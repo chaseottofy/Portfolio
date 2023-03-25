@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "short_name": "portfolio",
+  "description": "portfolio",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": null,
+  "background_color": "#111314",
+  "theme_color": "#111314"
+}

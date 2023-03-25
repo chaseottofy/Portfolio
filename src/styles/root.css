@@ -1,0 +1,607 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat/montserrat-v25-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/montserrat/montserrat-v25-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat/montserrat-v25-latin-500.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/montserrat/montserrat-v25-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat/montserrat-v25-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Open Sans"),
+    local("OpenSans"),
+    url('../fonts/openSans/open-sans-v34-latin-regular.woff2') format('woff2'),
+    url('../fonts/openSans/open-sans-v34-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Open Sans"),
+    local("OpenSans"),
+    url('../fonts/openSans/open-sans-v34-latin-500.woff2') format('woff2'),
+    url('../fonts/openSans/open-sans-v34-latin-500.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local("Open Sans"),
+    local("OpenSans"),
+    url('../fonts/openSans/open-sans-v34-latin-700.woff2') format('woff2'),
+    url('../fonts/openSans/open-sans-v34-latin-700.woff') format('woff');
+}
+
+:root {
+  --bs-md:
+    rgba(0, 0, 0, 0.10) 0 3px 3px 0,
+    rgba(0, 0, 0, 0.10) 0 6px 6px 0;
+  --bs-xl:
+    rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
+    rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
+    rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
+  --error-bg: #42181b;
+  --error-border: 1px solid #b93e3e;
+  --primaryFont: "Open Sans", -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --primaryFont2: "Montserrat", sans-serif;
+
+  --overlaysm: rgba(0, 0, 0, .2);
+  --overlaymd: rgba(0, 0, 0, .5);
+  --overlaylg: rgba(0, 0, 0, .7);
+  --z-main: 500;
+  --z-footer: 600;
+  --z-sidebar: 700;
+  --z-header: 800;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}
+
+.theme__dark {
+  --black0: #000000;
+  --black1: #131516;
+  --black2: #1b1f21;
+  --mdgrey1: #414e5a;
+  --mdgrey2: #b6b7b8;
+  --darkgrey1: #1f2223;
+  --darkgrey2: rgba(0,0,0,.4);
+  --primary1: #2a8af6;
+  --pink1: #a853ba;
+  --red1: #e92a67;
+  --primary2: #04508a;
+  --primary3: #003b5b;
+  --primaryfocus1: rgba(40, 116, 174, .3);
+  --primarylight1: #44adfd;
+  --primarylight2: #84cee4;
+  --placeholder: #81929e;
+  --white1: #ffffff;
+  --white2: #ebf1f6;
+  --webkit-scroll--thumb: #484e51;
+  --webkit-scroll--hover: #505659;
+}
+
+/* .theme__dark {
+  --black0: #000000;
+  --black1: #131516;
+  --black2: #1b1f21;
+  --mdgrey1: #414e5a;
+  --darkgrey1: #1f2223;
+  --darkgrey2: #0f1112;
+  --primary1: #2874ae;
+  --primary2: #04508a;
+  --primary3: #003b5b;
+  --primaryfocus1: rgba(40, 116, 174, .3);
+  --primarylight1: #44adfd;
+  --primarylight2: #84cee4;
+  --placeholder: #81929e;
+  --white1: #ffffff;
+  --white2: #ebf1f6;
+  --webkit-scroll--thumb: #484e51;
+  --webkit-scroll--hover: #505659;
+} */
+
+*,
+*:before,
+*:after {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  height: calc(100vh - calc(100vh - 100%));
+  line-height: 1.15;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--black0);
+  color: var(--white1);
+  font-family: var(--primaryFont2);
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y:scroll;
+}
+
+/* GENERAL RESETS
+============================*/
+button,
+input {
+  background: none;
+  border: none;
+  color: var(--white1);
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  outline: none;
+  text-transform: none
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--primarylight2);
+  outline: 0;
+  text-decoration: none;
+}
+
+:link img,
+:visited img,
+a img {
+  border: none
+}
+
+input::placeholder {
+  color: var(--placeholder);
+  opacity: 1
+}
+
+svg {
+  fill: var(--white1);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.svg-xs {
+  height: 1rem;
+  width: 1rem;
+}
+
+.svg-sm {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.svg-md {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.svg-lg {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.svg-xl {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+/* ::-WEBKIT
+============================*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto
+}
+
+button[type=button],
+button[type=reset],
+button[type=submit],
+button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/* ::-webkit-scrollbar {
+  height: 18px;
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--webkit-scroll--thumb);
+  border: 2px solid var(--black1);
+  border-radius: 12px;
+  min-height: 60px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--webkit-scroll--hover)
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  opacity: 0;
+} */
+
+/* ::-MOZ
+============================*/
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-moz-placeholder {
+  color: var(--placeholder);
+  opacity: 1
+}
+
+input:-ms-input-placeholder {
+  color: var(--placeholder);
+  opacity: 1
+}
+
+/* [ATTRIBUTES]
+============================*/
+input[disabled],
+button[disabled],
+a[disabled] {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* INPUT[TYPE=CHECKBOX]
+============================*/
+.checkbox {
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: var(--black1);
+  background-origin: border-box;
+  border: 1px solid var(--primary1);
+  color: var(--primary1);
+  display: inline-block;
+  flex-shrink: 0;
+  height: 1rem;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  width: 1rem;
+  position: relative;
+}
+
+.checkbox:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.checkbox:checked {
+  background-color: currentColor;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-color: transparent;
+}
+
+.checkbox:checked:focus-visible,
+.checkbox:checked:hover {
+  border-color: transparent;
+}
+
+.checkbox:checked:focus-visible {
+  box-shadow: 0 0 0 4px var(--primaryfocus1);
+}
+
+.checkbox:focus-visible {
+  box-shadow: 0 0 0 4px var(--overlaysm);
+}
+
+/* [BUTTON] TEMPLATES
+=====================================*/
+.btn {
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  border: 1px solid transparent;
+  padding: .375rem .5rem;
+  transition: background 100ms ease-in-out;
+  font-size: .875rem;
+}
+
+/* =====================================
+DARK/TRANSPARENT button */
+.btn-dark {
+  background: var(--darkgrey2);
+  border: 1px solid var(--darkgrey1);
+  color: var(--white1);
+}
+
+.btn-transparent {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--white1);
+}
+
+.btn-dark:hover,
+.btn-transparent:hover,
+.btn-text-svg:hover {
+  background: var(--black0);
+}
+
+.btn-dark:hover svg,
+.btn-transparent:hover svg {
+  fill: var(--white2);
+}
+
+.btn-dark:active,
+.btn-transparent:active,
+.btn-text-svg:active {
+  background: var(--black1);
+  border: 1px solid var(--darkgrey1);
+}
+
+.btn-dark:active svg,
+.btn-transparent:active svg {
+  fill: var(--white1);
+}
+
+.btn-dark:focus-visible,
+.btn-transparent:focus-visible,
+.btn-text-svg:focus-visible {
+  border: 1px solid transparent;
+  outline: 2px solid var(--primary2);
+}
+
+.btn-dark:focus-visible svg,
+.btn-transparent:focus-visible svg {
+  fill: var(--white1);
+}
+
+/* =====================================
+PRIMARY button */
+.btn-primary {
+  background: var(--primary2);
+  border: 1px solid var(--primary1);
+  color: var(--white1);
+}
+
+.btn-primary:hover {
+  background: var(--primary1);
+}
+
+.btn-primary:active {
+  border: 1px solid transparent;
+  filter: brightness(0.8);
+  background: var(--primary1);
+}
+
+.btn-primary:focus-visible {
+  background: var(--primary1);
+  border: 1px solid transparent;
+  outline: 2px solid var(--primary2);
+}
+
+/* BUTTON MODIFIERS
+=====================================*/
+.btn-fixed--width {
+  width: 7.5rem;
+}
+
+.btn-disabled {
+  filter: brightness(.7);
+  background: transparent;
+  border: 1px solid transparent;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.btn-sm {
+  font-size: .75rem;
+  padding: .25rem .5rem;
+}
+
+.btn-svg,
+.btn-svgtxt {
+  display: flex;
+  align-items: center;
+}
+
+.btn-svg {
+  justify-content: center;
+  padding:0;
+}
+
+.btn-svgtxt {
+  justify-content: space-between;
+}
+
+.btn-round {
+  border-radius: 50%;
+}
+
+/* [INPUT] TEMPLATES
+=====================================*/
+.input {
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  border: 1px solid transparent;
+  padding: .375rem .625rem;
+  transition: all 100ms ease-in-out;
+  font-size: .875rem;
+}
+
+.input-dark {
+  background: var(--darkgrey2);
+  color: var(--white2);
+  border: 1px solid var(--darkgrey1);
+}
+
+.input-dark:active {
+  background: var(--darkgrey2);
+  filter: brightness(1.2);
+  outline: 2px solid var(--primary3);
+}
+
+.input-dark:focus-visible {
+  outline: 2px solid var(--primary2);
+  border: 1px solid transparent;
+}
+
+/* DEBUG
+=====================================*/
+.debug--bg {
+  background: var(--error);
+}
+
+.debug--border {
+  border: 1px solid var(--error);
+}
+
+.debug--color {
+  color: var(--error);
+}
+
+.debug--outline {
+  outline: 1px solid var(--error);
+}
+
+
+.container {
+  display:flex;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.row {
+  display:flex;
+  flex-direction: row;
+}
+
+.col {
+  display:flex;
+  flex-direction:column;
+}
+
+/* TRANSITION UTILITIES
+=====================================*/
+/*attach to body - disable all transition/animation*/
+.disable-transitions * {
+  -webkit-transition: none !important;
+  transition: none !important;
+  transition-duration: none !important;
+  transition-property: none !important;
+  transition-timing-function: none !important;
+  animation: none !important;
+}
+
+/* adaptive font sizes
+=====================================*/
+@media screen and (max-width: 770px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+/* @media (max-height: 380px),
+(max-height: 380px) {
+  html {
+    font-size: 11px;
+  }
+} */

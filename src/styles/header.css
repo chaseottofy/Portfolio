@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid var(--black2);
+  z-index: var(--z-header);
+  background: rgba(0, 0, 0, .8);
+  backdrop-filter: blur(12px);
+  transition: background 200ms ease-in-out;
+  box-shadow:
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+    inset 0 -1px 0 transparent;
+}
+
+.header-filter {
+  background: rgba(0, 0, 0, .5);
+}
+
+.header-col {
+  height: 100%;
+  justify-content: center;
+}
+
+.header-col,
+.header-col--link,
+.copy-email,
+.copy-email--icon {
+  display: flex;
+  align-items: center;
+}
+
+/* col one
+============================*/
+.header-col--one {
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.header-col--one svg {
+  fill: var(--white2);
+}
+
+.header-title,
+.header-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white1);
+}
+
+.header-title {
+  padding-right: .25rem;
+}
+
+.header-subtitle {
+  padding-left: .25rem;
+  font-size: .875rem;
+}
+
+/* col three
+============================*/
+.header-col--two {
+  justify-content: flex-end;
+  padding-right: 1rem;
+  margin-left: auto;
+  column-gap: .125rem;
+}
+
+.header-col--link {
+  height: 2.75rem;
+  width: 2.75rem;
+  justify-content:center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-col--link:hover svg {
+  fill: var(--mdgrey2);
+}
+
+.copy-email {
+  width: 2.75rem;
+  height: 2.75rem;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  transition: background .2s ease-in-out;
+}
+
+.copy-email .copy-email--icon {
+  user-select: none;
+  pointer-events: none;
+}
+
+.copy-icon,
+.email-icon {
+  transition: all .2s ease-in-out;
+}
+
+.copy-icon {
+  opacity: 0;
+  width: 0;
+}
+
+.copy-email:hover .copy-email--icon .email-icon {
+  opacity: 0;
+  width: 0;
+}
+
+.copy-email:hover .copy-email--icon .copy-icon {
+  opacity: 1;
+  width: 36px;
+}
+
+.copy-email--icon {
+  height: 36px;
+  width: 36px;
+  justify-content: center;
+}
+ 
+.btn-menu {
+  margin-left: 1rem;
+}
+
+
+@media screen and (max-width: 600px) {
+  .svg-divide {
+    display: none;
+  }
+
+  .header-col--one {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .header-subtitle {
+    padding: 0;
+  }
+}

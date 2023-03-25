@@ -1,0 +1,38 @@
+.main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: var(--z-main);
+  margin-top: 64px;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  min-height: 800px;
+  height: 100%;
+  opacity: .2;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  border-radius: 100%;
+  top: -400px;
+  filter: blur(75px);
+  will-change: filter;
+  mix-blend-mode: normal;
+  background:
+    conic-gradient(from 180deg at 50% 50%,
+      #2a8af6 0deg,
+      #a853ba 180deg,
+      #e92a67 1turn);
+}
+
