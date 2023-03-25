@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-// const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 module.exports = {
   entry: './src/index.js',
@@ -64,9 +64,9 @@ module.exports = {
     minimize: true,
     minimizer: [
       // production
-      // new TerserPlugin({
-      //   extractComments: true,
-      // }),
+      new TerserPlugin({
+        extractComments: true,
+      }),
       new CssMinimizerPlugin(),
     ],
   },

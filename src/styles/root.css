@@ -1,65 +1,40 @@
 /* montserrat-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/montserrat/montserrat-v25-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('../fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url('../fonts/montserrat/montserrat-v25-latin-regular.woff') format('woff');
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* montserrat-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/montserrat/montserrat-v25-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/montserrat/montserrat-v25-latin-500.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('../fonts/montserrat/montserrat-v25-latin-500.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url('../fonts/montserrat/montserrat-v25-latin-500.woff') format('woff');
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* montserrat-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/montserrat/montserrat-v25-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/montserrat/montserrat-v25-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local("Open Sans"),
-    local("OpenSans"),
-    url('../fonts/openSans/open-sans-v34-latin-regular.woff2') format('woff2'),
-    url('../fonts/openSans/open-sans-v34-latin-regular.woff') format('woff');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 500;
-  src:
-    local("Open Sans"),
-    local("OpenSans"),
-    url('../fonts/openSans/open-sans-v34-latin-500.woff2') format('woff2'),
-    url('../fonts/openSans/open-sans-v34-latin-500.woff') format('woff');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  src:
-    local("Open Sans"),
-    local("OpenSans"),
-    url('../fonts/openSans/open-sans-v34-latin-700.woff2') format('woff2'),
-    url('../fonts/openSans/open-sans-v34-latin-700.woff') format('woff');
+  src: url('../fonts/montserrat/montserrat-v25-latin-700.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url('../fonts/montserrat/montserrat-v25-latin-700.woff') format('woff');
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 :root {
@@ -72,8 +47,7 @@
     rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
   --error-bg: #42181b;
   --error-border: 1px solid #b93e3e;
-  --primaryFont: "Open Sans", -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
-  --primaryFont2: "Montserrat", sans-serif;
+  --primaryFont: "Montserrat", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
 
   --overlaysm: rgba(0, 0, 0, .2);
   --overlaymd: rgba(0, 0, 0, .5);
@@ -94,7 +68,7 @@
   --mdgrey1: #414e5a;
   --mdgrey2: #b6b7b8;
   --darkgrey1: #1f2223;
-  --darkgrey2: rgba(0,0,0,.4);
+  --darkgrey2: rgba(0, 0, 0, .4);
   --primary1: #2a8af6;
   --pink1: #a853ba;
   --red1: #e92a67;
@@ -109,26 +83,6 @@
   --webkit-scroll--thumb: #484e51;
   --webkit-scroll--hover: #505659;
 }
-
-/* .theme__dark {
-  --black0: #000000;
-  --black1: #131516;
-  --black2: #1b1f21;
-  --mdgrey1: #414e5a;
-  --darkgrey1: #1f2223;
-  --darkgrey2: #0f1112;
-  --primary1: #2874ae;
-  --primary2: #04508a;
-  --primary3: #003b5b;
-  --primaryfocus1: rgba(40, 116, 174, .3);
-  --primarylight1: #44adfd;
-  --primarylight2: #84cee4;
-  --placeholder: #81929e;
-  --white1: #ffffff;
-  --white2: #ebf1f6;
-  --webkit-scroll--thumb: #484e51;
-  --webkit-scroll--hover: #505659;
-} */
 
 *,
 *:before,
@@ -154,7 +108,7 @@ html {
 body {
   background: var(--black0);
   color: var(--white1);
-  font-family: var(--primaryFont2);
+  font-family: var(--primaryFont);
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -163,7 +117,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 
 /* GENERAL RESETS
@@ -254,27 +208,6 @@ button {
   -moz-appearance: button;
   appearance: button;
 }
-
-/* ::-webkit-scrollbar {
-  height: 18px;
-  width: 14px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--webkit-scroll--thumb);
-  border: 2px solid var(--black1);
-  border-radius: 12px;
-  min-height: 60px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--webkit-scroll--hover)
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-  opacity: 0;
-} */
 
 /* ::-MOZ
 ============================*/
@@ -488,7 +421,7 @@ PRIMARY button */
 
 .btn-svg {
   justify-content: center;
-  padding:0;
+  padding: 0;
 }
 
 .btn-svgtxt {
@@ -545,9 +478,8 @@ PRIMARY button */
   outline: 1px solid var(--error);
 }
 
-
 .container {
-  display:flex;
+  display: flex;
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
@@ -558,13 +490,13 @@ PRIMARY button */
 }
 
 .row {
-  display:flex;
+  display: flex;
   flex-direction: row;
 }
 
 .col {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* TRANSITION UTILITIES

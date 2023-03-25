@@ -1,7 +1,7 @@
 {
-  "name": "webpack-template",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "webpack-template",
+  "description": "portfolio",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chaseottofy/webpack-template.git"
+    "url": "git+https://github.com/chaseottofy/portfolio.git"
   },
   "author": "Chase Ottofy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chaseottofy/webpack-template/issues"
+    "url": "https://github.com/chaseottofy/portfolio/issues"
   },
-  "homepage": "https://github.com/chaseottofy/webpack-template#readme",
+  "homepage": "https://github.com/chaseottofy/portfolio#readme",
   "dependencies": {
     "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",
