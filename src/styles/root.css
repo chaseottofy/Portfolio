@@ -57,6 +57,34 @@
     url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff') format('woff');
 }
 
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter/inter-v12-latin-regular.woff2') format('woff2'), 
+       url('../fonts/inter/inter-v12-latin-regular.woff') format('woff');
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter/inter-v12-latin-500.woff2') format('woff2'), 
+       url('../fonts/inter/inter-v12-latin-500.woff') format('woff'); 
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2'), 
+       url('../fonts/inter/inter-v12-latin-700.woff') format('woff'); 
+}
+
 :root {
   --bs-md:
     rgba(0, 0, 0, 0.10) 0 3px 3px 0,
@@ -67,7 +95,7 @@
     rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
   --error-bg: #42181b;
   --error-border: 1px solid #b93e3e;
-  --primaryFont: "Montserrat", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --secondaryFont: "Space Grotesk", monospace;
   --overlaysm: rgba(0, 0, 0, .2);
   --overlaymd: rgba(0, 0, 0, .5);
@@ -85,6 +113,7 @@
   --black0: #000000;
   --black1: #131516;
   --black2: #1b1f21;
+  --black3: #1a1a1a;
   --mdgrey1: #686868;
   --mdgrey2: #8e8f90;
   --mdgrey3: #b6b7b8;
@@ -102,6 +131,7 @@
   --placeholder: #b2b2b2;
   --white1: #ffffff;
   --white2: #ebf1f6;
+  --white3: #b3b3b3;
   --webkit-scroll--thumb: #484e51;
   --webkit-scroll--hover: #505659;
 }
@@ -122,7 +152,7 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-size: 16px;
+  font-size: 18px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -144,6 +174,9 @@ body {
 
 /* GENERAL RESETS
 ============================*/
+h2,h3,h4 {
+  font-family: var(--secondaryFont);
+}
 button,
 input {
   background: none;
@@ -535,7 +568,13 @@ PRIMARY button */
 
 /* adaptive font sizes
 =====================================*/
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1020px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
   html {
     font-size: 14px;
   }

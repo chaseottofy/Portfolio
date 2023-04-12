@@ -2,7 +2,10 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   height: 64px;
+  /* max-width: 1440px; */
+  margin: 0 auto;
   width: 100%;
   display: flex;
   border-bottom: 1px solid var(--black2);
