@@ -26,8 +26,8 @@
 
 .header-col,
 .header-col--link,
-.copy-email,
-.copy-email--icon {
+.copy-btn,
+.copy-icon--wrapper {
   display: flex;
   align-items: center;
 }
@@ -80,7 +80,7 @@
   fill: var(--mdgrey2);
 }
 
-.copy-email {
+.copy-btn {
   width: 2.75rem;
   height: 2.75rem;
   justify-content: center;
@@ -92,13 +92,18 @@
   transition: background .2s ease-in-out;
 }
 
-.copy-email .copy-email--icon {
+.copy-btn .copy-icon--wrapper {
   user-select: none;
   pointer-events: none;
 }
+.copy-icon--wrapper {
+  height: 36px;
+  width: 36px;
+  justify-content: center;
+}
 
 .copy-icon,
-.email-icon {
+.copy-before {
   transition: all .2s ease-in-out;
 }
 
@@ -107,21 +112,16 @@
   width: 0;
 }
 
-.copy-email:hover .copy-email--icon .email-icon {
+.copy-btn:hover .copy-icon--wrapper .copy-before {
   opacity: 0;
   width: 0;
 }
 
-.copy-email:hover .copy-email--icon .copy-icon {
+.copy-btn:hover .copy-icon--wrapper .copy-icon  {
   opacity: 1;
   width: 36px;
 }
 
-.copy-email--icon {
-  height: 36px;
-  width: 36px;
-  justify-content: center;
-}
  
 .btn-menu {
   margin-left: 1rem;

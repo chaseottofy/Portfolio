@@ -15,6 +15,8 @@
 }
 
 .gradient {
+  pointer-events: none;
+  user-select: none;
   position: absolute;
   width: 100%;
   min-height: 800px;
