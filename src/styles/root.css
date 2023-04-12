@@ -37,6 +37,26 @@
   /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* space-grotesk-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/spaceGrotesk/space-grotesk-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/spaceGrotesk/space-grotesk-v15-latin-regular.woff') format('woff');
+}
+
+/* space-grotesk-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff') format('woff');
+}
+
 :root {
   --bs-md:
     rgba(0, 0, 0, 0.10) 0 3px 3px 0,
@@ -48,7 +68,7 @@
   --error-bg: #42181b;
   --error-border: 1px solid #b93e3e;
   --primaryFont: "Montserrat", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
-
+  --secondaryFont: "Space Grotesk", monospace;
   --overlaysm: rgba(0, 0, 0, .2);
   --overlaymd: rgba(0, 0, 0, .5);
   --overlaylg: rgba(0, 0, 0, .7);
@@ -65,10 +85,12 @@
   --black0: #000000;
   --black1: #131516;
   --black2: #1b1f21;
-  --mdgrey1: #414e5a;
-  --mdgrey2: #b6b7b8;
-  --darkgrey1: #1f2223;
-  --darkgrey2: rgba(0, 0, 0, .4);
+  --mdgrey1: #686868;
+  --mdgrey2: #8e8f90;
+  --mdgrey3: #b6b7b8;
+  --darkgrey1: #212121;
+  --darkgrey2: #1b1f21;
+  --darkgrey3: #262626;
   --primary1: #2a8af6;
   --pink1: #a853ba;
   --red1: #e92a67;
@@ -77,7 +99,7 @@
   --primaryfocus1: rgba(40, 116, 174, .3);
   --primarylight1: #44adfd;
   --primarylight2: #84cee4;
-  --placeholder: #81929e;
+  --placeholder: #b2b2b2;
   --white1: #ffffff;
   --white2: #ebf1f6;
   --webkit-scroll--thumb: #484e51;
