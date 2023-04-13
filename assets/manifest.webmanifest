@@ -5,8 +5,8 @@
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
-  "background_color": "#111314",
-  "theme_color": "#111314",
+  "background_color": "#131516",
+  "theme_color": "#131516",
   "icons": [
     {
       "src": "favicon.ico"
