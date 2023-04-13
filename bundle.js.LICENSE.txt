@@ -1,4 +1,8 @@
+/*! ./styles/aside/contactMenu.css */
+
 /*! ./styles/aside/scrolltop.css */
+
+/*! ./styles/aside/themeMenu.css */
 
 /*! ./styles/footer.css */
 
@@ -51,6 +55,14 @@
 /*!****************************************!*\
   !*** ./src/styles/aside/scrolltop.css ***!
   \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/styles/aside/themeMenu.css ***!
+  \****************************************/
+
+/*!******************************************!*\
+  !*** ./src/styles/aside/contactMenu.css ***!
+  \******************************************/
 
 /*!******************************************!*\
   !*** ./src/utilities/copyToClipboard.js ***!
