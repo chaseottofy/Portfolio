@@ -1,0 +1,41 @@
+/* ============================
+DIVIDER
+============================*/
+.section-divider {
+  backdrop-filter: brightness(2.2);
+  filter: brightness(1.5);
+  background: rgba(129, 64, 143, 0.1);
+  height: 100%;
+  margin: 0 auto;
+  min-height: 2px;
+  min-width: 100vw;
+  position: relative;
+  width: 100%;
+  z-index: 6
+}
+
+.section-gradient-left,
+.section-gradient-right {
+  border-radius: 100%;
+  filter: blur(46px);
+  margin-top: -8px;
+  min-height: 16px;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  user-select: none;
+  width: 100%
+}
+
+.section-gradient-left {
+  background: #3549a6;
+  position: relative;
+  transform: translateX(-51%);
+  z-index: 2
+}
+
+.section-gradient-right {
+  background: #7c1e4b;
+  position: relative;
+  transform: translateX(51%);
+  z-index: 2
+}

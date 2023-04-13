@@ -1,10 +1,18 @@
+// !!REMINDER
 // reverb thing fl studio
+// set svgs to reasonable inline size
 import "./styles/root.css";
 import "./styles/header.css";
 import "./styles/main.css";
+import "./styles/footer.css";
+import "./styles/aside/scrolltop.css";
+import "./styles/gradientElements/headerGradient.css";
+import "./styles/gradientElements/dividerGradient.css";
+
 import copyToClipboard from "./utilities/copyToClipboard";
-// import handleTheme, { handleDefaultTheme } from "./utilities/handleTheme";
 import handleScroll from "./utilities/handleScroll";
+// import handleTheme, { handleDefaultTheme } from "./utilities/handleTheme";
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 

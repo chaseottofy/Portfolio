@@ -8,76 +8,6 @@
 }
 
 /* ------------------------ */
-/* GRADIENT (under header)
-============================*/
-.gradient,
-.gradient-overlay {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.gradient-overlay {
-  left: 0;
-  top: 0;
-}
-
-.gradient {
-  background: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 1turn);
-  border-radius: 100%;
-  filter: blur(75px);
-  left: 50%;
-  margin: 0 auto;
-  min-height: 800px;
-  mix-blend-mode: normal;
-  opacity: .4;
-  pointer-events: none;
-  right: 50%;
-  top: -400px;
-  max-width: 1000px;
-  max-height: 800px;
-  transform: translateX(-50%);
-  user-select: none;
-  will-change: filter;
-}
-
-/* ------------------------ */
-
-.scroll-top {
-  height: 36px;
-  width: 36px;
-  border-radius: 24px;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  transition: all 150ms ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
-  background: rgba(57, 57, 57, 0.2);
-  box-shadow: var(--bs-md);
-}
-
-.hide-scroll-top {
-  z-index: -1;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0;
-  background: transparent;
-}
-
-.scroll-top svg {
-  height: 26px;
-  width: 26px;
-}
-
-.scroll-top:hover {
-  background: var(--black2);
-}
-
-/* ------------------------ */
 /* SECTIONS
 ============================*/
 .projects-container,
@@ -91,7 +21,7 @@
   width: 100%;
   padding: 0 1.5rem 0 1.5rem;
   position: relative;
-  background: linear-gradient(180deg, transparent 75%, rgb(0, 0, 0) 90%);
+  background: linear-gradient(180deg, transparent 75%, var(--black0) 90%);
   z-index: 3;
 }
 
@@ -137,48 +67,6 @@
   color: var(--white2);
 }
 
-/* ============================
-DIVIDER
-============================*/
-.section-divider {
-  backdrop-filter: brightness(2.2);
-  filter: brightness(1.5);
-  background: rgba(129, 64, 143, 0.1);
-  height: 100%;
-  margin: 0 auto;
-  min-height: 2px;
-  min-width: 100vw;
-  position: relative;
-  width: 100%;
-  z-index: 6
-}
-
-.section-gradient-left,
-.section-gradient-right {
-  border-radius: 100%;
-  filter: blur(46px);
-  margin-top: -8px;
-  min-height: 16px;
-  mix-blend-mode: normal;
-  pointer-events: none;
-  user-select: none;
-  width: 100%
-}
-
-.section-gradient-left {
-  background: #3549a6;
-  position: relative;
-  transform: translateX(-51%);
-  z-index: 2
-}
-
-.section-gradient-right {
-  background: #7c1e4b;
-  position: relative;
-  transform: translateX(51%);
-  z-index: 2
-}
-
 /* ------------------------ */
 /* SECTION: PROJECTS
 ============================*/
@@ -197,6 +85,8 @@ DIVIDER
 }
 
 .lines {
+  animation: lines 4s ease-out;
+  animation-iteration-count: infinite;
   position: absolute;
   top: 0;
   left: 0;
@@ -205,14 +95,16 @@ DIVIDER
   height: 280px;
   max-width: 580px;
   margin: 0 auto;
-  border-bottom: 1px solid var(--grey1);
+  opacity: .8;
+  border-bottom: 1px solid var(--grey2);
   z-index: 1;
   background: transparent;
   background-size: calc(100% / 4) 4%;
   background-image:
-    linear-gradient(to right, var(--grey1) .5px, transparent 1px),
-    linear-gradient(to left, var(--grey1) .5px, transparent 1px);
+    linear-gradient(to right, var(--grey2) .5px, transparent 1px),
+    linear-gradient(to left, var(--grey2) .5px, transparent 1px);
 }
+
 
 .projects-header__title {
   font-size: 5rem;
@@ -367,13 +259,11 @@ DIVIDER
 /* .about-container {} */
 /* ------------------------ */
 
-
 /* ------------------------ */
 /* SECTION: CONTACT 
 ============================*/
 /* .contact-container {} */
 /* ------------------------ */
-
 
 /* ------------------------ */
 /* QUERY
@@ -388,6 +278,7 @@ DIVIDER
   .skill__header {
     justify-content: center;
   }
+
   .skills-grid {
     grid-template-columns: 1fr;
     text-align: center;

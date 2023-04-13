@@ -1,0 +1,33 @@
+/* ------------------------ */
+/* GRADIENT (under header)
+============================*/
+.gradient,
+.gradient-overlay {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.gradient-overlay {
+  left: 0;
+  top: 0;
+}
+
+.gradient {
+  background: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 1turn);
+  border-radius: 100%;
+  filter: blur(75px);
+  left: 50%;
+  margin: 0 auto;
+  min-height: 800px;
+  mix-blend-mode: normal;
+  opacity: .4;
+  pointer-events: none;
+  right: 50%;
+  top: -400px;
+  max-width: 1000px;
+  max-height: 800px;
+  transform: translateX(-50%);
+  user-select: none;
+  will-change: filter;
+}

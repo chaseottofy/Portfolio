@@ -73,6 +73,8 @@
   --white1: #fff;
   --white2: #aaa;
   --offsetred: rgba(233, 42, 103, .4);
+  --offsetblack1: rgba(0,0,0,.8);
+  --offsetblack2: rgba(0,0,0,.5);
 }
 
 .theme__light {
@@ -85,6 +87,8 @@
   --white1: #171717;
   --white2: #4c4c4c;
   --offsetred: rgba(233, 42, 103, .2);
+  --offsetblack1: rgba(255,255,255,.9);
+  --offsetblack2: rgba(255,255,255,.7);
 }
 
 *,
@@ -130,6 +134,19 @@ h2,
 h3,
 h4 {
   font-weight: 700;
+}
+
+h1 {
+  letter-spacing: -.02em;
+  background-color: var(--white1);
+  background-image: linear-gradient(180deg, var(--white1), var(--white2));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h1,
@@ -407,6 +424,28 @@ DARK/TRANSPARENT button */
 
 /* TRANSITION UTILITIES
 =====================================*/
+@keyframes lines {
+  0% {
+    opacity: .8
+  }
+
+  25% {
+    opacity: .4
+  }
+
+  50% {
+    opacity: 0
+  }
+
+  75% {
+    opacity: .4
+  }
+
+  100% {
+    opacity: .8
+  }
+}
+
 /*attach to body - disable all transition/animation*/
 .disable-transitions * {
   -webkit-transition: none !important;

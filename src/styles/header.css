@@ -1,3 +1,4 @@
+
 .header {
   position: fixed;
   top: 0;
@@ -9,14 +10,14 @@
   display: flex;
   border-bottom: 1px solid var(--black2);
   z-index: var(--z-header);
-  background: rgba(0, 0, 0, .8);
+  background: var(--offsetblack1);
   backdrop-filter: blur(12px);
   transition: background 200ms ease-in-out;
   box-shadow:0 -1px 0 rgba(255, 255, 255, 0.1) inset,inset 0 -1px 0 transparent;
 }
 
 .header-filter {
-  background: rgba(0, 0, 0, .5);
+  background: var(--offsetblack2);
 }
 
 .header-col {
