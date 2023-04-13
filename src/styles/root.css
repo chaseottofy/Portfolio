@@ -61,6 +61,7 @@
   --z-overlay: 900;
   --z-modal: 1000;
   --z-toast: 1100;
+  --r:#ff0000;
 }
 
 .theme__dark {

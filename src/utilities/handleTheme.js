@@ -1,59 +1,68 @@
-/*
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 const colorSchemeMeta = $('meta[name="color-scheme"]');
+const themeBtns = $$(".theme-btn");
 
-const getMediaMatch = () => window.matchMedia('(prefers-color-scheme: dark)').matches
+const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
 
-const handleTheme = () => {
-  const moon = $(".moon-icon");
-  const sun = $(".sun-icon");
-  if (sun.classList.contains("hide-svg")) {
-    sun.classList.remove("hide-svg");
-    moon.classList.add("hide-svg");
-    document.body.setAttribute("class", "body theme__light");
-    colorSchemeMeta.setAttribute("content", "light");
-    localStorage.setItem("theme", "light");
-  } else {
-    sun.classList.add("hide-svg");
-    moon.classList.remove("hide-svg");
-    document.body.setAttribute("class", "body theme__dark");
-    colorSchemeMeta.setAttribute("content", "dark");
-    localStorage.setItem("theme", "dark");
+const resetThemeBtns = () => themeBtns.forEach(btn => btn.classList.remove("active-theme"));
+
+const handleTheme = (theme, element) => {
+  resetThemeBtns();
+  element.classList.add("active-theme");
+  localStorage.setItem("portfolio-theme", theme);
+  colorSchemeMeta.setAttribute("content", theme);
+  document.body.setAttribute("class", `body theme__${theme}`);
+};
+
+const swap = (target) => {
+  resetThemeBtns();
+  target.classList.add("active-theme");
+};
+
+const delegateTheme = e => {
+  if (e.target.closest(".theme-btn")) {
+    if (e.target.classList.contains("active-theme")) {
+      return;
+    }
+
+    const systemTheme = getSystemTheme();
+    const currentTheme = localStorage.getItem("portfolio-theme");
+    const targetTheme = e.target.getAttribute("data-theme");
+    if (targetTheme === "system") {
+      if (e.target.getAttribute("data-system-theme") === currentTheme) {
+        swap(e.target);
+        return;
+      } else {
+        handleTheme(systemTheme, e.target);
+        return;
+      }
+    } else {
+      if (targetTheme === currentTheme) {
+        swap(e.target);
+        return;
+      } else {
+        handleTheme(targetTheme, e.target);
+        return;
+      }
+    }
   }
 };
 
-const handleDefaultTheme = () => {
-  const localTheme = localStorage.getItem("theme");
-  if (localTheme) {
-    if (colorSchemeMeta.getAttribute("content") === localTheme) {
-      return;
-    } else {
-      handleTheme();
-      return;
-    }
+const initTheme = () => {
+  const localTheme = localStorage.getItem("portfolio-theme");
+  const systemTheme = getSystemTheme();
+  // append a new attribute to system theme button to refer to system theme
+  themeBtns[2].setAttribute("data-system-theme", systemTheme);
+
+  if (!localTheme || (localTheme !== "dark" && localTheme !== "light")) {
+    handleTheme(systemTheme, $(`[data-theme="${systemTheme}"]`));
+    return;
   } else {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      localStorage.setItem("theme", "dark");
-      return;
-    } else {
-      handleTheme();
-    }
+    handleTheme(localTheme, $(`[data-theme="${localTheme}"]`));
+    return;
   }
 };
 
-const delegateThemeBtns = e => {
-  const getThemeBtn = e.target.closest(".theme-btn")
-  if (getThemeBtn) {
-    const localTheme = localStorage.getItem("theme");
-    const theme = e.target.getAttribute("data-theme");
-    if (t)
-  }
-}
-
-export default handleTheme;
-export { handleDefaultTheme };
-import handleTheme, { handleDefaultTheme } from "./utilities/handleTheme";
-
-// window.addEventListener("load", handleDefaultTheme, { once: true });
-// $(".change-theme--btn").addEventListener("click", handleTheme);
-*/
+export default delegateTheme;
+export { initTheme };

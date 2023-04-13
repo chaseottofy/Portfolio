@@ -108,6 +108,7 @@
 
 .projects-header__title {
   font-size: 5rem;
+  text-align:center;
   position: relative;
   z-index: 2;
   padding-bottom: 1.25rem;
