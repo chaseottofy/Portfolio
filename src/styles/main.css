@@ -10,6 +10,7 @@
 /* ------------------------ */
 /* SECTIONS
 ============================*/
+.intro-container,
 .projects-container,
 .skills-container,
 .about-container,
@@ -25,6 +26,7 @@
   z-index: 3;
 }
 
+.projects-container,
 .skills-container,
 .about-container,
 .contact-container {
@@ -61,6 +63,7 @@
   font-size: 2.25rem;
 }
 
+
 .section-subtitle {
   font-family: var(--secondaryFont);
   line-height: 1.375;
@@ -68,20 +71,18 @@
 }
 
 /* ------------------------ */
-/* SECTION: PROJECTS
+/* SECTION: INTRO
 ============================*/
-.projects-container {
-  min-height: calc(100vh - 64px);
-}
+/* .intro-container {} */
 
-.projects-header {
+.intro-header {
   min-height: 460px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 3rem;
 }
 
 .lines {
@@ -105,22 +106,41 @@
     linear-gradient(to left, var(--grey2) .5px, transparent 1px);
 }
 
-
-.projects-header__title {
-  font-size: 5rem;
-  text-align:center;
-  position: relative;
-  z-index: 2;
-  padding-bottom: 1.25rem;
+.intro-header__title,
+.intro-header__subtitle {
+  position:relative;
+  z-index:2;
 }
 
-.projects-header__subtitle {
-  font-size: 1.125rem;
-  color: var(--white2);
-  font-family: var(--secondaryFont);
-  line-height: 1.375;
+.intro-header__title {
+  font-size: 1.825rem;
+  text-align: center;
 }
 
+.intro-header__subtitle {
+  display:flex;
+  align-items:center;
+  width: 100%;
+  justify-content: center;
+}
+
+.intro-header__subtitle--text {
+  font-size: 3rem;
+  color: var(--white1);
+  background-color: var(--white1);
+  background-image: linear-gradient(180deg, var(--white1), var(--white2));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ------------------------ */
+/* SECTION: PROJECTS
+============================*/
 .projects-grid {
   padding: 1rem 0 6rem 0;
   grid-template-columns: 1fr 1fr;

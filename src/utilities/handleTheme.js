@@ -1,5 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+const body = $(".body");
+const header = $(".header");
 const colorSchemeMeta = $('meta[name="color-scheme"]');
 const themeBtns = $$(".theme-btn");
 
@@ -9,10 +11,12 @@ const resetThemeBtns = () => themeBtns.forEach(btn => btn.classList.remove("acti
 
 const handleTheme = (theme, element) => {
   resetThemeBtns();
+  header.classList.remove("header-animate");
   element.classList.add("active-theme");
   localStorage.setItem("portfolio-theme", theme);
   colorSchemeMeta.setAttribute("content", theme);
-  document.body.setAttribute("class", `body theme__${theme}`);
+  body.setAttribute("class", `body theme__${theme}`);
+  setTimeout(() => header.classList.add("header-animate"), 150);
 };
 
 const swap = (target) => {

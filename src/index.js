@@ -12,6 +12,7 @@ import "./styles/gradientElements/dividerGradient.css";
 import delegateTheme, { initTheme } from "./utilities/handleTheme";
 import handleScroll from "./utilities/handleScroll";
 import copyToClipboard from "./utilities/copyToClipboard";
+import setMenuLinks from "./utilities/handleMenuLinks";
 const $ = document.querySelector.bind(document);
 
 window.addEventListener("load", initTheme, { once: true });
@@ -26,3 +27,4 @@ $(".copy-phone").addEventListener("click", () => {
 $(".scroll-top").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+setMenuLinks();

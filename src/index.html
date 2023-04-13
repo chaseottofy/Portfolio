@@ -15,13 +15,37 @@
 <body class="body theme__dark">
   <!--------------------->
   <!-- HEADER -->
-  <header class="header">
+  <header class="header header-animate">
+
     <div class="header-col header-col--one">
       <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white2)" stroke-width="1.5" viewBox="0 0 24 24" class="svg-divide svg-sm">
         <path d="M16.88 3.549L7.12 20.451"></path>
       </svg>
-      <h1 class="header-title">CHASE OTTOFY</h1>
-      <h2 class="header-subtitle">Front-end Developer</h2>
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li>
+            <button class="menu-btn--multi">
+              Projects
+              <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </li>
+          <li>
+            <a class="nav-menu--link" href="#skills-top" >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a class="nav-menu--link" href="#about-top">
+              About
+            </a>
+          </li>
+          <li>
+            <a class="nav-menu--link" href="#contact-top">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <div class="header-col header-col--two">
@@ -58,11 +82,11 @@
   </aside>
   <!--------------------->
 
-
   <!--------------------->
   <aside class="gradient"></aside>
   <aside class="gradient-overlay"></aside>
   <!--------------------->
+
   <!-- MAIN -->
   <main class="main">
     <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
@@ -76,27 +100,47 @@
 
     <!--------------------->
     <!-- SECTION: PROJECTS -->
-    <div class="projects-container">
-      <div class="projects-header">
-
+    <article class="intro-container">
+      <div class="intro-header">
         <div class="lines"></div>
-        <h1 class="projects-header__title">Work In Progress</h1>
-        <p class="projects-header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima.</p>
+        <h1 class="intro-header__title">CHASE OTTOFY</h1>
+        <div class="intro-header__subtitle">
+          <h2 class="intro-header__subtitle--text">
+            Front-end + UI
+          </h2>
+        </div>
+      </div>
+    </article>
+
+    <aside class="section-divider" id="projects-top"></aside>
+    <aside class="section-gradient-left"></aside>
+    <aside class="section-gradient-right"></aside>
+
+    <!--------------------->
+    <!-- SECTION: PROJECTS -->
+    <article class="projects-container">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <div class="section-subtitle">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <p>Distinctio maiores atque reprehenderit.</p>
+        </div>
       </div>
       <div class="projects-grid">
         <!-- <div class="project-cell">cell</div> -->
         <!-- <div class="project-cell">cell</div> -->
       </div>
-    </div>
+    </article>
     <!--------------------->
 
-    <aside class="section-divider"></aside>
+    <aside class="section-divider" id="skills-top"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
 
     <!--------------------->
     <!-- SECTION: SKILLS -->
-    <div class="skills-container">
+    <article class="skills-container">
       <div class="section-title">
         <h2>Skills</h2>
         <div class="section-subtitle">
@@ -308,16 +352,16 @@
       </div>
       <!-- end :: SKILLS -->
       <!-- end :: SKILLS -->
-    </div>
+    </article>
     <!--------------------->
 
-    <aside class="section-divider"></aside>
+    <aside class="section-divider" id="about-top"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
 
     <!--------------------->
     <!-- SECTION: ABOUT -->
-    <div class="about-container">
+    <article class="about-container">
 
       <div class="section-title">
         <h2>About</h2>
@@ -327,16 +371,16 @@
           <p>Distinctio maiores atque reprehenderit.</p>
         </div>
       </div>
-    </div>
+    </article>
     <!--------------------->
 
-    <aside class="section-divider"></aside>
+    <aside class="section-divider" id="contact-top"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
 
     <!--------------------->
     <!-- SECTION: CONTACT -->
-    <div class="contact-container">
+    <article class="contact-container">
       <div class="section-title">
         <h2>Contact</h2>
         <div class="section-subtitle">
@@ -345,7 +389,7 @@
           <p>Distinctio maiores atque reprehenderit.</p>
         </div>
       </div>
-    </div>
+    </article>
     <!--------------------->
   </main>
 
