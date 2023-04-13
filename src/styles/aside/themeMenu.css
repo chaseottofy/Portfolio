@@ -1,0 +1,48 @@
+.theme-modal {
+  display: flex;
+  position: absolute;
+  top: 39%;
+  left: .25rem;
+  z-index: var(--z-sidebar);
+}
+
+.theme-switch {
+  display: flex;
+  flex-direction: column;
+  height: 8rem;
+  width: 2.625rem;
+  justify-content: space-between;
+  padding: 10px 1px;
+  border-radius: 12px;
+  align-items: center;
+  position: relative;
+  background: var(--black0);
+  border: 1px solid var(--black1);
+}
+
+.theme-switch button {
+  display: flex;
+  background: transparent;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.theme-switch button svg {
+  fill: var(--black0);
+  stroke: var(--white2);
+}
+
+.theme-switch button:hover svg {
+  stroke: var(--white1);
+}
+
+.theme-switch .active-theme {
+  background: var(--black2);
+}
+
+.theme-switch .active-theme svg {
+  stroke: var(--white1);
+  fill: var(--black2);
+}

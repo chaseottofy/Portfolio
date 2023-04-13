@@ -13,7 +13,7 @@
   top: 0;
 }
 
-.gradient {
+/* .gradient {
   background: conic-gradient(
     from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 1turn
   );
@@ -32,4 +32,4 @@
   transform: translateX(-50%);
   user-select: none;
   will-change: filter;
-}
+} */

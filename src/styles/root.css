@@ -38,6 +38,20 @@
     url('../fonts/inter/inter-v12-latin-700.woff') format('woff');
 }
 
+/* inter-tight-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/intertight/inter-tight-v2-latin-800.woff2') format('woff2'),
+    url('../fonts/intertight/inter-tight-v2-latin-800.woff') format('woff');
+}
+
+/* 
+https://vercel.com/design/icons
+*/
+
 :root {
   --bs-md:
     rgba(0, 0, 0, 0.10) 0 3px 3px 0,
@@ -48,12 +62,10 @@
     rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --secondaryFont: "Space Grotesk", monospace;
+  --tertiaryFont: "Inter Tight", monospace;
   --blue1: #2a8af6;
   --pink1: #a853ba;
   --red1: #e92a67;
-  --overlaysm: rgba(0, 0, 0, .2);
-  --overlaymd: rgba(0, 0, 0, .5);
-  --overlaylg: rgba(0, 0, 0, .7);
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
@@ -61,7 +73,13 @@
   --z-overlay: 900;
   --z-modal: 1000;
   --z-toast: 1100;
-  --r:#ff0000;
+  --accent-1: #111;
+  --accent-2: #333;
+  --accent-3: #444;
+  --accent-4: #555;
+  --accent-5: #777;
+  --accent-6: #999;
+  --accent-7: #eaeaea;
 }
 
 .theme__dark {
@@ -73,9 +91,10 @@
   --grey3: #1b1a1a;
   --white1: #fff;
   --white2: #aaa;
+  --white3: #8c8c8c;
   --offsetred: rgba(233, 42, 103, .4);
-  --offsetblack1: rgba(0,0,0,.8);
-  --offsetblack2: rgba(0,0,0,.5);
+  --offsetblack1: rgba(0, 0, 0, .8);
+  --offsetblack2: rgba(0, 0, 0, .5);
 }
 
 .theme__light {
@@ -87,9 +106,10 @@
   --grey3: #d9d9d9;
   --white1: #171717;
   --white2: #4c4c4c;
+  --white3: #4c4c4c;
   --offsetred: rgba(233, 42, 103, .2);
-  --offsetblack1: rgba(255,255,255,.9);
-  --offsetblack2: rgba(255,255,255,.7);
+  --offsetblack1: rgba(255, 255, 255, .9);
+  --offsetblack2: rgba(255, 255, 255, .7);
 }
 
 *,
@@ -135,19 +155,6 @@ h2,
 h3,
 h4 {
   font-weight: 700;
-}
-
-h1 {
-  letter-spacing: -.02em;
-  background-color: var(--white1);
-  background-image: linear-gradient(180deg, var(--white1), var(--white2));
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  background-clip: text;
 }
 
 h1,

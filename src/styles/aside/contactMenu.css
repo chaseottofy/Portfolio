@@ -1,0 +1,10 @@
+.contact-menu {
+  position: absolute;
+  z-index: var(--z-aside);
+  top: 70px;
+  left: 0;
+  width: 320px;
+  height: 240px;
+  display:flex;
+  background: var(--black0);
+}
