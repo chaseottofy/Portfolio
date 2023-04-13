@@ -9,11 +9,11 @@
 .theme-switch {
   display: flex;
   flex-direction: column;
-  height: 8rem;
-  width: 2.625rem;
+  height: 10rem;
+  width: 2.825rem;
   justify-content: space-between;
-  padding: 10px 1px;
-  border-radius: 12px;
+  padding: .75rem .25rem;
+  border-radius: 10px;
   align-items: center;
   position: relative;
   background: var(--black0);
@@ -45,4 +45,11 @@
 .theme-switch .active-theme svg {
   stroke: var(--white1);
   fill: var(--black2);
+}
+
+@media screen and (max-width: 490px) {
+  .theme-switch {
+    height: 12rem;
+    width: 3.25rem;
+  } 
 }

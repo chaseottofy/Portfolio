@@ -1,0 +1,78 @@
+.toast-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 8500;
+}
+
+.toast {
+  right: 1rem;
+  bottom: 2rem;
+  max-width: 280px;
+  max-height: 40px;
+  height: 100%;
+  width: auto;
+  position: absolute;
+  border: 1px solid var(--black2);
+  border-radius: 2px;
+  background: var(--offsetblack1);
+  box-shadow:var(--bs-sm);
+  color: var(--white1);
+  transition: all .35s cubic-bezier(.25, .75, .6, .98);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.toast--2 {
+  transform: scaleX(.95);
+  opacity: .9;
+}
+
+.toast--3 {
+  transform: scaleX(.85);
+  opacity: .75;
+}
+
+.toast--4 {
+  transform: scaleX(.75);
+  opacity: .55;
+}
+
+.hide-toast {
+  opacity: 0;
+}
+
+.toast-progress {
+  height: 4px;
+  width: 100%;
+  background: var(--white2);
+  border-radius: 2px;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  z-index: 2;
+}
+
+.toast-progress--length {
+  height: 5px;
+  width: 100%;
+  background: var(--black1);
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.toast-message {
+  font-size: .825rem;
+  letter-spacing: -.5px;
+  color: var(--white1);
+  font-family: var(--primaryFont);
+  font-weight: 500;
+}

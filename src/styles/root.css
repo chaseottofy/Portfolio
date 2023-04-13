@@ -53,6 +53,8 @@ https://vercel.com/design/icons
 */
 
 :root {
+  --bs-sm:
+    rgba(0, 0, 0, 0.10) 0 0 3px 0;
   --bs-md:
     rgba(0, 0, 0, 0.10) 0 3px 3px 0,
     rgba(0, 0, 0, 0.10) 0 6px 6px 0;
@@ -93,7 +95,7 @@ https://vercel.com/design/icons
   --white2: #aaa;
   --white3: #8c8c8c;
   --offsetred: rgba(233, 42, 103, .4);
-  --offsetblack1: rgba(0, 0, 0, .8);
+  --offsetblack1: rgba(0, 0, 0, .9);
   --offsetblack2: rgba(0, 0, 0, .5);
 }
 
@@ -474,7 +476,7 @@ DARK/TRANSPARENT button */
 
 @media screen and (max-width: 640px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
