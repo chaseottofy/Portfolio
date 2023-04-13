@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "portfolio",
+  "description": "Portfolio for Chase Ottofy",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -14,6 +14,20 @@
     "type": "git",
     "url": "git+https://github.com/chaseottofy/portfolio.git"
   },
+  "keywords": [
+    "portfolio",
+    "chase",
+    "ottofy",
+    "chaseottofy",
+    "chase ottofy",
+    "chase ottofy portfolio",
+    "front end",
+    "front end developer",
+    "javascript developer",
+    "react developer",
+    "react",
+    "javascript"
+  ],
   "author": "Chase Ottofy",
   "license": "ISC",
   "bugs": {
