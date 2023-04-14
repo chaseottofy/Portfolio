@@ -10,46 +10,64 @@
   display: flex;
   flex-direction: column;
   height: 10rem;
-  width: 2.825rem;
+  width: 3rem;
   justify-content: space-between;
-  padding: .75rem .25rem;
   border-radius: 10px;
   align-items: center;
   position: relative;
-  background: var(--black0);
-  border: 1px solid var(--black1);
+  background: var(--offsetblack1);
+  border: 1px solid var(--black2);
 }
 
-.theme-switch button {
+.theme-switch span {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-switch span input {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.theme-switch span label {
   display: flex;
   background: transparent;
   align-items: center;
-  padding: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
   border-radius: 50%;
   justify-content: center;
+  cursor: pointer;
 }
 
-.theme-switch button svg {
+.theme-switch span label svg {
   fill: var(--black0);
   stroke: var(--white2);
+  height: 1rem;
+  width: 1rem;
 }
 
-.theme-switch button:hover svg {
+.theme-switch span input:checked + label svg {
   stroke: var(--white1);
 }
 
-.theme-switch .active-theme {
-  background: var(--black2);
+.theme-switch span input:checked + label {
+  background: var(--black1);
 }
 
-.theme-switch .active-theme svg {
+.theme-switch span:hover label svg {
   stroke: var(--white1);
-  fill: var(--black2);
 }
 
-@media screen and (max-width: 490px) {
-  .theme-switch {
-    height: 12rem;
-    width: 3.25rem;
-  } 
+.theme-switch span:hover label {
+  background: var(--black1);
 }

@@ -3,7 +3,6 @@ const toastWrapper = $(".toast-wrapper");
 
 let toastIndex = 0;
 const handleToasts = () => {
-  console.log(toastIndex)
   if (toastWrapper.children.length >= 4) {
     toastWrapper.removeChild(toastWrapper.children[toastWrapper.children.length - 1]);
   }
@@ -57,27 +56,4 @@ const createToast = (text) => {
   }, 10);
 };
 
-const copyToClipboard = (text) => {
-  if (!navigator.clipboard || !text) return;
-  return navigator.clipboard.writeText(text);
-};
-
-const handleCopyEmail = () => {
-  const message = "ottofy@zohomail.com";
-  copyToClipboard(message);
-  createToast(message);
-  return;
-}
-
-// const handleCopyPhone = () => {
-//   const message = "9709882548";
-//   copyToClipboard(message);
-//   createToast(message);
-//   return;
-// }
-const initCopy = () => {
-  $(".copy-email").addEventListener("click", handleCopyEmail);
-  // $(".copy-phone").addEventListener("click", handleCopyPhone);
-}
-
-export default initCopy;
+export default createToast;

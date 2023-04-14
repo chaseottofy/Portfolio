@@ -1,6 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  align-items:center;
   margin-top: 4rem;
   position: relative;
   width: 100%;

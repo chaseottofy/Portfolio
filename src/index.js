@@ -20,19 +20,18 @@ import "./styles/aside/themeMenu.css";
 import "./styles/aside/contactMenu.css";
 import "./styles/aside/toast.css";
 
-import delegateTheme, { initTheme } from "./utilities/handleTheme";
+import handleTheme, { setInitialTheme } from "./utilities/handleTheme";
 import handleScroll from "./utilities/handleScroll";
-import initCopy from "./utilities/copyToClipboard";
+import setCopyElements from "./utilities/handleCopy";
 import setMenuLinks from "./utilities/handleMenuLinks";
 
 const $ = document.querySelector.bind(document);
-window.addEventListener("load", initTheme, { once: true });
-window.addEventListener("scroll", handleScroll);
 
-$(".theme-switch").addEventListener("click", delegateTheme);
-$(".scroll-top").addEventListener("click", () => {
+setInitialTheme();
+handleTheme();
+setCopyElements();
+setMenuLinks();
+window.addEventListener("scroll", handleScroll);
+$(".scroll-top--btn").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-initCopy();
-setMenuLinks();

@@ -4,7 +4,7 @@ DIVIDER
 .section-divider {
   backdrop-filter: brightness(2.2);
   filter: brightness(1.5);
-  background: rgba(129, 64, 143, 0.1);
+  background: var(--dividerBg);
   height: 100%;
   margin: 0 auto;
   min-height: 2px;
@@ -27,14 +27,14 @@ DIVIDER
 }
 
 .section-gradient-left {
-  background: #3549a6;
+  background: var(--blue2);
   position: relative;
   transform: translateX(-51%);
   z-index: 2
 }
 
 .section-gradient-right {
-  background: #7c1e4b;
+  background: var(--red2);
   position: relative;
   transform: translateX(51%);
   z-index: 2
