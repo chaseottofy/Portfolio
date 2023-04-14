@@ -1,4 +1,5 @@
 const $ = document.querySelector.bind(document);
+
 const handleScroll = () => {
   const scrollTop = $(".scroll-top");
   const header = $(".header");
@@ -10,4 +11,5 @@ const handleScroll = () => {
     scrollTop.classList.add("hide-scroll-top");
   }
 };
+
 export default handleScroll;

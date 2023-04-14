@@ -1,0 +1,130 @@
+/* SECTION: SKILLS
+============================*/
+.skills-container {
+  margin-top: -16px;
+  padding-bottom: 6rem;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.skills-cell {
+  border: 1px solid var(--black2);
+  border-radius: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.skill__header {
+  align-items: center;
+  display: flex;
+  height: 64px;
+  position: relative;
+  width: 100%;
+}
+
+.skill__header--icon-wrapper {
+  border: 1.5px solid var(--black2);
+  border-radius: 32px;
+  height: 64px;
+  width: 64px
+}
+
+.skill__header--icon,
+.skill__header--icon-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+.skill__header--icon {
+  border-radius: 30px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  width: 48px
+}
+
+.skill__header--icon:after,
+.skill__header--icon:before {
+  border-radius: 50%;
+  content: "";
+  position: absolute
+}
+
+.skill__header--icon:before {
+  border: 12px solid transparent;
+  border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  border-image-slice: 1;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 100ms ease-in-out;
+  width: 100%
+}
+
+.skill__header--icon:after {
+  background: var(--black0);
+  height: 45.5px;
+  margin: 0 auto;
+  width: 45.5px;
+  z-index: 2;
+}
+
+.skills-cell:hover .skill__header--icon:before {
+  border-image: linear-gradient(to right bottom, var(--red1), var(--grey3), var(--black1));
+  border-image-slice: 1;
+}
+
+.skills-cell:hover .skill__header--icon svg {
+  fill: var(--red1);
+}
+
+.skill__header--icon svg {
+  fill: url(#subicon-gradient);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px var(--offset-red));
+  height: 42px;
+  position: relative;
+  transition: fill 100ms ease-in-out;
+  width: 42px;
+  z-index: 3
+}
+
+/* ------------ */
+/* skills: body */
+.skill__body {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-top: .5rem;
+}
+
+.skill__header--title h3,
+.skill__body--title h3 {
+  color: var(--white1);
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
+.skill__body--content {
+  color: var(--white1);
+  opacity: .7;
+  font-weight: 500;
+  line-height: 1.5rem
+}
+
+@media screen and (max-width: 490px) {
+  .skill__header {
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

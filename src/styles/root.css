@@ -466,6 +466,12 @@ DARK/TRANSPARENT button */
   animation: none !important;
 }
 
+.dotted-background {
+  background-image: radial-gradient(var(--black2) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: 50%;
+}
+
 /* adaptive font sizes
 =====================================*/
 @media screen and (max-width: 1020px) {

@@ -1,0 +1,28 @@
+/* SECTION: PROJECTS
+============================*/
+.projects-container {
+  margin-top: -16px;
+  padding-bottom: 6rem;
+}
+
+.projects-grid {
+  padding: 1rem 0 6rem 0;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-cell {
+  min-height: 380px;
+  background: rgba(53, 52, 52, 0.1);
+  border-radius: .75rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  gap: .5rem;
+  text-align: center;
+}
+@media screen and (max-width: 840px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
