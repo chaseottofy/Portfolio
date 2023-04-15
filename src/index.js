@@ -1,6 +1,3 @@
-// !!REMINDER
-// reverb thing fl studio
-// set svgs to reasonable inline size
 /**
  * @fileoverview Entry point, 
  * import all css (DOM order),
@@ -9,7 +6,7 @@
  * 
  * ./root (
  *   - font-face
- *   - common css variables
+ *   - common css variables between themes
  *   - css reset
  *   - html font-size query
  * 
@@ -24,7 +21,15 @@
  * <aside> <headerGradient />
  * 
  * --------------------------------
- * (** indicates child of <main>)
+ * fixed elements & popups
+ * 
+ * <aside> <scrolltop />
+ * <aside> <themeMenu />
+ * <aside> <contactMenu />
+ * <aside> <toast />
+ * 
+ * --------------------------------
+ * (** = child)
  * 
  * <main>
  * ** <dividerGradient />
@@ -36,16 +41,7 @@
  * </main>
  * 
  * --------------------------------
- * 
  * <footer />
- * 
- * --------------------------------
- * 
- * <aside> <scrolltop />
- * <aside> <themeMenu />
- * <aside> <contactMenu />
- * <aside> <toast />
- * 
  * --------------------------------
  */
 import "./styles/root.css";
@@ -77,11 +73,15 @@ import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 
 const appInit = () => {
+  // set default theme / toggle theme
   initTheme();
+  // copy phone # / email
   initCopyElements();
-  
-  // 
+  // scroll to articles / top of page
   initScroll();
-}
-
+};
 appInit();
+
+// !!REMINDER
+// reverb thing fl studio
+// set svgs to reasonable inline size

@@ -44,7 +44,7 @@
   font-size: 1.5rem;
   text-align: center;
   color: var(--white1);
-  font-family: var(--tertiaryFont);
+  font-family: var(--primaryFontAlt);
   font-weight: 800;
   transform: scale(.9, .8);
 }

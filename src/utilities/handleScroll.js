@@ -1,12 +1,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-/**
- * 
- */
 const handleMenuScroll = (e) => {
   e.preventDefault();
-  console.log(typeof e)
   $(`${e.target.getAttribute("href")}`).scrollIntoView({
     behavior: "smooth"
   });

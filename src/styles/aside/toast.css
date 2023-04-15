@@ -6,7 +6,7 @@
   width: 100%;
   user-select: none;
   pointer-events: none;
-  z-index: 8500;
+  z-index: var(--z-toast);
 }
 
 .toast {
@@ -20,7 +20,7 @@
   border: 1px solid var(--black2);
   border-radius: 2px;
   background: var(--offsetblack1);
-  box-shadow: var(--bs-sm);
+  box-shadow: var(--bs-md);
   color: var(--white1);
   transition: all .35s cubic-bezier(.25, .75, .6, .98);
   padding: 24px;

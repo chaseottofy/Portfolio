@@ -1,60 +1,58 @@
-/* space-grotesk-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff2') format('woff2'),
-    url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff') format('woff');
-}
-
-/* inter-regular - latin */
+/* inter-regular */
 @font-face {
   font-display: swap;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/inter/inter-v12-latin-regular.woff2') format('woff2'),
-    url('../fonts/inter/inter-v12-latin-regular.woff') format('woff');
+  src: url('../fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
 }
 
-/* inter-500 - latin */
+/* inter-500 */
 @font-face {
   font-display: swap;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/inter/inter-v12-latin-500.woff2') format('woff2'),
-    url('../fonts/inter/inter-v12-latin-500.woff') format('woff');
+  src: url('../fonts/inter/inter-v12-latin-500.woff2') format('woff2');
 }
 
-/* inter-700 - latin */
+/* inter-700 */
 @font-face {
   font-display: swap;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2'),
-    url('../fonts/inter/inter-v12-latin-700.woff') format('woff');
+  src: url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2');
 }
 
-/* inter-tight-800 - latin */
+/* inter-tight-800 */
 @font-face {
   font-display: swap;
   font-family: 'Inter Tight';
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/intertight/inter-tight-v2-latin-800.woff2') format('woff2'),
-    url('../fonts/intertight/inter-tight-v2-latin-800.woff') format('woff');
+  src: url('../fonts/intertight/inter-tight-v2-latin-800.woff2') format('woff2');
 }
 
-/* 
-https://vercel.com/design/icons
-*/
+/* space-grotesk-700 */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff2') format('woff2');
+}
 
+/* https://vercel.com/design/icons*/
 :root {
-  --bs-sm:
-    rgba(0, 0, 0, 0.10) 0 0 3px 0;
+  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --primaryFontAlt: "Inter Tight", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --secondaryFont: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, monospace;
+  --blue1: #2a8af6;
+  --blue2: #3549a6;
+  --pink1: #a853ba;
+  --red1: #e92a67;
+  --red2: #7c1e4b;
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
@@ -62,31 +60,14 @@ https://vercel.com/design/icons
     rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
     rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
     rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
-  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
-  --secondaryFont: "Space Grotesk", monospace;
-  --tertiaryFont: "Inter Tight", monospace;
-  --blue1: #2a8af6;
-  --blue2: #3549a6;
-  --pink1: #a853ba;
-  --red1: #e92a67;
-  --red2: #7c1e4b;
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
   --z-header: 800;
-  --z-overlay: 900;
+  --z-aside: 900;
   --z-modal: 1000;
   --z-toast: 1100;
-  --accent-1: #111;
-  --accent-2: #333;
-  --accent-3: #444;
-  --accent-4: #555;
-  --accent-5: #777;
-  --accent-6: #999;
-  --accent-7: #eaeaea;
 }
-
-
 
 *,
 *:before,
@@ -121,7 +102,7 @@ body {
   line-height: inherit;
   height: 100%;
   width: 100%;
-  position:relative;
+  position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 4rem 0;
@@ -249,10 +230,6 @@ a[disabled] {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-.hide {
-  display: none;
 }
 
 /* TRANSITION UTILITIES
