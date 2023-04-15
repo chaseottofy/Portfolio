@@ -56,8 +56,8 @@ https://vercel.com/design/icons
   --bs-sm:
     rgba(0, 0, 0, 0.10) 0 0 3px 0;
   --bs-md:
-    rgba(0, 0, 0, 0.10) 0 3px 3px 0,
-    rgba(0, 0, 0, 0.10) 0 6px 6px 0;
+    rgba(0, 0, 0, .2) 0 1px 2px 0,
+    rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-xl:
     rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
     rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
@@ -86,38 +86,7 @@ https://vercel.com/design/icons
   --accent-7: #eaeaea;
 }
 
-.theme__dark {
-  --black0: #000;
-  --black1: #131516;
-  --black2: #212121;
-  --grey1: #818080;
-  --grey2: #1c1c1c;
-  --grey3: #1b1a1a;
-  --white1: #fff;
-  --white2: #aaa;
-  --white3: #8c8c8c;
-  --offsetred: rgba(233, 42, 103, .4);
-  --offsetblack1: rgba(0, 0, 0, .9);
-  --offsetblack2: rgba(0, 0, 0, .5);
-  --dividerBg: rgba(129, 64, 143, 0.1);
-}
 
-.theme__light {
-  --black0: #fff;
-  --black1: #fafafa;
-  --black2: #e5e5e5;
-  --grey1: #999;
-  --grey2: #d9d9d9;
-  --grey3: #d9d9d9;
-  --white1: #171717;
-  --white2: #4c4c4c;
-  --white3: #4c4c4c;
-  --offsetred: rgba(233, 42, 103, .2);
-  --offsetblack1: rgba(255, 255, 255, .9);
-  --offsetblack2: rgba(255, 255, 255, .7);
-  --offsetwhite1: rgba(233, 42, 103, .2);
-  --dividerBg: linear-gradient(to right, #3549a6, #7c1e4b);
-}
 
 *,
 *:before,
@@ -131,6 +100,7 @@ https://vercel.com/design/icons
 
 html {
   height: calc(100vh - calc(100vh - 100%));
+  width: calc(100vw - calc(100vw - 100%));
   line-height: 1.15;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -151,8 +121,10 @@ body {
   line-height: inherit;
   height: 100%;
   width: 100%;
+  position:relative;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding: 4rem 0;
 }
 
 /* GENERAL RESETS
@@ -220,31 +192,6 @@ svg {
   -ms-user-select: none;
 }
 
-.svg-xs {
-  height: 1rem;
-  width: 1rem;
-}
-
-.svg-sm {
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
-.svg-md {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.svg-lg {
-  height: 1.75rem;
-  width: 1.75rem;
-}
-
-.svg-xl {
-  height: 3.5rem;
-  width: 3.5rem;
-}
-
 /* ::-WEBKIT
 ============================*/
 ::-webkit-inner-spin-button,
@@ -306,135 +253,6 @@ a[disabled] {
 
 .hide {
   display: none;
-}
-
-/* [BUTTON] TEMPLATES
-=====================================*/
-.btn {
-  border-radius: 4px;
-  outline: 2px solid transparent;
-  border: 1px solid transparent;
-  padding: .375rem .5rem;
-  transition: background 100ms ease-in-out;
-  font-size: .875rem;
-}
-
-/* =====================================
-DARK/TRANSPARENT button */
-.btn-dark {
-  background: var(--grey2);
-  border: 1px solid var(--grey3);
-  color: var(--white1);
-}
-
-.btn-transparent {
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--white1);
-}
-
-.btn-dark:hover,
-.btn-transparent:hover,
-.btn-text-svg:hover {
-  background: var(--black0);
-}
-
-.btn-dark:hover svg,
-.btn-transparent:hover svg {
-  fill: var(--white2);
-}
-
-.btn-dark:active,
-.btn-transparent:active,
-.btn-text-svg:active {
-  background: var(--black1);
-  border: 1px solid var(--grey3);
-}
-
-.btn-dark:active svg,
-.btn-transparent:active svg {
-  fill: var(--white1);
-}
-
-.btn-dark:focus-visible,
-.btn-transparent:focus-visible,
-.btn-text-svg:focus-visible {
-  border: 1px solid transparent;
-  outline: 2px solid var(--grey1);
-}
-
-.btn-dark:focus-visible svg,
-.btn-transparent:focus-visible svg {
-  fill: var(--white1);
-}
-
-/* BUTTON MODIFIERS
-=====================================*/
-.btn-fixed--width {
-  width: 7.5rem;
-}
-
-.btn-disabled {
-  filter: brightness(.7);
-  background: transparent;
-  border: 1px solid transparent;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.btn-sm {
-  font-size: .75rem;
-  padding: .25rem .5rem;
-}
-
-.btn-svg,
-.btn-svgtxt {
-  display: flex;
-  align-items: center;
-}
-
-.btn-svg {
-  justify-content: center;
-  padding: 0;
-}
-
-.btn-svgtxt {
-  justify-content: space-between;
-}
-
-.btn-round {
-  border-radius: 50%;
-}
-
-/* [INPUT] TEMPLATES
-=====================================*/
-.input {
-  border-radius: 4px;
-  outline: 2px solid transparent;
-  border: 1px solid transparent;
-  padding: .375rem .625rem;
-  transition: all 100ms ease-in-out;
-  font-size: .875rem;
-}
-
-.input-dark {
-  background: var(--grey2);
-  color: var(--white2);
-  border: 1px solid var(--grey3);
-}
-
-.input-dark:active {
-  background: var(--grey2);
-  filter: brightness(1.2);
-  outline: 2px solid var(--black1);
-}
-
-.input-dark:focus-visible {
-  outline: 2px solid var(--black1);
-  border: 1px solid transparent;
 }
 
 /* TRANSITION UTILITIES

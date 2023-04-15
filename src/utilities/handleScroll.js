@@ -1,6 +1,18 @@
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-const handleScroll = () => {
+/**
+ * 
+ */
+const handleMenuScroll = (e) => {
+  e.preventDefault();
+  console.log(typeof e)
+  $(`${e.target.getAttribute("href")}`).scrollIntoView({
+    behavior: "smooth"
+  });
+};
+
+const handlePageScroll = () => {
   const scrollTop = $(".scroll-top");
   const header = $(".header");
   if (window.pageYOffset > 0) {
@@ -12,4 +24,19 @@ const handleScroll = () => {
   }
 };
 
-export default handleScroll;
+const initScroll = () => {
+  // scroll to articles on page
+  $$(".nav-menu--link").forEach(link => {
+    link.addEventListener("click", handleMenuScroll);
+  });
+
+  // apply filter to header and toggle scroll to top button;
+  window.addEventListener("scroll", handlePageScroll);
+
+  // scroll to top;
+  $(".scroll-top--btn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+export default initScroll;

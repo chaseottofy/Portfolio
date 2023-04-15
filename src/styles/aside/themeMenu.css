@@ -62,6 +62,7 @@
 
 .theme-switch span input:checked + label {
   background: var(--black1);
+  box-shadow: var(--bs-md);
 }
 
 .theme-switch span:hover label svg {

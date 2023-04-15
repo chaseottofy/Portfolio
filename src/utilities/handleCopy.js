@@ -6,23 +6,16 @@ const copyToClipboard = (text) => {
   return navigator.clipboard.writeText(text);
 };
 
-const handleCopyEmail = () => {
-  const message = "ottofy@zohomail.com";
-  copyToClipboard(message);
-  createToast(message);
+const setCopy = (text) => {
+  copyToClipboard(text);
+  createToast(text);
   return;
 }
 
-const handleCopyPhone = () => {
-  const message = "9709882548";
-  copyToClipboard(message);
-  createToast(message);
-  return;
+const copyEmail = () => setCopy("ottofy@zohomail.com");
+const copyPhone = () => setCopy("9709882548");
+const initCopyElements = () => {
+  $(".copy-email").addEventListener("click", copyEmail);
+  // $(".copy-phone").addEventListener("click", copyPhone);
 }
-
-const setCopyElements = () => {
-  $(".copy-email").addEventListener("click", handleCopyEmail);
-  // $(".copy-phone").addEventListener("click", handleCopyPhone);
-}
-
-export default setCopyElements;
+export default initCopyElements;

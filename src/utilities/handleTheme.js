@@ -16,7 +16,7 @@ const setTheme = (theme) => {
   setTimeout(() => header.classList.add("header-animate"), 150);
 };
 
-const setInitialTheme = () => {
+const initDefaultTheme = () => {
   const localTheme = localStorage.getItem("portfolio-theme");
   const systemTheme = getSystemTheme();
   themeInputs[2].setAttribute("value", systemTheme);
@@ -30,16 +30,20 @@ const setInitialTheme = () => {
     themeInputs[localTheme === "dark" ? 0 : 1].checked = true;
     return;
   }
-}
+};
 
-const handleTheme = () => {
+const initThemeOptions = () => {
   themeInputs.forEach((input) => {
     input.addEventListener("change", () => {
       const theme = input.getAttribute("value");
       setTheme(theme === "system" ? input.getAttribute("data-system-theme") : theme);
     });
-  })
+  });
+};
+
+const initTheme = () => {
+  initDefaultTheme();
+  initThemeOptions();
 }
 
-export default handleTheme;
-export { setInitialTheme };
+export default initTheme;

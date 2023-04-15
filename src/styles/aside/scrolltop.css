@@ -4,7 +4,7 @@
   border-radius: 50%;
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  right: 0;
   z-index: 8000;
 }
 
@@ -22,8 +22,8 @@
 }
 
 .scroll-top--btn svg {
-  height: 26px;
-  width: 26px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .scroll-top--btn:hover {

@@ -13,7 +13,7 @@
 </head>
 
 <body class="body theme__dark">
-  <!--------------------->
+
   <!-- HEADER -->
   <header class="header header-animate">
     <div class="header-wrapper">
@@ -75,28 +75,19 @@
   <!--------------------->
 
 
+  <!-- Header Gradient -->
+  <!-- <aside class="gradient"></aside>
+  <aside class="gradient-overlay"></aside> -->
   <!--------------------->
+
+
+  <!-- Contact menu popup -->
   <!-- <aside class="contact-menu"></aside> -->
   <!--------------------->
 
 
-  <!--------------------->
-  <aside class="scroll-top hide-scroll-top">
 
-    <button class="scroll-top--btn" aria-label="button" role="button">
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"></path></svg>
-    </button>
-  </aside>
-  <!--------------------->
-
-
-  <!--------------------->
-  <aside class="gradient"></aside>
-  <aside class="gradient-overlay"></aside>
-  <!--------------------->
-
-
-  <!--------------------->
+  <!-- Theme Switch -->
   <aside class="theme-modal">
     <div class="theme-switch">
       <span>
@@ -124,24 +115,30 @@
       </span>
     </div>
   </aside>
-  <!-- <aside class="theme-modal">
-    <div class="theme-switch">
-      <button class="btn theme-btn theme-btn--dark" data-theme="dark" aria-label="button" role="button">
-        <svg fill="none" height="16" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="16" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-      </button>
-      <button class="btn theme-btn theme-btn--light" data-theme="light" aria-label="button" role="button">
-        <svg fill="none" height="16" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="16" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
-      </button>
-      <button class="btn theme-btn theme-btn--system" data-theme="system" aria-label="button" role="button">
-        <svg fill="none" height="16" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="16" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
-      </button>
-    </div>
-  </aside> -->
   <!--------------------->
 
 
-  <!-- MAIN -->
+
+  <!-- Scroll-to-top -->
+  <aside class="scroll-top hide-scroll-top">
+    <button class="scroll-top--btn" aria-label="button" role="button">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"></path></svg>
+    </button>
+  </aside>
+  <!--------------------->
+
+
+
+  <!-- Toast popup (dynamic) -->
+  <aside class="toast-wrapper"></aside>
+  <!--------------------->
+
+
+
+  <!-- MAIN (intro > projects > skills > about > contact) -->
   <main class="main">
+
+    <!-- not visible : used to refer to gradient -->
     <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
       <defs>
         <linearGradient id="subicon-gradient">
@@ -151,8 +148,9 @@
       </defs>
     </svg>
 
-    <!--------------------->
-    <!-- SECTION: PROJECTS -->
+
+
+    <!-- SECTION: INTRO -->
     <article class="section-container intro-container">
       <div class="intro-header">
         <div class="lines"></div>
@@ -180,14 +178,15 @@
         </div>
       </div>
     </article>
+    <!--------------------->
 
-    <aside class="section-divider" id="projects-top"></aside>
+
+
+    <!-- SECTION: PROJECTS -->
+    <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
-
-    <!--------------------->
-    <!-- SECTION: PROJECTS -->
-    <article class="section-container projects-container">
+    <article class="section-container projects-container offset-container--top" id="projects-top">
       <div class="section-title">
         <h2>Projects</h2>
         <!-- on side of project card, show lighthouse score -->
@@ -204,13 +203,13 @@
     </article>
     <!--------------------->
 
-    <aside class="section-divider" id="skills-top"></aside>
+
+
+    <!-- SECTION: SKILLS -->
+    <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
-
-    <!--------------------->
-    <!-- SECTION: SKILLS -->
-    <article class="section-container skills-container">
+    <article class="section-container skills-container offset-container--top" id="skills-top">
       <div class="section-title">
         <h2>Skills</h2>
         <div class="section-subtitle">
@@ -432,13 +431,13 @@
     </article>
     <!--------------------->
 
-    <aside class="section-divider" id="about-top"></aside>
+
+
+    <!-- SECTION: ABOUT -->
+    <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
-
-    <!--------------------->
-    <!-- SECTION: ABOUT -->
-    <article class="section-container about-container">
+    <article class="section-container about-container offset-container--top" id="about-top">
 
       <div class="section-title">
         <h2>About</h2>
@@ -453,13 +452,13 @@
     </article>
     <!--------------------->
 
-    <aside class="section-divider" id="contact-top"></aside>
+
+
+    <!-- SECTION: CONTACT -->
+    <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
-
-    <!--------------------->
-    <!-- SECTION: CONTACT -->
-    <article class="section-container contact-container">
+    <article class="section-container contact-container offset-container--top" id="contact-top">
       <div class="section-title">
         <h2>Contact</h2>
         <div class="section-subtitle">
@@ -475,12 +474,9 @@
   </main>
 
 
-  <!--------------------->
-  <aside class="toast-wrapper"></aside>
-  <!--------------------->
 
 
-  <!--------------------->
+  <!-- FOOTER -->
   <footer class="footer"></footer>
   <!--------------------->
 </body>

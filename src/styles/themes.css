@@ -1,0 +1,32 @@
+.theme__dark {
+  --black0: #000;
+  --black1: #131516;
+  --black2: #212121;
+  --grey1: #818080;
+  --grey2: #1c1c1c;
+  --grey3: #1b1a1a;
+  --white1: #fff;
+  --white2: #aaa;
+  --white3: #8c8c8c;
+  --offsetred: rgba(233, 42, 103, .4);
+  --offsetblack1: rgba(0, 0, 0, .9);
+  --offsetblack2: rgba(0, 0, 0, .5);
+  --dividerBg: rgba(129, 64, 143, 0.1);
+}
+
+.theme__light {
+  --black0: #fff;
+  --black1: #fafafa;
+  --black2: #e5e5e5;
+  --grey1: #999;
+  --grey2: #d9d9d9;
+  --grey3: #d9d9d9;
+  --white1: #171717;
+  --white2: #4c4c4c;
+  --white3: #4c4c4c;
+  --offsetred: rgba(233, 42, 103, .2);
+  --offsetblack1: rgba(255, 255, 255, .9);
+  --offsetblack2: rgba(255, 255, 255, .7);
+  --offsetwhite1: rgba(233, 42, 103, .2);
+  --dividerBg: linear-gradient(to right, #677ee6, #b67394);
+}

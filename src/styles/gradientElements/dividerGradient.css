@@ -5,37 +5,36 @@ DIVIDER
   backdrop-filter: brightness(2.2);
   filter: brightness(1.5);
   background: var(--dividerBg);
-  height: 100%;
   margin: 0 auto;
-  min-height: 2px;
+  min-height: 1px;
+  height:1px;
   min-width: 100vw;
   position: relative;
   width: 100%;
-  z-index: 6
+  z-index: 6;
 }
 
 .section-gradient-left,
 .section-gradient-right {
-  border-radius: 100%;
   filter: blur(46px);
-  margin-top: -8px;
-  min-height: 16px;
+  margin-top: -.5rem;
+  min-height: 1rem;
   mix-blend-mode: normal;
   pointer-events: none;
   user-select: none;
-  width: 100%
+  width: 40%;
 }
 
 .section-gradient-left {
   background: var(--blue2);
   position: relative;
-  transform: translateX(-51%);
-  z-index: 2
+  z-index: 2;
+  margin-right:auto;
 }
 
 .section-gradient-right {
   background: var(--red2);
   position: relative;
-  transform: translateX(51%);
-  z-index: 2
+  z-index: 2;
+  margin-left:auto;
 }
