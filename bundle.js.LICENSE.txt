@@ -1,7 +1,5 @@
 /*! ./createToast */
 
-/*! ./styles/aside/contactMenu.css */
-
 /*! ./styles/aside/scrolltop.css */
 
 /*! ./styles/aside/themeMenu.css */
@@ -125,10 +123,6 @@
 /*!*****************************************!*\
   !*** ./src/styles/sections/contact.css ***!
   \*****************************************/
-
-/*!******************************************!*\
-  !*** ./src/styles/aside/contactMenu.css ***!
-  \******************************************/
 
 /*!******************************************!*\
   !*** ./src/styles/components/button.css ***!
