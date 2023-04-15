@@ -54,6 +54,7 @@
   align-items:center;
   width: 100%;
   justify-content: center;
+  padding-top: .5rem;
 }
 
 .intro-header__subtitle--text {
@@ -68,6 +69,7 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   background-clip: text;
+  line-height: .9;
 }
 
 .intro-header__subtitle span svg {

@@ -65,11 +65,9 @@ import "./styles/footer.css";
 
 import "./styles/aside/scrolltop.css";
 import "./styles/aside/themeMenu.css";
-import "./styles/aside/contactMenu.css";
 import "./styles/aside/toast.css";
 
 /***************************************/
-// import Avatar from "./images/avatar.webp";
 
 
 /***************************************/
@@ -88,11 +86,6 @@ const appInit = () => {
   initScroll();
   // open/close contact menu
   initHover();
-  // images
-  // const images = document.querySelectorAll(".img");
-  // images.forEach((img) => {
-  //   img.src = e
-  // })
 };
 appInit();
 

@@ -10,6 +10,7 @@ const closeContactMenu = e => {
 };
 
 const contactMousemove = e => {
+  if (!e || !e.target) return;
   if (e.target.closest(".contact-menu")) return;
   if (e.target.closest(".nav-multi__contact")) return;
   closeContactMenu();

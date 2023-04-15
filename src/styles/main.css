@@ -16,7 +16,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem;
   position: relative;
   background: linear-gradient(180deg, transparent 75%, var(--black0) 90%);
   z-index: 3;  
@@ -24,7 +24,7 @@
 
 .offset-container--top {
   margin-top: -1rem;
-  padding-bottom: 6rem;
+  padding-bottom: 6rem !important;
   scroll-margin-top: 4rem;
 }
 
@@ -58,4 +58,10 @@
   font-family: var(--secondaryFont);
   line-height: 1.375;
   color: var(--white2);
+}
+
+@media screen and (max-width: 768px) {
+  .section-container {
+    padding: 0 .5rem;
+  }
 }

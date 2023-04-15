@@ -95,7 +95,8 @@
 /* ------------ */
 /* skills: body */
 .skill__body {
-  display: flex;
+  /* display: flex; */
+  display:none;
   flex-direction: column;
   gap: .5rem;
   padding-top: .5rem;
