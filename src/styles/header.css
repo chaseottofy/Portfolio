@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 4rem;
-  width:100%;
+  width: 100%;
   border-bottom: 1px solid var(--black2);
   z-index: var(--z-header);
   background: var(--offsetblack1);
@@ -13,7 +13,7 @@
 
 .header-wrapper {
   max-width: 1440px;
-  width:100%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -84,6 +84,7 @@
   cursor: pointer;
   color: var(--white1);
   transition: color .2s ease-in-out;
+  box-shadow:none;
 }
 
 .nav-menu li button svg {
@@ -95,7 +96,9 @@
 }
 
 .nav-menu li button:hover {
-  background: var(--black2);
+  background: var(--black1);
+  box-shadow: 
+    rgba(20,20,20,0.2) 0 -1px 1px 0;
 }
 
 .nav-menu li button:hover svg {
@@ -112,16 +115,16 @@
   justify-content: flex-end;
   margin-left: auto;
   column-gap: .125rem;
-  width:100%;
+  width: 100%;
 }
 
 .header-col--link,
 .copy-btn {
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
   height: 2.75rem;
   width: 2.75rem;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 .header-col--link:hover svg {
@@ -135,11 +138,12 @@
 .copy-btn {
   display: flex;
   align-items: center;
-  padding: 0;
+  justify-content: center;
   margin: 0;
   background: transparent;
-  border: 1px solid transparent;
-  transition: background 150ms ease-in-out;
+  border: 1px solid var(--black0);
+  padding:0;
+  border-radius:50%;
 }
 
 .copy-icon--after {
@@ -148,9 +152,9 @@
   height: 0;
 }
 
-.copy-icon--before,
-.header-col--link svg {
+.copy-icon--before {
   fill: var(--white1);
+  stroke:var(--black0);
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -177,31 +181,34 @@
 .copy-btn:hover .copy-icon--before {
   opacity: 0;
   width: 0;
+  height: 0;
 }
 
 .copy-btn:hover .copy-icon--after {
   opacity: 1;
-  height: 1rem;
-  width: 1rem;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.header-col--link svg {
+  fill: var(--white1);
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 @media screen and (max-width: 600px) {
   .svg-divide {
     display: none;
   }
-}
-
-@media screen and (max-width: 490px) {
+  .header-wrapper {
+    padding: 0 .5rem;
+  }
   .nav-menu {
     column-gap: .5rem;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .header-wrapper {
-    padding: 0 .5rem;
-  }
-
   .nav-menu li button,
   .nav-menu li a {
     padding: .5rem .375rem;

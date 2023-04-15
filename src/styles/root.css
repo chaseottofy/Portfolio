@@ -95,6 +95,7 @@ body {
   background: var(--black0);
   color: var(--white1);
   font-family: var(--primaryFont);
+  text-rendering: optimizeSpeed;
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;

@@ -68,10 +68,17 @@ import "./styles/aside/themeMenu.css";
 import "./styles/aside/contactMenu.css";
 import "./styles/aside/toast.css";
 
+/***************************************/
+// import Avatar from "./images/avatar.webp";
+
+
+/***************************************/
 import initTheme from "./utilities/handleTheme";
 import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
+import initHover from "./utilities/handleHover";
 
+/***************************************/
 const appInit = () => {
   // set default theme / toggle theme
   initTheme();
@@ -79,6 +86,13 @@ const appInit = () => {
   initCopyElements();
   // scroll to articles / top of page
   initScroll();
+  // open/close contact menu
+  initHover();
+  // images
+  // const images = document.querySelectorAll(".img");
+  // images.forEach((img) => {
+  //   img.src = e
+  // })
 };
 appInit();
 

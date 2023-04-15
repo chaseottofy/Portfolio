@@ -3,6 +3,7 @@
   position: absolute;
   top: 39%;
   left: .25rem;
+  width: 3rem;
   z-index: var(--z-sidebar);
 }
 

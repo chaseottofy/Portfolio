@@ -11,6 +11,7 @@
   --offsetred: rgba(233, 42, 103, .4);
   --offsetblack1: rgba(0, 0, 0, .9);
   --offsetblack2: rgba(0, 0, 0, .5);
+  --offsetgrey1:rgba(23, 23, 23, 0.5);
   --dividerBg: rgba(129, 64, 143, 0.1);
 }
 
@@ -27,6 +28,7 @@
   --offsetred: rgba(233, 42, 103, .2);
   --offsetblack1: rgba(255, 255, 255, .9);
   --offsetblack2: rgba(255, 255, 255, .7);
+  --offsetgrey1:rgba(255, 255, 255, .7);
   --offsetwhite1: rgba(233, 42, 103, .2);
   --dividerBg: linear-gradient(to right, #677ee6, #b67394);
 }

@@ -1,9 +1,16 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const handleMenuScroll = (e) => {
+const handleHrefScroll = (e) => {
   e.preventDefault();
   $(`${e.target.getAttribute("href")}`).scrollIntoView({
+    behavior: "smooth"
+  });
+};
+
+const handleAttrScroll = (e) => {
+  e.preventDefault();
+  $(`${e.target.getAttribute("data-href")}`).scrollIntoView({
     behavior: "smooth"
   });
 };
@@ -21,14 +28,14 @@ const handlePageScroll = () => {
 };
 
 const initScroll = () => {
-  // scroll to articles on page
+  // scroll to articles on page from nav
   $$(".nav-menu--link").forEach(link => {
-    link.addEventListener("click", handleMenuScroll);
+    link.addEventListener("click", handleHrefScroll);
   });
+  $(".contact-nav--btn").addEventListener("click", handleAttrScroll);
 
   // apply filter to header and toggle scroll to top button;
   window.addEventListener("scroll", handlePageScroll);
-
   // scroll to top;
   $(".scroll-top--btn").addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
