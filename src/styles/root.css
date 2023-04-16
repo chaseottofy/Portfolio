@@ -48,11 +48,6 @@
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --primaryFontAlt: "Inter Tight", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --secondaryFont: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, monospace;
-  --blue1: #2a8af6;
-  --blue2: #3549a6;
-  --pink1: #a853ba;
-  --red1: #e92a67;
-  --red2: #7c1e4b;
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
@@ -67,6 +62,11 @@
   --z-aside: 900;
   --z-modal: 1000;
   --z-toast: 1100;
+  --blue1: #2a8af6;
+  --blue2: #3549a6;
+  --pink1: #a853ba;
+  --red1: #e92a67;
+  --red2: #7c1e4b;
 }
 
 *,
@@ -106,7 +106,7 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
 }
 
 /* GENERAL RESETS

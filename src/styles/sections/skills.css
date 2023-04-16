@@ -7,7 +7,7 @@
 }
 
 .skills-cell {
-  border: 1px solid var(--black2);
+  border: 1px solid var(--black1);
   border-radius: .75rem;
   display: flex;
   flex-direction: column;

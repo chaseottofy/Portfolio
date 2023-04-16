@@ -1,23 +1,28 @@
 .theme-modal {
   display: flex;
   position: absolute;
-  top: 39%;
-  left: .25rem;
-  width: 3rem;
+  top: 80vh;
+  width: 100%;
+  left: 0;
+  right: 0;
+  max-width: 1380px;
+  padding: 0 .5rem;
+  margin: 0 auto;
+  justify-content: center;
   z-index: var(--z-sidebar);
 }
 
 .theme-switch {
   display: flex;
-  flex-direction: column;
-  height: 10rem;
-  width: 3rem;
+  width: 10rem;
+  height: 3rem;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: .75rem;
   align-items: center;
   position: relative;
-  background: var(--offsetblack1);
-  border: 1px solid var(--black2);
+  background: var(--offsetgrey1);
+  box-shadow: var(--bs-md);
+  border: 1px solid var(--black1);
 }
 
 .theme-switch span {

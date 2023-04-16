@@ -13,13 +13,13 @@
   right: 1rem;
   bottom: 2rem;
   max-width: 280px;
-  max-height: 40px;
+  max-height: 48px;
   height: 100%;
   width: auto;
   position: absolute;
   border: 1px solid var(--black2);
   border-radius: 2px;
-  background: var(--offsetblack1);
+  background: var(--grey2);
   box-shadow: var(--bs-md);
   color: var(--white1);
   transition: all .35s cubic-bezier(.25, .75, .6, .98);
@@ -59,7 +59,7 @@
 }
 
 .toast-progress--length {
-  height: 5px;
+  height: 4px;
   width: 100%;
   background: var(--black1);
   border-radius: 2px;

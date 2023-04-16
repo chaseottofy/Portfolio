@@ -75,6 +75,7 @@ import initTheme from "./utilities/handleTheme";
 import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
+import initDefaults from "./utilities/handleDefaults";
 
 /***************************************/
 const appInit = () => {
@@ -86,6 +87,9 @@ const appInit = () => {
   initScroll();
   // open/close contact menu
   initHover();
+
+  // default time / date / etc
+  initDefaults();
 };
 appInit();
 

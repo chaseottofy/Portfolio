@@ -1,5 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+const scrollTop = $(".scroll-top");
+const header = $(".header");
 
 const handleHrefScroll = (e) => {
   e.preventDefault();
@@ -16,8 +18,6 @@ const handleAttrScroll = (e) => {
 };
 
 const handlePageScroll = () => {
-  const scrollTop = $(".scroll-top");
-  const header = $(".header");
   if (window.pageYOffset > 0) {
     header.classList.add("header-filter");
     scrollTop.classList.remove("hide-scroll-top");
@@ -29,6 +29,7 @@ const handlePageScroll = () => {
 
 const initScroll = () => {
   // scroll to articles on page from nav
+  handlePageScroll();
   $$(".nav-menu--link").forEach(link => {
     link.addEventListener("click", handleHrefScroll);
   });

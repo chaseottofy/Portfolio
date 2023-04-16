@@ -2,36 +2,41 @@ const $ = document.querySelector.bind(document);
 const navContactBtn = $(".nav-multi__contact");
 const contactMenu = $(".contact-menu");
 
-const closeContactMenu = e => {
+const closeContactMenu = () => {
   contactMenu.classList.remove("contact-menu--active");
-  contactMenu.style.left = "0";
-  document.removeEventListener("mousemove", contactMousemove);
+  navContactBtn.firstChild.classList.remove("nav-menu--contact--active");
+  // contactMenu.style.left = "1rem";
+  window.removeEventListener("mousemove", contactMousemove);
   return;
 };
 
 const contactMousemove = e => {
+  console.log({
+    e:e,
+    target:e.target,
+  })
   if (!e || !e.target) return;
   if (e.target.closest(".contact-menu")) return;
   if (e.target.closest(".nav-multi__contact")) return;
   closeContactMenu();
 };
 
-// write a helper function to get the right position of the contact menu, 
-
-const openContactMenu = e => {
+const openContactMenu = () => {
   if (contactMenu.classList.contains("contact-menu--active")) return;
+
   const rect = navContactBtn.getBoundingClientRect();
   if (window.innerWidth > 768) {
     contactMenu.style.left = `${rect.left - 140}px`;
   } else {
-    contactMenu.style.left = `0px`;
+    contactMenu.style.left = `1rem`;
   }
 
   contactMenu.classList.add("contact-menu--active");
-  document.addEventListener("mousemove", contactMousemove);
+  navContactBtn.firstChild.classList.add("nav-menu--contact--active");
+  window.addEventListener("mousemove", contactMousemove);
 };
 
-const toggleContactMenu = e => {
+const toggleContactMenu = () => {
   if (contactMenu.classList.contains("contact-menu--active")) {
     closeContactMenu();
   } else {

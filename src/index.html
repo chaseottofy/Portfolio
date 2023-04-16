@@ -14,14 +14,19 @@
 
 <body class="body theme__dark">
 
+  <!-- DELETE -->
+  <aside style="position:absolute;top:4.5rem;left:0;right:0;font-size:.75rem;z-index:4000;margin:0 auto;height:.75rem;max-width:1150px;width:100%;pointer-events:none;user-select:none;padding-left:2rem;">work in progress...</aside>
+
   <!-- HEADER -->
   <header class="header header-animate">
     <div class="header-wrapper">
 
       <div class="header-col header-col--one">
-        <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white2)" stroke-width="1.5" viewBox="0 0 24 24" class="svg-divide svg-sm">
-        <path d="M16.88 3.549L7.12 20.451"></path>
-      </svg>
+        <span class="header-logo">
+          <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white2)" stroke-width="1.5" viewBox="0 0 24 24" class="svg-divide svg-sm">
+            <path d="M16.88 3.549L7.12 20.451"></path>
+          </svg>
+        </span>
         <nav class="header-nav">
           <ul class="nav-menu">
             <li>
@@ -41,8 +46,10 @@
               </a>
             </li>
             <li class="nav-multi__contact">
-              <button class="menu-btn--multi contact-nav--btn" aria-label="button" role="button" data-href="#contact-top">
-                Contact
+              <button class="menu-btn--multi contact-nav--btn" aria-label="button" data-href="#contact-top">
+                <span style="pointer-events:none;user-select:none">
+                  Contact
+                </span>
                 <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
               </button>
             </li>
@@ -75,67 +82,59 @@
   <!--------------------->
 
   <!-- Contact menu popup -->
-  <aside class="contact-menu" style="left:0;">
-    <div class="contact-menu__header">
-      <!-- RIGHT -->
-      <div class="cm-right">
+  <aside class="contact-menu contact-menu__header" style="left:1rem;">
+    <!-- RIGHT -->
+    <div class="cm-right">
 
-        <div class="cm-right--top">
-          <div class="cm-right--top__cell">
-            <a class="cm-right--top__cell-badge" href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
-              <span>
-                Github
-              </span>
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-
-          <div class="cm-right--top__cell">
-            <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
-              <span>
-                YouTube
-              </span>
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-
-          <div class="cm-right--top__cell">
-            <a class="cm-right--top__cell-badge" href="https://codepen.io/chaseottofy" title="Codepen Profile" target="_blank" rel="noreferrer">
-              <span>
-                Codepen
-              </span>
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-
-          <div class="cm-right--top__cell">
-            <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
-              <span>
-                Codewars
-              </span>
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
+      <div class="cm-right--top">
+        <div class="cm-right--top__cell">
+          <a class="cm-right--top__cell-badge" href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
+            <span>
+              Github
+            </span>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
         </div>
 
-        <div class="cm-right--bottom">
-          <div class="cm-right--bottom__cell">
-            <span>ottofy@zohomail.com</span>
+        <div class="cm-right--top__cell">
+          <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
+            <span>
+              YouTube
+            </span>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="cm-right--top__cell">
+          <a class="cm-right--top__cell-badge" href="https://codepen.io/chaseottofy" title="Codepen Profile" target="_blank" rel="noreferrer">
+            <span>
+              Codepen
+            </span>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="cm-right--top__cell">
+          <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
+            <span>
+              Codewars
+            </span>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="cm-right--bottom">
+
+        <div class="cm-right--bottom__cell">
+          <div class="cm-right--bottom__cell-header">ottofy@zohomail.com</div>
+          <div class="cm-right--bottom__cell-body">
+            <span>E-mail</span>
             <div class="cm-right--bottom__cell-icons">
               <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
               </a>
-              <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button" role="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
-              </button>
-            </div>
-          </div>
-          <div class="cm-right--bottom__cell">
-            <span>970-988-2548</span>
-            <div class="cm-right--bottom__cell-icons">
-              <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button" role="button">
+              <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
@@ -144,11 +143,25 @@
           </div>
         </div>
 
+
+        <div class="cm-right--bottom__cell">
+          <div class="cm-right--bottom__cell-header">970-988-2548</div>
+          <div class="cm-right--bottom__cell-body">
+            <span>Phone</span>
+            <div class="cm-right--bottom__cell-icons">
+              <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </aside>
   <!--------------------->
-
 
 
   <!-- Theme Switch -->
@@ -182,15 +195,13 @@
   <!--------------------->
 
 
-
   <!-- Scroll-to-top -->
   <aside class="scroll-top hide-scroll-top">
-    <button class="scroll-top--btn" aria-label="button" role="button">
+    <button class="scroll-top--btn" aria-label="button">
       <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"></path></svg>
     </button>
   </aside>
   <!--------------------->
-
 
 
   <!-- Toast popup (dynamic) -->
@@ -198,10 +209,8 @@
   <!--------------------->
 
 
-
   <!-- MAIN (intro > projects > skills > about > contact) -->
   <main class="main">
-
     <!-- not visible : used to refer to gradient -->
     <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
       <defs>
@@ -219,27 +228,28 @@
       <div class="intro-header">
         <div class="lines"></div>
         <h1 class="intro-header__title">CHASE OTTOFY</h1>
-        <div class="intro-header__subtitle">
-          <h2 class="intro-header__subtitle--text">
-            Front-end
-          </h2>
-          <span>
-            <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white1)" stroke-width="1.5" viewBox="0 0 24 24" style="opacity:.9;">
+        <div class="intro-header__subtitles">
+
+          <div class="intro-header__subtitle intro-header__subtitle--one">
+            <h2 class="intro-header__subtitle--text">
+              Front-end
+            </h2>
+            <span>
+              <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white1)" stroke-width="1.5" viewBox="0 0 24 24" style="opacity:.9;">
             <path d="M16.88 3.549L7.12 20.451"></path>
           </svg>
-          </span>
-          <h2 class="intro-header__subtitle--text">
-            UX
-          </h2>
+            </span>
+            <h2 class="intro-header__subtitle--text">
+              UX
+            </h2>
+          </div>
+          <div class="intro-header__subtitle intro-header__subtitle--two">
+            <h2 class="intro-header__subtitle--text ih-last">
+              Developer
+            </h2>
+          </div>
         </div>
-        <!-- <h2 class="intro-header__subtitle--text">
-          Developer
-        </h2> -->
         <!-- create status showing that I'm still looking -->
-        <div style="display:flex;align-items:center;padding-top:.5rem;column-gap:.25rem">
-          <span>WORK IN PROGRESS... </span>
-          <span>4/14/23</span>
-        </div>
       </div>
     </article>
     <!--------------------->
@@ -254,15 +264,18 @@
       <div class="section-title">
         <h2>Projects</h2>
         <!-- on side of project card, show lighthouse score -->
-        <div class="section-subtitle">
+        <!-- <div class="section-subtitle">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
           <p>Distinctio maiores atque reprehenderit.</p>
-        </div>
+        </div> -->
       </div>
-      <div class="section-grid projects-grid">
-        <!-- <div class="project-cell">cell</div> -->
-        <!-- <div class="project-cell">cell</div> -->
+      <div class="projects-grid">
+        <div class="project-cell col--1 project-gc"></div>
+        <div class="project-cell col--2-a"></div>
+        <div class="project-cell col--2-b"></div>
+        <div class="project-cell col--2-a"></div>
+        <div class="project-cell col--2-b"></div>
       </div>
     </article>
     <!--------------------->
@@ -276,7 +289,7 @@
     <article class="section-container skills-container offset-container--top" id="skills-top">
       <div class="section-title">
         <h2>Skills</h2>
-        <div class="section-subtitle">
+        <!-- <div class="section-subtitle">
           <span>
             provide examples of skills, don't just list them.
           </span>
@@ -284,7 +297,7 @@
           <span>
             probably combine some of these into single card...
           </span>
-        </div>
+        </div> -->
       </div>
 
       <!-- GRID -->
@@ -502,7 +515,7 @@
     <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <aside class="section-gradient-right"></aside>
-    <article class="section-container about-container offset-container--top" id="about-top">
+    <article class="section-container about-container" id="about-top">
 
       <div class="section-title">
         <h2>About</h2>
@@ -520,35 +533,42 @@
 
 
     <!-- SECTION: CONTACT -->
-    <aside class="section-divider"></aside>
-    <!-- <aside class="section-gradient-left"></aside> -->
-    <!-- <aside class="section-gradient-right"></aside> -->
-    <article class="section-container contact-container offset-container--top" id="contact-top">
+    <!-- <aside class="section-divider"></aside> -->
+    <article class="section-container contact-container" id="contact-top">
 
       <div class="section-title">
-        <!-- <h2>Contact / Links</h2> -->
+        <h2>Contact / Links</h2>
       </div>
 
       <div class="contact-menu__body">
+        <aside class="contact-menu__body--gradient"></aside>
+        <aside class="contact-menu__body--gradient-bottom"></aside>
         <!-- LEFT -->
         <div class="cm-left">
+
+          <!-- CM LEFT HEADER -->
           <div class="cm-left__header">
             <span>CHASE OTTOFY</span>
             <span>Front-end / UX Developer</span>
           </div>
 
+          <!-- CM LEFT BODY -->
           <div class="cm-left__body">
             <div class="cm-left__body-avatar"></div>
           </div>
+
+
+          <!-- CM LEFT FOOTER -->
           <div class="cm-left__footer">
             <div class="cm-left__footer-relocate">
-              - will relocate -
+              - willing to relocate -
             </div>
             <div class="cm-left__footer-location">
-              <span>Breck, CO</span>
-              <a>
+              <span>Breckenridge, CO</span>
+              <a href="https://www.google.com/maps/place/Breckenridge,+CO+80424/@39.501242,-106.0432109,13z/data=!4m6!3m5!1s0x876af63d6c26e7c1:0x628d8f7f6680a27a!8m2!3d39.4816537!4d-106.0383518!16zL20vMHJjcnQ" title="Google Maps" target="_blank" rel="noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M14,4v5c0,1.12,0.37,2.16,1,3H9c0.65-0.86,1-1.9,1-3V4H14 M17,2H7C6.45,2,6,2.45,6,3c0,0.55,0.45,1,1,1c0,0,0,0,0,0l1,0v5 c0,1.66-1.34,3-3,3v2h5.97v7l1,1l1-1v-7H19v-2c0,0,0,0,0,0c-1.66,0-3-1.34-3-3V4l1,0c0,0,0,0,0,0c0.55,0,1-0.45,1-1 C18,2.45,17.55,2,17,2L17,2z"/></g></svg>
               </a>
+              <span class="cm-left--time">MST:</span>
             </div>
           </div>
         </div>
@@ -556,81 +576,110 @@
         <!-- RIGHT -->
         <div class="cm-right">
           <div class="cm-right--top">
-            <div class="cm-right--top__cell">
+            <div class="cm-right--top__cell badge-github">
               <a class="cm-right--top__cell-badge" href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
                 <span>
                   Github
                 </span>
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
 
-            <div class="cm-right--top__cell">
+            <div class="cm-right--top__cell badge-youtube">
               <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
                 <span>
                   YouTube
                 </span>
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
 
-            <div class="cm-right--top__cell">
+            <div class="cm-right--top__cell badge-codepen">
               <a class="cm-right--top__cell-badge" href="https://codepen.io/chaseottofy" title="Codepen Profile" target="_blank" rel="noreferrer">
                 <span>
                   Codepen
                 </span>
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
 
-            <div class="cm-right--top__cell">
+            <div class="cm-right--top__cell badge-codewars">
               <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
                 <span>
                   Codewars
                 </span>
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
           </div>
 
-          <div class="cm-right--bottom">
+          <div class="cm-right--bottom cm-right--bottom__body">
             <div class="cm-right--bottom__cell">
-              <span>ottofy@zohomail.com</span>
-              <div class="cm-right--bottom__cell-icons">
-                <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-                  <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:currentColor;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-                </a>
-                <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button" role="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
+              <div class="cm-right--bottom__cell-header">
+                ottofy@zohomail.com
+              </div>
+              <div class="cm-right--bottom__cell-body">
+                <span>E-mail</span>
+                <div class="cm-right--bottom__cell-icons">
+                  <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                  </a>
+                  <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
-                </button>
+                  </button>
+                </div>
               </div>
             </div>
+
             <div class="cm-right--bottom__cell">
-              <span>970-988-2548</span>
-              <div class="cm-right--bottom__cell-icons">
-                <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button" role="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
+              <div class="cm-right--bottom__cell-header">
+                970-988-2548
+              </div>
+              <div class="cm-right--bottom__cell-body">
+                <span>Phone</span>
+                <div class="cm-right--bottom__cell-icons">
+                  <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
-                </button>
+                  </button>
+                </div>
               </div>
+
             </div>
           </div>
-
         </div>
       </div>
     </article>
     <!--------------------->
   </main>
 
-  <br>
-  <br>
-
-
   <!-- FOOTER -->
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-top--message">
+          <!-- <span>I hope my passion for development overshadows my lack of experience - </span>
+          <span>I am eager to prove myself as a worthy candidate to invest in.</span> -->
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Design Inspired by – </span>
+        <span>&nbsp;</span>
+        <a href="https://vercel.com/" title="Vercel" target="_blank" rel="noreferrer">
+          Vercel
+        </a>
+        <span>&nbsp;/&nbsp;</span>
+
+        <a href="https://turbo.build/" title="Turbo" target="_blank" rel="noreferrer">
+          Turbo
+        </a>
+      </div>
+    </div>
+  </footer>
   <!--------------------->
 </body>
 

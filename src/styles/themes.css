@@ -6,12 +6,14 @@
   --grey2: #1c1c1c;
   --grey3: #1b1a1a;
   --white1: #fff;
-  --white2: #aaa;
+  --white2: #b7b7b7;
   --white3: #8c8c8c;
   --offsetred: rgba(233, 42, 103, .4);
   --offsetblack1: rgba(0, 0, 0, .9);
   --offsetblack2: rgba(0, 0, 0, .5);
-  --offsetgrey1:rgba(23, 23, 23, 0.5);
+  --offsetgrey1:rgba(23, 23, 23, 0.2);
+  --offsetgrey2:rgba(23, 23, 23, 0.4);
+  --offsetgrey3:rgba(23, 23, 23, 0.6);
   --dividerBg: rgba(129, 64, 143, 0.1);
 }
 
@@ -27,8 +29,9 @@
   --white3: #4c4c4c;
   --offsetred: rgba(233, 42, 103, .2);
   --offsetblack1: rgba(255, 255, 255, .9);
-  --offsetblack2: rgba(255, 255, 255, .7);
+  --offsetblack2: rgba(255, 255, 255, .9);
   --offsetgrey1:rgba(255, 255, 255, .7);
-  --offsetwhite1: rgba(233, 42, 103, .2);
+  --offsetgrey2:rgba(255, 255, 255, .5);
+  --offsetgrey3:rgba(255, 255, 255, .5);
   --dividerBg: linear-gradient(to right, #677ee6, #b67394);
 }
