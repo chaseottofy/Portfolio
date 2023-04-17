@@ -1,6 +1,11 @@
 /* SECTION: SKILLS
 ============================*/
-/* .skills-container {} */
+.skills-container {
+  margin-top: -1rem;
+  padding-bottom: 6rem !important;
+  scroll-margin-top: 4rem;
+  background: linear-gradient(180deg, transparent 20%, var(--offsetgrey1) 90%);
+}
 
 .skills-grid {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

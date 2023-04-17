@@ -1,3 +1,17 @@
+/* 
+--blue1: #2a8af6;
+--blue2: #3549a6;
+--pink1: #a853ba;
+--red1: #e92a67;
+--red2: #7c1e4b;
+*/
+.colors {
+  --blue1: rgb(42, 138, 246);
+--blue2: #3549a6;
+--pink1: #a853ba;
+--red1: rgb(233, 42, 103);
+--red2: #7c1e4b;
+}
 .theme__dark {
   --black0: #000;
   --black1: #131516;
@@ -7,7 +21,6 @@
   --grey3: #1b1a1a;
   --white1: #fff;
   --white2: #b7b7b7;
-  --white3: #8c8c8c;
   --offsetred: rgba(233, 42, 103, .4);
   --offsetblack1: rgba(0, 0, 0, .9);
   --offsetblack2: rgba(0, 0, 0, .5);
@@ -26,7 +39,6 @@
   --grey3: #d9d9d9;
   --white1: #171717;
   --white2: #4c4c4c;
-  --white3: #4c4c4c;
   --offsetred: rgba(233, 42, 103, .2);
   --offsetblack1: rgba(255, 255, 255, .9);
   --offsetblack2: rgba(255, 255, 255, .9);

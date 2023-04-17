@@ -6,8 +6,8 @@ DIVIDER
   filter: brightness(1.5);
   background: var(--dividerBg);
   margin: 0 auto;
-  min-height: 1px;
-  height:1px;
+  min-height: 2px;
+  height: 2px;
   min-width: 100vw;
   position: relative;
   width: 100%;
@@ -23,18 +23,20 @@ DIVIDER
   pointer-events: none;
   user-select: none;
   width: 40%;
+
+  opacity: 0;
 }
 
 .section-gradient-left {
   background: var(--blue2);
   position: relative;
   z-index: 2;
-  margin-right:auto;
+  margin-right: auto;
 }
 
 .section-gradient-right {
   background: var(--red2);
   position: relative;
   z-index: 2;
-  margin-left:auto;
+  margin-left: auto;
 }

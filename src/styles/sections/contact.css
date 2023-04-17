@@ -1,6 +1,5 @@
 .contact-container {
   padding-bottom: 2rem;
-  scroll-margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +9,6 @@
   padding-left: .75rem;
   padding-right: .75rem;
   background: var(--offsetgrey1);
-  /* background: linear-gradient(180deg, transparent 75%, var(--black0) 90%); */
   z-index: 3;
 }
 
@@ -18,11 +16,13 @@
   position: fixed;
   top: 3rem;
   left: 0;
+  right: 0;
+  margin: 0 auto;
   max-width: 360px;
-  width: 100%;
+  width: 90%;
   height: 400px;
   display: flex;
-  border-radius: 20px;
+  border-radius: 14px;
   background: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0);
   z-index: -1;
@@ -52,9 +52,10 @@
 .contact-menu__header {
   flex-direction: column;
   min-height: 400px;
-  padding: 6px 2px;
+  padding: 6px;
   margin: 0 auto;
   width: 100%;
+  max-height: 90%;
 }
 
 .contact-menu__body {
@@ -85,6 +86,7 @@
       var(--grey1) 20%,
       transparent);
   opacity: .5;
+  display:none;
 }
 
 .contact-menu__body--gradient-bottom {
@@ -250,7 +252,6 @@
   width: 100%;
   gap: .5rem;
   overflow: hidden;
-  /* background: var(--offsetgrey2); */
 }
 
 .cm-right--top__cell {
@@ -270,7 +271,6 @@
 }
 
 .cm-right--top__cell-badge {
-  /* display: flex; */
   display: none;
   justify-content: center;
   column-gap: 8px;
@@ -324,6 +324,8 @@
 }
 
 .cm-right--bottom__cell-header {
+  font-weight: 500;
+  font-size: .8rem;
   display: flex;
   height: 100%;
   width: 100%;
@@ -354,7 +356,7 @@
   display: flex;
   align-items: center;
   height: 1.75rem;
-  width: 1.75rem;
+  width: 2rem;
   justify-content: center;
 }
 
@@ -385,12 +387,13 @@
 }
 
 @media screen and (max-width: 560px) {
-  .contact-menu__header {
+
+  /* .contact-menu__header {
     max-width: 90%;
     left: 0 !important;
     right: 0 !important;
     margin: 0 auto;
-  }
+  } */
 
   .contact-menu__body {
     grid-template-columns: 1fr;
@@ -410,10 +413,6 @@
     padding: 4px;
     padding-bottom: .5rem;
   }
-
-  /* .contact-menu__body .cm-right {
-    border-top: 1px solid var(--black2);
-  } */
 
   .cm-left__header {
     width: 100%;
@@ -456,5 +455,11 @@
   .cm-copy,
   .cm-email-goto {
     height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .contact-menu__header {
+    max-width: 90%;
   }
 }

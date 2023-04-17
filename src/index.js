@@ -77,6 +77,9 @@ import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
 
+import initGlitch from "./utilities/glitch";
+  // initGlitch();
+
 /***************************************/
 const appInit = () => {
   // set default theme / toggle theme
@@ -87,7 +90,6 @@ const appInit = () => {
   initScroll();
   // open/close contact menu
   initHover();
-
   // default time / date / etc
   initDefaults();
 };

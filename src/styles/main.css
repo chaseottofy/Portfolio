@@ -22,12 +22,6 @@
   z-index: 3;
 }
 
-.offset-container--top {
-  margin-top: -1rem;
-  padding-bottom: 6rem !important;
-  scroll-margin-top: 4rem;
-}
-
 .section-grid {
   display: grid;
   column-gap: 1rem;
@@ -48,7 +42,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .section-title h2 {

@@ -34,6 +34,7 @@ const initScroll = () => {
     link.addEventListener("click", handleHrefScroll);
   });
   $(".contact-nav--btn").addEventListener("click", handleAttrScroll);
+  $(".header-logo").addEventListener("click", handleAttrScroll);
 
   // apply filter to header and toggle scroll to top button;
   window.addEventListener("scroll", handlePageScroll);
@@ -41,6 +42,6 @@ const initScroll = () => {
   $(".scroll-top--btn").addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
+};
 
 export default initScroll;

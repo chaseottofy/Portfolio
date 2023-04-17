@@ -13,8 +13,8 @@
 .footer-container {
   display:flex;
   flex-direction: column;
-  max-width: 1440px;
-  width: 100%;
+  max-width: 1200px;
+  width: 60%;
   margin: 0 auto;
   min-height: 100%;
   height: 100%;
@@ -49,24 +49,10 @@
   align-items: center;
   height: 40px;
   margin-top: auto;
-  width: 100%;
+  width: auto;
   font-size: 0.75rem;
   color: var(--white1);
   opacity: .8;
+  position: relative;
+  z-index: 9999;
 }
-
-/* 
-.contact-menu__body--gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,
-      transparent,
-      var(--grey3) 10%,
-      var(--grey1) 20%,
-      transparent);
-  opacity: .8;
-}
-*/

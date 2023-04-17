@@ -1,6 +1,10 @@
 /* SECTION: PROJECTS
 ============================*/
-/* .projects-container {} */
+.projects-container {
+  margin-top: -1rem;
+  padding-bottom: 6rem !important;
+  scroll-margin-top: 4rem;
+}
 
 .projects-grid {
   position:relative;
@@ -31,7 +35,7 @@
 }
 
 .project-cell {
-  border: 1px solid var(--black1);
+  border: 1px solid var(--black2);
   min-height: 200px;
   width: calc(100% - 1rem);
   border-radius: .75rem;
