@@ -7,43 +7,78 @@
 */
 .colors {
   --blue1: rgb(42, 138, 246);
---blue2: #3549a6;
---pink1: #a853ba;
---red1: rgb(233, 42, 103);
---red2: #7c1e4b;
+  --blue2: #3549a6;
+  --pink1: #a853ba;
+  --red1: rgb(233, 42, 103);
+  --red2: #7c1e4b;
 }
+
 .theme__dark {
   --black0: #000;
-  --black1: #131516;
+  --black1: #0c0c0c;
   --black2: #212121;
+
   --grey1: #818080;
   --grey2: #1c1c1c;
   --grey3: #1b1a1a;
+
   --white1: #fff;
   --white2: #b7b7b7;
-  --offsetred: rgba(233, 42, 103, .4);
+
   --offsetblack1: rgba(0, 0, 0, .9);
-  --offsetblack2: rgba(0, 0, 0, .5);
-  --offsetgrey1:rgba(23, 23, 23, 0.2);
-  --offsetgrey2:rgba(23, 23, 23, 0.4);
-  --offsetgrey3:rgba(23, 23, 23, 0.6);
+  --offsetblack2: rgba(0, 0, 0, .6);
+  --offsetblack3: rgba(0, 0, 0, .5);
+  --offsetblack4: rgba(0, 0, 0, .4);
+
+  --offsetgrey1: rgba(23, 23, 23, 0.2);
+  --offsetgrey2: rgba(23, 23, 23, 0.4);
+  --offsetgrey3: rgba(23, 23, 23, 0.6);
+  --offsetgrey4: rgba(23, 23, 23, 0.8);
+
+  --offsetred: rgba(233, 42, 103, .4);
+  --ring-border: 2px solid rgba(255, 255, 255, .5);
+  /* --dividerBg: transparent; */
   --dividerBg: rgba(129, 64, 143, 0.1);
+
+  /* --headerBgBefore: transparent; */
+  --headerBgBefore: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.9) 40%,
+      rgba(0, 0, 0, 0) 100%);
+  --bs-md:
+    rgba(0, 0, 0, .2) 0 1px 2px 0,
+    rgba(0, 0, 0, .1) 0 1px 3px 0;
 }
 
 .theme__light {
   --black0: #fff;
   --black1: #fafafa;
   --black2: #e5e5e5;
+
   --grey1: #999;
   --grey2: #d9d9d9;
   --grey3: #d9d9d9;
+
   --white1: #171717;
   --white2: #4c4c4c;
-  --offsetred: rgba(233, 42, 103, .2);
+
   --offsetblack1: rgba(255, 255, 255, .9);
-  --offsetblack2: rgba(255, 255, 255, .9);
-  --offsetgrey1:rgba(255, 255, 255, .7);
-  --offsetgrey2:rgba(255, 255, 255, .5);
-  --offsetgrey3:rgba(255, 255, 255, .5);
-  --dividerBg: linear-gradient(to right, #677ee6, #b67394);
+  --offsetblack2: rgba(255, 255, 255, .8);
+  --offsetblack3: rgba(255, 255, 255, .8);
+  --offsetblack4: rgba(255, 255, 255, .8);
+
+  --offsetgrey1: rgba(255, 255, 255, .7);
+  --offsetgrey2: rgba(255, 255, 255, .5);
+  --offsetgrey3: rgba(255, 255, 255, .5);
+  --offsetgrey4: rgba(255, 255, 255, .5);
+  --offsetred: rgba(233, 42, 103, .2);
+  --ring-border: 2px solid rgba(0, 0, 0, .5);
+
+  --dividerBg: transparent;
+  /* --dividerBg: linear-gradient(to right, #677ee6, #b67394); */
+  --headerBgBefore: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.9) 40%,
+      rgba(255, 255, 255, 0) 100%);
+  --bs-md:
+    rgba(0, 0, 0, .2) 0 1px 2px 0,
+    rgba(0, 0, 0, .1) 0 1px 3px 0;
 }

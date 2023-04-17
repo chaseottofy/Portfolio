@@ -3,16 +3,53 @@
 /* GRADIENT (under header)
 ============================*/
 .gradient,
-.gradient-overlay {
+.gradient-overlay--one,
+.gradient-overlay--two {
   height: 100%;
   position: absolute;
   width: 100%;
+  z-index: -1;
+  margin: 0 auto;
+  left:0;
+  right:0;
+  pointer-events: none;
+  user-select: none;
 }
 
-.gradient-overlay {
+.gradient {
+  background-image: linear-gradient(
+    to top, 
+    var(--blue1), 
+    var(--red1)
+    );
+  transform: translateY(-60%);
+  /* height: 800px; */
+  /* width: 800px; */
+  max-height: 500px;
+  max-width: 800px;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.gradient-overlay--one {
+  transform: translateY(-60%);
+  background-image: var(--headerBgBefore);
+  width: 100vw;
+  max-width: 1200px;
+  height: 100%;
+}
+
+.gradient-overlay--two {
+  transform: translateY(-8rem);
+  max-height: 40vh;
+  background-image: var(--headerBgBefore);
+  opacity: .5;
+}
+
+/* .gradient-overlay {
   left: 0;
   top: 0;
-}
+} */
 
 /* .gradient {
   background: conic-gradient(

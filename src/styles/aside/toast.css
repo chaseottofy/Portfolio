@@ -17,9 +17,8 @@
   height: 100%;
   width: auto;
   position: absolute;
-  border: 1px solid var(--black2);
-  border-radius: 2px;
-  background: var(--grey2);
+  border-radius: 6px;
+  background: var(--offsetgrey4);
   box-shadow: var(--bs-md);
   color: var(--white1);
   transition: all .35s cubic-bezier(.25, .75, .6, .98);
@@ -61,7 +60,7 @@
 .toast-progress--length {
   height: 4px;
   width: 100%;
-  background: var(--black1);
+  background: transparent;
   border-radius: 2px;
   position: absolute;
   top: 0;

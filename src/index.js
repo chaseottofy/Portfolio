@@ -52,6 +52,7 @@ import "./styles/components/input.css";
 import "./styles/components/svg.css";
 
 import "./styles/header.css";
+import "./styles/headerLogo.css";
 import "./styles/gradientElements/headerGradient.css";
 
 import "./styles/main.css";
@@ -76,10 +77,6 @@ import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
-
-import initGlitch from "./utilities/glitch";
-  // initGlitch();
-
 /***************************************/
 const appInit = () => {
   // set default theme / toggle theme

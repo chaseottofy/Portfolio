@@ -48,9 +48,6 @@
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --primaryFontAlt: "Inter Tight", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --secondaryFont: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, monospace;
-  --bs-md:
-    rgba(0, 0, 0, .2) 0 1px 2px 0,
-    rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-xl:
     rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
     rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
@@ -62,12 +59,37 @@
   --z-aside: 900;
   --z-modal: 1000;
   --z-toast: 1100;
-  --blue1: #2a8af6;
+
+  /* BLUE RED */
+  /* --blue1: #2a8af6;
+  --red1: #e92a67; */
+
+  /* RED RED */
+  /* --blue1: #f44847;
+  --red1: #a73130; */
+
+  --blue1: #2196f3;
+  --red1: #1d1e22;
+
+
+
+
   --blue2: #3549a6;
-  --pink1: #a853ba;
-  --red1: #e92a67;
   --red2: #7c1e4b;
+
+  --pink1: #a853ba;
+
+  --gap1: .5rem;
+  --gap2: .75rem;
+  --gap3: .875rem;
+  --gap4: 1rem;
 }
+
+/* 
+--blue1: #f44847;
+--red1: #a73130;
+
+*/
 
 *,
 *:before,
@@ -113,14 +135,21 @@ body {
 ============================*/
 h1,
 h2,
-h3,
-h4 {
-  font-weight: 700;
+span,
+button,
+p,
+a,
+li,
+ul,
+div {
+  font-family: var(--primaryFont);
 }
 
 h1,
-h2 {
-  font-family: var(--primaryFont);
+h2,
+h3,
+h4 {
+  font-weight: 700;
 }
 
 h3,
