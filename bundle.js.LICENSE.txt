@@ -20,6 +20,8 @@
 
 /*! ./styles/header.css */
 
+/*! ./styles/headerLogo.css */
+
 /*! ./styles/main.css */
 
 /*! ./styles/root.css */
@@ -35,8 +37,6 @@
 /*! ./styles/sections/skills.css */
 
 /*! ./styles/themes.css */
-
-/*! ./utilities/glitch */
 
 /*! ./utilities/handleCopy */
 
@@ -72,9 +72,9 @@
   !*** ./src/styles/themes.css ***!
   \*******************************/
 
-/*!*********************************!*\
-  !*** ./src/utilities/glitch.js ***!
-  \*********************************/
+/*!***********************************!*\
+  !*** ./src/styles/headerLogo.css ***!
+  \***********************************/
 
 /*!************************************!*\
   !*** ./src/styles/aside/toast.css ***!
