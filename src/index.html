@@ -151,14 +151,6 @@
   </aside>
   <!--------------------->
 
-  <!-- Scroll-to-top button -->
-  <!-- <aside class="scroll-top hide-scroll-top">
-    <button class="scroll-top--btn" aria-label="button">
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"></path></svg>
-    </button>
-  </aside> -->
-  <!--------------------->
-
 
 
 
@@ -648,10 +640,10 @@
 
     <!-- SECTION: CONTACT-FORM -->
     <article class="contact-form--container">
-      <form class="contact-form" action="mailto:emailid@example.com" method="post" enctype="text/plain">
+      <form class="contact-form">
         <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" class="form-name--input" name="name" minlength="1" maxlength="200" required>
+          <label for="form-name">Name *</label>
+          <input id="form-name" type="text" class="form-name--input" name="form-name" minlength="1" maxlength="200" required>
         </div>
 
         <div class="form-group">
@@ -662,7 +654,7 @@
               <label for="contact-method--email">Email</label>
             </span>
             <span>
-              <input class="contact-option--input" id="contact-method--phone" type="radio" name="contact-method" value="phone">
+              <input class="contact-option--input" id="contact-method--phone" type="radio" name="contact-method" value="phone" aria-label="">
               <label for="contact-method--phone">Phone</label>
             </span>
           </div>
@@ -671,8 +663,8 @@
         </div>
 
         <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea class="form-message--input" name="message" rows="4" required></textarea>
+          <label for="form-message">Message *</label>
+          <textarea id="form-message" class="form-message--input" name="form-message" rows="4" required></textarea>
         </div>
 
         <div class="form-group form-group--submit">

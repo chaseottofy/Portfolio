@@ -1,6 +1,5 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-// const scrollTop = $(".scroll-top");
 const header = $(".header");
 
 const handleHrefScroll = (e) => {
@@ -18,13 +17,10 @@ const handleAttrScroll = (e) => {
 };
 
 const handlePageScroll = () => {
-  
   if (window.pageYOffset > window.innerHeight) {
     header.classList.add("header-filter");
-    // scrollTop.classList.remove("hide-scroll-top");
   } else {
     header.classList.remove("header-filter");
-    // scrollTop.classList.add("hide-scroll-top");
   }
 };
 
@@ -32,17 +28,13 @@ const initScroll = () => {
   // scroll to articles on page from nav
   handlePageScroll();
   $$(".nav-menu--link").forEach(link => {
-    link.addEventListener("click", handleHrefScroll);
+    link.addEventListener("click", handleHrefScroll, { passive: true });
   });
-  $(".contact-nav--btn").addEventListener("click", handleAttrScroll);
-  $(".header-logo").addEventListener("click", handleAttrScroll);
+  $(".contact-nav--btn").addEventListener("click", handleAttrScroll, { passive: true });
+  $(".header-logo").addEventListener("click", handleAttrScroll, { passive: true });
 
   // apply filter to header and toggle scroll to top button;
-  window.addEventListener("scroll", handlePageScroll);
-  // scroll to top;
-  // $(".scroll-top--btn").addEventListener("click", () => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // });
+  window.addEventListener("scroll", handlePageScroll, { passive: true });
 };
 
 export default initScroll;

@@ -65,7 +65,6 @@ import "./styles/sections/contact.css";
 import "./styles/sections/contactForm.css";
 import "./styles/footer.css";
 
-import "./styles/aside/scrolltop.css";
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
 

@@ -33,7 +33,9 @@ const toggleContactMenu = () => {
 
 const initHover = () => {
   navContactBtn.addEventListener("mouseenter", openContactMenu);
-  navContactBtn.addEventListener("touchstart", toggleContactMenu);
+  navContactBtn.addEventListener("touchstart", toggleContactMenu, {
+    passive: true
+  });
 };
 
 export default initHover;

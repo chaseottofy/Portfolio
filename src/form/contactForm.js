@@ -36,21 +36,11 @@ const handleFormSubmit = e => {
   e.target.preventDefault();
   const formData = new FormData(form);
   const data = {
-    name: formData.get("name"),
+    name: formData.get("form-name"),
     contactMethod: formData.get("contact-method"),
     contactValue: formData.get("contact-value"),
-    message: formData.get("message"),
+    message: formData.get("form-message"),
   };
-
-  // handle mailto 
-  const mailto = `mailto:
-  ?subject=Contact%20from%20${data.name}
-  &body=${data.message}
-  %0D%0A%0D%0A
-  Contact%20me%20at%20${data.contactValue}
-  `;
-
-  window.open(mailto, "_blank");
 };
 
 
@@ -59,7 +49,7 @@ const initContactForm = () => {
     option.addEventListener("change", handleSelectedContactMethod);
   });
   form.addEventListener("input", handleFormChange);
-  submitBtn.addEventListener("submit", (e) => handleFormSubmit(e));
+  // submitBtn.addEventListener("submit", (e) => handleFormSubmit(e));
 };
 
 export default initContactForm;
