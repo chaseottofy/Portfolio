@@ -2,8 +2,6 @@
 
 /*! ./form/contactForm */
 
-/*! ./styles/aside/scrolltop.css */
-
 /*! ./styles/aside/themeMenu.css */
 
 /*! ./styles/aside/toast.css */
@@ -119,10 +117,6 @@
 /*!***************************************!*\
   !*** ./src/utilities/handleScroll.js ***!
   \***************************************/
-
-/*!****************************************!*\
-  !*** ./src/styles/aside/scrolltop.css ***!
-  \****************************************/
 
 /*!****************************************!*\
   !*** ./src/styles/aside/themeMenu.css ***!
