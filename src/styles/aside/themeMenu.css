@@ -17,14 +17,13 @@
   display: flex;
   flex-direction: row;
   height: 3rem;
-  width: 12rem;
+  width: 10rem;
   justify-content: space-between;
   border-radius: 1.5rem;
   align-items: center;
   position: relative;
   /* background: var(--offsetgrey2); */
   box-shadow: var(--bs-md);
-  /* border: 1px solid var(--black1); */
 }
 
 /* .theme-switch--col {
@@ -82,8 +81,6 @@
 }
 
 .theme-switch span input:checked + label {
-  /* background: var(--offsetgrey3); */
-  /* box-shadow: var(--bs-md); */
   background: rgba(0, 0, 0, 0.4);
 }
 

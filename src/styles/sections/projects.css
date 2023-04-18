@@ -37,22 +37,17 @@
 }
 
 .project-cell {
-  /* border: 1px solid red; */
-  /* min-height: min(40vh, 620px); */
-  /* min-height: min(40vh, 620px); */
   min-height: 50vh;
-  /* width: 100%; */
-  /* max-width: 90%; */
-  /* min-height: 30rem; */
   width: 100%;
   border-radius: 1rem;
   display:flex;
   flex-direction: column;
-  /* gap: .5rem; */
-  /* padding: .5rem; */
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 }
+
+
 
 .project-cell__content {
   display: flex;
@@ -62,11 +57,11 @@
   overflow:hidden;
   height: 100%;
   width: 100%;
-  position: relative;
 }
 
-/* .project-cell .project-cell__content {} */
-
+/* PROJECT IMAGES
+============================*/
+/* GOOGLE CALENDAR */
 .theme__light .project-calendar .project-cell__content {
   background-image: url("../../images/projects/calendar/gclight1.webp");
   background-size: cover;
@@ -80,18 +75,87 @@
   background-repeat: no-repeat;
 }
 
+/* MARKDOWN */
 .theme__light .project-markdown .project-cell__content {
   background-image: url("../../images/projects/markdown/mklight1.webp");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
 }
-
 .project-markdown .project-cell__content {
   background-image: url("../../images/projects/markdown/mkdark1.webp");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+}
+
+/* PROJECT CELL ASIDE CONTENT
+============================*/
+.project-cell--links {
+  position: absolute;
+  bottom:0;
+  left:0;
+  display:flex;
+  align-items: center;
+  height: 3rem;
+  background: var(--offsetblack2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  column-gap: 1rem;
+  width: 100%;
+}
+.project-cell--links a {
+  font-size: .75rem;
+  height: 2rem;
+  min-width: 4rem;
+  padding: 0 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-weight: 500;
+  font-family: var(--primaryFont);
+  cursor: pointer;
+  color: var(--white1);
+  opacity: .9;
+  background: var(--offsetblack1);
+  box-shadow: none;
+  position: relative;
+  transition: all .2s ease-in-out;
+  border-radius: 6px;
+}
+.project-cell--links a:hover {
+  background: var(--black0);
+}
+
+.project-cell--overlay,
+.project-cell--lighthouse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: var(--offsetgrey1);
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: all .2s ease-in-out;
+}
+
+.lighthouse-four {
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  .col--2-a,
+  .col--2-b {
+    grid-column: 1 / span 4;
+  }
 }
 
 /* .project-components .project-cell__content {
@@ -106,37 +170,4 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-} */
-
-@media screen and (max-width: 768px) {
-  .col--2-a,
-  .col--2-b {
-    grid-column: 1 / span 4;
-  }
-}
-
-/* @media screen and (max-width: 840px) {
-
-} */
-
-/* .projects-grid::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  left: 0;
-  max-height:400px;
-  pointer-events: none;
-  top: 0;
-  background: linear-gradient(180deg,var(--black0),transparent);
-  height:30vh;
-}
-
-.projects-grid::after {
-  content: "";
-  background: linear-gradient(180deg,transparent 75%,var(--black0) 90%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  pointer-events: none;
 } */

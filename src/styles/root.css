@@ -60,6 +60,7 @@
   --z-modal: 1000;
   --z-toast: 1100;
 
+  /* i suck at colors */
   /* BLUE RED */
   /* --blue1: #2a8af6;
   --red1: #e92a67; */
@@ -77,14 +78,11 @@
   --red1: #2575fc; */
 
   --blue1: #F40076;
-  --blue3: #0c3479;
   --red1: #342711;
 
   --blue2: #3549a6;
   --red2: #7c1e4b;
-
   --pink1: #a853ba;
-
   --gap1: .5rem;
   --gap2: .75rem;
   --gap3: .875rem;
