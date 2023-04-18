@@ -34,20 +34,10 @@
   src: url('../fonts/intertight/inter-tight-v2-latin-800.woff2') format('woff2');
 }
 
-/* space-grotesk-700 */
-@font-face {
-  font-display: swap;
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/spaceGrotesk/space-grotesk-v15-latin-700.woff2') format('woff2');
-}
-
 /* https://vercel.com/design/icons*/
 :root {
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --primaryFontAlt: "Inter Tight", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
-  --secondaryFont: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, monospace;
   --bs-xl:
     rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
     rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
@@ -138,6 +128,8 @@ body {
 ============================*/
 h1,
 h2,
+h3,
+h4,
 span,
 button,
 p,
@@ -155,11 +147,6 @@ h2,
 h3,
 h4 {
   font-weight: 700;
-}
-
-h3,
-h4 {
-  font-family: var(--secondaryFont);
 }
 
 button,

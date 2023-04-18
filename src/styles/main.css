@@ -51,7 +51,6 @@
 }
 
 .section-subtitle {
-  font-family: var(--secondaryFont);
   line-height: 1.375;
   color: var(--white2);
 }
