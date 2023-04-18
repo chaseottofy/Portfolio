@@ -1,5 +1,5 @@
 # Portfolio
 
-## WORD IN PROGRESS
+work in progress
 
-![screen](/current.png)
+![screen](current.png)
