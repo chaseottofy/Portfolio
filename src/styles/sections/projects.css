@@ -2,7 +2,6 @@
 ============================*/
 .projects-container {
   margin-top: -1rem;
-  /* padding-bottom: 3rem; */
   scroll-margin-top: 4rem;
 }
 
@@ -17,6 +16,7 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 .5rem;
   row-gap: 3rem;
 }
 
@@ -62,14 +62,14 @@
 .theme__light .project-calendar .project-cell__content {
   background-image: url("../../images/projects/calendar/gclight1.webp");
   background-size: cover;
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 
 .project-calendar .project-cell__content {
   background-image: url("../../images/projects/calendar/gcdark1.webp");
   background-size: cover;
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 
@@ -77,14 +77,14 @@
 .theme__light .project-markdown .project-cell__content {
   background-image: url("../../images/projects/markdown/mklight1.webp");
   background-size: cover;
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 
 .project-markdown .project-cell__content {
   background-image: url("../../images/projects/markdown/mkdark1.webp");
   background-size: cover;
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 

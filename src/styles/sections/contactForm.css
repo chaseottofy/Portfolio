@@ -3,10 +3,6 @@
   width: 100%;
   height: 100%;
   z-index: 3;
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem;
-  padding: .25rem;
   background-image: linear-gradient(
     var(--black3),
     var(--black3)),
@@ -22,7 +18,17 @@
   background-repeat: no-repeat;
   pointer-events: none;
   user-select: none;
+  padding: .25rem;
+}
+
+.contact-form--wrapper {
+  height: 100%;
+  width: 100%;
   max-width: 1200px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
 }
 
 .contact-form {
@@ -35,7 +41,6 @@
   border-radius: 20px;
   max-width: 480px;
   width:100%;
-  margin: 0 auto;
   border: 1px solid transparent;
 }
 
