@@ -1,4 +1,5 @@
 # Portfolio
-Portfolio
 
-work in progress
+## WORD IN PROGRESS
+
+![screen](/current.png)
