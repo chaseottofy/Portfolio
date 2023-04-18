@@ -19,21 +19,23 @@
   <header class="header header-animate">
     <div class="header-wrapper">
 
-      <button class="header-logo" data-href="#header-top" aria-label="button">
-        <span class="header-logo--before"></span>
-        <div class="header-logo--after">TT</div>
+      <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
+        <svg class="logo--o-1" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
+        <svg class="logo--o-2" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
+        <svg class="logo--t-1" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg>
+        <svg class="logo--t-2" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg>
       </button>
 
       <div class="nav-wrapper">
         <nav class="header-nav">
           <ul class="nav-menu">
             <li>
-              <a class="nav-menu--link" href="#projects-top">
+              <a class="nav-menu--link" href="#projects-top" title="Scroll to projects">
                 Projects
               </a>
             </li>
             <li>
-              <a class="nav-menu--link" href="#skills-top">
+              <a class="nav-menu--link" href="#skills-top" title="Scroll to skills">
                 Skills
               </a>
             </li>
@@ -55,18 +57,16 @@
 
       </div>
 
-
-
     </div>
   </header>
+
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
+
+  <!-- HEADER GRADIENT -->
   <!--------------------->
-  <aside class="gradient"></aside>
   <aside class="gradient-overlay--one"></aside>
-  <aside class="gradient-overlay--two"></aside>
-  <!-- Header Gradient -->
-  <!-- 
-  <aside class="gradient-overlay"></aside> -->
+  <!-- <aside class="gradient"></aside> -->
+  <!-- <aside class="gradient-overlay--two"></aside> -->
   <!--------------------->
 
   <!-- Contact menu popup -->
@@ -151,24 +151,15 @@
   </aside>
   <!--------------------->
 
-
-
-
-  <!--------------------->
-
-
-  <!-- Scroll-to-top -->
-  <aside class="scroll-top hide-scroll-top">
+  <!-- Scroll-to-top button -->
+  <!-- <aside class="scroll-top hide-scroll-top">
     <button class="scroll-top--btn" aria-label="button">
       <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"></path></svg>
     </button>
-  </aside>
+  </aside> -->
   <!--------------------->
 
 
-  <!-- Toast popup (dynamic) -->
-  <aside class="toast-wrapper"></aside>
-  <!--------------------->
 
 
   <!-- MAIN (intro > projects > skills > about > contact) -->
@@ -184,7 +175,6 @@
     </svg>
 
 
-
     <!-- SECTION: INTRO -->
     <article class="section-container intro-container">
       <div class="intro-header">
@@ -197,7 +187,7 @@
               Front-end
             </h2>
             <span>
-              <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--white1)" stroke-width="1.5" viewBox="0 0 24 24" style="opacity:.9;">
+              <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--header-text-before)" stroke-width="1.5" viewBox="0 0 24 24" style="opacity:.9;">
             <path d="M16.88 3.549L7.12 20.451"></path>
           </svg>
             </span>
@@ -209,12 +199,8 @@
             </h2>
           </div>
         </div>
-        <!-- create status showing that I'm still looking -->
       </div>
 
-      <!-- <aside class="intro-bg--svg"></aside> -->
-
-      
       <!-- Theme Switch -->
       <aside class="theme-modal">
         <div class="theme-switch">
@@ -250,17 +236,8 @@
           <p>Available for hire</p>
         </div>
       </aside>
-      
-
-      <!-- <aside class="intro-rings">
-        <div class="ring-1"></div>
-        <div class="ring-2"></div>
-        <div class="ring-3"></div>
-        <div class="ring-4"></div>
-      </aside> -->
     </article>
     <!--------------------->
-
 
 
     <!-- SECTION: PROJECTS -->
@@ -278,11 +255,25 @@
         </div> -->
       </div>
       <div class="projects-grid">
-        <div class="project-cell col--1 project-gc"></div>
-        <!-- <div class="project-cell col--2-a"></div>
-        <div class="project-cell col--2-b"></div>
-        <div class="project-cell col--2-a"></div>
-        <div class="project-cell col--2-b"></div> -->
+        <div class="project-cell col--1 project-calendar">
+          <div class="project-cell__content"></div>
+          <!-- <div class="project-cell__header"></div> -->
+          <!-- <div class="project-cell__body"></div> -->
+        </div>
+
+        <div class="project-cell col--1 project-markdown">
+          <div class="project-cell__content"></div>
+        </div>
+
+        <!-- <div class="project-cell col--2-a project-components">
+          <div class="project-cell__content"></div>
+        </div> -->
+
+        <!-- <div class="project-cell col--2-b project-other">
+          <div class="project-cell__content"></div>
+        </div> -->
+        
+        <!-- <div class="project-cell col--2-b"></div> -->
       </div>
     </article>
     <!--------------------->
@@ -527,7 +518,6 @@
       <div class="section-title">
         <h2>About</h2>
       </div>
-
       <div class="section-grid"></div>
     </article> -->
     <!--------------------->
@@ -655,8 +645,52 @@
         </div>
       </div>
     </article>
+
+    <!-- SECTION: CONTACT-FORM -->
+    <article class="contact-form--container">
+      <form class="contact-form" action="mailto:emailid@example.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" class="form-name--input" name="name" minlength="1" maxlength="200" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-method">Choose the best for response *</label>
+          <div class="contact-method-group">
+            <span>
+              <input class="contact-option--input" id="contact-method--email" type="radio" name="contact-method" value="email" checked>
+              <label for="contact-method--email">Email</label>
+            </span>
+            <span>
+              <input class="contact-option--input" id="contact-method--phone" type="radio" name="contact-method" value="phone">
+              <label for="contact-method--phone">Phone</label>
+            </span>
+          </div>
+
+          <input type="email" class="form-contact--input" name="contact-value" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea class="form-message--input" name="message" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group form-group--submit">
+          <button class="submit-form--btn" type="submit" disabled>Submit</button>
+        </div>
+      </form>
+
+      <div class="contact-form--aside">
+        aside content
+      </div>
+
+    </article>
     <!--------------------->
   </main>
+
+  <!-- Toast popup (dynamic) -->
+  <aside class="toast-wrapper"></aside>
+  <!--------------------->
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -669,14 +703,9 @@
       <div class="footer-bottom">
         <span>@Chase Ottofy –</span>
         <span>&nbsp;</span>
-        <a href="ottofy@zohomail.com" title="Github Profile" target="_blank" rel="noreferrer">
+        <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
           Github
         </a>
-        <!-- <span>&nbsp;/&nbsp;</span> -->
-
-        <!-- <a href="https://turbo.build/" title="Turbo" target="_blank" rel="noreferrer">
-          Turbo
-        </a> -->
       </div>
     </div>
   </footer>

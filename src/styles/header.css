@@ -5,9 +5,8 @@
   height: 4rem;
   width: 100%;
   z-index: var(--z-header);
-  background: transparent;
-  
-  backdrop-filter: blur(0);
+  background: var(--header-before);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   will-change: background, backdrop-filter, -webkit-backdrop-filter;
 }
@@ -31,13 +30,15 @@
 }
 
 .header-filter {
-  background: var(--offsetblack2);
+  background: var(--header-after);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .header-filter .header-nav .nav-menu li button,
 .header-filter .header-nav .nav-menu li a {
   background:transparent;
+  color: var(--white1);
 }
 
 .header-nav {
@@ -50,19 +51,17 @@
 
 .nav-menu {
   width: auto;
-  border-radius: 1rem;
   height: 2.75rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: var(--offsetblack2); */
 }
 
 .nav-menu li {
   height: 100%;
   width: 100%;
-  padding: .375rem;
+  padding: .375rem .5rem;
 }
 
 .nav-menu li button,
@@ -70,23 +69,30 @@
   font-size: .8rem;
   height: 100%;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 .75rem;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0;
   font-weight: 500;
-  border-radius: 1rem;
   cursor: pointer;
-  color: var(--white1);
+  color: var(--header-text-before);
   box-shadow: none;
   position: relative;
+  transition: all .2s ease-in-out;
+  border-radius: 1rem;
 }
 
 .nav-menu li a:hover {
   opacity: .8;
-  transition: opacity 150ms ease-in-out;
+  background: var(--black0);
+  color: var(--white1);
+}
+
+.nav-menu li a:focus-visible,
+.nav-menu li button:focus-visible {
+  background: var(--offsetgrey1);
 }
 
 .nav-menu li button svg {
@@ -101,11 +107,14 @@
   background: var(--white1) !important;
   color: var(--black0) !important;
   opacity: .8;
-  
-  /* box-shadow:
-    rgba(20, 20, 20, 0.2) 0 -1px 1px 0; */
 }
 
 .nav-menu--contact--active svg {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width: 640px) {
+  .nav-menu li {
+    padding: .375rem .125rem;
+  } 
 }

@@ -62,6 +62,7 @@ import "./styles/sections/projects.css";
 import "./styles/sections/skills.css";
 import "./styles/sections/about.css";
 import "./styles/sections/contact.css";
+import "./styles/sections/contactForm.css";
 import "./styles/footer.css";
 
 import "./styles/aside/scrolltop.css";
@@ -77,11 +78,17 @@ import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
+import initContactForm from "./form/contactForm";
 /***************************************/
+
+
+
+
+
 const appInit = () => {
   // set default theme / toggle theme
   initTheme();
-  // copy phone # / email
+  // copy phone # / emai;
   initCopyElements();
   // scroll to articles / top of page
   initScroll();
@@ -89,6 +96,8 @@ const appInit = () => {
   initHover();
   // default time / date / etc
   initDefaults();
+  // contact form
+  initContactForm();
 };
 appInit();
 

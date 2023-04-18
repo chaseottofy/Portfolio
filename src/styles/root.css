@@ -68,11 +68,17 @@
   /* --blue1: #f44847;
   --red1: #a73130; */
 
-  --blue1: #2196f3;
-  --red1: #1d1e22;
+  /* BLUE BLUE */
+  /* --blue1: #2196f3;
+  --red1: #1d1e22; */
 
+  /* BLUE BLUE */
+  /* --blue1: #2196f3;
+  --red1: #2575fc; */
 
-
+  --blue1: #F40076;
+  --blue3: #0c3479;
+  --red1: #342711;
 
   --blue2: #3549a6;
   --red2: #7c1e4b;
@@ -88,7 +94,6 @@
 /* 
 --blue1: #f44847;
 --red1: #a73130;
-
 */
 
 *,
@@ -141,7 +146,9 @@ p,
 a,
 li,
 ul,
-div {
+div,
+input,
+textarea {
   font-family: var(--primaryFont);
 }
 
@@ -203,6 +210,10 @@ svg {
   -ms-user-select: none;
 }
 
+textarea {
+  resize: none;
+}
+
 /* ::-WEBKIT
 ============================*/
 ::-webkit-inner-spin-button,
@@ -255,11 +266,12 @@ input:-ms-input-placeholder {
 input[disabled],
 button[disabled],
 a[disabled] {
-  pointer-events: none;
+  /* pointer-events: none; */
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: not-allowed;
 }
 
 /* TRANSITION UTILITIES

@@ -1,10 +1,3 @@
-/* 
---blue1: #2a8af6;
---blue2: #3549a6;
---pink1: #a853ba;
---red1: #e92a67;
---red2: #7c1e4b;
-*/
 .colors {
   --blue1: rgb(42, 138, 246);
   --blue2: #3549a6;
@@ -14,9 +7,15 @@
 }
 
 .theme__dark {
+  --header-before: transparent;
+  --header-text-before: #fff;
+  --header-after: rgba(0, 0, 0, .6);
+
+
   --black0: #000;
   --black1: #0c0c0c;
   --black2: #212121;
+  --black3: #050505;
 
   --grey1: #818080;
   --grey2: #1c1c1c;
@@ -37,10 +36,8 @@
 
   --offsetred: rgba(233, 42, 103, .4);
   --ring-border: 2px solid rgba(255, 255, 255, .5);
-  /* --dividerBg: transparent; */
   --dividerBg: rgba(129, 64, 143, 0.1);
 
-  /* --headerBgBefore: transparent; */
   --headerBgBefore: linear-gradient(180deg,
       rgba(0, 0, 0, 0.9) 40%,
       rgba(0, 0, 0, 0) 100%);
@@ -50,9 +47,14 @@
 }
 
 .theme__light {
+  --header-before: transparent;
+  --header-text-before: #fff;
+  --header-after: rgba(255,255,255,.9);
+
   --black0: #fff;
   --black1: #fafafa;
   --black2: #e5e5e5;
+  --black3: #fff;
 
   --grey1: #999;
   --grey2: #d9d9d9;
@@ -74,7 +76,6 @@
   --ring-border: 2px solid rgba(0, 0, 0, .5);
 
   --dividerBg: transparent;
-  /* --dividerBg: linear-gradient(to right, #677ee6, #b67394); */
   --headerBgBefore: linear-gradient(180deg,
       rgba(255, 255, 255, 0.9) 40%,
       rgba(255, 255, 255, 0) 100%);

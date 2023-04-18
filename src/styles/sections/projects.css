@@ -7,9 +7,11 @@
 }
 
 .projects-grid {
-  position:relative;
+  position: relative;
   padding-top: 1rem;
   display: grid;
+  padding-left:0;
+  padding-right:0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   max-width: 1200px;
@@ -35,25 +37,87 @@
 }
 
 .project-cell {
-  border: 1px solid var(--black2);
-  min-height: 200px;
-  width: calc(100% - 1rem);
-  border-radius: .75rem;
+  /* border: 1px solid red; */
+  /* min-height: min(40vh, 620px); */
+  /* min-height: min(40vh, 620px); */
+  min-height: 50vh;
+  /* width: 100%; */
+  /* max-width: 90%; */
+  /* min-height: 30rem; */
+  width: 100%;
+  border-radius: 1rem;
+  display:flex;
+  flex-direction: column;
+  /* gap: .5rem; */
+  /* padding: .5rem; */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.project-cell__content {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  gap: .5rem;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
+/* .project-cell .project-cell__content {} */
 
-@media screen and (max-width: 840px) {
-
+.theme__light .project-calendar .project-cell__content {
+  background-image: url("../../images/projects/calendar/gclight1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.project-calendar .project-cell__content {
+  background-image: url("../../images/projects/calendar/gcdark1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
+.theme__light .project-markdown .project-cell__content {
+  background-image: url("../../images/projects/markdown/mklight1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
+.project-markdown .project-cell__content {
+  background-image: url("../../images/projects/markdown/mkdark1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
+/* .project-components .project-cell__content {
+  background-image: url("../../images/projects/other/other1.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.project-other .project-cell__content {
+  background-image: url("../../images/projects/other/other1.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+@media screen and (max-width: 768px) {
+  .col--2-a,
+  .col--2-b {
+    grid-column: 1 / span 4;
+  }
+}
+
+/* @media screen and (max-width: 840px) {
+
+} */
 
 /* .projects-grid::before {
   content: "";

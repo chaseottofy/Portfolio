@@ -1,5 +1,7 @@
 /*! ./createToast */
 
+/*! ./form/contactForm */
+
 /*! ./styles/aside/scrolltop.css */
 
 /*! ./styles/aside/themeMenu.css */
@@ -29,6 +31,8 @@
 /*! ./styles/sections/about.css */
 
 /*! ./styles/sections/contact.css */
+
+/*! ./styles/sections/contactForm.css */
 
 /*! ./styles/sections/intro.css */
 
@@ -71,6 +75,10 @@
 /*!*******************************!*\
   !*** ./src/styles/themes.css ***!
   \*******************************/
+
+/*!*********************************!*\
+  !*** ./src/form/contactForm.js ***!
+  \*********************************/
 
 /*!***********************************!*\
   !*** ./src/styles/headerLogo.css ***!
@@ -143,6 +151,10 @@
 /*!******************************************!*\
   !*** ./src/styles/sections/projects.css ***!
   \******************************************/
+
+/*!*********************************************!*\
+  !*** ./src/styles/sections/contactForm.css ***!
+  \*********************************************/
 
 /*!********************************************************!*\
   !*** ./src/styles/gradientElements/headerGradient.css ***!

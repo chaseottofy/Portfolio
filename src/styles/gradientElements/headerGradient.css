@@ -4,47 +4,52 @@
 ============================*/
 .gradient,
 .gradient-overlay--one,
-.gradient-overlay--two {
+.gradient-overlay--two,
+.grdient-overlay--shape {
   height: 100%;
   position: absolute;
   width: 100%;
   z-index: -1;
   margin: 0 auto;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   pointer-events: none;
   user-select: none;
 }
 
-.gradient {
-  background-image: linear-gradient(
-    to top, 
-    var(--blue1), 
-    var(--red1)
-    );
+/* .gradient {
+  background-image: linear-gradient(to top,
+      var(--blue1),
+      var(--red1));
   transform: translateY(-60%);
-  /* height: 800px; */
-  /* width: 800px; */
   max-height: 500px;
   max-width: 800px;
   border-radius: 50%;
   filter: blur(50px);
-}
+} */
+
+/* .gradient-overlay--one {
+
+} */
 
 .gradient-overlay--one {
-  transform: translateY(-60%);
+  background: linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #000000 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 0.01%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #FF0000 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #110055 100%);
+  background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge, normal;
+  margin-top: -4rem;
+  /* filter: grayscale(.5) invert(1) opacity(.5); */
+  /* transform: translateY(-60%);
   background-image: var(--headerBgBefore);
   width: 100vw;
   max-width: 1200px;
-  height: 100%;
+  height: 100%; */
 }
 
-.gradient-overlay--two {
+/* .gradient-overlay--two {
   transform: translateY(-8rem);
   max-height: 40vh;
   background-image: var(--headerBgBefore);
   opacity: .5;
-}
+} */
 
 /* .gradient-overlay {
   left: 0;

@@ -23,7 +23,7 @@
 }
 
 .footer-top {
-  border-top: 1px solid var(--black2);
+  /* border-top: 1px solid var(--black2); */
   height: 100px;
   display:flex;
   width: 100%;
