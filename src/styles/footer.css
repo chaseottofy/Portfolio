@@ -39,7 +39,6 @@
   padding: 1rem;
   border-radius: 6px;
   row-gap: .375rem;
-  opacity: .9;
   text-align: center;
 }
 
@@ -52,7 +51,6 @@
   width: auto;
   font-size: 0.75rem;
   color: var(--white1);
-  opacity: .8;
   position: relative;
   z-index: 9999;
 }

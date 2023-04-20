@@ -24,21 +24,22 @@
   font-weight: 700;
   src: url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2');
 }
-  /* i suck at colors */
-  /* BLUE RED */
-  /* --blue1: #2a8af6;
+
+/* i suck at colors */
+/* BLUE RED */
+/* --blue1: #2a8af6;
   --red1: #e92a67; */
 
-  /* RED RED */
-  /* --blue1: #f44847;
+/* RED RED */
+/* --blue1: #f44847;
   --red1: #a73130; */
 
-  /* BLUE BLUE */
-  /* --blue1: #2196f3;
+/* BLUE BLUE */
+/* --blue1: #2196f3;
   --red1: #1d1e22; */
 
-  /* BLUE BLUE */
-  /* --blue1: #2196f3;
+/* BLUE BLUE */
+/* --blue1: #2196f3;
   --red1: #2575fc; */
 /* https://vercel.com/design/icons*/
 :root {
@@ -60,7 +61,7 @@
   --blue2: #3549a6;
   --red2: #7c1e4b;
   --pink1: #a853ba;
-  
+
   --gap1: .5rem;
   --gap2: .75rem;
   --gap3: .875rem;
@@ -193,7 +194,6 @@ textarea {
   resize: none;
 }
 
-
 /* ::-WEBKIT
 ============================*/
 ::-webkit-inner-spin-button,
@@ -292,6 +292,24 @@ a[disabled] {
   background-image: radial-gradient(var(--black2) 1px, transparent 1px);
   background-size: 25px 25px;
   background-position: 50%;
+}
+
+.modal-ov {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-ov--hide {
+  display: none;
 }
 
 /* adaptive font sizes

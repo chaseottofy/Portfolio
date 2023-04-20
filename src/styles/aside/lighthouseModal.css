@@ -1,0 +1,77 @@
+.lighthouse-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 500px;
+  width: 95%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  opacity: 0;
+}
+
+.lighthouse-modal--active {
+  z-index: 9999;
+  opacity: 1;
+  user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+}
+
+.lighthouse-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  margin-bottom: 4px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.lighthouse-modal__body {
+  height: 100%;
+  width: 100%;
+}
+
+.close-lh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 120px;
+  height: 100%;
+  text-align: center;
+  background: var(--white1);
+  color: var(--black0);
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.close-lh-btn:hover {
+  background: var(--white2);
+  color: var(--black1);
+}
+
+.lh-gc {
+  background-image: url("../../images/projects/calendar/gclh1.webp");
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.lh-mk {
+  background-image: url("../../images/projects/markdown/mklh1.webp");
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
+}

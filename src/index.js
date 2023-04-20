@@ -67,6 +67,7 @@ import "./styles/footer.css";
 
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
+import "./styles/aside/lighthouseModal.css";
 
 /***************************************/
 
@@ -78,6 +79,7 @@ import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
 import initContactForm from "./form/contactForm";
+import initModals from "./utilities/handleModals";
 /***************************************/
 const appInit = () => {
   // default time / date / etc
@@ -92,6 +94,8 @@ const appInit = () => {
   initHover();
   // contact form
   initContactForm();
+  // modals
+  initModals();
 };
 appInit();
 

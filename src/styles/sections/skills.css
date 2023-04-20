@@ -2,9 +2,8 @@
 ============================*/
 .skills-container {
   margin-top: -1rem;
-  padding-bottom: 6rem !important;
   scroll-margin-top: 4rem;
-  background: var(--grey3);
+  background: var(--black4);
   /* background: linear-gradient(180deg, transparent 20%, var(--offsetgrey1) 90%); */
 }
 

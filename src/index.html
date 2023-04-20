@@ -151,7 +151,17 @@
   </aside>
   <!--------------------->
 
-
+  <!-- LIGHTHOUSE MODAL POPUP -->
+  <aside class="lighthouse-modal">
+    <div class="lighthouse-modal__header">
+      <span></span>
+      <button class="close-lh-btn">
+        close
+      </button>
+    </div>
+    <div class="lighthouse-modal__body"></div>
+  </aside>
+  <!--------------------->
 
 
   <!-- MAIN (intro > projects > skills > about > contact) -->
@@ -165,7 +175,6 @@
         </linearGradient>
       </defs>
     </svg>
-
 
     <!-- SECTION: INTRO -->
     <article class="section-container intro-container">
@@ -247,15 +256,14 @@
         </div> -->
       </div>
 
-
       <div class="projects-grid">
-
         <!-- GOOGLE CALENDAR -->
         <div class="project-cell col--1 project-calendar">
           <!-- PROJECT HEADER -->
           <div class="project-cell__header">
             <div class="project-cell--header__title">
-              <h3>Google Calendar Clone</h3>
+              <h3>Google Calendar 2.0</h3>
+              <p>Fully-functional | This is not just a clone, it is an improvement.</p>
             </div>
 
             <div class="project-cell--header__links">
@@ -270,12 +278,13 @@
                 <span>Live Site</span>
               </a>
             </div>
-
           </div>
 
+          <div class="project-cell__subheader">
+            <div class="sb-br"></div>
+          </div>
           <!-- PROJECT CONTENT -->
           <div class="project-cell__content"></div>
-
 
           <!-- PROJECT FOOTER -->
           <div class="project-cell__footer">
@@ -286,12 +295,28 @@
                 <p>No Dependencies</p>
               </div>
             </div>
+            <button class="project-cell--lhbtn" data-img-class="lh-gc">
+              Lighthouse: 100
+              <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </div>
 
-            <div class="project-cell--lighthouse">
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
+          <div class="project-writeup">
+            <div class="project-writeup__top">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptates.
+              </p>
+            </div>
+
+            <div class="project-writeup__toggle">
+              <button class="project-writeup__toggle--btn" data-proj-index="0">
+                SHOW MORE
+                <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+            </div>
+
+            <div class="project-writeup__more writeup-hidden">
+              ONE
             </div>
           </div>
         </div>
@@ -318,7 +343,10 @@
                 <span>Live Site</span>
               </a>
             </div>
+          </div>
 
+          <div class="project-cell__subheader">
+            <div class="sb-br"></div>
           </div>
 
           <!-- PROJECT CONTENT -->
@@ -333,11 +361,28 @@
               <h4>React – <small>Vite</small></h4>
             </div>
 
-            <div class="project-cell--lighthouse">
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
-              <span class="lighthouse-score">100</span>
+            <button class="project-cell--lhbtn" data-img-class="lh-mk">
+              Lighthouse: 100
+              <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </div>
+
+          <div class="project-writeup">
+            <div class="project-writeup__top">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptates.
+              </p>
+            </div>
+
+            <div class="project-writeup__toggle">
+              <button class="project-writeup__toggle--btn" data-proj-index="1">
+                SHOW MORE
+                <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+            </div>
+
+            <div class="project-writeup__more writeup-hidden">
+              TWO
             </div>
           </div>
         </div>
@@ -772,9 +817,15 @@
     <!--------------------->
   </main>
 
+
   <!-- Toast popup (dynamic) -->
   <aside class="toast-wrapper"></aside>
   <!--------------------->
+
+  <!-- modal overlay -->
+  <aside class="modal-ov modal-ov--hide"></aside>
+  <!------------------->
+
 
   <!-- FOOTER -->
   <footer class="footer">
