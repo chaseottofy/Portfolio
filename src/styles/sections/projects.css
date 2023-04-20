@@ -32,15 +32,15 @@
 }
 
 .project-cell {
-  min-height: 500px;
+  min-height: 600px;
   height: 60vh;
-  max-height: 800px;
-  border: 1px solid red;
+  max-height: 1000px;
   width: 100%;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border: 1px solid var(--black2);
   overflow: hidden;
   position: relative;
 }
@@ -50,8 +50,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 3rem;
-  padding: .375rem .5rem;
+  height: 4rem;
+  padding: .75rem;
 }
 
 .project-cell--header__title,
@@ -273,7 +273,7 @@
 
 @media screen and (max-width: 1020px) {
   .project-cell {
-    height: 70vh;
+    height: 80vh;
   }
 }
 
@@ -300,20 +300,25 @@
 @media screen and (max-width: 490px) {
   .project-cell {
     height: 90vh;
+    min-height: 450px;
+
   }
 
   .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight3.webp");
+    background-position: top center;
+    /* background-size: contain; */
   }
 
   .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gcdark3.webp");
+    background-position: top center;
   }
 }
 
 @media screen and (max-width: 380px) {
   .project-cell {
-    height: 95vh;
+    height: 70vh;
   }
 }
 
