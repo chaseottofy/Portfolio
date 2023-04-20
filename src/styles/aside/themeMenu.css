@@ -5,7 +5,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 1.5rem;
+  bottom: 4rem;
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
@@ -64,11 +64,11 @@
 }
 
 .theme-switch span input:checked + label svg {
-  stroke: var(--white1);
+  stroke: var(--white0);
 }
 
 .theme-switch span input:checked + label {
-  background: var(--black1);
+  background: var(--theme-btn--checked);
 }
 
 .theme-switch span:hover label svg,
@@ -78,5 +78,5 @@
 
 .theme-switch span:hover label,
 .theme-switch span:focus-visible label {
-  background: var(--white1);
+  background: var(--white0);
 }

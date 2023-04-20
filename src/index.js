@@ -98,3 +98,5 @@ appInit();
 // !!REMINDER
 // reverb thing fl studio
 // set svgs to reasonable inline size
+// width when in mobile view
+// column gap

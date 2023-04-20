@@ -124,14 +124,13 @@
   background-image: linear-gradient(180deg, var(--white1) 60%, var(--white2) 90%);
 } */
 
-
 .available-message {
   position:absolute;
   display: flex;
   justify-content: flex-start;
   left: 0;
   right: 0;
-  bottom: 1.5rem;
+  bottom: 2.5rem;
   margin: 0 auto;
   max-width: 1200px;
   padding-left: 1rem;
