@@ -2,6 +2,8 @@
 
 /*! ./form/contactForm */
 
+/*! ./styles/aside/lighthouseModal.css */
+
 /*! ./styles/aside/themeMenu.css */
 
 /*! ./styles/aside/toast.css */
@@ -45,6 +47,8 @@
 /*! ./utilities/handleDefaults */
 
 /*! ./utilities/handleHover */
+
+/*! ./utilities/handleModals */
 
 /*! ./utilities/handleScroll */
 
@@ -115,6 +119,10 @@
   \***************************************/
 
 /*!***************************************!*\
+  !*** ./src/utilities/handleModals.js ***!
+  \***************************************/
+
+/*!***************************************!*\
   !*** ./src/utilities/handleScroll.js ***!
   \***************************************/
 
@@ -149,6 +157,10 @@
 /*!*********************************************!*\
   !*** ./src/styles/sections/contactForm.css ***!
   \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/styles/aside/lighthouseModal.css ***!
+  \**********************************************/
 
 /*!********************************************************!*\
   !*** ./src/styles/gradientElements/headerGradient.css ***!
