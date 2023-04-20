@@ -101,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 2.5rem;
+  height: 3rem;
   background: var(--offsetblack2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -188,8 +188,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 2.5rem;
-  padding: .25rem .5rem;
+  height: 3rem;
+  padding: .375rem .5rem;
 }
 
 .project-cell--top__title,
@@ -197,7 +197,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-  column-gap: .5rem;
 }
 
 .project-cell--top__title h3 {
@@ -214,14 +213,13 @@
   display: flex;
   align-items: center;
   border: 1px solid var(--black2);
-  border-radius: 4px;
+  border-radius: 5px;
   font-weight: 500;
   font-family: var(--primaryFont);
   cursor: pointer;
   color: var(--white1);
   opacity: .9;
   background: transparent;
-  /* background: var(--offsetblack1); */
   box-shadow: none;
   position: relative;
   transition: all .2s ease-in-out;
@@ -234,16 +232,20 @@
   border-color: var(--blue2);
 }
 
+.project-cell--top__links a:last-child {
+  margin-left: .5rem;
+}
+
 .project-cell--top__links a span {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+  padding: 0 .25rem;
 }
 
 .project-cell--top__links a span:last-child {
-  padding: 0 .5rem;
   white-space: nowrap;
 }
 
@@ -256,15 +258,15 @@
 /* ASIDE CELL RIGHT */
 .project-cell--lighthouse {
   position: absolute;
-  top: 2.5rem;
-  bottom: 2.5rem;
+  top: 3rem;
+  bottom: 3rem;
   right: 0;
   width: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100% - 5rem);
+  height: calc(100% - 6rem);
   pointer-events: none;
   user-select: none;
 }
