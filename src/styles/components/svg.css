@@ -22,3 +22,8 @@
   height: 3.5rem;
   width: 3.5rem;
 }
+
+.svg-nofill {
+  fill: none;
+  stroke: var(--white1);
+}

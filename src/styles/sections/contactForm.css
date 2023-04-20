@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   z-index: 3;
+  background-color: var(--grey3);
   background-image: linear-gradient(
     var(--black3),
     var(--black3)),
@@ -19,6 +20,7 @@
   pointer-events: none;
   user-select: none;
   padding: .25rem;
+  display:none;
 }
 
 .contact-form--wrapper {

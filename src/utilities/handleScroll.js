@@ -3,14 +3,14 @@ const $$ = document.querySelectorAll.bind(document);
 const header = $(".header");
 
 const handleHrefScroll = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   $(`${e.target.getAttribute("href")}`).scrollIntoView({
     behavior: "smooth"
   });
 };
 
 const handleAttrScroll = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   $(`${e.target.getAttribute("data-href")}`).scrollIntoView({
     behavior: "smooth"
   });

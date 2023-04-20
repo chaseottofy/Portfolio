@@ -19,7 +19,8 @@
 
   --grey1: #818080;
   --grey2: #1c1c1c;
-  --grey3: #1b1a1a;
+  --grey3: #000;
+  /* --grey3: #1b1a1a; */
 
   --white1: #fff;
   --white2: #b7b7b7;
@@ -58,7 +59,7 @@
 
   --grey1: #999;
   --grey2: #d9d9d9;
-  --grey3: #d9d9d9;
+  --grey3: #fff;
 
   --white1: #171717;
   --white2: #4c4c4c;

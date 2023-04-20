@@ -1,6 +1,6 @@
 const $ = document.querySelector.bind(document);
 const contactMenuTime = $(".cm-left--time");
-
+// const resetHeight = () => {}
 const getTime = () => {
   return new Date().toLocaleString("en-US", {
     timeZone: "America/Denver",

@@ -16,7 +16,6 @@
 .logo--o-2 {
   height: 1.5rem;
   width: 1.5rem;
-  /* stroke: var(--header-text-before); */
   fill: var(--header-text-before);
   transition: transform .2s ease-in-out;
 }
@@ -34,7 +33,6 @@
 .logo--o-2 {
   transform: translateX(-.75rem);
 }
-
 
 .logo--t-1,
 .logo--t-2 {
@@ -70,4 +68,10 @@
 .header-logo:focus-visible .logo--t-2 {
   transform: translateX(-2.4rem);
   opacity: 1;
+}
+
+@media screen and (max-width: 320px) {
+  .header-logo {
+    display:none;
+  }
 }

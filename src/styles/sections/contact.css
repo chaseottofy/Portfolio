@@ -4,11 +4,12 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  max-width: 100vw;
   width: 100%;
   position: relative;
   padding-left: .75rem;
   padding-right: .75rem;
-  background: var(--offsetgrey1);
+  background: var(--grey3);
   z-index: 3;
 }
 
@@ -173,8 +174,8 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: url('../../images/mugshot/avatar.webp');
   border-radius: 6px;
+  background: url('../../images/mugshot/avatar.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -266,13 +267,21 @@
   display: flex;
   flex-direction: column;
   padding: 2px;
-  background: var(--offsetblack3);
   border: 1px solid var(--black2);
   width: 100%;
   height: 100%;
   border-radius: var(--gap1);
   transition: background 150ms ease-in-out;
   cursor: pointer;
+}
+
+.cm-right--top__cell .badge-github {
+  background-image: url("../../images/logos/github.svg");
+  /* background-size: contain; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* width: 100%; */
+  /* height: 100%; */
 }
 
 .cm-right--top__cell:hover {
@@ -411,6 +420,12 @@
   .contact-menu__body {
     min-height: 520px;
   }
+
+  .contact-menu,
+  .contact-menu__header {
+    max-width: 320px;
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -477,8 +492,8 @@
 
 
 
-@media screen and (max-width: 380px) {
+/* @media screen and (max-width: 380px) {
   .contact-menu__header {
     max-width: 90%;
   }
-}
+} */

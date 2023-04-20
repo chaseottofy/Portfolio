@@ -6,9 +6,9 @@
 .gradient-overlay--one,
 .gradient-overlay--two,
 .grdient-overlay--shape {
-  height: 100%;
   position: absolute;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   z-index: -1;
   margin: 0 auto;
   left: 0;

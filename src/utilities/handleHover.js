@@ -6,6 +6,7 @@ const closeContactMenu = () => {
   contactMenu.classList.remove("contact-menu--active");
   navContactBtn.firstChild.classList.remove("nav-menu--contact--active");
   window.removeEventListener("mousemove", contactMousemove);
+  window.removeEventListener("touchmove", contactMousemove, { passive: true });
   return;
 };
 
@@ -21,6 +22,7 @@ const openContactMenu = () => {
   contactMenu.classList.add("contact-menu--active");
   navContactBtn.firstChild.classList.add("nav-menu--contact--active");
   window.addEventListener("mousemove", contactMousemove);
+  window.addEventListener("touchmove", contactMousemove, { passive: true });
 };
 
 const toggleContactMenu = () => {

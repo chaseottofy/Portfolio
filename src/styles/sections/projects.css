@@ -35,6 +35,7 @@
 }
 
 .project-cell {
+  min-height: 500px;
   height: 60vh;
   max-height: 800px;
   width: 100%;
@@ -90,6 +91,9 @@
 
 /* PROJECT CELL ASIDE CONTENT
 ============================*/
+
+/* ASIDE CELL BOTTOM  */
+/* STACK USED */
 .project-cell--bottom {
   position: absolute;
   bottom: 0;
@@ -97,12 +101,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3rem;
+  height: 2.5rem;
   background: var(--offsetblack2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 .5rem;
 }
 
 .project-cell--bottom__stack {
@@ -113,10 +117,11 @@
 }
 
 .stack-vanilla {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   position: relative;
 }
+
 .stack-vanilla::before {
   content: "";
   position: absolute;
@@ -125,8 +130,8 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   background: black;
 }
 
@@ -151,8 +156,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .stack-react svg {
@@ -170,60 +175,103 @@
   opacity: .9;
 }
 
-.project-cell--bottom__links {
+/* ASIDE CELL TOP */
+/* title + links */
+.project-cell--top {
+  background: var(--offsetblack2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
-  background: var(--black2);
-  height: 2rem;
-  width: 30%;
-  border-radius: 8px;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding: .25rem .5rem;
 }
 
-.project-cell--bottom__links a {
+.project-cell--top__title,
+.project-cell--top__links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  column-gap: .5rem;
+}
+
+.project-cell--top__title h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -.5px;
+}
+
+.project-cell--top__links a {
   font-size: .75rem;
   height: 100%;
   width: 100%;
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 0;
+  border: 1px solid var(--black2);
+  border-radius: 4px;
   font-weight: 500;
   font-family: var(--primaryFont);
   cursor: pointer;
   color: var(--white1);
   opacity: .9;
-  background: var(--offsetblack1);
+  background: transparent;
+  /* background: var(--offsetblack1); */
   box-shadow: none;
   position: relative;
   transition: all .2s ease-in-out;
+  padding: 0 .5rem;
 }
 
-.project-cell--bottom__links a:hover {
-  background: var(--white1);
-  color: var(--black0);
+.project-cell--top__links a:hover,
+.project-cell--top__links a:focus-visible {
+  background: var(--black1);
+  border-color: var(--blue2);
 }
 
+.project-cell--top__links a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.project-cell--top__links a span:last-child {
+  padding: 0 .5rem;
+  white-space: nowrap;
+}
+
+.project-cell--top__links svg {
+  height: 1rem;
+  width: 1rem;
+  stroke: var(--white1);
+}
+
+/* ASIDE CELL RIGHT */
 .project-cell--lighthouse {
   position: absolute;
-  top: 0;
+  top: 2.5rem;
+  bottom: 2.5rem;
   right: 0;
   width: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100% - 2.825rem);
-  background: transparent;
-  opacity: 1;
+  height: calc(100% - 5rem);
   pointer-events: none;
   user-select: none;
-  transition: all .2s ease-in-out;
 }
 
 .lighthouse-score {
   font-family: monospace;
-  font-size: .725rem;
+  font-size: .625rem;
   font-weight: 500;
   border: 2px solid #0ccd66;
   background: #1f3328;
@@ -257,3 +305,29 @@
   background-position: center;
   background-repeat: no-repeat;
 } */
+
+/*
+*/
+@media screen and (max-width: 1020px) {
+  .project-cell {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .project-cell {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .project-cell {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .project-cell {
+    height: 95vh;
+  }
+}
