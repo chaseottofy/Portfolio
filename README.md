@@ -2,8 +2,8 @@
 
 work in progress
 
-![screen](current.png)
+![screen](current1.jpg)
 
 ## Popup Contact Menu
 
-![screen2](current2.png)
+![screen2](current2.jpg)
