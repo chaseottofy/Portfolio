@@ -52,7 +52,10 @@
 
 .section-subtitle {
   line-height: 1.375;
-  color: var(--white2);
+  color: var(--white1);
+  opacity: .9;
+  font-size: .875rem;
+  font-weight: 500;
 }
 
 /* @media screen and (max-width: 768px) {} */

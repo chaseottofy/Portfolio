@@ -32,15 +32,31 @@ const handleFormChange = e => {
   }
 };
 
+const createTimestamp = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+  return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+};
+
+const createSuccessMessage = () => {
+  const successMessage = document.createElement("div");
+  successMessage.classList.add("success-message");
+  const sendingText = document.createElement("span");
+  sendingText.textContent = "Sending Messgage...";
+  formContainer.classList.add("disable-form");
+  successMessage.appendChild(sendingText);
+  form.appendChild(successMessage);
+};
+
 const handleFormSubmit = e => {
   e.preventDefault();
+  createSuccessMessage();
   let data = new FormData(form);
-  // console.log(
-  //   data.get("messageName"), 
-  //   data.get("contactMethod"), 
-  //   data.get("messageContactVal"), 
-  //   data.get("messageVal"),
-  // );
 
   fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
     method: "POST",
@@ -49,8 +65,10 @@ const handleFormSubmit = e => {
     .then(res => res.text())
     .then(data => console.log(data))
     .then(() => {
-      createToast("Submitted!");
+      createToast("Message Sent!");
       form.reset();
+      $(".success-message").remove();
+      formContainer.classList.remove("disable-form");
     });
 };
 
@@ -61,5 +79,11 @@ const initContactForm = () => {
   form.addEventListener("input", handleFormChange);
   form.addEventListener("submit", (e) => handleFormSubmit(e));
 };
-
 export default initContactForm;
+
+// console.log(
+//   data.get("messageName"),
+//   data.get("contactMethod"),
+//   data.get("messageContactVal"),
+//   data.get("messageVal"),
+// );

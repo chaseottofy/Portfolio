@@ -18,7 +18,11 @@
   background-position: 0 0, 0 0;
   background-repeat: no-repeat;
   padding: .25rem;
-  /* display:none; */
+}
+
+.disable-form {
+  pointer-events: none;
+  user-select: none;
 }
 
 .contact-form--wrapper {
@@ -41,6 +45,29 @@
   width:100%;
   border: 1px solid transparent;
   margin: 0 auto;
+  position: relative;
+  overflow:hidden;
+}
+
+.success-message {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey3);
+  font-size: .825rem;
+  color: var(--white1);
+}
+
+.success-message span {
+  animation: pulse 1.5s infinite;
 }
 
 .form-group label {
@@ -159,25 +186,4 @@
 
 .btn-allow:hover {
   background: var(--grey2);
-}
-
-/* CONTACT FORM ASIDE
-=====================================*/
-
-.contact-form--aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  height: 100%;
-  width: 100%;
-  font-size: .75rem;
-  color: var(--white2);
-}
-
-@media screen and (max-width: 840px) {
-  .contact-form--wrapper {
-    grid-template-columns:1fr;
-  }
 }

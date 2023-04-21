@@ -772,7 +772,10 @@
     <article class="contact-form--container">
 
       <div class="section-title">
-        <h2>Send a message</h2>
+        <h2>Send Direct Message</h2>
+        <h3 class="section-subtitle">
+          Will get back to you as soon as possible.
+        </h3>
       </div>
 
       <div class="contact-form--wrapper">
@@ -785,33 +788,31 @@
 
           <div class="form-group">
             <label for="contact-method">Choose the best for response *</label>
+
             <div class="contact-method-group">
               <span>
                 <input class="contact-option--input" id="contact-method--email" type="radio" name="contactMethod" value="email" checked>
                 <label for="contact-method--email">Email</label>
               </span>
+
               <span>
                 <input class="contact-option--input" id="contact-method--phone" type="radio" name="contactMethod" value="phone" aria-label="">
                 <label for="contact-method--phone">Phone</label>
               </span>
             </div>
 
-            <input type="email" class="form-contact--input" name="messageContactVal" placeholder="Enter your email address" required>
+            <input type="email" class="form-contact--input" name="messageContactVal" placeholder="Enter your email address" minlength="1" maxLength="200" required>
           </div>
 
           <div class="form-group">
             <label for="form-message">Message *</label>
-            <textarea id="form-message" class="form-message--input" name="messageVal" rows="4" required></textarea>
+            <textarea id="form-message" class="form-message--input" name="messageVal" rows="4" maxlength="500" minlength="1" required></textarea>
           </div>
 
           <div class="form-group form-group--submit">
-            <input class="submit-form--btn" type="submit" value="Submit" disabled>
+            <button class="submit-form--btn" type="submit" disabled>Submit</button>
           </div>
         </form>
-
-        <div class="contact-form--aside">
-          aside content
-        </div>
       </div>
     </article>
     <!--------------------->

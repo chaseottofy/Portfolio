@@ -39,7 +39,7 @@ const createToast = (text) => {
 
   const message = document.createElement("span");
   message.classList.add("toast-message");
-  message.textContent = `copied – ${text}`;
+  message.textContent = `${text}`;
 
   wrapper.append(progressbar, progresstrack, message);
   toastWrapper.prepend(wrapper);
