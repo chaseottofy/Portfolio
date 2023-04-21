@@ -13,7 +13,7 @@
 
   --black0: #000;
   --black1: #0c0c0c;
-  --black2: #212121;
+  --black2: #222;
   --black3: #050505;
   --black4: #090909;
 
@@ -47,6 +47,9 @@
     rgba(0, 0, 0, .1) 0 1px 3px 0;
 
   --theme-btn--checked: rgba(0, 0, 0, .4);
+
+  --btn-text: #fff;
+  --btn-bg: #000;
 }
 
 .theme__light {
@@ -56,7 +59,8 @@
 
   --black0: #fff;
   --black1: #fafafa;
-  --black2: #e5e5e5;
+  --black2: #eaeaea;
+  /* --black2: #e5e5e5; */
   --black3: #fff;
   --black4: #fafafa;
 
@@ -89,4 +93,7 @@
     rgba(0, 0, 0, .1) 0 1px 3px 0;
 
   --theme-btn--checked: rgba(255, 255, 255, .9);
+
+  --btn-text: #fff;
+  --btn-bg: #000;
 }

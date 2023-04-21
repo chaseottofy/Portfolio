@@ -315,6 +315,11 @@ a[disabled] {
   display: none;
 }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 0 0 0 2px var(--white1);
+}
 /* adaptive font sizes
 =====================================*/
 @media screen and (max-width: 1020px) {

@@ -54,6 +54,8 @@
 
 /*! ./utilities/handleHover */
 
+/*! ./utilities/handleImageExpand */
+
 /*! ./utilities/handleModals */
 
 /*! ./utilities/handleScroll */
@@ -171,6 +173,10 @@
 /*!*******************************************!*\
   !*** ./src/styles/aside/hoverContext.css ***!
   \*******************************************/
+
+/*!********************************************!*\
+  !*** ./src/utilities/handleImageExpand.js ***!
+  \********************************************/
 
 /*!*********************************************!*\
   !*** ./src/styles/sections/contactForm.css ***!

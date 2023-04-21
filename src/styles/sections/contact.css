@@ -8,7 +8,7 @@
   position: relative;
   padding-left: .75rem;
   padding-right: .75rem;
-  background: var(--black4);
+  background: var(--black0);
   z-index: 3;
 }
 
@@ -146,7 +146,7 @@
 /* LEFT BODY SECTION */
 .cm-left__body {
   position: relative;
-  padding: 1rem 0;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .cm-left__body-avatar {
@@ -155,8 +155,8 @@
   overflow: hidden;
   position: relative;
   border-radius: var(--gap1);
-  /* background: url('../../images/mugshot/avatar.webp'); */
-  background: url('../../images/mugshot/avatar1.webp');
+  background: url('../../images/mugshot/avatar.webp');
+  filter: contrast(1.2) brightness(.9);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -251,7 +251,6 @@
   background: var(--black4);
   width: 100%;
   height: 100%;
-  transition: background 150ms ease-in-out;
   cursor: pointer;
 }
 
@@ -339,6 +338,7 @@
 
 .cm-right--top__cell:hover {
   background: var(--black3);
+  transition: background 150ms ease-in-out;
 }
 
 .cm-right--top__cell:hover .badge-top--profile span {
@@ -379,7 +379,8 @@
   align-items: center;
   height: 1.75rem;
   width: 100%;
-  font-size: .825rem;
+  font-size: .875rem;
+  letter-spacing: -.5px;
   font-weight: 500;
 }
 

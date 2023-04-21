@@ -85,15 +85,27 @@
   border-radius: 1rem;
 }
 
-.nav-menu li a:hover {
-  opacity: .8;
-  background: var(--white1);
-  color: var(--black0);
+.nav-menu li a:hover,
+.nav-menu li button:hover {
+  color: #000;
+  background: #fff;
 }
+
+.header-filter .nav-menu li a:hover,
+.header-filter .nav-menu li button:hover {
+  color: var(--black0);
+  background: var(--white1);
+}
+
+/* .nav-menu li a:hover {
+  color: var(--black0);
+  background: var(--white1);
+} */
 
 .nav-menu li a:focus-visible,
 .nav-menu li button:focus-visible {
-  background: var(--offsetgrey1);
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--white1);
 }
 
 .nav-menu li button svg {
@@ -123,11 +135,5 @@
 @media screen and (max-width: 560px) {
   .nav-menu li button svg {
     display: none;
-  }
-
-  .nav-menu li button:hover {
-    opacity: .8;
-    background: var(--white1);
-    color: var(--black0);
   }
 }

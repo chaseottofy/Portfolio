@@ -83,7 +83,14 @@ import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
 import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
+import initImageExpand from "./utilities/handleImageExpand";
+// import initLayout from "./utilities/handleLayout";
 /***************************************/
+
+// CLICK PROJECT IMAGE TO EXPAND / COLLAPSE FULL IMAGE
+// TAB INDEX IS FUCKED
+
+
 const appInit = () => {
   // default time / date / etc
   initDefaults();
@@ -99,6 +106,8 @@ const appInit = () => {
   initContactForm();
   // modals
   initModals();
+  // expand images
+  initImageExpand();
 };
 appInit();
 

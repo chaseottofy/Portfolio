@@ -10,7 +10,7 @@
   padding-top: 1rem;
   padding-left: 0;
   padding-right: 0;
-  display:flex;
+  display: flex;
   flex-direction: column;
   height: 100%;
   max-width: 1200px;
@@ -20,6 +20,7 @@
 }
 
 .project-cell {
+  box-shadow: var(--bs-md);
   background: var(--black4);
   width: 100%;
   border-radius: 1rem;
@@ -29,8 +30,7 @@
   border: 1px solid var(--black2);
   overflow: hidden;
   position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* HEADER
@@ -39,8 +39,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 4rem;
-  padding: .75rem;
+  height: 5rem;
+  padding: .25rem .75rem;
   align-items: center;
 }
 
@@ -75,30 +75,34 @@
   width: 100%;
   height: 100%;
   max-height: 2rem;
-  margin: 0;
+  margin: 0 .25rem;
   display: flex;
   border: 1px solid var(--black2);
   border-radius: 5px;
   font-weight: 500;
   font-family: var(--primaryFont);
   cursor: pointer;
-  color: var(--white1);
+  color: var(--btn-text);
+  background: var(--btn-bg);
   opacity: .9;
-  background: transparent;
   box-shadow: none;
   position: relative;
-  transition: all .2s ease-in-out;
   padding: 0 .25rem;
 }
 
 .project-cell--header__links a:hover,
 .project-cell--header__links a:focus-visible {
-  background: var(--black1);
-  border-color: var(--blue2);
+  background: var(--btn-text);
+  color: var(--btn-bg);
+  transition: background .2s ease-in-out, color .2s ease-in-out;
+  /* background: var(--black1); */
+  /* border-color: var(--blue2); */
 }
 
-.project-cell--header__links a:last-child {
-  margin-left: .5rem;
+.project-cell--header__links a:hover svg,
+.project-cell--header__links a:focus-visible svg {
+  stroke: var(--btn-bg);
+  transition: stroke .2s ease-in-out;
 }
 
 .project-cell--header__links a span {
@@ -114,41 +118,57 @@
 .project-cell--header__links a span svg {
   height: 100%;
   width: 1rem;
-  stroke: var(--white1);
+  stroke: var(--btn-text);
   fill: none;
 }
 
 /* SUBHEADER
 ============================*/
 .project-cell__subheader {
+  display: none;
+  /* display: flex; */
+  /* height: 3.5rem; */
   font-size: .75rem;
   width: 100%;
-  display: flex;
   flex-direction: column;
-  height: 3.5rem;
+  height: 1rem;
   padding: 0 .5rem 1rem .5rem;
 }
-.project-cell__subheader .sb-br {
+
+/* .project-cell__subheader .sb-br {
   height: .5rem;
   margin-bottom: .25rem;
   border-top: 2px solid var(--black2);
   width: 30%;
-}
+} */
 
 /* CONTENT
 ============================*/
 .project-cell__content {
-  /* min-height: 600px; */
-  /* height: 100%; */
-  /* max-height: 1000px; */
-  max-height: 600px;
-  min-height: 600px;
+  max-height: 500px;
+  min-height: 500px;
   height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 100%;
   position: relative;
+  cursor: pointer;
+}
+
+.project-cell__content--overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background: var(--offsetblack4);
+  opacity: 0;
+}
+
+.project-cell__content:hover .project-cell__content--overlay {
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
 }
 
 /* PROJECT IMAGES
@@ -305,6 +325,8 @@
   z-index: 1;
   border: 1px solid var(--black2);
   background: var(--black1);
+  /* box-shadow: var(--bs-md); */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
   border-radius: .8rem;
   color: var(--white2);
   display: flex;
@@ -315,7 +337,7 @@
   cursor: pointer;
 }
 
-.project-writeup__toggle--btn-active svg{
+.project-writeup__toggle--btn-active svg {
   transform: rotate(180deg);
 }
 
@@ -332,7 +354,6 @@
   color: var(--white1);
 }
 
-
 .project-writeup__more {
   font-size: .875rem;
   padding: .75rem;
@@ -341,6 +362,7 @@
   height: auto;
   transition: all .2s ease-in-out;
 }
+
 .writeup-hidden {
   display: none;
   max-height: 0;
@@ -359,7 +381,6 @@
   font-family: monospace;
   font-size: .825rem;
   font-weight: 500;
-  background: #1f3328;
   border-radius: 1rem;
   padding: 0 .75rem;
   white-space: nowrap;
@@ -367,6 +388,7 @@
   display: flex;
   justify-content: center;
   color: #0ccd66;
+  background: #1f3328;
 }
 
 .project-cell--lhbtn:hover {
@@ -385,19 +407,59 @@
   transform: rotate(180deg);
 }
 
+/*  */
+
+/*  */
+
+/* SMALL PROJECTS
+============================*/
+.projects-small {
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  column-gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-small .project-cell__header {
+  height: 3rem;
+}
+
+.projects-small h3 {
+  font-size: .825rem;
+}
+
+.projects-small h4 {
+  font-size: .75rem;
+}
+
+.projects-small .project-cell__content {
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.project-react-showcase .project-cell__content {
+  background-image: url("../../images/projects/rc1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.project-vanilla-showcase .project-cell__content {
+  background-image: url("../../images/projects/vc1.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
 @media screen and (max-width: 1020px) {
-  /* .project-cell__content {height: 80vh;} */
+  .projects-small {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (max-width: 640px) {
-  .col--2-a,
-  .col--2-b {
-    grid-column: 1 / span 4;
-  }
-
-  /* .project-cell__content {height: 80vh;} */
-
   .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight2.webp");
   }
@@ -405,24 +467,30 @@
   .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gcdark2.webp");
   }
+
+  .projects-small .project-cell__content {
+    max-height: 300px;
+    min-height: 300px;
+  }
 }
 
 @media screen and (max-width: 490px) {
-  /* .project-cell__content {height: 90vh;} */
-
   .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight3.webp");
     background-position: top center;
     background-size: cover;
   }
-  
+
   .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gcdark3.webp");
     background-position: top center;
     background-size: cover;
   }
+
+  .projects-small .project-cell__content {
+    max-height: 220px;
+    min-height: 220px;
+  }
 }
 
-@media screen and (max-width: 380px) {
-  /* .project-cell__content {height: 70vh;} */
-}
+/* @media screen and (max-width: 380px) {} */
