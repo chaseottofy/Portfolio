@@ -70,7 +70,6 @@ import "./styles/footer.css";
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
 import "./styles/aside/lighthouseModal.css";
-
 /***************************************/
 
 
@@ -80,7 +79,7 @@ import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
-import initContactForm from "./form/contactForm";
+import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
 /***************************************/
 const appInit = () => {
