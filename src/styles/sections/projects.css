@@ -43,25 +43,26 @@
   position: relative;
 }
 
-/* CELL HEADER */
+/* HEADER
+============================*/
 .project-cell__header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   height: 4rem;
   padding: .75rem;
+  align-items: center;
 }
 
 .project-cell--header__title,
 .project-cell--header__links {
   display: flex;
   height: 100%;
+  align-items: center;
 }
 
-
 .project-cell--header__title {
-  flex-direction: column;
-  padding-right: 1.5rem;
+  padding-right: 1rem;
 }
 
 .project-cell--header__title h3 {
@@ -75,16 +76,17 @@
 }
 
 .project-cell--header__links {
-  align-items: baseline;
+  align-items: center;
+  height: 100%;
 }
 
 .project-cell--header__links a {
   font-size: .75rem;
-  height: 2.25rem;
   width: 100%;
+  height: 100%;
+  max-height: 2rem;
   margin: 0;
   display: flex;
-  align-items: center;
   border: 1px solid var(--black2);
   border-radius: 5px;
   font-weight: 500;
@@ -96,7 +98,7 @@
   box-shadow: none;
   position: relative;
   transition: all .2s ease-in-out;
-  padding: 0 .5rem;
+  padding: 0 .25rem;
 }
 
 .project-cell--header__links a:hover,
@@ -116,44 +118,35 @@
   width: 100%;
   height: 100%;
   padding: 0 .25rem;
-}
-
-.project-cell--header__links a span:last-child {
   white-space: nowrap;
 }
 
-.project-cell--header__links svg {
-  height: 1rem;
+.project-cell--header__links a span svg {
+  height: 100%;
   width: 1rem;
   stroke: var(--white1);
+  fill: none;
 }
 
+/* SUBHEADER
+============================*/
 .project-cell__subheader {
   font-size: .75rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 2rem;
-  padding: .875rem;
+  height: 3.5rem;
+  padding: 0 .5rem 1rem .5rem;
 }
-
-.project-cell__subheader p:first-child {
-  font-weight: 500;
-  font-size: 1rem;
-  opacity: .9;
-  line-height: 1.5rem;
-}
-
-/* .project-cell__subheader small {} */
-
 .project-cell__subheader .sb-br {
-  height: .75rem;
-  margin-bottom: .5rem;
-  border-bottom: 2px solid var(--black2);
-  width: 40%;
+  height: .5rem;
+  margin-bottom: .25rem;
+  border-top: 2px solid var(--black2);
+  width: 30%;
 }
 
-/* CELL CONTENT */
+/* CONTENT
+============================*/
 .project-cell__content {
   min-height: 600px;
   height: 60vh;

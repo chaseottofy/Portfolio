@@ -4,11 +4,15 @@ const $$ = document.querySelectorAll.bind(document);
 const modalOverlay = $(".modal-ov");
 const body = $(".body");
 
+const LHModal = $(".lighthouse-modal");
+const LHBody = $(".lighthouse-modal__body");
+const LHBtns = $$(".project-cell--lhbtn");
+const openLHBtns = $$(".project-cell--lhbtn");
+
+const SMBtns = $$(".project-writeup__toggle--btn");
+const SMMore = $$(".project-writeup__more");
+
 const handleLHModal = () => {
-  const LHModal = $(".lighthouse-modal");
-  const LHBody = $(".lighthouse-modal__body");
-  const LHBtns = $$(".project-cell--lhbtn");
-  const openLHBtns = $$(".project-cell--lhbtn");
 
   const closeLH = e => {
     if (e.target.closest(".project-cell--lhbtn")) return;
@@ -34,8 +38,7 @@ const handleLHModal = () => {
 };
 
 const handleProjectShowMore = () => {
-  const SMBtns = $$(".project-writeup__toggle--btn");
-  const SMMore = $$(".project-writeup__more");
+
 
   const toggleSM = e => {
     const idx = parseInt(e.target.getAttribute("data-proj-index"));

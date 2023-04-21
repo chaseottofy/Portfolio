@@ -1,3 +1,4 @@
+import createToast from "../utilities/createToast";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const form = $(".contact-form");
@@ -8,7 +9,6 @@ const messageInput = $(".form-message--input");
 const submitBtn = $(".submit-form--btn");
 const contactOptions = $$(".contact-option--input");
 const formContainer = $(".contact-form--container");
-
 
 const handleSelectedContactMethod = e => {
   const selectedOption = e.target.value;
@@ -33,23 +33,33 @@ const handleFormChange = e => {
 };
 
 const handleFormSubmit = e => {
-  e.target.preventDefault();
-  const formData = new FormData(form);
-  const data = {
-    name: formData.get("form-name"),
-    contactMethod: formData.get("contact-method"),
-    contactValue: formData.get("contact-value"),
-    message: formData.get("form-message"),
-  };
-};
+  e.preventDefault();
+  let data = new FormData(form);
+  // console.log(
+  //   data.get("messageName"), 
+  //   data.get("contactMethod"), 
+  //   data.get("messageContactVal"), 
+  //   data.get("messageVal"),
+  // );
 
+  fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
+    method: "POST",
+    body: data,
+  })
+    .then(res => res.text())
+    .then(data => console.log(data))
+    .then(() => {
+      createToast("Submitted!");
+      form.reset();
+    });
+};
 
 const initContactForm = () => {
   contactOptions.forEach((option) => {
     option.addEventListener("change", handleSelectedContactMethod);
   });
   form.addEventListener("input", handleFormChange);
-  // submitBtn.addEventListener("submit", (e) => handleFormSubmit(e));
+  form.addEventListener("submit", (e) => handleFormSubmit(e));
 };
 
 export default initContactForm;

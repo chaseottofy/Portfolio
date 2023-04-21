@@ -44,6 +44,7 @@
  * <footer />
  * --------------------------------
  */
+
 import "./styles/root.css";
 import "./styles/themes.css";
 
@@ -86,7 +87,7 @@ const appInit = () => {
   initDefaults();
   // set default theme / toggle theme
   initTheme();
-  // copy phone # / emai;
+  // copy phone # / email;
   initCopyElements();
   // scroll to articles / top of page
   initScroll();

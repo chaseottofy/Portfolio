@@ -278,6 +278,18 @@ a[disabled] {
   }
 }
 
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /*attach to body - disable all transition/animation*/
 .disable-transitions * {
   -webkit-transition: none !important;

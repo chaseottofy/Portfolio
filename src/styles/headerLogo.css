@@ -39,10 +39,9 @@
   height: 1.75rem;
   width: 1.75rem;
   stroke: var(--header-text-before);
-  opacity: .5;
+  opacity: 0;
   transition: all .2s ease-in-out;
   stroke-width: 1.25;
-  display: none;
 }
 
 .logo--t-1 {
@@ -50,23 +49,23 @@
 }
 
 .logo--t-2 {
-  transform: translateX(-2.75rem);
+  transform: translateX(-3.25rem);
 }
 
 .header-logo:hover .logo--o-2,
 .header-logo:focus-visible .logo--o-2 {
-  transform: translateX(1.35rem);
+  transform: translateX(1.75rem);
 }
 
 .header-logo:hover .logo--t-1,
 .header-logo:focus-visible .logo--t-1 {
-  transform: translateX(-1.75rem);
+  transform: translateX(-2rem);
   opacity: 1;
 }
 
 .header-logo:hover .logo--t-2,
 .header-logo:focus-visible .logo--t-2 {
-  transform: translateX(-2.4rem);
+  transform: translateX(-2.75rem);
   opacity: 1;
 }
 
