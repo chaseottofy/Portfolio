@@ -4,28 +4,27 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 180px;
-  height: auto;
-  margin: 0 auto;
+  height: 120px;
+  margin-top: auto;
   width: 100%;
+  position: relative;
 }
 
 .footer-container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   max-width: 1200px;
   width: 60%;
   margin: 0 auto;
-  min-height: 100%;
   height: 100%;
   padding: 0 1rem;
-  position:relative;
+  position: relative;
 }
 
 .footer-top {
   /* border-top: 1px solid var(--black2); */
   height: 100px;
-  display:flex;
+  display: flex;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
@@ -33,7 +32,7 @@
 }
 
 .footer-top--message {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
@@ -43,7 +42,7 @@
 }
 
 .footer-bottom {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;

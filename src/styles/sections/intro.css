@@ -11,8 +11,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  /* padding-left: 2rem; */
-  /* padding-right: 2rem; */
 }
 
 .intro-header__title,

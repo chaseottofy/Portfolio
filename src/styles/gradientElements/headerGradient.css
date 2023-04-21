@@ -2,12 +2,9 @@
 
 /* GRADIENT (under header)
 ============================*/
-.gradient,
-.gradient-overlay--one,
-.gradient-overlay--two,
-.grdient-overlay--shape {
+.gradient-overlay--one {
   position: absolute;
-  height: 100vh;
+  height: calc(100vh + 2rem);
   width: 100vw;
   z-index: -1;
   margin: 0 auto;
@@ -15,6 +12,13 @@
   right: 0;
   pointer-events: none;
   user-select: none;
+}
+
+.gradient-overlay--one {
+  background:
+    linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #000000 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 0.01%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #FF0000 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #110055 100%);
+  background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge, normal;
+  margin-top: -6rem;
 }
 
 /* .gradient {
@@ -27,22 +31,6 @@
   border-radius: 50%;
   filter: blur(50px);
 } */
-
-/* .gradient-overlay--one {
-
-} */
-
-.gradient-overlay--one {
-  background: linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #000000 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 0.01%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #FF0000 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #110055 100%);
-  background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge, normal;
-  margin-top: -4rem;
-  /* filter: grayscale(.5) invert(1) opacity(.5); */
-  /* transform: translateY(-60%);
-  background-image: var(--headerBgBefore);
-  width: 100vw;
-  max-width: 1200px;
-  height: 100%; */
-}
 
 /* .gradient-overlay--two {
   transform: translateY(-8rem);
@@ -75,4 +63,28 @@
   transform: translateX(-50%);
   user-select: none;
   will-change: filter;
+} */
+
+/* .gradient-colors {
+  --gblue1: #00069F;
+  --gblue2: #2400FF;
+  --gblue3: #0500FF;
+
+  --ggreen1: #69D200;
+  --ggreen2: #8CFF18;
+  --ggreen3: #00FF19;
+  --ggreen4: #24FF00;
+
+  --gpurple1: #8000FF;
+  --gpurple2: #6C0075;
+  --gpurple3: #EB00FF;
+  --gpurple4: #970091;
+
+  --gblack1: #120010;
+  --gblack2: #000000;
+  --gblack3: #32003A;
+  --gblack4: #110055;
+
+  --gred1: #FF0000;
+  --gred2: #FF4040;
 } */

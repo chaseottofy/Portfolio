@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
   max-width: 100vw;
   width: 100%;
   position: relative;
@@ -14,6 +14,7 @@
 }
 
 .contact-menu {
+  display: flex;
   position: fixed;
   top: 3rem;
   left: 0;
@@ -22,7 +23,6 @@
   max-width: 400px;
   width: 90%;
   height: 400px;
-  display: flex;
   border-radius: 14px;
   background: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0);
@@ -178,6 +178,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: .1;
 }
 
 .theme__dark .cm-left__body-avatar {
@@ -185,6 +186,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: .1;
 }
 
 /* ---------------- */

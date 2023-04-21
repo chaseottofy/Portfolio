@@ -1,34 +1,22 @@
 /* SECTION: PROJECTS
 ============================*/
 .projects-container {
+  width: 100%;
   scroll-margin-top: 4rem;
 }
 
 .projects-grid {
   position: relative;
   padding-top: 1rem;
-  display: grid;
   padding-left: 0;
   padding-right: 0;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 1fr;
+  display:flex;
+  flex-direction: column;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   padding: 0 1rem;
-  row-gap: 3rem;
-}
-
-.col--1 {
-  grid-column: 1 / span 4;
-}
-
-.col--2-a {
-  grid-column: 1 / span 2;
-}
-
-.col--2-b {
-  grid-column: 3 / span 4;
 }
 
 .project-cell {
@@ -41,6 +29,8 @@
   border: 1px solid var(--black2);
   overflow: hidden;
   position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 /* HEADER
@@ -148,9 +138,12 @@
 /* CONTENT
 ============================*/
 .project-cell__content {
+  /* min-height: 600px; */
+  /* height: 100%; */
+  /* max-height: 1000px; */
+  max-height: 600px;
   min-height: 600px;
-  height: 60vh;
-  max-height: 1000px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -394,21 +387,16 @@
 
 
 @media screen and (max-width: 1020px) {
-  .project-cell__content {
-    height: 80vh;
-  }
+  /* .project-cell__content {height: 80vh;} */
 }
 
 @media screen and (max-width: 640px) {
-
   .col--2-a,
   .col--2-b {
     grid-column: 1 / span 4;
   }
 
-  .project-cell__content {
-    height: 80vh;
-  }
+  /* .project-cell__content {height: 80vh;} */
 
   .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight2.webp");
@@ -420,10 +408,7 @@
 }
 
 @media screen and (max-width: 490px) {
-  .project-cell__content {
-    height: 90vh;
-    min-height: 450px;
-  }
+  /* .project-cell__content {height: 90vh;} */
 
   .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight3.webp");
@@ -439,7 +424,5 @@
 }
 
 @media screen and (max-width: 380px) {
-  .project-cell__content {
-    height: 70vh;
-  }
+  /* .project-cell__content {height: 70vh;} */
 }
