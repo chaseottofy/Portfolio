@@ -70,6 +70,8 @@ import "./styles/footer.css";
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
 import "./styles/aside/lighthouseModal.css";
+import "./styles/spinner.css";
+import "./styles/aside/hoverContext.css";
 /***************************************/
 
 

@@ -38,7 +38,7 @@
 
 .header-filter .header-nav .nav-menu li button,
 .header-filter .header-nav .nav-menu li a {
-  background:transparent;
+  background: transparent;
   color: var(--white1);
 }
 
@@ -67,10 +67,10 @@
 
 .nav-menu li button,
 .nav-menu li a {
-  font-size: .8rem;
+  font-size: .875rem;
   height: 100%;
   width: 100%;
-  padding: 0 .75rem;
+  padding: 0 1rem;
   margin: 0;
   display: flex;
   align-items: center;
@@ -87,8 +87,8 @@
 
 .nav-menu li a:hover {
   opacity: .8;
-  background: var(--black0);
-  color: var(--white1);
+  background: var(--white1);
+  color: var(--black0);
 }
 
 .nav-menu li a:focus-visible,
@@ -117,7 +117,17 @@
 @media screen and (max-width: 640px) {
   .nav-menu li {
     padding: .375rem .125rem;
-  } 
+  }
 }
 
-/* @media screen and (max-width: 320px) {} */
+@media screen and (max-width: 560px) {
+  .nav-menu li button svg {
+    display: none;
+  }
+
+  .nav-menu li button:hover {
+    opacity: .8;
+    background: var(--white1);
+    color: var(--black0);
+  }
+}

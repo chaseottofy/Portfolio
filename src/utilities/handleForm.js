@@ -1,4 +1,5 @@
-import createToast from "../utilities/createToast";
+import createToast from "../factory/createToast";
+import createSpinner from "../factory/createSpinner"
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const form = $(".contact-form");
@@ -9,6 +10,7 @@ const messageInput = $(".form-message--input");
 const submitBtn = $(".submit-form--btn");
 const contactOptions = $$(".contact-option--input");
 const formContainer = $(".contact-form--container");
+const formWrapper = $(".contact-form--wrapper");
 
 const handleSelectedContactMethod = e => {
   const selectedOption = e.target.value;
@@ -46,11 +48,9 @@ const createTimestamp = () => {
 const createSuccessMessage = () => {
   const successMessage = document.createElement("div");
   successMessage.classList.add("success-message");
-  const sendingText = document.createElement("span");
-  sendingText.textContent = "Sending Messgage...";
-  formContainer.classList.add("disable-form");
-  successMessage.appendChild(sendingText);
-  form.appendChild(successMessage);
+  successMessage.appendChild(createSpinner());
+  formWrapper.classList.add("disable-form");
+  formWrapper.appendChild(successMessage);
 };
 
 const handleFormSubmit = e => {
@@ -68,7 +68,7 @@ const handleFormSubmit = e => {
       createToast("Message Sent!");
       form.reset();
       $(".success-message").remove();
-      formContainer.classList.remove("disable-form");
+      formWrapper.classList.remove("disable-form");
     });
 };
 
@@ -77,7 +77,7 @@ const initContactForm = () => {
     option.addEventListener("change", handleSelectedContactMethod);
   });
   form.addEventListener("input", handleFormChange);
-  form.addEventListener("submit", (e) => handleFormSubmit(e));
+  form.addEventListener("submit", handleFormSubmit);
 };
 export default initContactForm;
 

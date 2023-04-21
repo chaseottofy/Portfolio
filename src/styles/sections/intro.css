@@ -15,31 +15,31 @@
 
 .intro-header__title,
 .intro-header__subtitle {
-  position:relative;
-  z-index:2;
+  position: relative;
+  z-index: 2;
 }
 
 /* TITLE (NAME)
 ============================*/
 .intro-header__title {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   text-align: center;
   color: var(--header-text-before);
   font-weight: 700;
-  transform: scale(.9, .75);
+  transform: scaleY(.85);
   cursor: help;
   margin-top: 7rem;
 }
 
 .intro-header__title:hover {
-  background: rgba(255,255,255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.intro-header__title:hover::after {
+.intro-header__title:hover:after {
   content: "(auto-fee)";
   position: absolute;
-  bottom:1.5rem;
-  right:0;
+  bottom: 1.375rem;
+  right: 0;
   transform: translateX(115%);
   font-size: 1rem;
   font-weight: 500;
@@ -47,25 +47,23 @@
   font-family: var(--primaryFont);
 }
 
-.intro-header__title:hover::before {
+.intro-header__title:hover:before {
   content: "ô′tō fē";
   position: absolute;
-  bottom:0;
-  right:0;
-  transform: translateX(138%);
+  bottom: 0;
+  right: 0;
+  transform: translateX(140%);
   font-size: 1rem;
   font-weight: 500;
   color: var(--header-text-before);
   font-family: var(--primaryFont);
 }
 
-
 /* SUBTITLES
 ============================*/
 .intro-header__subtitles {
-  display:flex;
-  flex-direction:column;
-  /* border: 2px dotted var(--black2); */
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   min-height: 50vh;
@@ -73,15 +71,11 @@
 }
 
 .intro-header__subtitle {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   width: 100%;
   justify-content: center;
 }
-
-/* .intro-header__subtitle--one {
-  padding-top: 2rem;
-} */
 
 .intro-header__subtitle--two {
   padding-top: .125rem;
@@ -92,23 +86,7 @@
   letter-spacing: -.1rem;
   font-size: 3rem;
   color: var(--header-text-before);
-  /* background-color: var(--white1);
-  background-image: linear-gradient(180deg, var(--white1) 60%, var(--white2) 90%);
-  background-size: 100%;
-  background-repeat: repeat; 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  background-clip: text;
-  */
 }
-
-/* .intro-header__subtitle--two h2 {
-  background-size: 100%;
-  background-repeat: repeat;
-  background-image: linear-gradient(180deg, var(--white1) 40%, var(--white2) 60%);
-} */
 
 .intro-header__subtitle span svg {
   height: 2.375rem;
@@ -118,57 +96,47 @@
   stroke: var(--header-text-before);
 }
 
-/* .intro-header__subtitle--text:nth-child(3n) {
-  background-image: linear-gradient(180deg, var(--white1) 60%, var(--white2) 90%);
-} */
-
-.available-message {
-  position:absolute;
+/* INTRO ICONS
+============================*/
+.intro-icons {
   display: flex;
-  justify-content: flex-start;
-  left: 0;
-  right: 0;
-  bottom: 2.5rem;
+  width: 60%;
   margin: 0 auto;
-  max-width: 1200px;
-  padding-left: 1rem;
-  width: 100%;
-  z-index: var(--z-sidebar);
-  background: transparent;
-  pointer-events: none;
-  user-select: none;
-}
-
-.available-message--wrapper {
-  display: flex;
-  font-size: .9rem;
-  font-weight: 500;
-  color: var(--header-text-before);
-  font-family: var(--primaryFont);
-  height: 2.7rem;
   align-items: center;
-}
-
-.available-message--wrapper span {
-  height: .375rem;
-  width: .375rem;
-  border-radius: 50%;
-  background: var(--blue1);
-  margin-right: .5rem;
+  height: 3rem;
+  margin-top: 4rem;
+  justify-content: center;
   position: relative;
+  z-index: 1000;
 }
 
-.available-message--wrapper span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.intro-icons a,
+.intro-icons button {
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--blue1);
-  opacity: 0;
-  animation: pulse 1.5s infinite;
+  margin: 0 .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-/* @media screen and (max-width: ) */
+.intro-icons a svg,
+.intro-icons button svg {
+  fill: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  stroke: var(--header-text-before);
+  opacity: .8;
+}
+
+.intro-icons a:hover,
+.intro-icons button:hover {
+  background: rgba(0, 0, 0, .3);
+}
+
+.intro-icons a:hover svg,
+.intro-icons button:hover svg {
+  opacity: 1;
+}

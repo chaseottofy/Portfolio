@@ -11,19 +11,22 @@
 }
 
 .toast {
-  right: 1rem;
+  right: 0;
+  left:0;
+  margin: 0 auto;
   bottom: 2rem;
+  min-width: 160px;
   max-width: 280px;
-  max-height: 48px;
+  max-height: 3rem;
   height: 100%;
   width: auto;
   position: absolute;
   border-radius: 6px;
-  background: var(--offsetgrey4);
+  background: var(--offsetblack1);
   box-shadow: var(--bs-md);
   color: var(--white1);
   transition: all .35s cubic-bezier(.25, .75, .6, .98);
-  padding: 24px;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
 }

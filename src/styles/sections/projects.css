@@ -357,13 +357,13 @@
   cursor: pointer;
   margin-left: auto;
   font-family: monospace;
-  font-size: .75rem;
+  font-size: .825rem;
   font-weight: 500;
   background: #1f3328;
   border-radius: 1rem;
-  padding: 0 .5rem;
+  padding: 0 .75rem;
   white-space: nowrap;
-  height: 1.75rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   color: #0ccd66;

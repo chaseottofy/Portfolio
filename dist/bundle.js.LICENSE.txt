@@ -1,8 +1,8 @@
-/*! ../utilities/createToast */
+/*! ../factory/createSpinner */
 
-/*! ./createToast */
+/*! ../factory/createToast */
 
-/*! ./form/contactForm */
+/*! ./styles/aside/hoverContext.css */
 
 /*! ./styles/aside/lighthouseModal.css */
 
@@ -42,11 +42,15 @@
 
 /*! ./styles/sections/skills2.css */
 
+/*! ./styles/spinner.css */
+
 /*! ./styles/themes.css */
 
 /*! ./utilities/handleCopy */
 
 /*! ./utilities/handleDefaults */
+
+/*! ./utilities/handleForm */
 
 /*! ./utilities/handleHover */
 
@@ -80,13 +84,17 @@
   !*** ./src/styles/themes.css ***!
   \*******************************/
 
-/*!*********************************!*\
-  !*** ./src/form/contactForm.js ***!
-  \*********************************/
+/*!********************************!*\
+  !*** ./src/styles/spinner.css ***!
+  \********************************/
 
 /*!***********************************!*\
   !*** ./src/styles/headerLogo.css ***!
   \***********************************/
+
+/*!************************************!*\
+  !*** ./src/factory/createToast.js ***!
+  \************************************/
 
 /*!************************************!*\
   !*** ./src/styles/aside/toast.css ***!
@@ -96,8 +104,12 @@
   !*** ./src/utilities/handleCopy.js ***!
   \*************************************/
 
+/*!*************************************!*\
+  !*** ./src/utilities/handleForm.js ***!
+  \*************************************/
+
 /*!**************************************!*\
-  !*** ./src/utilities/createToast.js ***!
+  !*** ./src/factory/createSpinner.js ***!
   \**************************************/
 
 /*!**************************************!*\
@@ -155,6 +167,10 @@
 /*!******************************************!*\
   !*** ./src/styles/sections/projects.css ***!
   \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/styles/aside/hoverContext.css ***!
+  \*******************************************/
 
 /*!*********************************************!*\
   !*** ./src/styles/sections/contactForm.css ***!
