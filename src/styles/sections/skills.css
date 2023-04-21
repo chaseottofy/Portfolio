@@ -4,7 +4,6 @@
   margin-top: -1rem;
   scroll-margin-top: 4rem;
   background: var(--black4);
-  /* background: linear-gradient(180deg, transparent 20%, var(--offsetgrey1) 90%); */
 }
 
 .skills-grid {
@@ -100,7 +99,6 @@
 /* ------------ */
 /* skills: body */
 .skill__body {
-  /* display: flex; */
   display:none;
   flex-direction: column;
   gap: .5rem;
