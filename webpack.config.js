@@ -57,8 +57,7 @@ module.exports = (env) => {
         },
       }),
       new FaviconsWebpackPlugin({
-        logo: './src/images/fav/grad1.svg',
-        // logo: './src/favicon.ico',
+        logo: './src/favicon.svg',
         manifest: './src/manifest.webmanifest',
         mode: "light",
       }),
