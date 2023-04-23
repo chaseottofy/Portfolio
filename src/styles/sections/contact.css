@@ -155,7 +155,7 @@
   overflow: hidden;
   position: relative;
   border-radius: var(--gap1);
-  background: url('../../images/mugshot/avatar.webp');
+  background: url('../../images/mugshot/avatar2.webp');
   filter: contrast(1.2) brightness(.9);
   background-size: cover;
   background-position: center;
@@ -357,7 +357,7 @@
   min-height: 2.5rem;
   min-width: 2.5rem;
   border-radius: 50%;
-  background-image: url("../../images/mugshot/unnamed.jpg");
+  background-image: url("../../images/mugshot/YTmug1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -367,7 +367,7 @@
   min-height: 2.5rem;
   min-width: 2.5rem;
   border-radius: 50%;
-  background-image: url("../../images/mugshot/cw-mug.png");
+  background-image: url("../../images/mugshot/codewarsmug1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

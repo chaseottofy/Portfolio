@@ -174,12 +174,12 @@
 /* PROJECT IMAGES
 ============================*/
 /* GOOGLE CALENDAR */
-.theme__light .project-calendar .project-cell__content {
+/* .theme__light .project-calendar .project-cell__content {
   background-image: url("../../images/projects/calendar/gclight1.webp");
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
-}
+} */
 
 .project-calendar .project-cell__content {
   background-image: url("../../images/projects/calendar/gcdark1.webp");
@@ -460,9 +460,9 @@
 }
 
 @media screen and (max-width: 640px) {
-  .theme__light .project-calendar .project-cell__content {
+  /* .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight2.webp");
-  }
+  } */
 
   .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gcdark2.webp");
@@ -475,11 +475,11 @@
 }
 
 @media screen and (max-width: 490px) {
-  .theme__light .project-calendar .project-cell__content {
+  /* .theme__light .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gclight3.webp");
     background-position: top center;
     background-size: cover;
-  }
+  } */
 
   .project-calendar .project-cell__content {
     background-image: url("../../images/projects/calendar/gcdark3.webp");
