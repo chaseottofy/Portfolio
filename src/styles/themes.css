@@ -12,8 +12,8 @@
   --header-after: rgba(0, 0, 0, .6);
 
   --black0: #000;
-  --black1: #0c0c0c;
-  --black2: #222;
+  --black1: #111;
+  --black2: #333;
   --black3: #050505;
   --black4: #090909;
 
@@ -25,7 +25,7 @@
   --white1: #fff;
   --white2: #b7b7b7;
 
-  --offsetblack1: rgba(0, 0, 0, .9);
+  --offsetblack1: rgba(0, 0, 0, .8);
   --offsetblack2: rgba(0, 0, 0, .6);
   --offsetblack3: rgba(0, 0, 0, .5);
   --offsetblack4: rgba(0, 0, 0, .4);
@@ -50,6 +50,9 @@
 
   --btn-text: #fff;
   --btn-bg: #000;
+
+  --lh-green:#16cf6b;
+  --lh-color:#fff;
 }
 
 .theme__light {
@@ -60,7 +63,6 @@
   --black0: #fff;
   --black1: #fafafa;
   --black2: #eaeaea;
-  /* --black2: #e5e5e5; */
   --black3: #fff;
   --black4: #fafafa;
 
@@ -96,4 +98,7 @@
 
   --btn-text: #fff;
   --btn-bg: #000;
+
+  --lh-green:#16cf6b;
+  --lh-color:#fff;
 }

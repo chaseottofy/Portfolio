@@ -7,8 +7,8 @@
   width: 100%;
   z-index: var(--z-header);
   background: var(--header-before);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
   will-change: background, backdrop-filter, -webkit-backdrop-filter;
 }
 
@@ -28,18 +28,6 @@
   transition-property: background, backdrop-filter, -webkit-backdrop-filter;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
-}
-
-.header-filter {
-  background: var(--header-after);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.header-filter .header-nav .nav-menu li button,
-.header-filter .header-nav .nav-menu li a {
-  background: transparent;
-  color: var(--white1);
 }
 
 .header-nav {
@@ -85,22 +73,10 @@
   border-radius: 1rem;
 }
 
-.nav-menu li a:hover,
-.nav-menu li button:hover {
+.nav-menu li a:hover {
   color: #000;
   background: #fff;
 }
-
-.header-filter .nav-menu li a:hover,
-.header-filter .nav-menu li button:hover {
-  color: var(--black0);
-  background: var(--white1);
-}
-
-/* .nav-menu li a:hover {
-  color: var(--black0);
-  background: var(--white1);
-} */
 
 .nav-menu li a:focus-visible,
 .nav-menu li button:focus-visible {
@@ -117,13 +93,47 @@
 }
 
 .nav-menu--contact--active {
-  background: var(--white1) !important;
-  color: var(--black0) !important;
-  opacity: .8;
+  background: #fff;
+  transition: background .2s ease-in-out;
+}
+
+.nav-menu--contact--active span {
+  color: #000;
 }
 
 .nav-menu--contact--active svg {
   transform: rotate(180deg);
+  stroke: #000;
+}
+
+.header-filter {
+  background: var(--header-after);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-filter .header-nav .nav-menu li button,
+.header-filter .header-nav .nav-menu li a {
+  color: var(--white1);
+}
+
+.header-filter .nav-menu--contact--active {
+  background: var(--white1);
+  transition: background .2s ease-in-out;
+}
+
+.header-filter .nav-menu--contact--active span {
+  color: var(--black0);
+}
+
+.header-filter .nav-menu--contact--active svg {
+  transform: rotate(180deg);
+  stroke: var(--black0);
+}
+
+.header-filter .nav-menu li a:hover {
+  color: var(--black0);
+  background: var(--white1);
 }
 
 @media screen and (max-width: 640px) {
@@ -135,5 +145,21 @@
 @media screen and (max-width: 560px) {
   .nav-menu li button svg {
     display: none;
+  }
+
+  .nav-menu li button:hover {
+    background: #fff;
+  }
+
+  .nav-menu li button:hover span {
+    color: #000;
+  }
+
+  .header-filter .nav-menu li button:hover {
+    background: var(--white1);
+  }
+
+  .header-filter .nav-menu li button:hover span {
+    color: var(--black0);
   }
 }

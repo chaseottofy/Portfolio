@@ -13,9 +13,18 @@ const initContactMenu = () => {
 
   const contactMousemove = e => {
     if (!e || !e.target) return;
-    if (e.target.closest(".contact-menu")) return;
-    if (e.target.closest(".nav-multi__contact")) return;
-    if (e.clientX <= 0 || e.clientY <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight) return closeContactMenu();
+
+    if (
+      e.target.closest(".contact-menu") ||
+      e.target.closest(".nav-multi__contact")
+    ) return;
+    
+    if (
+      e.clientX <= 0
+      || e.clientY <= 0
+      || e.clientX >= window.innerWidth
+      || e.clientY >= window.innerHeight
+    ) return closeContactMenu();
 
     closeContactMenu();
   };

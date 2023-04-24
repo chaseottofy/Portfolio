@@ -24,7 +24,6 @@
     </defs>
   </svg>
 
-
   <!-- HEADER -->
   <header class="header header-animate">
     <div class="header-wrapper">
@@ -61,21 +60,23 @@
                 </span>
                 <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
               </button>
+
             </li>
           </ul>
         </nav>
-
       </div>
-
     </div>
   </header>
 
+
+  <!-- Basis to scroll back to top -->
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
 
+
   <!-- HEADER GRADIENT -->
-  <!--------------------->
   <aside class="gradient-overlay--one"></aside>
   <!--------------------->
+
 
   <!-- Contact menu popup -->
   <aside class="contact-menu contact-menu__header">
@@ -175,8 +176,8 @@
             </a>
             <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
             </button>
           </div>
         </div>
@@ -186,8 +187,8 @@
           <div class="cm-right--bottom__cell-icons">
             <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" width="1rem">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
             </button>
           </div>
         </div>
@@ -196,22 +197,93 @@
   </aside>
   <!--------------------->
 
+
   <!-- LIGHTHOUSE MODAL POPUP -->
   <aside class="lighthouse-modal">
     <div class="lighthouse-modal__header">
-      <span></span>
+      <span class="lh-appname">Google Calendar 2.0 Lighthouse Metrics</span>
       <button class="close-lh-btn" disabled>
-        close
+        <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color:var(--geist-foreground)"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
       </button>
     </div>
-    <div class="lighthouse-modal__body"></div>
+    <div class="lighthouse-modal__body">
+      <div class="lh-main">
+        <span class="lh-main__score">
+          100
+        </span>
+        <a class="lh-main__score-title" href="https://flic.kr/s/aHBqjAAZkD" title="Flickr screenshots of test" target="_blank" rel="noreferrer">
+          Screenshots
+          <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color:var(--geist-foreground)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+      </div>
+
+      <!-- FIRST CONTENTFUL PAINT -->
+      <div class="lh-sub">
+        <div class="lh-sub-title">First Contentful Paint</div>
+        <div class="lh-sub__metrics">
+          <div class="lh-sub__metrics-title">
+            0.3 <span class="lh-sub__metrics-sm">s</span>
+          </div>
+          <div class="lh-sub__metrics-score">100</div>
+        </div>
+        <hr>
+        <div class="lh-sub-subtitle">
+          When the page's first content is displayed.
+        </div>
+      </div>
+
+      <!-- LARGEST CONTENTFUL PAINT -->
+      <div class="lh-sub">
+        <div class="lh-sub-title">First Contentful Paint</div>
+        <div class="lh-sub__metrics">
+          <div class="lh-sub__metrics-title">
+            0.3 <span class="lh-sub__metrics-sm">s</span>
+          </div>
+          <div class="lh-sub__metrics-score">100</div>
+        </div>
+        <hr>
+        <div class="lh-sub-subtitle">
+          When all the page's content has been displayed.
+        </div>
+      </div>
+
+      <!-- FIRST INPUT DELAY -->
+      <div class="lh-sub">
+        <div class="lh-sub-title">Total Blocking Time</div>
+        <div class="lh-sub__metrics">
+          <div class="lh-sub__metrics-title">
+            0 <span class="lh-sub__metrics-sm">ms</span>
+          </div>
+          <div class="lh-sub__metrics-score">100</div>
+        </div>
+        <hr>
+        <div class="lh-sub-subtitle">
+          The page's time to react to the user's first interaction.
+        </div>
+      </div>
+
+      <!-- CUMALITIVE LAYOUT SHIFT -->
+      <div class="lh-sub">
+        <div class="lh-sub-title">Cumulative Layout Shift</div>
+        <div class="lh-sub__metrics">
+          <div class="lh-sub__metrics-title">
+            0
+          </div>
+          <div class="lh-sub__metrics-score">100</div>
+        </div>
+        <hr>
+        <div class="lh-sub-subtitle">
+          How much the page's elements move when loaded.
+        </div>
+      </div>
+    </div>
   </aside>
   <!--------------------->
 
 
-
+  <!--------------------->
   <!-- SECTION: INTRO -->
-  <article class="intro-container">
+  <section class="intro-container">
     <div class="intro-header">
       <h1 class="intro-header__title">CHASE OTTOFY</h1>
       <div class="intro-header__subtitles">
@@ -269,22 +341,23 @@
         </span>
       </div>
     </aside>
-  </article>
+  </section>
+  <!--------------------->
 
 
-
-  <!-- MAIN (intro > projects > skills > about > contact) -->
+  <!-- MAIN (projects > skills > about > contact) -->
   <main class="main">
     <aside class="section-divider"></aside>
     <article class="projects-container" id="projects-top">
       <div class="section-title"><h2>Projects</h2></div>
 
-      
       <div class="projects-grid">
-
-
         <!-- GOOGLE CALENDAR -->
         <div class="project-cell col--1 project-calendar">
+          <!-- PROJECT CONTENT -->
+          <div class="project-cell__content"></div>
+
+
           <!-- PROJECT HEADER -->
           <div class="project-cell__header">
             <div class="project-cell--header__title">
@@ -302,10 +375,7 @@
             </div>
           </div>
 
-          <div class="project-cell__subheader"></div>
 
-          <!-- PROJECT CONTENT -->
-          <div class="project-cell__content"></div>
 
           <!-- PROJECT FOOTER -->
           <div class="project-cell__footer">
@@ -316,7 +386,7 @@
                 <p>No Dependencies</p>
               </div>
             </div>
-            <button class="project-cell--lhbtn" data-img-class="lh-gc">
+            <button class="project-cell--lhbtn" data-app-name="calendar">
               100
               <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
@@ -359,11 +429,8 @@
             </div>
           </div>
 
-          <div class="project-cell__subheader"></div>
-
           <!-- PROJECT CONTENT -->
           <div class="project-cell__content">
-            <!-- <div class="project-cell__content--overlay"></div> -->
           </div>
 
           <!-- PROJECT FOOTER -->
@@ -375,7 +442,7 @@
               <h4>React – <small>Vite</small></h4>
             </div>
 
-            <button class="project-cell--lhbtn" data-img-class="lh-mk">
+            <button class="project-cell--lhbtn" data-app-name="markdown">
               100
               <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
@@ -432,14 +499,14 @@
               <div class="project-writeup__top">
                 <p>Variety of Custom Vanilla JS Components.</p>
               </div>
-  
+
               <div class="project-writeup__toggle">
                 <button class="project-writeup__toggle--btn" data-proj-index="2">
                   SHOW MORE
                   <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
                 </button>
               </div>
-  
+
               <div class="project-writeup__more writeup-hidden">
                 FOUR
               </div>
@@ -480,14 +547,14 @@
               <div class="project-writeup__top">
                 <p>Custom React and Preact components.</p>
               </div>
-  
+
               <div class="project-writeup__toggle">
                 <button class="project-writeup__toggle--btn" data-proj-index="3">
                   SHOW MORE
                   <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
                 </button>
               </div>
-  
+
               <div class="project-writeup__more writeup-hidden">
                 FOUR
               </div>
@@ -754,6 +821,7 @@
   <aside class="modal-ov modal-ov--hide"></aside>
   <!------------------->
 </body>
+
 </html>
 
 
