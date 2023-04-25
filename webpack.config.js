@@ -1,15 +1,16 @@
+const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
-const path = require('path');
+const svgToMiniDataURI = require("mini-svg-data-uri");
 
 module.exports = (env) => {
   return {
     entry: './src/index.js',
-    mode: 'production',
+    mode: 'development',
     devtool: 'source-map',
     devServer: {
       static: {
@@ -22,6 +23,10 @@ module.exports = (env) => {
     },
     module: {
       rules: [
+        {
+          test: /\.html$/i,
+          loader: "html-loader",
+        },
         {
           test: /\.js$/,
           enforce: "pre",
@@ -37,8 +42,39 @@ module.exports = (env) => {
           type: 'asset/resource',
         },
         {
-          test: /\.(ico|png|svg|webp|jpg)$/i,
+          test: /\.ico$/,
           type: 'asset/resource',
+        },
+        {
+          test: /\.svg$/,
+          type: 'asset/inline',
+          generator: {
+            dataUrl: (content) => {
+              content = content.toString();
+              return svgToMiniDataURI(content);
+            },
+          },
+        },
+        {
+          test: /\.webp$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]',
+          },
+        },
+        {
+          test: /\.png$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]',
+          },
+        },
+        {
+          test: /\.jpg$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]',
+          },
         },
       ],
     },
@@ -94,3 +130,11 @@ module.exports = (env) => {
     },
   };
 };
+
+// {
+//   test: /\.(ico|png|svg|webp|jpg)$/i,
+//   type: 'asset/resource',
+//   generator: {
+//     filename: 'images/[name][ext]',
+//   }
+// },
