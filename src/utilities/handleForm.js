@@ -51,16 +51,19 @@ const createSuccessMessage = () => {
   successMessage.appendChild(createSpinner());
   formWrapper.classList.add("disable-form");
   formWrapper.appendChild(successMessage);
+};
+
+const applySkeleton = () => {
   nameInput.classList.add("skeleton");
   contactValueInput.classList.add("skeleton");
   messageInput.classList.add("skeleton");
-};
+}
 
 const handleFormSubmit = e => {
   e.preventDefault();
+  applySkeleton();
   createSuccessMessage();
   let data = new FormData(form);
-
   fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
     method: "POST",
     body: data,

@@ -1,4 +1,4 @@
-.theme__light .cal-thumb--1 {
+/* .theme__light .cal-thumb--1 {
   background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal1.webp");
 }
 
@@ -18,7 +18,9 @@
   background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal5.webp");
 }
 
-.cal-thumb--1 {
+ */
+
+/* .cal-thumb--1 {
   background-image: url("../../images/projects/calendar_thumb/thumbcal1.webp");
 }
 
@@ -36,6 +38,26 @@
 
 .cal-thumb--5 {
   background-image: url("../../images/projects/calendar_thumb/thumbcal5.webp");
+} */
+
+.cal-cell__image--1 {
+  background-image: url("../../images/projects/calendar/cal1.webp");
+}
+
+.cal-cell__image--2 {
+  background-image: url("../../images/projects/calendar/cal2.webp");
+}
+
+.cal-cell__image--3 {
+  background-image: url("../../images/projects/calendar/cal3.webp");
+}
+
+.cal-cell__image--4 {
+  background-image: url("../../images/projects/calendar/cal4.webp");
+}
+
+.cal-cell__image--5 {
+  background-image: url("../../images/projects/calendar/cal5.webp");
 }
 
 .theme__light .cal-cell__image--1 {
@@ -56,24 +78,4 @@
 
 .theme__light .cal-cell__image--5 {
   background-image: url("../../images/projects/calendar/light/lightcal5.webp");
-}
-
-.cal-cell__image--1 {
-  background-image: url("../../images/projects/calendar/cal1.webp");
-}
-
-.cal-cell__image--2 {
-  background-image: url("../../images/projects/calendar/cal2.webp");
-}
-
-.cal-cell__image--3 {
-  background-image: url("../../images/projects/calendar/cal3.webp");
-}
-
-.cal-cell__image--4 {
-  background-image: url("../../images/projects/calendar/cal4.webp");
-}
-
-.cal-cell__image--5 {
-  background-image: url("../../images/projects/calendar/cal5.webp");
 }

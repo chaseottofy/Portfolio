@@ -28,11 +28,12 @@
 }
 
 .header-nav {
-  height: 100%;
+  height: 3.25rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 1rem;
 }
 
 .nav-menu {
@@ -79,6 +80,8 @@
 .nav-menu li button:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px var(--white1);
+  -webkit-box-shadow: 0 0 0 2px var(--white1);
+  -moz-box-shadow: 0 0 0 2px var(--white1);
 }
 
 .nav-menu li button svg {

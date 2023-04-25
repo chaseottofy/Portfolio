@@ -56,25 +56,25 @@ import "./styles/header.css";
 import "./styles/headerLogo.css";
 import "./styles/gradientElements/headerGradient.css";
 
+
 import "./styles/main.css";
 import "./styles/gradientElements/dividerGradient.css";
+
 import "./styles/sections/intro.css";
-// import "./styles/sections/projects.css";
-// import "./styles/sections/skills.css";
-import "./styles/sections/projects2.css";
-// import "./styles/sections/projectImages.css";
-import "./styles/sections/skills2.css";
+import "./styles/sections/projects.css";
+import "./styles/sections/projectImages.css";
 import "./styles/sections/about.css";
+import "./styles/sections/skills.css";
 import "./styles/sections/contact.css";
 import "./styles/sections/contactForm.css";
+
 import "./styles/footer.css";
 
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
 import "./styles/aside/lighthouseModal.css";
-import "./styles/spinner.css";
+import "./styles/aside/spinner.css";
 import "./styles/aside/hoverContext.css";
-import "./styles/aside/projectFloat.css";
 /***************************************/
 
 
@@ -108,7 +108,7 @@ const appInit = () => {
   initContactForm();
   // modals
   initModals();
-  // expand thumbs
+  // click through project tabs
   initProjects();
 };
 

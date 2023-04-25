@@ -2,32 +2,32 @@
 DIVIDER
 ============================*/
 .section-divider {
-  backdrop-filter: brightness(2.2);
-  filter: brightness(1.5);
-  background: var(--dividerBg);
+  backdrop-filter: brightness(1.6);
+  box-shadow: 0 0 0 1px var(--dividerBg);
+  height: 1px;
   margin: 0 auto;
-  min-height: 2px;
-  height: 2px;
-  max-width: 100vw;
   width: 100%;
   position: relative;
-  /* width: 100%; */
   z-index: 6;
 }
 
 .section-gradient-left {
   filter: blur(48px);
-  border-radius: 50%;
-  margin-top: -4rem;
-  min-height: 2rem;
-  mix-blend-mode:normal;
+  border-radius: 25%;
+  margin-top: -6rem;
+  min-height: 4rem;
+  mix-blend-mode:darken;
   pointer-events: none;
   user-select: none;
   width: 100%;
+  opacity: 1;
   background: linear-gradient(
-    180deg,
-    var(--black0) 10%,
-    var(--grey1)
+    to bottom,
+    transparent,
+    var(--grey1),
+    var(--grey2),
+    var(--grey1),
+    transparent
   );
   position: relative;
   z-index: 2;

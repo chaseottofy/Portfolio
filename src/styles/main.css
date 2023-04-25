@@ -1,14 +1,13 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   position: relative;
   z-index: var(--z-main);
   width: 100%;
   /* height; 100%; */
   margin-top: 4rem;
 }
-
 
 /* ------------------------ */
 /* SECTIONS
@@ -44,11 +43,40 @@
   text-align: center;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
+  position:relative;
 }
 
-.section-title h2 {
-  font-weight: bold;
+.section-title--left {
+  display: flex;
+  padding-top: 6rem;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 6rem 1rem 0 1rem;
+}
+
+.section-title h2,
+.section-title--left h2 {
+  font-weight: 700;
+  font-size: 3.125rem;
+  letter-spacing: -.5px;
+  color: transparent;
+  background-image: linear-gradient(to bottom,
+      var(--white1) 0%,
+      var(--white2),
+      var(--black4)
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 200%;
+}
+
+.section-title h3 {
+  font-weight: 700;
   font-size: 2rem;
+  color: var(--white1);
 }
 
 .section-subtitle {
@@ -58,102 +86,3 @@
   font-size: .875rem;
   font-weight: 500;
 }
-
-/*
-.projects-subsection {
-  display: none;
-  width: 100%;
-  height: 5rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: flex-end;
-  padding: 0 2rem;
-}
-
-.proj-layout__switch--wrapper {
-  display: flex;
-  height: 2.5rem;
-  width: 6rem;
-  justify-content: space-between;
-  padding: .125rem;
-  align-items: center;
-  border-radius: 5px;
-  border: 1px solid var(--black2);
-}
-
-.proj-layout__switch {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.proj-layout__switch input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  z-index: -1;
-}
-
-.proj-layout__switch label {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background: var(--black0);
-  transition: background .2s ease-in-out;
-  cursor: pointer;
-}
-
-.proj-layout__switch label svg {
-  stroke: var(--white1);
-  opacity: .75;
-  fill: none;
-  transition: opacity .2s ease-in-out;
-}
-
-.proj-layout__switch label:hover svg {
-  opacity: 1;
-}
-
-.proj-layout__switch input:checked + label {
-  background: var(--black2);
-}
-
-.proj-layout__switch input:checked + label svg {
-  opacity: 1;
-}
-
-<div class="projects-subsection">
-  <div class="proj-layout__switch--wrapper">
-
-    <div class="proj-layout__switch">
-      <input class="layout-input" name="icons-large" id="input--stack-column" type="radio" value="column">
-      <label class="label--stack-list" for="input--stack-column">
-        <svg data-testid="geist-icon" fill="none" height="20" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" style="color: currentcolor;"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path>
-      </svg>
-      </label>
-    </div>
-
-
-    <div class="proj-layout__switch">
-      <input class="layout-input" name="icons-large" id="input--stack-grid" type="radio" value="grid" checked="">
-      <label class="label--stack-grid" for="input--stack-grid">
-        <svg data-testid="geist-icon" fill="none" height="20" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" style="color: currentcolor;"><path d="M3 3h7v7H3z"></path><path d="M14 3h7v7h-7z"></path><path d="M14 14h7v7h-7z"></path><path d="M3 14h7v7H3z"></path></svg>
-      </label>
-    </div>
-  </div>
-</div>
-*/

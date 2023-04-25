@@ -25,23 +25,6 @@
   src: url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2');
 }
 
-/* i suck at colors */
-/* BLUE RED */
-/* --blue1: #2a8af6;
-  --red1: #e92a67; */
-
-/* RED RED */
-/* --blue1: #f44847;
-  --red1: #a73130; */
-
-/* BLUE BLUE */
-/* --blue1: #2196f3;
-  --red1: #1d1e22; */
-
-/* BLUE BLUE */
-/* --blue1: #2196f3;
-  --red1: #2575fc; */
-/* https://vercel.com/design/icons*/
 :root {
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
   --bs-xl:
@@ -56,12 +39,13 @@
   --z-modal: 1000;
   --z-toast: 1100;
 
-  /* --blue1: #F40076; */
-  --blue1: #5877ff;
-  --blue2: #3855d8;
-  --blue3: #23306d;
+  --blue1: #637ef3;
+  --blue2: #435fdc;
+  --blue3: #273c97;
+  --blue4:#435fdc;
   --red1: #342711;
   --red2: #a02460;
+  --red3: #f40076;
   --pink1: #a853ba;
 
   --gap1: .5rem;
@@ -299,6 +283,12 @@ a[disabled] {
       var(--grey2));
   background-size: 400% 100%;
   animation: skeleton_loading 8s ease-in-out infinite;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  pointer-events: none;
+  user-select: none;
 }
 
 .skeleton::placeholder {

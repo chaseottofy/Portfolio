@@ -22,9 +22,9 @@
   overflow: hidden;
   background: transparent;
   border-radius: 1rem;
-  transform: scale(.8);
-  transition-property: background, opacity, z-index, border, transform;
-  transition-duration: 150ms;
+  transform: scale(.9);
+  transition-property: transform;
+  transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -115,6 +115,8 @@
       var(--black1));
   width: 100%;
   box-shadow: 0 0 0 1px var(--black2);
+  -webkit-box-shadow: 0 0 0 1px var(--black2);
+  -moz-box-shadow: 0 0 0 1px var(--black2);
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, .12));
   z-index: 2;
 }
@@ -219,7 +221,6 @@
   width: 100%;
   height: 210px;
   text-align: left;
-  /* box-shadow: 0 0 0 1px var(--black2); */
 }
 
 .lh-sub:nth-child(-n + 3) {

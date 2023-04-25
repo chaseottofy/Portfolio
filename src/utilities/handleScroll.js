@@ -24,6 +24,63 @@ const handlePageScroll = () => {
   }
 };
 
+// const initThumbnailScroll = () => {
+//   const scrollLeftBtn = $(".cell-thumbnail--nav__left");
+//   const scrollRightBtn = $(".cell-thumbnail--nav__right");
+
+//   const handleScroll = (e) => {
+//     const scrollDirection = e.target.getAttribute("data-scroll-direction");
+//     const scrollContainer = scrollDirection === "left"
+//       ? e.target.nextElementSibling
+//       : e.target.previousElementSibling;
+
+
+//     const scrollAmount = scrollContainer.children[0].offsetWidth;
+//     const childrenLength = scrollContainer.children.length;
+
+//     if (scrollDirection === "left") {
+//       if (scrollContainer.scrollLeft > 0) {
+//         scrollContainer.scrollLeft -= scrollAmount;
+//       } else {
+//         scrollContainer.scrollLeft = scrollAmount * (childrenLength - 1);
+//       }
+//     } else {
+//       if (scrollContainer.scrollLeft < scrollAmount * (childrenLength - 1)) {
+//         scrollContainer.scrollLeft += scrollAmount;
+//       } else {
+//         scrollContainer.scrollLeft = 0;
+//       }
+//     }
+//   };
+
+//   scrollLeftBtn.onclick = handleScroll;
+//   scrollRightBtn.onclick = handleScroll;
+// };
+
+const initScroll = () => {
+  // scroll to articles on page from nav
+  handlePageScroll();
+
+  $$(".nav-menu--link").forEach(link => {
+    link.addEventListener("click", handleHrefScroll, { passive: true });
+  });
+
+  $(".contact-nav--btn").addEventListener("click", handleAttrScroll, { passive: true });
+
+  $(".header-logo").addEventListener("click", handleAttrScroll, { passive: true });
+
+  // apply filter to header and toggle scroll to top button;
+  window.addEventListener("scroll", handlePageScroll, { passive: true });
+  
+  // scroll project thumbnails
+  // initThumbnailScroll();
+};
+
+export default initScroll;
+
+
+/*
+
 const handleProjectsScroll = (e) => {
   const floatMenu = $(".project-float--wrapper");
   const floatMenuTitle = $(".fm-current");
@@ -45,61 +102,14 @@ const handleProjectsScroll = (e) => {
     return;
   }
 };
+window.addEventListener("scroll", handleProjectsScroll, { passive: true });
 
-const initThumbnailScroll = () => {
-  const scrollLeftBtn = $(".cell-thumbnail--nav__left");
-  const scrollRightBtn = $(".cell-thumbnail--nav__right");
+window.addEventListener("load", handleProjectsScroll, { once: true });
 
-  const handleScroll = (e) => {
-    const scrollDirection = e.target.getAttribute("data-scroll-direction");
-    const scrollContainer = scrollDirection === "left"
-      ? e.target.nextElementSibling
-      : e.target.previousElementSibling;
-
-
-    const scrollAmount = scrollContainer.children[0].offsetWidth;
-    const childrenLength = scrollContainer.children.length;
-
-    if (scrollDirection === "left") {
-      if (scrollContainer.scrollLeft > 0) {
-        scrollContainer.scrollLeft -= scrollAmount;
-      } else {
-        scrollContainer.scrollLeft = scrollAmount * (childrenLength - 1);
-      }
-    } else {
-      if (scrollContainer.scrollLeft < scrollAmount * (childrenLength - 1)) {
-        scrollContainer.scrollLeft += scrollAmount;
-      } else {
-        scrollContainer.scrollLeft = 0;
-      }
-    }
-  };
-
-  scrollLeftBtn.onclick = handleScroll;
-  scrollRightBtn.onclick = handleScroll;
-};
-
-const initScroll = () => {
-  // scroll to articles on page from nav
-  handlePageScroll();
-
-  $$(".nav-menu--link").forEach(link => {
-    link.addEventListener("click", handleHrefScroll, { passive: true });
-  });
-
-  $(".contact-nav--btn").addEventListener("click", handleAttrScroll, { passive: true });
-
-  $(".header-logo").addEventListener("click", handleAttrScroll, { passive: true });
-
-  // apply filter to header and toggle scroll to top button;
-  window.addEventListener("scroll", handlePageScroll, { passive: true });
-
-  window.addEventListener("scroll", handleProjectsScroll, { passive: true });
-
-  window.addEventListener("load", handleProjectsScroll, { once: true });
-
-  // scroll project thumbnails
-  initThumbnailScroll();
-};
-
-export default initScroll;
+  <!-- FLOAT MENU -->
+  <aside class="project-float--wrapper">
+    <ul class="float__menu">
+      <li class="fm-current"></li>
+    </ul>
+  </aside>
+*/

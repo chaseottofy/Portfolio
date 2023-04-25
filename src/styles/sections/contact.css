@@ -459,7 +459,7 @@
   align-items: center;
   min-height: 4rem;
   border-top: 1px solid var(--black2);
-  background: var(--black3);
+  background: var(--offsetblack2);
   height: 100%;
   width: 100%;
   padding: 2px var(--gap1);
