@@ -6,6 +6,8 @@
 
 /*! ./styles/aside/lighthouseModal.css */
 
+/*! ./styles/aside/projectFloat.css */
+
 /*! ./styles/aside/themeMenu.css */
 
 /*! ./styles/aside/toast.css */
@@ -38,7 +40,7 @@
 
 /*! ./styles/sections/intro.css */
 
-/*! ./styles/sections/projects.css */
+/*! ./styles/sections/projects2.css */
 
 /*! ./styles/sections/skills2.css */
 
@@ -54,9 +56,9 @@
 
 /*! ./utilities/handleHover */
 
-/*! ./utilities/handleImageExpand */
-
 /*! ./utilities/handleModals */
+
+/*! ./utilities/handleProjects */
 
 /*! ./utilities/handleScroll */
 
@@ -162,21 +164,25 @@
   !*** ./src/utilities/handleDefaults.js ***!
   \*****************************************/
 
-/*!******************************************!*\
-  !*** ./src/styles/components/button.css ***!
-  \******************************************/
+/*!*****************************************!*\
+  !*** ./src/utilities/handleProjects.js ***!
+  \*****************************************/
 
 /*!******************************************!*\
-  !*** ./src/styles/sections/projects.css ***!
+  !*** ./src/styles/components/button.css ***!
   \******************************************/
 
 /*!*******************************************!*\
   !*** ./src/styles/aside/hoverContext.css ***!
   \*******************************************/
 
-/*!********************************************!*\
-  !*** ./src/utilities/handleImageExpand.js ***!
-  \********************************************/
+/*!*******************************************!*\
+  !*** ./src/styles/aside/projectFloat.css ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/styles/sections/projects2.css ***!
+  \*******************************************/
 
 /*!*********************************************!*\
   !*** ./src/styles/sections/contactForm.css ***!
