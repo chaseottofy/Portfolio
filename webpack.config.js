@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
@@ -48,6 +47,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         title: "output management",
         template: "./src/index.html",
+        favicon: "./src/favicon.svg",
         filename: "index.html",
         inject: "head",
         minify: {
@@ -64,11 +64,6 @@ module.exports = (env) => {
           },
         ],
       }),
-      // new FaviconsWebpackPlugin({
-      //   logo: './src/favicon.svg',
-      //   manifest: './src/manifest.webmanifest',
-      //   mode: "light",
-      // }),
       new MiniCssExtractPlugin({
         filename: "[name].css",
       }),
@@ -99,13 +94,3 @@ module.exports = (env) => {
     },
   };
 };
-
-
-// {
-//   match: /vendors\.[a-z-0-9]*.css$/,
-//   attributes: { as: 'style' },
-// },
-// {
-//   match: /.*\.webp$/,
-//   attributes: { as: 'image', type: 'image/webp' },
-// },
