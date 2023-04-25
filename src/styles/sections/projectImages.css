@@ -1,0 +1,79 @@
+.theme__light .cal-thumb--1 {
+  background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal1.webp");
+}
+
+.theme__light .cal-thumb--2 {
+  background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal2.webp");
+}
+
+.theme__light .cal-thumb--3 {
+  background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal3.webp");
+}
+
+.theme__light .cal-thumb--4 {
+  background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal4.webp");
+}
+
+.theme__light .cal-thumb--5 {
+  background-image: url("../../images/projects/calendar_thumb/light/lightthumbcal5.webp");
+}
+
+.cal-thumb--1 {
+  background-image: url("../../images/projects/calendar_thumb/thumbcal1.webp");
+}
+
+.cal-thumb--2 {
+  background-image: url("../../images/projects/calendar_thumb/thumbcal2.webp");
+}
+
+.cal-thumb--3 {
+  background-image: url("../../images/projects/calendar_thumb/thumbcal3.webp");
+}
+
+.cal-thumb--4 {
+  background-image: url("../../images/projects/calendar_thumb/thumbcal4.webp");
+}
+
+.cal-thumb--5 {
+  background-image: url("../../images/projects/calendar_thumb/thumbcal5.webp");
+}
+
+.theme__light .cal-cell__image--1 {
+  background-image: url("../../images/projects/calendar/light/lightcal1.webp");
+}
+
+.theme__light .cal-cell__image--2 {
+  background-image: url("../../images/projects/calendar/light/lightcal2.webp");
+}
+
+.theme__light .cal-cell__image--3 {
+  background-image: url("../../images/projects/calendar/light/lightcal3.webp");
+}
+
+.theme__light .cal-cell__image--4 {
+  background-image: url("../../images/projects/calendar/light/lightcal4.webp");
+}
+
+.theme__light .cal-cell__image--5 {
+  background-image: url("../../images/projects/calendar/light/lightcal5.webp");
+}
+
+.cal-cell__image--1 {
+  background-image: url("../../images/projects/calendar/cal1.webp");
+}
+
+.cal-cell__image--2 {
+  background-image: url("../../images/projects/calendar/cal2.webp");
+}
+
+.cal-cell__image--3 {
+  background-image: url("../../images/projects/calendar/cal3.webp");
+}
+
+.cal-cell__image--4 {
+  background-image: url("../../images/projects/calendar/cal4.webp");
+}
+
+.cal-cell__image--5 {
+  background-image: url("../../images/projects/calendar/cal5.webp");
+}

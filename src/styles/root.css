@@ -56,10 +56,12 @@
   --z-modal: 1000;
   --z-toast: 1100;
 
-  --blue1: #F40076;
+  /* --blue1: #F40076; */
+  --blue1: #5877ff;
+  --blue2: #3855d8;
+  --blue3: #23306d;
   --red1: #342711;
-  --blue2: #3549a6;
-  --red2: #7c1e4b;
+  --red2: #a02460;
   --pink1: #a853ba;
 
   --gap1: .5rem;
@@ -81,8 +83,8 @@
 }
 
 html {
-  height: 100%;
-  width: 100%;
+  height: calc(100vh - calc(100vh - 100%));
+  width: calc(100vw - calc(100vw - 100%));
   line-height: 1.15;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -102,8 +104,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: inherit;
-  height: calc(100vh - calc(100vh - 100%));
-  width: calc(100vw - calc(100vw - 100%));
+  height: 100%;
+  width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -135,16 +137,38 @@ h4 {
   font-weight: 700;
 }
 
-button,
+button {
+  background: none;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-transform: none;
+}
+
 input {
   background: none;
-  border: none;
-  color: var(--white1);
-  font-size: 100%;
   line-height: 1.15;
   margin: 0;
   outline: none;
-  text-transform: none
+  text-transform: none;
+  border: 1px solid var(--black2);
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: .75rem;
+  color: var(--white1);
+}
+
+textarea {
+  background: none;
+  text-transform: none;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--black2);
+  border-radius: 5px;
+  font-size: .75rem;
+  color: var(--white1);
 }
 
 button {
@@ -168,8 +192,19 @@ a img {
 }
 
 input::placeholder {
-  color: var(--white2);
-  opacity: 1
+  color: var(--white1);
+  opacity: .7;
+  font-size: .75rem;
+}
+
+a:focus-visible {
+  outline: 0 0 0 2px var(--white1);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--blue2);
 }
 
 svg {
@@ -247,6 +282,45 @@ a[disabled] {
 
 /* TRANSITION UTILITIES
 =====================================*/
+.disable-transitions * {
+  -webkit-transition: none !important;
+  transition: none !important;
+  transition-duration: none !important;
+  transition-property: none !important;
+  transition-timing-function: none !important;
+  animation: none !important;
+}
+
+.skeleton {
+  background-image: linear-gradient(270deg,
+      var(--grey2),
+      var(--grey3),
+      var(--grey3),
+      var(--grey2));
+  background-size: 400% 100%;
+  animation: skeleton_loading 8s ease-in-out infinite;
+}
+
+.skeleton::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+.skeleton::-webkit-input-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+@keyframes skeleton_loading {
+  0% {
+    background-position: 200% 0
+  }
+
+  to {
+    background-position: -200% 0
+  }
+}
+
 @keyframes lines {
   0% {
     opacity: .8
@@ -273,24 +347,17 @@ a[disabled] {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
 }
 
 /*attach to body - disable all transition/animation*/
-.disable-transitions * {
-  -webkit-transition: none !important;
-  transition: none !important;
-  transition-duration: none !important;
-  transition-property: none !important;
-  transition-timing-function: none !important;
-  animation: none !important;
-}
-
 .dotted-background {
   background-image: radial-gradient(var(--black2) 1px, transparent 1px);
   background-size: 25px 25px;
@@ -315,11 +382,6 @@ a[disabled] {
   display: none;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-  outline: 0 0 0 2px var(--white1);
-}
 /* adaptive font sizes
 =====================================*/
 @media screen and (max-width: 1020px) {

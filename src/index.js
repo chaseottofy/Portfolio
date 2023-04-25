@@ -59,8 +59,10 @@ import "./styles/gradientElements/headerGradient.css";
 import "./styles/main.css";
 import "./styles/gradientElements/dividerGradient.css";
 import "./styles/sections/intro.css";
-import "./styles/sections/projects.css";
+// import "./styles/sections/projects.css";
 // import "./styles/sections/skills.css";
+import "./styles/sections/projects2.css";
+// import "./styles/sections/projectImages.css";
 import "./styles/sections/skills2.css";
 import "./styles/sections/about.css";
 import "./styles/sections/contact.css";
@@ -72,6 +74,7 @@ import "./styles/aside/toast.css";
 import "./styles/aside/lighthouseModal.css";
 import "./styles/spinner.css";
 import "./styles/aside/hoverContext.css";
+import "./styles/aside/projectFloat.css";
 /***************************************/
 
 
@@ -83,13 +86,12 @@ import initHover from "./utilities/handleHover";
 import initDefaults from "./utilities/handleDefaults";
 import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
-import initImageExpand from "./utilities/handleImageExpand";
+import initProjects from "./utilities/handleProjects";
 // import initLayout from "./utilities/handleLayout";
 /***************************************/
 
 // CLICK PROJECT IMAGE TO EXPAND / COLLAPSE FULL IMAGE
 // TAB INDEX IS FUCKED
-
 
 const appInit = () => {
   // default time / date / etc
@@ -106,10 +108,15 @@ const appInit = () => {
   initContactForm();
   // modals
   initModals();
-  // expand images
-  initImageExpand();
+  // expand thumbs
+  initProjects();
 };
+
 appInit();
+
+console.log(document.body.clientWidth);
+console.log(window.innerWidth);
+
 
 // !!REMINDER
 // reverb thing fl studio

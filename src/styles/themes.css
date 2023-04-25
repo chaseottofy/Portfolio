@@ -1,15 +1,16 @@
-.colors {
+/* .colors {
   --blue1: rgb(42, 138, 246);
   --blue2: #3549a6;
   --pink1: #a853ba;
   --red1: rgb(233, 42, 103);
   --red2: #7c1e4b;
-}
+} */
 
 .theme__dark {
-  --header-before: transparent;
-  --header-text-before: #fff;
-  --header-after: rgba(0, 0, 0, .6);
+  --accent-1: #111;
+  --accent-2: #222;
+  --accent-3: #333;
+  --accent-4: #444;
 
   --black0: #000;
   --black1: #111;
@@ -35,30 +36,42 @@
   --offsetgrey3: rgba(23, 23, 23, 0.6);
   --offsetgrey4: rgba(23, 23, 23, 0.8);
 
-  --offsetred: rgba(233, 42, 103, .4);
-  --ring-border: 2px solid rgba(255, 255, 255, .5);
-  --dividerBg: rgba(129, 64, 143, 0.1);
 
-  --headerBgBefore: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.9) 40%,
-      rgba(0, 0, 0, 0) 100%);
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
+  
+  /* SPECIFIC */
+  --header-before: transparent;
+  --header-text-before: #fff;
+  --header-after: rgba(0, 0, 0, .6);
+  --headerBgBefore: linear-gradient(180deg,
+  rgba(0, 0, 0, 0.9) 40%,
+  rgba(0, 0, 0, 0) 100%);
 
-  --theme-btn--checked: rgba(0, 0, 0, .4);
+  --dividerBg: rgba(64, 76, 143, 0.1);
+
+  --scroller-bg: #444;
+  --scroller-bg--hover: #555;
 
   --btn-text: #fff;
   --btn-bg: #000;
+  --theme-btn--checked: rgba(0, 0, 0, .4);
+  --float-btn: #111;
+  
+  --thumbnail-bg: rgba(0, 0, 0, .6);
+  --thumbnail-bg--hover: rgba(0,0,0,.2);
+  
+  --lh-green: #16cf6b;
+  --lh-color: #fff;
 
-  --lh-green:#16cf6b;
-  --lh-color:#fff;
 }
 
 .theme__light {
-  --header-before: transparent;
-  --header-text-before: #fff;
-  --header-after: rgba(255,255,255,.9);
+  --accent-1: #fafafa;
+  --accent-2: #f2f2f2;
+  --accent-3: #e5e5e5;
+  --accent-4: #d4d4d4;
 
   --black0: #fff;
   --black1: #fafafa;
@@ -83,22 +96,32 @@
   --offsetgrey2: rgba(255, 255, 255, .5);
   --offsetgrey3: rgba(255, 255, 255, .5);
   --offsetgrey4: rgba(255, 255, 255, .5);
-  --offsetred: rgba(233, 42, 103, .2);
-  --ring-border: 2px solid rgba(0, 0, 0, .5);
 
-  --dividerBg: transparent;
-  --headerBgBefore: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.9) 40%,
-      rgba(255, 255, 255, 0) 100%);
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
 
-  --theme-btn--checked: rgba(255, 255, 255, .9);
+  /* SPECIFIC */
+  --header-before: transparent;
+  --header-text-before: #fff;
+  --header-after: rgba(255, 255, 255, .9);
+  --headerBgBefore: linear-gradient(180deg,
+  rgba(255, 255, 255, 0.9) 40%,
+  rgba(255, 255, 255, 0) 100%);
+
+  --scroller-bg: #a8a8a8;
+  --scroller-bg--hover: #ccc;
+  
+  --dividerBg: transparent;
+
+  --thumbnail-bg: rgba(255, 255, 255, .5);
+  --thumbnail-bg--hover: rgba(255, 255, 255, .2);
 
   --btn-text: #fff;
   --btn-bg: #000;
-
-  --lh-green:#16cf6b;
-  --lh-color:#fff;
+  --theme-btn--checked: rgba(255, 255, 255, .9);
+  --float-btn: #111;
+  
+  --lh-green: #16cf6b;
+  --lh-color: #fff;
 }

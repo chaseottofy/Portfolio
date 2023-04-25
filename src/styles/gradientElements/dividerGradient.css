@@ -8,13 +8,33 @@ DIVIDER
   margin: 0 auto;
   min-height: 2px;
   height: 2px;
-  min-width: 100vw;
-  position: relative;
+  max-width: 100vw;
   width: 100%;
+  position: relative;
+  /* width: 100%; */
   z-index: 6;
 }
 
-.section-gradient-left,
+.section-gradient-left {
+  filter: blur(48px);
+  border-radius: 50%;
+  margin-top: -4rem;
+  min-height: 2rem;
+  mix-blend-mode:normal;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--black0) 10%,
+    var(--grey1)
+  );
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* .section-gradient-left,
 .section-gradient-right {
   filter: blur(46px);
   margin-top: -.5rem;
@@ -23,8 +43,6 @@ DIVIDER
   pointer-events: none;
   user-select: none;
   width: 40%;
-
-  opacity: 0;
 }
 
 .section-gradient-left {
@@ -39,4 +57,4 @@ DIVIDER
   position: relative;
   z-index: 2;
   margin-left: auto;
-}
+} */

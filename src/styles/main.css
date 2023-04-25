@@ -5,9 +5,10 @@
   position: relative;
   z-index: var(--z-main);
   width: 100%;
-  height: 100%;
+  /* height; 100%; */
   margin-top: 4rem;
 }
+
 
 /* ------------------------ */
 /* SECTIONS
@@ -36,7 +37,7 @@
 
 .section-title {
   display: flex;
-  padding-top: 4rem;
+  padding-top: 6rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;

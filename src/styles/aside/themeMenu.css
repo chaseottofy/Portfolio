@@ -35,6 +35,7 @@
 .theme-switch span input {
   -webkit-appearance: none;
   appearance: none;
+  border: none;
   padding: 0;
   margin: 0;
   outline: none;

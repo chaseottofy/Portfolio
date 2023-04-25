@@ -1,5 +1,5 @@
 import createToast from "../factory/createToast";
-import createSpinner from "../factory/createSpinner"
+import createSpinner from "../factory/createSpinner";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const form = $(".contact-form");
@@ -51,6 +51,9 @@ const createSuccessMessage = () => {
   successMessage.appendChild(createSpinner());
   formWrapper.classList.add("disable-form");
   formWrapper.appendChild(successMessage);
+  nameInput.classList.add("skeleton");
+  contactValueInput.classList.add("skeleton");
+  messageInput.classList.add("skeleton");
 };
 
 const handleFormSubmit = e => {
@@ -68,7 +71,11 @@ const handleFormSubmit = e => {
       createToast("Message Sent!");
       form.reset();
       $(".success-message").remove();
+      submitBtn.classList.remove("btn-allow");
       formWrapper.classList.remove("disable-form");
+      nameInput.classList.remove("skeleton");
+      contactValueInput.classList.remove("skeleton");
+      messageInput.classList.remove("skeleton");
     });
 };
 
@@ -79,6 +86,7 @@ const initContactForm = () => {
   form.addEventListener("input", handleFormChange);
   form.addEventListener("submit", handleFormSubmit);
 };
+
 export default initContactForm;
 
 // console.log(

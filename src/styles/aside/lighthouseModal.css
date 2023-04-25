@@ -33,7 +33,7 @@
   transform: scale(1);
   opacity: 1;
   user-select: auto;
-  border: 2px solid var(--black2);
+  border: 1px solid var(--black2);
   background: var(--black1);
   -webkit-user-select: auto;
   -moz-user-select: auto;
@@ -49,7 +49,6 @@
   height: 64px;
   padding: .5rem .75rem;
   width: 100%;
-  /* background: var(--black0); */
   border-bottom: 1px solid var(--black2);
 }
 
@@ -111,7 +110,6 @@
   max-width: 320px;
   min-height: 240px;
   min-width: 200px;
-  /* background: var(--black0); */
   background: linear-gradient(180deg,
       var(--black0) 40%,
       var(--black1));
@@ -217,10 +215,19 @@
   flex-direction: column;
   position: relative;
   padding: 1.5rem;
+  border: none;
   width: 100%;
   height: 210px;
   text-align: left;
-  box-shadow: 0 0 0 1px var(--black2);
+  /* box-shadow: 0 0 0 1px var(--black2); */
+}
+
+.lh-sub:nth-child(-n + 3) {
+  border-bottom: 1px solid var(--black2);
+}
+
+.lh-sub:nth-child(even) {
+  border-right: 1px solid var(--black2);
 }
 
 .lh-sub-title {
@@ -313,5 +320,6 @@
   .lh-sub {
     max-width: 100%;
     min-height: 180px;
+    border-bottom: 1px solid var(--black2);
   }
 }

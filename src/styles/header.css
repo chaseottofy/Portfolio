@@ -7,9 +7,8 @@
   width: 100%;
   z-index: var(--z-header);
   background: var(--header-before);
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
-  will-change: background, backdrop-filter, -webkit-backdrop-filter;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .header-wrapper {
@@ -25,9 +24,7 @@
 }
 
 .header-animate {
-  transition-property: background, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+  transition: background .2s ease-in-out;
 }
 
 .header-nav {
@@ -108,8 +105,6 @@
 
 .header-filter {
   background: var(--header-after);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .header-filter .header-nav .nav-menu li button,
