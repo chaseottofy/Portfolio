@@ -40,9 +40,13 @@
 
 /*! ./styles/sections/intro.css */
 
-/*! ./styles/sections/projectImages.css */
+/*! ./styles/sections/sectionprojects/projectCard.css */
 
-/*! ./styles/sections/projects.css */
+/*! ./styles/sections/sectionprojects/projectContent.css */
+
+/*! ./styles/sections/sectionprojects/projectImages.css */
+
+/*! ./styles/sections/sectionprojects/projectsLayout.css */
 
 /*! ./styles/sections/skills.css */
 
@@ -172,10 +176,6 @@
   !*** ./src/styles/components/button.css ***!
   \******************************************/
 
-/*!******************************************!*\
-  !*** ./src/styles/sections/projects.css ***!
-  \******************************************/
-
 /*!*******************************************!*\
   !*** ./src/styles/aside/hoverContext.css ***!
   \*******************************************/
@@ -188,10 +188,6 @@
   !*** ./src/styles/aside/lighthouseModal.css ***!
   \**********************************************/
 
-/*!***********************************************!*\
-  !*** ./src/styles/sections/projectImages.css ***!
-  \***********************************************/
-
 /*!********************************************************!*\
   !*** ./src/styles/gradientElements/headerGradient.css ***!
   \********************************************************/
@@ -199,3 +195,19 @@
 /*!*********************************************************!*\
   !*** ./src/styles/gradientElements/dividerGradient.css ***!
   \*********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/styles/sections/sectionprojects/projectCard.css ***!
+  \*************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/styles/sections/sectionprojects/projectImages.css ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/styles/sections/sectionprojects/projectContent.css ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/styles/sections/sectionprojects/projectsLayout.css ***!
+  \****************************************************************/
