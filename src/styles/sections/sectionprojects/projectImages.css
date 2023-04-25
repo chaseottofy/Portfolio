@@ -1,0 +1,85 @@
+.project-image__calendar {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1.6;
+}
+
+.hide-img {
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  z-index: -1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* .cal-current {
+  animation: load-image .3s ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes load-image {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
+
+.cal-cell__image--1 {
+  background-image: url("../../../images/projects/calendar/c1.webp");
+}
+
+.cal-cell__image--2 {
+  background-image: url("../../../images/projects/calendar/c2.webp");
+}
+
+.cal-cell__image--3 {
+  background-image: url("../../../images/projects/calendar/c3.webp");
+}
+
+.cal-cell__image--4 {
+  background-image: url("../../../images/projects/calendar/c4.webp");
+}
+
+.cal-cell__image--5 {
+  background-image: url("../../../images/projects/calendar/c5.webp");
+}
+
+.theme__light .cal-cell__image--1 {
+  background-image: url("../../../images/projects/calendar/light/lightc1.webp");
+}
+
+.theme__light .cal-cell__image--2 {
+  background-image: url("../../../images/projects/calendar/light/lightc2.webp");
+}
+
+.theme__light .cal-cell__image--3 {
+  background-image: url("../../../images/projects/calendar/light/lightc3.webp");
+}
+
+.theme__light .cal-cell__image--4 {
+  background-image: url("../../../images/projects/calendar/light/lightc4.webp");
+}
+
+.theme__light .cal-cell__image--5 {
+  background-image: url("../../../images/projects/calendar/light/lightc5.webp");
+}
+
+/* @media screen and (max-width: 768px) {
+  .project-image__calendar {aspect-ratio: 1.6;}
+} */

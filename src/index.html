@@ -13,19 +13,9 @@
 </head>
 
 
-<body class="body theme__dark">
-  <!-- not visible : used to refer to gradient -->
-  <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
-    <defs>
-      <linearGradient id="subicon-gradient">
-        <stop offset="5%" stop-color="#a853ba"/>
-        <stop offset="95%" stop-color="#e92a67"/>
-      </linearGradient>
-    </defs>
-  </svg>
-
+<body class="body theme__dark disable-transitions">
   <!-- HEADER -->
-  <header class="header header-animate">
+  <header class="header">
     <div class="header-wrapper">
 
       <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
@@ -73,9 +63,10 @@
     </div>
   </header>
 
-
-  <!-- Basis to scroll back to top -->
+  <!-- scroll back to this position -->
+  <!-- need since header is fixed -->
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
+
 
 
   <!-- HEADER GRADIENT -->
@@ -84,7 +75,7 @@
   <!--------------------->
 
 
-  <!-- Contact menu popup -->
+  <!-- CONTACT MENU POPUP -->
   <aside class="contact-menu contact-menu__header">
     <!-- RIGHT -->
     <div class="cm-right">
@@ -205,6 +196,7 @@
   <!--------------------->
 
 
+
   <!-- LIGHTHOUSE MODAL POPUP -->
   <aside class="lighthouse-modal">
     <div class="lighthouse-modal__header">
@@ -295,21 +287,14 @@
   <!--------------------->
   <!-- SECTION: INTRO -->
   <section class="intro-container">
-    <!-- <aside class="intro-gradient--one"></aside> -->
-    <!-- <aside class="intro-gradient--two"></aside> -->
-    <!-- <aside class="intro-gradient--three"></aside> -->
-    <!-- <aside class="intro-gradient--four"></aside> -->
     <div class="intro-header">
       <h1 class="intro-header__title">CHASE OTTOFY</h1>
-      <div class="intro-header__subtitles">
 
+      <div class="intro-header__subtitles">
         <div class="intro-header__subtitle intro-header__subtitle--one">
-          <h2 class="intro-header__subtitle--text">
-            Front-end
-          </h2>
+          <h2 class="intro-header__subtitle--text">Front-end</h2>
           <span>
             <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_105_296)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M200 98.5234C196.477 99.4861 192.769 100 188.941 100H144.233C121.117 100 102.378 118.739 102.378 141.854V191.319C102.378 194.295 102.067 197.199 101.477 200C100.514 196.477 100 192.769 100 188.941V144.233C100 121.117 81.2612 102.378 58.1456 102.378H8.68122C5.70469 102.378 2.80073 102.067 0 101.477C3.52289 100.514 7.23105 100 11.0593 100H55.7675C78.8831 100 97.622 81.2611 97.622 58.1456L97.622 8.68118C97.622 5.70466 97.9327 2.80071 98.5234 0C99.4861 3.5229 100 7.23107 100 11.0593V55.7675C100 78.8831 118.739 97.622 141.855 97.622H191.319C194.295 97.622 197.199 97.9327 200 98.5234Z" fill="url(#paint0_linear_105_296)"/> </g> <defs> <linearGradient id="paint0_linear_105_296" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse"> <stop stop-color="var(--header-text-before)"/> <stop offset="1" stop-color="var(--header-text-before)"/> </linearGradient> <clipPath id="clip0_105_296"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
-            <!-- <svg fill="none" shape-rendering="geometricPrecision" stroke-linecap="square" stroke="var(--header-text-before)" stroke-width="1.5" viewBox="0 0 24 24" style="opacity:.9;"> -->
             <path d="M16.88 3.549L7.12 20.451"></path>
             </svg>
           </span>
@@ -322,10 +307,8 @@
             Web Developer
           </h2>
         </div>
-
         <!-- intro message -->
         <div class="intro-message"></div>
-
       </div>
     </div>
 
@@ -365,8 +348,6 @@
     <aside class="section-divider"></aside>
     <article class="projects-container" id="projects-top">
       <aside class="section-gradient-left"></aside>
-      <!-- <aside class="proj-gradient--one"></aside> -->
-      <!-- <aside class="proj-gradient--two"></aside> -->
       <div class="section-title">
         <span>Highlighted Work</span>
         <h2>Projects</h2>
@@ -383,30 +364,31 @@
                 <span style="background:#fbc032;"></span>
                 <span style="background:#27ca40;"></span>
               </div>
+
               <div class="pc__header-tabs calendar-tabs">
                 <span>
                   <input id="proj-calendar-day" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput" checked>
-                  <label aria-label="Day View" for="proj-calendar-day" class="proj-header__tablabel" data-tab-idx="1" data-lab-after="view">Day </label>
+                  <label aria-label="Day View" for="proj-calendar-day" class="proj-header__tablabel proj-cal--tab" data-tab-idx="1" data-lab-after="view">Day </label>
                 </span>
 
                 <span>
                   <input id="proj-calendar-week" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Day View" for="proj-calendar-week" class="proj-header__tablabel" data-tab-idx="4" data-lab-after="view">Week </label>
+                  <label aria-label="Day View" for="proj-calendar-week" class="proj-header__tablabel proj-cal--tab" data-tab-idx="2" data-lab-after="view">Week </label>
                 </span>
 
                 <span>
                   <input id="proj-calendar-month" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Month View" for="proj-calendar-month" class="proj-header__tablabel" data-tab-idx="2" data-lab-after="view">Month </label>
+                  <label aria-label="Month View" for="proj-calendar-month" class="proj-header__tablabel proj-cal--tab" data-tab-idx="3" data-lab-after="view">Month </label>
                 </span>
 
                 <span>
                   <input id="proj-calendar-year" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Year View" for="proj-calendar-year" class="proj-header__tablabel" data-tab-idx="5" data-lab-after="view">Year </label>
+                  <label aria-label="Year View" for="proj-calendar-year" class="proj-header__tablabel proj-cal--tab" data-tab-idx="4" data-lab-after="view">Year </label>
                 </span>
 
                 <span>
                   <input id="proj-calendar-list" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="List View" for="proj-calendar-list" class="proj-header__tablabel" data-tab-idx="3" data-lab-after="view">List </label>
+                  <label aria-label="List View" for="proj-calendar-list" class="proj-header__tablabel proj-cal--tab" data-tab-idx="5" data-lab-after="view">List </label>
                 </span>
 
               </div>
@@ -416,10 +398,8 @@
             <div class="project-content__subheader">
 
               <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
-                  chaseottofy.github.io/google-calendar-clone-vanilla/
-                </a>
+                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+                  chaseottofy.github.io/google-calendar-clone-vanilla/</a>
                 <span>
                   <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color:var(--geist-foreground)"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 </span>
@@ -429,25 +409,24 @@
               <div class="pc__subheader--links">
                 <a href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
                   <svg aria-label="github" height="19" viewBox="0 0 14 14" width="19"><path d="M7 .175c-3.872 0-7 3.128-7 7 0 3.084 2.013 5.71 4.79 6.65.35.066.482-.153.482-.328v-1.181c-1.947.415-2.363-.941-2.363-.941-.328-.81-.787-1.028-.787-1.028-.634-.438.044-.416.044-.416.7.044 1.071.722 1.071.722.635 1.072 1.641.766 2.035.59.066-.459.24-.765.437-.94-1.553-.175-3.193-.787-3.193-3.456 0-.766.262-1.378.721-1.881-.065-.175-.306-.897.066-1.86 0 0 .59-.197 1.925.722a6.754 6.754 0 0 1 1.75-.24c.59 0 1.203.087 1.75.24 1.335-.897 1.925-.722 1.925-.722.372.963.131 1.685.066 1.86.46.48.722 1.115.722 1.88 0 2.691-1.641 3.282-3.194 3.457.24.219.481.634.481 1.29v1.926c0 .197.131.415.481.328C11.988 12.884 14 10.259 14 7.175c0-3.872-3.128-7-7-7z" fill="currentColor" fill-rule="nonzero"></path></svg>
-                  <!-- <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color:var(--geist-foreground)"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> -->
                 </a>
 
 
                 <button class="lh-btn" data-app-name="calendar">
                   <svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;" data-darkreader-inline-stroke="" data-darkreader-inline-fill=""><title></title><path d="M12 0l5.5 3.5v5H20v3h-2.25l2 12.5H4.25l2-12.5H4v-3h2.5V3.53zm2.94 13.25l-6.22 2.26L8 20.04l7.5-2.75zM12 3.56L9.5 5.17V8.5h5V5.15Z"></path></svg>
-                  <!-- <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3l2 3l2 15h-8l2 -15z"></path><path d="M8 9l8 0"></path><path d="M3 11l2 -2l-2 -2"></path><path d="M21 11l-2 -2l2 -2"></path></svg> -->
                 </button>
                 <!-- lighthouse -->
               </div>
-
-
             </div>
-
-
+            <!-- CALENDAR BODY -->
             <div class="project-content__body">
-              <div class="project-cell__image project-cell--calendar cal-cell__image--1" data-curr-idx="1" data-thumb-title="Day View"></div>
-            </div>
+              <div class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View"></div>
+              <div class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View"></div>
+              <div class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View"></div>
+              <div class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View"></div>
+              <div class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View"></div>
 
+            </div>
 
           </div>
         </div>
@@ -661,9 +640,6 @@
       <div class="section-title">
         <h3>Send Direct Message</h3>
         <span class="cf-br" style="height:1rem;"></span>
-        <!-- <h4 class="section-subtitle">
-          I am currently looking for opportunities!
-        </h4> -->
       </div>
 
       <div class="contact-form--wrapper">
@@ -702,18 +678,19 @@
         </form>
       </div>
     </article>
-
-
     <!--------------------->
   </main>
+
 
   <!-- Toast popup (dynamic) -->
   <aside class="toast-wrapper"></aside>
   <!--------------------->
 
+
   <!-- modal overlay -->
   <aside class="modal-ov modal-ov--hide"></aside>
   <!------------------->
+
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -727,37 +704,3 @@
 </body>
 
 </html>
-
-
-<!-- 
-
-
-
-http://localhost:3000/?messageName=Another&contact-method=email&messageContactVal=ottofy%40zohomail.com&messageVal=asdf
- -->
-
-<!-- SECTION: SKILLS -->
-<!-- <aside class="section-divider"></aside> -->
-<!-- <aside class="section-gradient-left"></aside> -->
-<!-- <aside class="section-gradient-right"></aside> -->
-<!-- <article class="section-container skills-container" id="skills-top"></article> -->
-<!--------------------->
-
-<!-- SECTION: ABOUT -->
-<!-- <aside class="section-divider"></aside>
-<aside class="section-gradient-left"></aside>
-<aside class="section-gradient-right"></aside>
-<article class="section-container about-container" id="about-top">
-
-  <div class="section-title">
-    <h2>About</h2>
-  </div>
-  <div class="section-grid"></div>
-</article> -->
-<!--------------------->
-
-<!--------------------->
-<!-- SECTION: PROJECTS -->
-<!-- <aside class="section-divider"></aside> -->
-<!-- <aside class="section-gradient-left"></aside> -->
-<!-- <aside class="section-gradient-right"></aside> -->

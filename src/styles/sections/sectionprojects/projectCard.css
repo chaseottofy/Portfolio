@@ -1,65 +1,3 @@
-/* SECTION: PROJECTS
-============================*/
-.projects-container {
-  width: 100%;
-  /* scroll-margin-top: 4rem; */
-  background: linear-gradient(to bottom,
-      var(--black0) 0%,
-      var(--accent-1) 20%,
-      var(--black4) 40%,
-      var(--black0) 80%,
-      transparent);
-  position: relative;
-}
-
-.projects-container .section-title::before {
-  position: absolute;
-  top: calc(50% + 4px);
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  margin: 0 auto;
-  content: "";
-  pointer-events: none;
-  user-select: none;
-  background: linear-gradient(to left,
-      transparent,
-      var(--grey3) 10%,
-      var(--accent-3) 50%,
-      var(--grey3) 90%,
-      transparent);
-  opacity: 1;
-  z-index: 1;
-}
-
-.projects-container .section-title span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -.5px;
-  backdrop-filter: blur(8px);
-  transform: scaleY(.93);
-  margin-bottom: 1rem;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, var(--white1), var(--white2));
-  z-index: 2;
-}
-
-.projects-grid {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 4rem;
-  padding: 1rem;
-}
-
 .project-cell {
   width: 100%;
   -webkit-box-shadow: var(--bs-lg);
@@ -115,6 +53,8 @@
   border-radius: 50%;
 }
 
+/* TABS
+============================*/
 .pc__header-tabs {
   display: flex;
   height: 100%;
@@ -176,16 +116,14 @@
   border-bottom: 2px solid transparent;
 }
 
-.project-content__body {
-  background: var(--black0);
-}
-
+/* SUBHEADER CONTENT (search/githublink/lighthouse button)
+============================*/
 .project-content__subheader {
   background: var(--accent-1);
   height: 3rem;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 20%;
+  grid-template-columns: 1fr 30%;
   padding: 0 .75rem;
   align-items: center;
   justify-content: center;
@@ -199,7 +137,7 @@
   width: 100%;
   height: 2rem;
   border-radius: 10px;
-  padding: 0 0 0 .5rem;
+  padding: 0 .5rem 0 .5rem;
   overflow: hidden;
   background: var(--black4);
   font-size: .75rem;
@@ -278,28 +216,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   border-radius: 5px;
+  color: var(--white1);
+  background: var(--black4);
+  transition: background .2s ease-in-out, color .2s ease-in-out;
 }
 
 .pc__subheader--links a {
-  margin-right: .25rem;
+  margin-right: .75rem;
 }
 
 .pc__subheader--links svg {
   height: 1rem;
   width: 1rem;
-  fill: none;
 }
-
-/* .pc__subheader--links a {} */
-/* .pc__subheader--links button {} */
 
 .pc__subheader--links a svg {
   fill: var(--white1);
+  stroke: none;
   opacity: 1;
+  transition: color .2s ease-in-out;
 }
 
 .pc__subheader--links button svg {
@@ -308,27 +247,19 @@
 
 .pc__subheader--links a:hover,
 .pc__subheader--links button:hover {
-  background: var(--black4);
+  background: var(--white1);
+  color: var(--black0);
 }
 
-/* IMAGE
-============================*/
-.project-cell__image {
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  aspect-ratio: 1.8;
+.pc__subheader--links a:hover svg,
+.pc__subheader--links button:hover svg {
+  fill: var(--black0);
 }
 
 /* QUERIES
 ============================*/
 /* @media screen and (max-width: 1020px) {} */
 @media screen and (max-width: 768px) {
-
-  .projects-grid {
-    padding: .5rem;
-  }
-
   .project-content__header {
     grid-template-columns: 5rem 1fr;
   }
@@ -344,16 +275,25 @@
 
   /* subheader */
   .project-content__subheader {
-    padding: 0 .25rem;
+    padding: 0 .75rem;
   }
 
   .pc__subheader--search {
     font-size: .625rem;
   }
+}
 
-  /* main content */
-  .project-cell__image {
-    aspect-ratio: 1.6;
+@media screen and (max-width: 640px) {
+  .project-content__subheader {
+    grid-template-columns: 60% 1fr;
+  }
+
+  .pc__subheader--search a:first-child svg {
+    display: none;
+  }
+
+  .pc__subheader--search span {
+    display: none;
   }
 }
 
@@ -366,10 +306,6 @@
 
   .pc__subheader--search {
     font-size: .625rem;
-  }
-
-  .pc__subheader--search a:first-child svg {
-    display: none;
   }
 }
 

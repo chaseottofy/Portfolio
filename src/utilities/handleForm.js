@@ -34,16 +34,16 @@ const handleFormChange = e => {
   }
 };
 
-const createTimestamp = () => {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const second = date.getSeconds();
-  return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
-};
+// const createTimestamp = () => {
+//   const date = new Date();
+//   const year = date.getFullYear();
+//   const month = date.getMonth() + 1;
+//   const day = date.getDate();
+//   const hour = date.getHours();
+//   const minute = date.getMinutes();
+//   const second = date.getSeconds();
+//   return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+// };
 
 const createSuccessMessage = () => {
   const successMessage = document.createElement("div");
@@ -59,11 +59,14 @@ const applySkeleton = () => {
   messageInput.classList.add("skeleton");
 }
 
+// still need some kind of authentication to prevent my google sheet from turning into garbage.
 const handleFormSubmit = e => {
   e.preventDefault();
   applySkeleton();
   createSuccessMessage();
   let data = new FormData(form);
+
+  // wait can I put full-stack on my resume now?
   fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
     method: "POST",
     body: data,
@@ -83,18 +86,9 @@ const handleFormSubmit = e => {
 };
 
 const initContactForm = () => {
-  contactOptions.forEach((option) => {
-    option.addEventListener("change", handleSelectedContactMethod);
-  });
+  contactOptions.forEach((option) => option.addEventListener("change", handleSelectedContactMethod));
   form.addEventListener("input", handleFormChange);
   form.addEventListener("submit", handleFormSubmit);
 };
 
 export default initContactForm;
-
-// console.log(
-//   data.get("messageName"),
-//   data.get("contactMethod"),
-//   data.get("messageContactVal"),
-//   data.get("messageVal"),
-// );

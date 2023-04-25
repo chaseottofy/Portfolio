@@ -4,14 +4,21 @@ const $$ = document.querySelectorAll.bind(document);
 const modalOverlay = $(".modal-ov");
 const body = $(".body");
 
+// lighthouse buttons (project cell header - next to fake search bar)
 const LHBtns = $$(".lh-btn");
+
+// lighthouse modal elements (<aside>)
 const LHModal = $(".lighthouse-modal");
 const LHBody = $(".lighthouse-modal__body");
 const closeLHBtn = $(".close-lh-btn");
 
+// show more buttons (project writeups)
 const SMBtns = $$(".project-writeup__toggle--btn");
 const SMMore = $$(".project-writeup__more");
 
+
+// handle Lighthouse modal
+// populate modal with data onclick
 const handleLHModal = () => {
   const modalData = {
     "calendar": {
@@ -34,7 +41,6 @@ const handleLHModal = () => {
       LHModal.setAttribute("class", "lighthouse-modal");
       LHBody.setAttribute("class", "lighthouse-modal__body");
       modalOverlay.classList.add("modal-ov--hide");
-      // LHBtns.forEach(btn => btn.classList.remove("project-cell--lhbtn-active"));
       closeLHBtn.disabled = true;
       body.onclick = null;
     }
@@ -51,13 +57,16 @@ const handleLHModal = () => {
     $(".lh-main__score-title").href = modalData[appname]['link'];
     $(".lh-metric-a").textContent = modalData[appname]['metric-a'];
     $(".lh-metric-b").textContent = modalData[appname]['metric-b'];
-    $(".body").onclick = closeLH;
+
+    // just use the body for click outside of modal functionality
+    body.onclick = closeLH;
   };
 
   LHBtns.forEach((btn) => btn.addEventListener("click", openLH));
 };
 
 const handleProjectShowMore = () => {
+  // init show more buttons
   const toggleSM = e => {
     const idx = parseInt(e.target.getAttribute("data-proj-index"));
     const moreModal = SMMore[idx];

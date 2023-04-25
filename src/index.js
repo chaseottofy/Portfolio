@@ -1,125 +1,119 @@
 /**
- * @fileoverview Entry point, 
- * import all css (DOM order),
- * initialize event listeners
- * --------------------------------
+ * @fileoverview
+ * - import all stylesheets in order of DOM hierarchy 
+ * (webpack bundles them in order of import into one file @dist/main.css)\
  * 
- * ./root (
- *   - font-face
- *   - common css variables between themes
- *   - css reset
- *   - html font-size query
- * 
- * --------------------------------
- * 
- * ./themes (dark/light)
- * ./components (button, input, svg)
- * 
- * --------------------------------
- * 
- * <header />
- * <aside> <headerGradient />
- * 
- * --------------------------------
- * fixed elements & popups
- * 
- * <aside> <scrolltop />
- * <aside> <themeMenu />
- * <aside> <contactMenu />
- * <aside> <toast />
- * 
- * --------------------------------
- * (** = child)
- * 
- * <main>
- * ** <dividerGradient />
- * ** <intro />
- * ** <projects />
- * ** <skills />
- * ** <about />
- * ** <contact />
- * </main>
- * 
- * --------------------------------
- * <footer />
- * --------------------------------
+ * - import init functions for all utilities/handlers
  */
 
+// font declarations / css reset / css variables (root & themes)
 import "./styles/root.css";
+
+// two classes : light/dark 
+// -- note that root.css holds the primary/secondary color variables
+// this is for text / background / etc colors
 import "./styles/themes.css";
 
+
+// reusable components
 import "./styles/components/button.css";
 import "./styles/components/input.css";
 import "./styles/components/svg.css";
 
+
+// header : nav / logo / theme toggle
 import "./styles/header.css";
 import "./styles/headerLogo.css";
 import "./styles/gradientElements/headerGradient.css";
 
 
+// main : intro / projects / about / skills / contact --- provide basic layout & header
 import "./styles/main.css";
+
+
+// divider for each main section
 import "./styles/gradientElements/dividerGradient.css";
 
+
+// intro : section 1
 import "./styles/sections/intro.css";
-import "./styles/sections/projects.css";
-import "./styles/sections/projectImages.css";
+
+
+// projects : section 2
+import "./styles/sections/sectionprojects/projectImages.css";
+import "./styles/sections/sectionprojects/projectsLayout.css";
+import "./styles/sections/sectionprojects/projectCard.css";
+import "./styles/sections/sectionprojects/projectContent.css";
+
+
+// about/skills : section 3/4
 import "./styles/sections/about.css";
 import "./styles/sections/skills.css";
+
+
+// contact/contactForm : section 5/6
 import "./styles/sections/contact.css";
 import "./styles/sections/contactForm.css";
 
-import "./styles/footer.css";
 
+// Dynamic content (loading animations/ toast notifications) & modals
 import "./styles/aside/themeMenu.css";
 import "./styles/aside/toast.css";
 import "./styles/aside/lighthouseModal.css";
 import "./styles/aside/spinner.css";
 import "./styles/aside/hoverContext.css";
+
+
+import "./styles/footer.css";
+/**
+ * List of breakpoints
+ * 1020
+ * 768
+ * 640
+ * 490
+ * 380
+ */
 /***************************************/
 
 
 /***************************************/
 import initTheme from "./utilities/handleTheme";
-import initCopyElements from "./utilities/handleCopy";
 import initScroll from "./utilities/handleScroll";
 import initHover from "./utilities/handleHover";
-import initDefaults from "./utilities/handleDefaults";
+import initCopyElements from "./utilities/handleCopy";
+import initProjects from "./utilities/handleProjects";
 import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
-import initProjects from "./utilities/handleProjects";
-// import initLayout from "./utilities/handleLayout";
+import initDefaults from "./utilities/handleDefaults";
 /***************************************/
-
-// CLICK PROJECT IMAGE TO EXPAND / COLLAPSE FULL IMAGE
-// TAB INDEX IS FUCKED
-
 const appInit = () => {
-  // default time / date / etc
-  initDefaults();
   // set default theme / toggle theme
   initTheme();
-  // copy phone # / email;
-  initCopyElements();
-  // scroll to articles / top of page
+
+  // scroll to nav elements / top of page
   initScroll();
-  // open/close contact menu
+
+  // hovers : contact menu (navbar) / tbd..
   initHover();
-  // contact form
-  initContactForm();
-  // modals
-  initModals();
-  // click through project tabs
+
+  // configure any copy to clipboard elements
+  initCopyElements();
+
+  // click through project tabs to serve new images
   initProjects();
+
+  // set up form POST & error-handling
+  initContactForm();
+
+  // configure open/close for all modals
+  initModals();
+
+  // set default time / date / etc
+  initDefaults();
 };
 
 appInit();
 
-console.log(document.body.clientWidth);
-console.log(window.innerWidth);
-
-
 // !!REMINDER
-// reverb thing fl studio
+// TAB INDEX
 // set svgs to reasonable inline size
-// width when in mobile view
-// column gap

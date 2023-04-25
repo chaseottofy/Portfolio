@@ -44,21 +44,3 @@
   margin-top: -8rem;
   display:none;
 }
-
-/* @keyframes gradient {
-  0% {
-    filter: grayscale(0);
-  }
-  25% {
-    filter: grayscale(.5);
-  }
-  50% {
-    filter: grayscale(1);
-  }
-  75% {
-    filter: grayscale(.5);
-  }
-  100% {
-    filter: grayscale(0);
-  }
-} */

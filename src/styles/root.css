@@ -372,6 +372,14 @@ a[disabled] {
   display: none;
 }
 
+/*
+ -1020
+ -768
+ -640
+ -490
+ -380
+*/
+
 /* adaptive font sizes
 =====================================*/
 @media screen and (max-width: 1020px) {
