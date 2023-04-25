@@ -12,6 +12,25 @@
   cursor: pointer;
 }
 
+.header-logo svg {
+  color: var(--white1);
+  fill: var(--white1);
+}
+
+.theme__light .header-logo svg {
+  filter: invert(1);
+}
+
+.theme__light .header-filter .header-logo svg {
+  filter: invert(0);
+}
+
+/*
+
+<!-- <svg class="logo--o-1" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
+<svg class="logo--o-2" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
+<svg class="logo--t-1" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg>
+<svg class="logo--t-2" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg> -->
 .logo--o-1,
 .logo--o-2 {
   height: 1.5rem;
@@ -71,3 +90,5 @@
     opacity: 1;
   }
 }
+
+*/

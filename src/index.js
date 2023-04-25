@@ -1,3 +1,5 @@
+
+
 /**
  * @fileoverview
  * - import all stylesheets in order of DOM hierarchy 
@@ -5,7 +7,6 @@
  * 
  * - import init functions for all utilities/handlers
  */
-
 // font declarations / css reset / css variables (root & themes)
 import "./styles/root.css";
 
@@ -65,6 +66,10 @@ import "./styles/aside/hoverContext.css";
 
 
 import "./styles/footer.css";
+
+/*
+
+*/
 /**
  * List of breakpoints
  * 1020
@@ -73,6 +78,11 @@ import "./styles/footer.css";
  * 490
  * 380
  */
+
+// https://www.wiktorwisniewski.dev/blog/preloading-assets-with-webpack5
+// https://github.com/webdiscus/html-bundler-webpack-plugin
+// https://vercel.com/features/edge-functions
+// https://www.bestfolios.com/home
 /***************************************/
 
 
@@ -85,8 +95,12 @@ import initProjects from "./utilities/handleProjects";
 import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
 import initDefaults from "./utilities/handleDefaults";
+import initImages from "./utilities/handleImages";
 /***************************************/
 const appInit = () => {
+  // preload images
+  // initImages();
+
   // set default theme / toggle theme
   initTheme();
 

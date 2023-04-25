@@ -6,6 +6,6 @@
   "lang": "en-US",
   "display": "standalone",
   "orientation": null,
-  "background_color": "#131516",
-  "theme_color": "#131516"
+  "background_color": "#000",
+  "theme_color": "#000"
 }

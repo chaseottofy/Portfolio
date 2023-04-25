@@ -53,7 +53,6 @@
   border-radius: 50%;
   justify-content: center;
   cursor: pointer;
-  /* box-shadow: 0 0 0 2px rgba(0, 0, 0, 0); */
 }
 
 .theme-switch span label svg {

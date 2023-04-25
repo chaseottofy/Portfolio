@@ -13,16 +13,13 @@
 </head>
 
 
-<body class="body theme__dark disable-transitions">
+<body class="body theme__dark">
   <!-- HEADER -->
-  <header class="header">
+  <header class="header header-animate">
     <div class="header-wrapper">
 
       <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
-        <svg class="logo--o-1" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
-        <svg class="logo--o-2" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path></svg>
-        <svg class="logo--t-1" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg>
-        <svg class="logo--t-2" stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 4l12 0"></path><path d="M12 4l0 16"></path></svg>
+        <svg width="1.5rem" height="1.5rem" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M32 100.641C32 68.391 54.1651 41.3515 84 34.1102V1.28125C36.3772 8.98855 0 50.5392 0 100.641C0 150.742 36.3772 192.293 84 200V167.171C54.1651 159.93 32 132.89 32 100.641ZM200 100.641C200 150.742 163.623 192.293 116 200V167.171C145.835 159.93 168 132.89 168 100.641C168 68.391 145.835 41.3515 116 34.1102V1.28125C163.623 8.98855 200 50.5392 200 100.641Z" fill="url(#paint0_linear_231_555)"/> <defs> <linearGradient id="paint0_linear_231_555" x1="157.5" y1="33.0763" x2="44.7421" y2="148.561" gradientUnits="userSpaceOnUse"> <stop offset="0.0509862" stop-color="var(--white1)"/> <stop offset="1" stop-color="var(--white2)"/> </linearGradient> </defs> </svg>
       </button>
 
       <div class="nav-wrapper">
@@ -43,11 +40,6 @@
                 About
               </a>
             </li>
-            <!-- <li>
-              <a class="nav-menu--link" href="#about-top">
-                About
-              </a>
-            </li> -->
             <li class="nav-multi__contact">
               <button class="menu-btn--multi contact-nav--btn" aria-label="button" data-href="#contact-top">
                 <span style="pointer-events:none;user-select:none">
@@ -55,7 +47,6 @@
                 </span>
                 <svg fill="none" height="14" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="14" aria-hidden="true" style="color: currentcolor;"><path d="M6 9l6 6 6-6"></path></svg>
               </button>
-
             </li>
           </ul>
         </nav>
@@ -67,13 +58,9 @@
   <!-- need since header is fixed -->
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
 
-
-
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one"></aside>
-  <aside class="gradient-overlay--two"></aside>
   <!--------------------->
-
 
   <!-- CONTACT MENU POPUP -->
   <aside class="contact-menu contact-menu__header">
@@ -196,7 +183,6 @@
   <!--------------------->
 
 
-
   <!-- LIGHTHOUSE MODAL POPUP -->
   <aside class="lighthouse-modal">
     <div class="lighthouse-modal__header">
@@ -282,8 +268,6 @@
   <!--------------------->
 
 
-
-
   <!--------------------->
   <!-- SECTION: INTRO -->
   <section class="intro-container">
@@ -294,7 +278,7 @@
         <div class="intro-header__subtitle intro-header__subtitle--one">
           <h2 class="intro-header__subtitle--text">Front-end</h2>
           <span>
-            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_105_296)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M200 98.5234C196.477 99.4861 192.769 100 188.941 100H144.233C121.117 100 102.378 118.739 102.378 141.854V191.319C102.378 194.295 102.067 197.199 101.477 200C100.514 196.477 100 192.769 100 188.941V144.233C100 121.117 81.2612 102.378 58.1456 102.378H8.68122C5.70469 102.378 2.80073 102.067 0 101.477C3.52289 100.514 7.23105 100 11.0593 100H55.7675C78.8831 100 97.622 81.2611 97.622 58.1456L97.622 8.68118C97.622 5.70466 97.9327 2.80071 98.5234 0C99.4861 3.5229 100 7.23107 100 11.0593V55.7675C100 78.8831 118.739 97.622 141.855 97.622H191.319C194.295 97.622 197.199 97.9327 200 98.5234Z" fill="url(#paint0_linear_105_296)"/> </g> <defs> <linearGradient id="paint0_linear_105_296" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse"> <stop stop-color="var(--header-text-before)"/> <stop offset="1" stop-color="var(--header-text-before)"/> </linearGradient> <clipPath id="clip0_105_296"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
+            <svg width="1.5rem" height="1.5rem" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_105_296)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M200 98.5234C196.477 99.4861 192.769 100 188.941 100H144.233C121.117 100 102.378 118.739 102.378 141.854V191.319C102.378 194.295 102.067 197.199 101.477 200C100.514 196.477 100 192.769 100 188.941V144.233C100 121.117 81.2612 102.378 58.1456 102.378H8.68122C5.70469 102.378 2.80073 102.067 0 101.477C3.52289 100.514 7.23105 100 11.0593 100H55.7675C78.8831 100 97.622 81.2611 97.622 58.1456L97.622 8.68118C97.622 5.70466 97.9327 2.80071 98.5234 0C99.4861 3.5229 100 7.23107 100 11.0593V55.7675C100 78.8831 118.739 97.622 141.855 97.622H191.319C194.295 97.622 197.199 97.9327 200 98.5234Z" /> </g><defs><clipPath id="clip0_105_296"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
             <path d="M16.88 3.549L7.12 20.451"></path>
             </svg>
           </span>
@@ -331,7 +315,7 @@
         </span>
 
         <span>
-          <input id="theme-switch-system" type="radio" value="dark" name="radio-theme" class="theme-input" checked>
+          <input id="theme-switch-system" type="radio" value="dark" name="radio-theme" class="theme-input">
           <label aria-label="Switch to system mode" for="theme-switch-system" title="Switch to system mode" class="theme-label">
             <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path>
         </svg>
@@ -354,7 +338,7 @@
       </div>
 
       <div class="projects-grid">
-
+        <!-- GOOGLE CALENDAR PROJECT -->
         <div class="project-cell project-calendar" data-proj-title="Google Calendar 2.0">
           <div class="project-cell__content">
 
@@ -419,24 +403,80 @@
               </div>
             </div>
             <!-- CALENDAR BODY -->
+
             <div class="project-content__body">
               <div class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View"></div>
               <div class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View"></div>
               <div class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View"></div>
               <div class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View"></div>
               <div class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View"></div>
-
             </div>
 
           </div>
         </div>
 
+
+        <!-- MARKDOWN PROJECT -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
-          <div class="project-cell__content"></div>
-          <div class="project-cell__image project-cell--markdown"></div>
+          <div class="project-cell__content">
+
+            <div class="project-content__header">
+              <div class="pc__header-decoration">
+                <span style="background:#fb6257;"></span>
+                <span style="background:#fbc032;"></span>
+                <span style="background:#27ca40;"></span>
+              </div>
+
+              <div class="pc__header-tabs calendar-tabs">
+                <span>
+                  <input id="proj-markdown-one" type="radio" value="Day" name="proj-markdown--radio" class="proj-header__tabinput" checked>
+                  <label for="proj-markdown-one" class="proj-header__tablabel proj-mark--tab" data-tab-idx="1" data-lab-after="">One </label>
+                </span>
+
+                <span>
+                  <input id="proj-markdown-two" type="radio" value="Day" name="proj-markdown--radio" class="proj-header__tabinput">
+                  <label for="proj-markdown-two" class="proj-header__tablabel proj-mark--tab" data-tab-idx="2" data-lab-after="">Two </label>
+                </span>
+
+              </div>
+            </div>
+
+
+            <div class="project-content__subheader">
+
+              <div class="pc__subheader--search">
+
+                <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+                  https://chaseottofy.github.io/react-lite-markdown/</a>
+                <span>
+                  <svg data-testid="geist-icon" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color:var(--geist-foreground)"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </span>
+                </button>
+              </div>
+
+              <div class="pc__subheader--links">
+                <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
+                  <svg aria-label="github" height="19" viewBox="0 0 14 14" width="19"><path d="M7 .175c-3.872 0-7 3.128-7 7 0 3.084 2.013 5.71 4.79 6.65.35.066.482-.153.482-.328v-1.181c-1.947.415-2.363-.941-2.363-.941-.328-.81-.787-1.028-.787-1.028-.634-.438.044-.416.044-.416.7.044 1.071.722 1.071.722.635 1.072 1.641.766 2.035.59.066-.459.24-.765.437-.94-1.553-.175-3.193-.787-3.193-3.456 0-.766.262-1.378.721-1.881-.065-.175-.306-.897.066-1.86 0 0 .59-.197 1.925.722a6.754 6.754 0 0 1 1.75-.24c.59 0 1.203.087 1.75.24 1.335-.897 1.925-.722 1.925-.722.372.963.131 1.685.066 1.86.46.48.722 1.115.722 1.88 0 2.691-1.641 3.282-3.194 3.457.24.219.481.634.481 1.29v1.926c0 .197.131.415.481.328C11.988 12.884 14 10.259 14 7.175c0-3.872-3.128-7-7-7z" fill="currentColor" fill-rule="nonzero"></path></svg>
+                </a>
+
+
+                <button class="lh-btn" data-app-name="markdown">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><title></title><path d="M12 0l5.5 3.5v5H20v3h-2.25l2 12.5H4.25l2-12.5H4v-3h2.5V3.53zm2.94 13.25l-6.22 2.26L8 20.04l7.5-2.75zM12 3.56L9.5 5.17V8.5h5V5.15Z"></path></svg>
+                </button>
+                <!-- lighthouse -->
+              </div>
+            </div>
+            <!-- MARKDOWN BODY -->
+
+            <div class="project-content__body">
+              <div class="project-image__markdown mark-cell__image--1 mark-current" data-mark-nth="1" data-thumb-title="One"></div>
+              <div class="project-image__markdown mark-cell__image--2 hide-img" data-mark-nth="2" data-thumb-title="Two"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="project-cell project-vjs" data-proj-title="Vanilla JS Components">
+
+        <!-- <div class="project-cell project-vjs" data-proj-title="Vanilla JS Components">
           <div class="project-cell__content"></div>
           <div class="project-cell__image project-cell--vjs"></div>
         </div>
@@ -444,7 +484,7 @@
         <div class="project-cell project-rjs" data-proj-title="React JS Components">
           <div class="project-cell__content"></div>
           <div class="project-cell__image project-cell--rjs"></div>
-        </div>
+        </div> -->
       </div>
     </article>
     <!--------------------->

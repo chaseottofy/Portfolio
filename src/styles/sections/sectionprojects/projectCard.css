@@ -79,11 +79,13 @@
   justify-content: center;
   height: 100%;
   cursor: pointer;
-  background: var(--accent-2);
   border-right: 1px solid var(--black2);
-  border-bottom: 2px solid var(--black2);
+  border-bottom: 1px solid var(--black2);
   background: var(--accent-1);
   position: relative;
+  transition-property: background, border-bottom;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
 }
 
 .pc__header-tabs span label::after {
@@ -96,7 +98,6 @@
 
 .pc__header-tabs span label:hover,
 .pc__header-tabs span label:focus-visible {
-  transition: all .2s ease-in-out;
   background: var(--black0);
 }
 
@@ -113,7 +114,7 @@
 
 .pc__header-tabs span input:checked + label {
   background: var(--black0);
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid var(--black0);
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
@@ -222,7 +223,7 @@
   border-radius: 5px;
   color: var(--white1);
   background: var(--black4);
-  transition: background .2s ease-in-out, color .2s ease-in-out;
+  transition: background 100ms ease-in-out;
 }
 
 .pc__subheader--links a {

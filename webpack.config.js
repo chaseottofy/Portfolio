@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -9,7 +10,8 @@ const path = require('path');
 module.exports = (env) => {
   return {
     entry: './src/index.js',
-    mode: 'development',
+    mode: 'production',
+    devtool: 'source-map',
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
@@ -19,7 +21,6 @@ module.exports = (env) => {
       hot: true,
       compress: true,
     },
-    devtool: 'source-map',
     module: {
       rules: [
         {
@@ -55,11 +56,19 @@ module.exports = (env) => {
           removeAttributeQuotes: true,
         },
       }),
-      new FaviconsWebpackPlugin({
-        logo: './src/favicon.svg',
-        manifest: './src/manifest.webmanifest',
-        mode: "light",
+      new HtmlWebpackInjectPreload({
+        files: [
+          {
+            match: /.*\.woff2$/,
+            attributes: { as: 'font', type: 'font/woff2', crossorigin: true },
+          },
+        ],
       }),
+      // new FaviconsWebpackPlugin({
+      //   logo: './src/favicon.svg',
+      //   manifest: './src/manifest.webmanifest',
+      //   mode: "light",
+      // }),
       new MiniCssExtractPlugin({
         filename: "[name].css",
       }),
@@ -67,9 +76,20 @@ module.exports = (env) => {
     optimization: {
       minimize: true,
       minimizer: [
-        // production
-        new TerserPlugin({ extractComments: true }),
-        new CssMinimizerPlugin(),
+        new TerserPlugin({
+          minify: TerserPlugin.uglifyJsMinify,
+          extractComments: true
+        }),
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              'default',
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
+          },
+        }),
       ],
     },
     output: {
@@ -79,3 +99,13 @@ module.exports = (env) => {
     },
   };
 };
+
+
+// {
+//   match: /vendors\.[a-z-0-9]*.css$/,
+//   attributes: { as: 'style' },
+// },
+// {
+//   match: /.*\.webp$/,
+//   attributes: { as: 'image', type: 'image/webp' },
+// },

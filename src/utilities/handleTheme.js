@@ -12,9 +12,9 @@ const setTheme = (theme) => {
   colorSchemeMeta.setAttribute("content", theme);
 
   // For smaller sites like this I like to disable all transitions on load to prevent flashing. see ../styles/root.css @ .disable-transitions
-  body.setAttribute("class", `body theme__${theme} disable-transitions`);
+  body.setAttribute("class", `body theme__${theme}`);
   // 200 = longest transition duration in app
-  setTimeout(() => body.classList.remove("disable-transitions"), 200);
+  // setTimeout(() => body.classList.remove("disable-transitions"), 200);
 };
 
 // if local storage has theme, set it
