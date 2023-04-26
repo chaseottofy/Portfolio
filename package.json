@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve --open",
+    "dev": "webpack serve",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -40,17 +40,14 @@
     "css-minimizer-webpack-plugin": "^4.2.2",
     "dotenv-webpack": "^8.0.1",
     "gh-pages": "^5.0.0",
-    "html-bundler-webpack-plugin": "^1.17.3",
-    "html-loader": "^4.2.0",
+    "html-bundler-webpack-plugin": "^1.18.0",
     "html-minimizer-webpack-plugin": "^4.3.0",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.5",
     "mini-svg-data-uri": "^1.4.4",
     "source-map-loader": "^4.0.1",
-    "style-loader": "^3.3.2",
+    "sass": "1.62.0",
+    "sass-loader": "^13.2.2",
     "terser-webpack-plugin": "^5.3.7",
     "uglify-js": "^3.17.4",
-    "url-loader": "^4.1.1",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1",
@@ -58,6 +55,5 @@
     "webpack-nano": "^1.1.1"
   },
   "devDependencies": {
-    "@principalstudio/html-webpack-inject-preload": "^1.2.7"
   }
 }
