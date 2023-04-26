@@ -1,4 +1,4 @@
-import html from "./index.html";
+// import html from "./index.html";
 
 /**
  * @fileoverview
@@ -41,7 +41,7 @@ import "./styles/sections/intro.css";
 
 
 // projects : section 2
-import "./styles/sections/sectionprojects/projectImages.css";
+import "./styles/sections/sectionprojects/projectImages2.css";
 import "./styles/sections/sectionprojects/projectsLayout.css";
 import "./styles/sections/sectionprojects/projectCard.css";
 import "./styles/sections/sectionprojects/projectContent.css";
@@ -99,7 +99,7 @@ import initImages from "./utilities/handleImages";
 /***************************************/
 const appInit = () => {
   // preload images
-  // initImages();
+  initImages();
 
   // set default theme / toggle theme
   initTheme();
