@@ -63,11 +63,11 @@ module.exports = (env, argv) => {
         },
         js: {
           // output filename of JS
-          filename: 'js/[name].[contenthash:8].js',
+          filename: '[name].[contenthash:8].js',
         },
         css: {
           // output filename of CSS
-          filename: 'css/[name].[contenthash:8].css',
+          filename: '[name].[contenthash:8].css',
         },
         preload: [
           {

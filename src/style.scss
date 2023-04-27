@@ -1,0 +1,49 @@
+/**
+ * @fileoverview
+ * - import all stylesheets in order of DOM hierarchy
+ * (webpack bundles them in order of import into one file @dist/main.css)\
+ */
+
+// font declarations / css reset / css variables (root & themes)
+@import "./styles/root";
+
+// two classes : light/dark
+// -- note that root.css holds the primary/secondary color variables
+// this is for text / background / etc colors
+@import "./styles/themes";
+
+// header : nav / logo / theme toggle
+@import "./styles/header";
+@import "./styles/gradientElements/headerGradient";
+
+// main : intro / projects / about / skills / contact --- provide basic layout & header
+@import "./styles/main";
+
+// divider for each main section
+@import "./styles/gradientElements/dividerGradient";
+
+// intro : section 1
+@import "./styles/sections/intro";
+
+// projects : section 2
+@import "./styles/sections/sectionprojects/projectImages";
+@import "./styles/sections/sectionprojects/projectsLayout";
+@import "./styles/sections/sectionprojects/projectCard";
+@import "./styles/sections/sectionprojects/projectContent";
+
+// about/skills : section 3/4
+@import "./styles/sections/about";
+@import "./styles/sections/skills";
+
+// contact/contactForm : section 5/6
+@import "./styles/sections/contact";
+@import "./styles/sections/contactForm";
+
+// Dynamic content (loading animations/ toast notifications) & modals
+@import "./styles/aside/themeMenu";
+@import "./styles/aside/toast";
+@import "./styles/aside/lighthouseModal";
+@import "./styles/aside/spinner";
+@import "./styles/aside/hoverContext";
+
+@import "./styles/footer";

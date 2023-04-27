@@ -14,8 +14,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-  <link href="./styles/style.scss" rel="stylesheet">
-  <script src="./index.js" defer="defer"></script>
+  <link href="style.scss" rel="stylesheet">
+  <script src="index.js" defer="defer"></script>
 </head>
 
 
@@ -29,27 +29,19 @@
         <nav class="header-nav">
           <ul class="nav-menu">
             <li>
-              <a class="nav-menu--link" href="#projects-top" title="Scroll to projects">
-                Projects
-              </a>
+              <a class="nav-menu--link" href="#projects-top" title="Scroll to projects">Projects</a>
             </li>
             <li>
-              <a class="nav-menu--link" href="#skills-top" title="Scroll to skills">
-                Skills
-              </a>
+              <a class="nav-menu--link" href="#skills-top" title="Scroll to skills">Skills</a>
             </li>
             <li>
-              <a class="nav-menu--link" href="#about-top" title="Scroll to skills">
-                About
-              </a>
+              <a class="nav-menu--link" href="#about-top" title="Scroll to skills">About</a>
             </li>
             <li class="nav-multi__contact">
-              <button class="menu-btn--multi contact-nav--btn" aria-label="button" data-href="#contact-top">
-                <span style="pointer-events:none;user-select:none">
-                  Contact
-                </span>
+              <a class="nav-menu--link menu-btn--multi contact-nav--btn" title="Contact Menu & context" data-href="#contact-top" href="#contact-top">
+                <span>Contact</span>
                 <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt="">
-              </button>
+              </a>
             </li>
           </ul>
         </nav>
