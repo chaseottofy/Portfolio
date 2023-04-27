@@ -270,8 +270,8 @@
 }
 
 .badge-top--container--svg {
-  min-width: 2.5rem;
-  min-height: 2.5rem;
+  min-width: 3rem;
+  min-height: 3rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -293,8 +293,8 @@
 }
 
 .badge-mug {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
 }
 

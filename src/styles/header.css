@@ -43,6 +43,8 @@
 
 .header-logo img {
   filter: invert(1);
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .header-logo:hover {
