@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20%;
+  bottom: 15%;
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
@@ -54,15 +54,22 @@
   justify-content: center;
   cursor: pointer;
   color: var(--white1);
+  transition: background .2s ease-in-out;
 }
 
 .theme-switch span label img {
   height: 1rem;
   width: 1rem;
+  opacity: .8;
+}
+
+.theme-switch span label:hover img {
+  opacity: 1;
 }
 
 .theme-switch span input:checked + .theme-label--two img {
   filter: invert(1);
+  opacity: 1;
 }
 
 .theme-switch span input:checked + label {

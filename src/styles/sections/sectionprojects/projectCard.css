@@ -11,7 +11,7 @@
   margin-bottom: 6rem;
   max-width: 100%;
   border: 1px solid var(--black2);
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 8px;
 }
 
 .project-cell__content {
@@ -21,6 +21,7 @@
   width: 100%;
   overflow: hidden;
 }
+
 
 .project-content__header {
   background: var(--accent-1);
@@ -40,17 +41,26 @@
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
+  background: var(--tab-bg);
   border: 1px solid var(--black2);
   border-top: none;
   border-left: none;
-  pointer-events: none;
-  user-select: none;
+}
+
+.header-decoration--sm {
+  border: none;
+  height: 75%;
 }
 
 .pc__header-decoration span {
   height: .875rem;
   width: .875rem;
   border-radius: 50%;
+  transition: transform .2s ease-in-out;
+}
+
+.pc__header-decoration span:hover {
+  transform: scale(1.2);
 }
 
 /* TABS
@@ -80,12 +90,11 @@
   height: 100%;
   cursor: pointer;
   border-right: 1px solid var(--black2);
-  border-bottom: 1px solid var(--black2);
-  background: var(--accent-1);
+  border-left: 1px solid var(--black2);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid var(--tab-bottom);
+  background: var(--tab-bg);
   position: relative;
-  transition-property: background, border-bottom;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
 }
 
 .pc__header-tabs span label::after {
@@ -98,7 +107,8 @@
 
 .pc__header-tabs span label:hover,
 .pc__header-tabs span label:focus-visible {
-  background: var(--black0);
+  background: var(--tab-bg-hover);
+  transition: background .2s ease-in-out;
 }
 
 .pc__header-tabs span input {
@@ -113,8 +123,8 @@
 }
 
 .pc__header-tabs span input:checked + label {
-  background: var(--black0);
-  border-bottom: 1px solid var(--black0);
+  background: var(--tab-bg-active);
+  border-bottom: 3px solid var(--tab-bg-hover);
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
@@ -133,14 +143,17 @@
   z-index: 1;
 }
 
+
+
 /* SUBHEADER SEARCH */
 .pc__subheader--search {
   width: 100%;
-  height: 2rem;
-  border-radius: 10px;
-  padding: 0 .5rem 0 .5rem;
+  height: 1.825rem;
+  border-radius: 5px;
+  padding: 0 .75rem 0 .5rem;
   overflow: hidden;
-  background: var(--black4);
+  box-shadow: var(--bs-md);
+  background: var(--tab-bg-hover);
   font-size: .75rem;
   display: flex;
   align-items: center;
@@ -151,20 +164,16 @@
 }
 
 .pc__subheader--search a {
+  width: 100%;
   position: relative;
-  color: var(--white0);
+  color: var(--white2);
 }
 
 .pc__subheader--search a:first-child img {
   height: .5rem;
   width: .5rem;
-  margin-right: .25rem;
-}
-
-.pc__subheader--search a:first-child {
-  width: 100%;
-  height: 100%;
-  line-height: 2rem;
+  margin: 0 .5rem 0 .25rem;
+  opacity: .5;
 }
 
 .pc__subheader--search a:hover {
@@ -175,7 +184,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 2rem;
+  height: 100%;
   width: 2rem;
   pointer-events: none;
   user-select: none;
@@ -214,17 +223,30 @@
   cursor: pointer;
   border-radius: 5px;
   color: var(--white1);
-  background: var(--black4);
-  transition: filter 100ms ease-in-out;
+  opacity: .8;
 }
 
-.pc__subheader--links a {
-  margin-right: .75rem;
+.pc__subheader--links img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.vert {
+  height: 100%;
+  width: 1px;
+  background: var(--black1);
+  margin: 0 .5rem;
 }
 
 .pc__subheader--links a:hover,
 .pc__subheader--links button:hover {
   filter: invert(1);
+  background: var(--black4);
+  transition: background 100ms ease-in-out, filter 100ms ease-in-out;
+}
+
+.subheader-sm {
+  height: 2.75rem;
 }
 
 /* QUERIES
@@ -268,6 +290,14 @@
 }
 
 @media screen and (max-width: 490px) {
+  .project-content__header {
+    height: 2.25rem;
+  }
+
+  .subheader-sm {
+    height: 2.5rem;
+  }
+  
   .pc__header-tabs span label::after {
     display: none;
   }

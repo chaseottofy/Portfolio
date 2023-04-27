@@ -21,7 +21,7 @@
 
 <body class="body theme__dark">
   <!-- HEADER -->
-  <header class="header header-animate">
+  <header class="header ">
     <div class="header-wrapper">
       <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top"><img src="./images/svg/logo.svg" alt="logo" /></button>
 
@@ -50,7 +50,6 @@
   </header>
 
   <!-- scroll back to this position -->
-  <!-- need since header is fixed -->
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
 
   <!-- HEADER GRADIENT -->
@@ -61,7 +60,6 @@
   <aside class="contact-menu contact-menu__header" cm-loaded="false">
     <!-- RIGHT -->
     <div class="cm-right">
-
       <div class="cm-right--top">
         <!-- GITHUB BADGE -->
         <div class="cm-right--top__cell badge-github">
@@ -347,7 +345,7 @@
 
             <div class="project-content__subheader">
               <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon" src="./images/svg/lock.svg" alt="">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
+                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
                 <span>
                   <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
                 </span>
@@ -357,6 +355,7 @@
                 <a href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
                   <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
                 </a>
+                <div class="vert"></div>
                 <button class="lh-btn" data-app-name="calendar" aria-label="button">
                   <img class="img-icon" src="./images/svg/lighthouse.svg" alt="">
                 </button>
@@ -372,7 +371,7 @@
                 <source srcset="
               ./images/169/calendar/dark/daydark1.webp 1280w,
               ./images/169/calendar/dark/daydark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View" src="./images/169/calendar/dark/daydark1.webp" alt="Day View">
+                <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View" src="./images/169/calendar/dark/daydark1.webp" alt="Day View" style="max-width:1280px;">
               </picture>
 
               <picture>
@@ -382,7 +381,7 @@
                 <source srcset="
               ./images/169/calendar/dark/weekdark1.webp 1280w,
               ./images/169/calendar/dark/weekdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View" src="./images/169/calendar/dark/weekdark1.webp" alt="Week View">
+                <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View" src="./images/169/calendar/dark/weekdark1.webp" alt="Week View" style="max-width:1280px;">
               </picture>
 
               <picture>
@@ -392,7 +391,7 @@
                 <source srcset="
               ./images/169/calendar/dark/monthdark1.webp 1280w,
               ./images/169/calendar/dark/monthdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View" src="./images/169/calendar/dark/monthdark1.webp" alt="Month View">
+                <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View" src="./images/169/calendar/dark/monthdark1.webp" alt="Month View" style="max-width:1280px;">
               </picture>
 
               <picture>
@@ -402,7 +401,7 @@
                 <source srcset="
               ./images/169/calendar/dark/yeardark1.webp 1280w,
               ./images/169/calendar/dark/yeardark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View" src="./images/169/calendar/dark/yeardark1.webp" alt="Year View">
+                <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View" src="./images/169/calendar/dark/yeardark1.webp" alt="Year View" style="max-width:1280px;">
               </picture>
 
               <picture>
@@ -412,9 +411,11 @@
                 <source srcset="
               ./images/169/calendar/dark/listdark1.webp 1280w,
               ./images/169/calendar/dark/listdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View" src="./images/169/calendar/dark/listdark1.webp" alt="List View">
+                <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View" src="./images/169/calendar/dark/listdark1.webp" alt="List View" style="max-width:1280px;">
               </picture>
             </div>
+
+            <div class="project-content__about"></div>
           </div>
         </div>
 
@@ -422,49 +423,53 @@
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
           <div class="project-cell__content">
 
-            <div class="project-content__header">
+            <div class="project-content__header subheader-sm">
               <div class="pc__header-decoration">
                 <span style="background:#fb6257;"></span>
                 <span style="background:#fbc032;"></span>
                 <span style="background:#27ca40;"></span>
               </div>
 
-              <div class="pc__header-tabs calendar-tabs">
-                <span>
-                  <input id="proj-markdown-one" type="radio" value="Day" name="proj-markdown--radio" class="proj-header__tabinput" checked>
-                  <label for="proj-markdown-one" class="proj-header__tablabel proj-mark--tab" data-tab-idx="1" data-lab-after="">One </label>
-                </span>
 
-                <span>
-                  <input id="proj-markdown-two" type="radio" value="Day" name="proj-markdown--radio" class="proj-header__tabinput">
-                  <label for="proj-markdown-two" class="proj-header__tablabel proj-mark--tab" data-tab-idx="2" data-lab-after="">Two </label>
-                </span>
+              <div class="project-content__subheader subheader-sm">
+                <div class="pc__subheader--search">
+                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
+                    https://chaseottofy.github.io/react-lite-markdown/</a>
+                  <span>
+                    <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
+                  </span>
+                </div>
+
+                <div class="pc__subheader--links">
+                  <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
+                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                  </a>
+                  <div class="vert"></div>
+                  <button class="lh-btn" data-app-name="markdown" aria-label="button">
+                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="">
+                  </button>
+                </div>
               </div>
             </div>
 
 
-            <div class="project-content__subheader">
-              <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon" src="./images/svg/lock.svg" alt="">https://chaseottofy.github.io/react-lite-markdown/</a>
-                <span><img class="img-icon" src="./images/svg/arrowRight.svg" alt=""></span>
-              </div>
-
-              <div class="pc__subheader--links">
-                <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
-                </a>
-                <button class="lh-btn" data-app-name="markdown" aria-label="button">
-                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="">
-                </button>
-              </div>
-            </div>
 
             <div class="project-content__body">
-              <div class="project-image__markdown mark-cell__image--1 mark-current" data-mark-nth="1" data-thumb-title="One"></div>
-              <div class="project-image__markdown mark-cell__image--2 hide-img" data-mark-nth="2" data-thumb-title="Two"></div>
+              <picture>
+                <source srcset="
+                    ./images/169/mdlite/light/markdownlight1.webp 1280w,
+                    ./images/169/mdlite/light/markdownlight2.webp  720w
+                  " media="(prefers-color-scheme: light)" />
+                <source srcset="
+                    ./images/169/mdlite/dark/markdowndark1.webp 1280w,
+                    ./images/169/mdlite/dark/markdowndark1.webp  720w
+                  " media="(prefers-color-scheme: dark)" />
+                <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/169/mdlite/dark/markdowndark1.webp" alt="Mdlite" style="max-width:1280px;" />
+              </picture>
             </div>
           </div>
         </div>
+
         <!-- <div class="project-cell project-vjs" data-proj-title="Vanilla JS Components">
           <div class="project-cell__content"></div>
           <div class="project-cell__image project-cell--vjs"></div>

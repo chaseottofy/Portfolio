@@ -276,15 +276,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 0 1px var(--white2);
+  box-shadow: 0 0 0 1px var(--grey1);
 }
+
+
 
 .badge-top--container--svg img {
   filter: invert(1);
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
 }
-
 
 .badge-top--profile {
   display: flex;

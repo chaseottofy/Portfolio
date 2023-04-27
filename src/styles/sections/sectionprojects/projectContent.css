@@ -2,6 +2,8 @@
   background: var(--black0);
   position: relative;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   border: none;

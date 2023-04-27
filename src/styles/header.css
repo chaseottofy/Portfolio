@@ -116,6 +116,7 @@
 .nav-menu li a:hover {
   color: #000;
   background: #fff;
+  transition: background .2s ease-in-out;
 }
 
 .nav-menu li a:focus-visible {

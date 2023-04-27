@@ -1,11 +1,3 @@
-/* .colors {
-  --blue1: rgb(42, 138, 246);
-  --blue2: #3549a6;
-  --pink1: #a853ba;
-  --red1: rgb(233, 42, 103);
-  --red2: #7c1e4b;
-} */
-
 .theme__dark {
   --accent-1: #111;
   --accent-2: #222;
@@ -67,6 +59,10 @@
   --lh-green: #16cf6b;
   --lh-color: #fff;
 
+  --tab-bg: #111;
+  --tab-bottom: #0f0f0f;
+  --tab-bg-hover: #050505;
+  --tab-bg-active: #000;
 }
 
 .theme__light {
@@ -128,4 +124,9 @@
 
   --lh-green: #16cf6b;
   --lh-color: #fff;
+
+  --tab-bg: #fafafa;
+  --tab-bottom: #333;
+  --tab-bg-hover: #fefefe;
+  --tab-bg-active: #fff;
 }

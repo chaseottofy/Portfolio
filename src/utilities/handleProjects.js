@@ -40,8 +40,9 @@ const initProjectImages = () => {
       });
     };
 
+
+    // set Calendar Tabs
     setTabs($$(".proj-cal--tab"), 'cal', tabnames.calendar);
-    setTabs($$(".proj-mark--tab"), 'mark', tabnames.markdown);
   };
   initTabs();
 };

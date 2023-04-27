@@ -10,16 +10,13 @@ const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').m
 const setTheme = (theme) => {
   localStorage.setItem("portfolio-theme", theme);
   colorSchemeMeta.setAttribute("content", theme);
-
-  // For smaller sites like this I like to disable all transitions on load to prevent flashing. see ../styles/root.css @ .disable-transitions
   body.setAttribute("class", `body theme__${theme}`);
-  // 200 = longest transition duration in app
-  // setTimeout(() => body.classList.remove("disable-transitions"), 200);
 };
 
 // if local storage has theme, set it
 // otherwise, set theme to system theme which will default to "light" if for whatever reason the system theme can't be retrieved
 const initDefaultTheme = () => {
+  console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const localTheme = localStorage.getItem("portfolio-theme");
   const systemTheme = getSystemTheme();
   // themeInputs[2] == system theme input
@@ -48,6 +45,7 @@ const initThemeOptions = () => {
 const initTheme = () => {
   initDefaultTheme();
   initThemeOptions();
+  $(".header").classList.add("header-animate");
 };
 
 export default initTheme;
