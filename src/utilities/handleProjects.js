@@ -4,9 +4,11 @@ const $$ = document.querySelectorAll.bind(document);
 const initProjectImages = () => {
   const tabnames = {
     calendar: ['day', 'week', 'month', 'year', 'list'],
-    markdown: ['one', 'two', 'three'],
-    vanilla: ['one', 'two', 'three'],
-    react: ['one', 'two', 'three'],
+    comparr: ['vanilla', 'react'],
+    components: {
+      ['vanilla']: 'https://codepen.io/chaseottofy/pens/public',
+      ['react']: 'https://chaseottofy.github.io/react-boilerplate/'
+    }
   };
 
   /**
@@ -14,8 +16,9 @@ const initProjectImages = () => {
    * @param {string} nth - idx of tab
    * @param {string} prefix - prefix of class ( cal / mark / etc )
    * @param {string} tabname - name of tab : use to set the last value of search bar to reflect current image
+   * @param {boolean} multi - true = multiple projects (tabnames.components) : requires slightly different search bar handling since the entire url is different;
    */
-  const handleTab = (nth, prefix, tabname) => {
+  const handleTab = (nth, prefix, tabname, multi) => {
     const currentClass = `${prefix}-current`;
     const activeImg = $(`.${currentClass}`);
     const activeIdx = activeImg.getAttribute("data-tab-idx");
@@ -28,22 +31,36 @@ const initProjectImages = () => {
     newActiveImg.classList.remove("hide-img");
     newActiveImg.classList.add(currentClass);
 
-    $(`.${prefix}-search`).setAttribute("data-search-after", tabname);
+    if (multi) {
+      const url = tabnames.components[tabname];
+      $(".component-search").setAttribute("href", url);
+      $(".component-search--text").textContent = url;
+    } else {
+      $(`.${prefix}-search`).setAttribute("data-search-after", tabname);
+    }
   };
 
   const initTabs = () => {
-    const setTabs = (tabs, prefix, arr) => {
+    const setTabs = (tabs, prefix, tabname, multi) => {
       tabs[0].previousElementSibling.checked = true;
       tabs.forEach((tab, idx) => {
-        const handleClick = () => handleTab(idx + 1, prefix, arr[idx]);
+        const handleClick = () => handleTab(
+          idx + 1,
+          prefix,
+          tabname[idx],
+          multi
+        );
         tab.onclick = handleClick;
       });
     };
 
-
     // set Calendar Tabs
-    setTabs($$(".proj-cal--tab"), 'cal', tabnames.calendar);
+    setTabs($$(".proj-cal--tab"), 'cal', tabnames.calendar, false);
+    // set Components Tabs
+    setTabs($$(".proj-comp--tab"), 'comp', tabnames.comparr, true);
   };
+
+  
   initTabs();
 };
 

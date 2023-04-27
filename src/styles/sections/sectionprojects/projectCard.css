@@ -22,7 +22,6 @@
   overflow: hidden;
 }
 
-
 .project-content__header {
   background: var(--accent-1);
   height: 2.5rem;
@@ -143,8 +142,6 @@
   z-index: 1;
 }
 
-
-
 /* SUBHEADER SEARCH */
 .pc__subheader--search {
   width: 100%;
@@ -180,7 +177,7 @@
   color: var(--blue1);
 }
 
-.pc__subheader--search span {
+.pc__subheader--search .search-arrowright {
   position: absolute;
   top: 0;
   right: 0;
@@ -195,7 +192,7 @@
   background: transparent;
 }
 
-.pc__subheader--search span img {
+.pc__subheader--search .search-arrowright img {
   height: .75rem;
   width: .75rem;
 }
@@ -249,6 +246,8 @@
   height: 2.75rem;
 }
 
+
+
 /* QUERIES
 ============================*/
 @media screen and (max-width: 768px) {
@@ -284,7 +283,7 @@
     display: none;
   }
 
-  .pc__subheader--search span {
+  .pc__subheader--search .search-arrowright {
     display: none;
   }
 }

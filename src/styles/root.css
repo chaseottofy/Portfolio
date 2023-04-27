@@ -427,15 +427,23 @@ a[disabled] {
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   html {
     font-size: 15px;
   }
-}
+} */
 
 @media screen and (max-width: 640px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
   }
 }
 

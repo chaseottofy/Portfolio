@@ -85,14 +85,3 @@
   font-size: .875rem;
   font-weight: 500;
 }
-
-@media screen and (max-width: 640px) {
-  .section-title h2,
-  .section-title--left h2 {
-    font-size: 2.5rem;
-  }
-
-  .section-title h3 {
-    font-size: 1.5rem;
-  }
-}

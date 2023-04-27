@@ -1,23 +1,20 @@
 .project-image__calendar,
-.project-image__markdown {
+.project-image__markdown,
+.project-image__components {
   /* 16 / 9 prevents lighthouse from screaming at me */
   /* I orignally resized all of the images to 16/10 for a cleaner fraction but I guess that's irrelevant */
   aspect-ratio: 16/9;
   width: 100%;
   object-fit: cover;
   object-position: top center;
-
-  /* Still determining whether these make a difference for my current images */
-  /* Need to compare on mobile */
-  /* image-rendering: -moz-crisp-edges;
+  image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; */
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 .hide-img {
-  /* opacity: 1; */
   pointer-events: none;
   user-select: none;
   appearance: none;

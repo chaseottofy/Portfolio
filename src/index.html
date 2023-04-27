@@ -290,6 +290,7 @@
   <!--------------------->
 
 
+
   <!-- MAIN (projects > skills > about > contact) -->
   <main class="main">
     <aside class="section-divider"></aside>
@@ -302,8 +303,7 @@
 
       <div class="projects-grid">
 
-
-        <!-- GOOGLE CALENDAR PROJECT -->
+        <!-- CALENDAR PROJECT -->
         <div class="project-cell project-calendar" data-proj-title="Google Calendar 2.0">
           <div class="project-cell__content">
 
@@ -346,7 +346,7 @@
             <div class="project-content__subheader">
               <div class="pc__subheader--search">
                 <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
-                <span>
+                <span class="search-arrowright">
                   <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
                 </span>
               </div>
@@ -417,7 +417,18 @@
 
             <div class="project-content__about"></div>
           </div>
+
+          <div class="project-cell__footer">
+            <div class="project-footer__titles">
+              <div class="pf-stack">
+                <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="">
+              </div>
+              <h3 class="pf-appname">Google Calendar 2.0</h3>
+            </div>
+            <div class="project-footer__content"></div>
+          </div>
         </div>
+
 
         <!-- MARKDOWN PROJECT -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
@@ -435,7 +446,7 @@
                 <div class="pc__subheader--search">
                   <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
                     https://chaseottofy.github.io/react-lite-markdown/</a>
-                  <span>
+                  <span class="search-arrowright">
                     <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
                   </span>
                 </div>
@@ -452,8 +463,6 @@
               </div>
             </div>
 
-
-
             <div class="project-content__body">
               <picture>
                 <source srcset="
@@ -462,23 +471,102 @@
                   " media="(prefers-color-scheme: light)" />
                 <source srcset="
                     ./images/169/mdlite/dark/markdowndark1.webp 1280w,
-                    ./images/169/mdlite/dark/markdowndark1.webp  720w
+                    ./images/169/mdlite/dark/markdowndark2.webp  720w
                   " media="(prefers-color-scheme: dark)" />
                 <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/169/mdlite/dark/markdowndark1.webp" alt="Mdlite" style="max-width:1280px;" />
               </picture>
             </div>
           </div>
+
+          <div class="project-cell__footer">
+            <div class="project-footer__titles">
+              <div class="pf-stack">
+                <img class="react-icon" src="./images/svg/react.svg" alt="">
+              </div>
+              <h3 class="pf-appname">Markdown to HTML</h3>
+            </div>
+            <div class="project-footer__content"></div>
+          </div>
         </div>
 
-        <!-- <div class="project-cell project-vjs" data-proj-title="Vanilla JS Components">
-          <div class="project-cell__content"></div>
-          <div class="project-cell__image project-cell--vjs"></div>
+
+        <!-- COMPONENT GALLERY -->
+        <div class="project-cell project-components" data-proj-title="Components Gallery">
+          <div class="project-cell__content">
+
+            <div class="project-content__header">
+              <div class="pc__header-decoration">
+                <span style="background:#fb6257;"></span>
+                <span style="background:#fbc032;"></span>
+                <span style="background:#27ca40;"></span>
+              </div>
+
+              <div class="pc__header-tabs component-tabs">
+                <span>
+                  <input id="proj-comp-vanilla" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput" checked>
+                  <label aria-label="Vanilla Components" for="proj-comp-vanilla" class="proj-header__tablabel proj-comp--tab" data-tab-idx="1" data-lab-after="">Vanilla JS Components </label>
+                </span>
+
+                <span>
+                  <input id="proj-comp-react" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput">
+                  <label aria-label="React Components" for="proj-comp-react" class="proj-header__tablabel proj-comp--tab" data-tab-idx="2" data-lab-after="">React JS Components </label>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="project-content__subheader">
+              <div class="pc__subheader--search">
+                <a href="https://codepen.io/chaseottofy/pens/public" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="" class="component-search">
+                  <img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
+                  <span class="component-search--text">
+                    https://codepen.io/chaseottofy/pens/public
+                  </span>
+                </a>
+
+                <span class="search-arrowright">
+                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
+                </span>
+              </div>
+
+              <div class="pc__subheader--links">
+                <a href="https://codepen.io/chaseottofy/pens/public" title="Vanilla Components" target="_blank" rel="noreferrer" class="sub-proj--gh">
+                  <img class="img-icon" src="./images/svg/codepen.svg" alt="">
+                </a>
+
+                <div class="vert"></div>
+
+                <a href="https://github.com/chaseottofy/react-boilerplate" title="React Components Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                </a>
+              </div>
+            </div>
+
+            <!-- COMPONENTS BODY -->
+            <div class="project-content__body">
+              <!-- Vanilla Js component pic -->
+              <picture>
+                <source srcset="
+                    ./images/169/vanillacomp/vanillacomp1.webp 1280w,
+                    ./images/169/vanillacomp/vanillacomp2.webp  720w
+                  " media="(prefers-color-scheme: dark)" />
+                <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/169/vanillacomp/vanillacomp1.webp" data-tab-idx="1" alt="Vanilla JS Components" style="max-width:1280px;" />
+              </picture>
+
+              <!-- React Js component pic -->
+              <picture>
+                <source srcset="
+                ./images/169/reactcomp/reactcomplight1.webp 1280w,
+                ./images/169/reactcomp/reactcomplight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/reactcomp/reactcompdark1.webp 1280w,
+              ./images/169/reactcomp/reactcompdark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__components comp-cell__image--2 hide-img" src="./images/169/reactcomp/reactcompdark2.webp" data-tab-idx="2" alt="React Components" style="max-width:1280px;">
+              </picture>
+            </div>
+          </div>
         </div>
 
-        <div class="project-cell project-rjs" data-proj-title="React JS Components">
-          <div class="project-cell__content"></div>
-          <div class="project-cell__image project-cell--rjs"></div>
-        </div> -->
       </div>
     </article>
     <!--------------------->
