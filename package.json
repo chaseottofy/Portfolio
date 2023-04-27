@@ -35,7 +35,6 @@
   },
   "homepage": "https://github.com/chaseottofy/portfolio#readme",
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.14",
     "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",

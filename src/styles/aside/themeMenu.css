@@ -15,8 +15,8 @@
   display: flex;
   flex-direction: row;
   height: 3rem;
-  width: 9.5rem;
-  justify-content: space-evenly;
+  width: 9rem;
+  justify-content: space-around;
   border-radius: 9999px;
   border: 1px solid #333;
   align-items: center;
@@ -29,8 +29,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .theme-switch span input {
