@@ -1,52 +1,23 @@
 .project-image__calendar,
 .project-image__markdown {
+  /* 16 / 9 prevents lighthouse from screaming at me */
+  /* I orignally resized all of the images to 16/10 for a cleaner fraction but I guess that's irrelevant */
+  aspect-ratio: 16 / 9;
   width: 100%;
-  background-repeat: no-repeat;
-  image-rendering: -moz-crisp-edges;
+  object-fit: cover;
+  object-position: top center;
+
+  /* Still determining whether these make a difference for my current images */
+  /* Need to compare on mobile */
+    /* image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor;
-  background-size: cover;
-}
-
-.project-image__calendar {
-  aspect-ratio: 1.6;
-  position:relative;
-  filter:brightness(1.1);
-}
-
-.project-image__markdown {
-  aspect-ratio: 2.4;
-}
-
-.project-image__calendar::after {
-  position: absolute;
-  top:0;
-  left:0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  /* background: rgba(0,0,0,.5); */
-  /* backdrop-filter: blur(10px); */
-  /* opacity: .2;  */
-}
-
-
-.project-image__markdown::after {
-  position: absolute;
-  top:0;
-  left:0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  background: rgba(0,0,0,.5);
-  backdrop-filter: blur(6px);
-  opacity: .2; 
+  -ms-interpolation-mode: nearest-neighbor; */
 }
 
 .hide-img {
-  opacity: 1;
+  /* opacity: 1; */
   pointer-events: none;
   user-select: none;
   appearance: none;
