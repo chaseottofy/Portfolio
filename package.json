@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack serve",
+    "build": "webpack --mode=production",
+    "dev": "webpack serve --mode=development",
     "deploy": "gh-pages -d dist"
   },
   "repository": {

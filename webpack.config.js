@@ -5,9 +5,11 @@ const TerserPlugin = require("terser-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 const svgToMiniDataURI = require("mini-svg-data-uri");
 
-module.exports = (env) => {
+module.exports = (env, argv) => {
+  const mode = argv.mode === 'development';
+
   return {
-    mode: 'development',
+    mode: mode ? 'development' : 'production',
     devtool: 'source-map',
     devServer: {
       static: {
@@ -117,11 +119,3 @@ module.exports = (env) => {
     },
   };
 };
-
-// {
-//   test: /\.(ico|png|svg|webp|jpg)$/i,
-//   type: 'asset/resource',
-//   generator: {
-//     filename: 'images/[name][ext]',
-//   }
-// },
