@@ -249,7 +249,7 @@
   background: var(--black1);
 }
 
-.cm-left__footer-location svg {
+.cm-left__footer-location img {
   height: .825rem;
   width: .825rem;
 }
@@ -318,7 +318,8 @@
   box-shadow: 0 0 0 1px var(--white2);
 }
 
-.badge-top--container--svg svg {
+.badge-top--container--svg img {
+  filter: invert(1);
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -419,16 +420,13 @@
   font-weight: 500;
 }
 
-.badge-footer span:first-child {
-  padding: 0 .5rem 0 .25rem;
-}
-
-.badge-footer span:first-child svg {
-  stroke-width: 1;
+.badge-footer img {
   fill: none;
   height: .875rem;
   width: .875rem;
-  opacity: .8;
+  filter:invert(1);
+  margin-right: .5rem;
+  margin-left: .25rem;
 }
 
 /* ---------------- */
@@ -495,19 +493,10 @@
   background: var(--black2);
 }
 
-.cm-copy svg,
-.cm-email-goto svg {
+.cm-copy img,
+.cm-email-goto img {
   height: .825rem;
   width: .825rem;
-}
-
-.cm-copy svg {
-  fill: var(--white1);
-}
-
-.cm-email-goto svg {
-  stroke: var(--white1);
-  fill: none;
 }
 
 .contact-menu__header a,
@@ -548,7 +537,7 @@
     min-width: 2rem;
   }
 
-  .badge-top--container--svg svg {
+  .badge-top--container--svg img {
     height: 1.25rem;
     width: 1.25rem;
   }

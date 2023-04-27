@@ -46,17 +46,17 @@ module.exports = (env, argv) => {
             filename: 'fonts/[name][ext][query]',
           },
         },
-        {
-          test: /\.svg$/,
-          exclude: /favicon/, // don't inline favicon.svg
-          type: 'asset/inline',
-          generator: {
-            dataUrl: (content) => {
-              content = content.toString();
-              return svgToMiniDataURI(content);
-            },
-          },
-        },
+        // {
+        //   test: /\.svg$/,
+        //   exclude: /favicon/, 
+        //   type: 'asset/inline',
+        //   generator: {
+        //     dataUrl: (content) => {
+        //       content = content.toString();
+        //       return svgToMiniDataURI(content);
+        //     },
+        //   },
+        // },
         {
           test: /\.(ico|png|svg|webp|jpg)$/i,
           type: 'asset/resource',

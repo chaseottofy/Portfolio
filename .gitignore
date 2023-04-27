@@ -9,3 +9,7 @@ dist/
 
 # Unused
 drafts/
+
+# IDE
+vscode
+.vscode/

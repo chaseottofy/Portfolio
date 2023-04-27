@@ -72,11 +72,7 @@
   border: 1px solid var(--black1);
 }
 
-.close-lh-btn svg {
-  stroke: var(--white1);
-}
-
-.close-lh-btn:hover svg {
+.close-lh-btn:hover img {
   opacity: .8;
 }
 
@@ -164,14 +160,6 @@
   content: "";
 }
 
-.lh-main__score svg {
-  cursor: default;
-  -webkit-user-select: none;
-  user-select: none;
-  max-width: 100%;
-  border-radius: 50%;
-}
-
 .lh-main__score-title {
   font-size: .875rem;
   color: var(--white1);
@@ -192,12 +180,10 @@
   background: var(--black0);
 }
 
-.lh-main__score-title svg {
+.lh-main__score-title img {
   margin-left: .5rem;
   height: 1rem;
   width: 1rem;
-  stroke: var(--white1);
-  fill: none;
 }
 
 .lh-main__score-subtitle {

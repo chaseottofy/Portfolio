@@ -155,12 +155,10 @@
   color: var(--white0);
 }
 
-.pc__subheader--search a:first-child svg {
+.pc__subheader--search a:first-child img {
   height: .5rem;
   width: .5rem;
   margin-right: .25rem;
-  fill: var(--white2);
-  stroke: none;
 }
 
 .pc__subheader--search a:first-child {
@@ -171,10 +169,6 @@
 
 .pc__subheader--search a:hover {
   color: var(--blue1);
-}
-
-.pc__subheader--search a:hover + span svg {
-  stroke: var(--blue1);
 }
 
 .pc__subheader--search span {
@@ -192,9 +186,7 @@
   background: transparent;
 }
 
-.pc__subheader--search span svg {
-  fill: none;
-  stroke: var(--white1);
+.pc__subheader--search span img {
   height: .75rem;
   width: .75rem;
 }
@@ -223,43 +215,20 @@
   border-radius: 5px;
   color: var(--white1);
   background: var(--black4);
-  transition: background 100ms ease-in-out;
+  transition: filter 100ms ease-in-out;
 }
 
 .pc__subheader--links a {
   margin-right: .75rem;
 }
 
-.pc__subheader--links svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.pc__subheader--links a svg {
-  fill: var(--white1);
-  stroke: none;
-  opacity: 1;
-  transition: color .2s ease-in-out;
-}
-
-.pc__subheader--links button svg {
-  fill: var(--lh-green);
-}
-
 .pc__subheader--links a:hover,
 .pc__subheader--links button:hover {
-  background: var(--white1);
-  color: var(--black0);
-}
-
-.pc__subheader--links a:hover svg,
-.pc__subheader--links button:hover svg {
-  fill: var(--black0);
+  filter: invert(1);
 }
 
 /* QUERIES
 ============================*/
-/* @media screen and (max-width: 1020px) {} */
 @media screen and (max-width: 768px) {
   .project-content__header {
     grid-template-columns: 5rem 1fr;
@@ -289,7 +258,7 @@
     grid-template-columns: 60% 1fr;
   }
 
-  .pc__subheader--search a:first-child svg {
+  .pc__subheader--search a:first-child img {
     display: none;
   }
 
@@ -299,9 +268,7 @@
 }
 
 @media screen and (max-width: 490px) {
-
-  .pc__header-tabs span label::after,
-  .searchbar-icon {
+  .pc__header-tabs span label::after {
     display: none;
   }
 
@@ -309,5 +276,3 @@
     font-size: .625rem;
   }
 }
-
-/* @media screen and (max-width: 380px) {} */
