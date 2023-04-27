@@ -1,7 +1,11 @@
-node_modules
-draft.js
-draft2.js
-drafts
-db
+# Dependency packages files
+node_modules/
+
+# Output
+dist/
+
+# Environment variables
 .env
-dist
+
+# Unused
+drafts/

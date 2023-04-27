@@ -11,51 +11,22 @@
 
 /* =====================================
 DARK/TRANSPARENT button */
-.btn-dark {
-  background: var(--grey2);
-  border: 1px solid var(--grey3);
-  color: var(--white1);
-}
-
-.btn-transparent {
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--white1);
-}
-
-.btn-dark:hover,
-.btn-transparent:hover,
 .btn-text-svg:hover {
   background: var(--black0);
 }
 
-.btn-dark:hover svg,
 .btn-transparent:hover svg {
   fill: var(--white2);
 }
 
-.btn-dark:active,
-.btn-transparent:active,
 .btn-text-svg:active {
   background: var(--black1);
   border: 1px solid var(--grey3);
 }
 
-.btn-dark:active svg,
-.btn-transparent:active svg {
-  fill: var(--white1);
-}
-
-.btn-dark:focus-visible,
-.btn-transparent:focus-visible,
 .btn-text-svg:focus-visible {
   border: 1px solid transparent;
   outline: 2px solid var(--grey1);
-}
-
-.btn-dark:focus-visible svg,
-.btn-transparent:focus-visible svg {
-  fill: var(--white1);
 }
 
 .btn:focus {

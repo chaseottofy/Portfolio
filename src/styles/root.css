@@ -113,7 +113,7 @@ ul,
 div,
 input,
 textarea {
-  font-family: var(--primaryFont);
+  font-family: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, BlinkMacSystemFont, Helvetica Neue, Arial, monospace;
 }
 
 h1,
@@ -166,7 +166,8 @@ ul {
 }
 
 a {
-  color: var(--blue1);
+  /* color: var(--blue1); */
+  color: #637ef3;
   outline: 0;
   text-decoration: none;
 }
