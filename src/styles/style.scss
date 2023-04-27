@@ -2,7 +2,6 @@
  * @fileoverview
  * - import all stylesheets in order of DOM hierarchy
  * (webpack bundles them in order of import into one file @dist/main.css)\
- *
  */
 
 // font declarations / css reset / css variables (root & themes)
@@ -15,7 +14,6 @@
 
 // header : nav / logo / theme toggle
 @import "./header";
-@import "./headerLogo";
 @import "./gradientElements/headerGradient";
 
 // main : intro / projects / about / skills / contact --- provide basic layout & header

@@ -3,7 +3,6 @@ const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
-const svgToMiniDataURI = require("mini-svg-data-uri");
 
 module.exports = (env, argv) => {
   const mode = argv.mode === 'development';
@@ -46,19 +45,8 @@ module.exports = (env, argv) => {
             filename: 'fonts/[name][ext][query]',
           },
         },
-        // {
-        //   test: /\.svg$/,
-        //   exclude: /favicon/, 
-        //   type: 'asset/inline',
-        //   generator: {
-        //     dataUrl: (content) => {
-        //       content = content.toString();
-        //       return svgToMiniDataURI(content);
-        //     },
-        //   },
-        // },
         {
-          test: /\.(ico|png|svg|webp|jpg)$/i,
+          test: /\.(ico|svg|png|webp|jpg)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'images/[name].[hash:8][ext][query]',

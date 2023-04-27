@@ -150,56 +150,17 @@
   overflow: hidden;
 }
 
-.cm-left__body-avatar {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: url('../../images/mugshot/avatar2.webp');
-  /* filter: contrast(1.2) brightness(.9); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-}
-
 .cm-left__body::after {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 1); */
   background: linear-gradient(180deg,
       rgba(255, 255, 255, 0) 100%),
     rgba(255, 255, 255, 0.9) 40%;
-  /* mix-blend-mode: overlay; */
-  /* mix-blend-mode: normal; */
-  /* mix-blend-mode: multiply; */
-  /* mix-blend-mode: screen; */
-  /* mix-blend-mode: overlay; */
-  /* mix-blend-mode: darken; */
-  /* mix-blend-mode: lighten; */
-  /* mix-blend-mode: color-dodge; */
-  /* mix-blend-mode: color-burn; */
-  /* mix-blend-mode: hard-light; */
-  /* mix-blend-mode: soft-light; */
-  /* mix-blend-mode: difference; */
-  /* mix-blend-mode: exclusion; */
-  /* mix-blend-mode: hue; */
-  /* mix-blend-mode: saturation; */
-  /* mix-blend-mode: color; */
-  /* mix-blend-mode: luminosity; */
   content: "";
 }
-
-/* .theme__dark .cm-left__body-avatar {
-  background: url('../../images/mugshot/avatar1.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: .3;
-} */
 
 /* ---------------- */
 /* LEFT FOOTER SECTION */
@@ -324,10 +285,17 @@
   width: 1.5rem;
 }
 
+
 .badge-top--profile {
   display: flex;
   max-height: 3rem;
   font-size: .75rem;
+}
+
+.badge-mug {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
 }
 
 .badge-top span {
@@ -388,26 +356,6 @@
 .cm-right--top__cell:hover .badge-footer span:last-child {
   transform: translateX(10%);
   transition: transform 150ms ease-in-out;
-}
-
-.yt-mug {
-  min-height: 2.5rem;
-  min-width: 2.5rem;
-  border-radius: 50%;
-  background-image: url("../../images/mugshot/YTmug1.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.cw-mug {
-  min-height: 2.5rem;
-  min-width: 2.5rem;
-  border-radius: 50%;
-  background-image: url("../../images/mugshot/codewarsmug1.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .badge-footer {
@@ -530,8 +478,6 @@
     padding: .5rem;
   }
 
-  .yt-mug,
-  .cw-mug,
   .badge-top--container--svg {
     min-height: 2rem;
     min-width: 2rem;
@@ -540,6 +486,11 @@
   .badge-top--container--svg img {
     height: 1.25rem;
     width: 1.25rem;
+  }
+
+  .badge-mug {
+    height: 2rem;
+    width: 2rem;
   }
 }
 
@@ -578,12 +529,6 @@
   .cm-left__footer {
     width: 50%;
     height: 80%;
-  }
-
-  .cm-left__body-avatar {
-    max-width: 200px;
-    height: 100%;
-    width: 100%;
   }
 
   .cm-left__footer-relocate {
