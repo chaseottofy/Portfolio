@@ -1,8 +1,11 @@
+import { contactMenuLazy } from "./handleImages";
 const $ = document.querySelector.bind(document);
 const navContactBtn = $(".nav-multi__contact");
 const contactMenu = $(".contact-menu");
 
 const initContactMenu = () => {
+
+  
   const closeContactMenu = () => {
     contactMenu.classList.remove("contact-menu--active");
     navContactBtn.firstChild.classList.remove("nav-menu--contact--active");
@@ -34,6 +37,7 @@ const initContactMenu = () => {
 
   const openContactMenu = () => {
     if (window.innerWidth <= 560) return;
+    contactMenuLazy();
     if (contactMenu.classList.contains("contact-menu--active")) return;
     
     contactMenu.classList.add("contact-menu--active");

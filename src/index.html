@@ -66,7 +66,7 @@
   <!--------------------->
 
   <!-- CONTACT MENU POPUP -->
-  <aside class="contact-menu contact-menu__header">
+  <aside class="contact-menu contact-menu__header" cm-loaded="false">
     <!-- RIGHT -->
     <div class="cm-right">
 
@@ -77,13 +77,14 @@
             <div class="badge-top">
               <div class="badge-top--profile">
                 <div class="badge-top--container--svg">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                  <img class="img-icon cm-header--img" src="data:," alt="" disabled>
                 </div>
                 <span data-acc="@chaseottofy">@chaseottofy</span>
               </div>
             </div>
             <div class="badge-footer">
-              <img class="img-icon" src="./images/svg/bentarrow.svg" alt=""><span>Github</span>
+              <img class="img-icon cm-bent--arrow" src="data:," alt="" disabled>
+              <span>Github</span>
             </div>
           </a>
         </div>
@@ -93,12 +94,12 @@
           <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
             <div class="badge-top">
               <div class="badge-top--profile">
-                <img class="badge-mug" src="./images/mugshot/YTmug1.webp" alt="">
+                <img class="badge-mug cm-header--img" src="data:," alt="" disabled>
                 <span class="badge-prof" data-acc="3.6k subscribers" data-bef="550,000 views">@otto-fy</span>
               </div>
             </div>
             <div class="badge-footer">
-              <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+              <img class="img-icon cm-bent--arrow" src="data:," alt="" disabled>
               <span>YouTube</span>
             </div>
           </a>
@@ -110,14 +111,14 @@
             <div class="badge-top">
               <div class="badge-top--profile">
                 <div class="badge-top--container--svg">
-                  <img class="img-icon" src="./images/svg/codepen.svg" alt="">
+                  <img class="img-icon cm-header--img" src="data:," alt="" disabled>
                 </div>
                 <span data-acc="@chaseottofy">@chaseottofy</span>
               </div>
             </div>
 
             <div class="badge-footer">
-              <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+              <img class="img-icon cm-bent--arrow" src="data:," alt="" disabled>
               <span>Codepen</span>
             </div>
           </a>
@@ -128,13 +129,13 @@
           <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
             <div class="badge-top">
               <div class="badge-top--profile">
-                <img class="badge-mug" src="./images/mugshot/codewarsmug1.webp" alt="">
+                <img class="badge-mug cm-header--img" src="data:," alt="" disabled>
                 <span class="badge-prof" data-bef="#2,797" data-acc="Top 0.5%">@protto</span>
               </div>
             </div>
 
             <div class="badge-footer">
-              <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+              <img class="img-icon cm-bent--arrow" src="data:," alt="" disabled>
               <span>Codewars</span>
             </div>
           </a>
@@ -370,18 +371,60 @@
               </div>
             </div>
 
-
             <!-- CALENDAR BODY -->
             <div class="project-content__body">
-              <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View" src="./images/projects/calendar/dark_sm/c1.webp" alt="calendar day view" />
-              <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View" src="./images/projects/calendar/dark_sm/c2.webp" alt="calendar week view" />
-              <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View" src="./images/projects/calendar/dark_sm/c3.webp" alt="calendar month view" />
-              <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View" src="./images/projects/calendar/dark_sm/c4.webp" alt="calendar year view" />
-              <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View" src="./images/projects/calendar/dark_sm/c5.webp" alt="calendar list view" />
+              <picture>
+                <source srcset="
+                ./images/169/calendar/light/daylight1.webp 1280w,
+                ./images/169/calendar/light/daylight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/calendar/dark/daydark1.webp 1280w,
+              ./images/169/calendar/dark/daydark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View" src="./images/169/calendar/dark/daydark1.webp" alt="Day View">
+              </picture>
+
+              <picture>
+                <source srcset="
+                ./images/169/calendar/light/weeklight1.webp 1280w,
+                ./images/169/calendar/light/weeklight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/calendar/dark/weekdark1.webp 1280w,
+              ./images/169/calendar/dark/weekdark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View" src="./images/169/calendar/dark/weekdark1.webp" alt="Week View">
+              </picture>
+
+              <picture>
+                <source srcset="
+                ./images/169/calendar/light/monthlight1.webp 1280w,
+                ./images/169/calendar/light/monthlight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/calendar/dark/monthdark1.webp 1280w,
+              ./images/169/calendar/dark/monthdark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View" src="./images/169/calendar/dark/monthdark1.webp" alt="Month View">
+              </picture>
+
+              <picture>
+                <source srcset="
+                ./images/169/calendar/light/yearlight1.webp 1280w,
+                ./images/169/calendar/light/yearlight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/calendar/dark/yeardark1.webp 1280w,
+              ./images/169/calendar/dark/yeardark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View" src="./images/169/calendar/dark/yeardark1.webp" alt="Year View">
+              </picture>
+
+              <picture>
+                <source srcset="
+                ./images/169/calendar/light/listlight1.webp 1280w,
+                ./images/169/calendar/light/listlight2.webp 720w" media="(prefers-color-scheme: light)">
+                <source srcset="
+              ./images/169/calendar/dark/listdark1.webp 1280w,
+              ./images/169/calendar/dark/listdark2.webp 720w" media="(prefers-color-scheme: dark)">
+                <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View" src="./images/169/calendar/dark/listdark1.webp" alt="List View">
+              </picture>
             </div>
           </div>
         </div>
-
 
         <!-- MARKDOWN PROJECT -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
@@ -468,7 +511,9 @@
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
     <article class="contact-container" id="contact-top">
-      <div class="section-title"><h2>Contact / Links</h2></div>
+      <div class="section-title">
+        <h2>Contact / Links</h2>
+      </div>
 
       <div class="contact-menu__body">
         <aside class="contact-menu__body--gradient"></aside>
@@ -500,7 +545,7 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                      <img class="img-icon cm-body--img" src="./images/svg/githuboutline.svg" alt="">
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
@@ -516,7 +561,7 @@
               <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug" src="./images/mugshot/YTmug1.webp" alt="">
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt="">
                     <span class="badge-prof" data-acc="3.6k subscribers" data-bef="550,000 views">@otto-fy</span>
                   </div>
                 </div>
@@ -534,7 +579,7 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon" src="./images/svg/codepen.svg" alt="">
+                      <img class="img-icon cm-body--img" src="./images/svg/codepen.svg" alt="">
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
@@ -552,13 +597,13 @@
               <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug" src="./images/mugshot/codewarsmug1.webp" alt="">
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" alt="">
                     <span class="badge-prof" data-bef="#2,797" data-acc="Top 0.5%">@protto</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+                  <img class="img-icon img-bent-arrowsrc" src="./images/svg/bentarrow.svg" alt="">
                   <span>Codewars</span>
                 </div>
               </a>

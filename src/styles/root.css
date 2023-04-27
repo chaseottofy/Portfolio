@@ -284,6 +284,16 @@ input:-ms-input-placeholder {
 
 /* [ATTRIBUTES]
 ============================*/
+img[disabled] {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  appearance: none;
+  opacity: .5;
+}
+
 input[disabled],
 button[disabled],
 a[disabled] {
@@ -419,9 +429,15 @@ a[disabled] {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px;
   }
 }
 

@@ -43,7 +43,7 @@
   text-align: center;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  position:relative;
+  position: relative;
 }
 
 .section-title--left {
@@ -65,8 +65,7 @@
   background-image: linear-gradient(to bottom,
       var(--white1) 0%,
       var(--white2),
-      var(--black4)
-    );
+      var(--black4));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,4 +84,15 @@
   opacity: .9;
   font-size: .875rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 640px) {
+  .section-title h2,
+  .section-title--left h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-title h3 {
+    font-size: 1.5rem;
+  }
 }
