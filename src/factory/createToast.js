@@ -1,5 +1,4 @@
-const $ = document.querySelector.bind(document);
-const toastWrapper = $(".toast-wrapper");
+const toastWrapper = document.querySelector(".toast-wrapper");
 
 let toastIndex = 0;
 const handleToasts = () => {
@@ -13,7 +12,6 @@ const handleToasts = () => {
     if (idx === 4) {
       toast.classList.add("hide-toast");
     }
-
     toast.setAttribute("class", `toast toast--${i + 1}`);
     toast.style.zIndex = 9000 - i;
     toast.style.bottom = `${i + 2}rem`;
@@ -21,7 +19,7 @@ const handleToasts = () => {
 };
 
 const createToast = (text) => {
-  if (toastIndex <= 3) {toastIndex++;}
+  if (toastIndex <= 3) { toastIndex++; }
 
   let width = 0;
   const wrapper = document.createElement("aside");
@@ -50,7 +48,7 @@ const createToast = (text) => {
     progressbar.style.width = `${width}%`;
     if (width === 100) {
       wrapper.remove();
-      if (toastIndex > 0) {toastIndex--;}
+      if (toastIndex > 0) { toastIndex--; }
       clearInterval();
     }
   }, 10);

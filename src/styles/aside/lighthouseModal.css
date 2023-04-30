@@ -1,43 +1,30 @@
-.lighthouse-modal {
+.lighthouse-modal--wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  max-width: 900px;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y:scroll;
+  background: rgba(0, 0, 0, .6);
+}
+
+.lighthouse-modal {
   height: 90%;
   max-height: 500px;
   width: 90%;
-  z-index: -1;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  max-width: 900px;
   background: transparent;
   border-radius: 1rem;
-  transform: scale(.9);
-  transition-property: transform;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
-.lighthouse-modal--active {
-  z-index: 9999;
-  transform: scale(1);
-  opacity: 1;
-  user-select: auto;
   border: 1px solid var(--black2);
   background: var(--black1);
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* HEADER
@@ -46,8 +33,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
-  padding: .5rem .75rem;
+  height: 4rem;
+  padding: 0 .75rem;
   width: 100%;
   border-bottom: 1px solid var(--black2);
 }
@@ -57,6 +44,8 @@
   opacity: .9;
   font-size: 0.875rem;
   font-weight: 500;
+  height: 56px;
+  line-height: 56px;
 }
 
 .close-lh-btn {
@@ -65,26 +54,23 @@
   justify-content: center;
   height: 2rem;
   width: 2rem;
+  padding: 0;
+  margin: 0;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  background: var(--black2);
-  border: 1px solid var(--black1);
-}
-
-.close-lh-btn:hover img {
-  opacity: .8;
+  background: var(--black1);
+  border: 1px solid var(--black2);
 }
 
 .close-lh-btn:hover {
-  background: var(--black1);
-  border: 1px solid var(--black2);
+  background: var(--black2);
 }
 
 /* BODY
 ============================*/
 .lighthouse-modal__body {
-  height: auto;
+  height: calc(100% - 4rem);
   overflow-y: auto;
   width: 100%;
   display: grid;
@@ -168,7 +154,7 @@
   font-weight: 500;
   margin: 1.5rem 0 .75rem 0;
   cursor: pointer;
-  background: var(--black2);
+  background: var(--black1);
   border: 1px solid var(--black2);
   padding: .5rem;
   display: flex;
@@ -177,13 +163,7 @@
 }
 
 .lh-main__score-title:hover {
-  background: var(--black0);
-}
-
-.lh-main__score-title img {
-  margin-left: .5rem;
-  height: 1rem;
-  width: 1rem;
+  background: var(--black2);
 }
 
 .lh-main__score-subtitle {
@@ -306,7 +286,7 @@
 
   .lh-sub {
     max-width: 100%;
-    min-height: 180px;
+    height: 160px;
     border-bottom: 1px solid var(--black2);
   }
 }

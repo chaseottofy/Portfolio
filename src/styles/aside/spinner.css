@@ -83,13 +83,3 @@
   animation-delay: -.1s;
   transform: rotate(330deg) translate(146%)
 }
-
-@keyframes spin {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: .15;
-  }
-}

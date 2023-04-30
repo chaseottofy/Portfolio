@@ -85,7 +85,7 @@
 .nav-menu li {
   height: 100%;
   width: 100%;
-  padding: .5rem .75rem;
+  padding: .625rem .75rem;
   display: flex;
   align-items: center;
 }
@@ -153,6 +153,8 @@
 }
 
 .nav-multi--caret {
+  height: 14px;
+  width: 14px;
   filter: invert(1);
   transition: transform .2s ease-in-out;
 }
@@ -191,7 +193,7 @@
 
 @media screen and (max-width: 640px) {
   .nav-menu li {
-    padding: .5rem .125rem;
+    padding: .625rem .125rem;
   }
 }
 

@@ -15,5 +15,5 @@ const createContext = (top, left, text) => {
   } else if (rect.left < 0) {
     contextWrapper.style.left = `${left + rect.width}px`;
   }
-}
+};
 export default createContext;

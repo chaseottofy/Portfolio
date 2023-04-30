@@ -1,11 +1,8 @@
-import { contactMenuLazy } from "./handleImages";
-const $ = document.querySelector.bind(document);
-const navContactBtn = $(".nav-multi__contact");
-const contactMenu = $(".contact-menu");
+import contactMenuLazy from "./handleImages";
+const navContactBtn = document.querySelector(".nav-multi__contact");
+const contactMenu = document.querySelector(".contact-menu");
 
 const initContactMenu = () => {
-
-  
   const closeContactMenu = () => {
     contactMenu.classList.remove("contact-menu--active");
     navContactBtn.firstChild.classList.remove("nav-menu--contact--active");
@@ -23,7 +20,7 @@ const initContactMenu = () => {
       e.target.closest(".contact-menu") ||
       e.target.closest(".nav-multi__contact")
     ) return;
-    
+
     // close if mouse is outside of window... I believe this will prevent some bugs in firefox notably. Don't quote me on that.
     if (
       e.clientX <= 0
@@ -39,12 +36,12 @@ const initContactMenu = () => {
     if (window.innerWidth <= 560) return;
     contactMenuLazy();
     if (contactMenu.classList.contains("contact-menu--active")) return;
-    
+
     contactMenu.classList.add("contact-menu--active");
     navContactBtn.firstChild.classList.add("nav-menu--contact--active");
-
     window.onmousemove = contactMousemove;
   };
+  
   navContactBtn.onmouseenter = openContactMenu;
 };
 

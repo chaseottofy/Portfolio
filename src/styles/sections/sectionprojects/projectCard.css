@@ -41,9 +41,7 @@
   width: 100%;
   height: 100%;
   background: var(--tab-bg);
-  border: 1px solid var(--black2);
-  border-top: none;
-  border-left: none;
+  border-bottom: 1px solid var(--black2);
 }
 
 .header-decoration--sm {
@@ -88,7 +86,7 @@
   justify-content: center;
   height: 100%;
   cursor: pointer;
-  border-right: 1px solid var(--black2);
+  /* border-right: 1px solid var(--black2); */
   border-left: 1px solid var(--black2);
   border-top: 3px solid transparent;
   border-bottom: 3px solid var(--tab-bottom);
@@ -124,6 +122,17 @@
 .pc__header-tabs span input:checked + label {
   background: var(--tab-bg-active);
   border-bottom: 3px solid var(--tab-bg-hover);
+}
+
+.pc__header-tabs span input:checked + label::before {
+  position: absolute;
+  top: .375rem;
+  right: .375rem;
+  height: .375rem;
+  width: .375rem;
+  border-radius: 50%;
+  background: var(--tab-active-color);
+  content: "";
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
@@ -246,8 +255,6 @@
   height: 2.75rem;
 }
 
-
-
 /* QUERIES
 ============================*/
 @media screen and (max-width: 768px) {
@@ -296,7 +303,7 @@
   .subheader-sm {
     height: 2.5rem;
   }
-  
+
   .pc__header-tabs span label::after {
     display: none;
   }

@@ -5,16 +5,15 @@ const TerserPlugin = require("terser-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (env, argv) => {
-  const mode = argv.mode === 'development';
+  const isDev = argv.mode === 'development';
 
   return {
-    mode: mode ? 'development' : 'production',
+    mode: isDev ? 'development' : 'production',
     devtool: 'source-map',
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
       },
-      // enable live reload
       watchFiles: {
         paths: ['src/**/*.*'],
         options: {
@@ -72,7 +71,7 @@ module.exports = (env, argv) => {
         preload: [
           {
             test: /\.woff2?$/,
-            attributes: { as: 'font', crossorigin: true },
+            attributes: { as: 'font', crossorigin: "anonymous", type: 'font/woff2' },
           },
         ],
         minify: {

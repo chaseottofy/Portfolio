@@ -1,6 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 const initProjectImages = () => {
   const tabnames = {
     calendar: ['day', 'week', 'month', 'year', 'list'],
@@ -13,54 +10,57 @@ const initProjectImages = () => {
 
   /**
    * handleTab
-   * @param {string} nth - idx of tab
-   * @param {string} prefix - prefix of class ( cal / mark / etc )
-   * @param {string} tabname - name of tab : use to set the last value of search bar to reflect current image
-   * @param {boolean} multi - true = multiple projects (tabnames.components) : requires slightly different search bar handling since the entire url is different;
+   * @param {string} nth : idx of tab
+   * @param {string} prefix : prefix of class ( cal / mark / etc )
+   * @param {string} tabname : tab name (add to end of search url)
+   * @param {boolean} isMulti : true = multiple projects 
+   * (tabnames.components) : requires slightly different search bar handling since the entire url is different;
+   * 
+   * 
+   * Until performance takes a hit (which if this comment is still here it hasn't) all images will be loaded on app init. 
+   * They are hidden with negative z index until needed. 
+   * Use 'nth' to find correct image index to toggle and hide the current.
    */
-  const handleTab = (nth, prefix, tabname, multi) => {
+  const handleTab = (nth, prefix, tabname, isMulti) => {
     const currentClass = `${prefix}-current`;
-    const activeImg = $(`.${currentClass}`);
+    const activeImg = document.querySelector(`.${currentClass}`);
     const activeIdx = activeImg.getAttribute("data-tab-idx");
 
     if (nth === activeIdx) return;
+
     activeImg.classList.remove(currentClass);
     activeImg.classList.add("hide-img");
 
-    const newActiveImg = $(`.${prefix}-cell__image--${nth}`);
+    const newActiveImg = document.querySelector(`.${prefix}-cell__image--${nth}`);
     newActiveImg.classList.remove("hide-img");
     newActiveImg.classList.add(currentClass);
 
-    if (multi) {
+    if (isMulti) {
       const url = tabnames.components[tabname];
-      $(".component-search").setAttribute("href", url);
-      $(".component-search--text").textContent = url;
+      document.querySelector(".component-search").setAttribute("href", url);
+      document.querySelector(".component-search--text").textContent = url;
     } else {
-      $(`.${prefix}-search`).setAttribute("data-search-after", tabname);
+      document.querySelector(`.${prefix}-search`).setAttribute("data-search-after", tabname);
     }
   };
 
   const initTabs = () => {
-    const setTabs = (tabs, prefix, tabname, multi) => {
+    const setTabs = (tabs, prefix, tabname, isMulti) => {
+      // set first tab to checked if not already on page load
       tabs[0].previousElementSibling.checked = true;
       tabs.forEach((tab, idx) => {
-        const handleClick = () => handleTab(
-          idx + 1,
-          prefix,
-          tabname[idx],
-          multi
-        );
-        tab.onclick = handleClick;
+        tab.addEventListener("click", () => {
+          handleTab(idx + 1, prefix, tabname[idx], isMulti);
+        });
       });
     };
 
     // set Calendar Tabs
-    setTabs($$(".proj-cal--tab"), 'cal', tabnames.calendar, false);
+    setTabs(document.querySelectorAll(".proj-cal--tab"), 'cal', tabnames.calendar, false);
     // set Components Tabs
-    setTabs($$(".proj-comp--tab"), 'comp', tabnames.comparr, true);
+    setTabs(document.querySelectorAll(".proj-comp--tab"), 'comp', tabnames.comparr, true);
   };
 
-  
   initTabs();
 };
 

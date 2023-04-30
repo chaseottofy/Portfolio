@@ -6,6 +6,9 @@
 
 // font declarations / css reset / css variables (root & themes)
 @import "./styles/root";
+@import "./styles/animation.css";
+@import "./styles/reset.css";
+@import "./styles/utility.css";
 
 // two classes : light/dark
 // -- note that root.css holds the primary/secondary color variables
@@ -14,13 +17,13 @@
 
 // header : nav / logo / theme toggle
 @import "./styles/header";
-@import "./styles/gradientElements/headerGradient";
+@import "./styles/gradients/headerGradient";
 
 // main : intro / projects / about / skills / contact --- provide basic layout & header
 @import "./styles/main";
 
 // divider for each main section
-@import "./styles/gradientElements/dividerGradient";
+@import "./styles/gradients/dividerGradient";
 
 // intro : section 1
 @import "./styles/sections/intro";

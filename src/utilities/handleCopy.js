@@ -1,5 +1,4 @@
 import createToast from "../factory/createToast";
-const $$ = document.querySelectorAll.bind(document);
 
 const copyToClipboard = (text) => {
   if (!navigator.clipboard || !text) return;
@@ -15,7 +14,7 @@ const setCopy = (text) => {
 const copyEmail = () => setCopy("copied! – ottofy@zohomail.com");
 const copyPhone = () => setCopy("copied! – 9709882548");
 const initCopyElements = () => {
-  $$(".cm-copy--email").forEach(el => el.addEventListener("click", copyEmail));
-  $$(".cm-copy--phone").forEach(el => el.addEventListener("click", copyPhone));
+  document.querySelectorAll(".cm-copy--email").forEach(el => el.addEventListener("click", copyEmail));
+  document.querySelectorAll(".cm-copy--phone").forEach(el => el.addEventListener("click", copyPhone));
 };
 export default initCopyElements;

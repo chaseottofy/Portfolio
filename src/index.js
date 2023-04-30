@@ -23,12 +23,8 @@ import initProjects from "./utilities/handleProjects";
 import initContactForm from "./utilities/handleForm";
 import initModals from "./utilities/handleModals";
 import initDefaults from "./utilities/handleDefaults";
-import initImages from "./utilities/handleImages";
 /***************************************/
 const appInit = () => {
-  // preload images
-  initImages();
-
   // set default theme / toggle theme
   initTheme();
 

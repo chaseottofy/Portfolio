@@ -1,7 +1,4 @@
-const $ = document.querySelector.bind(document);
-const contactMenuTime = $(".cm-left--time");
-
-const getTime = () => {
+const getMyTime = () => {
   return new Date().toLocaleString("en-US", {
     timeZone: "America/Denver",
     hour: "numeric",
@@ -10,7 +7,14 @@ const getTime = () => {
   });
 };
 
+// const getYourTime = () => {
+//   const date = new Date();
+//   const [h, m] = [date.getHours(), date.getMinutes()];
+//   console.log(`${h > 12 ? h % 12 : h}:${m < 10 ? '0' + m : m} ${h >= 12 ? "PM" : "AM"}`);
+// };
+
 const initDefaults = () => {
-  contactMenuTime.textContent = `MST: ${getTime()}`;
+  // display my current time in contact section
+  document.querySelector(".cm-left--time").textContent = `MST: ${getMyTime()}`;
 };
 export default initDefaults;

@@ -21,7 +21,7 @@
 
 <body class="body theme__dark">
   <!-- HEADER -->
-  <header class="header ">
+  <header class="header">
     <div class="header-wrapper">
       <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top"><img src="./images/svg/logo.svg" alt="logo" /></button>
 
@@ -48,10 +48,8 @@
       </div>
     </div>
   </header>
-
   <!-- scroll back to this position -->
   <aside id="header-top" style="scroll-margin-top: 4rem"></aside>
-
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one"></aside>
   <!--------------------->
@@ -159,88 +157,6 @@
   </aside>
   <!--------------------->
 
-  <!-- LIGHTHOUSE MODAL POPUP -->
-  <aside class="lighthouse-modal">
-    <div class="lighthouse-modal__header">
-      <span class="lh-appname">Google Calendar 2.0 Lighthouse Metrics</span>
-      <button class="close-lh-btn" aria-label="button" disabled>
-        <img class="img-icon" src="./images/svg/close.svg" alt="">
-      </button>
-    </div>
-    <div class="lighthouse-modal__body">
-      <div class="lh-main">
-        <span class="lh-main__score">100</span>
-        <a class="lh-main__score-title" href="https://flic.kr/s/aHBqjAAZkD" title="Flickr screenshots of test" target="_blank" rel="noreferrer">
-          Screenshots
-          <img class="img-icon" src="./images/svg/externalLink.svg" alt="">
-        </a>
-      </div>
-
-      <!-- FIRST CONTENTFUL PAINT -->
-      <div class="lh-sub">
-        <div class="lh-sub-title">First Contentful Paint</div>
-        <div class="lh-sub__metrics">
-          <div class="lh-sub__metrics-title">
-            <span class="lh-metric-a">0.3</span>
-            <span class="lh-sub__metrics-sm">s</span>
-          </div>
-          <div class="lh-sub__metrics-score">100</div>
-        </div>
-        <hr>
-        <div class="lh-sub-subtitle">
-          When the page's first content is displayed.
-        </div>
-      </div>
-
-      <!-- LARGEST CONTENTFUL PAINT -->
-      <div class="lh-sub">
-        <div class="lh-sub-title">First Contentful Paint</div>
-        <div class="lh-sub__metrics">
-          <div class="lh-sub__metrics-title">
-            <span class="lh-metric-b">0.3</span>
-            <span class="lh-sub__metrics-sm">s</span>
-          </div>
-          <div class="lh-sub__metrics-score">100</div>
-        </div>
-        <hr>
-        <div class="lh-sub-subtitle">
-          When all the page's content has been displayed.
-        </div>
-      </div>
-
-      <!-- FIRST INPUT DELAY -->
-      <div class="lh-sub">
-        <div class="lh-sub-title">Total Blocking Time</div>
-        <div class="lh-sub__metrics">
-          <div class="lh-sub__metrics-title">
-            0 <span class="lh-sub__metrics-sm">ms</span>
-          </div>
-          <div class="lh-sub__metrics-score">100</div>
-        </div>
-        <hr>
-        <div class="lh-sub-subtitle">
-          The page's time to react to the user's first interaction.
-        </div>
-      </div>
-
-      <!-- CUMALITIVE LAYOUT SHIFT -->
-      <div class="lh-sub">
-        <div class="lh-sub-title">Cumulative Layout Shift</div>
-        <div class="lh-sub__metrics">
-          <div class="lh-sub__metrics-title">
-            0
-          </div>
-          <div class="lh-sub__metrics-score">100</div>
-        </div>
-        <hr>
-        <div class="lh-sub-subtitle">
-          How much the page's elements move when loaded.
-        </div>
-      </div>
-    </div>
-  </aside>
-  <!--------------------->
-
   <!--------------------->
   <!-- SECTION: INTRO -->
   <section class="intro-container">
@@ -256,8 +172,6 @@
         <div class="intro-header__subtitle intro-header__subtitle--two">
           <h2 class="intro-header__subtitle--text ih-last">Web Developer</h2>
         </div>
-        <!-- intro message -->
-        <!-- <div class="intro-message"></div> -->
       </div>
     </div>
 
@@ -288,7 +202,6 @@
     </aside>
   </section>
   <!--------------------->
-
 
 
   <!-- MAIN (projects > skills > about > contact) -->
@@ -345,73 +258,137 @@
 
             <div class="project-content__subheader">
               <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
+                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="icon">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
                 <span class="search-arrowright">
-                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
+                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right">
                 </span>
               </div>
 
               <div class="pc__subheader--links">
                 <a href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                 </a>
                 <div class="vert"></div>
-                <button class="lh-btn" data-app-name="calendar" aria-label="button">
-                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="">
+                <button class="lh-btn" data-app-idx="0" aria-label="button">
+                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
                 </button>
               </div>
             </div>
 
             <!-- CALENDAR BODY -->
             <div class="project-content__body">
+
+
+              <!-- calendar: day view -->
               <picture>
-                <source srcset="
-                ./images/169/calendar/light/daylight1.webp 1280w,
-                ./images/169/calendar/light/daylight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/calendar/dark/daydark1.webp 1280w,
-              ./images/169/calendar/dark/daydark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-thumb-title="Day View" src="./images/169/calendar/dark/daydark1.webp" alt="Day View" style="max-width:1280px;">
+                <source 
+                  srcset="
+                    ./images/projcal/light/cdaylg.webp 2560w,
+                    ./images/projcal/light/cdaymd.webp 1536w" 
+                  media="(prefers-color-scheme: light)"
+                  >
+                <source 
+                  srcset="
+                    ./images/projcal/dark/cdaylgdark.webp 2560w,
+                    ./images/projcal/dark/cdaymddark.webp 1536w"
+                  media="(prefers-color-scheme: dark)"
+                  >
+                <img 
+                  class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" 
+                  data-thumb-title="Day View"
+                  sizes="(max-width: 640px) 640px, 1280px"
+                  src="./images/projcal/dark/cdaylgdark.webp" 
+                  alt="Day View"
+                  style="max-width:1280px;">
               </picture>
 
+
+
+              <!-- calendar: week view -->
               <picture>
-                <source srcset="
-                ./images/169/calendar/light/weeklight1.webp 1280w,
-                ./images/169/calendar/light/weeklight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/calendar/dark/weekdark1.webp 1280w,
-              ./images/169/calendar/dark/weekdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-thumb-title="Week View" src="./images/169/calendar/dark/weekdark1.webp" alt="Week View" style="max-width:1280px;">
+                <source 
+                  srcset="
+                    ./images/projcal/light/cweeklg.webp 2560w,
+                    ./images/projcal/light/cweekmd.webp 1536w" 
+                  media="(prefers-color-scheme: light)">
+                <source 
+                  srcset="
+                    ./images/projcal/dark/cweeklgdark.webp 2560w,
+                    ./images/projcal/dark/cweekmddark.webp 1536w" 
+                  media="(prefers-color-scheme: dark)">
+                <img 
+                  class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" 
+                  data-thumb-title="Week View" 
+                  sizes="(max-width: 640px) 640px, 1280px"
+                  src="./images/projcal/dark/cweeklgdark.webp" 
+                  alt="Week View"
+                  style="max-width:1280px;">
               </picture>
 
+
+              <!-- calendar: month view -->
               <picture>
-                <source srcset="
-                ./images/169/calendar/light/monthlight1.webp 1280w,
-                ./images/169/calendar/light/monthlight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/calendar/dark/monthdark1.webp 1280w,
-              ./images/169/calendar/dark/monthdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-thumb-title="Month View" src="./images/169/calendar/dark/monthdark1.webp" alt="Month View" style="max-width:1280px;">
+                <source 
+                  srcset="
+                    ./images/projcal/light/cmonthlg.webp 2560w,
+                    ./images/projcal/light/cmonthmd.webp 1536w" 
+                    media="(prefers-color-scheme: light)">
+                <source 
+                  srcset="
+                    ./images/projcal/dark/cmonthlgdark.webp 2560w,
+                    ./images/projcal/dark/cmonthmddark.webp 1536w" 
+                  media="(prefers-color-scheme: dark)">
+                <img 
+                  class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" 
+                  data-thumb-title="Month View" 
+                  sizes="(max-width: 640px) 640px, 1280px"
+                  src="./images/projcal/dark/cmonthlgdark.webp" 
+                  alt="Month View" 
+                  style="max-width:1280px;">
               </picture>
 
+
+              <!-- calendar: year view -->
               <picture>
-                <source srcset="
-                ./images/169/calendar/light/yearlight1.webp 1280w,
-                ./images/169/calendar/light/yearlight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/calendar/dark/yeardark1.webp 1280w,
-              ./images/169/calendar/dark/yeardark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-thumb-title="Year View" src="./images/169/calendar/dark/yeardark1.webp" alt="Year View" style="max-width:1280px;">
+                <source 
+                  srcset="
+                    ./images/projcal/light/cyearlg.webp 2560w,
+                    ./images/projcal/light/cyearmd.webp 1536w" 
+                  media="(prefers-color-scheme: light)">
+                <source 
+                  srcset="
+                    ./images/projcal/dark/cyearlgdark.webp 2560w,
+                    ./images/projcal/dark/cyearmddark.webp 1536w" 
+                  media="(prefers-color-scheme: dark)">
+                <img 
+                  class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" 
+                  sizes="(max-width: 640px) 640px, 1280px"
+                  data-thumb-title="Year View" 
+                  src="./images/projcal/dark/cyearlgdark.webp" 
+                  alt="Year View" 
+                  style="max-width:1280px;">
               </picture>
 
+
+              <!-- calendar: list view -->
               <picture>
-                <source srcset="
-                ./images/169/calendar/light/listlight1.webp 1280w,
-                ./images/169/calendar/light/listlight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/calendar/dark/listdark1.webp 1280w,
-              ./images/169/calendar/dark/listdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-thumb-title="List View" src="./images/169/calendar/dark/listdark1.webp" alt="List View" style="max-width:1280px;">
+                <source 
+                  srcset="
+                    ./images/projcal/light/clistlg.webp 2560w,
+                    ./images/projcal/light/clistmd.webp 1536w" 
+                  media="(prefers-color-scheme: light)">
+                <source 
+                  srcset="
+                    ./images/projcal/dark/clistlgdark.webp 2560w,
+                    ./images/projcal/dark/clistmddark.webp 1536w" 
+                  media="(prefers-color-scheme: dark)">
+                <img 
+                  class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" 
+                  sizes="(max-width: 640px) 640px, 1280px"
+                  data-thumb-title="List View" 
+                  src="./images/projcal/dark/clistlgdark.webp" 
+                  alt="List View" 
+                  style="max-width:1280px;">
               </picture>
             </div>
 
@@ -421,13 +398,15 @@
           <div class="project-cell__footer">
             <div class="project-footer__titles">
               <div class="pf-stack">
-                <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="">
+                <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon">
               </div>
               <h3 class="pf-appname">Google Calendar 2.0</h3>
             </div>
             <div class="project-footer__content"></div>
           </div>
         </div>
+
+
 
 
         <!-- MARKDOWN PROJECT -->
@@ -444,37 +423,27 @@
 
               <div class="project-content__subheader subheader-sm">
                 <div class="pc__subheader--search">
-                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
+                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="lock-icon">
                     https://chaseottofy.github.io/react-lite-markdown/</a>
                   <span class="search-arrowright">
-                    <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
+                    <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right-icon">
                   </span>
                 </div>
 
                 <div class="pc__subheader--links">
                   <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                   </a>
                   <div class="vert"></div>
-                  <button class="lh-btn" data-app-name="markdown" aria-label="button">
-                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="">
+                  <button class="lh-btn" data-app-idx="1" aria-label="button">
+                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
                   </button>
                 </div>
               </div>
             </div>
 
             <div class="project-content__body">
-              <picture>
-                <source srcset="
-                    ./images/169/mdlite/light/markdownlight1.webp 1280w,
-                    ./images/169/mdlite/light/markdownlight2.webp  720w
-                  " media="(prefers-color-scheme: light)" />
-                <source srcset="
-                    ./images/169/mdlite/dark/markdowndark1.webp 1280w,
-                    ./images/169/mdlite/dark/markdowndark2.webp  720w
-                  " media="(prefers-color-scheme: dark)" />
-                <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/169/mdlite/dark/markdowndark1.webp" alt="Mdlite" style="max-width:1280px;" />
-              </picture>
+              <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:1280px;">
             </div>
           </div>
 
@@ -488,6 +457,8 @@
             <div class="project-footer__content"></div>
           </div>
         </div>
+
+
 
 
         <!-- COMPONENT GALLERY -->
@@ -511,7 +482,6 @@
                   <input id="proj-comp-react" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput">
                   <label aria-label="React Components" for="proj-comp-react" class="proj-header__tablabel proj-comp--tab" data-tab-idx="2" data-lab-after="">React JS Components </label>
                 </span>
-
               </div>
             </div>
 
@@ -546,22 +516,12 @@
             <div class="project-content__body">
               <!-- Vanilla Js component pic -->
               <picture>
-                <source srcset="
-                    ./images/169/vanillacomp/vanillacomp1.webp 1280w,
-                    ./images/169/vanillacomp/vanillacomp2.webp  720w
-                  " media="(prefers-color-scheme: dark)" />
-                <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/169/vanillacomp/vanillacomp1.webp" data-tab-idx="1" alt="Vanilla JS Components" style="max-width:1280px;" />
+                <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/vanillacomp/vanillacomp1.webp" data-tab-idx="1" alt="Vanilla JS Components" style="max-width:1280px;" srcset="./images/vanillacomp/vanillacomp1.webp 1280w, ./images/vanillacomp/vanillacomp2.webp 720w" />
               </picture>
 
               <!-- React Js component pic -->
               <picture>
-                <source srcset="
-                ./images/169/reactcomp/reactcomplight1.webp 1280w,
-                ./images/169/reactcomp/reactcomplight2.webp 720w" media="(prefers-color-scheme: light)">
-                <source srcset="
-              ./images/169/reactcomp/reactcompdark1.webp 1280w,
-              ./images/169/reactcomp/reactcompdark2.webp 720w" media="(prefers-color-scheme: dark)">
-                <img class="project-image__components comp-cell__image--2 hide-img" src="./images/169/reactcomp/reactcompdark2.webp" data-tab-idx="2" alt="React Components" style="max-width:1280px;">
+                <img class="project-image__components comp-cell__image--2 hide-img" src="./images/reactcomp/reactcompdark1.webp" data-tab-idx="2" alt="React Components" style="max-width:1280px;" srcset="./images/reactcomp/reactcompdark1.webp 1280w, ./images/reactcomp/reactcompdark2.webp 720w">
               </picture>
             </div>
           </div>
@@ -770,23 +730,18 @@
   </main>
 
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>@Chase Ottofy&nbsp; – &nbsp;</span>
+    <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">Github</a>
+  </footer>
+
+
   <!-- Toast popup (dynamic) -->
   <aside class="toast-wrapper"></aside>
   <!--------------------->
-
   <!-- modal overlay -->
-  <aside class="modal-ov modal-ov--hide"></aside>
   <!------------------->
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div>
-        <span>@Chase Ottofy&nbsp;–&nbsp;</span>
-        <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">Github</a>
-      </div>
-    </div>
-  </footer>
 </body>
 
 </html>

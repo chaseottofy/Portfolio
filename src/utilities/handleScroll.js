@@ -1,15 +1,13 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-const header = $(".header");
+const header = document.querySelector(".header");
 
 const handleHrefScroll = (e) => {
-  $(`${e.target.getAttribute("href")}`).scrollIntoView({
+  document.querySelector(`${e.target.getAttribute("href")}`).scrollIntoView({
     behavior: "smooth"
   });
 };
 
 const handleAttrScroll = (e) => {
-  $(`${e.target.getAttribute("data-href")}`).scrollIntoView({
+  document.querySelector(`${e.target.getAttribute("data-href")}`).scrollIntoView({
     behavior: "smooth"
   });
 };
@@ -26,9 +24,9 @@ const initScroll = () => {
   // call on init in case page loads beyond point for header-filter
   handlePageScroll();
   // click nav list item links to scroll to section
-  $$(".nav-menu--link").forEach(link => link.addEventListener("click", handleHrefScroll, { passive: true }));
+  document.querySelectorAll(".nav-menu--link").forEach(link => link.addEventListener("click", handleHrefScroll, { passive: true }));
   // click header logo to scroll to top of page
-  $(".header-logo").addEventListener("click", handleAttrScroll, { passive: true });
+  document.querySelector(".header-logo").addEventListener("click", handleAttrScroll, { passive: true });
 
   // when window is scrolled past the intro section, apply a filter to the header to invert the colors
   window.addEventListener("scroll", handlePageScroll, { passive: true });

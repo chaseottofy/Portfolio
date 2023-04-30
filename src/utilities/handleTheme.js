@@ -1,9 +1,7 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-const body = $(".body");
-const colorSchemeMeta = $('meta[name="color-scheme"]');
-const themeInputs = $$(".theme-input");
-const themeLabels = $$(".theme-label");
+const body = document.querySelector(".body");
+const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+const themeInputs = document.querySelectorAll(".theme-input");
+const themeLabels = document.querySelectorAll(".theme-label");
 
 const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
 
@@ -16,7 +14,6 @@ const setTheme = (theme) => {
 // if local storage has theme, set it
 // otherwise, set theme to system theme which will default to "light" if for whatever reason the system theme can't be retrieved
 const initDefaultTheme = () => {
-  console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const localTheme = localStorage.getItem("portfolio-theme");
   const systemTheme = getSystemTheme();
   // themeInputs[2] == system theme input
@@ -45,7 +42,7 @@ const initThemeOptions = () => {
 const initTheme = () => {
   initDefaultTheme();
   initThemeOptions();
-  $(".header").classList.add("header-animate");
+  document.querySelector(".header").classList.add("header-animate");
 };
 
 export default initTheme;

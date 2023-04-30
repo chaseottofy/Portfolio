@@ -1,16 +1,12 @@
 import createToast from "../factory/createToast";
 import createSpinner from "../factory/createSpinner";
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-const form = $(".contact-form");
-const nameInput = $(".form-name--input");
-const contactMethodGroup = $(".contact-method-group");
-const contactValueInput = $(".form-contact--input");
-const messageInput = $(".form-message--input");
-const submitBtn = $(".submit-form--btn");
-const contactOptions = $$(".contact-option--input");
-const formContainer = $(".contact-form--container");
-const formWrapper = $(".contact-form--wrapper");
+const form = document.querySelector(".contact-form");
+const nameInput = document.querySelector(".form-name--input");
+const contactValueInput = document.querySelector(".form-contact--input");
+const messageInput = document.querySelector(".form-message--input");
+const submitBtn = document.querySelector(".submit-form--btn");
+const contactOptions = document.querySelectorAll(".contact-option--input");
+const formWrapper = document.querySelector(".contact-form--wrapper");
 
 const handleSelectedContactMethod = e => {
   const selectedOption = e.target.value;
@@ -34,17 +30,6 @@ const handleFormChange = e => {
   }
 };
 
-// const createTimestamp = () => {
-//   const date = new Date();
-//   const year = date.getFullYear();
-//   const month = date.getMonth() + 1;
-//   const day = date.getDate();
-//   const hour = date.getHours();
-//   const minute = date.getMinutes();
-//   const second = date.getSeconds();
-//   return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
-// };
-
 const createSuccessMessage = () => {
   const successMessage = document.createElement("div");
   successMessage.classList.add("success-message");
@@ -53,20 +38,28 @@ const createSuccessMessage = () => {
   formWrapper.appendChild(successMessage);
 };
 
-const applySkeleton = () => {
-  nameInput.classList.add("skeleton");
-  contactValueInput.classList.add("skeleton");
-  messageInput.classList.add("skeleton");
-}
+const toggleSkeleton = () => {
+  nameInput.classList.toggle("skeleton");
+  contactValueInput.classList.toggle("skeleton");
+  messageInput.classList.toggle("skeleton");
+};
+
+const resetForm = () => {
+  form.reset();
+  document.querySelector(".success-message").remove();
+  submitBtn.classList.remove("btn-allow");
+  formWrapper.classList.remove("disable-form");
+  toggleSkeleton();
+};
 
 // still need some kind of authentication to prevent my google sheet from turning into garbage.
 const handleFormSubmit = e => {
   e.preventDefault();
-  applySkeleton();
+  const data = new FormData(form);
+  
+  toggleSkeleton();
   createSuccessMessage();
-  let data = new FormData(form);
 
-  // wait can I put full-stack on my resume now?
   fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
     method: "POST",
     body: data,
@@ -75,13 +68,7 @@ const handleFormSubmit = e => {
     .then(data => console.log(data))
     .then(() => {
       createToast("Message Sent!");
-      form.reset();
-      $(".success-message").remove();
-      submitBtn.classList.remove("btn-allow");
-      formWrapper.classList.remove("disable-form");
-      nameInput.classList.remove("skeleton");
-      contactValueInput.classList.remove("skeleton");
-      messageInput.classList.remove("skeleton");
+      resetForm();
     });
 };
 

@@ -1,29 +1,23 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
-const contactMenuImages = $$(".cm-header--img");
-const contactBodyImages = $$(".cm-body--img");
-const contactMenuArrows = $$(".cm-bent--arrow");
-const contactArrowSrc = $(".img-bent-arrowsrc");
-const contactMenu = $(".contact-menu");
-
-const initImages = () => { };
+const contactMenu = document.querySelector(".contact-menu");
+const contactMenuArrows = document.querySelectorAll(".cm-bent--arrow");
 
 /**
- * The contact menu revealed on hover in the header shares the same images as the contact menu in the body.
- * This implements a fake lazy load to prevent the images from laoding twice on init.
- */
+ * Load assets from contact-menu__body into contact-menu__header only when the contact menu is opened. 
+ * Use data attribute 
+*/
 const contactMenuLazy = () => {
   if (contactMenu.getAttribute("cm-loaded") === "true") return;
-  const arrowsrc = contactArrowSrc.src;
-  contactMenuImages.forEach((img, idx) => {
-    img.src = contactBodyImages[idx].src;
+
+  const setImg = (img, idx) => {
+    img.src = document.querySelectorAll(".cm-body--img")[idx].src;
     img.removeAttribute("disabled");
-    contactMenuArrows[idx].src = arrowsrc;
+  
+    contactMenuArrows[idx].src = document.querySelector(".img-bent-arrowsrc").src;
     contactMenuArrows[idx].removeAttribute("disabled");
-  });
+  }
+
+  document.querySelectorAll(".cm-header--img").forEach((img, idx) => setImg(img, idx));
   contactMenu.setAttribute("cm-loaded", "true");
 };
 
-export default initImages;
-export { contactMenuLazy };
+export default contactMenuLazy;

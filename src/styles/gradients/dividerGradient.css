@@ -1,0 +1,35 @@
+/* ============================
+DIVIDER
+============================*/
+.section-divider {
+  backdrop-filter: brightness(1.6);
+  box-shadow: 0 0 0 1px var(--dividerBg);
+  height: 1px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 6;
+}
+
+.section-gradient-left {
+  filter: blur(48px);
+  border-radius: 25%;
+  margin-top: -6rem;
+  min-height: 4rem;
+  mix-blend-mode:darken;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  opacity: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--grey1),
+    var(--grey2),
+    var(--grey1),
+    transparent
+  );
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}

@@ -3,7 +3,6 @@
 .project-image__components {
   /* 16 / 9 prevents lighthouse from screaming at me */
   /* I orignally resized all of the images to 16/10 for a cleaner fraction but I guess that's irrelevant */
-  aspect-ratio: 16/9;
   width: 100%;
   object-fit: cover;
   object-position: top center;
@@ -12,6 +11,16 @@
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
+}
+
+.project-image__calendar {
+  aspect-ratio: 16/9;
+
+}
+
+.project-image__markdown,
+.project-image__components {
+  aspect-ratio: calc(2560/1096);
 }
 
 .hide-img {
