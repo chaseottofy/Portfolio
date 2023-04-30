@@ -16,14 +16,15 @@
 @import "./styles/header";
 @import "./styles/gradients/headerGradient";
 
-// main : intro / projects / about / skills / contact --- provide basic layout & header
-@import "./styles/main";
 
 // divider for each main section
 @import "./styles/gradients/dividerGradient";
 
 // intro : section 1
 @import "./styles/sections/intro";
+
+// main : intro / projects / about / skills / contact --- provide basic layout & header
+@import "./styles/main";
 
 // projects : section 2
 @import "./styles/sections/sectionprojects/projectImages";
@@ -44,6 +45,5 @@
 @import "./styles/aside/toast";
 @import "./styles/aside/lighthouseModal";
 @import "./styles/aside/spinner";
-@import "./styles/aside/hoverContext";
 
 @import "./styles/footer";

@@ -54,7 +54,6 @@
   justify-content: center;
   cursor: pointer;
   color: var(--white1);
-  transition: background .2s ease-in-out;
 }
 
 .theme-switch span label img {

@@ -62,9 +62,9 @@
   --tab-bg: #111;
   --tab-bottom: #0f0f0f;
   --tab-bg-hover: #050505;
-  --tab-bg-active: #000;
+  --tab-bg-active: #050505;
 
-  --tab-active-color: #294ef1;
+  --tab-active-color: #718afb;
 }
 
 .theme__light {

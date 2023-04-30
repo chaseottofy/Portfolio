@@ -1,19 +1,8 @@
-/**
- * List of breakpoints
- * 1020
- * 768
- * 640
- * 490
- * 380
- */
-
 // https://www.wiktorwisniewski.dev/blog/preloading-assets-with-webpack5
 // https://github.com/webdiscus/html-bundler-webpack-plugin
 // https://vercel.com/features/edge-functions
 // https://www.bestfolios.com/home
 /***************************************/
-
-
 /***************************************/
 import initTheme from "./utilities/handleTheme";
 import initScroll from "./utilities/handleScroll";
@@ -51,7 +40,6 @@ const appInit = () => {
 };
 
 appInit();
-
 // !!REMINDER
 // TAB INDEX
 // set svgs to reasonable inline size

@@ -8,7 +8,10 @@ const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').m
 const setTheme = (theme) => {
   localStorage.setItem("portfolio-theme", theme);
   colorSchemeMeta.setAttribute("content", theme);
-  body.setAttribute("class", `body theme__${theme}`);
+  body.classList.remove("theme__dark")
+  body.classList.remove("theme__light")
+  body.classList.add(`theme__${theme}`)
+  // body.setAttribute("class", `body theme__${theme}`);
 };
 
 // if local storage has theme, set it

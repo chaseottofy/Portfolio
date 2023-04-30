@@ -15,7 +15,6 @@
 
 .project-image__calendar {
   aspect-ratio: 16/9;
-
 }
 
 .project-image__markdown,
@@ -38,4 +37,35 @@
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+}
+
+.fade-img--in {
+  animation: fade-img .2s both;
+}
+
+.img-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fade-img {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

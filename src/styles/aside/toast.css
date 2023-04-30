@@ -23,8 +23,8 @@
   width: auto;
   position: absolute;
   border-radius: 6px;
-  background: var(--offsetblack1);
-  box-shadow: var(--bs-md);
+  background: var(--black1);
+  box-shadow: var(--bs-lg);
   color: var(--white1);
   transition: all .35s cubic-bezier(.25, .75, .6, .98);
   padding: 1.5rem;

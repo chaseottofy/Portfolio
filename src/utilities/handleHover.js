@@ -33,7 +33,7 @@ const initContactMenu = () => {
   };
 
   const openContactMenu = () => {
-    if (window.innerWidth <= 560) return;
+    if (window.innerWidth <= 768) return;
     contactMenuLazy();
     if (contactMenu.classList.contains("contact-menu--active")) return;
 

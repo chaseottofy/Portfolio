@@ -9,10 +9,45 @@
   border: none;
 }
 
+.pcb-cal {
+  aspect-ratio: 16/9;
+  filter: grayscale(20%) contrast(120%);
+}
+
+.pcb-mark {
+  filter: grayscale(20%) contrast(115%);
+}
+
+.pcb-comp {
+  filter: grayscale(20%) contrast(120%);
+}
+
+.pcb-comp::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  background: rgba(42, 43, 46, 0.2);
+}
+
+.Light__mode .pcb-comp::after {
+  background: rgba(42, 43, 46, 0);
+}
+
+.pcb-mark,
+.pcb-comp {
+  aspect-ratio: calc(2560/1096);
+}
+
 /* FOOTER
 ============================*/
 .project-cell__footer {
-  min-height: 5rem;
+  padding-top: 1rem;
+  padding: 1rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,9 +57,13 @@
 .project-footer__titles {
   display: flex;
   flex-direction: column;
-  min-height: 6rem;
   height: 100%;
-  padding: .5rem;
+}
+
+.pf-stacks {
+  display: flex;
+  height: 4rem;
+  width: 100%;
 }
 
 .pf-stack {
@@ -34,20 +73,67 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: var(--accent-1);
+  margin-right: 1rem;
+  position: relative;
+  overflow:hidden;
+}
+
+.pf-stack::before {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  border-image-slice: 1;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 100ms ease-in-out;
+  width: 100%;
+}
+
+.pf-stack::after {
+  background: var(--black0);
+  margin: 0 auto;
+  height: 2.9rem;
+  width: 2.9rem;
+  z-index: 2;
+  border-radius: 50%;
+  content: "";
+  position: absolute
+}
+
+.pf-stack:hover {
+  box-shadow: 0 0 0 1px var(--accent-2);
 }
 
 .vanilla-icon,
-.react-icon {
+.react-icon,
+.webpack-icon,
+.vite-icon {
   height: 1.5rem;
   width: 1.5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.theme__light .vite-icon,
+.theme__light .webpack-icon,
+.theme__light .vanilla-icon,
+.theme__light .react-icon {
+  filter: invert(1);
+
 }
 
 .pf-appname {
   font-weight: 500;
-  font-size: 1.5rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.25rem;
+  transform: scaleY(.9);
   letter-spacing: -.5px;
   color: var(--white1);
+  opacity: .9;
   padding-left: .5rem;
 }
 
@@ -57,5 +143,4 @@
   height: 100%;
   width: 100%;
   padding: .5rem;
-  border-top: 1px solid var(--black2);
 }

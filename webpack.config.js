@@ -7,24 +7,48 @@ const Dotenv = require('dotenv-webpack');
 module.exports = (env, argv) => {
   const isDev = argv.mode === 'development';
 
-  return {
+  const config = {
     mode: isDev ? 'development' : 'production',
-    devtool: 'source-map',
-    devServer: {
-      static: {
-        directory: path.join(__dirname, 'dist'),
-      },
-      watchFiles: {
-        paths: ['src/**/*.*'],
-        options: {
-          usePolling: true,
-        },
-      },
-      port: 3000,
-      open: true,
-      hot: true,
-      compress: true,
+    devtool: isDev ? 'inline-source-map' : 'source-map',
+
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      clean: true,
     },
+
+    resolve: {
+      alias: {
+        '@fonts': path.join(__dirname, 'src/fonts/inter/'),
+      },
+    },
+
+    plugins: [
+      new Dotenv(),
+      new HtmlBundlerPlugin({
+        entry: {
+          index: 'src/index.html',
+        },
+        js: {
+          filename: '[name].[contenthash:8].js',
+        },
+        css: {
+          filename: '[name].[contenthash:8].css',
+        },
+        preload: [
+          {
+            test: /\.woff2?$/,
+            attributes: { as: 'font', crossorigin: true },
+            // attributes: { as: 'font', crossorigin: "anonymous", type: 'font/woff2' },
+          },
+        ],
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+        },
+      }),
+    ],
+
     module: {
       rules: [
         {
@@ -53,34 +77,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
-    plugins: [
-      new Dotenv(),
-      new HtmlBundlerPlugin({
-        entry: {
-          // define templates here
-          index: 'src/index.html', // => dist/index.html
-        },
-        js: {
-          // output filename of JS
-          filename: '[name].[contenthash:8].js',
-        },
-        css: {
-          // output filename of CSS
-          filename: '[name].[contenthash:8].css',
-        },
-        preload: [
-          {
-            test: /\.woff2?$/,
-            attributes: { as: 'font', crossorigin: "anonymous", type: 'font/woff2' },
-          },
-        ],
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-        },
-      }),
-    ],
+
     optimization: {
       minimize: true,
       minimizer: [
@@ -100,9 +97,23 @@ module.exports = (env, argv) => {
         }),
       ],
     },
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      clean: true,
+
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+      watchFiles: {
+        paths: ['src/**/*.*'],
+        options: {
+          usePolling: true,
+        },
+      },
+      port: 3000,
+      open: true,
+      hot: true,
+      compress: true,
     },
   };
+
+  return config;
 };

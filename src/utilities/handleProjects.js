@@ -1,3 +1,5 @@
+import { setCalendarImg, setComponentImg } from "./handleImages";
+
 const initProjectImages = () => {
   const tabnames = {
     calendar: ['day', 'week', 'month', 'year', 'list'],
@@ -16,7 +18,6 @@ const initProjectImages = () => {
    * @param {boolean} isMulti : true = multiple projects 
    * (tabnames.components) : requires slightly different search bar handling since the entire url is different;
    * 
-   * 
    * Until performance takes a hit (which if this comment is still here it hasn't) all images will be loaded on app init. 
    * They are hidden with negative z index until needed. 
    * Use 'nth' to find correct image index to toggle and hide the current.
@@ -24,7 +25,7 @@ const initProjectImages = () => {
   const handleTab = (nth, prefix, tabname, isMulti) => {
     const currentClass = `${prefix}-current`;
     const activeImg = document.querySelector(`.${currentClass}`);
-    const activeIdx = activeImg.getAttribute("data-tab-idx");
+    const activeIdx = parseInt(activeImg.getAttribute(`data-${prefix}-nth`));
 
     if (nth === activeIdx) return;
 
@@ -34,6 +35,15 @@ const initProjectImages = () => {
     const newActiveImg = document.querySelector(`.${prefix}-cell__image--${nth}`);
     newActiveImg.classList.remove("hide-img");
     newActiveImg.classList.add(currentClass);
+
+    // import new calendar image if not already loaded
+    if (prefix === 'cal' && nth > 1) {
+      setCalendarImg(nth - 1);
+    }
+    // import new component image if not already loaded
+    if (prefix === 'comp' && nth === 2) {
+      setComponentImg();
+    }
 
     if (isMulti) {
       const url = tabnames.components[tabname];

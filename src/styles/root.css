@@ -2,7 +2,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: local('Inter Regular'), local('Inter-Regular'), url('../fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
+  src: local('Inter Regular'), local('Inter-Regular'), url('@fonts/inter-v12-latin-regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: local('Inter Medium'), local('Inter-Medium'), url('../fonts/inter/inter-v12-latin-500.woff2') format('woff2');
+  src: local('Inter Medium'), local('Inter-Medium'), url('@fonts/inter-v12-latin-500.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -18,16 +18,12 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: local('Inter Bold'), local('Inter-Bold'), url('../fonts/inter/inter-v12-latin-700.woff2') format('woff2');
+  src: local('Inter Bold'), local('Inter-Bold'), url('@fonts/inter-v12-latin-700.woff2') format('woff2');
   font-display: swap;
 }
 
 :root {
   --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
-  --bs-xl:
-    rgba(0, 0, 0, 0.14) 0px 8px 10px 1px,
-    rgba(0, 0, 0, 0.12) 0px 3px 14px 2px,
-    rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
@@ -39,20 +35,10 @@
   --blue1: #637ef3;
   --blue2: #435fdc;
   --blue3: #273c97;
-  --blue4: #435fdc;
-  --red1: #342711;
-  --red2: #a02460;
-  --red3: #f40076;
-  --pink1: #a853ba;
 
   --gap1: .5rem;
-  --gap2: .75rem;
-  --gap3: .875rem;
-  --gap4: 1rem;
-
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
-  --maxWidthMd: 1200px;
 }
 
 *,
@@ -66,8 +52,6 @@
 }
 
 html {
-  height: calc(100vh - calc(100vh - 100%));
-  width: calc(100vw - calc(100vw - 100%));
   line-height: 1.15;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -78,21 +62,20 @@ html {
 }
 
 body {
+  min-height: 100%;
+  width: calc(100vw - calc(100vw - 100%));
+  font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
-  font-family: var(--primaryFont);
   text-rendering: optimizeSpeed;
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: inherit;
-  height: 100%;
-  width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 4rem 0 0 0;
 }
 
 /* GENERAL RESETS
@@ -290,13 +273,6 @@ a[disabled] {
   cursor: not-allowed;
 }
 
-/*attach to body - disable all transition/animation*/
-/* .dotted-background {
-  background-image: radial-gradient(var(--black2) 1px, transparent 1px);
-  background-size: 25px 25px;
-  background-position: 50%;
-} */
-
 .img-icon {
   height: 1rem;
   width: 1rem;
@@ -307,13 +283,54 @@ a[disabled] {
   filter: invert(0);
 }
 
-/*
- -1020
- -768
- -640
- -490
- -380
-*/
+
+
+/* TRANSITION UTILITIES
+=====================================*/
+.disable-transitions * {
+  -webkit-transition: none !important;
+  transition: none !important;
+  transition-duration: none !important;
+  transition-property: none !important;
+  transition-timing-function: none !important;
+  animation: none !important;
+}
+
+.skeleton {
+  background-image: linear-gradient(270deg,
+      var(--grey2),
+      var(--grey3),
+      var(--grey3),
+      var(--grey2));
+  background-size: 400% 100%;
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+  animation: skeleton_loading 8s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+}
+
+.skeleton::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+.skeleton::-webkit-input-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+@keyframes ease-modal-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes skeleton_loading {
   0% {
@@ -322,28 +339,6 @@ a[disabled] {
 
   to {
     background-position: -200% 0
-  }
-}
-
-@keyframes lines {
-  0% {
-    opacity: .8
-  }
-
-  25% {
-    opacity: .4
-  }
-
-  50% {
-    opacity: 0
-  }
-
-  75% {
-    opacity: .4
-  }
-
-  100% {
-    opacity: .8
   }
 }
 
@@ -369,43 +364,6 @@ a[disabled] {
   100% {
     opacity: .15;
   }
-}
-
-/* TRANSITION UTILITIES
-=====================================*/
-.disable-transitions * {
-  -webkit-transition: none !important;
-  transition: none !important;
-  transition-duration: none !important;
-  transition-property: none !important;
-  transition-timing-function: none !important;
-  animation: none !important;
-}
-
-.skeleton {
-  background-image: linear-gradient(270deg,
-      var(--grey2),
-      var(--grey3),
-      var(--grey3),
-      var(--grey2));
-  background-size: 400% 100%;
-  animation: skeleton_loading 8s ease-in-out infinite;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  pointer-events: none;
-  user-select: none;
-}
-
-.skeleton::placeholder {
-  color: transparent;
-  opacity: 0;
-}
-
-.skeleton::-webkit-input-placeholder {
-  color: transparent;
-  opacity: 0;
 }
 
 /* adaptive font sizes
