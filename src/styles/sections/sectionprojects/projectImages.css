@@ -1,8 +1,6 @@
 .project-image__calendar,
 .project-image__markdown,
 .project-image__components {
-  /* 16 / 9 prevents lighthouse from screaming at me */
-  /* I orignally resized all of the images to 16/10 for a cleaner fraction but I guess that's irrelevant */
   width: 100%;
   object-fit: cover;
   object-position: top center;
@@ -67,5 +65,11 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .project-image__calendar {
+    aspect-ratio: 4/3;
   }
 }

@@ -3,17 +3,15 @@ const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-
-const smp = new SpeedMeasurePlugin();
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
-    devtool: IS_PRODUCTION ? 'source-map' : 'eval-cheap-module-source-map',
+    devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
 
+    target: 'web',
     output: {
       path: path.resolve(__dirname, 'dist'),
       clean: true,
@@ -32,18 +30,22 @@ module.exports = (env, argv) => {
         entry: {
           index: 'src/index.html',
         },
+
         js: {
           filename: '[name].[contenthash:8].js',
         },
+
         css: {
           filename: '[name].[contenthash:8].css',
         },
+
         preload: [
           {
             test: /\.woff2?$/,
             attributes: { as: 'font', crossorigin: true },
           },
         ],
+
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -61,7 +63,7 @@ module.exports = (env, argv) => {
           use: ['source-map-loader'],
         },
         {
-          test: /\.(css|scss)$/,
+          test: /\.(css|sass|scss)$/,
           use: ['css-loader', 'postcss-loader', 'sass-loader'],
         },
         {
@@ -101,23 +103,26 @@ module.exports = (env, argv) => {
       ],
     },
 
-    target: 'web',
-    devServer: {
-      static: {
-        directory: path.join(__dirname, 'dist'),
-      },
-      watchFiles: {
-        paths: ['src/**/*.*'],
-        options: {
-          usePolling: true,
-        },
-      },
-      port: 3000,
-      open: true,
-      hot: true,
-      compress: true,
+    performance: {
+      hints: false,
     },
   };
 
-  return smp.wrap(config);
+  if (!IS_PRODUCTION) {
+    config.devServer = {
+      compress: true,
+      port: 8000,
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+      // watchFiles: {
+      //   paths: ['src/**/*.*'],
+      //   options: {
+      //     usePolling: true,
+      //   },
+      // },
+    };
+  }
+
+  return config;
 };

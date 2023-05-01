@@ -83,12 +83,11 @@
   content: "";
   position: absolute;
   border: 12px solid transparent;
-  border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
-  border-image-slice: 1;
+  /* border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  border-image-slice: 1; */
   height: 100%;
   left: 0;
   top: 0;
-  transition: all 100ms ease-in-out;
   width: 100%;
 }
 
@@ -100,11 +99,7 @@
   z-index: 2;
   border-radius: 50%;
   content: "";
-  position: absolute
-}
-
-.pf-stack:hover {
-  box-shadow: 0 0 0 1px var(--accent-2);
+  position: absolute;
 }
 
 .vanilla-icon,

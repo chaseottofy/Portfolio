@@ -22,19 +22,18 @@ const handlePageScroll = () => {
 };
 
 const initScroll = () => {
-  // call on init in case page loads beyond point for header-filter
   handlePageScroll();
+  window.addEventListener('scroll', handlePageScroll, { passive: true });
+
   // click nav list item links to scroll to section
   document.querySelectorAll('.nav-menu--link').forEach((link) => {
     link.addEventListener('click', handleHrefScroll, { passive: true });
   });
 
   // click header logo to scroll to top of page
-  document.querySelector('.header-logo').addEventListener('click', scrollToTop, { passive: true });
-
-  // when window is scrolled past the intro section,
-  // apply a filter to the header to invert the colors
-  window.addEventListener('scroll', handlePageScroll, { passive: true });
+  document.querySelector('.header-logo').addEventListener('click', () => {
+    scrollToTop();
+  }, { passive: true });
 };
 
 export default initScroll;

@@ -36,10 +36,6 @@ const initContactMenu = () => {
 };
 
 const initHover = () => {
-  // Hover over "contact" button in nav menu to toggle <aside> modal
-  // Attempt at recreating vercels https://vercel.com/ menu hover effect
-  // (hover over the "Features" nav menu item)
-  // Disabled for small screens
   initContactMenu();
 };
 

@@ -1,5 +1,8 @@
 .skills-container {
   width: 100%;
+  background: radial-gradient(circle farthest-side at 50% 50%, var(--blue1) 0%, transparent 100%);
+  position: relative;
+  
 }
 
 .skills-grid {

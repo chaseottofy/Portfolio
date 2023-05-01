@@ -35,11 +35,17 @@ const initDefaultTheme = () => {
 
 const handleThemeChange = (e) => {
   const theme = e.target.getAttribute('value');
-  setTheme(theme === 'system' ? e.target.getAttribute('data-system-theme') : theme);
+  if (theme === 'system') {
+    setTheme(e.target.getAttribute('data-system-theme'));
+  } else {
+    setTheme(theme);
+  }
 };
 
 const initThemeOptions = () => {
-  themeInputs.forEach((input) => input.addEventListener('change', handleThemeChange));
+  themeInputs.forEach((input) => {
+    input.addEventListener('change', handleThemeChange);
+  });
 };
 
 const initTheme = () => {

@@ -24,13 +24,13 @@
 }
 
 .project-content__header {
-  height: 2.25rem;
+  height: 2.5rem;
   width: 100%;
   display: grid;
   grid-template-columns: 5rem 1fr;
   align-items: center;
   justify-content: center;
-  background: var(--black1);
+  background: var(--black4);
   position: relative;
   z-index: 2;
 }
@@ -47,6 +47,8 @@
   border: none;
   height: 100%;
 }
+
+/* background:radial-gradient(circle farthest-side at 50% 50%, var(--colors-purple700) 0%, transparent 100%)} */
 
 .pc__header-decoration span {
   height: .625rem;
@@ -72,6 +74,9 @@
   height: 100%;
   width: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+  overflow:hidden;
 }
 
 .pc__header-tabs span label {
@@ -81,19 +86,20 @@
   font-size: .75rem;
   letter-spacing: -.5px;
   color: var(--white2);
-  font-weight: 500;
   width: 100%;
   justify-content: center;
   height: 100%;
   cursor: pointer;
   background: var(--black0);
-  border-right: 1px solid var(--black2);
+  border-right: 2px solid var(--black1);
   position: relative;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
-.pc__header-tabs span:first-child label {
+/* .pc__header-tabs span:first-child label {
   border-radius: 8px 0 0 0;
-}
+} */
 
 .pc__header-tabs span label::after {
   content: attr(data-lab-after);
@@ -101,12 +107,11 @@
 
 .pc__header-tabs span:last-child label {
   border-right: none;
-  border-radius: 0 8px 0 0;
 }
 
 .pc__header-tabs span label:hover,
 .pc__header-tabs span label:focus-visible {
-  opacity: .6;
+  opacity: .8;
   transition: opacity .2s ease-in-out;
 }
 
@@ -119,18 +124,30 @@
   outline: none;
   position: absolute;
   z-index: -1;
+
 }
 
 .pc__header-tabs span input:checked + label {
-  box-shadow: inset 0 0 10px 8px rgba(87, 87, 87, 0.1);
+  /* box-shadow: inset 0 0 12px 6px rgba(55, 55, 55, 0.1); */
+  /* box-shadow: inset 0 0 10px 8px rgba(74, 74, 74, 0.1); */
+  /* box-shadow: inset 0 0 10px 8px rgba(87, 87, 87, 0.1); */
+  background: var(--black3);
+  /* border-image: linear-gradient(
+    to top,
+    transparent 0%,
+    var(--offsetgrey1) 40%,
+    #2c3970,
+  );
+  border-image-slice: 1; */
+
 }
 
 .pc__header-tabs span input:checked + label::before {
   position: absolute;
   top: .5rem;
   right: 1rem;
-  height: .25rem;
-  width: .25rem;
+  height: .3rem;
+  width: .3rem;
   border-radius: 50%;
   background: var(--tab-active-color);
   content: "";
@@ -140,7 +157,7 @@
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
 ============================*/
 .project-content__subheader {
-  height: 3rem;
+  height: 3.5rem;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 30%;
@@ -160,7 +177,7 @@
   padding: 0 .75rem 0 .5rem;
   overflow: hidden;
   box-shadow: var(--bs-md);
-  background: var(--tab-bg-hover);
+  background: var(--accent-1);
   font-size: .75rem;
   display: flex;
   align-items: center;
@@ -225,8 +242,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   cursor: pointer;
   border-radius: 5px;
   color: var(--white1);
@@ -234,21 +251,20 @@
 }
 
 .pc__subheader--links img {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.125rem;
+  width: 1.125rem;
 }
 
 .vert {
   height: 100%;
   width: 1px;
-  background: var(--black1);
-  margin: 0 .5rem;
+  background: transparent;
+  margin: 0 .25rem;
 }
 
 .pc__subheader--links a:hover,
 .pc__subheader--links button:hover {
-  filter: invert(1);
-  background: var(--black4);
+  background: var(--grey2);
   transition: background 100ms ease-in-out, filter 100ms ease-in-out;
 }
 
@@ -297,10 +313,20 @@
   .pc__header-tabs span label::after {
     display: none;
   }
+
+  .pc__subheader--links a,
+  .pc__subheader--links button {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .pc__subheader--links img {
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 @media screen and (max-width: 490px) {
-
 
   .subheader-sm {
     height: 2.5rem;

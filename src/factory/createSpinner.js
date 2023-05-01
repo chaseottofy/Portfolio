@@ -8,7 +8,7 @@ const createSpinner = () => {
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 12; i += 1) {
     const cell = document.createElement('div');
     cell.classList.add('spinner-cell');
     spinner.appendChild(cell);

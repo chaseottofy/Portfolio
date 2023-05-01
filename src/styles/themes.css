@@ -5,13 +5,13 @@
   --accent-4: #444;
 
   --black0: #000;
-  --black1: #111;
+  --black1: #0e0e0f;
   --black2: #333;
   --black3: #050505;
   --black4: #090909;
 
   --grey1: #818080;
-  --grey2: #1c1c1c;
+  --grey2: #1a1a1a;
   --grey3: #000;
 
   --white0: #fff;
@@ -31,9 +31,12 @@
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
-
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
+  --bs-offset-1:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
 
   /* SPECIFIC */
   --header-before: transparent;
@@ -102,6 +105,10 @@
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
+  --bs-offset-1:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
     
   /* SPECIFIC */
   --header-before: transparent;

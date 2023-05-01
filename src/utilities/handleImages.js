@@ -1,5 +1,7 @@
 import createSpinner from '../factory/createSpinner';
 
+import imageSets from './getImage';
+
 const appendSkeleton = (parent) => {
   const tempSkeleton = document.createElement('aside');
   tempSkeleton.classList.add('img-skeleton');
@@ -7,40 +9,59 @@ const appendSkeleton = (parent) => {
   parent.prepend(tempSkeleton);
 };
 
+const calendarImageVars = [
+  [null, null],
+  ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
+  ['cmonthlgdark', 'cmonthmddark', 'Calendar Month'],
+  ['cyearlgdark', 'cyearmddark', 'Calendar Year'],
+  ['clistlgdark', 'clistmddark', 'Calendar List'],
+];
+
 const setCalendarImg = (idx) => {
   const calImgWrappers = document.querySelectorAll('.project-image__calendar');
   const calImg = calImgWrappers[idx];
-  if (calImg.getAttribute('data-proj-hasimg') === 'true') {
+
+  if (calImg.getAttribute('data-hasimg') === 'true') {
     return;
   }
-
-  const calImgSets = [[null, null], ['cweeklgdark', 'cweekmddark'], ['cmonthlgdark', 'cmonthmddark'], ['cyearlgdark', 'cyearmddark'], ['clistlgdark', 'clistmddark']];
-  const imgset = calImgSets[idx];
 
   appendSkeleton(document.querySelector('.pcb-cal'));
   const skel = document.querySelector('.img-skeleton');
 
-  const calImgPromise = new Promise((resolve, reject) => {
-    const img0 = new Image();
-    const img1 = new Image();
-    img0.src = require('../images/projcal/dark/' + imgset[0] + '.webp');
-    img1.src = require('../images/projcal/dark/' + imgset[1] + '.webp');
-    img0.addEventListener('load', () => resolve([img0, img1]), { once: true });
-    img0.addEventListener('error', () => reject(new Error('Error loading image')), { once: true });
-  });
+  const [largepath, mediumpath, alt] = calendarImageVars[idx];
+  const set = imageSets.calendar;
+  const large = set[largepath];
+  const medium = set[mediumpath];
 
-  calImgPromise.then((images) => {
-    calImg.src = images[0].src;
-    calImg.srcset = `${images[0].src} 2560w, ${images[1].src} 1536w`;
-    calImg.classList.add('fade-img--in');
-    calImg.setAttribute('data-proj-hasimg', 'true');
-    calImg.addEventListener('load', () => {
-      if (skel) skel.remove();
-    }, { once: true });
-  }).catch((err) => {
-    console.error(err);
+  const sourceLg = document.createElement('source');
+  sourceLg.setAttribute('srcset', large);
+  sourceLg.setAttribute('media', '(min-width: 640px)');
+
+  const sourceMd = document.createElement('source');
+  sourceMd.setAttribute('srcset', medium);
+  sourceMd.setAttribute('media', '(max-width: 640px)');
+
+  const imgLg = document.createElement('img');
+  imgLg.setAttribute('src', large);
+  imgLg.setAttribute('alt', alt);
+  imgLg.setAttribute('style', 'max-width:100vw;');
+
+  calImg.append(sourceLg, sourceMd, imgLg);
+  calImg.classList.add('fade-img--in');
+  calImg.setAttribute('data-hasimg', 'true');
+
+  imgLg.addEventListener('load', () => {
     if (skel) skel.remove();
-  });
+  }, { once: true });
+
+  imgLg.addEventListener('error', () => {
+    if (skel) skel.remove();
+    console.assert(false, 'Error loading image');
+    calImg.classList.remove('fade-img--in');
+    calImg.classList.add('img--error');
+    sourceLg.remove();
+    sourceMd.remove();
+  }, { once: true });
 };
 
 const setComponentImg = () => {
@@ -52,39 +73,45 @@ const setComponentImg = () => {
   appendSkeleton(document.querySelector('.pcb-comp'));
   const skelcomp = document.querySelector('.img-skeleton');
 
-  const compImgPromise = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.src = require('../images/component/rjslg.webp');
-    img.addEventListener('load', () => resolve(img), { once: true });
-    img.addEventListener('error', () => reject(new Error('Error loading image')), { once: true });
-  });
+  const imgsrc = imageSets.rjs;
+  const sourceLg = document.createElement('source');
+  sourceLg.setAttribute('srcset', imgsrc);
+  const imgLg = document.createElement('img');
+  imgLg.setAttribute('src', imgsrc);
+  imgLg.setAttribute('alt', 'React Components');
+  imgLg.setAttribute('style', 'max-width:100vw;');
+  compImg.append(sourceLg, imgLg);
+  compImg.setAttribute('data-comp-hasimg', 'true');
+  compImg.classList.add('fade-img--in');
 
-  compImgPromise.then((img) => {
-    compImg.src = img.src;
-    compImg.classList.add('fade-img--in');
-    compImg.setAttribute('data-comp-hasimg', 'true');
-    compImg.addEventListener('load', () => {
-      if (skelcomp) skelcomp.remove();
-    }, { once: true });
-  }).catch((err) => {
-    console.error(err);
+  imgLg.addEventListener('load', () => {
     if (skelcomp) skelcomp.remove();
-  });
+  }, { once: true });
+
+  imgLg.addEventListener('error', () => {
+    if (skelcomp) skelcomp.remove();
+    console.assert(false, 'Error loading image');
+    compImg.classList.remove('fade-img--in');
+    compImg.classList.add('img--error');
+    imgLg.setAttribute('alt', 'Image failed to load :(');
+    sourceLg.remove();
+  }, { once: true });
 };
 
 const contactMenuLazy = () => {
   const contactMenu = document.querySelector('.contact-menu');
-  const contactMenuArrows = document.querySelectorAll('.cm-bent--arrow');
   if (contactMenu.getAttribute('cm-loaded') === 'true') return;
+  const bentArrow = document.querySelector('.img-bent-arrowsrc');
+  const bentArrowSrc = bentArrow.getAttribute('src');
+  const cmHeaderArrows = document.querySelectorAll('.cm-bent--arrow');
+  const cmHeaderImgs = document.querySelectorAll('.cm-header--img');
+  const cmBodyImgs = document.querySelectorAll('.cm-body--img');
 
-  const setImg = (img, idx) => {
-    img.src = document.querySelectorAll('.cm-body--img')[idx].src;
-    img.removeAttribute('disabled');
-    contactMenuArrows[idx].src = document.querySelector('.img-bent-arrowsrc').src;
-    contactMenuArrows[idx].removeAttribute('disabled');
-  };
+  for (let i = 0; i < cmHeaderImgs.length; i += 1) {
+    cmHeaderImgs[i].setAttribute('src', cmBodyImgs[i].getAttribute('src'));
+    cmHeaderArrows[i].setAttribute('src', bentArrowSrc);
+  }
 
-  document.querySelectorAll('.cm-header--img').forEach((img, idx) => setImg(img, idx));
   contactMenu.setAttribute('cm-loaded', 'true');
 };
 

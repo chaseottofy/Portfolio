@@ -11,10 +11,22 @@ const createLHModal = (idx) => {
       score: ['0.4', '0.4', '0.0', '0.0'],
     },
     content: [
-      ['First Contentful Paint', 'Marks the time at which the first text or image is painted.'],
-      ['Largest Contentful Paint', 'Marks the time at which the largest text or image is painted.'],
-      ['Total Blocking Time', 'Sum of all time periods between FCP and Time to Interactive'],
-      ['Cumulative Layout Shift', 'Measures the movement of visible elements within the viewport.'],
+      [
+        'First Contentful Paint',
+        'Marks the time at which the first text or image is painted.',
+      ],
+      [
+        'Largest Contentful Paint',
+        'Marks the time at which the largest text or image is painted.',
+      ],
+      [
+        'Total Blocking Time',
+        'Sum of all time periods between FCP and Time to Interactive',
+      ],
+      [
+        'Cumulative Layout Shift',
+        'Measures the movement of visible elements within the viewport.',
+      ],
     ],
   };
 
@@ -52,22 +64,28 @@ const createLHModal = (idx) => {
   lhmain.append(mainscore, screenshotLinkBtn);
   lhbody.appendChild(lhmain);
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i += 1) {
+    const [contentTitle, contentDesc] = apps.content[i];
+
     const sub = document.createElement('div');
     sub.classList.add('lh-sub');
+
     const subHeader = document.createElement('div');
     subHeader.classList.add('lh-sub-title');
-    subHeader.textContent = apps.content[i][0];
+    subHeader.textContent = contentTitle;
+
     const metricDesc = document.createElement('div');
     metricDesc.classList.add('lh-sub__metrics-title');
+
     const metricDescTitle = document.createElement('span');
     metricDescTitle.classList.add('lh-sub__metrics-title');
     metricDescTitle.textContent = apps[idx].score[i];
     metricDesc.appendChild(metricDescTitle);
     const hr = document.createElement('hr');
+
     const metricDescSubtext = document.createElement('div');
     metricDescSubtext.classList.add('lh-sub-subtitle');
-    metricDescSubtext.textContent = apps.content[i][1];
+    metricDescSubtext.textContent = contentDesc;
 
     sub.append(subHeader, metricDesc, hr, metricDescSubtext);
     lhbody.appendChild(sub);

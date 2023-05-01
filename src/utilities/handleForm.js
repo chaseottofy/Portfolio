@@ -53,7 +53,6 @@ const resetForm = () => {
   toggleSkeleton();
 };
 
-// still need some kind of authentication to prevent my google sheet from turning into garbage.
 const handleFormSubmit = (e) => {
   e.preventDefault();
   const data = new FormData(form);
@@ -74,7 +73,9 @@ const handleFormSubmit = (e) => {
 };
 
 const initContactForm = () => {
-  contactOptions.forEach((option) => option.addEventListener('change', handleSelectedContactMethod));
+  contactOptions.forEach((option) => {
+    option.addEventListener('change', handleSelectedContactMethod);
+  });
   form.addEventListener('input', handleFormChange);
   form.addEventListener('submit', handleFormSubmit);
 };

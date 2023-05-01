@@ -3,10 +3,12 @@ const toastWrapper = document.querySelector('.toast-wrapper');
 let toastIndex = 0;
 const handleToasts = () => {
   if (toastWrapper.children.length >= 4) {
-    toastWrapper.removeChild(toastWrapper.children[toastWrapper.children.length - 1]);
+    toastWrapper.removeChild(
+      toastWrapper.children[toastWrapper.children.length - 1],
+    );
   }
 
-  for (let i = 0; i < toastWrapper.children.length; i++) {
+  for (let i = 0; i < toastWrapper.children.length; i += 1) {
     const toast = toastWrapper.children[i];
     const idx = +toast.getAttribute('toast-idx');
     if (idx === 4) {
@@ -19,7 +21,9 @@ const handleToasts = () => {
 };
 
 const createToast = (text) => {
-  if (toastIndex <= 3) { toastIndex++; }
+  if (toastIndex <= 3) {
+    toastIndex += 1;
+  }
 
   let width = 0;
   const wrapper = document.createElement('aside');
@@ -44,11 +48,13 @@ const createToast = (text) => {
   handleToasts();
 
   setInterval(() => {
-    width++;
+    width += 1;
     progressbar.style.width = `${width}%`;
     if (width === 100) {
       wrapper.remove();
-      if (toastIndex > 0) { toastIndex--; }
+      if (toastIndex > 0) {
+        toastIndex -= 1;
+      }
       clearInterval();
     }
   }, 10);

@@ -1,5 +1,8 @@
 import { setCalendarImg, setComponentImg } from './handleImages';
 
+const calendarTabs = document.querySelectorAll('.proj-cal--tab');
+const componentTabs = document.querySelectorAll('.proj-comp--tab');
+
 const initProjectImages = () => {
   const tabnames = {
     calendar: ['day', 'week', 'month', 'year', 'list'],
@@ -28,9 +31,9 @@ const initProjectImages = () => {
     activeImg.classList.remove(currentClass);
     activeImg.classList.add('hide-img');
 
-    const newActiveImg = document.querySelector(`.${prefix}-cell__image--${nth}`);
-    newActiveImg.classList.remove('hide-img');
-    newActiveImg.classList.add(currentClass);
+    const newActive = document.querySelector(`.${prefix}-cell__image--${nth}`);
+    newActive.classList.remove('hide-img');
+    newActive.classList.add(currentClass);
 
     // import new calendar image if not already loaded
     if (prefix === 'cal' && nth > 1) {
@@ -53,7 +56,6 @@ const initProjectImages = () => {
   const initTabs = () => {
     const setTabs = (tabs, prefix, tabname, isMulti) => {
       // set first tab to checked if not already on page load
-      tabs[0].previousElementSibling.checked = true;
       tabs.forEach((tab, idx) => {
         tab.addEventListener('click', () => {
           handleTab(idx + 1, prefix, tabname[idx], isMulti);
@@ -62,9 +64,11 @@ const initProjectImages = () => {
     };
 
     // set Calendar Tabs
-    setTabs(document.querySelectorAll('.proj-cal--tab'), 'cal', tabnames.calendar, false);
+    calendarTabs[0].previousElementSibling.checked = true;
+    setTabs(calendarTabs, 'cal', tabnames.calendar, false);
     // set Components Tabs
-    setTabs(document.querySelectorAll('.proj-comp--tab'), 'comp', tabnames.comparr, true);
+    componentTabs[0].previousElementSibling.checked = true;
+    setTabs(componentTabs, 'comp', tabnames.comparr, true);
   };
 
   initTabs();
