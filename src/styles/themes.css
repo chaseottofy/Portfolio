@@ -16,7 +16,7 @@
 
   --white0: #fff;
   --white1: #fff;
-  --white2: #b7b7b7;
+  --white2: #cccbcb;
 
   --offsetblack1: rgba(0, 0, 0, .8);
   --offsetblack2: rgba(0, 0, 0, .6);
@@ -64,7 +64,7 @@
   --tab-bg-hover: #050505;
   --tab-bg-active: #050505;
 
-  --tab-active-color: #718afb;
+  --tab-active-color: #377dfe;
 }
 
 .theme__light {

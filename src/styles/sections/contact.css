@@ -141,7 +141,6 @@
 }
 
 .cm-left__header h3 {
-  font-family: var(--primaryFont);
   padding-left: 6px;
   font-weight: 700;
   font-size: 1rem;
@@ -159,7 +158,6 @@
   letter-spacing: -.5px;
   font-size: .75rem;
   line-height: .75rem;
-  font-family: var(--primaryFont);
   font-weight: 500;
   padding-top: 4px;
   transform: scaleY(.9);
@@ -256,7 +254,7 @@
   grid-template-columns: 1fr 1fr;
   height: 100%;
   width: 100%;
-  background: var(--offsetblack2);
+  background: var(--black3);
   overflow: hidden;
 }
 
@@ -391,8 +389,8 @@
 
 .badge-footer img {
   fill: none;
-  height: .875rem;
-  width: .875rem;
+  height: 1rem;
+  width: 1rem;
   filter: invert(1);
   margin-right: .5rem;
   margin-left: .25rem;
@@ -444,7 +442,7 @@
 .cm-copy,
 .cm-email-goto {
   background: var(--black4);
-  border: 1px solid var(--black2);
+  border: 1px solid var(--black1);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -454,18 +452,18 @@
 }
 
 .cm-copy {
-  margin-left: .875rem;
+  margin-left: .5rem;
 }
 
 .cm-copy:hover,
 .cm-email-goto:hover {
-  background: var(--black2);
+  opacity: .8;
 }
 
 .cm-copy img,
 .cm-email-goto img {
-  height: .825rem;
-  width: .825rem;
+  height: 1.375rem;
+  width: 1.375rem;
 }
 
 .contact-menu__header a,

@@ -8,12 +8,26 @@
   width: 100%;
   z-index: -1;
   margin: 0 auto;
-  top:0;
+  top: 0;
   left: 0;
   pointer-events: none;
   user-select: none;
   background:
     linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #222 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 .5%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #FF0000 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #110055 100%);
   background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge;
+}
+
+.gradient-overlay--one::after {
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: linear-gradient(180deg, rgba(7, 55, 60, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  
+}
+
+.gradient-noir {
   filter: brightness(1.2) contrast(1.2) grayscale(1);
 }

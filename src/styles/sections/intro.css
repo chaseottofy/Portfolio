@@ -46,7 +46,6 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--header-text-before);
-  font-family: var(--primaryFont);
 }
 
 .intro-header__title:hover:before {
@@ -58,7 +57,6 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--header-text-before);
-  font-family: var(--primaryFont);
 }
 
 /* SUBTITLES

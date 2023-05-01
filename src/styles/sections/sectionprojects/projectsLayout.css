@@ -74,3 +74,9 @@
   max-width: var(--maxWidthLg);
   padding: 1rem;
 }
+
+@media screen and (max-width: 460px) {
+  .projects-grid {
+    padding: .5rem;
+  }
+}

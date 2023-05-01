@@ -1,15 +1,18 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+
+const smp = new SpeedMeasurePlugin();
 
 module.exports = (env, argv) => {
-  const isDev = argv.mode === 'development';
+  const IS_PRODUCTION = argv.mode === 'production';
 
   const config = {
-    mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'inline-source-map' : 'source-map',
+    mode: IS_PRODUCTION ? 'production' : 'development',
+    devtool: IS_PRODUCTION ? 'source-map' : 'eval-cheap-module-source-map',
 
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -24,6 +27,7 @@ module.exports = (env, argv) => {
 
     plugins: [
       new Dotenv(),
+
       new HtmlBundlerPlugin({
         entry: {
           index: 'src/index.html',
@@ -38,7 +42,6 @@ module.exports = (env, argv) => {
           {
             test: /\.woff2?$/,
             attributes: { as: 'font', crossorigin: true },
-            // attributes: { as: 'font', crossorigin: "anonymous", type: 'font/woff2' },
           },
         ],
         minify: {
@@ -53,13 +56,13 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.js$/,
-          enforce: "pre",
+          enforce: 'pre',
           exclude: /node_modules/,
-          use: ["source-map-loader"],
+          use: ['source-map-loader'],
         },
         {
           test: /\.(css|scss)$/,
-          use: ["css-loader", "postcss-loader", "sass-loader"],
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
         },
         {
           test: /\.(woff|woff2)$/i,
@@ -69,7 +72,7 @@ module.exports = (env, argv) => {
           },
         },
         {
-          test: /\.(ico|svg|png|webp|jpg)$/i,
+          test: /\.(ico|svg|png|webp|avif|jpg)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'images/[name].[hash:8][ext][query]',
@@ -79,11 +82,11 @@ module.exports = (env, argv) => {
     },
 
     optimization: {
-      minimize: true,
+      minimize: IS_PRODUCTION,
       minimizer: [
         new TerserPlugin({
-          minify: TerserPlugin.uglifyJsMinify,
-          extractComments: true
+          minify: TerserPlugin.esbuildMinify,
+          extractComments: false,
         }),
         new CssMinimizerPlugin({
           minimizerOptions: {
@@ -98,6 +101,7 @@ module.exports = (env, argv) => {
       ],
     },
 
+    target: 'web',
     devServer: {
       static: {
         directory: path.join(__dirname, 'dist'),
@@ -115,5 +119,5 @@ module.exports = (env, argv) => {
     },
   };
 
-  return config;
+  return smp.wrap(config);
 };

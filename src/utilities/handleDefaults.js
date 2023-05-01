@@ -1,11 +1,9 @@
-const getMyTime = () => {
-  return new Date().toLocaleString("en-US", {
-    timeZone: "America/Denver",
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true
-  });
-};
+const getMyTime = () => new Date().toLocaleString('en-US', {
+  timeZone: 'America/Denver',
+  hour: 'numeric',
+  minute: 'numeric',
+  hour12: true,
+});
 
 // const getYourTime = () => {
 //   const date = new Date();
@@ -15,6 +13,6 @@ const getMyTime = () => {
 
 const initDefaults = () => {
   // display my current time in contact section
-  document.querySelector(".cm-left--time").textContent = `MST: ${getMyTime()}`;
+  document.querySelector('.cm-left--time').textContent = `MST: ${getMyTime()}`;
 };
 export default initDefaults;

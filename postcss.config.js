@@ -1,13 +1,15 @@
+const mqpacker = require('css-mqpacker');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+const postcssPresetEnv = require('postcss-preset-env');
+
 module.exports = {
   plugins: [
-    // sort and concats media queries to end of file
-    require('css-mqpacker')({ sort: true }),
-    // minify - roughly 15% smaller..
-    require('cssnano')({
+    mqpacker({ sort: true }),
+    cssnano({
       preset: 'default',
     }),
-    // vendor prefixes
-    require('autoprefixer'),
-    require('postcss-preset-env'),
+    autoprefixer,
+    postcssPresetEnv,
   ],
 };

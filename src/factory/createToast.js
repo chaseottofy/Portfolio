@@ -1,4 +1,4 @@
-const toastWrapper = document.querySelector(".toast-wrapper");
+const toastWrapper = document.querySelector('.toast-wrapper');
 
 let toastIndex = 0;
 const handleToasts = () => {
@@ -8,11 +8,11 @@ const handleToasts = () => {
 
   for (let i = 0; i < toastWrapper.children.length; i++) {
     const toast = toastWrapper.children[i];
-    const idx = +toast.getAttribute("toast-idx");
+    const idx = +toast.getAttribute('toast-idx');
     if (idx === 4) {
-      toast.classList.add("hide-toast");
+      toast.classList.add('hide-toast');
     }
-    toast.setAttribute("class", `toast toast--${i + 1}`);
+    toast.setAttribute('class', `toast toast--${i + 1}`);
     toast.style.zIndex = 9000 - i;
     toast.style.bottom = `${i + 2}rem`;
   }
@@ -22,21 +22,21 @@ const createToast = (text) => {
   if (toastIndex <= 3) { toastIndex++; }
 
   let width = 0;
-  const wrapper = document.createElement("aside");
-  wrapper.classList.add("toast");
+  const wrapper = document.createElement('aside');
+  wrapper.classList.add('toast');
   wrapper.style.zIndex = 9000;
   wrapper.style.bottom = '2rem';
-  wrapper.setAttribute("toast-idx", toastIndex);
+  wrapper.setAttribute('toast-idx', toastIndex);
 
-  const progressbar = document.createElement("span");
-  progressbar.classList.add("toast-progress");
+  const progressbar = document.createElement('span');
+  progressbar.classList.add('toast-progress');
   progressbar.style.width = `${width}%`;
 
-  const progresstrack = document.createElement("span");
-  progresstrack.classList.add("toast-progress--length");
+  const progresstrack = document.createElement('span');
+  progresstrack.classList.add('toast-progress--length');
 
-  const message = document.createElement("span");
-  message.classList.add("toast-message");
+  const message = document.createElement('span');
+  message.classList.add('toast-message');
   message.textContent = `${text}`;
 
   wrapper.append(progressbar, progresstrack, message);

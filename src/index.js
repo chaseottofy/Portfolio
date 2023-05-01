@@ -2,17 +2,17 @@
 // https://github.com/webdiscus/html-bundler-webpack-plugin
 // https://vercel.com/features/edge-functions
 // https://www.bestfolios.com/home
-/***************************************/
-/***************************************/
-import initTheme from "./utilities/handleTheme";
-import initScroll from "./utilities/handleScroll";
-import initHover from "./utilities/handleHover";
-import initCopyElements from "./utilities/handleCopy";
-import initProjects from "./utilities/handleProjects";
-import initContactForm from "./utilities/handleForm";
-import initModals from "./utilities/handleModals";
-import initDefaults from "./utilities/handleDefaults";
-/***************************************/
+/** ************************************ */
+/** ************************************ */
+import initTheme from './utilities/handleTheme';
+import initScroll from './utilities/handleScroll';
+import initHover from './utilities/handleHover';
+import initCopyElements from './utilities/handleCopy';
+import initProjects from './utilities/handleProjects';
+import initContactForm from './utilities/handleForm';
+import initModals from './utilities/handleModals';
+import initDefaults from './utilities/handleDefaults';
+/** ************************************ */
 const appInit = () => {
   // set default theme / toggle theme
   initTheme();

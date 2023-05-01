@@ -283,8 +283,6 @@ a[disabled] {
   filter: invert(0);
 }
 
-
-
 /* TRANSITION UTILITIES
 =====================================*/
 .disable-transitions * {
@@ -390,12 +388,12 @@ a[disabled] {
 
 @media screen and (max-width: 490px) {
   html {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width: 380px) {
+/* @media screen and (max-width: 380px) {
   html {
     font-size: 12px;
   }
-}
+} */

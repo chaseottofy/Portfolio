@@ -1,0 +1,25 @@
+{
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "quotes": ["error", "single"],
+    "linebreak-style": 0,
+    "prefer-template": "off",
+    "no-plusplus": "off",
+    "prefer-destructuring": "off",
+    "quote-props": "off",
+    "no-param-reassign": "off",
+    "no-dynamic-require": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off",
+    "no-console": "off"
+  }
+}

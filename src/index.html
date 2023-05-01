@@ -16,20 +16,15 @@
 </head>
 
 <body class="body theme__dark">
-  <!-- HEADER -->
-  <aside class="gradient-overlay--one"></aside>
-  <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
-    <defs>
-      <linearGradient id="subicon-gradient">
-        <stop offset="5%" stop-color="#a853ba" />
-        <stop offset="95%" stop-color="#e92a67" />
-      </linearGradient>
-    </defs>
-  </svg>
+  <!-- HEADER GRADIENT -->
+  <aside class="gradient-overlay--one gradient-noir"></aside>
 
+  <!-- HEADER (FIXED)-->
   <header class="header">
     <div class="header-wrapper">
-      <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top"><img src="./images/svg/logo.svg" alt="logo" /></button>
+      <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
+        <img src="./images/svg/logo.svg" alt="logo" style="height:1.5rem;width:1.5rem;" />
+      </button>
 
       <div class="nav-wrapper">
         <nav class="header-nav">
@@ -54,10 +49,8 @@
       </div>
     </div>
   </header>
-  <!-- scroll back to this position -->
-  <aside id="header-top" style="scroll-margin-top: 4rem;height:0;"></aside>
-  <!-- HEADER GRADIENT -->
   <!--------------------->
+
 
   <!-- CONTACT MENU POPUP -->
   <aside class="contact-menu contact-menu__header" cm-loaded="false">
@@ -161,6 +154,7 @@
     </div>
   </aside>
   <!--------------------->
+
 
   <!--------------------->
   <!-- SECTION: INTRO -->
@@ -282,15 +276,15 @@
 
             <!-- CALENDAR BODY -->
             <div class="project-content__body pcb-cal">
-              <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-proj-hasimg="true" data-thumb-title="Day View" srcset="./images/projcal/dark/cdaylgdark.webp 2560w, ./images/projcal/dark/cdaymddark.webp 1536w" sizes="(max-width: 640px) 640px, 1280px" src="./images/projcal/dark/cdaylgdark.webp" alt="Day View" style="max-width:1280px;">
+              <img class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-proj-hasimg="true" data-thumb-title="Day View" srcset="./images/projcal/dark/cdaylgdark.webp 2560w, ./images/projcal/dark/cdaymddark.webp 1536w" sizes="(max-width: 640px) 640px, 1280px" src="./images/projcal/dark/cdaylgdark.webp" alt="Day View" style="max-width:100vw;">
 
-              <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-proj-hasimg="false" data-thumb-title="Week View" sizes="(max-width: 640px) 640px, 1280px" alt="Week View" src="data:," style="max-width:1280px;">
+              <img class="project-image__calendar cal-cell__image--2 hide-img" data-cal-nth="2" data-proj-hasimg="false" data-thumb-title="Week View" sizes="(max-width: 640px) 640px, 1280px" alt="Week View" src="data:," style="max-width:100vw;">
 
-              <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-proj-hasimg="false" data-thumb-title="Month View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="Month View" style="max-width:1280px;">
+              <img class="project-image__calendar cal-cell__image--3 hide-img" data-cal-nth="3" data-proj-hasimg="false" data-thumb-title="Month View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="Month View" style="max-width:100vw;">
 
-              <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-proj-hasimg="false" data-thumb-title="Year View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="Year View" style="max-width:1280px;">
+              <img class="project-image__calendar cal-cell__image--4 hide-img" data-cal-nth="4" data-proj-hasimg="false" data-thumb-title="Year View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="Year View" style="max-width:100vw;">
 
-              <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-proj-hasimg="false" data-thumb-title="List View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="List View" style="max-width:1280px;">
+              <img class="project-image__calendar cal-cell__image--5 hide-img" data-cal-nth="5" data-proj-hasimg="false" data-thumb-title="List View" sizes="(max-width: 640px) 640px, 1280px" src="data:," alt="List View" style="max-width:100vw;">
             </div>
 
             <div class="project-content__about"></div>
@@ -347,7 +341,7 @@
             </div>
 
             <div class="project-content__body pcb-mark">
-              <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:1280px;">
+              <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;">
             </div>
           </div>
 
@@ -382,12 +376,12 @@
               <div class="pc__header-tabs component-tabs">
                 <span>
                   <input id="proj-comp-vanilla" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput" checked>
-                  <label aria-label="Vanilla Components" for="proj-comp-vanilla" class="proj-header__tablabel proj-comp--tab" data-tab-idx="1" data-lab-after="">Vanilla JS Components </label>
+                  <label aria-label="Vanilla Components" for="proj-comp-vanilla" class="proj-header__tablabel proj-comp--tab" data-tab-idx="1" data-lab-after="">Vanilla JS</label>
                 </span>
 
                 <span>
                   <input id="proj-comp-react" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput">
-                  <label aria-label="React Components" for="proj-comp-react" class="proj-header__tablabel proj-comp--tab" data-tab-idx="2" data-lab-after="">React JS Components </label>
+                  <label aria-label="React Components" for="proj-comp-react" class="proj-header__tablabel proj-comp--tab" data-tab-idx="2" data-lab-after="">React JS</label>
                 </span>
               </div>
             </div>
@@ -421,9 +415,9 @@
             <!-- COMPONENTS BODY -->
             <div class="project-content__body pcb-comp">
               <!-- Vanilla Js component pic -->
-              <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/component/jslg2.webp" data-comp-nth="1" alt="Vanilla JS Components" style="max-width:1280px;" />
+              <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/component/jslg2.webp" data-comp-nth="1" alt="Vanilla JS Components" style="max-width:100vw;" />
               <!-- React Js component pic -->
-              <img class="project-image__components comp-cell__image--2 hide-img" data-comp-nth="2" alt="React Components" src="data:," style="max-width:1280px;" data-comp-hasimg="false">
+              <img class="project-image__components comp-cell__image--2 hide-img" data-comp-nth="2" alt="React Components" src="data:," style="max-width:100vw;" data-comp-hasimg="false">
             </div>
           </div>
 

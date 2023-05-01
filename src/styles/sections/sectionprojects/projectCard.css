@@ -24,7 +24,7 @@
 }
 
 .project-content__header {
-  height: 2rem;
+  height: 2.25rem;
   width: 100%;
   display: grid;
   grid-template-columns: 5rem 1fr;
@@ -78,8 +78,9 @@
   display: flex;
   align-items: center;
   text-align: center;
-  font-size: .625rem;
-  color: var(--white1);
+  font-size: .75rem;
+  letter-spacing: -.5px;
+  color: var(--white2);
   font-weight: 500;
   width: 100%;
   justify-content: center;
@@ -121,20 +122,19 @@
 }
 
 .pc__header-tabs span input:checked + label {
-  /* filter: drop-shadow(0 8px 30px rgba(64, 63, 63, 0.12)); */
-  box-shadow: inset 0 0 8px 6px rgba(90, 89, 89, 0.1);
-  opacity: .8;
+  box-shadow: inset 0 0 10px 8px rgba(87, 87, 87, 0.1);
 }
 
 .pc__header-tabs span input:checked + label::before {
   position: absolute;
   top: .5rem;
-  right: .5rem;
+  right: 1rem;
   height: .25rem;
   width: .25rem;
   border-radius: 50%;
   background: var(--tab-active-color);
   content: "";
+  animation: pulse 2s ease-in-out infinite;
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
@@ -260,14 +260,18 @@
 ============================*/
 @media screen and (max-width: 768px) {
   .project-content__header {
-    grid-template-columns: 5rem 1fr;
+    grid-template-columns: 4rem 1fr;
+  }
+
+  .pc__header-decoration span {
+    height: 7px;
+    width: 7px;
   }
 
   .pc__header-tabs span label {
     letter-spacing: -.5px;
   }
 
-  /* subheader */
   .project-content__subheader {
     padding: 0 .75rem;
   }
@@ -289,18 +293,25 @@
   .pc__subheader--search .search-arrowright {
     display: none;
   }
-}
-
-@media screen and (max-width: 490px) {
-  .subheader-sm {
-    height: 2.5rem;
-  }
 
   .pc__header-tabs span label::after {
     display: none;
   }
+}
+
+@media screen and (max-width: 490px) {
+
+
+  .subheader-sm {
+    height: 2.5rem;
+  }
 
   .pc__subheader--search {
     font-size: .625rem;
+  }
+
+  .pc__header-tabs span input:checked + label::before {
+    right: .375rem;
+    top: .375rem;
   }
 }
