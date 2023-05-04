@@ -97,15 +97,12 @@
 }
 
 .contact-method-group span {
-  /* background-color: green; */
   width: 5rem;
   height: 1.75rem;
   position: relative;
-
 }
 
 .contact-method-group span label {
-
   height: 100%;
   width: 100%;
   text-align: center;
@@ -115,12 +112,12 @@
   background: transparent;
   font-weight: 500;
   color: var(--white1);
-  transition: all .2s ease-in-out;
   border-radius: 3px;
 }
 
 .contact-method-group span label:hover {
   opacity: .7;
+  transition: var(topac1);
 }
 
 .contact-method-group span input {
@@ -140,7 +137,6 @@
 .contact-method-group span input:checked + label {
   background: var(--black2);
   color: var(--white1);
-
   opacity: 1;
 }
 
@@ -161,13 +157,15 @@
   padding: 0.625rem 2.25rem;
   border-radius: 5px;
   font-size: .75rem;
-  transition: all .2s ease-in-out;
+  cursor: not-allowed;
 }
 
 .btn-allow {
   color: var(--white1);
   background: var(--black0);
   border: 1px solid var(--blue1);
+  cursor: pointer;
+  transition: var(--tbg1);
 }
 
 .btn-allow:hover {

@@ -58,9 +58,12 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(css|scss|sass)$/,
-          // use: ['css-loader', 'sass-loader'],
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
-          // use: ['css-loader', 'postcss-loader'],
+          use: [
+            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } },
+          ],
+          // use: ['css-loader', 'postcss-loader', 'sass-loader'],
         },
         {
           test: /\.(woff|woff2)$/i,
@@ -79,6 +82,8 @@ module.exports = (env, argv) => {
       ],
     },
 
+    // minify: CssMinimizerPlugin.lightningCssMinify,
+    // minify: CssMinimizerPlugin.esbuildMinify,
     optimization: {
       minimize: IS_PRODUCTION,
       minimizer: [
@@ -86,23 +91,20 @@ module.exports = (env, argv) => {
           minify: TerserPlugin.esbuildMinify,
           extractComments: false,
         }),
+        `...`,
         new CssMinimizerPlugin({
-          minimizerOptions: {
-            preset: [
-              'default',
-              {
-                discardComments: { removeAll: true },
-              },
-            ],
-          },
+          minimizerOptions: [
+            {
+              preset: require.resolve('cssnano-preset-advanced'),
+            },
+          ],
+          minify: [
+            CssMinimizerPlugin.cssnanoMinify,
+            CssMinimizerPlugin.cleanCssMinify,
+          ],
         }),
       ],
     },
-
-    // watchOptions: {
-    //   aggregateTimeout: 600,
-    //   ignored: /node_modules/,
-    // },
 
     performance: {
       hints: false,

@@ -4,7 +4,7 @@ import cmonthlgdark from '../images/projcal/dark/cmonthlgdark.webp';
 import cmonthmddark from '../images/projcal/dark/cmonthmddark.webp';
 import cyearlgdark from '../images/projcal/dark/cyearlgdark.webp';
 import cyearmddark from '../images/projcal/dark/cyearmddark.webp';
-import clistlgdark from '../images/projcal/dark/clistlgdark.webp';
+import clistlgdark from '../images/projcal/dark/clistlgdark2.webp';
 import clistmddark from '../images/projcal/dark/clistmddark.webp';
 
 import reactlg from '../images/component/reactlg.webp';

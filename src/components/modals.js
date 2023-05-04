@@ -1,6 +1,9 @@
 import createLHModal from '../template/createLHModal';
 
+import getScrollBarWidth from '../utilities/getScrollbarWidth';
+
 const body = document.querySelector('.body');
+const header = document.querySelector('.header');
 
 const handleLHModal = () => {
   // buttons to trigger lighthouse modal
@@ -12,6 +15,8 @@ const handleLHModal = () => {
       body.onclick = null;
       body.onkeydown = null;
       body.removeAttribute('style');
+      body.classList.remove('body-prevent-scroll');
+      header.removeAttribute('style');
     }
   };
 
@@ -36,7 +41,9 @@ const handleLHModal = () => {
     body.appendChild(createLHModal(proj));
     body.onclick = closeLH;
     body.onkeydown = closeLHOnEsc;
-    body.style.overflow = 'hidden';
+    body.classList.add('body-prevent-scroll');
+    body.style.paddingRight = `${getScrollBarWidth()}px`;
+    header.style.paddingRight = `${getScrollBarWidth()}px`;
   };
 
   LHBtns.forEach((btn) => btn.addEventListener('click', openLH));

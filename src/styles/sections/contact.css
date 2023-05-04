@@ -322,7 +322,7 @@
   text-align: end;
   margin-left: auto;
   color: transparent;
-  transition: color .2s ease-in-out;
+  transition: var(--tc1);
 }
 
 .badge-prof {
@@ -339,7 +339,7 @@
   height: 100%;
   z-index: 1;
   color: var(--white1);
-  transition: top .2s ease-in-out;
+  transition:var(--ttop1);
 }
 
 .badge-prof::before {
@@ -352,12 +352,11 @@
   height: 100%;
   z-index: 1;
   color: var(--white1);
-  transition: top .2s ease-in-out;
 }
 /* img-icon cm-body--img */
 .cm-right--top__cell:hover {
   background: var(--black3);
-  transition: background 150ms ease-in-out;
+  transition:var(--tbg1);
 }
 
 .cm-right--top__cell:hover .badge-top--profile span {
@@ -370,11 +369,12 @@
 
 .cm-right--top__cell:hover .badge-prof::before {
   top: 2.5rem;
+  transition:var(--ttop1);
 }
 
 .cm-right--top__cell:hover .badge-footer span:last-child {
   transform: translateX(10%);
-  transition: transform 150ms ease-in-out;
+  transition:var(--tt1);
 }
 
 .badge-footer {

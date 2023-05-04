@@ -13,6 +13,9 @@ import initContactForm from './utilities/handleForm';
 import initModals from './components/modals';
 import initDefaults from './utilities/handleDefaults';
 /** ************************************ */
+// testing
+// import createShowWidthElement from './testing/createShowWidth';
+/** ************************************ */
 const appInit = () => {
   // set default theme / toggle theme
   initTheme();

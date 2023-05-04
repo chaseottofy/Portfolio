@@ -39,6 +39,20 @@
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
+
+  /* --tbg1: background .2s ease-in-out;
+  --tt1: transform .2s ease-in-out;
+  --tc1: color .2s ease-in-out;
+  --ttop1: top .2s ease-in-out;
+  --topac1: opacity .2s ease-in-out;
+  --ttoast1: all .35s cubic-bezier(.25, .75, .6, .98); */
+  --tbg1: none;
+  --tt1: none;
+  --tc1: none;
+  --ttop1: none;
+  --topac1: none;
+  --ttoast1: none;
+  --tnone: none;
 }
 
 *,
@@ -294,7 +308,6 @@ a[disabled] {
 =====================================*/
 .body-prevent-scroll {
   overflow: hidden;
-  padding-right: 15px;
 }
 
 .scrollbar-measure {

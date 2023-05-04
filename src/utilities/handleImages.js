@@ -2,6 +2,14 @@ import createSpinner from '../template/createSpinner';
 
 import imageSets from './getImage';
 
+const calendarImageVars = [
+  [null, null], // placeholder for already loaded image
+  ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
+  ['cmonthlgdark', 'cmonthmddark', 'Calendar Month'],
+  ['cyearlgdark', 'cyearmddark', 'Calendar Year'],
+  ['clistlgdark', 'clistmddark', 'Calendar List'],
+];
+
 const appendSkeleton = (parent) => {
   const tempSkeleton = document.createElement('aside');
   tempSkeleton.classList.add('img-skeleton');
@@ -9,30 +17,15 @@ const appendSkeleton = (parent) => {
   parent.prepend(tempSkeleton);
 };
 
-const calendarImageVars = [
-  [null, null],
-  ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
-  ['cmonthlgdark', 'cmonthmddark', 'Calendar Month'],
-  ['cyearlgdark', 'cyearmddark', 'Calendar Year'],
-  ['clistlgdark', 'clistmddark', 'Calendar List'],
-];
+const handleImgError = (img) => {
+  console.assert(false, 'Error loading image');
+  img.classList.remove('fade-img--in');
+  img.classList.add('img--error');
+  img.firstChild.remove();
+  img.firstChild.nextSibling.remove();
+};
 
-const setCalendarImg = (idx) => {
-  const calImgWrappers = document.querySelectorAll('.project-image__calendar');
-  const calImg = calImgWrappers[idx];
-
-  if (calImg.getAttribute('data-hasimg') === 'true') {
-    return;
-  }
-
-  appendSkeleton(document.querySelector('.pcb-cal'));
-  const skel = document.querySelector('.img-skeleton');
-
-  const [largepath, mediumpath, alt] = calendarImageVars[idx];
-  const set = imageSets.calendar;
-  const large = set[largepath];
-  const medium = set[mediumpath];
-
+const appendPicture = (parent, large, medium, alt) => {
   const sourceLg = document.createElement('source');
   sourceLg.setAttribute('srcset', large);
   sourceLg.setAttribute('media', '(min-width: 640px)');
@@ -44,24 +37,37 @@ const setCalendarImg = (idx) => {
   const imgLg = document.createElement('img');
   imgLg.setAttribute('src', large);
   imgLg.setAttribute('alt', alt);
+  imgLg.setAttribute('loading', 'eager');
   imgLg.setAttribute('style', 'max-width:100vw;');
 
-  calImg.append(sourceLg, sourceMd, imgLg);
-  calImg.classList.add('fade-img--in');
-  calImg.setAttribute('data-hasimg', 'true');
+  parent.append(sourceLg, sourceMd, imgLg);
+  parent.classList.add('fade-img--in');
+  parent.setAttribute('data-hasimg', 'true');
 
+  const skel = document.querySelector('.img-skeleton');
   imgLg.addEventListener('load', () => {
     if (skel) skel.remove();
   }, { once: true });
 
   imgLg.addEventListener('error', () => {
     if (skel) skel.remove();
-    console.assert(false, 'Error loading image');
-    calImg.classList.remove('fade-img--in');
-    calImg.classList.add('img--error');
-    sourceLg.remove();
-    sourceMd.remove();
+    handleImgError(parent);
   }, { once: true });
+};
+
+const setCalendarImg = (idx) => {
+  const calImgWrappers = document.querySelectorAll('.project-image__calendar');
+  const calImg = calImgWrappers[idx];
+
+  if (calImg.getAttribute('data-hasimg') === 'true') {
+    return;
+  }
+
+  appendSkeleton(document.querySelector('.pcb-cal'));
+  // lp:large path, mp:medium path
+  const [lp, mp, alt] = calendarImageVars[idx];
+  const set = imageSets.calendar;
+  appendPicture(calImg, set[lp], set[mp], alt);
 };
 
 const setComponentImg = () => {
@@ -71,41 +77,8 @@ const setComponentImg = () => {
   }
 
   appendSkeleton(document.querySelector('.pcb-comp'));
-  const skelcomp = document.querySelector('.img-skeleton');
-
   const set = imageSets.react;
-  const large = set.reactlg;
-  const medium = set.reactmd;
-
-  const sourceLg = document.createElement('source');
-  sourceLg.setAttribute('srcset', large);
-  sourceLg.setAttribute('media', '(min-width: 640px)');
-
-  const sourceMd = document.createElement('source');
-  sourceMd.setAttribute('srcset', medium);
-  sourceMd.setAttribute('media', '(max-width: 640px)');
-
-  const imgLg = document.createElement('img');
-  imgLg.setAttribute('src', large);
-  imgLg.setAttribute('alt', 'React Components');
-  imgLg.setAttribute('style', 'max-width:100vw;');
-
-  compImg.append(sourceLg, sourceMd, imgLg);
-  compImg.setAttribute('data-comp-hasimg', 'true');
-  compImg.classList.add('fade-img--in');
-
-  imgLg.addEventListener('load', () => {
-    if (skelcomp) skelcomp.remove();
-  }, { once: true });
-
-  imgLg.addEventListener('error', () => {
-    if (skelcomp) skelcomp.remove();
-    console.assert(false, 'Error loading image');
-    compImg.classList.remove('fade-img--in');
-    compImg.classList.add('img--error');
-    imgLg.setAttribute('alt', 'Image failed to load :(');
-    sourceLg.remove();
-  }, { once: true });
+  appendPicture(compImg, set.reactlg, set.reactmd, 'React Components');
 };
 
 const contactMenuLazy = () => {
@@ -121,7 +94,6 @@ const contactMenuLazy = () => {
     cmHeaderImgs[i].setAttribute('src', cmBodyImgs[i].getAttribute('src'));
     cmHeaderArrows[i].setAttribute('src', bentArrowSrc);
   }
-
   contactMenu.setAttribute('cm-loaded', 'true');
 };
 

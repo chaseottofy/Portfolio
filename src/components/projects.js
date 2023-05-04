@@ -4,13 +4,13 @@ import getScrollBarWidth from '../utilities/getScrollbarWidth';
 
 import projectJSON from '../data/projectJSONMin.json';
 
+// initProjectImages
 const calendarTabs = document.querySelectorAll('.proj-cal--tab');
 const componentTabs = document.querySelectorAll('.proj-comp--tab');
-
+// initProjectOverviews
 const poWrapper = document.querySelector('.project-overview--wrapper');
-const overviewBtns = document.querySelectorAll('.open-overview--btn');
-
 const body = document.querySelector('body');
+const header = document.querySelector('.header');
 
 const initProjectImages = () => {
   const tabnames = {
@@ -97,6 +97,8 @@ const initProjectOverviews = () => {
       poWrapper.onclick = null;
       poWrapper.innerText = '';
       body.classList.remove('body-prevent-scroll');
+      body.removeAttribute('style');
+      header.removeAttribute('style');
     }
   };
 
@@ -176,14 +178,15 @@ const initProjectOverviews = () => {
   const setProjectOverview = (e) => {
     poWrapper.classList.remove('hide-po');
     body.classList.add('body-prevent-scroll');
-    console.log(getScrollBarWidth());
+    body.style.paddingRight = `${getScrollBarWidth()}px`;
+    header.style.paddingRight = `${getScrollBarWidth()}px`;
     poWrapper.innerText = '';
     createProjectOverview(projectJSON[e.target.getAttribute('data-proj')]);
     poWrapper.onclick = closeProjectOverview;
     e.target.blur();
   };
 
-  overviewBtns.forEach((btn) => {
+  document.querySelectorAll('.open-overview--btn').forEach((btn) => {
     btn.addEventListener('click', setProjectOverview);
   });
 };

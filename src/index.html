@@ -50,8 +50,6 @@
     </div>
   </header>
 
-  <aside class="show-screen--width" style="position:fixed;top:0;right:0;pointer-events: none;z-index:9999;font-size:.75rem;width:100%;text-align:right;"></aside>
-
 
   <!-- CONTACT MENU POPUP -->
   <aside class="contact-menu contact-menu__header" cm-loaded="false">
@@ -221,10 +219,6 @@
       <div class="projects-grid">
 
         <!-- CALENDAR PROJECT -->
-
-
-
-
         <div class="project-cell project-calendar" data-proj-title="Google Calendar 2.0">
           <div class="project-cell__content">
             <div class="project-content__header">
@@ -292,11 +286,11 @@
 
               <div class="pc__subheader--links">
                 <a href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
                 </a>
                 <div class="vert"></div>
                 <button class="lh-btn" data-lh-proj="calendar" aria-label="button">
-                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
+                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon" loading="lazy">
                 </button>
               </div>
             </div>
@@ -310,21 +304,25 @@
                 data-cal-nth="1"
                 data-hasimg="true">
                 <source
-                  srcset="./images/projcal/dark/cdaylgdark.webp"
+                  srcset="./images/projcal/dark/cdaylgdark2.webp"
                   media="(min-width: 640px)">
                 <source
                   srcset="./images/projcal/dark/cdaymddark.webp"
                   media="(max-width: 640px)">
                 <img
-                  src="./images/projcal/dark/cdaylgdark.webp" 
+                  src="./images/projcal/dark/cdaylgdark2.webp" 
                   alt="Day View"
-                  style="max-width:100vw;">
+                  style="max-width:100vw;"
+                  loading="lazy"
+                  fetchpriority="high"
+                >
               </picture>
 
               <picture
                 class="project-image__calendar cal-cell__image--2 hide-img"
                 data-cal-nth="2"
-                data-hasimg="false">
+                data-hasimg="false"
+              >
               </picture>
 
               <picture
@@ -353,14 +351,14 @@
 
           <!-- CALENDAR FOOTER -->
           <div class="project-cell__footer">
-            <h4 class="pf-title">FRAMEWORK / TOOLING</h4>
+            <h3 class="pf-title">FRAMEWORK / TOOLING</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon">
+                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon" loading="lazy">
                 </div>
                 <div class="pf-stack">
-                  <img class="webpack-icon" src="./images/svg/webpack.svg" alt="webpack-icon">
+                  <img class="webpack-icon" src="./images/svg/webpack.svg" alt="webpack-icon" loading="lazy">
                 </div>
                 <div class="pf-stack--names">
                   <span>Vanilla JS + Webpack</span>
@@ -370,10 +368,6 @@
             <div class="pf-hr">
               <hr>
             </div>
-
-            <!-- <h4 class="pf-subtitle">
-              OVERVIEW
-            </h4> -->
             <div class="project-footer__content">
               <button class="open-overview--btn" data-proj="calendar" aria-label="button">Open Full Overview</button>
             </div>
@@ -388,9 +382,6 @@
 
 
         <!-- MARKDOWN PROJECT -->
-        <!-- <div class="project-cell--title">
-          <h3>Markdown to HTML</h3>
-        </div> -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
           <div class="project-cell__content">
 
@@ -412,11 +403,11 @@
 
                 <div class="pc__subheader--links">
                   <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
+                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
                   </a>
                   <div class="vert"></div>
                   <button class="lh-btn" data-lh-proj="markdown" aria-label="button">
-                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
+                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon" loading="lazy">
                   </button>
                 </div>
               </div>
@@ -438,21 +429,21 @@
                 media="(max-width: 640px)"
               >
 
-              <img src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;">
+              <img src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;" loading="lazy">
               </picture>
             </div>
           </div>
 
           <!-- MARKDOWN FOOTER -->
           <div class="project-cell__footer">
-            <h4 class="pf-title">FRAMEWORK / TOOLING</h4>
+            <h3 class="pf-title">FRAMEWORK / TOOLING</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="react-icon" src="./images/svg/react.svg" alt="react-icon">
+                  <img class="react-icon" src="./images/svg/react.svg" alt="react-icon" loading="lazy">>
                 </div>
                 <div class="pf-stack">
-                  <img class="vite-icon" src="./images/svg/vite.svg" alt="vite-icon">
+                  <img class="vite-icon" src="./images/svg/vite.svg" alt="vite-icon" loading="lazy">>
                 </div>
                 <div class="pf-stack--names">
                   <span>React + Vite</span>
@@ -519,12 +510,12 @@
 
               <div class="pc__subheader--links">
                 <a href="https://codepen.io/chaseottofy/pens/public" title="Vanilla Components" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/codepen.svg" alt="">
+                  <img class="img-icon" src="./images/svg/codepen.svg" alt="codepen-icon" loading="lazy">
                 </a>
 
                 <div class="vert"></div>
                 <a href="https://github.com/chaseottofy/react-boilerplate" title="React Components Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
                 </a>
               </div>
             </div>
@@ -548,7 +539,9 @@
               <img 
                 src="./images/component/vanillalg.webp" 
                 alt="Vanilla JS Components" 
-                style="max-width:100vw;">
+                style="max-width:100vw;"
+                loading="lazy"
+                >
               </picture>
 
               <!-- React Js component pic -->
@@ -562,26 +555,21 @@
 
           <!-- COMPONENTS FOOTER -->
           <div class="project-cell__footer">
-            <h4 class="pf-title">FRAMEWORKS</h4>
+            <h3 class="pf-title">FRAMEWORKS</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon">
-                </div>
+                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon" loading="lazy">
+                </div> 
                 <div class="pf-stack">
-                  <img class="react-icon" src="./images/svg/react.svg" alt="">
+                  <img class="react-icon" src="./images/svg/react.svg" alt="react-icon" loading="lazy">
                 </div>
                 <div class="pf-stack--names">
                   <span>Vanilla JS + React</span>
                 </div>
               </div>
             </div>
-            <div class="pf-hr">
-              <hr>
-            </div>
-            <!-- <div class="project-footer__content">
-              <button class="open-overview--btn" data-proj="components" aria-label="button">Open Full Overview</button>
-            </div> -->
+            <div class="pf-hr"></div>
           </div>
         </div>
 
@@ -638,7 +626,7 @@
             <div class="cm-left__footer-location">
               <span>Breckenridge, CO</span>
               <a href="https://www.google.com/maps/place/Breckenridge,+CO+80424/@39.501242,-106.0432109,13z/data=!4m6!3m5!1s0x876af63d6c26e7c1:0x628d8f7f6680a27a!8m2!3d39.4816537!4d-106.0383518!16zL20vMHJjcnQ" title="Google Maps" target="_blank" rel="noreferrer">
-                <img src="./images/svg/pin.svg" alt="" class="img-icon">
+                <img src="./images/svg/pin.svg" alt="" class="img-icon" loading="lazy">
               </a>
               <span class="cm-left--time">MST:</span>
             </div>

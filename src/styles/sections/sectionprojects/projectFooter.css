@@ -183,7 +183,7 @@
   width: 180px;
   margin: 0 auto;
   overflow: hidden;
-  transition: background .2s ease-in-out;
+  transition:var(--tbg1);
 }
 
 .project-footer__content button:hover {

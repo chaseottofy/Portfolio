@@ -22,12 +22,6 @@ const handlePageScroll = () => {
 };
 
 const initScroll = () => {
-  const scr = document.querySelector('.show-screen--width');
-  scr.innerText = window.innerWidth;
-  window.addEventListener('resize', () => {
-    scr.innerText = window.innerWidth;
-  });
-
   handlePageScroll();
   window.addEventListener('scroll', handlePageScroll, { passive: true });
 

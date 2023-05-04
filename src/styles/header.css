@@ -113,7 +113,7 @@
 .nav-menu li a:hover {
   color: #000;
   background: #fff;
-  transition: background .2s ease-in-out;
+  transition: var(--tbg1);
 }
 
 .nav-menu li a:focus-visible {
@@ -125,7 +125,7 @@
 
 .nav-menu--contact--active {
   background: #fff;
-  transition: background .2s ease-in-out;
+  transition:var(--tbg1);
 }
 
 .nav-menu--contact--active span {
@@ -142,7 +142,7 @@
 
 .header-filter .nav-menu--contact--active {
   background: var(--white1);
-  transition: background .2s ease-in-out;
+  transition:var(--tbg1);
 }
 
 .header-filter .nav-menu--contact--active span {
@@ -153,7 +153,7 @@
   height: 14px;
   width: 14px;
   filter: invert(1);
-  transition: transform .2s ease-in-out;
+  transition: var(--tt1);
 }
 
 .theme__light .nav-multi--caret {

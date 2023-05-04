@@ -51,11 +51,11 @@
   height: .625rem;
   width: .625rem;
   border-radius: 50%;
-  transition: transform .2s ease-in-out;
 }
 
 .pc__header-decoration span:hover {
   transform: scale(1.2);
+  transition: var(--tt1);
 }
 
 /* TABS
@@ -105,7 +105,7 @@
 .pc__header-tabs span label:hover,
 .pc__header-tabs span label:focus-visible {
   opacity: .8;
-  transition: opacity .2s ease-in-out;
+  transition: var(--topac1);
 }
 
 .pc__header-tabs span input {
@@ -139,7 +139,7 @@
   border-radius: 50%;
   background: var(--blue1);
   content: "";
-  animation: pulse 2s ease-in-out infinite;
+  /* animation: pulse 2s ease-in-out infinite; */
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
@@ -257,7 +257,7 @@
 .pc__subheader--links a:hover,
 .pc__subheader--links button:hover {
   background: var(--accent-1);
-  transition: background 100ms ease-in-out, filter 100ms ease-in-out;
+  transition: var(--tbg1);
 }
 
 .subheader-sm {
