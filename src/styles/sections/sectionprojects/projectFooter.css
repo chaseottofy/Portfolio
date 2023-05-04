@@ -25,14 +25,16 @@
 .pf-subtitle {
   font-size: .75rem;
   height: 2rem;
-  padding: 0 1rem 0 1.125rem;
-  font-weight: 700;
+  padding: 0 1rem 0 1.25rem;
+  font-weight: 500;
+  opacity: .9;
+  letter-spacing: -.5px;
   width: 100%;
   line-height: 1rem;
   position: relative;
 }
 
-.pf-title::after {
+/* .pf-title::after {
   position: absolute;
   top: 0;
   bottom: 1rem;
@@ -42,11 +44,7 @@
   width: 45%;
   height: 1px;
   border-top: 1px dotted var(--black2);
-  /* background: linear-gradient(to right,
-      var(--black0),
-      var(--grey1) 50%,
-      var(--black0)); */
-}
+} */
 
 .pf-stacks {
   display: grid;
@@ -172,8 +170,6 @@
   border-radius: 8px;
   font-weight: 500;
   position: relative;
-  /* background: var(--white1); */
-  /* color: var(--black0); */
   background: linear-gradient(
     to right bottom,
     var(--black4),
@@ -187,7 +183,6 @@
 }
 
 .project-footer__content button:hover {
-  /* background: var(--black0); */
   color: var(--white1);
   border: 2px solid var(--white1);
   background: linear-gradient(

@@ -1,8 +1,8 @@
 .header {
-  /* position: fixed; */
-  /* top: 0; */
-  /* left: 0; */
-  /* height: var(--headerHeight); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--headerHeight);
   max-width: 100vw;
   width: 100%;
   z-index: var(--z-header);
@@ -125,7 +125,7 @@
 
 .nav-menu--contact--active {
   background: #fff;
-  transition:var(--tbg1);
+  transition: var(--tbg1);
 }
 
 .nav-menu--contact--active span {
@@ -142,7 +142,7 @@
 
 .header-filter .nav-menu--contact--active {
   background: var(--white1);
-  transition:var(--tbg1);
+  transition: var(--tbg1);
 }
 
 .header-filter .nav-menu--contact--active span {
@@ -192,10 +192,11 @@
   .nav-multi--caret {
     display: none;
   }
+
   .nav-menu li {
     padding: .625rem .125rem;
   }
-  
+
   .nav-menu li:last-child a {
     width: 100%;
     justify-content: center;

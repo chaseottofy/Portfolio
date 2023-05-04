@@ -39,10 +39,6 @@ module.exports = (env, argv) => {
             test: /\.woff2?$/,
             attributes: { as: 'font', crossorigin: true },
           },
-          {
-            test: /\.(css|scss|less)$/,
-            as: 'style',
-          },
         ],
         minify: {
           removeComments: true,
@@ -67,7 +63,6 @@ module.exports = (env, argv) => {
             { loader: 'postcss-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { sourceMap: true } },
           ],
-          // use: ['css-loader', 'postcss-loader', 'sass-loader'],
         },
         {
           test: /\.(woff|woff2)$/i,
@@ -86,8 +81,6 @@ module.exports = (env, argv) => {
       ],
     },
 
-    // minify: CssMinimizerPlugin.lightningCssMinify,
-    // minify: CssMinimizerPlugin.esbuildMinify,
     optimization: {
       minimize: IS_PRODUCTION,
       minimizer: [
@@ -112,9 +105,7 @@ module.exports = (env, argv) => {
     performance: {
       hints: false,
     },
-
     stats: 'minimal',
-    // target: 'web',
   };
 
   if (!IS_PRODUCTION) {
@@ -124,10 +115,8 @@ module.exports = (env, argv) => {
       static: {
         directory: path.join(__dirname, './dist'),
       },
-
       watchFiles: {
         paths: ['src/**/*.*'],
-
         options: {
           usePolling: true,
         },

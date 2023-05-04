@@ -17,6 +17,10 @@
   padding: .125rem;
 }
 
+.contact-form--container .section-title {
+  padding-top: 4rem;
+}
+
 .disable-form {
   pointer-events: none;
   user-select: none;

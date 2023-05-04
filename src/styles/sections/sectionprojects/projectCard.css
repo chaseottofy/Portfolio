@@ -283,17 +283,9 @@
   .project-content__subheader {
     padding: 0 .75rem;
   }
-
-  .pc__subheader--search {
-    font-size: .625rem;
-  }
 }
 
 @media screen and (max-width: 640px) {
-  .project-content__subheader {
-    grid-template-columns: 60% 1fr;
-  }
-
   .pc__subheader--search a:first-child img {
     display: none;
   }

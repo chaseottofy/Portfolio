@@ -160,11 +160,15 @@ const initProjectOverviews = () => {
     const githubEl = document.createElement('a');
     githubEl.classList.add('proj-overview--link');
     githubEl.setAttribute('href', github);
+    githubEl.setAttribute('target', '_blank');
+    githubEl.setAttribute('rel', 'noopener noreferrer');
     githubEl.textContent = 'Github';
 
     const liveEl = document.createElement('a');
     liveEl.classList.add('proj-overview--link');
     liveEl.setAttribute('href', live);
+    liveEl.setAttribute('target', '_blank');
+    liveEl.setAttribute('rel', 'noopener noreferrer');
     liveEl.textContent = 'Live';
     linkEl.append(githubEl, liveEl);
 

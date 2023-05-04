@@ -318,14 +318,14 @@ a[disabled] {
 
 /* TRANSITION UTILITIES
 =====================================*/
-/* .disable-transitions * {
+.disable-transitions * {
   -webkit-transition: none !important;
   transition: none !important;
   transition-duration: none !important;
   transition-property: none !important;
   transition-timing-function: none !important;
   animation: none !important;
-} */
+}
 
 .skeleton {
   background-image: linear-gradient(270deg,

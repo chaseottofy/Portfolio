@@ -37,7 +37,7 @@ const createLHModal = (appname) => {
   screenshotLinkBtn.setAttribute('title', 'pagespeed.web.dev');
   screenshotLinkBtn.setAttribute('target', '_blank');
   screenshotLinkBtn.setAttribute('rel', 'noopener noreferrer');
-  screenshotLinkBtn.textContent = 'Run an audit';
+  screenshotLinkBtn.textContent = 'View latest audit';
   screenshotLinkBtn.classList.add('lh-main__score-title');
 
   header.append(lhtitle, closeBtn);

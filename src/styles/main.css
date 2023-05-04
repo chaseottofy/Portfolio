@@ -45,13 +45,14 @@
 }
 
 .section-title h2 {
-  font-weight: 700;
-  font-size: 2.875rem;
-  letter-spacing: -.5px;
+  font-weight: 500;
+  transform: scaleY(.88);
+  font-size: 2rem;
+  letter-spacing: -2px;
   color: transparent;
-  background-image: linear-gradient(to bottom,
-      var(--white1) 0%,
-      var(--white2),
+  background-image: linear-gradient(150deg,
+      var(--white0) 0%,
+      var(--white1),
       var(--black4));
   -webkit-background-clip: text;
   background-clip: text;

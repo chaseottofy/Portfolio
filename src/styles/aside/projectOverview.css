@@ -50,8 +50,11 @@
 .po-header--close {
   height: 2.5rem;
   width: 2.5rem;
+  background: var(--black4);
+  border: 1px solid var(--black2);
+  font-weight: 500;
   font-size: 1.5rem;
-  border-radius: 50%;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +71,7 @@
 .po-body hr {
   height: 2px;
   width: 100%;
-  margin: 1rem 0;
+  margin: .5rem 0;
   border-top: 1px solid var(--black2);
 }
 
@@ -110,7 +113,7 @@
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
-  /* list-style-type: circle;  */
+  list-style-type: circle; 
   list-style: circle;
 }
 
@@ -118,11 +121,13 @@
   position:relative;
   display: flex;
   align-items: center;
-  margin: .5rem 0;
+  margin: .25rem 0;
   font-size: .875rem;
   list-style: circle;
+  opacity:.9;
   padding-left: 1rem;
 }
+
 .po-list--item::before {
   content: "- ";
   position: absolute;

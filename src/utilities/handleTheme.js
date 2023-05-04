@@ -52,6 +52,9 @@ const initTheme = () => {
   initDefaultTheme();
   initThemeOptions();
   document.querySelector('.header').classList.add('header-animate');
+  setTimeout(() => {
+    body.classList.remove('disable-transitions');
+  }, 200);
 };
 
 export default initTheme;
