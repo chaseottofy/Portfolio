@@ -40,19 +40,20 @@
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
 
-  /* --tbg1: background .2s ease-in-out;
+  --tbg1: background .2s ease-in-out;
   --tt1: transform .2s ease-in-out;
   --tc1: color .2s ease-in-out;
   --ttop1: top .2s ease-in-out;
   --topac1: opacity .2s ease-in-out;
-  --ttoast1: all .35s cubic-bezier(.25, .75, .6, .98); */
-  --tbg1: none;
+  --ttoast1: all .35s cubic-bezier(.25, .75, .6, .98);
+  
+  /* --tbg1: none;
   --tt1: none;
   --tc1: none;
   --ttop1: none;
   --topac1: none;
   --ttoast1: none;
-  --tnone: none;
+  --tnone: none; */
 }
 
 *,
@@ -70,13 +71,14 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 body {
-  min-height: 100%;
+  /* min-height: 100vh; */
+  height: 100%;
   width: calc(100vw - calc(100vw - 100%));
   font-family: var(--primaryFont);
   background: var(--black0);
@@ -89,8 +91,6 @@ body {
   line-height: inherit;
   position: relative;
   overflow-x: hidden;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
   overflow-y: scroll;
 }
 
@@ -438,9 +438,3 @@ a[disabled] {
     font-size: 14px;
   }
 }
-
-/* @media screen and (max-width: 380px) {
-  html {
-    font-size: 12px;
-  }
-} */

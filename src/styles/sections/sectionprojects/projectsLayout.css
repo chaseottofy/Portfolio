@@ -23,7 +23,7 @@
   opacity: .9;  
 }
 
-.section-line--decoration {
+/* .section-line--decoration {
   position: absolute;
   z-index: 8;
   top:0;
@@ -41,7 +41,7 @@
 
 .theme__light .section-line--decoration {
   filter: invert(1) grayscale(1) contrast(1.2);
-}
+} */
 
 .projects-grid {
   position: relative;

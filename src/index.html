@@ -10,7 +10,7 @@
   <meta name="description" content="Portfolio for Chase Ottofy">
   <meta name="keywords" content="chase ottofy portfolio, portfolio, chase, ottofy, chaseottofy, chase ottofy, chase ottofy portfolio, front end developer, front end, javascript, react developer, react">
   <title>Chase Ottofy</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link href="style.scss" rel="stylesheet">
   <script src="index.js" defer="defer"></script>
 </head>
@@ -18,12 +18,12 @@
 <body class="body theme__dark">
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
-
   <!-- HEADER (FIXED)-->
-  <header class="header">
+  <header class="header" style="height: 4rem;
+  position: fixed; top:0; left:0;">
     <div class="header-wrapper">
-      <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
-        <img src="./images/svg/logo.svg" alt="logo" style="max-height:1.5rem;max-width:1.5rem;">
+      <button class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button">
+        <img src="./images/svg/logo.svg" alt>
       </button>
 
       <div class="nav-wrapper">
@@ -39,9 +39,9 @@
               <a class="nav-menu--link" href="#about-top" title="Scroll to skills">About</a>
             </li>
             <li class="nav-multi__contact">
-              <a class="nav-menu--link menu-btn--multi contact-nav--btn" title="Contact Menu & context" data-href="#contact-top" href="#contact-top">
+              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-href="#contact-top" href="#contact-top" title="Contact Menu & context">
                 <span>Contact</span>
-                <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt="">
+                <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt>
               </a>
             </li>
           </ul>
@@ -49,114 +49,6 @@
       </div>
     </div>
   </header>
-
-
-  <!-- CONTACT MENU POPUP -->
-  <aside class="contact-menu contact-menu__header" cm-loaded="false">
-    <!-- RIGHT -->
-    <div class="cm-right">
-      <div class="cm-right--top">
-        <!-- GITHUB BADGE -->
-        <div class="cm-right--top__cell badge-github">
-          <a class="cm-right--top__cell-badge" href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
-            <div class="badge-top">
-              <div class="badge-top--profile">
-                <div class="badge-top--container--svg">
-                  <img class="img-icon cm-header--img" src="data:," alt="">
-                </div>
-                <span data-acc="@chaseottofy">@chaseottofy</span>
-              </div>
-            </div>
-            <div class="badge-footer">
-              <img class="img-icon cm-bent--arrow" src="data:," alt="">
-              <span>Github</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- YOUTUBE BADGE-->
-        <div class="cm-right--top__cell badge-youtube">
-          <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
-            <div class="badge-top">
-              <div class="badge-top--profile">
-                <img class="badge-mug cm-header--img" src="data:," alt="">
-                <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
-              </div>
-            </div>
-            <div class="badge-footer">
-              <img class="img-icon cm-bent--arrow" src="data:," alt="">
-              <span>YouTube</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CODEPEN BADGE -->
-        <div class="cm-right--top__cell badge-codepen">
-          <a class="cm-right--top__cell-badge" href="https://codepen.io/chaseottofy" title="Codepen Profile" target="_blank" rel="noreferrer">
-            <div class="badge-top">
-              <div class="badge-top--profile">
-                <div class="badge-top--container--svg">
-                  <img class="img-icon cm-header--img" src="data:," alt="">
-                </div>
-                <span data-acc="@chaseottofy">@chaseottofy</span>
-              </div>
-            </div>
-
-            <div class="badge-footer">
-              <img class="img-icon cm-bent--arrow" src="data:," alt="">
-              <span>Codepen</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- CODEWARS BADGE -->
-        <div class="cm-right--top__cell badge-codewars">
-          <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
-            <div class="badge-top">
-              <div class="badge-top--profile">
-                <img class="badge-mug cm-header--img" src="data:," alt="">
-                <span class="badge-prof" data-bef="#2,797" data-acc="Top 0.5%">@protto</span>
-              </div>
-            </div>
-
-            <div class="badge-footer">
-              <img class="img-icon cm-bent--arrow" src="data:," alt="">
-              <span>Codewars</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-
-      <div class="cm-right--bottom cm-right--bottom__body">
-        <div class="cm-right--bottom__cell">
-          <span>ottofy@zohomail.com</span>
-          <div class="cm-right--bottom__cell-icons">
-            <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-              <img class="img-icon" src="./images/svg/mailto.svg" alt="">
-            </a>
-            <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
-              <img class="img-icon" src="./images/svg/copy.svg" alt="">
-            </button>
-          </div>
-        </div>
-
-        <div class="cm-right--bottom__cell">
-          <span>970-988-2548</span>
-          <div class="cm-right--bottom__cell-icons">
-            <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button">
-              <img class="img-icon" src="./images/svg/copy.svg" alt="">
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-
-  <!-- PROJECT OVERVIEW MODAL -->
-  <aside class="project-overview--wrapper hide-po"></aside>
-
 
   <!-- SECTION: INTRO -->
   <section class="intro-container">
@@ -168,7 +60,6 @@
           <img src="./images/svg/star.svg" alt="-">
           <h2 class="intro-header__subtitle--text">UX</h2>
         </div>
-        <!-- intro subtitle -->
         <div class="intro-header__subtitle intro-header__subtitle--two">
           <h2 class="intro-header__subtitle--text ih-last">Web Developer</h2>
         </div>
@@ -179,37 +70,36 @@
     <aside class="theme-modal">
       <div class="theme-switch">
         <span>
-          <input id="theme-switch-dark" type="radio" value="dark" name="radio-theme" class="theme-input">
-          <label aria-label="Switch to dark mode" for="theme-switch-dark" title="Switch to dark mode" class="theme-label">
-            <img src="./images/svg/moon.svg" alt="">
+          <input class="theme-input" id="theme-switch-dark" name="radio-theme" type="radio" value="dark">
+          <label class="theme-label" for="theme-switch-dark" title="Switch to dark mode" aria-label="Switch to dark mode">
+            <img src="./images/svg/moon.svg" alt="dark">
           </label>
         </span>
 
         <span>
-          <input id="theme-switch-light" type="radio" value="light" name="radio-theme" class="theme-input">
-          <label aria-label="Switch to light mode" for="theme-switch-light" title="Switch to light mode" class="theme-label theme-label--two">
-            <img src="./images/svg/sun.svg" alt="">
+          <input class="theme-input" id="theme-switch-light" name="radio-theme" type="radio" value="light">
+          <label class="theme-label theme-label--two" for="theme-switch-light" title="Switch to light mode" aria-label="Switch to light mode">
+            <img src="./images/svg/sun.svg" alt="light">
           </label>
         </span>
 
         <span>
-          <input id="theme-switch-system" type="radio" value="dark" name="radio-theme" class="theme-input">
-          <label aria-label="Switch to system mode" for="theme-switch-system" title="Switch to system mode" class="theme-label">
-            <img src="./images/svg/monitor.svg" alt="">
+          <input class="theme-input" id="theme-switch-system" name="radio-theme" type="radio" value="dark">
+          <label class="theme-label" for="theme-switch-system" title="Switch to system mode" aria-label="Switch to system mode">
+            <img src="./images/svg/monitor.svg" alt="system">
           </label>
         </span>
       </div>
     </aside>
   </section>
 
-
   <!-- MAIN (projects > skills > about > contact) -->
   <main class="main">
     <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
     <article class="projects-container" id="projects-top">
-      <aside class="section-line--decoration">
-      </aside>
+      <!-- <aside class="section-line--decoration"> -->
+      <!-- </aside> -->
 
       <div class="section-title">
         <span>Highlighted Work</span>
@@ -230,122 +120,59 @@
 
               <div class="pc__header-tabs calendar-tabs">
                 <span>
-                  <input id="proj-calendar-day" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput" checked>
-                  <label aria-label="Day View" for="proj-calendar-day" class="proj-header__tablabel proj-cal--tab" data-tab-idx="1" data-lab-after="view">Day </label>
+                  <input class="proj-header__tabinput" id="proj-calendar-day" name="proj-calendar--radio" type="radio" value="Day" checked>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="1" for="proj-calendar-day" aria-label="Day View">Day </label>
                 </span>
 
                 <span>
-                  <input id="proj-calendar-week" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Day View" for="proj-calendar-week" class="proj-header__tablabel proj-cal--tab" data-tab-idx="2" data-lab-after="view">Week </label>
+                  <input class="proj-header__tabinput" id="proj-calendar-week" name="proj-calendar--radio" type="radio" value="Day">
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="2" for="proj-calendar-week" aria-label="Day View">Week </label>
                 </span>
 
                 <span>
-                  <input id="proj-calendar-month" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Month View" for="proj-calendar-month" class="proj-header__tablabel proj-cal--tab" data-tab-idx="3" data-lab-after="view">Month </label>
+                  <input class="proj-header__tabinput" id="proj-calendar-month" name="proj-calendar--radio" type="radio" value="Day">
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="3" for="proj-calendar-month" aria-label="Month View">Month </label>
                 </span>
 
                 <span>
-                  <input id="proj-calendar-year" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="Year View" for="proj-calendar-year" class="proj-header__tablabel proj-cal--tab" data-tab-idx="4" data-lab-after="view">Year </label>
+                  <input class="proj-header__tabinput" id="proj-calendar-year" name="proj-calendar--radio" type="radio" value="Day">
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="4" for="proj-calendar-year" aria-label="Year View">Year </label>
                 </span>
 
                 <span>
-                  <input id="proj-calendar-list" type="radio" value="Day" name="proj-calendar--radio" class="proj-header__tabinput">
-                  <label aria-label="List View" for="proj-calendar-list" class="proj-header__tablabel proj-cal--tab" data-tab-idx="5" data-lab-after="view">List </label>
+                  <input class="proj-header__tabinput" id="proj-calendar-list" name="proj-calendar--radio" type="radio" value="Day">
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="5" for="proj-calendar-list" aria-label="List View">List </label>
                 </span>
-
               </div>
             </div>
 
             <div class="project-content__subheader">
-
-
-              <!-- <div class="project-switch">
-                <span>
-                  <input id="calendar-switch-screenshots" type="radio" value="dark" name="radio-calendar" class="project-switch--input" checked>
-                  <label aria-label="" for="calendar-switch-screenshots" title="" class="project-switch--label">
-                    <img class="img-icon" src="./images/svg/cardImage.svg" alt="">
-                  </label>
-                </span>
-      
-                <span>
-                  <input id="calendar-switch-overview" type="radio" value="dark" name="radio-calendar" class="project-switch--input">
-                  <label aria-label="" for="calendar-switch-overview" title="" class="project-switch--label">
-                    <img class="img-icon" src="./images/svg/cardImage.svg" alt="">
-                  </label>
-                </span>
-              </div> -->
-
-
               <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="icon">Google Calendar 2.0</a>
+                <a class="cal-search" data-search-after="day" href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Google Calendar 2.0</a>
                 <span class="search-arrowright">
-                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right">
+                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                 </span>
               </div>
 
               <div class="pc__subheader--links">
-                <a href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
+                <a class="sub-proj--gh" href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                 </a>
                 <div class="vert"></div>
                 <button class="lh-btn" data-lh-proj="calendar" aria-label="button">
-                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon" loading="lazy">
+                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse">
                 </button>
               </div>
             </div>
 
-
             <!-- CALENDAR BODY -->
             <div class="project-content__body pcb-cal">
-
-              <picture
-                class="project-image__calendar cal-cell__image--1 cal-current"
-                data-cal-nth="1"
-                data-hasimg="true">
-                <source
-                  srcset="./images/projcal/dark/cdaylgdark2.webp"
-                  media="(min-width: 640px)">
-                <source
-                  srcset="./images/projcal/dark/cdaymddark.webp"
-                  media="(max-width: 640px)">
-                <img
-                  src="./images/projcal/dark/cdaylgdark2.webp" 
-                  alt="Day View"
-                  style="max-width:100vw;"
-                  loading="lazy"
-                  fetchpriority="high"
-                >
+              <picture class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-hasimg="true">
+                <source srcset="./images/projcal/dark/cdaylgdark.webp" media="(min-width: 640px)">
+                <source srcset="./images/projcal/dark/cdaymddark.webp" media="(max-width: 640px)">
+                <img src="./images/projcal/dark/cdaylgdark.webp" alt="Day View" style="max-width:100vw;">
               </picture>
-
-              <picture
-                class="project-image__calendar cal-cell__image--2 hide-img"
-                data-cal-nth="2"
-                data-hasimg="false"
-              >
-              </picture>
-
-              <picture
-                class="project-image__calendar cal-cell__image--3 hide-img"
-                data-cal-nth="3"
-                data-hasimg="false">
-              </picture>
-
-              <picture
-                class="project-image__calendar cal-cell__image--4 hide-img"
-                data-cal-nth="4"
-                data-hasimg="false">
-              </picture>
-
-              <picture
-                class="project-image__calendar cal-cell__image--5 hide-img"
-                data-cal-nth="5"
-                data-hasimg="false">
-              </picture>
-
-
             </div>
-
             <div class="project-content__about"></div>
           </div>
 
@@ -355,10 +182,10 @@
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon" loading="lazy">
+                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt>
                 </div>
                 <div class="pf-stack">
-                  <img class="webpack-icon" src="./images/svg/webpack.svg" alt="webpack-icon" loading="lazy">
+                  <img class="webpack-icon" src="./images/svg/webpack.svg" alt>
                 </div>
                 <div class="pf-stack--names">
                   <span>Vanilla JS + Webpack</span>
@@ -380,7 +207,6 @@
         </div>
 
 
-
         <!-- MARKDOWN PROJECT -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
           <div class="project-cell__content">
@@ -395,19 +221,19 @@
 
               <div class="project-content__subheader subheader-sm">
                 <div class="pc__subheader--search">
-                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="lock-icon">Markdown to HTML</a>
+                  <a class="mark-search" data-search-after="one" href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Markdown to HTML</a>
                   <span class="search-arrowright">
-                    <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right-icon">
+                    <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                   </span>
                 </div>
 
                 <div class="pc__subheader--links">
-                  <a href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
+                  <a class="sub-proj--gh" href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer">
+                    <img class="img-icon" src="./images/svg/githuboutline.svg" alt>
                   </a>
                   <div class="vert"></div>
                   <button class="lh-btn" data-lh-proj="markdown" aria-label="button">
-                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon" loading="lazy">
+                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt>
                   </button>
                 </div>
               </div>
@@ -415,20 +241,9 @@
 
             <!-- MARKDOWN IMAGES -->
             <div class="project-content__body pcb-mark">
-              <picture
-                class="project-image__markdown mark-cell__image--1 mark-current"
-              >
-
-              <source 
-                srcset="./images/mdlite/markdowndark1.webp"
-                media="(min-width: 640px)"
-              >
-
-              <source
-                srcset="./images/mdlite/markdowndark2.webp"
-                media="(max-width: 640px)"
-              >
-
+              <picture class="project-image__markdown mark-cell__image--1 mark-current">
+              <source srcset="./images/mdlite/markdowndark1.webp" media="(min-width: 640px)">
+              <source srcset="./images/mdlite/markdowndark2.webp" media="(max-width: 640px)">
               <img src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;" loading="lazy">
               </picture>
             </div>
@@ -440,10 +255,10 @@
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="react-icon" src="./images/svg/react.svg" alt="react-icon" loading="lazy">>
+                  <img class="react-icon" src="./images/svg/react.svg" alt>
                 </div>
                 <div class="pf-stack">
-                  <img class="vite-icon" src="./images/svg/vite.svg" alt="vite-icon" loading="lazy">>
+                  <img class="vite-icon" src="./images/svg/vite.svg" alt>
                 </div>
                 <div class="pf-stack--names">
                   <span>React + Vite</span>
@@ -468,9 +283,6 @@
 
 
         <!-- PROJECT COMPONENTS -->
-        <!-- <div class="project-cell--title">
-          <h3>Vanilla Js + React Components</h3>
-        </div> -->
         <div class="project-cell project-components" data-proj-title="Components Gallery">
           <div class="project-cell__content">
 
@@ -483,39 +295,39 @@
 
               <div class="pc__header-tabs component-tabs">
                 <span>
-                  <input id="proj-comp-vanilla" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput" checked>
-                  <label aria-label="Vanilla Components" for="proj-comp-vanilla" class="proj-header__tablabel proj-comp--tab" data-tab-idx="1" data-lab-after="">Vanilla JS</label>
+                  <input class="proj-header__tabinput" id="proj-comp-vanilla" name="proj-comp--radio" type="radio" value="Day" checked>
+                  <label class="proj-header__tablabel proj-comp--tab" data-lab-after data-tab-idx="1" for="proj-comp-vanilla" aria-label="Vanilla Components">Vanilla JS</label>
                 </span>
 
                 <span>
-                  <input id="proj-comp-react" type="radio" value="Day" name="proj-comp--radio" class="proj-header__tabinput">
-                  <label aria-label="React Components" for="proj-comp-react" class="proj-header__tablabel proj-comp--tab" data-tab-idx="2" data-lab-after="">React JS</label>
+                  <input class="proj-header__tabinput" id="proj-comp-react" name="proj-comp--radio" type="radio" value="Day">
+                  <label class="proj-header__tablabel proj-comp--tab" data-lab-after data-tab-idx="2" for="proj-comp-react" aria-label="React Components">React JS</label>
                 </span>
               </div>
             </div>
 
             <div class="project-content__subheader">
               <div class="pc__subheader--search">
-                <a href="https://codepen.io/chaseottofy/pens/public" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="" class="component-search">
-                  <img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
+                <a class="component-search" data-search-after href="https://codepen.io/chaseottofy/pens/public" title="Go to Live Site" target="_blank" rel="noreferrer">
+                  <img class="img-icon search-lock" src="./images/svg/lock.svg" alt>
                   <span class="comp-search--text">
                     Vanilla Components
                   </span>
                 </a>
 
                 <span class="search-arrowright">
-                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt="">
+                  <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                 </span>
               </div>
 
               <div class="pc__subheader--links">
-                <a href="https://codepen.io/chaseottofy/pens/public" title="Vanilla Components" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/codepen.svg" alt="codepen-icon" loading="lazy">
+                <a class="sub-proj--gh" href="https://codepen.io/chaseottofy/pens/public" title="Vanilla Components" target="_blank" rel="noreferrer">
+                  <img class="img-icon" src="./images/svg/codepen.svg" alt>
                 </a>
 
                 <div class="vert"></div>
-                <a href="https://github.com/chaseottofy/react-boilerplate" title="React Components Repo" target="_blank" rel="noreferrer" class="sub-proj--gh">
-                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon" loading="lazy">
+                <a class="sub-proj--gh" href="https://github.com/chaseottofy/react-boilerplate" title="React Components Repo" target="_blank" rel="noreferrer">
+                  <img class="img-icon" src="./images/svg/githuboutline.svg" alt>
                 </a>
               </div>
             </div>
@@ -523,32 +335,10 @@
             <!-- COMPONENTS BODY -->
             <div class="project-content__body pcb-comp">
               <!-- Vanilla Js component pic -->
-              <picture
-                class="project-image__components comp-cell__image--1 comp-current"
-                data-comp-nth="1"
-                data-comp-hasimg="true"
-              >
-              <source 
-                srcset="./images/component/vanillalg.webp"
-                media="(min-width: 640px)"
-              >
-              <source 
-                srcset="./images/component/vanillamd.webp"
-                media="(max-width: 640px)"
-              >
-              <img 
-                src="./images/component/vanillalg.webp" 
-                alt="Vanilla JS Components" 
-                style="max-width:100vw;"
-                loading="lazy"
-                >
-              </picture>
-
-              <!-- React Js component pic -->
-              <picture
-                class="project-image__components comp-cell__image--2 hide-img"
-                data-comp-nth="2"
-                data-comp-hasimg="false">
+              <picture class="project-image__components comp-cell__image--1 comp-current" data-comp-hasimg="true" data-comp-nth="1">
+              <source srcset="./images/component/vanillalg.webp" media="(min-width: 640px)">
+              <source srcset="./images/component/vanillamd.webp" media="(max-width: 640px)">
+              <img src="./images/component/vanillalg.webp" alt="Vanilla JS Components" style="max-width:100vw;" loading="lazy">
               </picture>
             </div>
           </div>
@@ -559,10 +349,10 @@
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
-                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt="javascript-icon" loading="lazy">
-                </div> 
+                  <img class="vanilla-icon" src="./images/svg/vanilla.svg" alt>
+                </div>
                 <div class="pf-stack">
-                  <img class="react-icon" src="./images/svg/react.svg" alt="react-icon" loading="lazy">
+                  <img class="react-icon" src="./images/svg/react.svg" alt>
                 </div>
                 <div class="pf-stack--names">
                   <span>Vanilla JS + React</span>
@@ -573,13 +363,9 @@
           </div>
         </div>
 
-
-
         <div class="project-divider">
           <span class="vertical-line"></span>
         </div>
-
-
 
       </div>
     </article>
@@ -594,12 +380,11 @@
       </div>
     </article>
 
-
     <!-- SECTION: ABOUT -->
     <aside class="section-divider"></aside>
     <article class="about-container" id="about-top">
       <div class="about-grid">
-        <div class="section-title--left">
+        <div class="section-title">
           <h2>About</h2>
         </div>
       </div>
@@ -626,7 +411,7 @@
             <div class="cm-left__footer-location">
               <span>Breckenridge, CO</span>
               <a href="https://www.google.com/maps/place/Breckenridge,+CO+80424/@39.501242,-106.0432109,13z/data=!4m6!3m5!1s0x876af63d6c26e7c1:0x628d8f7f6680a27a!8m2!3d39.4816537!4d-106.0383518!16zL20vMHJjcnQ" title="Google Maps" target="_blank" rel="noreferrer">
-                <img src="./images/svg/pin.svg" alt="" class="img-icon" loading="lazy">
+                <img class="img-icon" src="./images/svg/pin.svg" alt>
               </a>
               <span class="cm-left--time">MST:</span>
             </div>
@@ -642,13 +427,14 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon cm-body--img" src="./images/svg/githuboutline.svg" alt="">
+                      <img class="img-icon cm-body--img" src="./images/svg/githuboutline.svg" alt>
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
                 </div>
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt=""><span>Github</span>
+                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
+                  <span>Github</span>
                 </div>
               </a>
             </div>
@@ -658,13 +444,13 @@
               <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt="">
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt style="height:3rem;width:3rem;">
                     <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
                   <span>YouTube</span>
                 </div>
               </a>
@@ -676,14 +462,14 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon cm-body--img" src="./images/svg/codepen.svg" alt="">
+                      <img class="img-icon cm-body--img" src="./images/svg/codepen.svg" alt>
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt="">
+                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
                   <span>Codepen</span>
                 </div>
               </a>
@@ -694,13 +480,13 @@
               <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" alt="">
-                    <span class="badge-prof" data-bef="#2,797" data-acc="Top 0.5%">@protto</span>
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" alt style="height:3rem;width:3rem;">
+                    <span class="badge-prof" data-acc="Top 0.5%" data-bef="#2,797">@protto</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon img-bent-arrowsrc" src="./images/svg/bentarrow.svg" alt="">
+                  <img class="img-icon img-bent-arrowsrc" src="./images/svg/bentarrow.svg" alt>
                   <span>Codewars</span>
                 </div>
               </a>
@@ -712,10 +498,10 @@
               <span>ottofy@zohomail.com</span>
               <div class="cm-right--bottom__cell-icons">
                 <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-                  <img class="img-icon" src="./images/svg/mailto.svg" alt="">
+                  <img class="img-icon" src="./images/svg/mailto.svg" alt>
                 </a>
                 <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
-                  <img class="img-icon" src="./images/svg/copy.svg" alt="">
+                  <img class="img-icon" src="./images/svg/copy.svg" alt>
                 </button>
               </div>
             </div>
@@ -723,8 +509,8 @@
             <div class="cm-right--bottom__cell">
               <span>970-988-2548</span>
               <div class="cm-right--bottom__cell-icons">
-                <button class="cm-copy cm-copy--phone" title="Copy Phone Number" data-text="9709882548" aria-label="button">
-                  <img class="img-icon" src="./images/svg/copy.svg" alt="">
+                <button class="cm-copy cm-copy--phone" data-text="9709882548" title="Copy Phone Number" aria-label="button">
+                  <img class="img-icon" src="./images/svg/copy.svg" alt>
                 </button>
               </div>
             </div>
@@ -746,30 +532,30 @@
         <form class="contact-form">
           <div class="form-group">
             <label for="form-name">Name *</label>
-            <input id="form-name" type="text" class="form-name--input" name="messageName" minlength="1" maxlength="200" required>
+            <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
           </div>
 
           <div class="form-group">
-            <label for="contact-method">Choose the best for response *</label>
+            <label>Choose the best for response *</label>
 
             <div class="contact-method-group">
               <span>
-                <input class="contact-option--input" id="contact-method--email" type="radio" name="contactMethod" value="email" checked>
+                <input class="contact-option--input" id="contact-method--email" name="contactMethod" type="radio" value="email" checked>
                 <label for="contact-method--email">Email</label>
               </span>
 
               <span>
-                <input class="contact-option--input" id="contact-method--phone" type="radio" name="contactMethod" value="phone" aria-label="">
+                <input class="contact-option--input" id="contact-method--phone" name="contactMethod" type="radio" aria-label value="phone">
                 <label for="contact-method--phone">Phone</label>
               </span>
             </div>
 
-            <input type="email" class="form-contact--input" name="messageContactVal" placeholder="Enter your email address" minlength="1" maxLength="200" required>
+            <input class="form-contact--input" name="messageContactVal" type="email" placeholder="Enter your email address" minlength="1" maxLength="200" required>
           </div>
 
           <div class="form-group">
             <label for="form-message">Message *</label>
-            <textarea id="form-message" class="form-message--input" name="messageVal" rows="4" maxlength="500" minlength="1" required></textarea>
+            <textarea class="form-message--input" id="form-message" name="messageVal" rows="4" maxlength="500" minlength="1" required></textarea>
           </div>
 
           <div class="form-group form-group--submit">
@@ -780,13 +566,116 @@
     </article>
   </main>
 
-
   <!-- FOOTER -->
   <footer class="footer">
     <span>@Chase Ottofy&nbsp; – &nbsp;</span>
     <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">Github</a>
   </footer>
 
+  <!-- PROJECT OVERVIEW MODAL -->
+  <aside class="project-overview--wrapper hide-po"></aside>
+
+  <!-- CONTACT MENU POPUP -->
+  <aside class="contact-menu contact-menu__header" data-cm-loaded="false">
+    <!-- RIGHT -->
+    <div class="cm-right">
+      <div class="cm-right--top">
+        <!-- GITHUB BADGE -->
+        <div class="cm-right--top__cell badge-github">
+          <a class="cm-right--top__cell-badge" href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
+            <div class="badge-top">
+              <div class="badge-top--profile">
+                <div class="badge-top--container--svg">
+                  <img class="img-icon cm-header--img" src="data:," alt>
+                </div>
+                <span data-acc="@chaseottofy">@chaseottofy</span>
+              </div>
+            </div>
+            <div class="badge-footer">
+              <img class="img-icon cm-bent--arrow" src="data:," alt>
+              <span>Github</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- YOUTUBE BADGE-->
+        <div class="cm-right--top__cell badge-youtube">
+          <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
+            <div class="badge-top">
+              <div class="badge-top--profile">
+                <img class="badge-mug cm-header--img" src="data:," alt>
+                <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
+              </div>
+            </div>
+            <div class="badge-footer">
+              <img class="img-icon cm-bent--arrow" src="data:," alt>
+              <span>YouTube</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CODEPEN BADGE -->
+        <div class="cm-right--top__cell badge-codepen">
+          <a class="cm-right--top__cell-badge" href="https://codepen.io/chaseottofy" title="Codepen Profile" target="_blank" rel="noreferrer">
+            <div class="badge-top">
+              <div class="badge-top--profile">
+                <div class="badge-top--container--svg">
+                  <img class="img-icon cm-header--img" src="data:," alt>
+                </div>
+                <span data-acc="@chaseottofy">@chaseottofy</span>
+              </div>
+            </div>
+
+            <div class="badge-footer">
+              <img class="img-icon cm-bent--arrow" src="data:," alt>
+              <span>Codepen</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CODEWARS BADGE -->
+        <div class="cm-right--top__cell badge-codewars">
+          <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
+            <div class="badge-top">
+              <div class="badge-top--profile">
+                <img class="badge-mug cm-header--img" src="data:," alt>
+                <span class="badge-prof" data-acc="Top 0.5%" data-bef="#2,797">@protto</span>
+              </div>
+            </div>
+
+            <div class="badge-footer">
+              <img class="img-icon cm-bent--arrow" src="data:," alt>
+              <span>Codewars</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="cm-right--bottom cm-right--bottom__body">
+        <div class="cm-right--bottom__cell">
+          <span>ottofy@zohomail.com</span>
+          <div class="cm-right--bottom__cell-icons">
+            <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
+              <img class="img-icon" src="./images/svg/mailto.svg" alt>
+            </a>
+            <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
+              <img class="img-icon" src="./images/svg/copy.svg" alt>
+            </button>
+          </div>
+        </div>
+
+        <div class="cm-right--bottom__cell">
+          <span>970-988-2548</span>
+          <div class="cm-right--bottom__cell-icons">
+            <button class="cm-copy cm-copy--phone" data-text="9709882548" title="Copy Phone Number" aria-label="button">
+              <img class="img-icon" src="./images/svg/copy.svg" alt>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>

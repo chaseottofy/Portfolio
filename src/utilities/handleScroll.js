@@ -36,6 +36,4 @@ const initScroll = () => {
   }, { passive: true });
 };
 
-// show-screen--width
-
 export default initScroll;

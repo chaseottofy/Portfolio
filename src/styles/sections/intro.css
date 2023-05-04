@@ -1,8 +1,10 @@
 /* SECTION: INTRO
 ============================*/
 .intro-container {
-  min-height: calc(100vh - 4rem);
-  height: 100%;
+  /* min-height: calc(100vh - 4rem); */
+  /* min-height: 100vh; */
+  /* height: 100%; */
+  height: calc(100vh + 2px);
   position: relative;
 }
 

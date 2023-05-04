@@ -39,6 +39,10 @@ module.exports = (env, argv) => {
             test: /\.woff2?$/,
             attributes: { as: 'font', crossorigin: true },
           },
+          {
+            test: /\.(css|scss|less)$/,
+            as: 'style',
+          },
         ],
         minify: {
           removeComments: true,
@@ -91,7 +95,6 @@ module.exports = (env, argv) => {
           minify: TerserPlugin.esbuildMinify,
           extractComments: false,
         }),
-        `...`,
         new CssMinimizerPlugin({
           minimizerOptions: [
             {

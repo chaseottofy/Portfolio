@@ -22,7 +22,6 @@ const handleSelectedContactMethod = (e) => {
 
 const handleFormChange = () => {
   if (nameInput.value && contactValueInput.value && messageInput.value) {
-    console.log('form is valid');
     submitBtn.disabled = false;
     submitBtn.classList.add('btn-allow');
   } else {
@@ -65,7 +64,6 @@ const handleFormSubmit = (e) => {
     body: data,
   })
     .then((res) => res.text())
-    .then((formd) => console.log(formd))
     .then(() => {
       createToast('Message Sent!');
       resetForm();

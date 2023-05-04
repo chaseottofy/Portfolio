@@ -15,6 +15,8 @@ import initDefaults from './utilities/handleDefaults';
 /** ************************************ */
 // testing
 // import createShowWidthElement from './testing/createShowWidth';
+// import initCls from './testing/cls';
+// initCls();
 /** ************************************ */
 const appInit = () => {
   // set default theme / toggle theme

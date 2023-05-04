@@ -17,15 +17,10 @@ const appendSkeleton = (parent) => {
   parent.prepend(tempSkeleton);
 };
 
-const handleImgError = (img) => {
-  console.assert(false, 'Error loading image');
-  img.classList.remove('fade-img--in');
-  img.classList.add('img--error');
-  img.firstChild.remove();
-  img.firstChild.nextSibling.remove();
-};
+const appendPicture = (parent, imgvars) => {
+  appendSkeleton(parent.parentElement);
+  const [large, medium, alt] = imgvars;
 
-const appendPicture = (parent, large, medium, alt) => {
   const sourceLg = document.createElement('source');
   sourceLg.setAttribute('srcset', large);
   sourceLg.setAttribute('media', '(min-width: 640px)');
@@ -34,56 +29,50 @@ const appendPicture = (parent, large, medium, alt) => {
   sourceMd.setAttribute('srcset', medium);
   sourceMd.setAttribute('media', '(max-width: 640px)');
 
-  const imgLg = document.createElement('img');
-  imgLg.setAttribute('src', large);
-  imgLg.setAttribute('alt', alt);
-  imgLg.setAttribute('loading', 'eager');
-  imgLg.setAttribute('style', 'max-width:100vw;');
-
-  parent.append(sourceLg, sourceMd, imgLg);
-  parent.classList.add('fade-img--in');
-  parent.setAttribute('data-hasimg', 'true');
+  const img = new Image();
+  img.src = large;
+  img.alt = alt;
+  img.style = 'max-width:100vw;';
+  parent.append(sourceLg, sourceMd);
 
   const skel = document.querySelector('.img-skeleton');
-  imgLg.addEventListener('load', () => {
-    if (skel) skel.remove();
-  }, { once: true });
-
-  imgLg.addEventListener('error', () => {
-    if (skel) skel.remove();
-    handleImgError(parent);
-  }, { once: true });
+  img.decode().then(() => {
+    parent.prepend(img);
+    if (skel) {
+      skel.remove();
+    }
+  }).catch((encodingError) => {
+    console.assert(false, encodingError);
+    if (skel) {
+      skel.remove();
+    }
+  });
 };
 
-const setCalendarImg = (idx) => {
-  const calImgWrappers = document.querySelectorAll('.project-image__calendar');
-  const calImg = calImgWrappers[idx];
+const configPicture = (parent, attr, classSet, nth, isCal) => {
+  const imgWrapper = document.createElement('picture');
+  classSet.forEach((className) => {
+    imgWrapper.classList.add(className);
+  });
 
-  if (calImg.getAttribute('data-hasimg') === 'true') {
-    return;
-  }
+  imgWrapper.setAttribute('data-hasimg', 'true');
+  imgWrapper.setAttribute(attr, nth);
+  parent.appendChild(imgWrapper);
 
-  appendSkeleton(document.querySelector('.pcb-cal'));
-  // lp:large path, mp:medium path
-  const [lp, mp, alt] = calendarImageVars[idx];
-  const set = imageSets.calendar;
-  appendPicture(calImg, set[lp], set[mp], alt);
-};
+  const [lp, mp, alt] = calendarImageVars[+nth - 1];
+  const set = isCal ? imageSets.calendar : imageSets.react;
 
-const setComponentImg = () => {
-  const compImg = document.querySelector('.comp-cell__image--2');
-  if (compImg.getAttribute('data-comp-hasimg') === 'true') {
-    return;
-  }
-
-  appendSkeleton(document.querySelector('.pcb-comp'));
-  const set = imageSets.react;
-  appendPicture(compImg, set.reactlg, set.reactmd, 'React Components');
+  appendPicture(
+    imgWrapper,
+    isCal
+      ? [set[lp], set[mp], alt]
+      : [set.reactlg, set.reactmd, 'React Components'],
+  );
 };
 
 const contactMenuLazy = () => {
   const contactMenu = document.querySelector('.contact-menu');
-  if (contactMenu.getAttribute('cm-loaded') === 'true') return;
+  if (contactMenu.getAttribute('data-cm-loaded') === 'true') return;
   const bentArrow = document.querySelector('.img-bent-arrowsrc');
   const bentArrowSrc = bentArrow.getAttribute('src');
   const cmHeaderArrows = document.querySelectorAll('.cm-bent--arrow');
@@ -94,8 +83,8 @@ const contactMenuLazy = () => {
     cmHeaderImgs[i].setAttribute('src', cmBodyImgs[i].getAttribute('src'));
     cmHeaderArrows[i].setAttribute('src', bentArrowSrc);
   }
-  contactMenu.setAttribute('cm-loaded', 'true');
+  contactMenu.setAttribute('data-cm-loaded', 'true');
 };
 
 export default contactMenuLazy;
-export { setCalendarImg, setComponentImg };
+export { configPicture };

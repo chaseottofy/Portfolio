@@ -1,4 +1,4 @@
-import { setCalendarImg, setComponentImg } from '../utilities/handleImages';
+import { configPicture } from '../utilities/handleImages';
 
 import getScrollBarWidth from '../utilities/getScrollbarWidth';
 
@@ -37,27 +37,45 @@ const initProjectImages = () => {
 
     if (nth === activeIdx) return;
 
-    activeImg.classList.remove(currentClass);
-    activeImg.classList.add('hide-img');
+    const newActiveClass = `${prefix}-cell__image--${nth}`;
+    const newActive = document.querySelector(`.${newActiveClass}`);
 
-    const newActive = document.querySelector(`.${prefix}-cell__image--${nth}`);
-    newActive.classList.remove('hide-img');
-    newActive.classList.add(currentClass);
+    if (newActive === null) {
+      const isCalendar = prefix === 'cal';
+      const newClass = [
+        newActiveClass,
+        `${prefix}-current`,
+        isCalendar
+          ? 'project-image__calendar'
+          : 'project-image__components',
+      ];
 
-    // import new calendar image if not already loaded
-    if (prefix === 'cal' && nth > 1) {
-      setCalendarImg(nth - 1);
-    }
-    // import new component image if not already loaded
-    if (prefix === 'comp' && nth === 2) {
-      setComponentImg();
+      const newDataAttr = `data-${prefix}-nth`;
+      configPicture(
+        activeImg.parentElement,
+        newDataAttr,
+        newClass,
+        +nth,
+        isCalendar,
+      );
+
+      activeImg.classList.remove(currentClass);
+      activeImg.classList.add('fade-img--out');
+      setTimeout(() => {
+        activeImg.classList.add('hide-img');
+        activeImg.classList.remove('fade-img--out');
+      }, 200);
+    } else {
+      activeImg.classList.remove(currentClass);
+      activeImg.classList.add('hide-img');
+      newActive.classList.remove('hide-img');
+      newActive.classList.add(currentClass);
     }
 
     if (isMulti) {
       const url = tabnames[tabname];
       const compSearch = document.querySelector('.component-search');
       compSearch.setAttribute('href', url);
-
       const compSearchInput = compSearch.lastElementChild;
       compSearchInput.innerText = `${tabname} components`;
     }
@@ -65,7 +83,6 @@ const initProjectImages = () => {
 
   const initTabs = () => {
     const setTabs = (tabs, prefix, tabname, isMulti) => {
-      // set first tab to checked if not already on page load
       tabs.forEach((tab, idx) => {
         tab.addEventListener('click', () => {
           handleTab(idx + 1, prefix, tabname[idx], isMulti);

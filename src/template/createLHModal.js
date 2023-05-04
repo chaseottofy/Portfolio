@@ -46,7 +46,6 @@ const createLHModal = (appname) => {
 
   for (let i = 0; i < 4; i += 1) {
     const [contentTitle, contentDesc] = dataContent[i];
-    console.log(contentTitle, contentDesc);
 
     const sub = document.createElement('div');
     sub.classList.add('lh-sub');

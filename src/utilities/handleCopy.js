@@ -4,7 +4,7 @@ const copyToClipboard = (text) => {
   try {
     return navigator.clipboard.writeText(text);
   } catch (err) {
-    console.error('Failed to copy: ', err);
+    console.assert(false, err);
   }
   return false;
 };
