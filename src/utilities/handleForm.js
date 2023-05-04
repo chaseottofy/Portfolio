@@ -1,5 +1,5 @@
-import createToast from '../factory/createToast';
-import createSpinner from '../factory/createSpinner';
+import createToast from '../template/createToast';
+import createSpinner from '../template/createSpinner';
 
 const form = document.querySelector('.contact-form');
 const nameInput = document.querySelector('.form-name--input');

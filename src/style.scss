@@ -1,5 +1,5 @@
-@import "./styles/root";
 @import "./styles/themes";
+@import "./styles/root";
 @import "./styles/header";
 @import "./styles/gradients/headerGradient";
 @import "./styles/gradients/dividerGradient";
@@ -8,7 +8,7 @@
 @import "./styles/sections/sectionprojects/projectImages";
 @import "./styles/sections/sectionprojects/projectsLayout";
 @import "./styles/sections/sectionprojects/projectCard";
-@import "./styles/sections/sectionprojects/projectContent";
+@import "./styles/sections/sectionprojects/projectFooter";
 @import "./styles/sections/about";
 @import "./styles/sections/skills";
 @import "./styles/sections/contact";
@@ -17,4 +17,5 @@
 @import "./styles/aside/toast";
 @import "./styles/aside/lighthouseModal";
 @import "./styles/aside/spinner";
+@import "./styles/aside/projectOverview";
 @import "./styles/footer";

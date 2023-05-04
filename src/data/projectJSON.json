@@ -1,0 +1,78 @@
+{
+  "calendar": {
+    "title": "Google Calendar 2.0",
+    "description": "Zero dependency clone of Google Calendar written in Vanilla JS.",
+    "github": "https://github.com/chaseottofy/google-calendar-clone-vanilla",
+    "live": "https://chaseottofy.github.io/google-calendar-clone-vanilla/",
+    "features": {
+      "about": [
+        "Recreation of the google calendar app in its entirety (aside from components that utilize google apis).",
+        "Zero third party resources used (aside from webpack & google-svgs)",
+        "All code is written in vanilla javascript, html, and css."
+      ],
+      "performance": [
+        "Tiny 40kb build",
+        "Heap is on average 92% smaller",
+        "92% less css rules",
+        "90% less css selectors",
+        "80% less queries",
+        "50% less dom nodes",
+        "Perfect lighthouse score",
+        "Now Responsive down to 280px!"
+      ],
+      "new features": [
+        "42 new color options",
+        "Three themes available (light, dark, and high contrast",
+        "Transfer all events from one category to another",
+        "Toggle animations on/off",
+        "New sorting animations",
+        "Now has month and year picker",
+        "Datepicker now highlights dates with events",
+        "Datepicker now highlights current week in week view",
+        "Yearpicker now highlights dates with events",
+        "Single page functionality - no evident page reloads"
+      ]
+    }
+  },
+  "markdown": {
+    "title": "Markdown to HTML",
+    "description": "Custom markdown parser/editor with real-time preview. Built with React.",
+    "github": "https://github.com/chaseottofy/react-lite-markdown",
+    "live": "https://chaseottofy.github.io/react-lite-markdown/",
+    "features": {
+      "about": [
+        "What separates this from many other react markdown editors is the avoidance of dangerouslySetInnerHTML and the ability to resize the editor/preview panels. It also incorporates a dynamic numbered line system (similar to notepad++), along with three contrast-accessible themes, local storage, and a file upload/download system.",
+        "Note that this is not traditional markdown. I've kept things limited to purely what I find useful/use most of the time.",
+        "Markdown expressions are rendered/represented as react elements. Aside from avoiding potential security risks, delivering content through an actual react element raises performance significantly. Using setDangerousHtml & then performing HTML sanitation goes against every core principle of react's reconciliation process."
+      ],
+      "performance": [
+        "50kb build",
+        "Perfect lighthouse score",
+        "Responsive down to mobile",
+        "Passes all accessibility tests",
+        "Avoids dangerouslySetInnerHTML"
+      ],
+      "features": [
+        "Editor with real-time preview",
+        "Three themes available (light, dark, and high contrast",
+        "Switch between column and row layouts",
+        "Custom dynamic number line system",
+        "See real-time file, word, character, and line counts",
+        "Local storage integration",
+        "Save and upload files",
+        "Copy to clipboard"
+      ],
+      "commands": [
+        "# Heading 1",
+        "## Heading 2",
+        "### Heading 3",
+        "*text* bold",
+        "[link](url) link",
+        "{url} image",
+        "> blockquote",
+        "- list",
+        "___ horizontal linebreak"
+      ]
+    }
+  }
+}

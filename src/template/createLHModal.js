@@ -1,34 +1,14 @@
-const createLHModal = (idx) => {
-  const apps = {
-    '0': {
-      title: 'Google Calendar 2.0',
-      link: 'https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-google-calendar-clone-vanilla/3ra0nt0y2h?form_factor=desktop',
-      score: ['0.3', '0.3', '0.0', '0.0'],
-    },
-    '1': {
-      title: 'Markdown Lite ',
-      link: 'https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop',
-      score: ['0.4', '0.4', '0.0', '0.0'],
-    },
-    content: [
-      [
-        'First Contentful Paint',
-        'Marks the time at which the first text or image is painted.',
-      ],
-      [
-        'Largest Contentful Paint',
-        'Marks the time at which the largest text or image is painted.',
-      ],
-      [
-        'Total Blocking Time',
-        'Sum of all time periods between FCP and Time to Interactive',
-      ],
-      [
-        'Cumulative Layout Shift',
-        'Measures the movement of visible elements within the viewport.',
-      ],
-    ],
-  };
+import lhdata from '../data/lighthouseJSON.json';
+
+const createLHModal = (appname) => {
+  const base = lhdata[appname];
+
+  const [dataTitle, dataLink, dataScore, dataContent] = [
+    base.title,
+    base.link,
+    base.score,
+    lhdata.content,
+  ];
 
   const wrapper = document.createElement('aside');
   wrapper.classList.add('lighthouse-modal--wrapper');
@@ -36,11 +16,11 @@ const createLHModal = (idx) => {
   modal.classList.add('lighthouse-modal');
 
   const header = document.createElement('div');
-  const title = document.createElement('span');
+  const lhtitle = document.createElement('span');
   const closeBtn = document.createElement('button');
   header.classList.add('lighthouse-modal__header');
-  title.classList.add('lh-appname');
-  title.textContent = `Lighthouse: ${apps[idx].title}`;
+  lhtitle.classList.add('lh-appname');
+  lhtitle.textContent = `Lighthouse: ${dataTitle}`;
   closeBtn.classList.add('close-lh-btn');
   closeBtn.textContent = 'x';
 
@@ -53,19 +33,20 @@ const createLHModal = (idx) => {
   mainscore.classList.add('lh-main__score');
 
   const screenshotLinkBtn = document.createElement('a');
-  screenshotLinkBtn.setAttribute('href', apps[idx].link);
+  screenshotLinkBtn.setAttribute('href', dataLink);
   screenshotLinkBtn.setAttribute('title', 'pagespeed.web.dev');
   screenshotLinkBtn.setAttribute('target', '_blank');
   screenshotLinkBtn.setAttribute('rel', 'noopener noreferrer');
   screenshotLinkBtn.textContent = 'Run an audit';
   screenshotLinkBtn.classList.add('lh-main__score-title');
 
-  header.append(title, closeBtn);
+  header.append(lhtitle, closeBtn);
   lhmain.append(mainscore, screenshotLinkBtn);
   lhbody.appendChild(lhmain);
 
   for (let i = 0; i < 4; i += 1) {
-    const [contentTitle, contentDesc] = apps.content[i];
+    const [contentTitle, contentDesc] = dataContent[i];
+    console.log(contentTitle, contentDesc);
 
     const sub = document.createElement('div');
     sub.classList.add('lh-sub');
@@ -79,7 +60,7 @@ const createLHModal = (idx) => {
 
     const metricDescTitle = document.createElement('span');
     metricDescTitle.classList.add('lh-sub__metrics-title');
-    metricDescTitle.textContent = apps[idx].score[i];
+    metricDescTitle.textContent = dataScore[i];
     metricDesc.appendChild(metricDescTitle);
     const hr = document.createElement('hr');
 

@@ -11,68 +11,65 @@
   position: relative;
 }
 
-.projects-container::before {
+.projects-container .section-title {
+  margin-top: 8rem;
+}
+
+.projects-container .section-title span {
+  margin-bottom: 1rem;
+  transform: scaleY(.9);
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: .9;  
+}
+
+.section-line--decoration {
   position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
+  z-index: 8;
+  top:0;
+  left:0;
+  right: 0;
+  max-width: var(--maxWidthLg);
+  height: 30rem;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
   background-image: url("../../../images/svg/verc.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 }
 
-.theme__light .projects-container::before {
+.theme__light .section-line--decoration {
   filter: invert(1) grayscale(1) contrast(1.2);
-}
-
-/* .projects-container .section-title::before {
-  position: absolute;
-  top: calc(50% + 4px);
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  margin: 0 auto;
-  content: "";
-  pointer-events: none;
-  user-select: none;
-  background: linear-gradient(to left,
-      transparent,
-      var(--grey3) 10%,
-      var(--accent-3) 50%,
-      var(--grey3) 90%,
-      transparent);
-  opacity: 1;
-  z-index: 1;
-} */
-
-.projects-container .section-title span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -.5px;
-  backdrop-filter: blur(8px);
-  transform: scaleY(.93);
-  margin-bottom: 1rem;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, var(--white1), var(--white2));
-  z-index: 2;
 }
 
 .projects-grid {
   position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0 auto;
+  margin-top: 4rem;
   width: 100%;
   max-width: var(--maxWidthLg);
-  padding: 1rem;
+  padding: 0 1rem;
+}
+
+.project-divider {
+  height: 8rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-line {
+  height: 6rem;
+  border-left: 2px dotted var(--accent-2);
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 460px) {

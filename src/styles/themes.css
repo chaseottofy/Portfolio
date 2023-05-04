@@ -3,6 +3,7 @@
   --accent-2: #222;
   --accent-3: #333;
   --accent-4: #444;
+  --accent-5: #555;
 
   --black0: #000;
   --black1: #0e0e0f;
@@ -18,56 +19,22 @@
   --white1: #fff;
   --white2: #cccbcb;
 
-  --offsetblack1: rgba(0, 0, 0, .8);
-  --offsetblack2: rgba(0, 0, 0, .6);
-  --offsetblack3: rgba(0, 0, 0, .5);
-  --offsetblack4: rgba(0, 0, 0, .4);
-
-  --offsetgrey1: rgba(23, 23, 23, 0.2);
-  --offsetgrey2: rgba(23, 23, 23, 0.4);
-  --offsetgrey3: rgba(23, 23, 23, 0.6);
-  --offsetgrey4: rgba(23, 23, 23, 0.8);
+  --offsetblack1: rgba(0, 0, 0, .6);
+  --offsetblack2: rgba(23, 23, 23, 0.6);
 
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
-  --bs-offset-1:
-    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
 
   /* SPECIFIC */
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(0, 0, 0, .6);
-  --headerBgBefore: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.9) 40%,
-      rgba(0, 0, 0, 0) 100%);
 
+  --link: #7F95F5;
   --dividerBg: rgba(64, 76, 143, 0.1);
-
-  --scroller-bg: #444;
-  --scroller-bg--hover: #555;
-
-  --btn-text: #fff;
-  --btn-bg: #000;
-  --theme-btn--checked: rgba(0, 0, 0, .4);
-  --float-btn: #111;
-
-  --thumbnail-bg: rgba(0, 0, 0, .6);
-  --thumbnail-bg--hover: rgba(0, 0, 0, .2);
-
-  --lh-green: #16cf6b;
-  --lh-color: #fff;
-
-  --tab-bg: #111;
-  --tab-bottom: #0f0f0f;
-  --tab-bg-hover: #050505;
-  --tab-bg-active: #050505;
-
-  --tab-active-color: #377dfe;
 }
 
 .theme__light {
@@ -75,6 +42,7 @@
   --accent-2: #f2f2f2;
   --accent-3: #e5e5e5;
   --accent-4: #d4d4d4;
+  --accent-5: #d4d4d4;
 
   --black0: #fff;
   --black1: #fafafa;
@@ -90,54 +58,20 @@
   --white1: #171717;
   --white2: #4c4c4c;
 
-  --offsetblack1: rgba(255, 255, 255, .9);
-  --offsetblack2: rgba(255, 255, 255, .8);
-  --offsetblack3: rgba(255, 255, 255, .8);
-  --offsetblack4: rgba(255, 255, 255, .8);
-
-  --offsetgrey1: rgba(255, 255, 255, .7);
-  --offsetgrey2: rgba(255, 255, 255, .5);
-  --offsetgrey3: rgba(255, 255, 255, .5);
-  --offsetgrey4: rgba(255, 255, 255, .5);
+  --offsetblack1: rgba(255, 255, 255, .8);
+  --offsetblack2: rgba(255, 255, 255, .5);
 
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
-  --bs-offset-1:
-    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-    
   /* SPECIFIC */
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(255, 255, 255, .9);
-  --headerBgBefore: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.9) 40%,
-      rgba(255, 255, 255, 0) 100%);
 
-  --scroller-bg: #a8a8a8;
-  --scroller-bg--hover: #ccc;
-
+  --link: #153DEF;
   --dividerBg: transparent;
-
-  --thumbnail-bg: rgba(255, 255, 255, .5);
-  --thumbnail-bg--hover: rgba(255, 255, 255, .2);
-
-  --btn-text: #fff;
-  --btn-bg: #000;
-  --theme-btn--checked: rgba(255, 255, 255, .9);
-  --float-btn: #111;
-
-  --lh-green: #16cf6b;
-  --lh-color: #fff;
-
-  --tab-bg: #fafafa;
-  --tab-bottom: #333;
-  --tab-bg-hover: #fefefe;
-  --tab-bg-active: #fff;
-
-  --tab-active-color: #273c97;
 }

@@ -1,8 +1,7 @@
-import createLHModal from '../factory/createLHModal';
+import createLHModal from '../template/createLHModal';
 
 const body = document.querySelector('.body');
 
-// Lighthouse modal
 const handleLHModal = () => {
   // buttons to trigger lighthouse modal
   const LHBtns = document.querySelectorAll('.lh-btn');
@@ -33,7 +32,8 @@ const handleLHModal = () => {
   const openLH = (e) => {
     if (document.querySelector('.lighthouse-modal--wrapper')) return;
     e.target.classList.add('project-cell--lhbtn-active');
-    body.appendChild(createLHModal(e.target.getAttribute('data-app-idx')));
+    const proj = e.target.getAttribute('data-lh-proj');
+    body.appendChild(createLHModal(proj));
     body.onclick = closeLH;
     body.onkeydown = closeLHOnEsc;
     body.style.overflow = 'hidden';

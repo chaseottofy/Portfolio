@@ -8,9 +8,9 @@ import initTheme from './utilities/handleTheme';
 import initScroll from './utilities/handleScroll';
 import initHover from './utilities/handleHover';
 import initCopyElements from './utilities/handleCopy';
-import initProjects from './utilities/handleProjects';
+import initProjects from './components/projects';
 import initContactForm from './utilities/handleForm';
-import initModals from './utilities/handleModals';
+import initModals from './components/modals';
 import initDefaults from './utilities/handleDefaults';
 /** ************************************ */
 const appInit = () => {

@@ -7,7 +7,8 @@ import cyearmddark from '../images/projcal/dark/cyearmddark.webp';
 import clistlgdark from '../images/projcal/dark/clistlgdark.webp';
 import clistmddark from '../images/projcal/dark/clistmddark.webp';
 
-import rjslg from '../images/component/rjslg.webp';
+import reactlg from '../images/component/reactlg.webp';
+import reactmd from '../images/component/reactmd.webp';
 
 const calendarImages = {
   'cweeklgdark': cweeklgdark,
@@ -20,9 +21,11 @@ const calendarImages = {
   'clistmddark': clistmddark,
 };
 
+const reactImages = { reactlg, reactmd };
+
 const imageSets = {
   calendar: calendarImages,
-  rjs: rjslg,
+  react: reactImages,
 };
 
 export default imageSets;

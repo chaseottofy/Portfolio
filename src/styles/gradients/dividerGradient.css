@@ -1,5 +1,5 @@
 /* ============================
-DIVIDER
+  DIVIDER
 ============================*/
 .section-divider {
   backdrop-filter: brightness(1.6);
@@ -12,6 +12,9 @@ DIVIDER
 }
 
 .section-gradient-left {
+  position: absolute;
+  top:0;
+  left:0;
   filter: blur(48px);
   border-radius: 25%;
   margin-top: -6rem;
@@ -29,7 +32,6 @@ DIVIDER
     var(--grey1),
     transparent
   );
-  position: relative;
   z-index: 2;
   margin: 0 auto;
 }

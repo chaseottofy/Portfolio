@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--offsetblack3);
+  background: var(--offsetblack1);
   font-size: .825rem;
   color: var(--white1);
 }
@@ -97,16 +97,15 @@
 }
 
 .contact-method-group span {
+  /* background-color: green; */
   width: 5rem;
   height: 1.75rem;
   position: relative;
+
 }
 
-/* .contact-method-group span:last-child {
-  margin-left: .5rem;
-} */
-
 .contact-method-group span label {
+
   height: 100%;
   width: 100%;
   text-align: center;
@@ -116,13 +115,12 @@
   background: transparent;
   font-weight: 500;
   color: var(--white1);
-  opacity: .7;
   transition: all .2s ease-in-out;
   border-radius: 3px;
 }
 
 .contact-method-group span label:hover {
-  opacity: 1;
+  opacity: .7;
 }
 
 .contact-method-group span input {
@@ -142,6 +140,7 @@
 .contact-method-group span input:checked + label {
   background: var(--black2);
   color: var(--white1);
+
   opacity: 1;
 }
 

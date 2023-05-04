@@ -1,0 +1,131 @@
+.project-overview--wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .6);
+}
+
+.project-overview--modal {
+  position: relative;
+  z-index: 2;
+  height: 90%;
+  max-height: 800px;
+  width: 90%;
+  max-width: 900px;
+  background: transparent;
+  border-radius: 1rem;
+  border: 1px solid var(--black2);
+  background: var(--black1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hide-po {
+  display:none;
+}
+
+.po-header {
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--black4);
+  border-bottom: 1px solid var(--black2);
+}
+
+.po-header--title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.po-header--close {
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.po-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.po-body hr {
+  height: 2px;
+  width: 100%;
+  margin: 1rem 0;
+  border-top: 1px solid var(--black2);
+}
+
+.po-title {
+  text-transform: uppercase;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.po-horiz {
+  height: 3rem;
+  width: 100%;
+}
+
+.proj-overview--links {
+  display: flex;
+  margin:  1rem 0;
+}
+
+.proj-overview--links a {
+  width: fit-content;
+  margin-right: .5rem;
+  padding: 0 1rem;
+  height: 2rem;
+  background: var(--black4);
+  border: 1px solid var(--accent-2);
+  border-radius: 5px;
+  line-height: 2rem;
+}
+
+.proj-overview--links a:hover {
+  filter: brightness(1.2);
+}
+
+.po-list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  /* list-style-type: circle;  */
+  list-style: circle;
+}
+
+.po-list--item {
+  position:relative;
+  display: flex;
+  align-items: center;
+  margin: .5rem 0;
+  font-size: .875rem;
+  list-style: circle;
+  padding-left: 1rem;
+}
+.po-list--item::before {
+  content: "- ";
+  position: absolute;
+  top:0;
+  left:0;
+}

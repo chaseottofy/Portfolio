@@ -1,4 +1,4 @@
-import createSpinner from '../factory/createSpinner';
+import createSpinner from '../template/createSpinner';
 
 import imageSets from './getImage';
 
@@ -73,14 +73,24 @@ const setComponentImg = () => {
   appendSkeleton(document.querySelector('.pcb-comp'));
   const skelcomp = document.querySelector('.img-skeleton');
 
-  const imgsrc = imageSets.rjs;
+  const set = imageSets.react;
+  const large = set.reactlg;
+  const medium = set.reactmd;
+
   const sourceLg = document.createElement('source');
-  sourceLg.setAttribute('srcset', imgsrc);
+  sourceLg.setAttribute('srcset', large);
+  sourceLg.setAttribute('media', '(min-width: 640px)');
+
+  const sourceMd = document.createElement('source');
+  sourceMd.setAttribute('srcset', medium);
+  sourceMd.setAttribute('media', '(max-width: 640px)');
+
   const imgLg = document.createElement('img');
-  imgLg.setAttribute('src', imgsrc);
+  imgLg.setAttribute('src', large);
   imgLg.setAttribute('alt', 'React Components');
   imgLg.setAttribute('style', 'max-width:100vw;');
-  compImg.append(sourceLg, imgLg);
+
+  compImg.append(sourceLg, sourceMd, imgLg);
   compImg.setAttribute('data-comp-hasimg', 'true');
   compImg.classList.add('fade-img--in');
 

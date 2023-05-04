@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -11,7 +11,6 @@ module.exports = (env, argv) => {
     mode: IS_PRODUCTION ? 'production' : 'development',
     devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
 
-    target: 'web',
     output: {
       path: path.resolve(__dirname, 'dist'),
       clean: true,
@@ -25,27 +24,22 @@ module.exports = (env, argv) => {
 
     plugins: [
       new Dotenv(),
-
       new HtmlBundlerPlugin({
         entry: {
           index: 'src/index.html',
         },
-
         js: {
           filename: '[name].[contenthash:8].js',
         },
-
         css: {
           filename: '[name].[contenthash:8].css',
         },
-
         preload: [
           {
             test: /\.woff2?$/,
             attributes: { as: 'font', crossorigin: true },
           },
         ],
-
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -63,8 +57,10 @@ module.exports = (env, argv) => {
           use: ['source-map-loader'],
         },
         {
-          test: /\.(css|sass|scss)$/,
+          test: /\.(css|scss|sass)$/,
+          // use: ['css-loader', 'sass-loader'],
           use: ['css-loader', 'postcss-loader', 'sass-loader'],
+          // use: ['css-loader', 'postcss-loader'],
         },
         {
           test: /\.(woff|woff2)$/i,
@@ -103,24 +99,34 @@ module.exports = (env, argv) => {
       ],
     },
 
+    // watchOptions: {
+    //   aggregateTimeout: 600,
+    //   ignored: /node_modules/,
+    // },
+
     performance: {
       hints: false,
     },
+
+    stats: 'minimal',
+    // target: 'web',
   };
 
   if (!IS_PRODUCTION) {
     config.devServer = {
       compress: true,
-      port: 8000,
+      port: 3000,
       static: {
-        directory: path.join(__dirname, 'dist'),
+        directory: path.join(__dirname, './dist'),
       },
-      // watchFiles: {
-      //   paths: ['src/**/*.*'],
-      //   options: {
-      //     usePolling: true,
-      //   },
-      // },
+
+      watchFiles: {
+        paths: ['src/**/*.*'],
+
+        options: {
+          usePolling: true,
+        },
+      },
     };
   }
 

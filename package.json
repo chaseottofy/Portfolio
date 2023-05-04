@@ -9,6 +9,7 @@
     "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development",
     "deploy": "npm run build && gh-pages -d dist",
+    "preview": "npm run build && http-server dist --port 4321 -o",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -50,6 +51,7 @@
     "gh-pages": "^5.0.0",
     "html-bundler-webpack-plugin": "^1.18.0",
     "html-minifier-terser": "^7.2.0",
+    "http-server": "^14.1.1",
     "postcss": "^8.4.23",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^8.3.2",
@@ -59,6 +61,7 @@
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2",
-    "webpack-dev-server": "^4.13.3"
+    "webpack-dev-server": "^4.13.3",
+    "webpack-merge": "^5.8.0"
   }
 }

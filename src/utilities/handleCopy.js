@@ -1,4 +1,4 @@
-import createToast from '../factory/createToast';
+import createToast from '../template/createToast';
 
 const copyToClipboard = (text) => {
   try {

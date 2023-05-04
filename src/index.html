@@ -23,7 +23,7 @@
   <header class="header">
     <div class="header-wrapper">
       <button class="header-logo" data-href="#header-top" aria-label="button" title="Scroll To Top">
-        <img src="./images/svg/logo.svg" alt="logo" style="height:1.5rem;width:1.5rem;">
+        <img src="./images/svg/logo.svg" alt="logo" style="max-height:1.5rem;max-width:1.5rem;">
       </button>
 
       <div class="nav-wrapper">
@@ -49,6 +49,8 @@
       </div>
     </div>
   </header>
+
+  <aside class="show-screen--width" style="position:fixed;top:0;right:0;pointer-events: none;z-index:9999;font-size:.75rem;width:100%;text-align:right;"></aside>
 
 
   <!-- CONTACT MENU POPUP -->
@@ -80,7 +82,7 @@
             <div class="badge-top">
               <div class="badge-top--profile">
                 <img class="badge-mug cm-header--img" src="data:," alt="">
-                <span class="badge-prof" data-acc="3.6k subscribers" data-bef="550,000 views">@otto-fy</span>
+                <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
               </div>
             </div>
             <div class="badge-footer">
@@ -154,6 +156,10 @@
   </aside>
 
 
+  <!-- PROJECT OVERVIEW MODAL -->
+  <aside class="project-overview--wrapper hide-po"></aside>
+
+
   <!-- SECTION: INTRO -->
   <section class="intro-container">
     <div class="intro-header">
@@ -202,8 +208,11 @@
   <!-- MAIN (projects > skills > about > contact) -->
   <main class="main">
     <aside class="section-divider"></aside>
+    <aside class="section-gradient-left"></aside>
     <article class="projects-container" id="projects-top">
-      <aside class="section-gradient-left"></aside>
+      <aside class="section-line--decoration">
+      </aside>
+
       <div class="section-title">
         <span>Highlighted Work</span>
         <h2>Projects</h2>
@@ -212,9 +221,12 @@
       <div class="projects-grid">
 
         <!-- CALENDAR PROJECT -->
+
+
+
+
         <div class="project-cell project-calendar" data-proj-title="Google Calendar 2.0">
           <div class="project-cell__content">
-
             <div class="project-content__header">
               <div class="pc__header-decoration">
                 <span style="background:#fb6257;"></span>
@@ -252,8 +264,27 @@
             </div>
 
             <div class="project-content__subheader">
+
+
+              <!-- <div class="project-switch">
+                <span>
+                  <input id="calendar-switch-screenshots" type="radio" value="dark" name="radio-calendar" class="project-switch--input" checked>
+                  <label aria-label="" for="calendar-switch-screenshots" title="" class="project-switch--label">
+                    <img class="img-icon" src="./images/svg/cardImage.svg" alt="">
+                  </label>
+                </span>
+      
+                <span>
+                  <input id="calendar-switch-overview" type="radio" value="dark" name="radio-calendar" class="project-switch--input">
+                  <label aria-label="" for="calendar-switch-overview" title="" class="project-switch--label">
+                    <img class="img-icon" src="./images/svg/cardImage.svg" alt="">
+                  </label>
+                </span>
+              </div> -->
+
+
               <div class="pc__subheader--search">
-                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="icon">chaseottofy.github.io/google-calendar-clone-vanilla/</a>
+                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="day" class="cal-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="icon">Google Calendar 2.0</a>
                 <span class="search-arrowright">
                   <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right">
                 </span>
@@ -264,13 +295,11 @@
                   <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                 </a>
                 <div class="vert"></div>
-                <button class="lh-btn" data-app-idx="0" aria-label="button">
+                <button class="lh-btn" data-lh-proj="calendar" aria-label="button">
                   <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
                 </button>
               </div>
             </div>
-
-
 
 
             <!-- CALENDAR BODY -->
@@ -322,7 +351,9 @@
             <div class="project-content__about"></div>
           </div>
 
+          <!-- CALENDAR FOOTER -->
           <div class="project-cell__footer">
+            <h4 class="pf-title">FRAMEWORK / TOOLING</h4>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -331,15 +362,35 @@
                 <div class="pf-stack">
                   <img class="webpack-icon" src="./images/svg/webpack.svg" alt="webpack-icon">
                 </div>
+                <div class="pf-stack--names">
+                  <span>Vanilla JS + Webpack</span>
+                </div>
               </div>
-              <h3 class="pf-appname">Google Calendar 2.0</h3>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="pf-hr">
+              <hr>
+            </div>
+
+            <!-- <h4 class="pf-subtitle">
+              OVERVIEW
+            </h4> -->
+            <div class="project-footer__content">
+              <button class="open-overview--btn" data-proj="calendar" aria-label="button">Open Full Overview</button>
+            </div>
           </div>
         </div>
 
 
+        <div class="project-divider">
+          <span class="vertical-line"></span>
+        </div>
+
+
+
         <!-- MARKDOWN PROJECT -->
+        <!-- <div class="project-cell--title">
+          <h3>Markdown to HTML</h3>
+        </div> -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
           <div class="project-cell__content">
 
@@ -353,8 +404,7 @@
 
               <div class="project-content__subheader subheader-sm">
                 <div class="pc__subheader--search">
-                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="lock-icon">
-                    https://chaseottofy.github.io/react-lite-markdown/</a>
+                  <a href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="one" class="mark-search"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt="lock-icon">Markdown to HTML</a>
                   <span class="search-arrowright">
                     <img class="img-icon" src="./images/svg/arrowRight.svg" alt="arrow-right-icon">
                   </span>
@@ -365,19 +415,37 @@
                     <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                   </a>
                   <div class="vert"></div>
-                  <button class="lh-btn" data-app-idx="1" aria-label="button">
+                  <button class="lh-btn" data-lh-proj="markdown" aria-label="button">
                     <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse-icon">
                   </button>
                 </div>
               </div>
             </div>
 
+            <!-- MARKDOWN IMAGES -->
             <div class="project-content__body pcb-mark">
-              <img class="project-image__markdown mark-cell__image--1 mark-current" data-thumb-title="mdlite" src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;">
+              <picture
+                class="project-image__markdown mark-cell__image--1 mark-current"
+              >
+
+              <source 
+                srcset="./images/mdlite/markdowndark1.webp"
+                media="(min-width: 640px)"
+              >
+
+              <source
+                srcset="./images/mdlite/markdowndark2.webp"
+                media="(max-width: 640px)"
+              >
+
+              <img src="./images/mdlite/markdowndark1.webp" alt="Mdlite" style="max-width:100vw;">
+              </picture>
             </div>
           </div>
 
+          <!-- MARKDOWN FOOTER -->
           <div class="project-cell__footer">
+            <h4 class="pf-title">FRAMEWORK / TOOLING</h4>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -386,15 +454,32 @@
                 <div class="pf-stack">
                   <img class="vite-icon" src="./images/svg/vite.svg" alt="vite-icon">
                 </div>
+                <div class="pf-stack--names">
+                  <span>React + Vite</span>
+                </div>
               </div>
-              <h3 class="pf-appname">Markdown Editor + Live Preview</h3>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="pf-hr">
+              <hr>
+            </div>
+            <div class="project-footer__content">
+              <button class="open-overview--btn" data-proj="markdown" aria-label="button">Open Full Overview</button>
+            </div>
           </div>
         </div>
 
 
-        <!-- COMPONENT GALLERY -->
+
+        <div class="project-divider">
+          <span class="vertical-line"></span>
+        </div>
+
+
+
+        <!-- PROJECT COMPONENTS -->
+        <!-- <div class="project-cell--title">
+          <h3>Vanilla Js + React Components</h3>
+        </div> -->
         <div class="project-cell project-components" data-proj-title="Components Gallery">
           <div class="project-cell__content">
 
@@ -422,8 +507,8 @@
               <div class="pc__subheader--search">
                 <a href="https://codepen.io/chaseottofy/pens/public" title="Go to Live Site" target="_blank" rel="noreferrer" data-search-after="" class="component-search">
                   <img class="img-icon search-lock" src="./images/svg/lock.svg" alt="">
-                  <span class="component-search--text">
-                    https://codepen.io/chaseottofy/pens/public
+                  <span class="comp-search--text">
+                    Vanilla Components
                   </span>
                 </a>
 
@@ -447,8 +532,25 @@
             <!-- COMPONENTS BODY -->
             <div class="project-content__body pcb-comp">
               <!-- Vanilla Js component pic -->
-              <img class="project-image__components comp-cell__image--1 comp-current" data-thumb-title="Vanilla Js Components" src="./images/component/jslg2.webp" data-comp-nth="1" alt="Vanilla JS Components" style="max-width:100vw;">
-              
+              <picture
+                class="project-image__components comp-cell__image--1 comp-current"
+                data-comp-nth="1"
+                data-comp-hasimg="true"
+              >
+              <source 
+                srcset="./images/component/vanillalg.webp"
+                media="(min-width: 640px)"
+              >
+              <source 
+                srcset="./images/component/vanillamd.webp"
+                media="(max-width: 640px)"
+              >
+              <img 
+                src="./images/component/vanillalg.webp" 
+                alt="Vanilla JS Components" 
+                style="max-width:100vw;">
+              </picture>
+
               <!-- React Js component pic -->
               <picture
                 class="project-image__components comp-cell__image--2 hide-img"
@@ -458,7 +560,9 @@
             </div>
           </div>
 
+          <!-- COMPONENTS FOOTER -->
           <div class="project-cell__footer">
+            <h4 class="pf-title">FRAMEWORKS</h4>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -467,12 +571,28 @@
                 <div class="pf-stack">
                   <img class="react-icon" src="./images/svg/react.svg" alt="">
                 </div>
+                <div class="pf-stack--names">
+                  <span>Vanilla JS + React</span>
+                </div>
               </div>
-              <h3 class="pf-appname">Custom Components : React & Vanilla</h3>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="pf-hr">
+              <hr>
+            </div>
+            <!-- <div class="project-footer__content">
+              <button class="open-overview--btn" data-proj="components" aria-label="button">Open Full Overview</button>
+            </div> -->
           </div>
         </div>
+
+
+
+        <div class="project-divider">
+          <span class="vertical-line"></span>
+        </div>
+
+
+
       </div>
     </article>
 
@@ -551,7 +671,7 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt="">
-                    <span class="badge-prof" data-acc="3.6k subscribers" data-bef="550,000 views">@otto-fy</span>
+                    <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
                   </div>
                 </div>
 
@@ -679,7 +799,8 @@
     <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">Github</a>
   </footer>
 
-  <!-- Toast popup (dynamic) -->
+
+  <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
 </body>
 

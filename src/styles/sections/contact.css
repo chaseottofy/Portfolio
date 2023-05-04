@@ -45,7 +45,7 @@
 
 .contact-menu--active {
   z-index: 9999;
-  background: var(--offsetgrey3);
+  background: var(--offsetblack2);
   opacity: 1;
   height: 500px;
   border: 1px solid var(--black2);
@@ -85,12 +85,12 @@
   content: "";
   background-image: url("../../images/svg/grid.svg");
   background-blend-mode: screen;
-  pointer-events: none;
-  user-select: none;
-  opacity: .4;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  pointer-events: none;
+  user-select: none;
+  opacity: .4;
 }
 
 .theme__light .contact-menu__body::before {
@@ -424,7 +424,7 @@
   align-items: center;
   min-height: 4rem;
   border-top: 1px solid var(--black2);
-  background: var(--offsetblack2);
+  background: var(--offsetblack1);
   height: 100%;
   width: 100%;
   padding: 2px var(--gap1);
@@ -530,5 +530,11 @@
 
   .cm-left__footer-location a {
     height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cm-right--top__cell-badge {
+    padding: .5rem;
   }
 }

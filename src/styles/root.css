@@ -148,7 +148,7 @@ ul {
 }
 
 a {
-  color: #637ef3;
+  color: var(--link);
   outline: 0;
   text-decoration: none;
 }
@@ -221,6 +221,11 @@ button {
   appearance: button;
 }
 
+button:focus-visible {
+  filter: brightness(1.2);
+  box-shadow: 0 0 0 2px var(--blue3);
+}
+
 /* ::-MOZ
 ============================*/
 ::-moz-focus-inner {
@@ -285,43 +290,29 @@ a[disabled] {
   filter: invert(0);
 }
 
-/* .img--error {
-  height: 100%;
-  width: 100% !important;
+/* GENERAL UTILITIES
+=====================================*/
+.body-prevent-scroll {
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+.scrollbar-measure {
+  overflow: scroll;
+  visibility: hidden;
   position: absolute;
-  top: 0;
-  left: 0;
-  content: "Image failed to load :(";
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: 700;
-  align-items: center;
-  color: var(--white1);
-  background: radial-gradient(circle,
-      var(--black0),
-      var(--black2),
-      var(--blue1),
-      var(--blue2),
-      var(--blue3));
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 8s ease-in-out infinite;
-} */
+}
 
 /* TRANSITION UTILITIES
 =====================================*/
-.disable-transitions * {
+/* .disable-transitions * {
   -webkit-transition: none !important;
   transition: none !important;
   transition-duration: none !important;
   transition-property: none !important;
   transition-timing-function: none !important;
   animation: none !important;
-}
+} */
 
 .skeleton {
   background-image: linear-gradient(270deg,
