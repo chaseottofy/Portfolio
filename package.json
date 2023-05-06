@@ -10,6 +10,7 @@
     "build": "webpack --mode=production",
     "deploy": "npm run build && gh-pages -d dist",
     "preview": "npm run build && http-server dist --port 4321 -o",
+    "analyze": "cross-env NODE_WEBPACK_ANALYZE=true npm run build",
     "clean": "rimraf -rf dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -33,14 +34,21 @@
     "javascript"
   ],
   "author": "Chase Ottofy",
-  "license": "ISC",
+  "license": "ISC" ,
   "bugs": {
     "url": "https://github.com/chaseottofy/portfolio/issues"
   },
   "homepage": "https://github.com/chaseottofy/portfolio#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.5",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/runtime": "^7.21.5",
     "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
     "compression-webpack-plugin": "^10.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "cssnano": "^6.0.1",
@@ -48,7 +56,7 @@
     "dotenv-webpack": "^8.0.1",
     "esbuild": "^0.17.18",
     "esbuild-loader": "^3.0.1",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
     "gh-pages": "^5.0.0",
     "html-bundler-webpack-plugin": "^1.18.0",
@@ -58,25 +66,17 @@
     "postcss-csso": "^6.0.1",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^8.3.2",
+    "responsive-loader": "^3.1.2",
+    "rimraf": "^5.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
+    "sharp": "^0.32.1",
     "source-map-loader": "^4.0.1",
     "terser-webpack-plugin": "^5.3.7",
-    "webpack": "^5.81.0",
+    "thread-loader": "^4.0.1",
+    "webpack": "^5.82.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.21.8",
-    "@babel/plugin-transform-modules-commonjs": "^7.21.5",
-    "@babel/plugin-transform-runtime": "^7.21.4",
-    "@babel/preset-env": "^7.21.5",
-    "@babel/runtime": "^7.21.5",
-    "babel-loader": "^9.1.2",
-    "responsive-loader": "^3.1.2",
-    "rimraf": "^5.0.0",
-    "sharp": "^0.32.1",
-    "thread-loader": "^4.0.1"
   }
 }

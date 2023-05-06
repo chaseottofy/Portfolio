@@ -6,13 +6,12 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
 const csso = require('postcss-csso');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+// const babelLoaderConfig = [];
+// const babelDevLoader = babelLoader.concat([])
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
-
-  // const babelLoaderConfig = [];
-  // const babelDevLoader = babelLoader.concat([])
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
@@ -63,13 +62,17 @@ module.exports = (env, argv) => {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: {
-            // {loader: 'thread-loader'},
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
+          use: [
+            {
+              loader: 'thread-loader',
             },
-          },
+            {
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+              },
+            },
+          ],
         },
         {
           test: /\.(css|scss|sass)$/,
@@ -89,8 +92,8 @@ module.exports = (env, argv) => {
                 postcssOptions: {
                   plugins: [
                     postcssPresetEnv(),
-                    // https://goalsmashers.github.io/css-minification-benchmark/
                     csso({
+                      // https://goalsmashers.github.io/css-minification-benchmark/
                       debug: true,
                       forceMediaMerge: true,
                     }),
@@ -170,6 +173,12 @@ module.exports = (env, argv) => {
         },
       },
     };
+  }
+
+  if (process.env.NODE_WEBPACK_ANALYZE) {
+    config.plugins.push(new BundleAnalyzerPlugin({
+      generateStatsFile: true,
+    }));
   }
 
   return config;
