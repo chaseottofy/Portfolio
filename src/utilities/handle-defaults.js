@@ -1,11 +1,9 @@
-const getMyTime = () => new Date().toLocaleString('en-US', {
-  timeZone: 'America/Denver',
-  hour: 'numeric',
-  minute: 'numeric',
-  hour12: true,
-});
+import setDateTime from './set-datetime';
+import createAscii from '../data/create-ascii';
 
 const initDefaults = () => {
-  document.querySelector('.cm-left--time').textContent = `MST: ${getMyTime()}`;
+  setDateTime();
+  createAscii();
 };
+
 export default initDefaults;

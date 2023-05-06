@@ -1,4 +1,4 @@
-import lhdata from '../data/lighthouseJSON.json';
+import lhdata from '../data/min/lighthouseJSONMin.json';
 
 const lhWrapper = document.querySelector('.lighthouse-modal--wrapper');
 
@@ -22,7 +22,12 @@ const createLHModal = (appname) => {
   const closeBtn = document.createElement('button');
   lhheader.classList.add('lighthouse-modal__header');
   lhtitle.classList.add('lh-appname');
-  lhtitle.textContent = `Lighthouse: ${dataTitle}`;
+
+  const tempspan = document.createElement('span');
+  tempspan.textContent = 'Audit: ';
+  const brhead = document.createElement('br');
+  lhtitle.append(tempspan, brhead, dataTitle);
+
   closeBtn.classList.add('close-lh-btn');
   closeBtn.textContent = 'x';
 

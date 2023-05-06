@@ -32,13 +32,18 @@
   --z-modal: 1000;
   --z-toast: 1100;
 
-  --blue1: #637ef3;
-  --blue2: #435fdc;
+  /* --blue1: #637ef3; */
+  --blue1: #0761d1;
+  --blue2: #0070f3;
+  --blue3: #3291ff;
+  /* --blue2: #435fdc;
   --blue3: #273c97;
+  --blue3: #132da2; */
 
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
+  --maxWidthMd: 1160px;
 
   --tbg1: background .2s ease-in-out;
   --tt1: transform .2s ease-in-out;
@@ -46,7 +51,12 @@
   --ttop1: top .2s ease-in-out;
   --topac1: opacity .2s ease-in-out;
   --ttoast1: all .35s cubic-bezier(.25, .75, .6, .98);
-  
+
+  --bez-1: cubic-bezier(.4, 0, .2, 1);
+  --bez-2: cubic-bezier(.33, 1, .68, 1);
+  --bez-3: cubic-bezier(.25, .75, .6, .98);
+
+  /* uncomment to disable all transitions */
   /* --tbg1: none;
   --tt1: none;
   --tc1: none;
@@ -138,7 +148,7 @@ input {
   width: 100%;
   padding: 0.5rem;
   border-radius: 5px;
-  font-size: .75rem;
+  font-size: .875rem;
   color: var(--white1);
 }
 
@@ -149,7 +159,7 @@ textarea {
   padding: 0.5rem;
   border: 1px solid var(--black2);
   border-radius: 5px;
-  font-size: .75rem;
+  font-size: .875rem;
   color: var(--white1);
 }
 
@@ -193,7 +203,7 @@ a img {
 input::placeholder {
   color: var(--white1);
   opacity: .7;
-  font-size: .75rem;
+  font-size: .875rem;
 }
 
 a:focus-visible {
@@ -353,9 +363,43 @@ a[disabled] {
   opacity: 0;
 }
 
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1.5rem);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(15%);
+  }
+}
+
+@keyframes slight-opacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .8;
+  }
+}
+
 @keyframes ease-modal-in {
   0% {
     opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
   }
 
   100% {
@@ -434,7 +478,28 @@ a[disabled] {
 }
 
 @media screen and (max-width: 490px) {
+  *,
+  *::after,
+  *::before {
+    -webkit-transition: none !important;
+    transition: none !important;
+    transition-duration: none !important;
+    transition-property: none !important;
+    transition-timing-function: none !important;
+    animation: none !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
   html {
     font-size: 14px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
   }
 }

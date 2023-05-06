@@ -154,10 +154,6 @@
                 <a class="sub-proj--gh" href="https://github.com/chaseottofy/google-calendar-clone-vanilla" title="Go to Repo" target="_blank" rel="noreferrer">
                   <img class="img-icon" src="./images/svg/githuboutline.svg" alt="github-icon">
                 </a>
-                <div class="vert"></div>
-                <button class="lh-btn" data-lh-proj="calendar" aria-label="button">
-                  <img class="img-icon" src="./images/svg/lighthouse.svg" alt="lighthouse">
-                </button>
               </div>
             </div>
 
@@ -165,8 +161,8 @@
             <div class="project-content__body pcb-cal">
               <picture class="project-image__calendar cal-cell__image--1 cal-current" data-cal-nth="1" data-hasimg="true">
                 <source srcset="./images/projcal/dark/cdaylgdark.webp" media="(min-width: 640px)">
-                <!-- <source srcset="./images/projcal/dark/cdaymddark.webp" media="(max-width: 640px)"> -->
-                <img src="./images/projcal/dark/cdaylgdark.webp" alt="Day View" style="max-width:calc(100vw - 2rem);">
+                <source srcset="./images/projcal/dark/cdaymddark.webp" media="(max-width: 640px)">
+                <img src="./images/projcal/dark/cdaylgdark.webp" alt="Day View" style="max-width:calc(100vw - 4px);">
               </picture>
             </div>
             <div class="project-content__about"></div>
@@ -174,7 +170,6 @@
 
           <!-- CALENDAR FOOTER -->
           <div class="project-cell__footer">
-            <h3 class="pf-title">VANILLA JS / WEBPACK</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -183,19 +178,22 @@
                 <div class="pf-stack">
                   <img class="webpack-icon" src="./images/svg/webpack.svg" alt>
                 </div>
+                <h3 class="pf-title">VANILLA JS<br>+ WEBPACK</h3>
               </div>
             </div>
             <div class="project-footer__content">
-              <button class="open-overview--btn" data-proj="calendar" aria-label="button">Open Full Overview</button>
+              <h4 class="project-footer__title">Google Calendar 2.0</h4>
+              <div class="project-footer-btns">
+                <button class="open-lh--btn" data-lh-proj="calendar" aria-label="button" data-text-lg="View ">Performance Audit</button>
+                <button class="open-overview--btn" data-proj="calendar" aria-label="button" data-text-lg="Open ">Full Overview</button>
+              </div>
             </div>
           </div>
         </div>
 
-
         <div class="project-divider">
           <span class="vertical-line"></span>
         </div>
-
 
         <!-- MARKDOWN PROJECT -->
         <div class="project-cell project-markdown" data-proj-title="Markdown Lite">
@@ -208,10 +206,9 @@
                 <span style="background:#27ca40;"></span>
               </div>
 
-
-              <div class="project-content__subheader subheader-sm">
+              <div class="project-content__subheader">
                 <div class="pc__subheader--search">
-                  <a class="mark-search" data-search-after="one" href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Markdown to HTML</a>
+                  <a class="mark-search" data-search-after="one" href="https://chaseottofy.github.io/react-lite-markdown/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>MD LITE</a>
                   <span class="search-arrowright">
                     <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                   </span>
@@ -221,10 +218,6 @@
                   <a class="sub-proj--gh" href="https://github.com/chaseottofy/react-lite-markdown" title="Go to Repo" target="_blank" rel="noreferrer">
                     <img class="img-icon" src="./images/svg/githuboutline.svg" alt>
                   </a>
-                  <div class="vert"></div>
-                  <button class="lh-btn" data-lh-proj="markdown" aria-label="button">
-                    <img class="img-icon" src="./images/svg/lighthouse.svg" alt>
-                  </button>
                 </div>
               </div>
             </div>
@@ -241,7 +234,6 @@
 
           <!-- MARKDOWN FOOTER -->
           <div class="project-cell__footer">
-            <h3 class="pf-title">REACT / VITE</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -250,21 +242,22 @@
                 <div class="pf-stack">
                   <img class="vite-icon" src="./images/svg/vite.svg" alt>
                 </div>
+                <h3 class="pf-title">REACT<br>+ VITE</h3>
               </div>
             </div>
             <div class="project-footer__content">
-              <button class="open-overview--btn" data-proj="markdown" aria-label="button">Open Full Overview</button>
+              <h4 class="project-footer__title">Markdown Lite</h4>
+              <div class="project-footer-btns">
+                <button class="open-lh--btn" data-lh-proj="markdown" aria-label="button" data-text-lg="View ">Performance Audit</button>
+                <button class="open-overview--btn" data-proj="markdown" aria-label="button" data-text-lg="Open ">Full Overview</button>
+              </div>
             </div>
           </div>
         </div>
 
-
-
         <div class="project-divider">
           <span class="vertical-line"></span>
         </div>
-
-
 
         <!-- PROJECT COMPONENTS -->
         <div class="project-cell project-components" data-proj-title="Components Gallery">
@@ -294,9 +287,7 @@
               <div class="pc__subheader--search">
                 <a class="component-search" data-search-after href="https://codepen.io/chaseottofy/pens/public" title="Go to Live Site" target="_blank" rel="noreferrer">
                   <img class="img-icon search-lock" src="./images/svg/lock.svg" alt>
-                  <span class="comp-search--text">
-                    Vanilla Components
-                  </span>
+                  <span class="comp-search--text">Vanilla Components</span>
                 </a>
 
                 <span class="search-arrowright">
@@ -328,7 +319,6 @@
 
           <!-- COMPONENTS FOOTER -->
           <div class="project-cell__footer">
-            <h3 class="pf-title">VANILLA JS / REACT</h3>
             <div class="project-footer__titles">
               <div class="pf-stacks">
                 <div class="pf-stack">
@@ -337,6 +327,7 @@
                 <div class="pf-stack">
                   <img class="react-icon" src="./images/svg/react.svg" alt>
                 </div>
+                <h3 class="pf-title">VANILLA JS / REACT</h3>
               </div>
             </div>
             <div class="pf-hr"></div>
@@ -369,7 +360,6 @@
         </div>
       </div>
     </article>
-
 
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
@@ -544,8 +534,30 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span>@Chase Ottofy&nbsp; – &nbsp;</span>
-    <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">Github</a>
+    <!-- <span>@Chase Ottofy&nbsp; – &nbsp;</span> -->
+    <div class="footer-links">
+
+      <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
+      <a href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
+    </div>
+    <br>
+    <br>
+    <pre class="ascii-wrapper">
+
+    </pre>
+    <!-- <pre class="ascii-art">
+      ___                             ___     
+     /  /\         ___       ___     /  /\    
+    /  /::\       /  /\     /  /\   /  /::\   
+   /  /:/\:\     /  /:/    /  /:/  /  /:/\:\  
+  /  /:/  \:\   /  /:/    /  /:/  /  /:/  \:\ 
+ /__/:/ \__\:\ /  /::\   /  /::\ /__/:/ \__\:\
+ \  \:\ /  /://__/:/\:\ /__/:/\:\\  \:\ /  /:/
+  \  \:\  /:/ \__\/  \:\\__\/  \:\\  \:\  /:/ 
+   \  \:\/:/       \  \:\    \  \:\\  \:\/:/  
+    \  \::/         \__\/     \__\/ \  \::/   
+     \__\/                           \__\/    
+    </pre> -->
   </footer>
 
   <!-- PROJECT OVERVIEW MODAL -->
@@ -554,7 +566,6 @@
   <!-- LIGHTHOUSE MODAL -->
   <aside class="lighthouse-modal--wrapper hide-lh-modal"></aside>
 
-  
   <!-- CONTACT MENU POPUP -->
   <aside class="contact-menu contact-menu__header" data-cm-loaded="false">
     <!-- RIGHT -->
@@ -630,7 +641,6 @@
           </a>
         </div>
       </div>
-
 
       <div class="cm-right--bottom cm-right--bottom__body">
         <div class="cm-right--bottom__cell">

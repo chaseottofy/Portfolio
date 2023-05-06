@@ -2,51 +2,23 @@
 ============================*/
 .projects-container {
   width: 100%;
-  background: linear-gradient(to bottom,
+  /* background: linear-gradient(to bottom,
       var(--black0) 0%,
       var(--accent-1) 20%,
       var(--black4) 40%,
       var(--black0) 80%,
-      transparent);
+      transparent); */
+  background: linear-gradient(to bottom,
+  var(--black0) 20%,
+  var(--black4) 40%,
+  var(--black0) 80%,
+  transparent);
   position: relative;
 }
 
-/* .projects-container .section-title {
-  padding-top: 8rem;
-} */
-
 .projects-container .section-title {
   padding-top: 4rem;
-
 }
-
-/* .projects-container .section-title span {
-  margin-bottom: .25rem;
-  transform: scaleY(.9);
-  font-size: .875rem;
-  font-weight: 500;
-  opacity: .9;  
-} */
-
-/* .section-line--decoration {
-  position: absolute;
-  z-index: 8;
-  top:0;
-  left:0;
-  right: 0;
-  max-width: var(--maxWidthLg);
-  height: 30rem;
-  width: 100%;
-  margin: 0 auto;
-  background-image: url("../../../images/svg/verc.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
-
-.theme__light .section-line--decoration {
-  filter: invert(1) grayscale(1) contrast(1.2);
-} */
 
 .projects-grid {
   position: relative;
@@ -56,12 +28,12 @@
   height: 100%;
   margin: 0 auto;
   width: 100%;
-  max-width: var(--maxWidthLg);
+  max-width: var(--maxWidthMd);
   padding: 0 1rem;
 }
 
 .project-divider {
-  height: 8rem;
+  height: 6rem;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -71,12 +43,12 @@
 }
 
 .vertical-line {
-  height: 6rem;
+  height: 4rem;
   border-left: 2px dotted var(--accent-2);
   margin: 0 auto;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 490px) {
   .projects-grid {
     padding: .5rem;
   }

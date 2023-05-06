@@ -10,5 +10,9 @@ dist/
 # Unused
 drafts/
 
+# Personal
+_docs/
+
+# IDE
 vscode
 .vscode/

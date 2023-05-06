@@ -2,3 +2,5 @@ node_modules
 /src/drafts/
 /dist/
 /src/testing/
+/src/_docs/
+/src/data/

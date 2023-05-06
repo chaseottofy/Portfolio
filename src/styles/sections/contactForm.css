@@ -7,7 +7,7 @@
       var(--grey3)),
     linear-gradient(200deg,
       var(--blue3) 0,
-      var(--blue2) 20%,
+      var(--blue1) 20%,
       rgba(121, 40, 202, 0) 80%);
   background-origin: border-box;
   background-clip: content-box, border-box;
@@ -62,7 +62,7 @@
   justify-content: center;
   align-items: center;
   background: var(--offsetblack1);
-  font-size: .825rem;
+  font-size: .875rem;
   color: var(--white1);
 }
 
@@ -73,7 +73,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: .75rem;
+  font-size: .875rem;
   color: var(--white2);
   font-weight: 500;
 }
@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  padding: 3px;
+  padding: 4px;
   border: 1px solid var(--black2);
   border-radius: 5px;
   width: 10rem;
@@ -160,7 +160,7 @@
   color: var(--white2);
   padding: 0.625rem 2.25rem;
   border-radius: 5px;
-  font-size: .75rem;
+  font-size: .875rem;
   cursor: not-allowed;
 }
 

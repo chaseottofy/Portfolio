@@ -18,7 +18,7 @@ const configContactMenu = () => {
   };
 
   const openContactMenu = () => {
-    if (window.innerWidth <= 768) return;
+    if (window.innerWidth <= 640) return;
     // load contact menu images
     contactMenuLazy();
 

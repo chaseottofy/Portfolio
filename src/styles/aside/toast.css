@@ -8,7 +8,7 @@
   width: 100%;
   user-select: none;
   pointer-events: none;
-  z-index: var(--z-toast);
+  z-index: 9999;
 }
 
 .toast {

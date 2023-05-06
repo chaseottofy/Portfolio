@@ -59,6 +59,7 @@
 
 .img-skeleton {
   position: absolute;
+  background: blue;
   top: 0;
   left: 0;
   width: 100%;

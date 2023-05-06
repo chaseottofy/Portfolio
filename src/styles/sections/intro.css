@@ -1,25 +1,9 @@
 /* SECTION: INTRO
 ============================*/
 .intro-container {
-  /* min-height: calc(100vh - 4rem); */
-  /* min-height: 100vh; */
-  /* height: 100%; */
   height: calc(100vh + 2px);
   position: relative;
 }
-
-/* .intro-container::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../../../images/svg/verc.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-} */
 
 .intro-header {
   height: 100%;
@@ -82,7 +66,7 @@
   width: 100%;
   height: 100%;
   height: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .intro-header__subtitle {
@@ -97,7 +81,7 @@
 }
 
 .intro-header__subtitle--text {
-  line-height: 1;
+  line-height: 1.125;
   letter-spacing: -.1rem;
   font-size: 3rem;
   color: var(--header-text-before);
@@ -107,4 +91,10 @@
   height: 1.5rem;
   width: 1.5rem;
   margin: 0 .875rem;
+}
+
+@media screen and (max-width: 640px) {
+  .intro-header__subtitle--text {
+    font-size: 2.5rem;
+  }
 }

@@ -1,3 +1,9 @@
+/**
+ * Cumulative Layout Shift (CLS)
+ * @description log any layout shifts to the console 
+ * **not on initial page load**
+ * **not for production**
+ */
 const initCls = () => {
   let cls = 0;
   new PerformanceObserver((entryList) => {

@@ -10,10 +10,11 @@
   align-items: center;
   overflow: hidden;
   background: rgba(0, 0, 0, .6);
+  animation: ease-modal-in 100ms both;
 }
 
 .hide-lh-modal {
-  display:none;
+  display: none;
 }
 
 .lighthouse-modal {
@@ -33,37 +34,45 @@
 /* HEADER
 ============================*/
 .lighthouse-modal__header {
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
-  padding: 0 .75rem;
-  width: 100%;
+  padding: 1rem;
+  background: var(--black4);
   border-bottom: 1px solid var(--black2);
 }
 
 .lh-appname {
-  color: var(--white1);
-  opacity: .9;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: linear-gradient(90deg,
+      var(--white1) 0%,
+      var(--accent-7) 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 200%;
+  transform: scaleY(.88);
   font-weight: 500;
-  height: 56px;
-  line-height: 56px;
 }
 
 .close-lh-btn {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 2rem;
-  width: 2rem;
+  align-items: center;
+  height: 2.25rem;
+  width: 2.25rem;
   padding: 0;
   margin: 0;
   border-radius: 5px;
   cursor: pointer;
-  text-align: center;
+  font-size: 1.125rem;
   background: var(--black1);
-  border: 1px solid var(--black2);
+  border: 1px solid var(--black3);
+  transform: scaleX(115%);
 }
 
 .close-lh-btn:hover {
@@ -150,19 +159,22 @@
 }
 
 .lh-main__score-title {
-  font-size: .875rem;
-  color: var(--white1);
+  background: var(--black4);
+  border: 1px solid var(--black3);
+  height: 2.5rem;
   border-radius: 5px;
-  letter-spacing: -.5px;
   font-weight: 500;
-  margin: 1.5rem 0 .75rem 0;
-  cursor: pointer;
-  background: var(--black1);
-  border: 1px solid var(--black2);
-  padding: .5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  background: linear-gradient(to right bottom,
+      var(--black4),
+      var(--black0),
+      var(--accent-1));
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+  font-size: .875rem;
+  overflow: hidden;
+  line-height: 2.5rem;
+  color: var(--white0);
 }
 
 .lh-main__score-title:hover {
@@ -189,6 +201,7 @@
   border: none;
   width: 100%;
   height: 210px;
+  /* max-height: 210px; */
   text-align: left;
 }
 
@@ -201,7 +214,7 @@
 }
 
 .lh-sub-title {
-  font-size: .875rem;
+  font-size: 1rem;
   color: var(--white1);
   font-weight: 500;
   width: 100%;
@@ -217,9 +230,10 @@
 }
 
 .lh-sub__metrics-title {
+  margin-top: .75rem;
   font-size: 1.375rem;
   font-weight: 700;
-  color: #16cf6b;
+  color: #1aad5f;
 }
 
 .lh-sub__metrics-sm {
@@ -238,7 +252,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .75rem;
+  font-size: .875rem;
   color: var(--white2);
 }
 
@@ -251,7 +265,7 @@
 }
 
 .lh-sub-subtitle {
-  font-size: 0.8125rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--white1);
   opacity: .8;
@@ -287,9 +301,17 @@
     transform: translateY(-45%) rotate(135deg);
   }
 
+  .lh-sub:nth-child(-n + 3) {
+    border-bottom: 1px solid var(--black3);
+  }
+
+  .lh-sub:nth-child(even) {
+    border-bottom: 1px solid var(--black3);
+  }
+
   .lh-sub {
     max-width: 100%;
     height: 160px;
-    border-bottom: 1px solid var(--black2);
+    border-bottom: 1px solid var(--black3);
   }
 }

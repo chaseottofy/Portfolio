@@ -43,7 +43,7 @@
 }
 
 .contact-menu--active {
-  z-index: 9999;
+  z-index: 9998;
   background: var(--offsetblack2);
   opacity: 1;
   height: 500px;
@@ -55,7 +55,7 @@
   -moz-user-select: auto;
   -ms-user-select: auto;
   min-height: 400px;
-  animation: ease-modal-in .2s both;
+  animation: ease-modal-in 100ms both;
 }
 
 .contact-menu__body {
@@ -133,7 +133,7 @@
   content: "";
   background-image: url('../../images/design/top1.avif');
   background-blend-mode: darken;
-  opacity: .3;
+  opacity: .4;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -143,6 +143,7 @@
 
 .theme__light .cm-left::after {
   filter: invert(1);
+  opacity: .3;
 }
 
 .cm-left__header,
@@ -158,10 +159,10 @@
 .cm-left__header {
   flex-direction: column;
   padding: .5rem;
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 700;
   line-height: 1.5rem;
-  letter-spacing: -.5px;
+  transform: scaleY(.9);
   color: var(--white0);
 }
 
@@ -179,9 +180,11 @@
   display: flex;
   align-items: center;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.125rem;
+  transform: scaleY(.9);
+  text-transform: uppercase;
+  color: var(--white0);
   font-weight: 500;
-  letter-spacing: -1px;
   height: 100%;
 }
 
@@ -189,8 +192,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-size: .875rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   font-weight: 500;
   color: var(--white1);
   padding: .25rem;
@@ -217,7 +219,7 @@
   grid-template-columns: 1fr 1fr;
   height: 100%;
   width: 100%;
-  background: var(--black3);
+  background: var(--black4);
   overflow: hidden;
 }
 
@@ -271,7 +273,7 @@
 .badge-top--profile {
   display: flex;
   max-height: 3rem;
-  font-size: .75rem;
+  font-size: .875rem;
 }
 
 .badge-mug {
@@ -285,17 +287,17 @@
   text-align: end;
   margin-left: auto;
   color: transparent;
-  transition: var(--tc1);
 }
 
 .badge-prof {
   position: relative;
+  color: transparent;
 }
 
 .badge-prof::after {
   position: absolute;
   content: attr(data-acc);
-  font-size: .7rem;
+  font-size: .825rem;
   top: 0;
   right: 0;
   width: 100%;
@@ -308,39 +310,37 @@
 .badge-prof::before {
   position: absolute;
   content: attr(data-bef);
-  font-size: .625rem;
-  top: 1rem;
+  font-size: .75rem;
+  top: 1.125rem;
   right: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
   color: var(--white1);
+  opacity: 1;
 }
 
 /* img-icon cm-body--img */
 .cm-right--top__cell:hover {
-  background: var(--black3);
-  transition: var(--tbg1);
+  animation: slight-opacity .2s both;
 }
 
-.cm-right--top__cell:hover .badge-top--profile span {
+.cm-right--top__cell:hover .badge-prof {
   color: var(--white1);
+  transition: var(--tc1);
 }
 
 .cm-right--top__cell:hover .badge-prof::after {
-  top: 1.5rem;
+  transform: translateY(1.5rem);
+  animation: slide-down .2s both;
 }
 
 .cm-right--top__cell:hover .badge-prof::before {
-  top: 2.5rem;
-  transition: var(--ttop1);
+  transform: translateY(1.5rem);
+  animation: slide-down .2s both;
 }
 
-.cm-right--top__cell:hover .badge-footer span:last-child {
-  transform: translateX(10%);
-  transition: var(--tt1);
-}
-
+/* BADGE FOOTER */
 .badge-footer {
   display: flex;
   align-items: center;
@@ -358,6 +358,15 @@
   filter: invert(1);
   margin-right: .5rem;
   margin-left: .25rem;
+}
+
+.badge-footer span {
+  padding: .25rem .5rem;
+  vertical-align: middle;
+}
+
+.cm-right--top__cell:hover .badge-footer span:last-child {
+  animation: slide-right .2s both;
 }
 
 /* ---------------- */
@@ -388,11 +397,11 @@
   align-items: center;
   min-height: 4rem;
   border-top: 1px solid var(--black2);
-  background: var(--offsetblack1);
+  background: var(--black4);
   height: 100%;
   width: 100%;
   padding: 2px var(--gap1);
-  font-size: .825rem;
+  font-size: .875rem;
   font-weight: 500;
 }
 
@@ -446,9 +455,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact-menu__header {
-    display: none;
-  }
 
   .contact-menu__body {
     grid-template-columns: 1fr;
@@ -489,7 +495,34 @@
 }
 
 @media screen and (max-width: 640px) {
+  .contact-menu__header {
+    display: none;
+  }
+
+  .contact-container {
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+
   .cm-right--top__cell-badge {
     padding: .5rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .cm-right--top__cell {
+    opacity: 1;
+  }
+
+  .badge-prof {
+    color: var(--white1) !important;
+  }
+
+  .badge-prof::after {
+    transform: translateY(1.5rem);
+  }
+
+  .badge-prof::before {
+    transform: translateY(1.5rem);
   }
 }

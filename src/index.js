@@ -1,46 +1,61 @@
-// https://www.wiktorwisniewski.dev/blog/preloading-assets-with-webpack5
-// https://github.com/webdiscus/html-bundler-webpack-plugin
-// https://vercel.com/features/edge-functions
-// https://www.bestfolios.com/home
 /** ************************************ */
 /** ************************************ */
 import initTheme from './utilities/handle-theme';
 import initScroll from './utilities/handle-scroll';
 import initHover from './utilities/handle-hover';
 import initCopyElements from './utilities/handle-copy';
-import initProjects from './components/projects';
+import initProjectCards from './components/projects';
+import initLHModal from './components/lh-modals';
 import initContactForm from './utilities/handle-form';
-import initModals from './components/modals';
 import initDefaults from './utilities/handle-defaults';
 /** ************************************ */
-// testing
-// import createShowWidthElement from './testing/show-width';
-// import initCls from './testing/cls';
-// initCls();
+// DEVELOPMENT ONLY
+import createShowWidthElement from './testing/show-width';
+// import initCls from './testing/cls'; // initCls();
 /** ************************************ */
+
 const appInit = () => {
-  // set default theme / toggle theme
+  createShowWidthElement(); // DEVELOPMENT ONLY
+  /**
+   * @function initTheme
+   * get system theme
+   * config localStorage theme
+   * allow theme change ... etc */
   initTheme();
 
-  // scroll to nav elements / top of page
+  /**
+   * @function initScroll
+   * scroll to top (logo)
+   * scroll to section (nav links)
+   * toggle filter for header if user has scrolled past 100vh;
+   */
   initScroll();
 
-  // hovers : contact menu (navbar) / tbd..
+  /**
+   * @function initHover Popup contact menu on hover */
   initHover();
 
-  // configure any copy to clipboard elements
+  /**
+   * @function initCopyElements config copy to clipboard functionality */
   initCopyElements();
 
-  // click through project tabs to serve new images
-  initProjects();
+  /**
+   * @function initProjectCards - config the following:
+   * config project overview modal "view full overview btn"
+   * allow click through tabs of each project
+   * dynamically import relevant images for each tab */
+  initProjectCards();
 
-  // set up form POST & error-handling
+  /**
+   * @function initLHModal config lighthouse modal "performance audit btn" */
+  initLHModal();
+
+  /**
+   * @function initContactForm setup contact form POST */
   initContactForm();
 
-  // configure open/close for all modals
-  initModals();
-
-  // set default time / date / etc
+  /**
+   * @function initDefaults set default time / date / etc */
   initDefaults();
 };
 

@@ -1,18 +1,17 @@
 import { configPicture } from '../utilities/handle-images';
 
-import getScrollBarWidth from '../utilities/get-scrollbarwidth';
-
-import projectJSON from '../data/projectJSONMin.json';
+import createProjectModal from '../template/create-projmodal';
 
 // initProjectImages
 const calendarTabs = document.querySelectorAll('.proj-cal--tab');
 const componentTabs = document.querySelectorAll('.proj-comp--tab');
 const overviewBtns = document.querySelectorAll('.open-overview--btn');
-// initProjectOverviews
-const poWrapper = document.querySelector('.project-overview--wrapper');
-const body = document.querySelector('body');
-const header = document.querySelector('.header');
 
+/**
+ * initProjectImages
+ * @description sets up project image tabs for dynamic image imports and switching
+ * @scopes : get-image.js -- handle-images.js
+ */
 const initProjectImages = () => {
   const tabnames = {
     calendar: ['day', 'week', 'month', 'year', 'list'],
@@ -101,117 +100,17 @@ const initProjectImages = () => {
   initTabs();
 };
 
-const getHR = () => {
-  const hr = document.createElement('hr');
-  return hr;
-};
-
-const closeProjectOverview = (e) => {
-  if (e.target.classList.contains('po-header--close')
-    || e.target.classList.contains('project-overview--wrapper')) {
-    poWrapper.classList.add('hide-po');
-    poWrapper.removeEventListener('click', closeProjectOverview);
-    poWrapper.firstElementChild.remove();
-    body.classList.remove('body-prevent-scroll');
-    body.removeAttribute('style');
-    header.removeAttribute('style');
-  }
-};
-
-const createProjectOverview = (data) => {
-  const {
-    title, github, live, features,
-  } = data;
-
-  const poModal = document.createElement('div');
-  poModal.classList.add('project-overview--modal');
-
-  const poModalHeader = document.createElement('div');
-  poModalHeader.classList.add('po-header');
-
-  const poModalTitle = document.createElement('h2');
-  poModalTitle.classList.add('po-header--title');
-  poModalTitle.textContent = title;
-
-  const closePoBtn = document.createElement('button');
-  closePoBtn.textContent = 'x';
-  closePoBtn.classList.add('po-header--close');
-  closePoBtn.setAttribute('title', 'Close Project Overview');
-  closePoBtn.setAttribute('aria-label', 'button');
-  closePoBtn.addEventListener('click', closeProjectOverview);
-
-  poModalHeader.append(poModalTitle, closePoBtn);
-
-  const poModalBody = document.createElement('div');
-  poModalBody.classList.add('po-body');
-
-  const linkTitle = document.createElement('div');
-  linkTitle.classList.add('po-title');
-  linkTitle.textContent = 'Links';
-
-  const linkEl = document.createElement('div');
-  linkEl.classList.add('proj-overview--links');
-
-  const githubEl = document.createElement('a');
-  githubEl.classList.add('proj-overview--link');
-  githubEl.setAttribute('href', github);
-  githubEl.setAttribute('target', '_blank');
-  githubEl.setAttribute('rel', 'noopener noreferrer');
-  githubEl.textContent = 'Github';
-
-  const liveEl = document.createElement('a');
-  liveEl.classList.add('proj-overview--link');
-  liveEl.setAttribute('href', live);
-  liveEl.setAttribute('target', '_blank');
-  liveEl.setAttribute('rel', 'noopener noreferrer');
-  liveEl.textContent = 'Live';
-  linkEl.append(githubEl, liveEl);
-
-  poModalBody.append(linkEl, getHR());
-
-  // refactor the following to use a for of loop
-
-  for (const [key, val] of Object.entries(features)) {
-    const featureTitle = document.createElement('div');
-    featureTitle.textContent = key;
-    featureTitle.classList.add('po-title');
-
-    const featureList = document.createElement('ul');
-    featureList.classList.add('po-list');
-
-    for (const feature of val) {
-      const featureEl = document.createElement('li');
-      featureEl.classList.add('po-list--item');
-      featureEl.textContent = feature;
-      featureList.append(featureEl);
-    }
-
-    poModalBody.append(featureTitle, featureList, getHR());
-  }
-
-  poModal.append(poModalHeader, poModalBody);
-  poWrapper.append(poModal);
-};
-
-const setProjectOverview = (e) => {
-  poWrapper.classList.remove('hide-po');
-  body.classList.add('body-prevent-scroll');
-  body.style.paddingRight = `${getScrollBarWidth()}px`;
-  header.style.paddingRight = `${getScrollBarWidth()}px`;
-  createProjectOverview(projectJSON[e.target.getAttribute('data-proj')]);
-  poWrapper.addEventListener('click', closeProjectOverview);
-  e.target.blur();
-};
-
 const initProjectOverviews = () => {
   for (const btn of overviewBtns) {
-    btn.addEventListener('click', setProjectOverview);
+    // create project overview modal when
+    // "View Full Overview is clicked" on Project card
+    btn.addEventListener('click', createProjectModal);
   }
 };
 
-const initProjects = () => {
+const initProjectCards = () => {
   initProjectImages();
   initProjectOverviews();
 };
 
-export default initProjects;
+export default initProjectCards;

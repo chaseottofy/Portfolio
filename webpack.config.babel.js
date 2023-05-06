@@ -94,7 +94,6 @@ module.exports = (env, argv) => {
                   plugins: [
                     postcssPresetEnv(),
                     csso({
-                      // https://goalsmashers.github.io/css-minification-benchmark/
                       debug: true,
                       forceMediaMerge: true,
                     }),
