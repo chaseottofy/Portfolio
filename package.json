@@ -6,10 +6,11 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development",
+    "build": "webpack --mode=production",
     "deploy": "npm run build && gh-pages -d dist",
     "preview": "npm run build && http-server dist --port 4321 -o",
+    "clean": "rimraf -rf dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -54,6 +55,7 @@
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
     "postcss": "^8.4.23",
+    "postcss-csso": "^6.0.1",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^8.3.2",
     "sass": "^1.62.1",
@@ -61,7 +63,20 @@
     "source-map-loader": "^4.0.1",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.81.0",
+    "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.5",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/runtime": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "responsive-loader": "^3.1.2",
+    "rimraf": "^5.0.0",
+    "sharp": "^0.32.1",
+    "thread-loader": "^4.0.1"
   }
 }

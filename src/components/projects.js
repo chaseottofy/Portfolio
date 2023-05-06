@@ -121,7 +121,7 @@ const initProjectOverviews = () => {
 
   const createProjectOverview = (data) => {
     const {
-      title, description, github, live, features,
+      title, github, live, features,
     } = data;
 
     const poModal = document.createElement('div');
@@ -146,10 +146,6 @@ const initProjectOverviews = () => {
     const poModalBody = document.createElement('div');
     poModalBody.classList.add('po-body');
 
-    const descEl = document.createElement('p');
-    descEl.classList.add('proj-overview--desc');
-    descEl.textContent = description;
-
     const linkTitle = document.createElement('div');
     linkTitle.classList.add('po-title');
     linkTitle.textContent = 'Links';
@@ -172,7 +168,7 @@ const initProjectOverviews = () => {
     liveEl.textContent = 'Live';
     linkEl.append(githubEl, liveEl);
 
-    poModalBody.append(descEl, linkEl, getHR());
+    poModalBody.append(linkEl, getHR());
 
     Object.entries(features).forEach(([key, val]) => {
       const featureTitle = document.createElement('div');

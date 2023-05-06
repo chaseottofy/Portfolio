@@ -3,9 +3,16 @@ const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
+const autoprefixer = require('autoprefixer');
+const csso = require('postcss-csso');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
+
+  // const babelLoaderConfig = [];
+  // const babelDevLoader = babelLoader.concat([])
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
@@ -37,7 +44,10 @@ module.exports = (env, argv) => {
         preload: [
           {
             test: /\.woff2?$/,
-            attributes: { as: 'font', crossorigin: true },
+            attributes: {
+              as: 'font',
+              crossorigin: true,
+            },
           },
         ],
         minify: {
@@ -52,16 +62,49 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.js$/,
-          enforce: 'pre',
           exclude: /node_modules/,
-          use: ['source-map-loader'],
+          use: {
+            // {loader: 'thread-loader'},
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
         },
         {
           test: /\.(css|scss|sass)$/,
           use: [
-            { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options:
+              {
+                sourceMap: true,
+                postcssOptions: {
+                  plugins: [
+                    postcssPresetEnv(),
+                    // https://goalsmashers.github.io/css-minification-benchmark/
+                    csso({
+                      debug: true,
+                      forceMediaMerge: true,
+                    }),
+                    autoprefixer(),
+                  ],
+                },
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
           ],
         },
         {
@@ -105,7 +148,12 @@ module.exports = (env, argv) => {
     performance: {
       hints: false,
     },
-    stats: 'minimal',
+    stats: {
+      children: true,
+      modules: false,
+      entrypoints: false,
+      colors: true,
+    },
   };
 
   if (!IS_PRODUCTION) {

@@ -15,7 +15,7 @@
     "quote-props": "off",
     "no-console": "off",
     "no-irregular-whitespace": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     "no-multiple-empty-lines": "error"
   }
 }
