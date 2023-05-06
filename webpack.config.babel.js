@@ -6,7 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
 const csso = require('postcss-csso');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
 // const babelLoaderConfig = [];
 // const babelDevLoader = babelLoader.concat([])
@@ -18,7 +18,8 @@ module.exports = (env, argv) => {
     devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
 
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      // path: path.resolve(__dirname, 'dist'),
+      path: path.join(__dirname, '/dist'),
       clean: true,
     },
 

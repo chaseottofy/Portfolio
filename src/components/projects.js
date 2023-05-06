@@ -1,12 +1,13 @@
-import { configPicture } from '../utilities/handleImages';
+import { configPicture } from '../utilities/handle-images';
 
-import getScrollBarWidth from '../utilities/getScrollbarWidth';
+import getScrollBarWidth from '../utilities/get-scrollbarwidth';
 
 import projectJSON from '../data/projectJSONMin.json';
 
 // initProjectImages
 const calendarTabs = document.querySelectorAll('.proj-cal--tab');
 const componentTabs = document.querySelectorAll('.proj-comp--tab');
+const overviewBtns = document.querySelectorAll('.open-overview--btn');
 // initProjectOverviews
 const poWrapper = document.querySelector('.project-overview--wrapper');
 const body = document.querySelector('body');
@@ -37,24 +38,23 @@ const initProjectImages = () => {
 
     if (nth === activeIdx) return;
 
-    const newActiveClass = `${prefix}-cell__image--${nth}`;
-    const newActive = document.querySelector(`.${newActiveClass}`);
+    const nowActiveClass = `${prefix}-cell__image--${nth}`;
+    const nowActive = document.querySelector(`.${nowActiveClass}`);
 
-    if (newActive === null) {
+    if (nowActive === null) {
       const isCalendar = prefix === 'cal';
-      const newClass = [
-        newActiveClass,
+      const tempClass = [
+        nowActiveClass,
         `${prefix}-current`,
         isCalendar
           ? 'project-image__calendar'
           : 'project-image__components',
       ];
 
-      const newDataAttr = `data-${prefix}-nth`;
       configPicture(
         activeImg.parentElement,
-        newDataAttr,
-        newClass,
+        `data-${prefix}-nth`,
+        tempClass,
         +nth,
         isCalendar,
       );
@@ -68,8 +68,8 @@ const initProjectImages = () => {
     } else {
       activeImg.classList.remove(currentClass);
       activeImg.classList.add('hide-img');
-      newActive.classList.remove('hide-img');
-      newActive.classList.add(currentClass);
+      nowActive.classList.remove('hide-img');
+      nowActive.classList.add(currentClass);
     }
 
     if (isMulti) {
@@ -77,19 +77,19 @@ const initProjectImages = () => {
       const compSearch = document.querySelector('.component-search');
       compSearch.setAttribute('href', url);
       const compSearchInput = compSearch.lastElementChild;
-      compSearchInput.innerText = `${tabname} components`;
+      compSearchInput.textContent = `${tabname} components`;
+    }
+  };
+
+  const setTabs = (tabs, prefix, tabname, isMulti) => {
+    for (const [index, tab] of tabs.entries()) {
+      tab.addEventListener('click', () => {
+        handleTab(index + 1, prefix, tabname[index], isMulti);
+      });
     }
   };
 
   const initTabs = () => {
-    const setTabs = (tabs, prefix, tabname, isMulti) => {
-      tabs.forEach((tab, idx) => {
-        tab.addEventListener('click', () => {
-          handleTab(idx + 1, prefix, tabname[idx], isMulti);
-        });
-      });
-    };
-
     // set Calendar Tabs
     calendarTabs[0].previousElementSibling.checked = true;
     setTabs(calendarTabs, 'cal', tabnames.calendar, false);
@@ -101,111 +101,112 @@ const initProjectImages = () => {
   initTabs();
 };
 
-const initProjectOverviews = () => {
-  const getHR = () => {
-    const hr = document.createElement('hr');
-    return hr;
-  };
+const getHR = () => {
+  const hr = document.createElement('hr');
+  return hr;
+};
 
-  const closeProjectOverview = (e) => {
-    if (e.target.classList.contains('po-header--close')
-      || e.target.classList.contains('project-overview--wrapper')) {
-      poWrapper.classList.add('hide-po');
-      poWrapper.onclick = null;
-      poWrapper.innerText = '';
-      body.classList.remove('body-prevent-scroll');
-      body.removeAttribute('style');
-      header.removeAttribute('style');
+const closeProjectOverview = (e) => {
+  if (e.target.classList.contains('po-header--close')
+    || e.target.classList.contains('project-overview--wrapper')) {
+    poWrapper.classList.add('hide-po');
+    poWrapper.removeEventListener('click', closeProjectOverview);
+    poWrapper.firstElementChild.remove();
+    body.classList.remove('body-prevent-scroll');
+    body.removeAttribute('style');
+    header.removeAttribute('style');
+  }
+};
+
+const createProjectOverview = (data) => {
+  const {
+    title, github, live, features,
+  } = data;
+
+  const poModal = document.createElement('div');
+  poModal.classList.add('project-overview--modal');
+
+  const poModalHeader = document.createElement('div');
+  poModalHeader.classList.add('po-header');
+
+  const poModalTitle = document.createElement('h2');
+  poModalTitle.classList.add('po-header--title');
+  poModalTitle.textContent = title;
+
+  const closePoBtn = document.createElement('button');
+  closePoBtn.textContent = 'x';
+  closePoBtn.classList.add('po-header--close');
+  closePoBtn.setAttribute('title', 'Close Project Overview');
+  closePoBtn.setAttribute('aria-label', 'button');
+  closePoBtn.addEventListener('click', closeProjectOverview);
+
+  poModalHeader.append(poModalTitle, closePoBtn);
+
+  const poModalBody = document.createElement('div');
+  poModalBody.classList.add('po-body');
+
+  const linkTitle = document.createElement('div');
+  linkTitle.classList.add('po-title');
+  linkTitle.textContent = 'Links';
+
+  const linkEl = document.createElement('div');
+  linkEl.classList.add('proj-overview--links');
+
+  const githubEl = document.createElement('a');
+  githubEl.classList.add('proj-overview--link');
+  githubEl.setAttribute('href', github);
+  githubEl.setAttribute('target', '_blank');
+  githubEl.setAttribute('rel', 'noopener noreferrer');
+  githubEl.textContent = 'Github';
+
+  const liveEl = document.createElement('a');
+  liveEl.classList.add('proj-overview--link');
+  liveEl.setAttribute('href', live);
+  liveEl.setAttribute('target', '_blank');
+  liveEl.setAttribute('rel', 'noopener noreferrer');
+  liveEl.textContent = 'Live';
+  linkEl.append(githubEl, liveEl);
+
+  poModalBody.append(linkEl, getHR());
+
+  // refactor the following to use a for of loop
+
+  for (const [key, val] of Object.entries(features)) {
+    const featureTitle = document.createElement('div');
+    featureTitle.textContent = key;
+    featureTitle.classList.add('po-title');
+
+    const featureList = document.createElement('ul');
+    featureList.classList.add('po-list');
+
+    for (const feature of val) {
+      const featureEl = document.createElement('li');
+      featureEl.classList.add('po-list--item');
+      featureEl.textContent = feature;
+      featureList.append(featureEl);
     }
-  };
 
-  const createProjectOverview = (data) => {
-    const {
-      title, github, live, features,
-    } = data;
+    poModalBody.append(featureTitle, featureList, getHR());
+  }
 
-    const poModal = document.createElement('div');
-    poModal.classList.add('project-overview--modal');
+  poModal.append(poModalHeader, poModalBody);
+  poWrapper.append(poModal);
+};
 
-    const poModalHeader = document.createElement('div');
-    poModalHeader.classList.add('po-header');
+const setProjectOverview = (e) => {
+  poWrapper.classList.remove('hide-po');
+  body.classList.add('body-prevent-scroll');
+  body.style.paddingRight = `${getScrollBarWidth()}px`;
+  header.style.paddingRight = `${getScrollBarWidth()}px`;
+  createProjectOverview(projectJSON[e.target.getAttribute('data-proj')]);
+  poWrapper.addEventListener('click', closeProjectOverview);
+  e.target.blur();
+};
 
-    const poModalTitle = document.createElement('h2');
-    poModalTitle.classList.add('po-header--title');
-    poModalTitle.innerText = title;
-
-    const closePoBtn = document.createElement('button');
-    closePoBtn.textContent = 'x';
-    closePoBtn.classList.add('po-header--close');
-    closePoBtn.setAttribute('title', 'Close Project Overview');
-    closePoBtn.setAttribute('aria-label', 'button');
-    closePoBtn.onclick = closeProjectOverview;
-
-    poModalHeader.append(poModalTitle, closePoBtn);
-
-    const poModalBody = document.createElement('div');
-    poModalBody.classList.add('po-body');
-
-    const linkTitle = document.createElement('div');
-    linkTitle.classList.add('po-title');
-    linkTitle.textContent = 'Links';
-
-    const linkEl = document.createElement('div');
-    linkEl.classList.add('proj-overview--links');
-
-    const githubEl = document.createElement('a');
-    githubEl.classList.add('proj-overview--link');
-    githubEl.setAttribute('href', github);
-    githubEl.setAttribute('target', '_blank');
-    githubEl.setAttribute('rel', 'noopener noreferrer');
-    githubEl.textContent = 'Github';
-
-    const liveEl = document.createElement('a');
-    liveEl.classList.add('proj-overview--link');
-    liveEl.setAttribute('href', live);
-    liveEl.setAttribute('target', '_blank');
-    liveEl.setAttribute('rel', 'noopener noreferrer');
-    liveEl.textContent = 'Live';
-    linkEl.append(githubEl, liveEl);
-
-    poModalBody.append(linkEl, getHR());
-
-    Object.entries(features).forEach(([key, val]) => {
-      const featureTitle = document.createElement('div');
-      featureTitle.textContent = key;
-      featureTitle.classList.add('po-title');
-
-      const featureList = document.createElement('ul');
-      featureList.classList.add('po-list');
-
-      val.forEach((feature) => {
-        const featureEl = document.createElement('li');
-        featureEl.classList.add('po-list--item');
-        featureEl.textContent = feature;
-        featureList.append(featureEl);
-      });
-
-      poModalBody.append(featureTitle, featureList, getHR());
-    });
-
-    poModal.append(poModalHeader, poModalBody);
-    poWrapper.append(poModal);
-  };
-
-  const setProjectOverview = (e) => {
-    poWrapper.classList.remove('hide-po');
-    body.classList.add('body-prevent-scroll');
-    body.style.paddingRight = `${getScrollBarWidth()}px`;
-    header.style.paddingRight = `${getScrollBarWidth()}px`;
-    poWrapper.innerText = '';
-    createProjectOverview(projectJSON[e.target.getAttribute('data-proj')]);
-    poWrapper.onclick = closeProjectOverview;
-    e.target.blur();
-  };
-
-  document.querySelectorAll('.open-overview--btn').forEach((btn) => {
+const initProjectOverviews = () => {
+  for (const btn of overviewBtns) {
     btn.addEventListener('click', setProjectOverview);
-  });
+  }
 };
 
 const initProjects = () => {

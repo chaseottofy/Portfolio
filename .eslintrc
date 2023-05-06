@@ -9,13 +9,23 @@
     "node": true,
     "browser": true
   },
-  "extends": "airbnb",
+  "extends": [
+    "plugin:unicorn/all",
+    "airbnb"
+  ],
   "rules": {
     "linebreak-style": 0,
-    "quote-props": "off",
-    "no-console": "off",
     "no-irregular-whitespace": "error",
     "no-unused-vars": "error",
-    "no-multiple-empty-lines": "error"
+    "no-multiple-empty-lines": "error",
+    "quote-props": "off",
+    "no-console": "off",
+    "no-restricted-syntax": "off", // allow for...of
+    "unicorn/prefer-module": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-dom-node-dataset": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/prefer-dom-node-remove": "off",
+    "unicorn/prefer-at": "off"
   }
 }

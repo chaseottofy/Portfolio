@@ -12,6 +12,10 @@
   background: rgba(0, 0, 0, .6);
 }
 
+.hide-lh-modal {
+  display:none;
+}
+
 .lighthouse-modal {
   height: 90%;
   max-height: 500px;

@@ -1,5 +1,5 @@
-import createToast from '../template/createToast';
-import createSpinner from '../template/createSpinner';
+import createToast from '../template/create-toast';
+import createSpinner from '../template/create-spinner';
 
 const form = document.querySelector('.contact-form');
 const nameInput = document.querySelector('.form-name--input');
@@ -33,9 +33,9 @@ const handleFormChange = () => {
 const createSuccessMessage = () => {
   const successMessage = document.createElement('div');
   successMessage.classList.add('success-message');
-  successMessage.appendChild(createSpinner());
+  successMessage.append(createSpinner());
   formWrapper.classList.add('disable-form');
-  formWrapper.appendChild(successMessage);
+  formWrapper.append(successMessage);
 };
 
 const toggleSkeleton = () => {
@@ -71,9 +71,9 @@ const handleFormSubmit = (e) => {
 };
 
 const initContactForm = () => {
-  contactOptions.forEach((option) => {
+  for (const option of contactOptions) {
     option.addEventListener('change', handleSelectedContactMethod);
-  });
+  }
   form.addEventListener('input', handleFormChange);
   form.addEventListener('submit', handleFormSubmit);
 };

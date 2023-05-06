@@ -4,17 +4,17 @@
 // https://www.bestfolios.com/home
 /** ************************************ */
 /** ************************************ */
-import initTheme from './utilities/handleTheme';
-import initScroll from './utilities/handleScroll';
-import initHover from './utilities/handleHover';
-import initCopyElements from './utilities/handleCopy';
+import initTheme from './utilities/handle-theme';
+import initScroll from './utilities/handle-scroll';
+import initHover from './utilities/handle-hover';
+import initCopyElements from './utilities/handle-copy';
 import initProjects from './components/projects';
-import initContactForm from './utilities/handleForm';
+import initContactForm from './utilities/handle-form';
 import initModals from './components/modals';
-import initDefaults from './utilities/handleDefaults';
+import initDefaults from './utilities/handle-defaults';
 /** ************************************ */
 // testing
-// import createShowWidthElement from './testing/createShowWidth';
+// import createShowWidthElement from './testing/show-width';
 // import initCls from './testing/cls';
 // initCls();
 /** ************************************ */

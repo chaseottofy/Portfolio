@@ -1,6 +1,10 @@
 import lhdata from '../data/lighthouseJSON.json';
 
+const lhWrapper = document.querySelector('.lighthouse-modal--wrapper');
+
 const createLHModal = (appname) => {
+  lhWrapper.classList.remove('hide-lh-modal');
+
   const base = lhdata[appname];
 
   const [dataTitle, dataLink, dataScore, dataContent] = [
@@ -10,15 +14,13 @@ const createLHModal = (appname) => {
     lhdata.content,
   ];
 
-  const wrapper = document.createElement('aside');
-  wrapper.classList.add('lighthouse-modal--wrapper');
-  const modal = document.createElement('div');
-  modal.classList.add('lighthouse-modal');
+  const lhmodal = document.createElement('div');
+  lhmodal.classList.add('lighthouse-modal');
 
-  const header = document.createElement('div');
+  const lhheader = document.createElement('div');
   const lhtitle = document.createElement('span');
   const closeBtn = document.createElement('button');
-  header.classList.add('lighthouse-modal__header');
+  lhheader.classList.add('lighthouse-modal__header');
   lhtitle.classList.add('lh-appname');
   lhtitle.textContent = `Lighthouse: ${dataTitle}`;
   closeBtn.classList.add('close-lh-btn');
@@ -40,19 +42,19 @@ const createLHModal = (appname) => {
   screenshotLinkBtn.textContent = 'View latest audit';
   screenshotLinkBtn.classList.add('lh-main__score-title');
 
-  header.append(lhtitle, closeBtn);
+  lhheader.append(lhtitle, closeBtn);
   lhmain.append(mainscore, screenshotLinkBtn);
-  lhbody.appendChild(lhmain);
+  lhbody.append(lhmain);
 
   for (let i = 0; i < 4; i += 1) {
     const [contentTitle, contentDesc] = dataContent[i];
 
-    const sub = document.createElement('div');
-    sub.classList.add('lh-sub');
+    const lhsub = document.createElement('div');
+    lhsub.classList.add('lh-sub');
 
-    const subHeader = document.createElement('div');
-    subHeader.classList.add('lh-sub-title');
-    subHeader.textContent = contentTitle;
+    const lhsubheader = document.createElement('div');
+    lhsubheader.classList.add('lh-sub-title');
+    lhsubheader.textContent = contentTitle;
 
     const metricDesc = document.createElement('div');
     metricDesc.classList.add('lh-sub__metrics-title');
@@ -60,20 +62,19 @@ const createLHModal = (appname) => {
     const metricDescTitle = document.createElement('span');
     metricDescTitle.classList.add('lh-sub__metrics-title');
     metricDescTitle.textContent = dataScore[i];
-    metricDesc.appendChild(metricDescTitle);
-    const hr = document.createElement('hr');
+    metricDesc.append(metricDescTitle);
+    const lhhr = document.createElement('hr');
 
     const metricDescSubtext = document.createElement('div');
     metricDescSubtext.classList.add('lh-sub-subtitle');
     metricDescSubtext.textContent = contentDesc;
 
-    sub.append(subHeader, metricDesc, hr, metricDescSubtext);
-    lhbody.appendChild(sub);
+    lhsub.append(lhsubheader, metricDesc, lhhr, metricDescSubtext);
+    lhbody.append(lhsub);
   }
 
-  modal.append(header, lhbody);
-  wrapper.appendChild(modal);
-  return wrapper;
+  lhmodal.append(lhheader, lhbody);
+  lhWrapper.append(lhmodal);
 };
 
 export default createLHModal;

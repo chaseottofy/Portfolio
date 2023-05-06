@@ -1,4 +1,5 @@
 const header = document.querySelector('.header');
+const navMenuLinks = document.querySelectorAll('.nav-menu--link');
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -26,9 +27,9 @@ const initScroll = () => {
   window.addEventListener('scroll', handlePageScroll, { passive: true });
 
   // click nav list item links to scroll to section
-  document.querySelectorAll('.nav-menu--link').forEach((link) => {
+  for (const link of navMenuLinks) {
     link.addEventListener('click', handleHrefScroll, { passive: true });
-  });
+  }
 
   // click header logo to scroll to top of page
   document.querySelector('.header-logo').addEventListener('click', () => {

@@ -22,7 +22,7 @@ const initDefaultTheme = () => {
   const localTheme = localStorage.getItem('portfolio-theme');
   const systemTheme = getSystemTheme();
   themeInputs[2].setAttribute('value', systemTheme);
-  themeLabels[2].setAttribute('data-system-theme', systemTheme);
+  themeLabels[2].dataset.systemTheme = systemTheme;
   if (!localTheme
     || (localTheme !== 'dark' && localTheme !== 'light')) {
     setTheme(systemTheme);
@@ -34,7 +34,7 @@ const initDefaultTheme = () => {
 };
 
 const handleThemeChange = (e) => {
-  const theme = e.target.getAttribute('value');
+  const theme = e.target.value;
   if (theme === 'system') {
     setTheme(e.target.getAttribute('data-system-theme'));
   } else {
@@ -43,9 +43,9 @@ const handleThemeChange = (e) => {
 };
 
 const initThemeOptions = () => {
-  themeInputs.forEach((input) => {
+  for (const input of themeInputs) {
     input.addEventListener('change', handleThemeChange);
-  });
+  }
 };
 
 const initTheme = () => {
