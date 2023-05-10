@@ -14,5 +14,4 @@ const createAscii = () => {
   const asciiWrapper = document.querySelector('.ascii-wrapper');
   asciiWrapper.textContent = asciitext;
 };
-
 export default createAscii;

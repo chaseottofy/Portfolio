@@ -123,13 +123,12 @@
 .pc__header-tabs span input:checked + label {
   box-shadow: var(--bs-inset1);
   background: var(--black0);
-  /* border-bottom: 1px solid var(--black2); */
 }
 
 .pc__header-tabs span input:checked + label::before {
   position: absolute;
-  top: .625rem;
-  right: .75rem;
+  top: .5rem;
+  right: .5rem;
   height: .35rem;
   width: .35rem;
   border-radius: 50%;
@@ -274,6 +273,10 @@
     text-transform: uppercase;
     font-weight: 500;
     transform: scaleY(.86);
+  }  
+  
+  .pc__header-tabs span input:checked + label::before {
+    display: none;
   }
 }
 
@@ -293,9 +296,5 @@
   .pc__header-decoration span {
     height: .675rem;
     width: .675rem;
-  }
-
-  .pc__header-tabs span input:checked + label::before {
-    display: none;
   }
 }

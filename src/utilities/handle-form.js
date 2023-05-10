@@ -1,4 +1,5 @@
 import createToast from '../template/create-toast';
+
 import createSpinner from '../template/create-spinner';
 
 const form = document.querySelector('.contact-form');

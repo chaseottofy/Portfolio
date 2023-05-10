@@ -15,15 +15,16 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 2rem;
-  height: 4rem;
+  height: 8rem;
 }
 
 .footer a {
   font-size: 13px;
   text-transform: uppercase;
-  line-height: 2rem;
+  line-height: 4rem;
+  height: 4rem;
   color: transparent;
-  padding: 0 1rem;
+  margin: 0 1rem;
   background-image: linear-gradient(150deg,
       var(--blue3) 0%,
       var(--blue2),
@@ -35,7 +36,6 @@
   background-size: 100% 200%;
   transform: scaleY(.9);
   font-weight: 700;
-  height: 2rem;
   position: relative;
 }
 
@@ -72,6 +72,6 @@
 
 @media screen and (max-width: 490px) {
   .ascii-wrapper {
-    transform: scale(.7);
+    transform: scale(.65);
   }
 }
