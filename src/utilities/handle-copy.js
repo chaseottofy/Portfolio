@@ -7,6 +7,7 @@ const copyToClipboard = (text) => {
   try {
     return navigator.clipboard.writeText(text);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.assert(false, error);
   }
   return false;

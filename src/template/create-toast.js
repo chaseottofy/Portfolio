@@ -3,9 +3,7 @@ const toastWrapper = document.querySelector('.toast-wrapper');
 let toastIndex = 0;
 const handleToasts = () => {
   if (toastWrapper.children.length >= 4) {
-    toastWrapper.removeChild(
-      toastWrapper.children[toastWrapper.children.length - 1],
-    );
+    toastWrapper.lastElementChild.remove();
   }
 
   for (let i = 0; i < toastWrapper.children.length; i += 1) {
@@ -41,7 +39,7 @@ const createToast = (text) => {
 
   const message = document.createElement('span');
   message.classList.add('toast-message');
-  message.textContent = `copied! ${text}`;
+  message.textContent = `Copied! ${text}`;
 
   wrapper.append(progressbar, progresstrack, message);
   toastWrapper.prepend(wrapper);

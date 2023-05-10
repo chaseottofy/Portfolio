@@ -54,6 +54,7 @@ const appendPicture = (parent, imgvars) => {
       skel.remove();
     }
   }).catch((encodingError) => {
+    // eslint-disable-next-line no-console
     console.assert(false, encodingError);
     if (skel) {
       skel.remove();
