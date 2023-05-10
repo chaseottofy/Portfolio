@@ -36,7 +36,7 @@ const createSuccessMessage = () => {
   successMessage.classList.add('success-message');
   successMessage.append(createSpinner());
   formWrapper.classList.add('disable-form');
-  formWrapper.append(successMessage);
+  formWrapper.prepend(successMessage);
 };
 
 const toggleSkeleton = () => {
@@ -47,7 +47,7 @@ const toggleSkeleton = () => {
 
 const resetForm = () => {
   form.reset();
-  document.querySelector('.success-message').remove();
+  formWrapper.firstElementChild.remove();
   submitBtn.classList.remove('btn-allow');
   formWrapper.classList.remove('disable-form');
   toggleSkeleton();

@@ -9,6 +9,12 @@
   <meta name="author" content="Chase Ottofy">
   <meta name="description" content="Portfolio for Chase Ottofy">
   <meta name="keywords" content="chase ottofy portfolio, portfolio, chase, ottofy, chaseottofy, chase ottofy, chase ottofy portfolio, front end developer, front end, javascript, react developer, react">
+  <!-- create meta for  -->
+  <meta property="og:title" content="Chase Ottofy Portfolio">
+  <meta property="og:description" content="Portfolio for Chase Ottofy">
+  <meta property="og:site_name" content="Portfolio">
+  <meta property="og:url" content="https://chaseottofy.github.io/Portfolio">
+  <meta name="robots" content="index, follow">
   <title>Chase Ottofy</title>
   <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link href="style.scss" rel="stylesheet">
@@ -21,24 +27,24 @@
   <!-- HEADER (FIXED)-->
   <header class="header">
     <div class="header-wrapper">
-      <button class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button">
+      <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#top">
         <img src="./images/svg/logo.svg" alt>
-      </button>
+      </a>
 
       <div class="nav-wrapper">
         <nav class="header-nav">
           <ul class="nav-menu">
             <li>
-              <a class="nav-menu--link" href="#projects-top" title="Scroll to projects">Projects</a>
+              <a class="nav-menu--link" data-scroll-to="0" href="#projects" title="Scroll to projects">Projects</a>
             </li>
             <li>
-              <a class="nav-menu--link" href="#skills-top" title="Scroll to skills">Skills</a>
+              <a class="nav-menu--link" data-scroll-to="1" href="#skills" title="Scroll to skills">Skills</a>
             </li>
             <li>
-              <a class="nav-menu--link" href="#about-top" title="Scroll to skills">About</a>
+              <a class="nav-menu--link" data-scroll-to="2" href="#about" title="Scroll to skills">About</a>
             </li>
             <li class="nav-multi__contact">
-              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-href="#contact-top" href="#contact-top" title="Contact Menu & context">
+              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="3" href="#contact" title="Contact Menu & context">
                 <span>Contact</span>
                 <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt>
               </a>
@@ -96,6 +102,8 @@
   <main class="main">
     <aside class="section-divider"></aside>
     <aside class="section-gradient-left"></aside>
+
+    <!-- SECTION : PROJECTS -->
     <article class="projects-container" id="projects-top">
 
       <div class="section-title">
@@ -363,7 +371,7 @@
 
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
-    <article class="contact-container" id="contact-top">
+    <div class="contact-container" id="contact-top">
 
       <div class="contact-menu__body">
         <!-- LEFT -->
@@ -463,7 +471,7 @@
             <div class="cm-right--bottom__cell">
               <span>ottofy@zohomail.com</span>
               <div class="cm-right--bottom__cell-icons">
-                <a class="cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
+                <a class="mailto-link cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
                   <img class="img-icon" src="./images/svg/mailto.svg" alt>
                 </a>
                 <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
@@ -483,7 +491,7 @@
           </div>
         </div>
       </div>
-    </article>
+    </div>
 
     <!-- SECTION: CONTACT-FORM -->
     <aside class="section-divider"></aside>
@@ -536,7 +544,7 @@
   <footer class="footer">
     <div class="footer-links">
       <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
-      <a href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
+      <a class="mailto-link" href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
     </div>
     <pre class="ascii-wrapper"></pre>
   </footer>

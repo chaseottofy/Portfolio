@@ -4,13 +4,11 @@ const copyEmailBtns = document.querySelectorAll('.cm-copy--email');
 const copyPhoneBtns = document.querySelectorAll('.cm-copy--phone');
 
 const copyToClipboard = (text) => {
-  try {
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
     return navigator.clipboard.writeText(text);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.assert(false, error);
   }
-  return false;
+  /* eslint-disable prefer-promise-reject-errors */
+  return Promise.reject('The Clipboard API is not available.');
 };
 
 const setCopy = (text) => {

@@ -60,12 +60,10 @@
   font-size: 12px;
   font-family: monospace;
   white-space: pre;
-  color: var(--white0);
-  opacity: .9;
+  color: var(--accent-7);
   font-weight: 700;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   height: fit-content;
 }

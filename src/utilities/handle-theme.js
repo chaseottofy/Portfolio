@@ -1,4 +1,5 @@
 const body = document.querySelector('.body');
+const header = document.querySelector('.header');
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const themeInputs = document.querySelectorAll('.theme-input');
 const themeLabels = document.querySelectorAll('.theme-label');
@@ -51,7 +52,7 @@ const initThemeOptions = () => {
 const initTheme = () => {
   initDefaultTheme();
   initThemeOptions();
-  document.querySelector('.header').classList.add('header-animate');
+  header.classList.add('header-animate');
   setTimeout(() => {
     body.classList.remove('disable-transitions');
   }, 200);

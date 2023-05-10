@@ -1,5 +1,14 @@
 const header = document.querySelector('.header');
+const headerLogo = document.querySelector('.header-logo');
 const navMenuLinks = document.querySelectorAll('.nav-menu--link');
+
+const projectsCont = document.querySelector('.projects-container');
+const skillsCont = document.querySelector('.skills-container');
+const aboutCont = document.querySelector('.about-container');
+const contactCont = document.querySelector('.contact-container');
+const sectionContainers = [
+  projectsCont, skillsCont, aboutCont, contactCont,
+];
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -9,9 +18,9 @@ const scrollToTop = () => {
 };
 
 const handleHrefScroll = (e) => {
-  document.querySelector(`${e.target.getAttribute('href')}`).scrollIntoView({
-    behavior: 'smooth',
-  });
+  sectionContainers[
+    Number(e.target.getAttribute('data-scroll-to'))
+  ].scrollIntoView({ behavior: 'smooth' });
 };
 
 const handlePageScroll = () => {
@@ -32,7 +41,7 @@ const initScroll = () => {
   }
 
   // click header logo to scroll to top of page
-  document.querySelector('.header-logo').addEventListener('click', () => {
+  headerLogo.addEventListener('click', () => {
     scrollToTop();
   }, { passive: true });
 };
