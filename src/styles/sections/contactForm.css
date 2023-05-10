@@ -21,6 +21,10 @@
   padding-top: 4rem;
 }
 
+.contact-form--container .section-title h3 {
+  font-size: 1.5rem;
+}
+
 .disable-form {
   pointer-events: none;
   user-select: none;

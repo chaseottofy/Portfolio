@@ -1,4 +1,4 @@
-import contactMenuLazy from './handle-images';
+import createContactMenu from '../template/create-contactmenu';
 
 const navContactBtn = document.querySelector('.nav-multi__contact');
 const contactMenu = document.querySelector('.contact-menu');
@@ -14,17 +14,15 @@ const configContactMenu = () => {
 
     contactMenu.classList.remove('contact-menu--active');
     navContactBtn.firstChild.classList.remove('nav-menu--contact--active');
+    contactMenu.firstElementChild.remove();
     window.removeEventListener('mousemove', contactMousemove);
   };
 
   const openContactMenu = () => {
     if (window.innerWidth <= 640) return;
-    // load contact menu images
-    contactMenuLazy();
-
-    // contact menu is open
     if (contactMenu.classList.contains('contact-menu--active')) return;
     contactMenu.classList.add('contact-menu--active');
+    createContactMenu();
     navContactBtn.firstChild.classList.add('nav-menu--contact--active');
     window.addEventListener('mousemove', contactMousemove);
   };

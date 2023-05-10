@@ -10,12 +10,12 @@ import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
 /** ************************************ */
 // DEVELOPMENT ONLY
-import createShowWidthElement from './testing/show-width';
+// import createShowWidthElement from './testing/show-width';
+// createShowWidthElement(); // DEVELOPMENT ONLY
 // import initCls from './testing/cls'; // initCls();
 /** ************************************ */
 
 const appInit = () => {
-  createShowWidthElement(); // DEVELOPMENT ONLY
   /**
    * @function initTheme
    * get system theme
@@ -62,4 +62,3 @@ const appInit = () => {
 appInit();
 // !!REMINDER
 // TAB INDEX
-// set svgs to reasonable inline size

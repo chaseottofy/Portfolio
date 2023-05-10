@@ -17,8 +17,8 @@ const setCopy = (text) => {
   createToast(text);
 };
 
-const copyEmail = () => setCopy('copied! – ottofy@zohomail.com');
-const copyPhone = () => setCopy('copied! – 9709882548');
+const copyEmail = () => setCopy('ottofy@zohomail.com');
+const copyPhone = () => setCopy('9709882548');
 const initCopyElements = () => {
   for (const btn of copyEmailBtns) {
     btn.addEventListener('click', copyEmail);

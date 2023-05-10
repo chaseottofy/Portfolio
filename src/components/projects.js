@@ -1,4 +1,4 @@
-import { configPicture } from '../utilities/handle-images';
+import configPicture from '../utilities/handle-images';
 
 import createProjectModal from '../template/create-projmodal';
 

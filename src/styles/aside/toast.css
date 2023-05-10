@@ -74,8 +74,8 @@
 }
 
 .toast-message {
-  font-size: .825rem;
+  font-size: .95rem;
   letter-spacing: -.5px;
   color: var(--white1);
-  font-weight: 500;
+  /* font-weight: 500; */
 }

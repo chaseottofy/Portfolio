@@ -49,17 +49,17 @@
   opacity: 0;
 }
 
-.fade-img--in {
+/* .fade-img--in {
   animation: fade-img .2s;
-}
+} */
 
-.fade-img--out {
+/* .fade-img--out {
   animation: fade-img .1s reverse;
-}
+} */
 
 .img-skeleton {
   position: absolute;
-  background: blue;
+  background: rgba(0,0,0,.4);
   top: 0;
   left: 0;
   width: 100%;

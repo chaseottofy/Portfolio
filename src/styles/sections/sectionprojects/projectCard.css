@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  font-size: .825rem;
+  font-size: .875rem;
   letter-spacing: -.5px;
   color: var(--white1);
   background: var(--black0);
@@ -283,7 +283,7 @@
   }
 
   .pc__subheader--search {
-    font-size: .825rem;
+    font-size: .875rem;
   }
 
   .project-calendar .pc__header-tabs span label {

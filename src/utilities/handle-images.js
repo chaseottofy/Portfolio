@@ -3,7 +3,6 @@ import createSpinner from '../template/create-spinner';
 import imageSets from './get-image';
 
 const calendarImageVars = [
-  ['', ''], // placeholder for already loaded image
   ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
   ['cmonthlgdark', 'cmonthmddark', 'Calendar Month'],
   ['cyearlgdark', 'cyearmddark', 'Calendar Year'],
@@ -80,7 +79,7 @@ const configPicture = (parent, attr, cSet, nth, isCal) => {
   imgWrapper.setAttribute(attr, nth);
   parent.append(imgWrapper);
 
-  const [lp, mp, alt] = calendarImageVars[+nth - 1];
+  const [lp, mp, alt] = calendarImageVars[+nth - 2];
   const set = isCal ? imageSets.calendar : imageSets.react;
 
   appendPicture(
@@ -91,21 +90,4 @@ const configPicture = (parent, attr, cSet, nth, isCal) => {
   );
 };
 
-const contactMenuLazy = () => {
-  const contactMenu = document.querySelector('.contact-menu');
-  if (contactMenu.getAttribute('data-cm-loaded') === 'true') return;
-  const bentArrow = document.querySelector('.img-bent-arrowsrc');
-  const bentArrowSrc = bentArrow.getAttribute('src');
-  const cmHeaderArrows = document.querySelectorAll('.cm-bent--arrow');
-  const cmHeaderImgs = document.querySelectorAll('.cm-header--img');
-  const cmBodyImgs = document.querySelectorAll('.cm-body--img');
-
-  for (const [index, element] of cmBodyImgs.entries()) {
-    cmHeaderImgs[index].src = element.src;
-    cmHeaderArrows[index].src = bentArrowSrc;
-  }
-  contactMenu.setAttribute('data-cm-loaded', 'true');
-};
-
-export default contactMenuLazy;
-export { configPicture };
+export default configPicture;
