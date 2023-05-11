@@ -14,6 +14,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 2rem;
   height: 8rem;
 }
@@ -22,18 +23,10 @@
   font-size: 13px;
   text-transform: uppercase;
   line-height: 4rem;
+  padding: 0 1rem;
   height: 4rem;
-  color: transparent;
-  margin: 0 1rem;
-  background-image: linear-gradient(150deg,
-      var(--blue3) 0%,
-      var(--blue2),
-      var(--blue3));
-  -webkit-background-clip: text;
-  filter: brightness(1.1) contrast(1.4);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 100% 200%;
+  color: var(--accent-7);
+  margin: 0 .25rem;
   transform: scaleY(.9);
   font-weight: 700;
   position: relative;
@@ -51,9 +44,13 @@
   background: transparent;
 }
 
+.footer a:hover {
+  background: var(--black4);
+}
+
 .footer a:hover::after {
   transition: background .35s var(--bez-3);
-  background: var(--blue1);
+  background: var(--accent-7);
 }
 
 .ascii-wrapper {
@@ -61,10 +58,12 @@
   font-family: monospace;
   white-space: pre;
   color: var(--accent-7);
+  transform: scale(.85);
   font-weight: 700;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: fit-content;
 }
 
