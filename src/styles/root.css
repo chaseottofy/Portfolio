@@ -208,12 +208,23 @@ input::placeholder {
 
 a:focus-visible {
   outline: 0 0 0 2px var(--white1);
+  box-shadow: 0 0 0 2px var(--blue3);
 }
 
 input:focus-visible,
 textarea:focus-visible {
   outline: none;
   border-color: var(--blue2);
+}
+
+input[type=radio]:focus-visible + label {
+  outline: 0 0 0 2px var(--white1);
+  box-shadow: 0 0 0 2px var(--blue3); 
+}
+
+button:focus-visible {
+  filter: brightness(1.2);
+  box-shadow: 0 0 0 2px var(--blue3);
 }
 
 svg {
@@ -243,11 +254,6 @@ button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-}
-
-button:focus-visible {
-  filter: brightness(1.2);
-  box-shadow: 0 0 0 2px var(--blue3);
 }
 
 /* ::-MOZ
@@ -478,6 +484,7 @@ a[disabled] {
 }
 
 @media screen and (max-width: 490px) {
+
   *,
   *::after,
   *::before {

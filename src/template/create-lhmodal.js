@@ -1,9 +1,35 @@
 import lhdata from '../data/min/lighthouseJSONMin.json';
+import handleModalOffset from '../utilities/handle-modaloffset';
 
-const lhWrapper = document.querySelector('.lighthouse-modal--wrapper');
+const body = document.querySelector('.body');
+const header = document.querySelector('.header');
 
-const createLHModal = (appname) => {
-  lhWrapper.classList.remove('hide-lh-modal');
+const handleLHClose = () => {
+  document?.querySelector('.lighthouse-modal--wrapper')?.remove();
+  // eslint-disable-next-line no-use-before-define
+  window.removeEventListener('keydown', closeLHOnEsc);
+  body.removeAttribute('style');
+  body.classList.remove('body-prevent-scroll');
+  header.removeAttribute('style');
+};
+
+const closeLH = (e) => {
+  if (e.target.classList.contains('lighthouse-modal--wrapper')
+    || e.target.closest('.close-lh-btn')) {
+    handleLHClose();
+  }
+};
+
+const closeLHOnEsc = (e) => {
+  if (e.key === 'Escape') {
+    handleLHClose();
+  }
+};
+
+const setLHModal = (appname) => {
+  // lhWrapper.classList.remove('hide-lh-modal');
+  const lhWrapper = document.createElement('aside');
+  lhWrapper.classList.add('lighthouse-modal--wrapper');
 
   const base = lhdata[appname];
 
@@ -19,15 +45,14 @@ const createLHModal = (appname) => {
 
   const lhheader = document.createElement('div');
   const lhtitle = document.createElement('span');
-  const closeBtn = document.createElement('button');
   lhheader.classList.add('lighthouse-modal__header');
   lhtitle.classList.add('lh-appname');
-
   const tempspan = document.createElement('span');
   tempspan.textContent = 'Audit: ';
   const brhead = document.createElement('br');
   lhtitle.append(tempspan, brhead, dataTitle);
 
+  const closeBtn = document.createElement('button');
   closeBtn.classList.add('close-lh-btn');
   closeBtn.textContent = 'x';
 
@@ -40,10 +65,10 @@ const createLHModal = (appname) => {
   mainscore.classList.add('lh-main__score');
 
   const screenshotLinkBtn = document.createElement('a');
-  screenshotLinkBtn.setAttribute('href', dataLink);
-  screenshotLinkBtn.setAttribute('title', 'pagespeed.web.dev');
-  screenshotLinkBtn.setAttribute('target', '_blank');
-  screenshotLinkBtn.setAttribute('rel', 'noopener noreferrer');
+  screenshotLinkBtn.href = dataLink;
+  screenshotLinkBtn.title = 'pagespeed.web.dev';
+  screenshotLinkBtn.target = '_blank';
+  screenshotLinkBtn.rel = 'noopener noreferrer';
   screenshotLinkBtn.textContent = 'View latest audit';
   screenshotLinkBtn.classList.add('lh-main__score-title');
 
@@ -80,6 +105,21 @@ const createLHModal = (appname) => {
 
   lhmodal.append(lhheader, lhbody);
   lhWrapper.append(lhmodal);
+  lhWrapper.addEventListener('click', closeLH);
+  setTimeout(() => {
+    closeBtn.focus();
+  }, 50);
+  return lhWrapper;
+};
+
+const createLHModal = (e) => {
+  if (body.classList.contains('body-prevent-scroll')) return;
+  body.append(
+    setLHModal(e.target.getAttribute('data-lh-proj')),
+  );
+  e.target.blur();
+  handleModalOffset();
+  window.addEventListener('keydown', closeLHOnEsc);
 };
 
 export default createLHModal;

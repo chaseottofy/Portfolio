@@ -2,10 +2,13 @@ import configPicture from '../utilities/handle-images';
 
 import createProjectModal from '../template/create-projmodal';
 
+import createLHModal from '../template/create-lhmodal';
+
 // initProjectImages
 const calendarTabs = document.querySelectorAll('.proj-cal--tab');
 const componentTabs = document.querySelectorAll('.proj-comp--tab');
 const overviewBtns = document.querySelectorAll('.open-overview--btn');
+const LHBtns = document.querySelectorAll('.open-lh--btn');
 
 /**
  * initProjectImages
@@ -108,9 +111,18 @@ const initProjectOverviews = () => {
   }
 };
 
+const initLHModals = () => {
+  for (const btn of LHBtns) {
+    // create lighthouse (performance overview) modal
+    // when "View Performance Audit" is clicked on Project card
+    btn.addEventListener('click', createLHModal);
+  }
+};
+
 const initProjectCards = () => {
   initProjectImages();
   initProjectOverviews();
+  initLHModals();
 };
 
 export default initProjectCards;

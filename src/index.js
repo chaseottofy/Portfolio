@@ -5,14 +5,11 @@ import initScroll from './utilities/handle-scroll';
 import initHover from './utilities/handle-hover';
 import initCopyElements from './utilities/handle-copy';
 import initProjectCards from './components/projects';
-import initLHModal from './components/lh-modals';
 import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
 /** ************************************ */
 // DEVELOPMENT ONLY
-// import createShowWidthElement from './testing/show-width';
-// createShowWidthElement(); // DEVELOPMENT ONLY
-// import initCls from './testing/cls'; // initCls();
+// import enableTesting from './testing/test-index';
 /** ************************************ */
 
 const appInit = () => {
@@ -20,7 +17,7 @@ const appInit = () => {
    * @function initTheme
    * get system theme
    * config localStorage theme
-   * allow theme change ... etc */
+  * allow theme change ... etc */
   initTheme();
 
   /**
@@ -41,14 +38,15 @@ const appInit = () => {
 
   /**
    * @function initProjectCards - config the following:
+   * config 'view performance audit' btns
+   *  - creates modal with performance links / insights
+   *
    * config project overview modal "view full overview btn"
-   * allow click through tabs of each project
-   * dynamically import relevant images for each tab */
+   *  - creates modal with more in depth project overview
+   *
+   * config project tabs
+   * - dynamically import relevant images for each tab */
   initProjectCards();
-
-  /**
-   * @function initLHModal config lighthouse modal "performance audit btn" */
-  initLHModal();
 
   /**
    * @function initContactForm setup contact form POST */
@@ -60,9 +58,8 @@ const appInit = () => {
 };
 
 appInit();
+// enableTesting(true, false, false, false); // DEV ONLY
 // !!REMINDER
 // TAB INDEX
 // create event emitter for modal tabs
 // smaller
-// smooth scroll
-// intersection observer

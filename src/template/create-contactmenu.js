@@ -1,6 +1,7 @@
 import badgeData from '../data/min/contactJSONMin.json';
 
-const cmAside = document.querySelector('.contact-menu');
+// const cmAside = document.querySelector('.contact-menu');
+const body = document.querySelector('.body');
 const bentArrow = document.querySelector('.img-bent-arrowsrc');
 const bentArrowSrc = bentArrow.getAttribute('src');
 const cmBodyImgs = document.querySelectorAll('.cm-body--img');
@@ -71,6 +72,10 @@ const createBadge = (cname, href, title, dataAcc, dataBef, idx) => {
 };
 
 const createContactMenu = () => {
+  if (document?.querySelector('.contact-menu')) return;
+  const cmAside = document.createElement('aside');
+  cmAside.setAttribute('class', 'contact-menu contact-menu__header');
+
   const cmwrapper = document.createElement('div');
   cmwrapper.classList.add('cm-right');
   const cm = document.createElement('div');
@@ -81,8 +86,10 @@ const createContactMenu = () => {
       createBadge(v.cname, v.href, v.title, v.dataAcc, v.dataBef, v.idx),
     );
   }
+
   cmwrapper.append(cm);
   cmAside.append(cmwrapper);
+  body.append(cmAside);
 };
 
 export default createContactMenu;

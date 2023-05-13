@@ -1,5 +1,9 @@
 const mailtoLinks = document.querySelectorAll('.mailto-link');
 
+/**
+ * configMailto
+ * @description config mailto links to open email client with subject already filled out
+ */
 const configMailto = () => {
   const subject = `subject=${encodeURIComponent('Contacting you from your portfolio site')}`;
   const email = 'ottofy@zohomail.com';

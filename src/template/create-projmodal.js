@@ -1,20 +1,14 @@
 import projectJSON from '../data/min/projectJSONMin.json';
 
-import getScrollBarWidth from '../utilities/get-scrollbarwidth';
+import handleModalOffset from '../utilities/handle-modaloffset';
 
-const poWrapper = document.querySelector('.project-overview--wrapper');
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
 
 const handleCloseProjOverview = () => {
-  poWrapper.classList.add('hide-po');
-  poWrapper.firstElementChild.remove();
-
-  // eslint-disable-next-line no-use-before-define
-  poWrapper.removeEventListener('click', closeProjectOverview);
+  document?.querySelector('.project-overview--wrapper')?.remove();
   // eslint-disable-next-line no-use-before-define
   window.removeEventListener('keydown', closeOverviewOnEsc);
-
   body.classList.remove('body-prevent-scroll');
   body.removeAttribute('style');
   header.removeAttribute('style');
@@ -73,6 +67,8 @@ const projectFeatureTemplate = (featureName, featureValue) => {
  */
 const setProjectOverview = (data) => {
   const { title, links, features } = data;
+  const poWrapper = document.createElement('aside');
+  poWrapper.classList.add('project-overview--wrapper');
 
   const poModal = document.createElement('div');
   poModal.classList.add('project-overview--modal');
@@ -90,7 +86,7 @@ const setProjectOverview = (data) => {
   closePoBtn.classList.add('po-header--close');
   closePoBtn.title = 'Close Project Overview';
   closePoBtn.ariaLabel = 'button';
-  closePoBtn.addEventListener('click', closeProjectOverview, { once: true });
+
   // MODAL HEADER : APPEND
   poSubheader.append(br, poModalTitle);
   poModalHeader.append(poSubheader, closePoBtn);
@@ -126,17 +122,21 @@ const setProjectOverview = (data) => {
   // MODAL : APPEND
   poModal.append(poModalHeader, poModalBody);
   poWrapper.append(poModal);
+  poWrapper.addEventListener('click', closeProjectOverview);
+  setTimeout(() => {
+    closePoBtn.focus();
+  }, 50);
+  return poWrapper;
 };
 
 const createProjectModal = (e) => {
-  poWrapper.classList.remove('hide-po');
-  body.classList.add('body-prevent-scroll');
-  body.style.paddingRight = `${getScrollBarWidth()}px`;
-  header.style.paddingRight = `${getScrollBarWidth()}px`;
-  setProjectOverview(projectJSON[e.target.getAttribute('data-proj')]);
-  poWrapper.addEventListener('click', closeProjectOverview);
-  window.addEventListener('keydown', closeOverviewOnEsc);
+  if (body.classList.contains('body-prevent-scroll')) return;
+  body.append(setProjectOverview(
+    projectJSON[e.target.getAttribute('data-proj')],
+  ));
   e.target.blur();
+  handleModalOffset();
+  window.addEventListener('keydown', closeOverviewOnEsc);
 };
 
 export default createProjectModal;

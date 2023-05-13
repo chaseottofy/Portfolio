@@ -39,10 +39,7 @@
   width: 100%;
   max-height: 90%;
   overflow: hidden;
-}
-
-.contact-menu--active {
-  z-index: 9998;
+    z-index: 9998;
   display: flex;
   background: var(--offsetblack2);
   opacity: 1;
@@ -57,6 +54,23 @@
   min-height: 400px;
   animation: ease-modal-in 100ms both;
 }
+
+/* .contact-menu--active {
+  z-index: 9998;
+  display: flex;
+  background: var(--offsetblack2);
+  opacity: 1;
+  height: 500px;
+  border: 1px solid var(--black2);
+  box-shadow: var(--bs-md);
+  pointer-events: auto;
+  user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  min-height: 400px;
+  animation: ease-modal-in 100ms both;
+} */
 
 .contact-menu__body {
   display: grid;

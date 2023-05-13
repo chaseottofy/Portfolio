@@ -62,10 +62,7 @@ const handleFormChange = () => {
   }
 };
 
-const disableForm = (e) => {
-  if (e) {
-    e.target.blur();
-  }
+const disableForm = () => {
   submitBtn.blur();
   submitBtn.disabled = true;
   formWrapper.classList.add('disable-form');
@@ -135,10 +132,8 @@ const handleFormSubmit = (e) => {
       createToast('Message Sent!');
       resetForm();
     })
-    .catch((error) => {
+    .catch(() => {
       createToast('Something went wrong!');
-      // eslint-disable-next-line no-console
-      console.assert(false, error);
       resetForm();
     });
 };
