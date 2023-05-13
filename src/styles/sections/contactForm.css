@@ -17,6 +17,15 @@
   padding: .125rem;
 }
 
+.disable-form {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.disable-contact-form {
+  display:none;
+}
+
 .contact-form--container .section-title {
   padding-top: 4rem;
 }

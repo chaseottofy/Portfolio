@@ -1,5 +1,4 @@
 const body = document.querySelector('.body');
-const header = document.querySelector('.header');
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const themeInputs = document.querySelectorAll('.theme-input');
 const themeLabels = document.querySelectorAll('.theme-label');
@@ -11,12 +10,14 @@ const getSystemTheme = () => {
   return 'light';
 };
 
-const setTheme = (theme) => {
+const setTheme = (theme, themeClass) => {
   localStorage.setItem('portfolio-theme', theme);
   colorSchemeMeta.setAttribute('content', theme);
-  body.classList.remove('theme__dark');
-  body.classList.remove('theme__light');
-  body.classList.add(`theme__${theme}`);
+  if (!body.classList.contains(themeClass)) {
+    body.classList.remove('theme__dark');
+    body.classList.remove('theme__light');
+    body.classList.add(themeClass);
+  }
 };
 
 const initDefaultTheme = () => {
@@ -26,10 +27,10 @@ const initDefaultTheme = () => {
   themeLabels[2].dataset.systemTheme = systemTheme;
   if (!localTheme
     || (localTheme !== 'dark' && localTheme !== 'light')) {
-    setTheme(systemTheme);
+    setTheme(systemTheme, `theme__${systemTheme}`);
     themeInputs[2].checked = true;
   } else {
-    setTheme(localTheme);
+    setTheme(localTheme, `theme__${localTheme}`);
     themeInputs[localTheme === 'dark' ? 0 : 1].checked = true;
   }
 };
@@ -37,9 +38,10 @@ const initDefaultTheme = () => {
 const handleThemeChange = (e) => {
   const theme = e.target.value;
   if (theme === 'system') {
-    setTheme(e.target.getAttribute('data-system-theme'));
+    const systemDataTheme = e.target.getAttribute('data-system-theme');
+    setTheme(systemDataTheme, `theme__${systemDataTheme}`);
   } else {
-    setTheme(theme);
+    setTheme(theme, `theme__${theme}`);
   }
 };
 
@@ -52,10 +54,6 @@ const initThemeOptions = () => {
 const initTheme = () => {
   initDefaultTheme();
   initThemeOptions();
-  header.classList.add('header-animate');
-  setTimeout(() => {
-    body.classList.remove('disable-transitions');
-  }, 200);
 };
 
 export default initTheme;

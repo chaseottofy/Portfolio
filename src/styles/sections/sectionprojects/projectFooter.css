@@ -230,11 +230,6 @@
     padding: 1rem;
   }
 
-  /* .project-footer-btns button {
-    font-size: .825rem;
-    padding: 0 .5rem;
-  } */
-
   .project-footer-btns button:before {
     content: "";
   }

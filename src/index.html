@@ -21,11 +21,11 @@
   <script src="index.js" defer="defer"></script>
 </head>
 
-<body class="body theme__dark disable-transitions">
+<body class="body theme__dark">
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
   <!-- HEADER (FIXED)-->
-  <header class="header">
+  <header class="header header-animate">
     <div class="header-wrapper">
       <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#top">
         <img src="./images/svg/logo.svg" alt>
@@ -104,7 +104,7 @@
     <aside class="section-gradient-left"></aside>
 
     <!-- SECTION : PROJECTS -->
-    <article class="projects-container" id="projects-top">
+    <article class="section-container projects-container" id="projects-top">
 
       <div class="section-title">
         <h2>Highlighted Work</h2>
@@ -125,27 +125,27 @@
               <div class="pc__header-tabs calendar-tabs">
                 <span>
                   <input class="proj-header__tabinput" id="proj-calendar-day" name="proj-calendar--radio" type="radio" value="Day" checked>
-                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="1" for="proj-calendar-day" aria-label="Day View" data-theme-labels>Day </label>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-lab-sm="D" data-tab-idx="1" for="proj-calendar-day" aria-label="Day View" data-theme-labels>Day </label>
                 </span>
 
                 <span>
                   <input class="proj-header__tabinput" id="proj-calendar-week" name="proj-calendar--radio" type="radio" value="Day">
-                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="2" for="proj-calendar-week" aria-label="Day View">Week </label>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-lab-sm="W" data-tab-idx="2" for="proj-calendar-week" aria-label="Day View">Week </label>
                 </span>
 
                 <span>
                   <input class="proj-header__tabinput" id="proj-calendar-month" name="proj-calendar--radio" type="radio" value="Day">
-                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="3" for="proj-calendar-month" aria-label="Month View">Month </label>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-lab-sm="M" data-tab-idx="3" for="proj-calendar-month" aria-label="Month View">Month </label>
                 </span>
 
                 <span>
                   <input class="proj-header__tabinput" id="proj-calendar-year" name="proj-calendar--radio" type="radio" value="Day">
-                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="4" for="proj-calendar-year" aria-label="Year View">Year </label>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-lab-sm="Y" data-tab-idx="4" for="proj-calendar-year" aria-label="Year View">Year </label>
                 </span>
 
                 <span>
                   <input class="proj-header__tabinput" id="proj-calendar-list" name="proj-calendar--radio" type="radio" value="Day">
-                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-tab-idx="5" for="proj-calendar-list" aria-label="List View">List </label>
+                  <label class="proj-header__tablabel proj-cal--tab" data-lab-after="view" data-lab-sm="L" data-tab-idx="5" for="proj-calendar-list" aria-label="List View">List </label>
                 </span>
               </div>
             </div>
@@ -351,7 +351,7 @@
 
     <!-- SECTION: SKILLS -->
     <aside class="section-divider"></aside>
-    <article class="skills-container" id="skills-top">
+    <article class="section-container skills-container" id="skills-top">
       <div class="skills-grid">
         <div class="section-title">
           <h2>Skills</h2>
@@ -361,7 +361,7 @@
 
     <!-- SECTION: ABOUT -->
     <aside class="section-divider"></aside>
-    <article class="about-container" id="about-top">
+    <article class="section-container about-container" id="about-top">
       <div class="about-grid">
         <div class="section-title">
           <h2>About</h2>
@@ -371,7 +371,7 @@
 
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
-    <div class="contact-container" id="contact-top">
+    <div class="section-container contact-container" id="contact-top">
 
       <div class="contact-menu__body">
         <!-- LEFT -->
@@ -503,11 +503,14 @@
       </div>
 
       <div class="contact-form--wrapper">
-        <form class="contact-form">
+        <form class="contact-form" data-csd="false">
           <div class="form-group">
             <label for="form-name">Name *</label>
             <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
           </div>
+
+          <input class="form-hp--one" type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+
 
           <div class="form-group">
             <label>Choose the best for response *</label>
@@ -526,6 +529,7 @@
 
             <input class="form-contact--input" name="messageContactVal" type="email" placeholder="Enter your email address" minlength="1" maxLength="200" required>
           </div>
+
 
           <div class="form-group">
             <label for="form-message">Message *</label>

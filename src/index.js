@@ -62,3 +62,7 @@ const appInit = () => {
 appInit();
 // !!REMINDER
 // TAB INDEX
+// create event emitter for modal tabs
+// smaller
+// smooth scroll
+// intersection observer
