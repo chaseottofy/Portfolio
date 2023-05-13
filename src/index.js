@@ -9,7 +9,8 @@ import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
 /** ************************************ */
 // DEVELOPMENT ONLY
-import enableTesting from './testing/test-index';
+// import enableTesting from './testing/test-index';
+// enableTesting(true, false, false, true); // DEV ONLY
 /** ************************************ */
 
 const appInit = () => {
@@ -58,7 +59,6 @@ const appInit = () => {
 };
 
 appInit();
-enableTesting(true, false, false, true); // DEV ONLY
 // !!REMINDER
 // TAB INDEX
 // create event emitter for modal tabs

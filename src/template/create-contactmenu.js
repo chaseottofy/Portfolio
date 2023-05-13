@@ -1,6 +1,5 @@
 import badgeData from '../data/min/contactJSONMin.json';
 
-// const cmAside = document.querySelector('.contact-menu');
 const body = document.querySelector('.body');
 const bentArrow = document.querySelector('.img-bent-arrowsrc');
 const bentArrowSrc = bentArrow.getAttribute('src');
@@ -72,9 +71,9 @@ const createBadge = (cname, href, title, dataAcc, dataBef, idx) => {
 };
 
 const createContactMenu = () => {
-  if (document?.querySelector('.contact-menu')) return;
+  if (document?.querySelector('.contact-menu__header')) return;
   const cmAside = document.createElement('aside');
-  cmAside.setAttribute('class', 'contact-menu contact-menu__header');
+  cmAside.setAttribute('class', 'contact-menu__header');
 
   const cmwrapper = document.createElement('div');
   cmwrapper.classList.add('cm-right');

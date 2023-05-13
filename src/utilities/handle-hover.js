@@ -7,11 +7,11 @@ const configContactMenu = () => {
     if (
       !e
       || !e.target
-      || e.target.closest('.contact-menu')
+      || e.target.closest('.contact-menu__header')
       || e.target.closest('.nav-multi__contact')
     ) return;
 
-    document?.querySelector('.contact-menu')?.remove();
+    document?.querySelector('.contact-menu__header')?.remove();
     navContactBtn.firstChild.classList.remove('nav-menu--contact--active');
     window.removeEventListener('mousemove', contactMousemove);
   };
