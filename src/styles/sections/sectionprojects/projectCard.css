@@ -8,7 +8,7 @@
   overflow: hidden;
   position: relative;
   max-width: 100%;
-  border: 1px solid var(--black2);
+  border: 1px solid var(--accent-1);
   background: var(--black0);
 }
 
@@ -27,7 +27,6 @@
   grid-template-columns: 6rem 1fr;
   align-items: center;
   justify-content: center;
-  background: var(--black4);
   position: relative;
   z-index: 2;
 }
@@ -80,19 +79,16 @@
   display: flex;
   align-items: center;
   text-align: center;
-  font-size: .875rem;
+  font-size: .825rem;
   letter-spacing: -.5px;
-  color: var(--white1);
-  background: var(--black0);
-  opacity: .9;
+  color: var(--accent-7);
   font-weight: 500;
   width: 100%;
   justify-content: center;
   height: 100%;
   cursor: pointer;
-  border-right: 1px solid var(--black2);
+  border: 1px solid var(--offsetwhite2);
   position: relative;
-  border-bottom: 1px solid var(--black4);
 }
 
 .pc__header-tabs span label::after {
@@ -105,8 +101,7 @@
 
 .pc__header-tabs span label:hover,
 .pc__header-tabs span label:focus-visible {
-  opacity: .8;
-  transition: var(--topac1);
+  background: var(--accent-1);
 }
 
 .pc__header-tabs span input {
@@ -121,8 +116,26 @@
 }
 
 .pc__header-tabs span input:checked + label {
-  box-shadow: var(--bs-inset1);
-  background: var(--black0);
+  transition: all .1s ease-in-out;
+  overflow: hidden;
+  border: 1px solid var(--offsetwhite2);
+  background:
+    linear-gradient(0deg,
+      var(--offsetwhite1),
+      var(--offsetwhite1)),
+    radial-gradient(50% 50% at 50% 100%,
+    var(--offsetwhite2) 0%,
+      var(--offsetwhite0) 100%);
+  /* box-shadow: var(--bs-inset1);
+  background: var(--black0); */
+}
+
+.pc__header-tabs span input:focus + label {
+  /* box-shadow: var(--bs-inset1); */
+  border: 1px solid rgba(255,255,255,.1);
+  /* background: var(--black0); */
+  opacity: .8;
+  transition: var(--topac1);
 }
 
 .pc__header-tabs span input:checked + label::before {
@@ -140,12 +153,12 @@
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
 ============================*/
 .project-content__subheader {
-  height: 3.5rem;
+  height: 3.75rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 .75rem;
+  padding: 0 1rem 0 .5rem;
   position: relative;
   z-index: 1;
 }
@@ -162,7 +175,11 @@
   border-radius: 5px;
   overflow: hidden;
   box-shadow: var(--bs-inset2);
-  background: var(--accent-1);
+  /* background: var(--accent-1); */
+  /* background: var(--accent-1); */
+  border: 1px solid var(--offsetwhite2);
+
+  /* background: var(--black1); */
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -174,11 +191,13 @@
 .pc__subheader--search a {
   width: 100%;
   position: relative;
-  color: var(--white1);
-  opacity: .9;
+  color: var(--white2);
+  font-size: .875rem;
+  /* opacity: .9; */
   height: 100%;
   display: flex;
   align-items: center;
+  font-weight: 500;
   z-index: 1000;
   padding: 0 3rem 0 .5rem;
 }
@@ -269,20 +288,23 @@
     display: none;
   }
 
-  .pc__header-tabs span label {
-    text-transform: uppercase;
-    font-weight: 500;
+  /* .pc__header-tabs span label {
     transform: scaleY(.86);
-  }  
+  }   */
   
   .pc__header-tabs span input:checked + label::before {
     display: none;
+  }
+
+  .pc__header-decoration span {
+    height: .675rem;
+    width: .675rem;
   }
 }
 
 @media screen and (max-width: 490px) {
   .project-content__header {
-    grid-template-columns: 4.5rem 1fr;
+    grid-template-columns: 5rem 1fr;
   }
 
   .pc__subheader--search {
@@ -291,11 +313,6 @@
 
   .project-calendar .pc__header-tabs span label {
     font-size: .75rem;
-  }
-
-  .pc__header-decoration span {
-    height: .675rem;
-    width: .675rem;
   }
   
   .calendar-tabs span label {

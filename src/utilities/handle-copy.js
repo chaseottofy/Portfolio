@@ -13,7 +13,7 @@ const copyToClipboard = (text) => {
 
 const setCopy = (text) => {
   copyToClipboard(text);
-  createToast(text);
+  createToast(text, 'copied!');
 };
 
 const copyEmail = () => setCopy('ottofy@zohomail.com');

@@ -16,15 +16,15 @@
   justify-content: space-evenly;
   align-items: center;
   margin-top: 2rem;
-  height: 8rem;
+  height: 6rem;
 }
 
 .footer a {
   font-size: 13px;
   text-transform: uppercase;
-  line-height: 4rem;
+  line-height: 3rem;
   padding: 0 1rem;
-  height: 4rem;
+  height: 3rem;
   color: var(--accent-7);
   margin: 0 .25rem;
   transform: scaleY(.9);

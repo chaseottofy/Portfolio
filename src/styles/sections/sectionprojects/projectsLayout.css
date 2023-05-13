@@ -9,15 +9,26 @@
       var(--black0) 80%,
       transparent); */
   background: linear-gradient(to bottom,
+      var(--black0) 0,
+      hsla(0, 0%, 100%, 0) 100%),
+    linear-gradient(180deg,
+      var(--offsetblack1) 0,
+      var(--offsetsecondary1) 100%);
+  background-size: 100% 100%, 100% 100%, 1440px 1px;
+  background-position: botton;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  /* background: linear-gradient(to bottom,
   var(--black0) 20%,
   var(--black4) 40%,
   var(--black0) 80%,
-  transparent);
+  transparent); */
   position: relative;
 }
 
 .projects-container .section-title {
   padding-top: 4rem;
+  opacity: 0;
 }
 
 .projects-grid {
@@ -37,7 +48,7 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }

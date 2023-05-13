@@ -18,7 +18,7 @@ const handleToasts = () => {
   }
 };
 
-const createToast = (text) => {
+const createToast = (text, pre) => {
   if (toastIndex <= 3) {
     toastIndex += 1;
   }
@@ -39,7 +39,7 @@ const createToast = (text) => {
 
   const message = document.createElement('span');
   message.classList.add('toast-message');
-  message.textContent = `Copied! ${text}`;
+  message.textContent = pre ? `${pre} ${text}` : `${text}`;
 
   wrapper.append(progressbar, progresstrack, message);
   toastWrapper.prepend(wrapper);

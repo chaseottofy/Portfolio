@@ -24,7 +24,7 @@
   max-width: 900px;
   background: transparent;
   border-radius: 1rem;
-  border: 1px solid var(--black2);
+  border: 1px solid rgba(12, 206, 107, .2);
   background: var(--black1);
   display: flex;
   flex-direction: column;
@@ -39,8 +39,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: var(--black4);
-  border-bottom: 1px solid var(--black2);
+  background: var(--black1);
+  border-bottom: 1px solid rgba(12, 206, 107, .1);
 }
 
 .lh-appname {
@@ -71,12 +71,13 @@
   cursor: pointer;
   font-size: 1.125rem;
   background: var(--black1);
-  border: 1px solid var(--black3);
+  color: var(--accent-7);
+  border: 1px solid var(--accent-2);
   transform: scaleX(115%);
 }
 
 .close-lh-btn:hover {
-  background: var(--black2);
+  background: var(--accent-1);
 }
 
 /* BODY

@@ -75,9 +75,12 @@ const setProjectOverview = (data) => {
   const poModalHeader = document.createElement('div');
   poModalHeader.classList.add('po-header');
   const poModalTitle = document.createElement('h3');
-  const poSubheader = document.createElement('span');
-  poSubheader.textContent = 'Project Overview: ';
+  const poSubheader = document.createElement('div');
   poSubheader.classList.add('po-header--title');
+  const poSubheaderText = document.createElement('span');
+  poSubheaderText.textContent = ' – Project Overview';
+  // poSubheader.setAttribute('data-mt-after', 'Project Overview: ')
+  // poSubheader.textContent = 'Project Overview: ';
   const br = document.createElement('br');
   poModalTitle.textContent = title;
 
@@ -88,7 +91,7 @@ const setProjectOverview = (data) => {
   closePoBtn.ariaLabel = 'button';
 
   // MODAL HEADER : APPEND
-  poSubheader.append(br, poModalTitle);
+  poSubheader.append(poModalTitle, br, poSubheaderText);
   poModalHeader.append(poSubheader, closePoBtn);
 
   const poModalBody = document.createElement('div');

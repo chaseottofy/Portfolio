@@ -129,11 +129,11 @@ const handleFormSubmit = (e) => {
   })
     .then((res) => res.text())
     .then(() => {
-      createToast('Message Sent!');
+      createToast('Message Sent!', false);
       resetForm();
     })
     .catch(() => {
-      createToast('Something went wrong!');
+      createToast('Something went wrong!', false);
       resetForm();
     });
 };

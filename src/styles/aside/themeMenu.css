@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 15%;
+  bottom: 3.5rem;
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
@@ -69,6 +69,11 @@
 .theme-switch span input:checked + .theme-label--two img {
   filter: invert(1);
   opacity: 1;
+}
+
+.theme-switch span input:focus-visible + label {
+  /* box-shadow: 0 0 0 2px var(--blue3); */
+  background: var(--blue2) !important;
 }
 
 .theme-switch span input:checked + label {
