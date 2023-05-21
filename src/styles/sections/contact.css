@@ -377,9 +377,10 @@
   flex-direction: column;
   height: 100%;
   background:
-    linear-gradient(200deg,
-      var(--offsetblack1),
-      var(--offsetwhite1));
+    linear-gradient(60deg,
+      var(--black0) 0,
+      var(--offsetblack0),
+      var(--offsetblack2) 80%);
 }
 
 .cm-right--bottom__cell {
@@ -408,6 +409,7 @@
 .cm-copy,
 .cm-email-goto {
   border: 1px solid var(--black1);
+  background: var(--black4);
   border-radius: 5px;
   display: flex;
   align-items: center;
