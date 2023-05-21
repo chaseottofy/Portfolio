@@ -1,11 +1,14 @@
 .skills-container {
   width: 100%;
-  /* background: radial-gradient(circle farthest-side at 50% 50%, var(--blue1) 0%, transparent 100%); */
   position: relative;
-  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 6rem;
+  scroll-margin-top: 4rem;
 }
 
-.skills-grid {
+.skills-top {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -14,4 +17,58 @@
   margin: 0 auto;
   width: 100%;
   padding: 1rem;
+}
+
+.skills-grid {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  border: 1px solid var(--black1);
+  margin-bottom: 2rem;
+}
+
+.skills-cell {
+  width: 25%;
+  height: 140px;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  background: var(--black0);
+  border: 1px solid transparent;
+  border-left: 1px solid var(--black4);
+  /* border-top: 1px solid var(--black2); */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.skills-cell:nth-child(n + 5) {
+  border-top: 1px solid var(--black4);
+}
+
+.skills-cell:hover {
+  border: 1px solid var(--offsetwhite2);
+  background:
+    linear-gradient(0deg,
+      var(--offsetwhite1),
+      var(--offsetwhite1)),
+    radial-gradient(50% 50% at 50% 100%,
+      var(--offsetwhite2) 0%,
+      var(--offsetwhite0) 100%);
+}
+
+.skills-cell h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 640px) {
+  .skills-cell {
+    width: 50%;
+  }
 }

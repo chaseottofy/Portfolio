@@ -1,4 +1,5 @@
 .contact-container {
+  padding-top: 4rem;
   padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@
   padding-right: .75rem;
   background: var(--black0);
   z-index: 3;
+  scroll-margin-top: 4rem;
 }
 
 .contact-menu__header {
@@ -81,7 +83,6 @@
       var(--grey1) 20%,
       transparent);
   opacity: .5;
-  /* display:none; */
 }
 
 /* LEFT GRID SECTION -- ONLY IN <MAIN> <CONTACT />
@@ -183,7 +184,7 @@
   grid-template-rows: 1fr auto;
   height: 100%;
   width: 100%;
-  box-shadow: var(--bs-lg);
+  box-shadow: var(--bs-md);
   position: relative;
   z-index: 1000;
 }
@@ -195,7 +196,6 @@
   grid-template-columns: 1fr 1fr;
   height: 100%;
   width: 100%;
-  /* background: var(--offsetblack0); */
   background:
     radial-gradient(100% 100% at 50% 0,
       var(--offsetblack0) 0,
@@ -290,7 +290,6 @@
   height: 100%;
   z-index: 1;
   color: var(--accent-7);
-  /* color: var(--white1); */
   transition: var(--ttop1);
 }
 
@@ -389,16 +388,13 @@
   align-items: center;
   min-height: 4rem;
   border-top: 1px solid var(--black2);
-  /* background: var(--offsetwhite0); */
   height: 100%;
   width: 100%;
   padding: 2px var(--gap1);
-  /* font-size: .875rem; */
   font-weight: 500;
 }
 
 .cm-right--bottom__cell span {
-  /* font-size: .925rem; */
   transform: scaleY(.95);
 }
 

@@ -1,1 +1,40 @@
-{"github":{"cname":"badge-github","href":"https://github.com/chaseottofy","title":"Github","dataAcc":"@chaseottofy","dataBef":null,"idx":0},"youtube":{"cname":"badge-youtube","href":"https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g","title":"YouTube","dataAcc":"3.6k subs","dataBef":["@otto-fy","550,000 views"],"idx":1},"codepen":{"cname":"badge-codepen","href":"https://codepen.io/chaseottofy","title":"Codepen","dataAcc":"@chaseottofy","dataBef":null,"idx":2},"codewars":{"cname":"badge-codewars","href":"https://www.codewars.com/users/protto","title":"Codewars","dataAcc":"Top 0.5%","dataBef":["@protto","#2500"],"idx":3}}
+{
+  "github": {
+    "cname": "badge-github",
+    "href": "https://github.com/chaseottofy",
+    "title": "Github",
+    "dataAcc": "@chaseottofy",
+    "dataBef": null,
+    "idx": 0
+  },
+  "youtube": {
+    "cname": "badge-youtube",
+    "href": "https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g",
+    "title": "YouTube",
+    "dataAcc": "3.6k subs",
+    "dataBef": [
+      "@otto-fy",
+      "_"
+    ],
+    "idx": 1
+  },
+  "codepen": {
+    "cname": "badge-codepen",
+    "href": "https://codepen.io/chaseottofy",
+    "title": "Codepen",
+    "dataAcc": "@chaseottofy",
+    "dataBef": null,
+    "idx": 2
+  },
+  "codewars": {
+    "cname": "badge-codewars",
+    "href": "https://www.codewars.com/users/protto",
+    "title": "Codewars",
+    "dataAcc": "Top 0.5%",
+    "dataBef": [
+      "@protto",
+      "#2500"
+    ],
+    "idx": 3
+  }
+}

@@ -27,7 +27,8 @@
   height: 3rem;
   color: var(--accent-7);
   margin: 0 .25rem;
-  transform: scaleY(.9);
+  /* transform: scaleY(.9); */
+  transform: scale(.9, .8);
   font-weight: 700;
   position: relative;
 }
@@ -57,8 +58,10 @@
   font-size: 12px;
   font-family: monospace;
   white-space: pre;
-  color: var(--accent-7);
-  transform: scale(.85);
+  color: var(--accent-6);
+  transform: scale(.95) translateY(-10%);
+  pointer-events: none;
+  user-select: none;
   font-weight: 700;
   width: 100%;
   display: flex;

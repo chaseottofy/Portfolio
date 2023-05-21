@@ -2,33 +2,21 @@
 ============================*/
 .projects-container {
   width: 100%;
-  /* background: linear-gradient(to bottom,
-      var(--black0) 0%,
-      var(--accent-1) 20%,
-      var(--black4) 40%,
-      var(--black0) 80%,
-      transparent); */
-  background: linear-gradient(to bottom,
+  background: linear-gradient(to top,
       var(--black0) 0,
       hsla(0, 0%, 100%, 0) 100%),
     linear-gradient(180deg,
-      var(--offsetblack1) 0,
-      var(--offsetsecondary1) 100%);
+      var(--black0) 0,
+      var(--offsetsecondary1) 20%);
   background-size: 100% 100%, 100% 100%, 1440px 1px;
   background-position: botton;
   background-repeat: no-repeat;
   z-index: 9999;
-  /* background: linear-gradient(to bottom,
-  var(--black0) 20%,
-  var(--black4) 40%,
-  var(--black0) 80%,
-  transparent); */
   position: relative;
 }
 
 .projects-container .section-title {
-  padding-top: 4rem;
-  opacity: 0;
+  padding: 5rem 0 5rem 0;
 }
 
 .projects-grid {
@@ -40,7 +28,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: var(--maxWidthMd);
-  padding: 0 1rem;
+  padding: 0 .5rem;
 }
 
 .project-divider {

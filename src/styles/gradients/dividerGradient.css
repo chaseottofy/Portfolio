@@ -35,3 +35,35 @@
   z-index: 2;
   margin: 0 auto;
 }
+
+.section-gradient--l,
+.section-gradient--r {
+  border-radius: 100%;
+  margin-top: -8px;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  user-select: none;
+  filter: blur(46px);
+  width: 100%
+}
+.section-gradient--l {
+  background: var(--blue1);
+  min-height: 24px;
+  position: relative;
+  /* transform: translateX(-51%); */
+  z-index: 7
+}
+
+.section-gradient--r{
+  background: var(--blue3);
+  position: relative;
+  min-height: 16px;
+  /* transform: translateX(51%); */
+  z-index: 2
+}
+
+.theme__light .section-gradient--l,
+.theme__light .section-gradient--r {
+  opacity: .2;
+  background: var(--white1);
+}

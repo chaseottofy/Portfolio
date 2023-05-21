@@ -40,11 +40,8 @@
             <li>
               <a class="nav-menu--link" data-scroll-to="1" href="#skills" title="Scroll to skills">Skills</a>
             </li>
-            <li>
-              <a class="nav-menu--link" data-scroll-to="2" href="#about" title="Scroll to skills">About</a>
-            </li>
             <li class="nav-multi__contact">
-              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="3" href="#contact" title="Contact Menu & context">
+              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="2" href="#contact" title="Contact Menu & context">
                 <span>Contact</span>
                 <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt>
               </a>
@@ -101,13 +98,12 @@
   <!-- MAIN (projects > skills > about > contact) -->
   <main class="main">
     <aside class="section-divider"></aside>
-    <aside class="section-gradient-left"></aside>
 
     <!-- SECTION : PROJECTS -->
     <article class="section-container projects-container" id="projects-top">
 
       <div class="section-title">
-        <h2>Highlighted Work</h2>
+        <h2>Projects</h2>
       </div>
 
       <div class="projects-grid">
@@ -186,19 +182,12 @@
                 <div class="pf-stack">
                   <img class="webpack-icon" src="./images/svg/webpack.svg" alt>
                 </div>
-                
-                <!-- <div class="project-footer-btns">
-                  <button class="open-lh--btn" data-lh-proj="calendar" aria-label="button" data-text-lg="View ">Performance Audit</button>
-                  <button class="open-overview--btn" data-proj="calendar" aria-label="button" data-text-lg="Open ">Full Overview</button>
-                </div> -->
                 <h3 class="pf-title">VANILLA JS + WEBPACK</h3>
-                <!-- <h3 class="pf-title">VANILLA JS<br>+ WEBPACK</h3> -->
               </div>
             </div>
-            
+
             <div class="project-footer__content">
               <h4 class="project-footer__title">Google Calendar 2.0</h4>
-                <!-- <h3 class="pf-title">VANILLA JS + WEBPACK</h3> -->
               <div class="project-footer-btns">
                 <button class="open-lh--btn" data-lh-proj="calendar" aria-label="button" data-text-lg="View ">Performance Audit</button>
                 <button class="open-overview--btn" data-proj="calendar" aria-label="button" data-text-lg="Open ">Full Overview</button>
@@ -259,7 +248,6 @@
                   <img class="vite-icon" src="./images/svg/vite.svg" alt>
                 </div>
                 <h3 class="pf-title">REACT + VITE</h3>
-                <!-- <h3 class="pf-title">REACT<br>+ VITE</h3> -->
               </div>
             </div>
             <div class="project-footer__content">
@@ -360,23 +348,32 @@
 
     <!-- SECTION: SKILLS -->
     <aside class="section-divider"></aside>
+    <aside class="section-gradient--l"></aside>
     <article class="section-container skills-container" id="skills-top">
-      <div class="skills-grid">
+      <div class="skills-top">
         <div class="section-title">
           <h2>Skills</h2>
         </div>
       </div>
-    </article>
-
-    <!-- SECTION: ABOUT -->
-    <aside class="section-divider"></aside>
-    <article class="section-container about-container" id="about-top">
-      <div class="about-grid">
-        <div class="section-title">
-          <h2>About</h2>
+      <div class="skills-grid">
+        <div class="skills-cell">
+          <span>JavaScript</span>
+          <span>Webpack</span>
+          <span>React</span>
         </div>
+        <div class="skills-cell">
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+        <div class="skills-cell">
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+          <span>Figma</span>
+        </div>
+        <div class="skills-cell">Wordpress</div>
       </div>
     </article>
+    <aside class="section-gradient--r"></aside>
 
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
@@ -386,8 +383,8 @@
         <!-- LEFT -->
         <div class="cm-left">
           <div class="cm-left__header">
-            <span>Contact /</span>
-            <span>Links</span>
+            <h3>Contact /</h3>
+            <h3>Links</h3>
           </div>
           <div class="cm-left__body"></div>
           <div class="cm-left__footer">
@@ -395,7 +392,7 @@
               willing to relocate
             </div>
             <div class="cm-left__footer-location">
-              <span>Breckenridge, CO</span>
+              <span>Colorado</span>
               <span class="cm-left--time">MST:</span>
             </div>
           </div>
@@ -428,7 +425,7 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt style="height:3rem;width:3rem;">
-                    <span class="badge-prof" data-acc="3.6k subs" data-bef="550,000 views">@otto-fy</span>
+                    <span class="badge-prof" data-acc="3.6k subs" data-bef="">@otto-fy</span>
                   </div>
                 </div>
 
@@ -481,10 +478,10 @@
               <span>ottofy@zohomail.com</span>
               <div class="cm-right--bottom__cell-icons">
                 <a class="mailto-link cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-                  <img class="img-icon" src="./images/svg/mailto.svg" alt>
+                  <img class="img-icon cm-img--icon" src="./images/svg/mailto.svg" alt>
                 </a>
                 <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
-                  <img class="img-icon" src="./images/svg/copy.svg" alt>
+                  <img class="img-icon cm-img--icon" src="./images/svg/copy.svg" alt>
                 </button>
               </div>
             </div>

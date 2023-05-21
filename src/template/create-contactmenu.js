@@ -1,9 +1,12 @@
 import badgeData from '../data/min/contactJSONMin.json';
+import createToast from './create-toast';
+import copyToClipboard from '../utilities/get-copytoclipboard';
 
 const body = document.querySelector('.body');
 const bentArrow = document.querySelector('.img-bent-arrowsrc');
 const bentArrowSrc = bentArrow.getAttribute('src');
 const cmBodyImgs = document.querySelectorAll('.cm-body--img');
+const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
 
 /**
  * createBadge
@@ -15,7 +18,14 @@ const cmBodyImgs = document.querySelectorAll('.cm-body--img');
  * @param {number} idx index of badge : use to retrieve img src from cmBodyImgs
  * @returns {HTMLDivElement} badge
  */
-const createBadge = (cname, href, title, dataAcc, dataBef, idx) => {
+const createBadge = (
+  cname,
+  href,
+  title,
+  dataAcc,
+  dataBef,
+  idx,
+) => {
   const badge = document.createElement('div');
   badge.classList.add('cm-right--top__cell');
   badge.classList.add(cname);
@@ -66,8 +76,57 @@ const createBadge = (cname, href, title, dataAcc, dataBef, idx) => {
   badgeTop.append(badgeTopProfile);
   badgeFooter.append(badgeFooterImg, badgeFooterSpan);
   badgeLink.append(badgeTop, badgeFooter);
+
   badge.append(badgeLink);
   return badge;
+};
+
+const createCmBottomCell = (
+  spanText,
+  btnClass,
+  btnTitle,
+  btnHref,
+  dataText,
+  imgs,
+) => {
+  const menuCell = document.createElement('div');
+  menuCell.classList.add('cm-right--bottom__cell');
+  const menuSpan = document.createElement('span');
+  menuSpan.textContent = spanText;
+  const menuCellIcons = document.createElement('div');
+  menuCellIcons.classList.add('cm-right--bottom__cell-icons');
+
+  if (btnHref) {
+    const menuLink = document.createElement('a');
+    menuLink.classList.add('cm-email-goto');
+    menuLink.href = btnHref;
+    menuLink.title = 'Open Mail-to';
+    const menuLinkImg = document.createElement('img');
+    menuLinkImg.classList.add('img-icon');
+    menuLinkImg.src = imgs[0].src;
+    menuLinkImg.alt = '';
+    menuLink.append(menuLinkImg);
+    menuCellIcons.append(menuLink);
+  }
+
+  const menuBtn = document.createElement('button');
+  menuBtn.classList.add('cm-copy');
+  menuBtn.classList.add(btnClass);
+  menuBtn.title = btnTitle;
+  menuBtn.setAttribute('aria-label', 'button');
+  const menuBtnImg = document.createElement('img');
+  menuBtnImg.classList.add('img-icon');
+  menuBtnImg.src = imgs[1].src;
+  menuBtnImg.alt = '';
+  menuBtn.addEventListener('click', () => {
+    copyToClipboard(dataText);
+    createToast(`Copied! ${dataText}`);
+  });
+  menuBtn.append(menuBtnImg);
+  menuCellIcons.append(menuBtn);
+
+  menuCell.append(menuSpan, menuCellIcons);
+  return menuCell;
 };
 
 const createContactMenu = () => {
@@ -86,7 +145,29 @@ const createContactMenu = () => {
     );
   }
 
-  cmwrapper.append(cm);
+  const cmFooter = document.createElement('div');
+  cmFooter.classList.add('cm-right--bottom');
+  cmFooter.classList.add('cm-right--bottom__body');
+  cmFooter.append(
+    createCmBottomCell(
+      '970-988-2548',
+      'cm-copy--phone',
+      'Copy Phone Number',
+      null,
+      '9709882548',
+      cmFooterImgs,
+    ),
+    createCmBottomCell(
+      'ottofy@zohomail.com',
+      'cm-copy--email',
+      'Copy E-mail Address',
+      'mailto:ottofy@zohomail.com',
+      'ottofy@zohomail.com',
+      cmFooterImgs,
+    ),
+  );
+
+  cmwrapper.append(cm, cmFooter);
   cmAside.append(cmwrapper);
   body.append(cmAside);
 };
