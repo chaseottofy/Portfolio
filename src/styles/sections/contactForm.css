@@ -175,14 +175,18 @@
   border-radius: 5px;
   font-size: .875rem;
   cursor: not-allowed;
+  user-select: none;
+  pointer-events: none;
 }
 
 .btn-allow {
   color: var(--white1);
   background: var(--black0);
   border: 1px solid var(--blue1);
-  cursor: pointer;
   transition: var(--tbg1);
+  cursor: pointer;
+  pointer-events: all;
+  user-select: all;
 }
 
 .btn-allow:hover {
