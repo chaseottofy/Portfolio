@@ -79,8 +79,5 @@
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
-  },
-  "dependencies": {
-    "jspdf": "^2.5.1"
   }
 }
