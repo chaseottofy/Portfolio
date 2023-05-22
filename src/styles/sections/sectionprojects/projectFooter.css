@@ -237,7 +237,7 @@
   }
 }
 
-/* @media screen and (max-width: 490px) {
+@media screen and (max-width: 490px) {
   .pf-title {
     font-size: .875rem;
   }
@@ -245,4 +245,4 @@
   .project-footer-btns button:before {
     content: "";
   }
-} */
+}
