@@ -1,7 +1,5 @@
 import resume from '../assets/resume.pdf';
 
-const resumeBtn = document.querySelector('.resume-btn');
-
 const handlePDF = () => {
   fetch(resume)
     .then((response) => response.blob())
@@ -21,6 +19,7 @@ const handlePDF = () => {
 };
 
 const initPDF = () => {
+  const resumeBtn = document.querySelector('.resume-btn');
   resumeBtn.addEventListener('click', handlePDF);
 };
 
