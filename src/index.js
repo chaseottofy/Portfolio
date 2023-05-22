@@ -7,6 +7,8 @@ import initCopyElements from './utilities/handle-copy';
 import initProjectCards from './components/projects';
 import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
+import initPDF from './utilities/handle-pdf';
+// import 
 /** ************************************ */
 // DEVELOPMENT ONLY
 // import enableTesting from './testing/test-index';
@@ -18,7 +20,8 @@ const appInit = () => {
    * @function initTheme
    * get system theme
    * config localStorage theme
-  * allow theme change ... etc */
+   * allow theme change ... etc 
+  */
   initTheme();
 
   /**
@@ -30,11 +33,13 @@ const appInit = () => {
   initScroll();
 
   /**
-   * @function initHover Popup contact menu on hover */
+   * @function initHover Popup contact menu on hover 
+  */
   initHover();
 
   /**
-   * @function initCopyElements config copy to clipboard functionality */
+   * @function initCopyElements config copy to clipboard functionality 
+  */
   initCopyElements();
 
   /**
@@ -46,20 +51,24 @@ const appInit = () => {
    *  - creates modal with more in depth project overview
    *
    * config project tabs
-   * - dynamically import relevant images for each tab */
+   * - dynamically import relevant images for each tab 
+  */
   initProjectCards();
 
   /**
-   * @function initContactForm setup contact form POST */
+   * @function initContactForm setup contact form POST 
+  */
   initContactForm();
 
   /**
-   * @function initDefaults set default time / date / etc */
+   * @function initDefaults set default time / date / etc 
+  */
   initDefaults();
+
+  /**
+   * @function initPDF setup PDF resume download
+  */
+  initPDF();
 };
 
 appInit();
-// !!REMINDER
-// TAB INDEX
-// create event emitter for modal tabs
-// smaller

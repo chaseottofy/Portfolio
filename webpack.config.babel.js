@@ -7,9 +7,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
 const csso = require('postcss-csso');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
-// unicorn/prefer-node-protocol
-// const babelLoaderConfig = [];
-// const babelDevLoader = babelLoader.concat([])
+
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
 
@@ -24,7 +22,7 @@ module.exports = (env, argv) => {
 
     resolve: {
       alias: {
-        '@fonts': path.join(__dirname, 'src/fonts/inter/'),
+        '@fonts': path.join(__dirname, 'src/assets/fonts/inter/'),
       },
     },
 

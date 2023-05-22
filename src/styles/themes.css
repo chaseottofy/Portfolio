@@ -26,6 +26,7 @@
   --offsetblack0: rgba(0, 0, 0, .8);
   --offsetblack1: rgba(0, 0, 0, .6);
   --offsetblack2: rgba(23, 23, 23, 0.6);
+  --offsetblack3: rgba(23, 23, 23, 0.1);
 
   --offsetwhite0: rgba(255, 255, 255, 0);
   --offsetwhite1: rgba(255, 255, 255, .05);
@@ -105,6 +106,7 @@
   --offsetblack0: rgba(255, 255, 255, .9);
   --offsetblack1: rgba(255, 255, 255, .7);
   --offsetblack2: rgba(255, 255, 255, .5);
+  --offsetblack3: rgba(255, 255, 255, .2);
 
   --offsetwhite0: rgba(0, 0, 0, 0);
   --offsetwhite1: rgba(0, 0, 0, .05);

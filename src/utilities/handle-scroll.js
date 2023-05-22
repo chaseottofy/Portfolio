@@ -32,7 +32,6 @@ const handleHeaderFilter = () => {
 };
 
 const handleHrefScroll = (e) => {
-  
   sectionContainers[
     Number.parseInt(e.target.getAttribute('data-scroll-to'), 10)
   ].scrollIntoView({
