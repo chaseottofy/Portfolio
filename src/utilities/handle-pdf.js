@@ -9,7 +9,6 @@ const handlePDF = () => {
       blobLink.download = 'chaseottofy_resume.pdf';
       blobLink.click();
       URL.revokeObjectURL(blobLink.href);
-      URL.revo;
       blobLink.remove();
     })
     .catch((error) => {
