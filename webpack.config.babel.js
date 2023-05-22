@@ -115,7 +115,7 @@ module.exports = (env, argv) => {
           },
         },
         {
-          test: /\.(ico|svg|png|webp|avif|jpg)$/i,
+          test: /\.(ico|svg|png|webp|avif|jpg|pdf)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'images/[name].[hash:8][ext][query]',

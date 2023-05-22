@@ -1,14 +1,35 @@
 const contactDateTime = document.querySelector('.cm-left--time');
 
-const getMyTime = () => new Date().toLocaleString('en-US', {
+const getMyTime = (date) => date.toLocaleString('en-US', {
   timeZone: 'America/Denver',
   hour: 'numeric',
   minute: 'numeric',
   hour12: true,
 });
 
-const setDateTime = () => {
-  contactDateTime.textContent = `MST: ${getMyTime()}`;
+const setDateTime = (timeString) => {
+  contactDateTime.textContent = `MST: ${timeString}`;
 };
 
-export default setDateTime;
+const initDateTime = () => {
+  setDateTime(getMyTime(new Date()));
+  const currentTime = new Date();
+
+  const firstInterval = new Promise((resolve) => {
+    setTimeout(() => {
+      setDateTime(getMyTime(new Date()));
+      resolve();
+    }, (60 - currentTime.getSeconds()) * 1000);
+  });
+
+  const updateInterval = () => {
+    setDateTime(getMyTime(new Date()));
+  };
+
+  firstInterval.then(() => {
+    updateInterval();
+    setInterval(updateInterval, 60_000);
+  });
+};
+
+export default initDateTime;
