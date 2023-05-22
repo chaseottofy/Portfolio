@@ -20,7 +20,8 @@
   left: 0;
   right: 0;
   max-width: 580px;
-  backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(24px); */
+  background: var(--offsetblack0);
   border-radius: 14px;
   flex-direction: column;
   margin: 0 auto;

@@ -2,7 +2,7 @@
   DIVIDER
 ============================*/
 .section-divider {
-  backdrop-filter: brightness(1.6);
+  filter: brightness(1.6);
   box-shadow: 0 0 0 1px var(--dividerBg);
   height: 1px;
   margin: 0 auto;

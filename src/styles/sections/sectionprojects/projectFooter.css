@@ -10,11 +10,11 @@
   z-index: 999;
   padding: .25rem .25rem .25rem .25rem;
   border-top: 1px solid var(--offsetsecondary2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
   background: linear-gradient(to bottom,
       var(--offsetblack0),
-      var(--black0) 80%);
+      var(--black0) 40%);
   /* background: linear-gradient(to bottom,
       var(--offsetblack0),
       var(--black4) 20%,
