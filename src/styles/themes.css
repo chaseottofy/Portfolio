@@ -1,4 +1,3 @@
-/*  */
 .theme__dark {
   --accent-1: #111;
   --accent-2: #222;
@@ -8,39 +7,29 @@
   --accent-6: #888;
   --accent-7: #eaeaea;
   --accent-8: #fafafa;
-
   --black0: #000;
   --black1: #0e0e0f;
   --black2: #333;
   --black3: #333;
   --black4: #090909;
-
   --grey1: #818080;
   --grey2: #1a1a1a;
   --grey3: #000;
-
   --white0: #fff;
   --white1: #fff;
   --white2: #cccbcb;
-
-  --offsetblack0: rgba(0, 0, 0, .8);
+  --offsetblack0: rgba(0, 0, 0, .9);
   --offsetblack1: rgba(0, 0, 0, .6);
   --offsetblack2: rgba(23, 23, 23, 0.6);
   --offsetblack3: rgba(23, 23, 23, 0.1);
-
   --offsetwhite0: rgba(255, 255, 255, 0);
   --offsetwhite1: rgba(255, 255, 255, .05);
   --offsetwhite2: rgba(255, 255, 255, .1);
-
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
   --offsetsecondary2: rgba(50, 180, 255, 0.1);
-  /* --offsetsecondary1: rgba(235, 54, 127, .2);
-  --offsetsecondary2: rgba(121, 40, 202, .2); */
-
   --red1: #cf007a;
   --red2: #c0103e;
   --red3: #F8688E;
-
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
@@ -48,13 +37,9 @@
     0 30px 60px rgba(0, 0, 0, .12);
   --bs-inset1:
     inset 0 0 10px 8px rgba(74, 74, 74, 0.2);
-  /* --bs-inset2:
-    inset 0 0 10px 8px rgba(74, 74, 74, 0.2),
-    inset 0 0 10px 8px rgba(74, 74, 74, 0.2); */
   --bs-inset2:
     inset 0 0 10px 8px rgba(17, 17, 17, .5),
     inset 0 0 10px 8px rgba(17, 17, 17, .3);
-  /* 333 */
   --bs-offset1:
     rgba(136, 136, 136, .1) 0 0 3px 2px,
     rgba(136, 136, 136, .05) 0 1px 3px 2px;
@@ -63,24 +48,12 @@
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(0, 0, 0, .6);
-
   --link: #7F95F5;
   --dividerBg: rgba(64, 100, 143, 0.1);
 }
 
-/* 
---accents-1: #fafafa;
---accents-2: #eaeaea;
---accents-3: #999;
---accents-4: #888;
---accents-5: #666;
---accents-6: #444;
---accents-7: #333;
---accents-8: #111;
-*/
-
 .theme__light {
-  --accent-1: #d4d4d4;
+  --accent-1: #f1f1f1;
   --accent-2: #f5f5f5;
   --accent-3: #f5f5f5;
   --accent-4: #d4d4d4;
@@ -88,26 +61,21 @@
   --accent-6: #888;
   --accent-7: #555;
   --accent-8: #111;
-
   --black0: #fff;
   --black1: #fafafa;
   --black2: #d4d4d4;
   --black3: #555;
   --black4: #fafafa;
-
   --grey1: #999;
   --grey2: #d9d9d9;
   --grey3: #fff;
-
   --white0: #000;
   --white1: #171717;
   --white2: #4c4c4c;
-
-  --offsetblack0: rgba(255, 255, 255, .9);
-  --offsetblack1: rgba(255, 255, 255, .7);
+  --offsetblack0: rgba(255, 255, 255, 1);
+  --offsetblack1: rgba(255, 255, 255, .8);
   --offsetblack2: rgba(255, 255, 255, .5);
   --offsetblack3: rgba(255, 255, 255, .2);
-
   --offsetwhite0: rgba(0, 0, 0, 0);
   --offsetwhite1: rgba(0, 0, 0, .05);
   --offsetwhite2: rgba(0, 0, 0, .1);
@@ -116,21 +84,19 @@
   --offsetsecondary2: rgba(121, 40, 202, .2); */
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
   --offsetsecondary2: rgba(50, 180, 255, 0.1);
-
   --red1: #cf007a;
   --red2: #c0103e;
   --red3: #A60731;
-
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
   --bs-inset1:
-    0 0 0 #cccccc,
-    0 0 0 #ffffff,
-    3px 3px 3px #cccccc inset,
-    -3px -3px 3px #ffffff inset;
+    0 0 0 #ccc,
+    0 0 0 #fff,
+    3px 3px 3px #ccc inset,
+    -3px -3px 3px #fff inset;
   --bs-inset2:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
@@ -142,7 +108,6 @@
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(255, 255, 255, .9);
-
   --link: #153DEF;
   --dividerBg: transparent;
 }

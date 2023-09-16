@@ -9,8 +9,9 @@
 }
 
 /* ------------------------ */
+
 /* SECTIONS
-============================*/
+============================ */
 .section-grid {
   display: grid;
   row-gap: 1.5rem;
@@ -35,23 +36,11 @@
 
 .section-title h2,
 .section-title h3 {
-  /* font-size: 3rem; */
   font-weight: 900;
   line-height: 1.375;
-  /* transform: scaleY(.9); */
-  /* letter-spacing: -1px; */
-  /* color: transparent; */
   font-family: var(--secondaryFont);
   color: var(--white1);
-  font-size: max(28px, 3vw);
-  /* background-image: linear-gradient(150deg,
-      var(--white0) 0%,
-      var(--accent-6),
-      var(--accent-7));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 100% 200%; */
+  font-size: 1.9634rem;
 }
 
 .section-subtitle {

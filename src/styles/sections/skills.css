@@ -63,10 +63,7 @@
 
 .skills-cell img {
   position: absolute;
-  top: 0;
-  left: 60%;
-  right: 0;
-  bottom: 0;
+  inset: 0 0 0 60%;
   margin: auto 0;
   height: 30%;
   width: 30%;

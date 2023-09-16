@@ -16,7 +16,7 @@ const configContactMenu = () => {
     window.removeEventListener('mousemove', contactMousemove);
   };
 
-  const openContactMenu = (e) => {
+  const openContactMenu = () => {
     if (window.innerWidth <= 640) return;
 
     if (navContactBtn?.firstElementChild?.classList.contains('nav-menu--contact--active')) return;

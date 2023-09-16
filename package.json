@@ -13,7 +13,9 @@
     "clean": "rimraf -rf dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "parseimg": "node ./scripts/parse.mjs --mode=placeholder"
+    "parseimg": "node ./scripts/parse.mjs --mode=placeholder",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix"
   },
   "repository": {
     "type": "git",
@@ -74,6 +76,8 @@
     "sass-loader": "^13.2.2",
     "sharp": "^0.32.5",
     "source-map-loader": "^4.0.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
     "terser-webpack-plugin": "^5.3.7",
     "thread-loader": "^4.0.1",
     "webpack": "^5.88.1",

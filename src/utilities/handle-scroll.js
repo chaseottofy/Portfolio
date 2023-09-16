@@ -40,7 +40,7 @@ const handleHrefScroll = (e) => {
 };
 
 const handlePageScroll = () => {
-  if (window.pageYOffset > window.innerHeight) {
+  if (window.scrollY > window.innerHeight) {
     header.classList.add('header-filter');
   } else {
     header.classList.remove('header-filter');

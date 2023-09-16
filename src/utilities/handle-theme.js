@@ -3,46 +3,29 @@ const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const themeInputs = document.querySelectorAll('.theme-input');
 const themeLabels = document.querySelectorAll('.theme-label');
 
-const getSystemTheme = () => {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
-  return 'light';
-};
-
-const setTheme = (theme, themeClass) => {
-  localStorage.setItem('portfolio-theme', theme);
+const setTheme = (theme) => {
+  const idx = theme === 'light' ? 1 : 0;
+  themeInputs[idx].setAttribute('value', theme);
+  themeLabels[idx].dataset.systemTheme = theme;
+  themeInputs[idx].checked = true;
   colorSchemeMeta.setAttribute('content', theme);
-  if (!body.classList.contains(themeClass)) {
-    body.classList.remove('theme__dark');
-    body.classList.remove('theme__light');
-    body.classList.add(themeClass);
-  }
+  body.setAttribute('class', `body theme__${theme}`);
 };
 
 const initDefaultTheme = () => {
   const localTheme = localStorage.getItem('portfolio-theme');
-  const systemTheme = getSystemTheme();
-  themeInputs[2].setAttribute('value', systemTheme);
-  themeLabels[2].dataset.systemTheme = systemTheme;
-  if (!localTheme
-    || (localTheme !== 'dark' && localTheme !== 'light')) {
-    setTheme(systemTheme, `theme__${systemTheme}`);
-    themeInputs[2].checked = true;
+  if (localTheme) {
+    setTheme(localTheme);
   } else {
-    setTheme(localTheme, `theme__${localTheme}`);
-    themeInputs[localTheme === 'dark' ? 0 : 1].checked = true;
+    localStorage.setItem('portfolio-theme', 'dark');
+    setTheme('dark');
   }
 };
 
 const handleThemeChange = (e) => {
   const theme = e.target.value;
-  if (theme === 'system') {
-    const systemDataTheme = e.target.getAttribute('data-system-theme');
-    setTheme(systemDataTheme, `theme__${systemDataTheme}`);
-  } else {
-    setTheme(theme, `theme__${theme}`);
-  }
+  localStorage.setItem('portfolio-theme', theme);
+  setTheme(theme);
 };
 
 const initThemeOptions = () => {

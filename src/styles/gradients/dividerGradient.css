@@ -1,6 +1,6 @@
 /* ============================
   DIVIDER
-============================*/
+============================ */
 .section-divider {
   filter: brightness(1.6);
   box-shadow: 0 0 0 1px var(--dividerBg);
@@ -17,7 +17,6 @@
   left:0;
   filter: blur(48px);
   border-radius: 25%;
-  margin-top: -6rem;
   min-height: 4rem;
   mix-blend-mode:darken;
   pointer-events: none;
@@ -46,11 +45,11 @@
   filter: blur(46px);
   width: 100%
 }
+
 .section-gradient--l {
   background: var(--blue1);
   min-height: 24px;
   position: relative;
-  /* transform: translateX(-51%); */
   z-index: 7
 }
 
@@ -58,7 +57,6 @@
   background: var(--blue3);
   position: relative;
   min-height: 16px;
-  /* transform: translateX(51%); */
   z-index: 2
 }
 

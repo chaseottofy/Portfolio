@@ -1,6 +1,8 @@
 .project-cell {
   width: 100%;
+
   /* box-shadow: var(--bs-offset1); */
+
   /* border-radius: .5rem; */
   display: flex;
   flex-direction: column;
@@ -21,8 +23,9 @@
   width: 100%;
   height: 100%;
   content: '';
-  filter: url(#grainy);
-  opacity: .05;
+  filter: url("#grainy");
+  opacity: .08;
+
   /* background: linear-gradient(
     to bottom,
     rgba(0,0,0,.1) 0,
@@ -44,12 +47,14 @@
 
 .project-content__header {
   /* grid-template-columns: 6rem 1fr; */
+
   /* padding-right: 2rem; */
   width: 100%;
   height: 3.5rem;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+
   /* max-width: 800px; */
   justify-content: center;
   padding-bottom: 1rem;
@@ -84,7 +89,7 @@
 }
 
 /* TABS
-============================*/
+============================ */
 .pc__header-tabs {
   display: flex;
   height: 100%;
@@ -132,7 +137,6 @@
 }
 
 .pc__header-tabs span input {
-  -webkit-appearance: none;
   appearance: none;
   border: none;
   padding: 0;
@@ -174,7 +178,7 @@
 }
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
-============================*/
+============================ */
 .project-content__subheader {
   height: 3rem;
   background: var(--black0);
@@ -182,6 +186,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   /* padding: 0 1rem 0 .5rem; */
   padding: .5rem 1rem;
   position: relative;
@@ -216,6 +221,7 @@
   color: var(--white1);
   opacity: .9;
   font-size: .9rem;
+
   /* opacity: .9; */
   height: 100%;
   display: flex;
@@ -291,6 +297,7 @@
 
 .pc__subheader--links img {
   /* width: 100%; */
+
   /* height: 100%; */
   height: 1.75rem;
   width: 1.75rem;

@@ -1,5 +1,5 @@
 /* FOOTER
-============================*/
+============================ */
 .project-cell__footer {
   width: 100%;
   height: 100%;
@@ -126,9 +126,10 @@
   flex-wrap: wrap;
   height: 100%;
   width: 100%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
+
   /* min-height: 4rem; */
-  padding: 1rem 1rem .5rem 1rem;
+  padding: 1rem 1rem .5rem;
   position: relative;
 }
 
@@ -156,9 +157,7 @@
   font-weight: 500;
   color: var(--white1);
   opacity: .9;
-  /* text-transform: uppercase; */
   transform: scaleY(.95);
-  /* letter-spacing: -.5px; */
   padding-right: 1rem;
   padding-left: .25rem;
   height: 3.5rem;
@@ -183,24 +182,17 @@
   white-space: nowrap;
 }
 
-.project-footer-btns button:before {
+.project-footer-btns button::before {
   content: attr(data-text-lg);
 }
 
 .project-footer-btns button:first-child {
-  /* border: 1px solid rgba(12, 206, 107, .1); */
   color: var(--accent-7);
   background: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
       rgba(12, 206, 107, .05));
   margin-right: 1.25rem;
-  border: 1px solid var(--offsetwhite2);
-  /* box-shadow: rgba(12, 206, 107, 0.05) 0 2px 4px 0; */
-}
-
-.theme__light .project-footer-btns button:first-child {
-  /* border: 1px solid var(--accent-5); */
   border: 1px solid var(--offsetwhite2);
 }
 
@@ -209,16 +201,9 @@
 }
 
 .project-footer-btns button:last-child {
-  /* color: #fff; */
   color: var(--white1);
   background: var(--offsetblack1);
-  /* background: linear-gradient(90deg,
-      var(--blue1) 0%,
-      var(--blue2) 50%,
-      var(--blue3)); */
-  /* filter: brightness(.9) contrast(1.2); */
   border: 1px solid var(--offsetwhite2);
-  /* box-shadow: rgba(50, 145, 255, 0.2) 0 2px 8px 0; */
 }
 
 .project-footer-btns button:last-child:hover {
@@ -232,8 +217,23 @@
   .project-cell__footer {
     margin-top: 0;
   }
+
+  .project-footer__content {
+    padding: 1rem .5rem;
+  }
+
+  .project-footer__title,
+  .project-footer-btns {
+    height: 2.5rem;
+  }
+
   .project-footer__title {
     font-size: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .pf-stacks {
+    display: none;
   }
 }
 
@@ -242,7 +242,7 @@
     font-size: .875rem;
   }
 
-  .project-footer-btns button:before {
+  .project-footer-btns button::before {
     content: "";
   }
 }

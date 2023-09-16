@@ -27,6 +27,7 @@
   height: 3rem;
   color: var(--accent-7);
   margin: 0 .25rem;
+
   /* transform: scaleY(.9); */
   transform: scale(.9, .8);
   font-weight: 700;

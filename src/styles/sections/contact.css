@@ -20,8 +20,10 @@
   left: 0;
   right: 0;
   max-width: 580px;
+
   /* backdrop-filter: blur(24px); */
   background: var(--offsetblack0);
+
   /* border-radius: 14px; */
   flex-direction: column;
   margin: 0 auto;
@@ -32,6 +34,7 @@
   display: flex;
   opacity: 1;
   height: 500px;
+
   /* border: 1px solid var(--black2); */
   box-shadow: var(--bs-md);
   min-height: 400px;
@@ -49,6 +52,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+
   /* border-radius: 20px; */
   position: relative;
 
@@ -87,7 +91,7 @@
 }
 
 /* LEFT GRID SECTION -- ONLY IN <MAIN> <CONTACT />
-=====================================*/
+===================================== */
 .cm-left {
   height: 100%;
   width: 100%;
@@ -98,6 +102,7 @@
   row-gap: .5rem;
   position: relative;
   overflow: hidden;
+
   /* border-radius: var(--gap1); */
 }
 
@@ -133,6 +138,7 @@
 }
 
 /* ---------------- */
+
 /* LEFT GRID HEADER */
 .cm-left__header {
   flex-direction: column;
@@ -145,6 +151,7 @@
 }
 
 /* ---------------- */
+
 /* LEFT FOOTER SECTION */
 .cm-left__footer {
   display: grid;
@@ -178,7 +185,7 @@
 }
 
 /* RIGHT GRID SECTION
-=====================================*/
+===================================== */
 .cm-right {
   display: grid;
   grid-template-columns: 1fr;
@@ -191,6 +198,7 @@
 }
 
 /* ---------------- */
+
 /* RIGHT TOP SECTION */
 .cm-right--top {
   display: grid;
@@ -357,6 +365,7 @@
 }
 
 /* ---------------- */
+
 /* RIGHT BOTTOM SECTION */
 .cm-right--bottom {
   display: flex;
@@ -369,6 +378,7 @@
 .contact-menu__body .cm-right {
   /* border-radius: 1rem; */
   overflow: hidden;
+
   /* border: 1px solid var(--black2); */
 }
 
@@ -409,7 +419,9 @@
 .cm-copy,
 .cm-email-goto {
   border: 1px solid var(--offsetwhite1);
+
   /* background: var(--black4); */
+
   /* border-radius: 5px; */
   display: flex;
   align-items: center;
@@ -444,7 +456,7 @@
     border: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 6px 2px 2rem 2px;
+    padding: 6px 2px 2rem;
   }
 
   .cm-left__header {

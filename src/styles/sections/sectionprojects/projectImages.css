@@ -1,5 +1,4 @@
 .project-content__body {
-  /* background: var(--black0); */
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -8,8 +7,6 @@
   margin: 0;
   border: none;
   padding-top: var(--ap2);
-  /* margin-top: -7rem; */
-  /* z-index: 1; */
 }
 
 .project-image__calendar,
@@ -22,24 +19,15 @@
   aspect-ratio: var(--ap);
   object-fit: cover;
   object-position: center;
-  image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  -ms-interpolation-mode: nearest-neighbor;
   filter: contrast(1.1) grayscale(10%);
-  /* filter: grayscale(10%) contrast(110%) brightness(90%); */
 }
 
 .hide-img {
   pointer-events: none;
   user-select: none;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   z-index: -1;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   opacity: 0;
 }
 
@@ -73,7 +61,7 @@
   }
 }
 
-/* @media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .project-content__body {
     padding-top: calc(3 / 4 * 100%);
   }
@@ -82,4 +70,4 @@
   .project-img-sm img {
     aspect-ratio: calc(4/3);
   }
-} */
+}
