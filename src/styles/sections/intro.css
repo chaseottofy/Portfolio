@@ -24,26 +24,29 @@
 /* TITLE (NAME)
 ============================*/
 .intro-header__title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  /* font-size: 1.5rem; */
   text-align: center;
   color: var(--header-text-before);
-  font-weight: 700;
-  transform: scaleY(.8);
+  /* font-weight: 700; */
+  /* transform: scaleY(.8); */
   cursor: help;
+  font-family: var(--secondaryFont);
+
 }
 
 .intro-header__title:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.intro-header__title:hover:after {
+/* .intro-header__title:hover:after {
   content: "(auto-fee)";
   position: absolute;
   bottom: 1.375rem;
   right: 0;
   transform: translateX(115%);
   font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--primaryFont);
   color: var(--header-text-before);
 }
 
@@ -54,9 +57,8 @@
   right: 0;
   transform: translateX(140%);
   font-size: 1rem;
-  font-weight: 500;
   color: var(--header-text-before);
-}
+} */
 
 /* SUBTITLES
 ============================*/
@@ -65,7 +67,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .intro-header__subtitle {
@@ -77,22 +79,16 @@
 }
 
 .intro-header__subtitle--two {
-  padding-top: .125rem;
+  padding-top: .325rem;
 }
 
-/* 
-  --white0: #fff;
-  --white1: #fff;
-  --white2: #cccbcb;
-
-*/
 .intro-header__subtitle--text {
   line-height: 1.125;
   letter-spacing: -.1rem;
-  font-size: 3.75rem;
+  font-size: max(24px, 4.2vw);
+  font-family: var(--secondaryFont);
+  font-weight: 900;
   color: transparent;
-  /* #aaffec */
-  /* #d3e5ff */
   background-image: linear-gradient(120deg,
       #fff,
       #cccbcb);
@@ -100,7 +96,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 100% 200%;
-  /* color: var(--header-text-before); */
 }
 
 .intro-header__subtitle img {
@@ -143,9 +138,7 @@
 
 .intro-header--btn span {
   padding-left: 1.25rem;
-  /* padding-left: 1.25rem; */
   padding-right:1rem;
-  /* padding-right:.5rem; */
 }
 
 .intro-header--btn img {
@@ -156,9 +149,9 @@
   filter: invert(1);
 }
 
-.intro-header--btn:last-child {
+/* .intro-header--btn:last-child {
   margin-left: 1rem;
-}
+} */
 
 .intro-header--btn:hover {
   background: linear-gradient(90deg,
@@ -167,7 +160,7 @@
   var(--blue3));
 }
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   .intro-header__subtitle--text {
     font-size: 3rem;
   }
@@ -177,4 +170,4 @@
   .intro-header__subtitle--text {
     font-size: 2.5rem;
   }
-}
+} */

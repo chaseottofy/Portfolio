@@ -79,8 +79,6 @@ const setProjectOverview = (data) => {
   poSubheader.classList.add('po-header--title');
   const poSubheaderText = document.createElement('span');
   poSubheaderText.textContent = ' – Project Overview';
-  // poSubheader.setAttribute('data-mt-after', 'Project Overview: ')
-  // poSubheader.textContent = 'Project Overview: ';
   const br = document.createElement('br');
   poModalTitle.textContent = title;
 

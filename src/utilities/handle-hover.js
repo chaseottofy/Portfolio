@@ -12,17 +12,17 @@ const configContactMenu = () => {
     ) return;
 
     document?.querySelector('.contact-menu__header')?.remove();
-    navContactBtn.firstChild.classList.remove('nav-menu--contact--active');
+    navContactBtn?.firstElementChild?.classList.remove('nav-menu--contact--active');
     window.removeEventListener('mousemove', contactMousemove);
   };
 
-  const openContactMenu = () => {
+  const openContactMenu = (e) => {
     if (window.innerWidth <= 640) return;
 
-    if (navContactBtn.firstChild.classList.contains('nav-menu--contact--active')) return;
+    if (navContactBtn?.firstElementChild?.classList.contains('nav-menu--contact--active')) return;
 
     createContactMenu();
-    navContactBtn.firstChild.classList.add('nav-menu--contact--active');
+    navContactBtn?.firstElementChild?.classList.add('nav-menu--contact--active');
     window.addEventListener('mousemove', contactMousemove);
   };
 

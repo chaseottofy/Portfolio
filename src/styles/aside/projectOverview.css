@@ -31,7 +31,7 @@
 }
 
 .po-header {
-  height: 5rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +43,7 @@
 }
 
 .po-header--title {
-  line-height: .75;
+  line-height: .8;
 }
 
 .po-header--title h3 {

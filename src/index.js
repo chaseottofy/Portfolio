@@ -4,17 +4,16 @@ import initTheme from './utilities/handle-theme';
 import initScroll from './utilities/handle-scroll';
 import initHover from './utilities/handle-hover';
 import initCopyElements from './utilities/handle-copy';
-import initProjectCards from './components/projects';
 import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
-import initPDF from './utilities/handle-pdf';
+import projCard from './template/create-card';
+// import initPDF from './utilities/handle-pdf';
 // import
 /** ************************************ */
 // DEVELOPMENT ONLY
 // import enableTesting from './testing/test-index';
 // enableTesting(true, false, false, true); // DEV ONLY
 /** ************************************ */
-
 const appInit = () => {
   /**
    * @function initTheme
@@ -43,19 +42,6 @@ const appInit = () => {
   initCopyElements();
 
   /**
-   * @function initProjectCards - config the following:
-   * config 'view performance audit' btns
-   *  - creates modal with performance links / insights
-   *
-   * config project overview modal "view full overview btn"
-   *  - creates modal with more in depth project overview
-   *
-   * config project tabs
-   * - dynamically import relevant images for each tab
-  */
-  initProjectCards();
-
-  /**
    * @function initContactForm setup contact form POST
   */
   initContactForm();
@@ -68,7 +54,13 @@ const appInit = () => {
   /**
    * @function initPDF setup PDF resume download
   */
-  initPDF();
+  // initPDF();
+
+  /**
+   * @function initProjectCards
+   *
+   */
+  projCard();
 };
 
 appInit();

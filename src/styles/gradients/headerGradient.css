@@ -29,5 +29,8 @@
 
 .gradient-noir {
   /* filter: grayscale(1) brightness(1.3); */
-  filter: brightness(1.3) contrast(1.3) grayscale(1);
+  filter: contrast(1.3) grayscale(1) brightness(.6);
+  /* backdrop-filter: url(#grainy); */
+  /* background-blend-mode:luminosity; */
+  /* opacity: .1; */
 }

@@ -16,3 +16,7 @@ _docs/
 # IDE
 vscode
 .vscode/
+
+unused.html
+inter/
+handle-pdf.js

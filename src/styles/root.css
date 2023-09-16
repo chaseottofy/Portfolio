@@ -1,8 +1,8 @@
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: local('Inter Regular'), local('Inter-Regular'), url('@fonts/inter-v12-latin-regular.woff2') format('woff2');
+  src: local('Inter Regular'), local('Inter-Regular'), url('../assets/fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: local('Inter Medium'), local('Inter-Medium'), url('@fonts/inter-v12-latin-500.woff2') format('woff2');
+  src: local('Inter Medium'), local('Inter-Medium'), url('../assets/fonts/inter/inter-v12-latin-500.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -18,12 +18,50 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: local('Inter Bold'), local('Inter-Bold'), url('@fonts/inter-v12-latin-700.woff2') format('woff2');
+  src: local('Inter Bold'), local('Inter-Bold'), url('../assets/fonts/inter/inter-v12-latin-700.woff2') format('woff2');
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/neue/NeueMontreal-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/neue/NeueMontreal-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'basement';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/basement-expanded.woff2') format('woff2');
   font-display: swap;
 }
 
 :root {
-  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --secondaryFont: "basement", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  /* --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace; */
+  --wt: 1600;
+  --ht: 900;
+  --ap2: calc(100% * (var(--ht)/var(--wt)));
+  --ap: calc(var(--wt)/var(--ht));
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
@@ -33,9 +71,13 @@
   --z-toast: 1100;
 
   /* --blue1: #637ef3; */
-  --blue1: #0761d1;
+  /* --blue2: #435fdc; */
+  --blue1: #111;
+  --blue2: #111;
+  --blue3: #111;
+  /* --blue1: #0761d1;
   --blue2: #0070f3;
-  --blue3: #3291ff;
+  --blue3: #3291ff; */
   /* --blue2: #435fdc;
   --blue3: #273c97;
   --blue3: #132da2; */
@@ -43,7 +85,8 @@
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
-  --maxWidthMd: 1160px;
+  --maxWidthMd: 1000px;
+  /* max-width: max(660px,40.3645833333vw); */
 
   --tbg1: background .2s ease-in-out;
   --tt1: transform .2s ease-in-out;
@@ -93,7 +136,7 @@ body {
   font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
-  text-rendering: optimizeSpeed;
+  /* text-rendering: optimizespeed; */
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -103,6 +146,25 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+/* body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  filter: url(#grainy);
+  opacity: .1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.1) 0,
+    rgba(0,0,0,.4) 100%
+  );
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+} */
 
 /* GENERAL RESETS
 ============================*/
@@ -119,7 +181,8 @@ ul,
 div,
 input,
 textarea {
-  font-family: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, BlinkMacSystemFont, Helvetica Neue, Arial, monospace;
+  font-family: var(--primaryFont);
+  /* font-family: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, BlinkMacSystemFont, Helvetica Neue, Arial, monospace; */
 }
 
 h1,
@@ -219,7 +282,7 @@ textarea:focus-visible {
 
 input[type=radio]:focus-visible + label {
   outline: 0 0 0 2px var(--white1);
-  box-shadow: 0 0 0 2px var(--blue3); 
+  box-shadow: 0 0 0 2px var(--blue3);
 }
 
 button:focus-visible {

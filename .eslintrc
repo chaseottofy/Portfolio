@@ -22,6 +22,7 @@
     "unicorn/prevent-abbreviations": "off",
     "unicorn/prefer-dom-node-dataset": "off",
     "unicorn/prefer-node-protocol": "off",
-    "unicorn/no-null": "off"
+    "unicorn/no-null": "off",
+    "unicorn/no-for-loop": "off"
   }
 }

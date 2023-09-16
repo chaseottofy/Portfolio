@@ -4,3 +4,4 @@ node_modules
 /src/testing/
 /src/_docs/
 /src/data/
+handle-pdf.js

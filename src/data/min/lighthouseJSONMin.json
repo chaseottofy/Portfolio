@@ -1,1 +1,60 @@
-{"calendar":{"title":"Google Calendar 2.0","link":"https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-google-calendar-clone-vanilla/3ra0nt0y2h?form_factor=desktop","score":["0.3","0.3","0.0","0.0"]},"markdown":{"title":"Markdown Lite ","link":"https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop","score":["0.3","0.3","0.0","0.0"]},"content":[["First Contentful Paint","Marks the time at which the first text or image is painted."],["Largest Contentful Paint","Marks the time at which the largest text or image is painted."],["Total Blocking Time","Sum of all time periods between FCP and Time to Interactive."],["Cumulative Layout Shift","Measures the movement of visible elements within the viewport."]]}
+{
+  "calendar": {
+    "title": "Google Calendar 2.0",
+    "link": "https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-google-calendar-clone-vanilla/3ra0nt0y2h?form_factor=desktop",
+    "score": [
+      "0.3",
+      "0.3",
+      "0.0",
+      "0.0"
+    ]
+  },
+  "blog": {
+    "title": "Nextjs Blog ",
+    "link": "https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop",
+    "score": [
+      "0.4",
+      "0.5",
+      "0.0",
+      "0.0"
+    ]
+  },
+  "monthpicker": {
+    "title": "Monthpicker ",
+    "link": "https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop",
+    "score": [
+      "0.3",
+      "0.4",
+      "0.0",
+      "0.0"
+    ]
+  },
+  "markdown": {
+    "title": "Markdown Lite ",
+    "link": "https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop",
+    "score": [
+      "0.3",
+      "0.3",
+      "0.0",
+      "0.0"
+    ]
+  },
+  "content": [
+    [
+      "First Contentful Paint",
+      "Marks the time at which the first text or image is painted."
+    ],
+    [
+      "Largest Contentful Paint",
+      "Marks the time at which the largest text or image is painted."
+    ],
+    [
+      "Total Blocking Time",
+      "Sum of all time periods between FCP and Time to Interactive."
+    ],
+    [
+      "Cumulative Layout Shift",
+      "Measures the movement of visible elements within the viewport."
+    ]
+  ]
+}

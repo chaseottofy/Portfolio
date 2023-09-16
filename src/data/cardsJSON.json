@@ -1,0 +1,34 @@
+{
+  "calendarCard": {
+    "title": "Google Calendar 2.0",
+    "projLink": "https://chaseottofy.github.io/google-calendar-clone-vanilla/",
+    "projLinkAlt": "Google Calendar 2.0",
+    "githubLink": "https://github.com/chaseottofy/google-calendar-clone-vanilla",
+    "stacks": ["vanilla", "webpack"],
+    "lighthouseKey": "calendar"
+  },
+  "blogCard": {
+    "title": "NextJS Blog",
+    "projLink": "https://chaseottofy.github.io/nextjs-blog/",
+    "projLinkAlt": "NEXTJS BLOG",
+    "githubLink": "https://github.com/chaseottofy/nextjs-blog",
+    "stacks": ["typescript", "next"],
+    "lighthouseKey": "blog"
+  },
+  "monthPickerCard": {
+    "title": "Month Picker Plugin",
+    "projLink": "https://www.npmjs.com/package/monthpicker-lite-js",
+    "projLinkAlt": "MONTH PICKER PLUGIN",
+    "githubLink": "https://github.com/chaseottofy/monthpicker-lite-js",
+    "stacks": ["typescript"],
+    "lighthouseKey": "monthpicker"
+  },
+  "markdownCard": {
+    "title": "Markdown Lite",
+    "projLink": "https://chaseottofy.github.io/react-lite-markdown/",
+    "projLinkAlt": "MD LITE",
+    "githubLink": "https://github.com/chaseottofy/react-lite-markdown",
+    "stacks": ["react", "vite"],
+    "lighthouseKey": "markdown"
+  }
+}

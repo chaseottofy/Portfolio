@@ -5,32 +5,24 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
-const csso = require('postcss-csso');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
-    devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
+    // devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
 
     output: {
-      path: path.join(__dirname, '/dist'),
+      path: path.resolve(__dirname, 'dist'),
       clean: true,
-    },
-
-    resolve: {
-      alias: {
-        '@fonts': path.join(__dirname, 'src/assets/fonts/inter/'),
-      },
     },
 
     plugins: [
       new Dotenv(),
       new HtmlBundlerPlugin({
         entry: {
-          index: 'src/index.html',
+          index: './src/index.html',
         },
         js: {
           filename: '[name].[contenthash:8].js',
@@ -47,7 +39,8 @@ module.exports = (env, argv) => {
             },
           },
         ],
-        minify: {
+        minify: IS_PRODUCTION,
+        minifyOptions: {
           removeComments: true,
           collapseWhitespace: true,
           removeAttributeQuotes: true,
@@ -60,17 +53,7 @@ module.exports = (env, argv) => {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: [
-            {
-              loader: 'thread-loader',
-            },
-            {
-              loader: 'babel-loader',
-              options: {
-                cacheDirectory: true,
-              },
-            },
-          ],
+          use: ['babel-loader'],
         },
         {
           test: /\.(css|scss|sass)$/,
@@ -79,21 +62,17 @@ module.exports = (env, argv) => {
               loader: 'css-loader',
               options: {
                 importLoaders: 2,
-                sourceMap: true,
+                sourceMap: false,
               },
             },
             {
               loader: 'postcss-loader',
               options:
               {
-                sourceMap: true,
+                sourceMap: false,
                 postcssOptions: {
                   plugins: [
                     postcssPresetEnv(),
-                    csso({
-                      debug: true,
-                      forceMediaMerge: true,
-                    }),
                     autoprefixer(),
                   ],
                 },
@@ -102,7 +81,7 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: true,
+                sourceMap: false,
               },
             },
           ],
@@ -123,9 +102,30 @@ module.exports = (env, argv) => {
         },
       ],
     },
+  };
 
-    optimization: {
-      minimize: IS_PRODUCTION,
+  if (!IS_PRODUCTION) {
+    config.devServer = {
+      static: {
+        directory: path.join(__dirname, '/dist'),
+      },
+      watchFiles: {
+        paths: ['src/**/*.*'],
+        options: {
+          usePolling: true,
+        },
+      },
+      compress: true,
+      port: 3000,
+      open: true,
+      hot: true,
+      historyApiFallback: true,
+    };
+  }
+
+  if (IS_PRODUCTION) {
+    config.optimization = {
+      minimize: true,
       minimizer: [
         new TerserPlugin({
           minify: TerserPlugin.esbuildMinify,
@@ -143,39 +143,7 @@ module.exports = (env, argv) => {
           ],
         }),
       ],
-    },
-
-    performance: {
-      hints: false,
-    },
-    stats: {
-      children: true,
-      modules: false,
-      entrypoints: false,
-      colors: true,
-    },
-  };
-
-  if (!IS_PRODUCTION) {
-    config.devServer = {
-      compress: true,
-      port: 3000,
-      static: {
-        directory: path.join(__dirname, './dist'),
-      },
-      watchFiles: {
-        paths: ['src/**/*.*'],
-        options: {
-          usePolling: true,
-        },
-      },
     };
-  }
-
-  if (process.env.NODE_WEBPACK_ANALYZE) {
-    config.plugins.push(new BundleAnalyzerPlugin({
-      generateStatsFile: true,
-    }));
   }
 
   return config;

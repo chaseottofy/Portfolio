@@ -70,7 +70,7 @@ const appendPicture = (parent, imgvars) => {
  * @param {number} nth    tab index
  * @param {boolean} isCal isCalendar
  */
-const configPicture = (parent, attr, cSet, nth, isCal) => {
+const configPicture = (parent, attr, cSet, nth) => {
   const imgWrapper = document.createElement('picture');
   for (const cName of cSet) {
     imgWrapper.classList.add(cName);
@@ -81,13 +81,11 @@ const configPicture = (parent, attr, cSet, nth, isCal) => {
   parent.append(imgWrapper);
 
   const [lp, mp, alt] = calendarImageVars[+nth - 2];
-  const set = isCal ? imageSets.calendar : imageSets.react;
+  const set = imageSets.calendar;
 
   appendPicture(
     imgWrapper,
-    isCal
-      ? [set[lp], set[mp], alt]
-      : [set.reactlg, set.reactmd, 'React Components'],
+    [set[lp], set[mp], alt],
   );
 };
 

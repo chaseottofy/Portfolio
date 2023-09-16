@@ -22,7 +22,7 @@
   max-width: 580px;
   /* backdrop-filter: blur(24px); */
   background: var(--offsetblack0);
-  border-radius: 14px;
+  /* border-radius: 14px; */
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
@@ -32,7 +32,7 @@
   display: flex;
   opacity: 1;
   height: 500px;
-  border: 1px solid var(--black2);
+  /* border: 1px solid var(--black2); */
   box-shadow: var(--bs-md);
   min-height: 400px;
   animation: ease-modal-in 100ms both;
@@ -49,7 +49,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   position: relative;
 
 }
@@ -98,7 +98,7 @@
   row-gap: .5rem;
   position: relative;
   overflow: hidden;
-  border-radius: var(--gap1);
+  /* border-radius: var(--gap1); */
 }
 
 .cm-left::after {
@@ -174,7 +174,7 @@
   color: var(--accent-7);
   padding: .25rem;
   height: 100%;
-  border-top: 1px solid var(--black2);
+  border-top: 1px solid var(--offsetwhite1);
 }
 
 /* RIGHT GRID SECTION
@@ -219,11 +219,11 @@
 }
 
 .cm-right--top__cell:nth-child(odd) {
-  border-right: 1px solid var(--black2);
+  border-right: 1px solid var(--offsetwhite1);
 }
 
 .cm-right--top__cell:nth-child(-n + 2) {
-  border-bottom: 1px solid var(--black2);
+  border-bottom: 1px solid var(--offsetwhite1);
 }
 
 .cm-right--top__cell-badge {
@@ -367,9 +367,9 @@
 }
 
 .contact-menu__body .cm-right {
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   overflow: hidden;
-  border: 1px solid var(--black2);
+  /* border: 1px solid var(--black2); */
 }
 
 .cm-right--bottom__body {
@@ -388,7 +388,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 4rem;
-  border-top: 1px solid var(--black2);
+  border-top: 1px solid var(--offsetwhite1);
   height: 100%;
   width: 100%;
   padding: 2px var(--gap1);
@@ -408,9 +408,9 @@
 
 .cm-copy,
 .cm-email-goto {
-  border: 1px solid var(--black1);
-  background: var(--black4);
-  border-radius: 5px;
+  border: 1px solid var(--offsetwhite1);
+  /* background: var(--black4); */
+  /* border-radius: 5px; */
   display: flex;
   align-items: center;
   height: 2.25rem;
