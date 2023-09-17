@@ -1,27 +1,3 @@
-/* @font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Inter Regular'), local('Inter-Regular'), url('../assets/fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Inter Medium'), local('Inter-Medium'), url('../assets/fonts/inter/inter-v12-latin-500.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Inter Bold'), local('Inter-Bold'), url('../assets/fonts/inter/inter-v12-latin-700.woff2') format('woff2');
-  font-display: swap;
-} */
-
 @font-face {
   font-family: Neue;
   font-style: normal;
@@ -74,7 +50,7 @@
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
-  --maxWidthMd: 1000px;
+  --maxWidthMd: 1140px;
   --tbg1: background .2s ease-in-out;
   --tt1: transform .2s ease-in-out;
   --tc1: color .2s ease-in-out;
@@ -98,7 +74,7 @@
 html {
   line-height: 1.15;
   tab-size: 4;
-  font-size: 16px;
+  font-size: 20px;
   text-size-adjust: 100%;
 }
 
