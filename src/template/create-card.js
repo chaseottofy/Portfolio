@@ -156,14 +156,14 @@ const createProjectFooterButtons = (lighthouseKey) => {
       'open-lh--btn',
       'data-lh-proj',
       lighthouseKey,
-      'Performance Audit',
+      'Audits',
       createLHModal,
     ),
     createProjectFooterButton(
       'open-overview--btn',
       'data-proj',
       lighthouseKey,
-      'Full Overview',
+      'Overview',
       createProjectModal,
     ),
   );
@@ -174,10 +174,10 @@ const createProjectFooterButtons = (lighthouseKey) => {
 const createProjectCell = (
   title,
   projLink,
-  projLinkAlt,
   githubLink,
   stacks,
   lighthouseKey,
+  description,
   projectCell,
   images,
   isCalendar = false,
@@ -208,7 +208,7 @@ const createProjectCell = (
     arrowDec.classList.add('search-arrowright');
     arrowDec.append(createIcon('img-icon', svgIcons.arrow, null));
     projectContentSubheader.append(
-      createSubheaderLink('search', projLink, lockIcon, projLinkAlt, arrowDec),
+      createSubheaderLink('search', projLink, lockIcon, title, arrowDec),
       createSubheaderLink('links', githubLink, githubIcon, 'github repo', null),
     );
     projectContentBody.classList.add('pcb-sm');
@@ -221,10 +221,15 @@ const createProjectCell = (
     ));
   }
 
-  projectFooterTitles.append(projectFooterStacks);
+  const projectFooterDesc = document.createElement('p');
+  projectFooterDesc.classList.add('project-footer__desc');
+  projectFooterDesc.textContent = `— ${description}`;
+  projectFooterTitles.append(projectFooterDesc, projectFooterStacks);
+
   const projectFooterTitle = document.createElement('h3');
   projectFooterTitle.classList.add('project-footer__title');
   projectFooterTitle.textContent = title;
+
   const projectFooterBtns = createProjectFooterButtons(lighthouseKey);
   projectFooterContent.append(projectFooterTitle, projectFooterBtns);
   projectCellFooter.append(projectFooterTitles, projectFooterContent);
@@ -254,6 +259,7 @@ const projCard = () => {
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
   for (let i = 0; i < clsNames.length; i += 1) {
     const cardElem = document.querySelector(`.${clsNames[i]}`);
+    // const { title, projLink, projLinkAlt, githubLink, stacks, lighthouseKey } = cardDataArray[i];
     createProjectCell(...Object.values(cardDataArray[i]), cardElem, imgArrays[i], i === 0);
   }
   initCalendarMulit();

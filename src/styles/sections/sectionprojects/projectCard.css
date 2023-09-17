@@ -1,19 +1,14 @@
 .project-cell {
   width: 100%;
-
-  /* box-shadow: var(--bs-offset1); */
-
-  /* border-radius: .5rem; */
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
   max-width: 100%;
-  border: 1px solid var(--accent-1);
+  border: 1px solid var(--grey2);
   background: var(--black0);
   z-index: 500;
-
 }
 
 .project-cell::after {
@@ -25,12 +20,6 @@
   content: '';
   filter: url("#grainy");
   opacity: .08;
-
-  /* background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.1) 0,
-    rgba(0,0,0,.4) 100%
-  ); */
   z-index: 9999;
   pointer-events: none;
   user-select: none;
@@ -46,23 +35,16 @@
 }
 
 .project-content__header {
-  /* grid-template-columns: 6rem 1fr; */
-
-  /* padding-right: 2rem; */
   width: 100%;
   height: 3.5rem;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-
-  /* max-width: 800px; */
   justify-content: center;
   padding-bottom: 1rem;
   position: relative;
   z-index: 9999;
-  
 }
-
 
 .pc__header-decoration {
   display: flex;

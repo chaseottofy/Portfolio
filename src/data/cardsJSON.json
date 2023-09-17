@@ -2,33 +2,33 @@
   "calendarCard": {
     "title": "Google Calendar 2.0",
     "projLink": "https://chaseottofy.github.io/google-calendar-clone-vanilla/",
-    "projLinkAlt": "Google Calendar 2.0",
     "githubLink": "https://github.com/chaseottofy/google-calendar-clone-vanilla",
     "stacks": ["vanilla", "webpack"],
-    "lighthouseKey": "calendar"
+    "lighthouseKey": "calendar",
+    "description": "Zero dependency clone of Google Calendar - Written in Vanilla JS."
   },
   "blogCard": {
     "title": "NextJS Blog",
     "projLink": "https://chaseottofy.github.io/nextjs-blog/",
-    "projLinkAlt": "NEXTJS BLOG",
     "githubLink": "https://github.com/chaseottofy/nextjs-blog",
     "stacks": ["typescript", "next"],
-    "lighthouseKey": "blog"
+    "lighthouseKey": "blog",
+    "description": "Next.js Blog with Contentlayer integration - Written in Typescript."
   },
   "monthPickerCard": {
     "title": "Month Picker Plugin",
     "projLink": "https://www.npmjs.com/package/monthpicker-lite-js",
-    "projLinkAlt": "MONTH PICKER PLUGIN",
     "githubLink": "https://github.com/chaseottofy/monthpicker-lite-js",
     "stacks": ["typescript"],
-    "lighthouseKey": "monthpicker"
+    "lighthouseKey": "monthpicker",
+    "description": "Lightweight month interface datepicker library for Vanilla JS & Typescript."
   },
   "markdownCard": {
     "title": "Markdown Lite",
     "projLink": "https://chaseottofy.github.io/react-lite-markdown/",
-    "projLinkAlt": "MD LITE",
     "githubLink": "https://github.com/chaseottofy/react-lite-markdown",
     "stacks": ["react", "vite"],
-    "lighthouseKey": "markdown"
+    "lighthouseKey": "markdown",
+    "description": "Custom React markdown editor with real-time preview."
   }
 }
