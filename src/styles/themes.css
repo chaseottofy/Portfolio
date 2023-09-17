@@ -16,7 +16,7 @@
   --grey2: #1a1a1a;
   --grey3: #000;
   --white0: #fff;
-  --white1: #fff;
+  --white1: rgb(247, 245, 245);
   --white2: #cccbcb;
   --offsetblack0: rgba(0, 0, 0, .9);
   --offsetblack1: rgba(0, 0, 0, .6);

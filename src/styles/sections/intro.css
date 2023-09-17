@@ -23,27 +23,33 @@
 
 /* TITLE (NAME)
 ============================ */
+
 .intro-header__title {
-  font-size: 1.9634rem;
+  font-size: 1.325rem;  
   text-align: center;
-  color: var(--header-text-before);
+  -webkit-text-stroke: 1px #a5aab6;
+  background:rgba(0, 0, 0, .6);
+  letter-spacing: .07rem;
+  color: transparent;
+  padding: .5rem 0;
+  position:relative;
+  background-clip: text;
+  transform: scaleY(1.3);
   cursor: help;
+  width: 100%;
   font-family: var(--secondaryFont);
 }
-
-.intro-header__title:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
 
 /* SUBTITLES
 ============================ */
 .intro-header__subtitles {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  margin-top: 5rem;
+  width: auto;
+  text-align: center;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  position: relative;
 }
 
 .intro-header__subtitle {
@@ -53,24 +59,44 @@
   justify-content: center;
 }
 
+.intro-header__subtitle--one {
+  display: flex;
+  flex-direction:column;
+}
+
 .intro-header__subtitle--two {
-  padding-top: .325rem;
+  display:flex;
+  text-align: center;
 }
 
 .intro-header__subtitle--text {
-  line-height: 1.125;
-  letter-spacing: -.1rem;
-  font-size: 3.1769rem;
+  line-height: 1.25;
+  font-size: 2.5rem;
+  width: 100%;
   font-family: var(--secondaryFont);
   font-weight: 900;
   color: transparent;
   background-image: linear-gradient(120deg,
-      #fff,
+      #e0dddd,
       #cccbcb);
   background-clip: text;
+  position: relative;
+  background-blend-mode: screen;
   -webkit-text-fill-color: transparent;
   background-size: 100% 200%;
 }
+
+/* .intro-header__subtitle--text:after { */
+/* .intro-header__subtitles:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  opacity: .1;
+  filter: url(#grainy);
+} */
 
 .intro-header__subtitle img {
   height: 1.5rem;
@@ -80,10 +106,10 @@
 
 @media screen and (max-width: 640px) {
   .intro-header__title {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
   }
 
   .intro-header__subtitle--text {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
