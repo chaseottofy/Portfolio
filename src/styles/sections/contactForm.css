@@ -151,11 +151,6 @@
   opacity: 1;
 }
 
-.contact-method-group span input:focus-visible + label {
-  outline: 1px solid var(--blue1);
-  opacity: 1;
-}
-
 .form-group--submit {
   display: flex;
   justify-content: flex-end;
@@ -170,7 +165,7 @@
   font-size: .875rem;
   cursor: not-allowed;
   user-select: none;
-  pointer-events: none;
+  position:relative;
 }
 
 .btn-allow {
@@ -185,4 +180,8 @@
 
 .btn-allow:hover {
   background: var(--grey2);
+}
+
+.invalid {
+  border: 1px solid var(--red1);
 }

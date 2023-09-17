@@ -23,6 +23,8 @@
     "unicorn/prefer-dom-node-dataset": "off",
     "unicorn/prefer-node-protocol": "off",
     "unicorn/no-null": "off",
-    "unicorn/no-for-loop": "off"
+    "unicorn/no-for-loop": "off",
+    "no-console": "off",
+    "unicorn/no-unsafe-regex": "off"
   }
 }

@@ -45,6 +45,7 @@
     rgba(136, 136, 136, .05) 0 1px 3px 2px;
 
   /* SPECIFIC */
+  --selection:#f81ce5;
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(0, 0, 0, .6);
@@ -105,6 +106,7 @@
     rgba(85, 85, 85, .1) 0 1px 3px 0;
 
   /* SPECIFIC */
+  --selection: #7fffe1;
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(255, 255, 255, .9);

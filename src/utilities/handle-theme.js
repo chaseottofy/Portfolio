@@ -1,4 +1,7 @@
+import isLocalStorageEnabled from './localstore-enabled';
+
 const initTheme = () => {
+  const localEnabled = isLocalStorageEnabled();
   const body = document.querySelector('.body');
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   const themeInputs = document.querySelectorAll('.theme-input');
@@ -14,6 +17,11 @@ const initTheme = () => {
   };
 
   const initDefaultTheme = () => {
+    if (!localEnabled) {
+      setTheme('dark');
+      return;
+    }
+
     const localTheme = localStorage.getItem('portfolio-theme');
     if (localTheme) {
       setTheme(localTheme);
@@ -25,8 +33,10 @@ const initTheme = () => {
 
   const handleThemeChange = (e) => {
     const theme = e.target.value;
-    localStorage.setItem('portfolio-theme', theme);
     setTheme(theme);
+    if (localEnabled) {
+      localStorage.setItem('portfolio-theme', theme);
+    }
   };
 
   const initThemeOptions = () => {

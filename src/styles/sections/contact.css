@@ -226,6 +226,10 @@
   cursor: pointer;
 }
 
+.cm-right--top__cell:focus-within {
+  outline: 1px dotted var(--white1);
+}
+
 .cm-right--top__cell:nth-child(odd) {
   border-right: 1px solid var(--offsetwhite1);
 }
@@ -389,8 +393,7 @@
   background:
     linear-gradient(60deg,
       var(--black0) 0,
-      var(--offsetblack0) 80%
-    );
+      var(--offsetblack0) 80%);
 }
 
 .cm-right--bottom__cell {

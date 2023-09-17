@@ -19,6 +19,11 @@ const handleToasts = () => {
   }
 };
 
+/**
+ *
+ * @param {string} text Message to display in toast
+ * @param {string} pre Optional prefix to display before message
+ */
 const createToast = (text, pre) => {
   const [toastIndex, setToastIndex] = handleState(0);
 

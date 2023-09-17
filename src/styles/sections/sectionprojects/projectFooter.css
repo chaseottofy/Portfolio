@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1.5rem 1rem 0;
 }
 
 .project-footer__desc {
@@ -108,6 +108,7 @@
 
 .project-footer__title {
   /* font-size: 1.375rem; */
+
   /* transform: scaleY(.95); */
   font-size: 1rem;
   font-family: var(--secondaryFont);
@@ -129,6 +130,7 @@
 
 .project-footer-btns button {
   /* margin-right: 1rem; */
+
   /* margin-left: 1rem; */
   border-radius: 6px;
   font-size: .9rem;

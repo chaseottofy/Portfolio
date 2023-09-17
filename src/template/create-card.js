@@ -257,9 +257,9 @@ const projCard = () => {
   const clsNames = ['project-calendar', 'blogcm', 'monthpickercm', 'markdowncm'];
   const imgArrays = [getImgArray(cal), getImgArray(blog), getImgArray(mp), getImgArray(mark)];
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
+
   for (let i = 0; i < clsNames.length; i += 1) {
     const cardElem = document.querySelector(`.${clsNames[i]}`);
-    // const { title, projLink, projLinkAlt, githubLink, stacks, lighthouseKey } = cardDataArray[i];
     createProjectCell(...Object.values(cardDataArray[i]), cardElem, imgArrays[i], i === 0);
   }
   initCalendarMulit();

@@ -47,6 +47,7 @@
   --blue1: #111;
   --blue2: #111;
   --blue3: #111;
+  --fv: 1px dotted var(--white1);
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
@@ -74,19 +75,16 @@
 html {
   line-height: 1.15;
   tab-size: 4;
-  font-size: 20px;
+  font-size: 18px;
   text-size-adjust: 100%;
 }
 
 body {
-  /* min-height: 100vh; */
   height: 100%;
   width: calc(100vw - calc(100vw - 100%));
   font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
-
-  /* text-rendering: optimizespeed; */
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -155,6 +153,8 @@ textarea {
   border-radius: 5px;
   font-size: .875rem;
   color: var(--white1);
+  resize: vertical;
+  min-height: 4rem;
 }
 
 ul {
@@ -163,7 +163,6 @@ ul {
 
 a {
   color: var(--link);
-  outline: 0;
   text-decoration: none;
 }
 
@@ -191,33 +190,18 @@ a img {
 }
 
 input::placeholder {
-  /* opacity: .7; */
-
-  /* color: var(--white1); */
   color: var(--white2);
   font-size: .875rem;
   opacity: 1
 }
 
-a:focus-visible {
-  outline: 0 0 0 2px var(--white1);
-  box-shadow: 0 0 0 2px var(--blue3);
-}
-
+a:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
-  outline: none;
-  border-color: var(--blue2);
-}
-
-input[type="radio"]:focus-visible + label {
-  outline: 0 0 0 2px var(--white1);
-  box-shadow: 0 0 0 2px var(--blue3);
-}
-
+input[type="radio"]:focus-visible + label,
+label:focus-visible,
+textarea:focus-visible,
 button:focus-visible {
-  filter: brightness(1.2);
-  box-shadow: 0 0 0 2px var(--blue3);
+  outline: 1px dotted var(--white1);
 }
 
 svg {
@@ -226,18 +210,16 @@ svg {
   user-select: none;
 }
 
+::selection {
+  background-color: var(--selection);
+  color: var(--white1);
+}
+
 /* ::-WEBKIT
 ============================ */
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto
-}
-
-button[type="button"],
-button[type="reset"],
-button[type="submit"],
-button {
-  appearance: button;
 }
 
 /* ::-MOZ
