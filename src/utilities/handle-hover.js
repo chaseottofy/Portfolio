@@ -1,8 +1,8 @@
 import createContactMenu from '../template/create-contactmenu';
 
-const navContactBtn = document.querySelector('.nav-multi__contact');
-
 const configContactMenu = () => {
+  const navContactBtn = document.querySelector('.nav-multi__contact');
+
   const contactMousemove = (e) => {
     if (
       !e

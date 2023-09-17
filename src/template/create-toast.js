@@ -1,6 +1,7 @@
+import handleState from '../utilities/handle-state';
+
 const toastWrapper = document.querySelector('.toast-wrapper');
 
-let toastIndex = 0;
 const handleToasts = () => {
   if (toastWrapper.children.length >= 4) {
     toastWrapper.lastElementChild.remove();
@@ -19,8 +20,10 @@ const handleToasts = () => {
 };
 
 const createToast = (text, pre) => {
-  if (toastIndex <= 3) {
-    toastIndex += 1;
+  const [toastIndex, setToastIndex] = handleState(0);
+
+  if (toastIndex() <= 3) {
+    setToastIndex(toastIndex() + 1);
   }
 
   let width = 0;
@@ -28,7 +31,7 @@ const createToast = (text, pre) => {
   wrapper.classList.add('toast');
   wrapper.style.zIndex = 9000;
   wrapper.style.bottom = '2rem';
-  wrapper.setAttribute('toast-idx', toastIndex);
+  wrapper.setAttribute('toast-idx', toastIndex());
 
   const progressbar = document.createElement('span');
   progressbar.classList.add('toast-progress');
@@ -50,8 +53,8 @@ const createToast = (text, pre) => {
     progressbar.style.width = `${width}%`;
     if (width === 100) {
       wrapper.remove();
-      if (toastIndex > 0) {
-        toastIndex -= 1;
+      if (toastIndex() > 0) {
+        setToastIndex(toastIndex() - 1);
       }
       clearInterval();
     }

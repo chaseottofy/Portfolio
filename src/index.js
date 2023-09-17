@@ -7,8 +7,6 @@ import initCopyElements from './utilities/handle-copy';
 import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
 import projCard from './template/create-card';
-// import initPDF from './utilities/handle-pdf';
-// import
 /** ************************************ */
 // DEVELOPMENT ONLY
 // import enableTesting from './testing/test-index';
@@ -50,11 +48,6 @@ const appInit = () => {
    * @function initDefaults set default time / date / etc
   */
   initDefaults();
-
-  /**
-   * @function initPDF setup PDF resume download
-  */
-  // initPDF();
 
   /**
    * @function initProjectCards

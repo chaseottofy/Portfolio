@@ -138,6 +138,7 @@ const createCalTabs = () => {
     wrapper.append(input, label);
     return wrapper;
   };
+
   const tabNames = ['Day', 'Week', 'Month', 'Year', 'List'];
   const calTabs = document.createElement('div');
   calTabs.classList.add('pc__header-tabs', 'calendar-tabs');
@@ -193,13 +194,12 @@ const createProjectCell = (
 
   if (isCalendar) {
     projectContentHeader.append(createCalTabs());
-    // projectContentHeader.append(createDecoration(), createCalTabs());
     projectContentSubheader.append(
-      createSubheaderLink('links', githubLink, githubIcon, null, null),
+      createSubheaderLink('links', githubLink, githubIcon, 'github repo', null),
     );
     projectContentBody.append(createProjectPicture(
       images,
-      ['project-image__calendar', 'cal-cell__image--1', 'cal-current'],
+      ['project-image__calendar', 'cal-current'],
       { attrName: 'data-cal-nth', dataText: '1' },
       { attrName: 'data-hasimg', dataText: 'true' },
     ));
@@ -207,7 +207,6 @@ const createProjectCell = (
     const arrowDec = document.createElement('span');
     arrowDec.classList.add('search-arrowright');
     arrowDec.append(createIcon('img-icon', svgIcons.arrow, null));
-    // projectContentHeader.prepend(createDecoration());
     projectContentSubheader.append(
       createSubheaderLink('search', projLink, lockIcon, projLinkAlt, arrowDec),
       createSubheaderLink('links', githubLink, githubIcon, 'github repo', null),

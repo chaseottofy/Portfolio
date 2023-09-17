@@ -2,12 +2,6 @@ import badgeData from '../data/min/contactJSONMin.json';
 import createToast from './create-toast';
 import copyToClipboard from '../utilities/get-copytoclipboard';
 
-const body = document.querySelector('.body');
-const bentArrow = document.querySelector('.img-bent-arrowsrc');
-const bentArrowSrc = bentArrow.getAttribute('src');
-const cmBodyImgs = document.querySelectorAll('.cm-body--img');
-const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
-
 /**
  * createBadge
  * @param {string} cname className
@@ -26,6 +20,10 @@ const createBadge = (
   dataBef,
   idx,
 ) => {
+  const cmBodyImgs = document.querySelectorAll('.cm-body--img');
+  const bentArrow = document.querySelector('.img-bent-arrowsrc');
+  const bentArrowSrc = bentArrow.getAttribute('src');
+
   const badge = document.createElement('div');
   badge.classList.add('cm-right--top__cell');
   badge.classList.add(cname);
@@ -130,6 +128,9 @@ const createCmBottomCell = (
 };
 
 const createContactMenu = () => {
+  const body = document.querySelector('.body');
+  const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
+
   if (document?.querySelector('.contact-menu__header')) return;
   const cmAside = document.createElement('aside');
   cmAside.setAttribute('class', 'contact-menu__header');

@@ -1,5 +1,3 @@
-const contactDateTime = document.querySelector('.cm-left--time');
-
 const getMyTime = (date) => date.toLocaleString('en-US', {
   timeZone: 'America/Denver',
   hour: 'numeric',
@@ -8,6 +6,7 @@ const getMyTime = (date) => date.toLocaleString('en-US', {
 });
 
 const setDateTime = (timeString) => {
+  const contactDateTime = document.querySelector('.cm-left--time');
   contactDateTime.textContent = `MST: ${timeString}`;
 };
 

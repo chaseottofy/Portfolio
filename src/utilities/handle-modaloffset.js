@@ -1,8 +1,5 @@
 import getScrollBarWidth from './get-scrollbarwidth';
 
-const body = document.querySelector('.body');
-const header = document.querySelector('.header');
-
 /**
  * handleModalOffset
  * @param {Element} body document.body
@@ -11,6 +8,8 @@ const header = document.querySelector('.header');
  * Adds padding to body and header to prevent page from shifting.
  */
 const handleModalOffset = () => {
+  const body = document.querySelector('.body');
+  const header = document.querySelector('.header');
   const offsetscroll = `${getScrollBarWidth()}px`;
   body.classList.add('body-prevent-scroll');
   body.style.paddingRight = offsetscroll;
