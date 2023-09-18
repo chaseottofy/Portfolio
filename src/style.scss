@@ -1,3 +1,10 @@
+/**
+ * @fileoverview This file is the entry point for the SCSS compiler.
+ * The main loader I use for javascript/html in webpack prefers scss imports over css imports.
+ * Even though I do not use scss, a workaround is to use a single scss file that imports all the css files.
+
+ * The project follows semantic HTML, and the CSS is organized to reflect the HTML structure
+*/
 @import "./styles/themes";
 @import "./styles/root";
 @import "./styles/header";
@@ -5,17 +12,23 @@
 @import "./styles/gradients/dividerGradient";
 @import "./styles/sections/intro";
 @import "./styles/main";
+// *** Section: Projects ***
 @import "./styles/sections/sectionprojects/projectImages";
 @import "./styles/sections/sectionprojects/projectsLayout";
 @import "./styles/sections/sectionprojects/projectCard";
 @import "./styles/sections/sectionprojects/projectFooter";
 @import "./styles/sections/about";
+// *** Section: Skills ***
 @import "./styles/sections/skills";
+// *** Section: Contact & Contact Form ***
 @import "./styles/sections/contact";
 @import "./styles/sections/contactForm";
+// *** Aside Content: Popups/Modals/Menus ***
 @import "./styles/aside/toast";
 @import "./styles/aside/lighthouseModal";
 @import "./styles/aside/spinner";
 @import "./styles/aside/projectOverview";
 @import "./styles/aside/floatingMenu";
+@import "./styles/aside/picturePopup";
+// *** Footer ***
 @import "./styles/footer";

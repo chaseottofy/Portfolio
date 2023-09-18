@@ -18,6 +18,15 @@ export function initGlobalDirname() {
   }
 }
 
+export function isNum(value) {
+  const num = Number(value);
+  if (isNaN(num)) {
+    throw new Error(`Invalid small image multiplier specified. Must be a number. Input: ${value}`);
+  }
+
+  return num;
+}
+
 export async function convertImageToBase64(filePath) {
   const buffer = await fs.promises.readFile(filePath);
   return buffer.toString('base64');

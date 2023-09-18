@@ -30,6 +30,7 @@ const initContactForm = () => {
   const [invalidElements, setInvalidElements] = handleState([]);
 
   const form = document.querySelector('.contact-form');
+  const formInputs = document.querySelectorAll('.fmi');
   const nameInput = document.querySelector('.form-name--input');
   const contactValueInput = document.querySelector('.form-contact--input');
   const messageInput = document.querySelector('.form-message--input');
@@ -122,6 +123,50 @@ const initContactForm = () => {
     submitBtn.disabled = true;
   };
 
+  const handleInvalidInputs = () => {
+    const invalidSwitch = () => {
+      if (invalidElements().length > 0) {
+        for (const element of invalidElements()) {
+          switch (element) {
+            case 'name': {
+              nameInput.classList.toggle('invalid');
+              break;
+            }
+            case 'email': {
+              contactValueInput.classList.toggle('invalid');
+              break;
+            }
+            case 'phone': {
+              contactValueInput.classList.toggle('invalid');
+              break;
+            }
+            case 'message': {
+              messageInput.classList.toggle('invalid');
+              break;
+            }
+            default: {
+              break;
+            }
+          }
+        }
+      }
+    };
+
+    invalidSwitch();
+    submitBtn.blur();
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('btn-allow');
+    setInvalidElements([]);
+
+    // if (type === 'invalid') {
+    //   setTimeout(() => {
+    //     invalidSwitch();
+    //     setInvalidElements([]);
+    //   }, 2000);
+    // } else {
+    // }
+  };
+
   const checkValidity = () => {
     const formData = new FormData(form);
     const contactName = formData.get('messageName');
@@ -154,64 +199,7 @@ const initContactForm = () => {
     e.preventDefault();
     checkHP();
     checkValidity();
-
-    if (invalidElements().length > 0) {
-      for (const element of invalidElements()) {
-        switch (element) {
-          case 'name': {
-            nameInput.classList.add('invalid');
-            break;
-          }
-          case 'email': {
-            contactValueInput.classList.add('invalid');
-            break;
-          }
-          case 'phone': {
-            contactValueInput.classList.add('invalid');
-            break;
-          }
-          case 'message': {
-            messageInput.classList.add('invalid');
-            break;
-          }
-          default: {
-            break;
-          }
-        }
-      }
-      submitBtn.blur();
-      submitBtn.disabled = true;
-      submitBtn.classList.remove('btn-allow');
-
-      setTimeout(() => {
-        for (const element of invalidElements()) {
-          switch (element) {
-            case 'name': {
-              nameInput.classList.remove('invalid');
-              break;
-            }
-            case 'email': {
-              contactValueInput.classList.remove('invalid');
-              break;
-            }
-            case 'phone': {
-              contactValueInput.classList.remove('invalid');
-              break;
-            }
-            case 'message': {
-              messageInput.classList.remove('invalid');
-              break;
-            }
-            default: {
-              break;
-            }
-          }
-        }
-
-        setInvalidElements([]);
-      }, 2000);
-      return;
-    }
+    handleInvalidInputs();
 
     if (formDisabled()) {
       return;
@@ -221,19 +209,19 @@ const initContactForm = () => {
     disableForm();
     toggleSkeleton();
     createSuccessMessage();
-    fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
-      method: 'POST',
-      body: formData,
-    })
-      .then((res) => res.text())
-      .then(() => {
-        createToast('Message Sent!', false);
-        resetForm();
-      })
-      .catch(() => {
-        createToast('Something went wrong!', false);
-        resetForm();
-      });
+    // fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
+    //   method: 'POST',
+    //   body: formData,
+    // })
+    //   .then((res) => res.text())
+    //   .then(() => {
+    //     createToast('Message Sent!', false);
+    //     resetForm();
+    //   })
+    //   .catch(() => {
+    //     createToast('Something went wrong!', false);
+    //     resetForm();
+    //   });
   };
 
   const initFormFunc = () => {

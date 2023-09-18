@@ -47,7 +47,7 @@
   padding: 0 .5rem;
 }
 
-.project-divider {
+/* .project-divider {
   height: 6rem;
   width: 100%;
   margin: 0 auto;
@@ -57,11 +57,15 @@
   justify-content: center;
 }
 
-.vertical-line {
+.project-divider::after {
   height: 4rem;
-  border-left: 2px dotted var(--accent-2);
-  margin: 0 auto;
-}
+  content: '';
+  position:absolute;
+  inset:0;
+  margin: auto;
+  width: 2px;
+  outline: 2px dotted var(--accent-2);
+} */
 
 @media screen and (max-width: 490px) {
   .projects-grid {

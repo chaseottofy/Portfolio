@@ -15,6 +15,9 @@ import createProjectModal from './create-projmodal';
 import cardData from '../data/cardsJSON.json';
 
 import initCalendarMulit from '../utilities/handle-tabs';
+import handleState from '../utilities/handle-state';
+
+const [popups, setPopups] = handleState([]);
 
 const createIcon = (cName, src, alt) => {
   const icon = new Image();
@@ -71,31 +74,74 @@ const createStack = (icon) => {
   return stack;
 };
 
+const createFullImagePopup = (img) => {
+  if (popups().length > 0) {
+    for (const popup of popups()) {
+      popup.remove();
+    }
+    setPopups([]);
+  }
+
+  const popup = document.createElement('div');
+  popup.classList.add('popup-picture');
+  const popupHeader = document.createElement('div');
+  popupHeader.classList.add('popup-picture__header');
+  const imageInfo = document.createElement('span');
+  imageInfo.classList.add('popup-picture__info');
+  imageInfo.textContent = img.alt;
+  const closeBtn = document.createElement('button');
+  closeBtn.classList.add('popup-picture__close');
+  closeBtn.textContent = 'close';
+
+  const imgWrapper = document.createElement('div');
+  imgWrapper.classList.add('popup-picture__imgwrapper');
+  const imgElem = new Image();
+  imgElem.src = img.src;
+  imgElem.alt = img.alt;
+  imgElem.loading = 'eager';
+  
+  popupHeader.append(imageInfo, closeBtn);
+  imgWrapper.append(imgElem);
+  popup.append(popupHeader, imgWrapper);
+  document.body.append(popup);
+
+  setPopups([popup]);
+  popup.addEventListener('click', () => {
+    popup.remove();
+    setPopups([]);
+  });
+};
+
 const createProjectPicture = (images, cNames, attr1, attr2) => {
   const projectImage = document.createElement('picture');
   if (attr1) { projectImage.setAttribute(...Object.values(attr1)); }
   if (attr2) { projectImage.setAttribute(...Object.values(attr2)); }
   for (const cName of cNames) { projectImage.classList.add(cName); }
 
-  let ind = 0;
-  for (const { src, alt, media } of images) {
+  for (let i = 0; i < images.length; i += 1) {
+    const { src, alt, media } = images[i];
     const source = document.createElement('source');
     source.srcset = src;
     source.media = media;
-    if (ind === 0) {
+    if (i === 0) {
       const img = new Image();
       img.src = src;
       img.alt = alt;
       img.style = 'max-width:100vw;';
       img.loading = 'lazy';
-      projectImage.append(source);
-      projectImage.append(img);
+      projectImage.append(source, img);
     } else {
-      // keep source tags in order
+      // source tags must be kept in order and inserted before the <img> tag
       projectImage.insertBefore(source, projectImage.lastElementChild);
     }
-    ind += 1;
   }
+
+  projectImage.addEventListener('click', (e) => {
+    const targetImg = e.target.closest('img');
+    if (!targetImg) return;
+    createFullImagePopup(targetImg);
+  });
+
   return projectImage;
 };
 
@@ -108,9 +154,9 @@ const createProjectFooterButton = (
 ) => {
   const button = document.createElement('button');
   button.classList.add(cName);
-  button.setAttribute('aria-label', 'button');
-  button.setAttribute(attrName, dataText);
+  button.ariaLabel = 'button';
   button.textContent = text;
+  button.setAttribute(attrName, dataText);
   button.addEventListener('click', callback);
   return button;
 };
@@ -129,11 +175,11 @@ const createCalTabs = () => {
     input.checked = checked;
     const label = document.createElement('label');
     label.classList.add('proj-header__tablabel', 'proj-cal--tab');
-    label.setAttribute('data-lab-after', 'view');
-    label.setAttribute('data-lab-sm', labSm);
-    label.setAttribute('data-tab-idx', tabIdx);
-    label.setAttribute('for', `proj-calendar-${title.toLowerCase()}`);
-    label.setAttribute('aria-label', labelTxt);
+    label.dataset.labAfter = 'view';
+    label.dataset.labSm = labSm;
+    label.dataset.tabIdx = tabIdx;
+    label.for = `proj-calendar-${title.toLowerCase()}`;
+    label.ariaLabel = labelTxt;
     label.textContent = `${title} `;
     wrapper.append(input, label);
     return wrapper;
@@ -182,22 +228,20 @@ const createProjectCell = (
   images,
   isCalendar = false,
 ) => {
-  const projectContentHeader = projectCell.querySelector('.project-content__header');
-  const projectContentSubheader = projectCell.querySelector('.project-content__subheader');
-  const projectContentBody = projectCell.querySelector('.project-content__body');
+  const projectHeader = projectCell.querySelector('.project-content__header');
+  const projectSubheader = projectCell.querySelector('.project-content__subheader');
+  const projectBody = projectCell.querySelector('.project-content__body');
   const projectCellFooter = projectCell.querySelector('.project-cell__footer');
   const projectFooterTitles = projectCell.querySelector('.project-footer__titles');
   const projectFooterStacks = projectCell.querySelector('.pf-stacks');
   const projectFooterContent = projectCell.querySelector('.project-footer__content');
   const lockIcon = createIcon('img-icon', svgIcons.lock, null);
   const githubIcon = createIcon('img-icon', svgIcons.github, null);
+  const subheaderGh = createSubheaderLink('links', githubLink, githubIcon, 'github repo', null);
 
   if (isCalendar) {
-    projectContentHeader.append(createCalTabs());
-    projectContentSubheader.append(
-      createSubheaderLink('links', githubLink, githubIcon, 'github repo', null),
-    );
-    projectContentBody.append(createProjectPicture(
+    projectHeader.append(createCalTabs());
+    projectBody.append(createProjectPicture(
       images,
       ['project-image__calendar', 'cal-current'],
       { attrName: 'data-cal-nth', dataText: '1' },
@@ -207,13 +251,12 @@ const createProjectCell = (
     const arrowDec = document.createElement('span');
     arrowDec.classList.add('search-arrowright');
     arrowDec.append(createIcon('img-icon', svgIcons.arrow, null));
-    projectContentSubheader.append(
-      createSubheaderLink('search', projLink, lockIcon, title, arrowDec),
-      createSubheaderLink('links', githubLink, githubIcon, 'github repo', null),
-    );
-    projectContentBody.classList.add('pcb-sm');
-    projectContentBody.append(createProjectPicture(images, ['proj-img-sm'], null, null));
+    projectSubheader.append(createSubheaderLink('search', projLink, lockIcon, title, arrowDec));
+    projectBody.classList.add('pcb-sm');
+    projectBody.append(createProjectPicture(images, ['proj-img-sm'], null, null));
   }
+
+  projectSubheader.append(subheaderGh);
 
   for (const stack of stacks) {
     projectFooterStacks.append(createStack(
@@ -254,7 +297,7 @@ const projCard = () => {
   const {
     calendarCard, blogCard, monthPickerCard, markdownCard,
   } = cardData;
-  const clsNames = ['project-calendar', 'blogcm', 'monthpickercm', 'markdowncm'];
+  const clsNames = ['calendarcm', 'blogcm', 'monthpickercm', 'markdowncm'];
   const imgArrays = [getImgArray(cal), getImgArray(blog), getImgArray(mp), getImgArray(mark)];
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
 
@@ -263,6 +306,15 @@ const projCard = () => {
     createProjectCell(...Object.values(cardDataArray[i]), cardElem, imgArrays[i], i === 0);
   }
   initCalendarMulit();
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      for (const popup of popups()) {
+        popup.remove();
+      }
+      setPopups([]);
+    }
+  });
 };
 
 export default projCard;

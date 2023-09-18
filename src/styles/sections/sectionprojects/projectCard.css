@@ -2,13 +2,28 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 0 auto 6rem auto;
+  /* overflow: hidden; */
   position: relative;
   max-width: 100%;
   border: 1px solid var(--grey2);
   background: var(--black0);
   z-index: 500;
+}
+
+.project-cell::before {
+  content: '';
+  bottom:0;
+  left:0;
+  right: 0;
+  transform: translateY(5.5rem);
+  position: absolute;
+  width: 1px;
+  outline: 2px dotted var(--accent-2);
+  /* backgrouxnd: green; */
+  z-index:9999;
+  height: 5rem;
+  margin: 0 auto;
 }
 
 .project-cell::after {
@@ -31,7 +46,6 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-
 }
 
 .project-content__header {
@@ -327,7 +341,7 @@
     font-size: .875rem;
   }
 
-  .project-calendar .pc__header-tabs span label {
+  .calendarcm .pc__header-tabs span label {
     font-size: .75rem;
   }
   

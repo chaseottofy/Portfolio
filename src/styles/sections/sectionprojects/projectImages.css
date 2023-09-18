@@ -9,6 +9,14 @@
   padding-top: var(--ap2);
 }
 
+.project-content__body picture {
+  cursor: pointer;
+}
+
+.project-content__body picture:hover {
+  filter: brightness(1.1);
+}
+
 .project-image__calendar,
 .proj-img-sm {
   height: 100%;
