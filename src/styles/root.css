@@ -30,9 +30,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-display: swap;
+
+}
+
 :root {
   --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
-  --secondaryFont: "basement", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  --monoFont: "JetBrains Mono", "Menlo", "Monaco", monospace;
+
   --wt: 1600;
   --ht: 900;
   --wt2: 720;
@@ -55,12 +66,15 @@
   --blue1: #111;
   --blue2: #111;
   --blue3: #111;
+  --primary1: #008beb;
+  --primary2: #086faa;
+  --primary3: #033450;
   --fv: 1px dotted var(--white1);
   --gap1: .5rem;
   --headerHeight: 4rem;
   --maxWidthLg: 1280px;
   --maxWidthMd: 1140px;
-  --tbg1: background .2s ease-in-out;
+  --tbg1: background .15s cubic-bezier(.4, 0, .2, 1);
   --tt1: transform .2s ease-in-out;
   --tc1: color .2s ease-in-out;
   --ttop1: top .2s ease-in-out;

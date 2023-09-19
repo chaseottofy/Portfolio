@@ -31,6 +31,8 @@
 }
 
 .contact-form--container .section-title h3 {
+  width: 100%;
+  text-align: center !important;
   font-size: 1.5rem;
 }
 

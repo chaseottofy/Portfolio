@@ -7,6 +7,7 @@
   /* height: calc(100vh + 13rem); */
   height: calc(100vh + 2px);
   width: 100%;
+  z-index: 100;
   /* z-index: -1; */
   margin: 0 auto;
   top: 0;

@@ -25,7 +25,7 @@
 
 [data-toast-type="success"] {
   color: #fff !important;
-  background: #008beb !important;
+  background: var(--primary1) !important;
 }
 
 [data-toast-type="error"] {
@@ -142,9 +142,9 @@
   opacity: 0;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   .toast {
-    width: 90vw;
+    width: min(80vw, 380px);
     left: 0;
     right: 0;
     margin: 0 auto;

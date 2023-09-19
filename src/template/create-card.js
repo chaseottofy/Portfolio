@@ -193,6 +193,7 @@ const createProjectCell = (
   stacks,
   lighthouseKey,
   description,
+  published,
   projectCell,
   images,
   isCalendar = false,
@@ -204,9 +205,13 @@ const createProjectCell = (
   const projectFooterTitles = projectCell.querySelector('.project-footer__titles');
   const projectFooterStacks = projectCell.querySelector('.pf-stacks');
   const projectFooterContent = projectCell.querySelector('.project-footer__content');
+  const projectPublished = projectCell.querySelector('.project-content__published');
   const lockIcon = createIcon('img-icon', svgIcons.lock, null);
-  const githubIcon = createIcon('img-icon', svgIcons.github, null);
-  const subheaderGh = createSubheaderLink('links', githubLink, githubIcon, 'github repo', null);
+  const ghIcon = createIcon('img-icon', svgIcons.github, null);
+  const subheaderGh = createSubheaderLink('links', githubLink, ghIcon, 'github repo', null);
+  const projectHref = `proj-${lighthouseKey}-top`;
+  projectCell.id = projectHref;
+  projectFooterStacks.dataset.pfStacks = stacks.join(' + ');
 
   if (isCalendar) {
     projectHeader.append(createCalTabs());
@@ -221,10 +226,14 @@ const createProjectCell = (
     arrowDec.classList.add('search-arrowright');
     arrowDec.append(createIcon('img-icon', svgIcons.arrow, null));
     projectSubheader.append(createSubheaderLink('search', projLink, lockIcon, title, arrowDec));
-    projectBody.classList.add('pcb-sm');
     projectBody.append(createProjectPicture(images, ['proj-img-sm'], null, null));
   }
   projectSubheader.append(subheaderGh);
+
+  const publishedText = document.createElement('span');
+  publishedText.classList.add('content-published--text');
+  publishedText.textContent = 'Published: ' + published;
+  projectPublished.append(publishedText);
 
   for (const stack of stacks) {
     projectFooterStacks.append(createStack(
@@ -234,7 +243,7 @@ const createProjectCell = (
 
   const projectFooterDesc = document.createElement('p');
   projectFooterDesc.classList.add('project-footer__desc');
-  projectFooterDesc.textContent = `— ${description}`;
+  projectFooterDesc.textContent = `${description}`;
   projectFooterTitles.append(projectFooterDesc, projectFooterStacks);
 
   const projectFooterTitle = document.createElement('h3');
@@ -258,6 +267,24 @@ const getImgArray = (images) => {
   return imgArray;
 };
 
+const handlePopupImage = (e) => {
+  if (window.innerWidth >= aspectSmallWidth) {
+    const img = e.target.closest('img');
+    if (!img) return;
+    const imgSrc = img?.src;
+    const imgAlt = img?.alt || 'alt';
+    if (!imgSrc) return;
+    createFullImagePopup(imgSrc, imgAlt);
+  } else {
+    const img = e.target.closest('picture');
+    if (!img) return;
+    const imgSrc = img?.firstElementChild?.nextElementSibling?.srcset;
+    const imgAlt = img?.lastElementChild?.alt || 'alt';
+    if (!imgSrc) return;
+    createFullImagePopup(imgSrc, imgAlt);
+  }
+};
+
 const initProjCards = () => {
   const { cal, markdown: mark, blog, monthPicker: mp } = imageSets;
   const { calendarCard, blogCard, monthPickerCard, markdownCard } = cardData;
@@ -267,28 +294,18 @@ const initProjCards = () => {
 
   for (let i = 0; i < clsNames.length; i += 1) {
     const cardElem = document.querySelector(`.${clsNames[i]}`);
-    createProjectCell(...Object.values(cardDataArray[i]), cardElem, imgArrays[i], i === 0);
+    // const { title, projLink, githubLink, stacks, lighthouseKey, description, published } = cardDataArray[i];
+    createProjectCell(
+      ...Object.values(cardDataArray[i]),
+      cardElem,
+      imgArrays[i],
+      i === 0
+    );
   }
-  initCalendarMulit();
 
+  initCalendarMulit();
   const projectsGrid = document.querySelector('.projects-grid');
-  projectsGrid.addEventListener('click', (e) => {
-    if (window.innerWidth >= aspectSmallWidth) {
-      const img = e.target.closest('img');
-      if (!img) return;
-      const imgSrc = img?.src;
-      const imgAlt = img?.alt || 'alt';
-      if (!imgSrc) return;
-      createFullImagePopup(imgSrc, imgAlt);
-    } else {
-      const img = e.target.closest('picture');
-      if (!img) return;
-      const imgSrc = img?.firstElementChild?.nextElementSibling?.srcset;
-      const imgAlt = img?.lastElementChild?.alt || 'alt';
-      if (!imgSrc) return;
-      createFullImagePopup(imgSrc, imgAlt);
-    }
-  });
+  projectsGrid.addEventListener('click', handlePopupImage);
 };
 
 export default initProjCards;

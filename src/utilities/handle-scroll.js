@@ -6,35 +6,9 @@ const scrollToTop = () => {
 };
 
 const initScroll = () => {
-  const header = document.querySelector('.header');
-  const introSection = document.querySelector('.intro-container');
-  const sectionTitleProjects = document.querySelector('.section-projects-title');
-  const floatingMenu = document.querySelector('.floating-menu');
-  const floatFixed = 'floating-menu--fixed';
-  const baseheaderHeight = 72;
   const headerLogo = document.querySelector('.header-logo');
   const navMenuLinks = document.querySelectorAll('.nav-menu--link');
   const sectionContainers = document.querySelectorAll('.section-container');
-
-  // const handleHeaderFilter = () => {
-  //   const observerOptions = {
-  //     root: null,
-  //     rootMargin: -baseheaderHeight + 'px',
-  //     threshold: 0,
-  //   };
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     for (const entry of entries) {
-  //       if (entry.intersectionRatio <= 0) {
-  //         floatingMenu.classList.add(floatFixed);
-  //       } else {
-  //         floatingMenu.classList.remove(floatFixed);
-  //       }
-  //     }
-  //   }, observerOptions);
-
-  //   observer.observe(introSection);
-  // };
 
   const handleHrefScroll = (e) => {
     sectionContainers[
@@ -44,20 +18,7 @@ const initScroll = () => {
     });
   };
 
-  // const handlePageScroll = () => {
-  //   const calcBottom = baseheaderHeight + window.scrollY;
-  //   if (calcBottom >= window.innerHeight) {
-  //     // header.classList.add('header-filter');
-  //     floatingMenu.classList.add(floatFixed);
-  //   } else {
-  //     floatingMenu.classList.remove(floatFixed);
-  //     // header.classList.remove('header-filter');
-  //   }
-  // };
-
   const configScroll = () => {
-    // handlePageScroll();
-    // handleHeaderFilter();
     // click nav list item links to scroll to section
     for (const link of navMenuLinks) {
       link.addEventListener('click', handleHrefScroll, {
@@ -74,3 +35,38 @@ const initScroll = () => {
 };
 
 export default initScroll;
+// const header = document.querySelector('.header');
+// const introSection = document.querySelector('.intro-container');
+// const sectionTitleProjects = document.querySelector('.section-projects-title');
+// const floatingMenu = document.querySelector('.floating-menu');
+// const floatFixed = 'floating-menu--fixed';
+// const baseheaderHeight = 72;
+// const handleHeaderFilter = () => {
+//   const observerOptions = {
+//     root: null,
+//     rootMargin: -baseheaderHeight + 'px',
+//     threshold: 0,
+//   };
+//   const observer = new IntersectionObserver((entries) => {
+//     for (const entry of entries) {
+//       if (entry.intersectionRatio <= 0) {
+//         floatingMenu.classList.add(floatFixed);
+//       } else {
+//         floatingMenu.classList.remove(floatFixed);
+//       }
+//     }
+//   }, observerOptions);
+//   observer.observe(introSection);
+// };
+
+// const handlePageScroll = () => {
+//   const calcBottom = baseheaderHeight + window.scrollY;
+//   if (calcBottom >= window.innerHeight) {
+
+//     // header.classList.add('header-filter');
+//     floatingMenu.classList.add(floatFixed);
+//   } else {
+//     floatingMenu.classList.remove(floatFixed);
+//     // header.classList.remove('header-filter');
+//   }
+// };

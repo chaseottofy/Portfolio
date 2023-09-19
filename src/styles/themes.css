@@ -29,6 +29,7 @@
   --offsetwhite2: rgba(255, 255, 255, .1);
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
   --offsetsecondary2: rgba(50, 180, 255, 0.1);
+  --offsetsecondary3: hsla(0, 0%, 100%, .4);
   --red1: #cf007a;
   --red2: #c0103e;
   --red3: #F8688E;
@@ -53,6 +54,12 @@
   --header-after: rgba(0, 0, 0, .6);
   --link: #7F95F5;
   --dividerBg: rgba(64, 100, 143, 0.1);
+  --linear1: linear-gradient(0deg,
+      var(--offsetwhite1),
+      var(--offsetwhite1)),
+    radial-gradient(50% 50% at 50% 100%,
+      var(--offsetwhite2) 0%,
+      var(--offsetwhite0) 100%);
   --radial1:
     radial-gradient(100% 100% at 50% 0,
       var(--offsetblack0) 0,
@@ -78,7 +85,7 @@
   --accent-4: #d4d4d4;
   --accent-5: #d4d4d4;
   --accent-6: #888;
-  --accent-7: #555;
+  --accent-7: #333;
   --accent-8: #111;
   --black0: #fff;
   --black1: #fafafa;
@@ -104,6 +111,7 @@
   --offsetsecondary2: rgba(121, 40, 202, .2); */
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
   --offsetsecondary2: rgba(50, 180, 255, 0.1);
+  --offsetsecondary3: rgba(0,0,0, 0.3);
   --red1: #cf007a;
   --red2: #c0103e;
   --red3: #A60731;
@@ -131,6 +139,12 @@
   --header-after: rgba(255, 255, 255, .9);
   --link: #153DEF;
   --dividerBg: transparent;
+  --linear1: linear-gradient(0deg,
+      rgba(23, 23, 23, .4),
+      rgba(8, 8, 8, .05)),
+    radial-gradient(50% 50% at 50% 100%,
+      rgba(40, 40, 40, .2) 0%,
+      rgba(0, 0, 0, .8) 100%);
   --radial1:
     radial-gradient(100% 100% at 50% 0,
       var(--offsetblack0) 0,

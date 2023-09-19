@@ -2,6 +2,7 @@
 /** ************************************ */
 import initTheme from './utilities/handle-theme';
 import initProjCards from './template/create-card';
+import initSkillsGrid from './template/create-skills';
 import initScroll from './utilities/handle-scroll';
 import initHover from './utilities/handle-hover';
 import initCopyElements from './utilities/handle-copy';
@@ -29,6 +30,13 @@ const appInit = () => {
    * on load.
    */
   initProjCards();
+
+  /**
+   * @description initSkillsGrid
+   * There is a skeleton of the skills grid already in the HTML for each card to prevent
+   * Import all svg icons for skills grid and append data to each skill cell
+   */
+  initSkillsGrid();
 
   /**
    * @description initScroll

@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  margin-top: -8rem;
+  margin-top: -4rem;
   flex-direction: column;
   position: relative;
   z-index: 999;
@@ -14,20 +14,33 @@
 }
 
 .project-footer__titles {
+  /* margin-top: .5rem; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 1.5rem 1rem 0;
+  padding: 1rem 1rem 0 1rem;
+  /* padding: 1.5rem 1rem 0; */
 }
 
 .project-footer__desc {
-  width: 100%;
+  width: 60%;
   display: flex;
   align-items: flex-start;
   height: 100%;
   padding-right: 1rem;
+  position:relative;
+  padding-left: .25rem;
+}
+
+.project-footer__desc:before {
+  content: '— ';
+  position:absolute;
+  transform: translateX(-100%);
+  left:0;
+  top:0;
+  font-size: .75rem;
 }
 
 .pf-stacks {
@@ -35,6 +48,18 @@
   align-items: center;
   width: auto;
   position: relative;
+}
+
+.pf-stacks:before {
+  content: attr(data-pf-stacks);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%) translateY(50%) scaleY(.9);
+  text-transform: uppercase;
+  font-size: .85rem;
+  letter-spacing: -.02em;
+  opacity: .7;
 }
 
 .pf-stack {
@@ -47,6 +72,11 @@
   margin-left: 1rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.pf-stack:hover {
+  opacity: .8;
 }
 
 .pf-stack::before {
@@ -55,6 +85,7 @@
   position: absolute;
   border: 12px solid transparent;
   border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  /* border-image: linear-gradient(to right bottom, #818080, #1a1a1a, #000); */
   border-image-slice: 1;
   height: 100%;
   left: 0;
@@ -63,7 +94,7 @@
 }
 
 .pf-stack::after {
-  background: var(--black0);
+  background: #000;
   margin: 0 auto;
   height: 96%;
   width: 96%;
@@ -73,25 +104,21 @@
   position: absolute;
 }
 
+.theme__light .pf-stack::after {
+  background: var(--black0);
+  /* background: #111; */
+}
+
 .vanilla-icon,
 .typescript-icon,
 .react-icon,
 .next-icon,
 .webpack-icon,
 .vite-icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
   z-index: 3;
   position: relative;
-}
-
-.theme__light .vite-icon,
-.theme__light .typescript-icon,
-.theme__light .webpack-icon,
-.theme__light .vanilla-icon,
-.theme__light .next-icon,
-.theme__light .react-icon {
-  filter: invert(1);
 }
 
 .project-footer__content {
@@ -114,7 +141,6 @@
   font-weight: 900;
   color: var(--white1);
   opacity: .9;
-  line-height: 2;
   position: relative;
   margin-right: 1rem;
   padding: 1rem 0;
@@ -175,6 +201,9 @@
 
   .pf-stacks {
     display: none;
+  }
+  .project-footer__desc {
+    width: 80%;
   }
 }
 

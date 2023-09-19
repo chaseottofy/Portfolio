@@ -5,7 +5,8 @@
     "githubLink": "https://github.com/chaseottofy/google-calendar-clone-vanilla",
     "stacks": ["vanilla", "webpack"],
     "lighthouseKey": "calendar",
-    "description": "Zero dependency clone of Google Calendar - Written in Vanilla JS."
+    "description": "Zero dependency clone of Google Calendar.",
+    "published": "Jan 15, 2023"
   },
   "blogCard": {
     "title": "NextJS Blog",
@@ -13,7 +14,8 @@
     "githubLink": "https://github.com/chaseottofy/nextjs-blog",
     "stacks": ["typescript", "next"],
     "lighthouseKey": "blog",
-    "description": "Next.js Blog with Contentlayer integration - Written in Typescript."
+    "description": "Next.js Blog with Contentlayer integration.",
+    "published": "Sep 14, 2023"
   },
   "monthPickerCard": {
     "title": "Month Picker Plugin",
@@ -21,7 +23,8 @@
     "githubLink": "https://github.com/chaseottofy/monthpicker-lite-js",
     "stacks": ["typescript"],
     "lighthouseKey": "monthpicker",
-    "description": "Lightweight month interface datepicker library for Vanilla JS & Typescript."
+    "description": "Lightweight month interface datepicker library for Vanilla JS & Typescript.",
+    "published": "Aug 27, 2023"
   },
   "markdownCard": {
     "title": "Markdown Lite",
@@ -29,6 +32,7 @@
     "githubLink": "https://github.com/chaseottofy/react-lite-markdown",
     "stacks": ["react", "vite"],
     "lighthouseKey": "markdown",
-    "description": "Custom React markdown editor with real-time preview."
+    "description": "Custom React markdown editor with real-time preview.",
+    "published": "Feb 26, 2023"
   }
 }
