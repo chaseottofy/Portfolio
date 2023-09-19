@@ -118,7 +118,7 @@ const createCmBottomCell = (
   menuBtnImg.alt = '';
   menuBtn.addEventListener('click', () => {
     copyToClipboard(dataText);
-    createToast(`Copied! ${dataText}`);
+    createToast(dataText, 'Copied!', 'success', 2);
   });
   menuBtn.append(menuBtnImg);
   menuCellIcons.append(menuBtn);

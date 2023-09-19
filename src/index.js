@@ -1,12 +1,13 @@
 /** ************************************ */
 /** ************************************ */
 import initTheme from './utilities/handle-theme';
+import initProjCards from './template/create-card';
 import initScroll from './utilities/handle-scroll';
 import initHover from './utilities/handle-hover';
 import initCopyElements from './utilities/handle-copy';
 import initContactForm from './utilities/handle-form';
 import initDefaults from './utilities/handle-defaults';
-import projCard from './template/create-card';
+import initHandleModals from './utilities/handle-modals';
 /** ************************************ */
 // DEVELOPMENT ONLY
 // import enableTesting from './testing/test-index';
@@ -14,7 +15,7 @@ import projCard from './template/create-card';
 /** ************************************ */
 const appInit = () => {
   /**
-   * @function initTheme
+   * @description initTheme
    * get system theme
    * config localStorage theme
    * allow theme change ... etc
@@ -22,7 +23,15 @@ const appInit = () => {
   initTheme();
 
   /**
-   * @function initScroll
+   * @description initProjectCards
+   * There is a skeleton of the card already in the HTML for each card to prevent
+   * layout shift when the content is loaded. This function fills in the content 
+   * on load.
+   */
+  initProjCards();
+
+  /**
+   * @description initScroll
    * scroll to top (logo)
    * scroll to section (nav links)
    * toggle filter for header if user has scrolled past 100vh;
@@ -30,30 +39,29 @@ const appInit = () => {
   initScroll();
 
   /**
-   * @function initHover Popup contact menu on hover
+   * @description initHover Popup contact menu on hover
   */
   initHover();
 
   /**
-   * @function initCopyElements config copy to clipboard functionality
+   * @description initCopyElements config copy to clipboard functionality
   */
   initCopyElements();
 
   /**
-   * @function initContactForm setup contact form POST
+   * @description initContactForm setup contact form POST
   */
   initContactForm();
 
   /**
-   * @function initDefaults set default time / date / etc
+   * @description initDefaults set default time / date / etc
   */
   initDefaults();
 
   /**
-   * @function initProjectCards
-   *
+   * @description Provide all modals/popups with close on esc functionality
    */
-  projCard();
+  initHandleModals();
 };
 
 appInit();

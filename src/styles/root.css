@@ -35,8 +35,16 @@
   --secondaryFont: "basement", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
   --wt: 1600;
   --ht: 900;
+  --wt2: 720;
+  --ht2: 540;
+  --wtvw: 1600px;
+  --htvh: 900px;
+  --htvh2: 540px;
+  --wtvw2: 720px;
   --ap2: calc(100% * (var(--ht)/var(--wt)));
   --ap: calc(var(--wt)/var(--ht));
+  --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
+  --apsmall: calc(var(--wt2)/var(--ht2));
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
@@ -80,11 +88,12 @@ html {
 }
 
 body {
-  height: 100%;
   width: calc(100vw - calc(100vw - 100%));
   font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
+  /* height: calc(100% - var(--headerHeight)); */
+  /* padding-top: var(--headerHeight); */
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -281,7 +290,7 @@ a[disabled] {
 
 /* TRANSITION UTILITIES
 ===================================== */
-.disable-transitions * {
+[data-disable-transitions="true"] * {
   transition: none !important;
   transition-duration: none !important;
   transition-property: none !important;
@@ -408,7 +417,7 @@ a[disabled] {
   }
 }
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   html {
     font-size: 15px;
   }
@@ -420,9 +429,10 @@ a[disabled] {
   h3 {
     font-size: 1.5rem;
   }
-}
+} */
 
-@media screen and (max-width: 490px) {
+/* @media screen and (max-width: 490px) {
+
   *,
   *::after,
   *::before {
@@ -432,7 +442,7 @@ a[disabled] {
     transition-timing-function: none !important;
     animation: none !important;
   }
-}
+} */
 
 @media screen and (max-width: 390px) {
   html {

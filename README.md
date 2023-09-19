@@ -17,6 +17,7 @@ Project images are handled differently than all other images
 - The original images are stored in the src/images/imgprojstart folder
 - Each project contains a large and small image within this folder.
 - The calendar project is the only project with multiple images, it contains 10 images total, 2 for each 'view' of the project.
+- It is preferred that project images are 
 
 > **Warning**
 > To utilize the image optimization script included in this project, a list of CLI commands is provided below.

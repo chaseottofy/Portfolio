@@ -27,8 +27,8 @@
 .intro-header__title {
   font-size: 1.325rem;  
   text-align: center;
-  -webkit-text-stroke: 1px #a5aab6;
-  background:rgba(0, 0, 0, .6);
+  -webkit-text-stroke: 1px #bdbcbc;
+  background:rgba(0,0,0,.6);
   letter-spacing: .07rem;
   color: transparent;
   padding: .5rem 0;

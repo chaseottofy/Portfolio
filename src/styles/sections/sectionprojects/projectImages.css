@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.project-content__body picture:hover {
-  filter: brightness(1.1);
-}
-
 .project-image__calendar,
 .proj-img-sm {
   height: 100%;
@@ -28,7 +24,7 @@
   object-fit: cover;
   object-position: center;
   image-rendering: -o-crisp-edges;
-  filter: contrast(1.1) grayscale(10%);
+  filter: contrast(1.15);
 }
 
 .hide-img {
@@ -49,7 +45,7 @@
 
 .img-skeleton {
   position: absolute;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, .4);
   top: 0;
   left: 0;
   width: 100%;
@@ -69,13 +65,13 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   .project-content__body {
-    padding-top: calc(3 / 4 * 100%);
+    padding-top: var(--ap2small);
   }
 
   .project-image__calendar img,
   .project-img-sm img {
-    aspect-ratio: calc(4/3);
+    aspect-ratio: var(--apsmall);
   }
 }

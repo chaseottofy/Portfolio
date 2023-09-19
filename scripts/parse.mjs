@@ -13,7 +13,6 @@ import {
   defaultDataURL,
 } from './defaults.mjs';
 
-
 initGlobalDirname();
 
 class ImageConfig {
@@ -25,9 +24,10 @@ class ImageConfig {
     "npm run setparse:base base/directory",
     "npm run setparse:sub folderWithinBase",
     "npm run setparse:out outputFolderWithinBase",
-    "npm run setparse:wh width height",
-    "npm run setparse:multiplier 0.1 - 0.9",
-    "npm run setparse:format jpg|jpeg|png|webp|avif",
+    "npm run setparse:wh width height (number number) (pixels)",
+    "npm run setparse:multiplier 0.1 - 0.9 (value to multiply width and height of Lg image by",
+    "npm run setparse:format jpg|jpeg|png|webp|avif (file extension : no dot)",
+    "npm run setparse:ar aspectRatio e.g. 4/3 (only applies to small images)",
     "npm run setparse:current (get current config)",
     "npm run setparse:quality 1-99",
   ];
@@ -46,7 +46,8 @@ class ImageConfig {
 
     this._postsFolder = 'imgprojstart';
     this._smallImageSuffix = '2';
-    this._smallImageMultiplier = 0.5;
+    this._smallImageMultiplier = 0.6;
+    this._smallAspectRatio = 4 / 3;
 
     this._postsPlaceholderFolder = 'imgproj';
     this._placeholderFileSuffix = '';
@@ -135,15 +136,22 @@ class ImageConfig {
         break;
       }
       case 'current': {
+        const baseStart = this._baseStartDirectory.slice(3);
         console.log({
-          base: this._baseStartDirectory.slice(3),
-          sub: this._baseStartDirectory.slice(3) + '/' + this._postsFolder,
-          output: this._baseStartDirectory.slice(3) + '/' + this._postsPlaceholderFolder,
+          base: baseStart,
+          sub: baseStart + '/' + this._postsFolder,
+          output: baseStart + '/' + this._postsPlaceholderFolder,
           wh: this._resizeOptions,
           multiplier: this._smallImageMultiplier,
           format: this._imageFileExtension,
           quality: this._outputImageQuality,
         });
+        break;
+      }
+      case 'ar': {
+        const num = isNum(args[0]);
+        this._smallAspectRatio = num;
+        console.log(`Small image aspect ratio set to: ${num}`);
         break;
       }
       case 'help': {
@@ -192,6 +200,12 @@ class ImageConfig {
       throw new Error(`Invalid small image multiplier specified. Must be larger than 0 and less than 1. E.g: 0.5`);
     }
     this._smallImageMultiplier = value;
+  }
+
+  get smallAspectRatio() { return this._smallAspectRatio; }
+  set smallAspectRatio(value) {
+    const num = isNum(value);
+    this._smallAspectRatio = num;
   }
 
   get smallImageSuffix() { return this._smallImageSuffix; }
@@ -336,29 +350,40 @@ config.init();
 const mode = config.mode;
 
 async function createImagePlaceholder() {
-  if (!fs.existsSync(config.postsDirectory)) {
-    fs.mkdirSync(config.placeholdersDirectory, { recursive: true });
+  const postsDirectory = config.postsDirectory;
+  const placeholderDirectory = config.placeholdersDirectory;
+  const acceptedFileExtensions = config.acceptedImageFileExtensions;
+  const placeholderSuffix = config.placeholderFileSuffix;
+  const imageFileExtension = config.imageFileExtension;
+  const desiredQuality = config.outputImageQuality;
+  const { width, height } = config.resizeOptions;
+  const smallImgSuffix = config.smallImageSuffix;
+  const smallImgMult = config.smallImageMultiplier;
+  const smallImgAspectRatio = config.smallAspectRatio;
+  const smallHeight = Math.round(height * smallImgMult);
+  const smallWidth = Math.round(smallImgAspectRatio * smallHeight);
+  console.log(smallWidth, smallHeight);
+
+  if (!fs.existsSync(postsDirectory)) {
+    fs.mkdirSync(placeholderDirectory, { recursive: true });
   }
-  const files = fs.readdirSync(config.postsDirectory);
-  const imageFiles = files.filter(file => config.acceptedImageFileExtensions.some(ext => file.endsWith(ext)));
+  const files = fs.readdirSync(postsDirectory);
+  const imageFiles = files.filter(file => acceptedFileExtensions.some(ext => file.endsWith(ext)));
+
 
   const tasks = imageFiles.map(async (imageFile) => {
-    const inputImagePath = path.join(config.postsDirectory, imageFile);
+    const inputImagePath = path.join(postsDirectory, imageFile);
     const imageNameWithoutExt = path.basename(imageFile, path.extname(imageFile));
 
-    const { width, height } = config.resizeOptions;
-    const smallImgSuffix = config.smallImageSuffix;
-    const smallImgMult = config.smallImageMultiplier;
     const isSmall = imageNameWithoutExt.match(new RegExp(`${smallImgSuffix}$`)) !== null;
     const resizeOptions = {
-      width: isSmall ? Math.round(width * smallImgMult) : width,
-      height: isSmall ? Math.round(height * smallImgMult) : height,
+      width: isSmall ? smallWidth : width,
+      height: isSmall ? smallHeight : height,
       position: 'top'
     };
 
     const outputImagePath = path.join(
-      config.placeholdersDirectory,
-      `${imageNameWithoutExt}${config.placeholderFileSuffix}.${config.imageFileExtension}`
+      placeholderDirectory, `${imageNameWithoutExt}${placeholderSuffix}.${imageFileExtension}`
     );
 
     const imageMetadata = await sharp(inputImagePath).metadata();
@@ -375,7 +400,7 @@ async function createImagePlaceholder() {
         .then((data) => {
           return sharp(data)
             .webp({
-              quality: config.outputImageQuality,
+              quality: desiredQuality,
               lossless: false,
               effort: 6,
             })
@@ -387,13 +412,9 @@ async function createImagePlaceholder() {
   console.log(`Processed ${tasks.length} images.`);
 }
 
-const runPlaceholder = () => {
-  createImagePlaceholder().catch(err => console.error("PLACEHOLDER processing error:", err));
-};
-
 const init = () => {
   if (mode === 'parse') {
-    runPlaceholder();
+    createImagePlaceholder().catch(err => console.error("PLACEHOLDER processing error:", err));
   }
 };
 

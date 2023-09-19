@@ -24,8 +24,9 @@ const handleToasts = () => {
  * @param {string} text Message to display in toast
  * @param {string} pre Optional prefix to display before message
  */
-const createToast = (text, pre) => {
+const createToast = (text, pre, type = 'default', time = 2) => {
   const [toastIndex, setToastIndex] = handleState(0);
+  const parseType = ['default', 'success', 'error'].includes(type) ? type : 'default';
 
   if (toastIndex() <= 3) {
     setToastIndex(toastIndex() + 1);
@@ -34,6 +35,7 @@ const createToast = (text, pre) => {
   let width = 0;
   const wrapper = document.createElement('aside');
   wrapper.classList.add('toast');
+  wrapper.dataset.toastType = parseType;
   wrapper.style.zIndex = 9000;
   wrapper.style.bottom = '2rem';
   wrapper.setAttribute('toast-idx', toastIndex());
@@ -45,11 +47,25 @@ const createToast = (text, pre) => {
   const progresstrack = document.createElement('span');
   progresstrack.classList.add('toast-progress--length');
 
+  const toastBody = document.createElement('div');
+  toastBody.classList.add('toast-body');
+
   const message = document.createElement('span');
   message.classList.add('toast-message');
   message.textContent = pre ? `${pre} ${text}` : `${text}`;
 
-  wrapper.append(progressbar, progresstrack, message);
+  const closeBtn = document.createElement('button');
+  closeBtn.classList.add('toast-close');
+  closeBtn.textContent = 'x';
+  closeBtn.addEventListener('click', () => {
+    wrapper.remove();
+    if (toastIndex() > 0) {
+      setToastIndex(toastIndex() - 1);
+    }
+  });
+
+  toastBody.append(message, closeBtn);
+  wrapper.append(progressbar, progresstrack, toastBody);
   toastWrapper.prepend(wrapper);
   handleToasts();
 
@@ -63,7 +79,7 @@ const createToast = (text, pre) => {
       }
       clearInterval();
     }
-  }, 10);
+  }, 10 * time);
 };
 
 export default createToast;

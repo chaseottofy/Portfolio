@@ -7,13 +7,22 @@ import getScrollBarWidth from './get-scrollbarwidth';
  * @description Prevents scrolling while modal is open.
  * Adds padding to body and header to prevent page from shifting.
  */
-const handleModalOffset = () => {
+const handleModalOffset = (element) => {
   const body = document.querySelector('.body');
   const header = document.querySelector('.header');
-  const offsetscroll = `${getScrollBarWidth()}px`;
-  body.classList.add('body-prevent-scroll');
-  body.style.paddingRight = offsetscroll;
-  header.style.paddingRight = offsetscroll;
+  if (body.classList.contains('body-prevent-scroll')) {
+    body.classList.remove('body-prevent-scroll');
+    body.removeAttribute('style');
+    header.removeAttribute('style');
+  } else {
+    const offsetscroll = `${getScrollBarWidth()}px`;
+    body.classList.add('body-prevent-scroll');
+    body.style.paddingRight = offsetscroll;
+    header.style.paddingRight = offsetscroll;
+    if (element) {
+      element.style.paddingRight = offsetscroll;
+    }
+  }
 };
 
 export default handleModalOffset;

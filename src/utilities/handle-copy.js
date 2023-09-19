@@ -3,7 +3,7 @@ import copyToClipboard from './get-copytoclipboard';
 
 const setCopy = (text) => {
   copyToClipboard(text);
-  createToast(text, 'copied!');
+  createToast(text, 'Copied!', 'success', 2);
 };
 
 const copyEmail = () => setCopy('ottofy@zohomail.com');
@@ -26,4 +26,5 @@ const initCopyElements = () => {
     }
   }
 };
+
 export default initCopyElements;

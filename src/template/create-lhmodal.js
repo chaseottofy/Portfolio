@@ -6,11 +6,9 @@ const header = document.querySelector('.header');
 
 const handleLHClose = () => {
   document?.querySelector('.lighthouse-modal--wrapper')?.remove();
+  handleModalOffset();
   // eslint-disable-next-line no-use-before-define
-  window.removeEventListener('keydown', closeLHOnEsc);
-  body.removeAttribute('style');
-  body.classList.remove('body-prevent-scroll');
-  header.removeAttribute('style');
+  // window.removeEventListener('keydown', closeLHOnEsc);
 };
 
 const closeLH = (e) => {
@@ -27,10 +25,8 @@ const closeLHOnEsc = (e) => {
 };
 
 const setLHModal = (appname) => {
-  // lhWrapper.classList.remove('hide-lh-modal');
   const lhWrapper = document.createElement('aside');
-  lhWrapper.classList.add('lighthouse-modal--wrapper');
-
+  lhWrapper.classList.add('lighthouse-modal--wrapper', 'act-modal');
   const base = lhdata[appname];
 
   const [dataTitle, dataLink, dataScore, dataContent] = [
@@ -106,9 +102,6 @@ const setLHModal = (appname) => {
   lhmodal.append(lhheader, lhbody);
   lhWrapper.append(lhmodal);
   lhWrapper.addEventListener('click', closeLH);
-  setTimeout(() => {
-    closeBtn.focus();
-  }, 50);
   return lhWrapper;
 };
 
@@ -119,7 +112,6 @@ const createLHModal = (e) => {
   );
   e.target.blur();
   handleModalOffset();
-  window.addEventListener('keydown', closeLHOnEsc);
 };
 
 export default createLHModal;

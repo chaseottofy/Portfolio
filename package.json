@@ -21,6 +21,7 @@
     "setparse:multiplier": "node ./scripts/parse.mjs --mode=multiplier",
     "setparse:format": "node ./scripts/parse.mjs --mode=format",
     "setparse:quality": "node ./scripts/parse.mjs --mode=quality",
+    "setparse:ar": "node ./scripts/parse.mjs --mode=ar",
     "setparse:current": "node ./scripts/parse.mjs --mode=current",
     "setparse:help": "node ./scripts/parse.mjs --mode=help",
     "stylelint": "stylelint \"src/**/*.css\"",

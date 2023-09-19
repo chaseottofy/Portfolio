@@ -1,9 +1,15 @@
 const copyToClipboard = (text) => {
-  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
-    return navigator.clipboard.writeText(text);
-  }
-  /* eslint-disable prefer-promise-reject-errors */
-  return Promise.reject('The Clipboard API is not available.');
+  return new Promise((resolve, reject) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        resolve("Text copied successfully!");
+      }).catch(err => {
+        reject("Failed to copy text using Clipboard API: " + err);
+      });
+    } else {
+      reject("Clipboard API not supported. Please copy the text manually.");
+    }
+  });
 };
 
 export default copyToClipboard;

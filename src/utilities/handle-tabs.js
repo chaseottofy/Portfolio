@@ -3,6 +3,10 @@
 import createSpinner from '../template/create-spinner';
 import handleState from './handle-state';
 import imageSets from './get-image';
+import {
+  aspectSmallWidth,
+  projectImageType,
+} from '../data/constants';
 
 const calendarImageVars = [
   ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
@@ -31,15 +35,15 @@ const appendPicture = (parent, imgvars) => {
   };
 
   parent.append(
-    createSource(large, '(min-width: 640px)'),
-    createSource(medium, '(max-width: 640px)'),
+    createSource(large, `(min-width: ${aspectSmallWidth + 1}px)`),
+    createSource(medium, `(max-width: ${aspectSmallWidth + 1}px)`),
   );
 
   const img = new Image();
   img.src = large;
   img.alt = alt;
   img.style = 'max-width:100vw;';
-  img.type = 'image/webp';
+  img.type = projectImageType;
   img.loading = 'eager';
 
   const skel = document.querySelector('.img-skeleton');

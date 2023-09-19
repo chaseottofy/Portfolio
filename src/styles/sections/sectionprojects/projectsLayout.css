@@ -14,6 +14,7 @@
   background-repeat: no-repeat; */
   z-index: 9999;
   position: relative;
+  scroll-margin-top: 4rem;
 }
 
 /* .projects-container::before {
@@ -28,7 +29,7 @@
 } */
 
 .projects-container .section-title {
-  padding: 5rem 0;
+  padding: 5rem 0 1rem 0;
 }
 
 .projects-grid {

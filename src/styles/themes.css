@@ -20,8 +20,10 @@
   --white2: #cccbcb;
   --offsetblack0: rgba(0, 0, 0, .9);
   --offsetblack1: rgba(0, 0, 0, .6);
-  --offsetblack2: rgba(23, 23, 23, 0.6);
+  --offsetblack2: rgba(0, 0, 0, .2);
+  /* --offsetblack2: rgba(23, 23, 23, 0.6); */
   --offsetblack3: rgba(23, 23, 23, 0.1);
+  --offsetblack4: rgba(8, 8, 8, 0.99);
   --offsetwhite0: rgba(255, 255, 255, 0);
   --offsetwhite1: rgba(255, 255, 255, .05);
   --offsetwhite2: rgba(255, 255, 255, .1);
@@ -45,12 +47,28 @@
     rgba(136, 136, 136, .05) 0 1px 3px 2px;
 
   /* SPECIFIC */
-  --selection:#f81ce5;
+  --selection: #f81ce5;
   --header-before: transparent;
   --header-text-before: #fff;
   --header-after: rgba(0, 0, 0, .6);
   --link: #7F95F5;
   --dividerBg: rgba(64, 100, 143, 0.1);
+  --radial1:
+    radial-gradient(100% 100% at 50% 0,
+      var(--offsetblack0) 0,
+      var(--offsetblack1) 100%),
+    linear-gradient(105deg,
+      var(--offsetwhite2) 8%,
+      var(--offsetwhite1) 30%,
+      var(--offsetblack2) 70%,
+      var(--offsetblack1) 95%);
+  /* 
+#040D14
+#044687
+#043258
+#042137
+#042C44
+*/
 }
 
 .theme__light {
@@ -77,6 +95,7 @@
   --offsetblack1: rgba(255, 255, 255, .8);
   --offsetblack2: rgba(255, 255, 255, .5);
   --offsetblack3: rgba(255, 255, 255, .2);
+  --offsetblack4: rgba(255, 255, 255, .96);
   --offsetwhite0: rgba(0, 0, 0, 0);
   --offsetwhite1: rgba(0, 0, 0, .05);
   --offsetwhite2: rgba(0, 0, 0, .1);
@@ -112,6 +131,17 @@
   --header-after: rgba(255, 255, 255, .9);
   --link: #153DEF;
   --dividerBg: transparent;
+  --radial1:
+    radial-gradient(100% 100% at 50% 0,
+      var(--offsetblack0) 0,
+      var(--offsetblack1) 100%),
+    linear-gradient(105deg,
+      var(--offsetwhite2) 8%,
+      var(--offsetwhite1) 30%,
+      var(--offsetblack2) 70%,
+      var(--offsetblack1) 95%);
+  --radial2:
+    linear-gradient(to bottom, #044687 0, #040D14 50%);
 }
 
 /*

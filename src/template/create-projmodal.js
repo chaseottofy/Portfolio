@@ -3,15 +3,10 @@ import projectJSON from '../data/min/projectJSONMin.json';
 import handleModalOffset from '../utilities/handle-modaloffset';
 
 const body = document.querySelector('body');
-const header = document.querySelector('.header');
 
 const handleCloseProjOverview = () => {
   document?.querySelector('.project-overview--wrapper')?.remove();
-  // eslint-disable-next-line no-use-before-define
-  window.removeEventListener('keydown', closeOverviewOnEsc);
-  body.classList.remove('body-prevent-scroll');
-  body.removeAttribute('style');
-  header.removeAttribute('style');
+  handleModalOffset();
 };
 
 const closeProjectOverview = (e) => {
@@ -21,16 +16,7 @@ const closeProjectOverview = (e) => {
   }
 };
 
-const closeOverviewOnEsc = (e) => {
-  if (e.key === 'Escape') {
-    handleCloseProjOverview();
-  }
-};
-
-const createProjectHR = () => {
-  const hr = document.createElement('hr');
-  return hr;
-};
+const createProjectHR = () => document.createElement('hr');
 
 const projectLinkTemplate = (link, text, tooltip) => {
   const linkEl = document.createElement('a');
@@ -68,7 +54,7 @@ const projectFeatureTemplate = (featureName, featureValue) => {
 const setProjectOverview = (data) => {
   const { title, links, features } = data;
   const poWrapper = document.createElement('aside');
-  poWrapper.classList.add('project-overview--wrapper');
+  poWrapper.classList.add('project-overview--wrapper', 'act-modal');
 
   const poModal = document.createElement('div');
   poModal.classList.add('project-overview--modal');
@@ -106,11 +92,7 @@ const setProjectOverview = (data) => {
   // create <UL><LI> cascade for each link
   for (const [key, val] of Object.entries(links)) {
     const [link, tooltip] = val;
-    linksWrapper.append(projectLinkTemplate(
-      link,
-      key,
-      tooltip,
-    ));
+    linksWrapper.append(projectLinkTemplate(link, key, tooltip));
   }
   poModalBody.append(linksWrapper);
 
@@ -132,12 +114,13 @@ const setProjectOverview = (data) => {
 
 const createProjectModal = (e) => {
   if (body.classList.contains('body-prevent-scroll')) return;
-  body.append(setProjectOverview(
-    projectJSON[e.target.getAttribute('data-proj')],
-  ));
+  const projectDataAttr = e.target.dataset.proj;
+  if (!projectDataAttr) return;
+  const projectData = projectJSON[projectDataAttr];
+
+  body.append(setProjectOverview(projectData));
   e.target.blur();
   handleModalOffset();
-  window.addEventListener('keydown', closeOverviewOnEsc);
 };
 
 export default createProjectModal;

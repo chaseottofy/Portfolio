@@ -20,7 +20,7 @@
   <script src="index.js" defer="defer"></script>
 </head>
 
-<body class="body theme__dark">
+<body class="body theme__dark" data-disable-transitions="true">
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
   <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
@@ -34,7 +34,7 @@
       result='noise'
     />
   </filter>
-</svg>
+  </svg>
   <!-- HEADER (FIXED)-->
   <header class="header header-animate">
     <div class="header-wrapper">
@@ -115,19 +115,44 @@
     <!-- SECTION : PROJECTS -->
     <article class="section-container projects-container" id="projects-top">
 
-      <div class="section-title">
-        <h2>Projects</h2>
+      <div class="section-title section-projects-title">
+        <h2>PROJECTS</h2>
       </div>
 
-      <!-- <aside class="floating-menu"></aside> -->
+      <aside class="floating-menu">
+        <ul class="float-options">
+          <li class="float-option--calendar">
+            <a href="#proj-calendar-top">
+              <span>Google Calendar 2.0</span>
+              <span>vanilla | 0 dependency</span>
+            </a>
+          </li>
+          <li class="float-option--blog">
+            <a href="#proj-blog-top">
+              <span>Next.js Blog</span>
+              <span>Typescript + React</span>
+            </a>
+          </li>
+          <li class="float-option--monthpicker">
+            <a href="#proj-monthpicker-top">
+              <span>Datepicker Package</span>
+              <span>Typescript</span>
+            </a>
+          </li>
+          <li class="float-option--markdown">
+            <a href="#proj-markdown-top">
+              <span>Markdown Editor</span>
+              <span>React</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
 
       <div class="projects-grid">
-
         <!-- calendar project -->
         <div class="project-cell calendarcm" data-proj-title="Google Calendar 2.0">
           <div class="project-cell__content">
             <div class="project-content__header"></div>
-
             <div class="project-content__subheader">
               <div class="pc__subheader--search" data-tooltip="Go to live site">
                 <a class="cal-search" data-search-after="day" href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Google Calendar 2.0</a>

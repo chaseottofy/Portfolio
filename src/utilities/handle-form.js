@@ -7,7 +7,14 @@ const checkEmailValidity = (email) => {
   return (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email));
 };
 
-const checkPhoneValidity = (phone) => (/^\d{10}$/.test(phone));
+const checkPhoneValidity = (phone) => {
+  if (!phone) {
+    return false;
+  } else if (phone.length < 10) {
+    return false;
+  }
+  return true;
+};
 
 const checkValidNameMessage = (sanitizedMessage, min, max) => {
   if (!sanitizedMessage) {
@@ -29,8 +36,8 @@ const initContactForm = () => {
   const [formDisabled, setFormDisabled] = handleState(true);
   const [invalidElements, setInvalidElements] = handleState([]);
 
-  const form = document.querySelector('.contact-form');
   const formInputs = document.querySelectorAll('.fmi');
+  const form = document.querySelector('.contact-form');
   const nameInput = document.querySelector('.form-name--input');
   const contactValueInput = document.querySelector('.form-contact--input');
   const messageInput = document.querySelector('.form-message--input');
@@ -120,6 +127,7 @@ const initContactForm = () => {
   const ensureDisableOnLoad = () => {
     submitBtn.classList.remove('btn-allow');
     setFormDisabled(true);
+    setInvalidElements([]);
     submitBtn.disabled = true;
   };
 
@@ -129,19 +137,23 @@ const initContactForm = () => {
         for (const element of invalidElements()) {
           switch (element) {
             case 'name': {
-              nameInput.classList.toggle('invalid');
+              nameInput.classList.add('invalid');
+              nameInput.focus();
               break;
             }
             case 'email': {
-              contactValueInput.classList.toggle('invalid');
+              contactValueInput.classList.add('invalid');
+              contactValueInput.focus();
               break;
             }
             case 'phone': {
-              contactValueInput.classList.toggle('invalid');
+              contactValueInput.classList.add('invalid');
+              contactValueInput.focus();
               break;
             }
             case 'message': {
-              messageInput.classList.toggle('invalid');
+              messageInput.classList.add('invalid');
+              messageInput.focus();
               break;
             }
             default: {
@@ -156,15 +168,6 @@ const initContactForm = () => {
     submitBtn.blur();
     submitBtn.disabled = true;
     submitBtn.classList.remove('btn-allow');
-    setInvalidElements([]);
-
-    // if (type === 'invalid') {
-    //   setTimeout(() => {
-    //     invalidSwitch();
-    //     setInvalidElements([]);
-    //   }, 2000);
-    // } else {
-    // }
   };
 
   const checkValidity = () => {
@@ -188,7 +191,7 @@ const initContactForm = () => {
     }
 
     const sanitizedMessage = sanitizeInput(message);
-    if (checkValidNameMessage(sanitizedMessage, 10, 2000)) {
+    if (checkValidNameMessage(sanitizedMessage, 2, 2000)) {
       messageInput.value = message;
     } else {
       setInvalidElements([...invalidElements(), 'message']);
@@ -201,7 +204,8 @@ const initContactForm = () => {
     checkValidity();
     handleInvalidInputs();
 
-    if (formDisabled()) {
+    if (formDisabled() || invalidElements().length > 0) {
+      setInvalidElements([]);
       return;
     }
 
@@ -209,19 +213,19 @@ const initContactForm = () => {
     disableForm();
     toggleSkeleton();
     createSuccessMessage();
-    // fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
-    //   method: 'POST',
-    //   body: formData,
-    // })
-    //   .then((res) => res.text())
-    //   .then(() => {
-    //     createToast('Message Sent!', false);
-    //     resetForm();
-    //   })
-    //   .catch(() => {
-    //     createToast('Something went wrong!', false);
-    //     resetForm();
-    //   });
+    fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.text())
+      .then(() => {
+        createToast('Message Sent!', null, 'success', 2);
+        resetForm();
+      })
+      .catch(() => {
+        createToast('Something went wrong!', 'Error: ', 'error', 2);
+        resetForm();
+      });
   };
 
   const initFormFunc = () => {
@@ -230,6 +234,16 @@ const initContactForm = () => {
       option.addEventListener('change', handleSelectedContactMethod);
     }
 
+    formInputs.forEach((input) => {
+      input.addEventListener('focus', (e) => {
+        if (e.target.classList.contains('invalid')) {
+          setTimeout(() => {
+
+            e.target.classList.remove('invalid');
+          }, 1500);
+        }
+      });
+    });
     form.addEventListener('input', handleFormChange);
     form.addEventListener('submit', handleFormSubmit);
   };

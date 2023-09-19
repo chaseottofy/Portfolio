@@ -9,6 +9,11 @@
   max-width: 1080px;
 }
 
+.skills-container .skills-top .section-title {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 .skills-top {
   position: relative;
   display: flex;
@@ -90,7 +95,7 @@
       var(--offsetwhite0) 100%);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   .skills-cell {
     height: 100px;
   }
