@@ -2,14 +2,15 @@
 ============================ */
 .projects-container {
   width: 100%;
-  background: var(--black0);
+
+  /* background: var(--black0); */
 
   /* background: linear-gradient(to top,
-  var(--black0) 0,
-  hsla(0, 0%, 100%, 0) 100%),
-  linear-gradient(180deg,
-  var(--black0) 0,
-  var(--offsetsecondary2) 20%);
+      var(--black0) 0,
+      hsla(0, 0%, 100%, 0) 100%),
+    linear-gradient(180deg,
+      var(--black0) 0,
+      var(--offsetsecondary1) 20%);
   background-size: 100% 100%, 100% 100%, 1440px 1px;
   background-position: bottom;
   background-repeat: no-repeat; */
@@ -18,25 +19,9 @@
   scroll-margin-top: 4rem;
 }
 
-/* .projects-container::before {
-  
-  position:absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height:100%;
-  content: '';
-  opacity: .1;
-  filter: url(#grainy);
-} */
-
 .projects-container .section-title {
-  padding: 5rem 0 1rem 0;
+  padding: 3rem 0 1rem 0;
 }
-
-/* .section-projects-title {
-  flex-direction: column;
-} */
 
 .projects-grid {
   position: relative;
@@ -49,8 +34,6 @@
   max-width: var(--maxWidthMd);
   padding: 0 .5rem;
 }
-
-
 
 @media screen and (max-width: 490px) {
   .projects-grid {

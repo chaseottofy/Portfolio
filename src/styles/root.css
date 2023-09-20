@@ -88,12 +88,9 @@ html {
   tab-size: 4;
   font-size: 18px;
   text-size-adjust: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
-  /* height: calc(100% - var(--headerHeight)); */
-  /* padding-top: var(--headerHeight); */
   width: calc(100vw - calc(100vw - 100%));
   font-family: var(--primaryFont);
   background: var(--black0);
@@ -425,12 +422,4 @@ a[disabled] {
   html {
     font-size: 14px;
   }
-
-  /* h2 {
-    font-size: 2.25rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-  } */
 }

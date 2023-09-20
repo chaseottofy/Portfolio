@@ -6,9 +6,16 @@
   background-image: linear-gradient(var(--grey3),
       var(--grey3)),
     linear-gradient(200deg,
+      var(--primary3) 0,
+      var(--primary1) 20%,
+      rgba(121, 40, 202, 0) 80%);
+
+  /* background-image: linear-gradient(var(--grey3),
+      var(--grey3)),
+    linear-gradient(200deg,
       var(--blue3) 0,
       var(--blue1) 20%,
-      rgba(121, 40, 202, 0) 80%);
+      rgba(121, 40, 202, 0) 80%); */
   background-origin: border-box;
   background-clip: content-box, border-box;
   background-size: 100% 100%, 100% 100%;
@@ -23,7 +30,7 @@
 }
 
 .disable-contact-form {
-  display:none;
+  display: none;
 }
 
 .contact-form--container .section-title {
@@ -167,7 +174,7 @@
   font-size: .875rem;
   cursor: not-allowed;
   user-select: none;
-  position:relative;
+  position: relative;
 }
 
 .btn-allow {

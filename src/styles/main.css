@@ -43,57 +43,15 @@
   opacity: .9;
 }
 
-/* font-size: max(26px, 3vw); */
 .section-title h2 {
   font-size: max(22px, 2vw);
   letter-spacing: 5px;
   color: var(--white1);
-  /* -webkit-text-stroke: 2px var(--white1) !important;
-  background: var(--offsetblack1) !important;
-  background-clip: text !important;
-  color: transparent !important; */
 }
 
 .section-title h3 {
   color: var(--white1);
-  /* -webkit-text-stroke: 1px var(--white1) !important;
-  background: var(--offsetblack1) !important;
-  background-clip: text !important;
-  color: transparent !important; */
-  /* color: var(--white1); */
 }
-
-/* .section-title h2:after {
-  content: "projects";
-  -webkit-text-stroke: 2px var(--primary1) !important;
-  background: var(--primary1) !important;
-  background-clip: text !important;
-  color: transparent !important;
-  -webkit-mask-image: linear-gradient(to top, var(--offsetblack1), transparent);
-  mask-image: linear-gradient(to top, var(--offsetblack1), transparent);
-  transform: scaleY(-1) translateX(-100%) translateY(-70%);
-  position:absolute;
-  z-index: -1;
-  height: 100%;
-} */
-
-/* .section-title h2:after {
-  content: "projects";
-  -webkit-text-stroke: 2px var(--accent-7) !important;
-  background: var(--offsetblack1) !important;
-  background-clip: text !important;
-  color: transparent !important;
-  -webkit-mask-image: linear-gradient(to right, var(--offsetblack1), transparent 60%);
-  mask-image: linear-gradient(to right, var(--offsetblack1), transparent 40%);
-  transform: scaleY(-1) translateY(-100%);
-  position: absolute;
-  top: 0;
-  opacity: .3;
-  left: 20%;
-  z-index: -1;
-  padding: .5rem;
-  height: 100%;
-} */
 
 .section-subtitle {
   line-height: 1.375;
@@ -118,7 +76,6 @@
   position: relative;
   border-bottom: 1px solid var(--grey2);
   opacity: .9;
-  /* border: 1px solid var(--grey2); */
 }
 
 .section-excerpt p {
