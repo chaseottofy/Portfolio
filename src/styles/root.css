@@ -30,20 +30,9 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-  font-display: swap;
-
-}
-
 :root {
   --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
-  --monoFont: "JetBrains Mono", "Menlo", "Monaco", monospace;
-
   --wt: 1600;
   --ht: 900;
   --wt2: 720;
@@ -99,15 +88,16 @@ html {
   tab-size: 4;
   font-size: 18px;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
+  /* height: calc(100% - var(--headerHeight)); */
+  /* padding-top: var(--headerHeight); */
   width: calc(100vw - calc(100vw - 100%));
   font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
-  /* height: calc(100% - var(--headerHeight)); */
-  /* padding-top: var(--headerHeight); */
   font-size: 1rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -431,43 +421,16 @@ a[disabled] {
   }
 }
 
-/* @media screen and (max-width: 640px) {
-  html {
-    font-size: 15px;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-} */
-
-/* @media screen and (max-width: 490px) {
-
-  *,
-  *::after,
-  *::before {
-    transition: none !important;
-    transition-duration: none !important;
-    transition-property: none !important;
-    transition-timing-function: none !important;
-    animation: none !important;
-  }
-} */
-
 @media screen and (max-width: 390px) {
   html {
     font-size: 14px;
   }
 
-  h2 {
+  /* h2 {
     font-size: 2.25rem;
   }
 
   h3 {
     font-size: 1.25rem;
-  }
+  } */
 }

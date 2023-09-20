@@ -2,38 +2,12 @@
   DIVIDER
 ============================ */
 .section-divider {
-  /* filter: brightness(2) contrast(1.5); */
   box-shadow: 0 0 0 1px var(--primary3);
-  /* box-shadow: 0 0 0 1px var(--dividerBg); */
   height: 1px;
   margin: 0 auto;
   width: 100%;
   position: relative;
 }
-
-/* .section-gradient-left {
-  position: absolute;
-  top:0;
-  left:0;
-  filter: blur(48px);
-  border-radius: 25%;
-  min-height: 4rem;
-  mix-blend-mode:darken;
-  pointer-events: none;
-  user-select: none;
-  width: 100%;
-  opacity: 1;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--grey1),
-    var(--grey2),
-    var(--grey1),
-    transparent
-  );
-  z-index: 2;
-  margin: 0 auto;
-} */
 
 .section-gradient--l {
   border-radius: 100%;
@@ -43,12 +17,11 @@
   user-select: none;
   filter: blur(46px);
   position: relative;
-  background: linear-gradient(to bottom,var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%));
-  height: 48px;
+  background: linear-gradient(to bottom, var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%));
+  opacity: .8;
+  height: 42px;
 }
 
-.theme__light .section-gradient--l,
-.theme__light .section-gradient--r {
-  opacity: .2;
-  background: var(--white1);
+.theme__light .section-gradient--l {
+  opacity: .5;
 }

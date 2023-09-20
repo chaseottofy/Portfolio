@@ -10,7 +10,7 @@ const createSkill = (content, imgSrc, title) => {
   skillContent.classList.add('skill-content');
   const createSkillContent = (text) => {
     const span = document.createElement('span');
-    span.textContent = '- ' + text;
+    span.textContent = `- ${text}`;
     skillContent.append(span);
   };
   for (const text of content) {
@@ -24,7 +24,7 @@ const createSkill = (content, imgSrc, title) => {
   }
   skillImg.src = imgSrc;
   skillImg.type = 'image/svg+xml';
-  skillImg.alt = content[0];
+  skillImg.alt = title;
   skillImgWrapper.append(skillImg);
 
   skillCell.append(skillTitle, skillContent, skillImgWrapper);
@@ -33,13 +33,15 @@ const createSkill = (content, imgSrc, title) => {
 
 const configSkillsGrid = () => {
   const skillsGrid = document.querySelector('.skills-grid');
-  const { react, vanilla, webpack, css, next, typescript, adobe, wordpress } = svgIcons;
+  const {
+    react, vanilla, webpack, css, next, typescript, wordpress,
+  } = svgIcons;
   const skillsArray = [
     {
       content: [
         'Developed reusable React components for various projects.',
         'Utilized hooks for state management and lifecycle methods.',
-        'Integrated third-party libraries for enhanced UI/UX.'
+        'Integrated third-party libraries for enhanced UI/UX.',
       ],
       imgSrc: react,
       title: 'React JS',
@@ -48,7 +50,7 @@ const configSkillsGrid = () => {
       content: [
         'Implemented complex features without relying on frameworks.',
         'Optimized website performance and responsiveness.',
-        'Debugged and resolved cross-browser compatibility issues.'
+        'Debugged and resolved cross-browser compatibility issues.',
       ],
       imgSrc: vanilla,
       title: 'Vanilla JS',
@@ -57,7 +59,7 @@ const configSkillsGrid = () => {
       content: [
         'Typed JavaScript for better maintainability and fewer runtime errors.',
         'Integrated third-party libraries with custom type declarations.',
-        'Utilized advanced types and generics for complex logic.'
+        'Utilized advanced types and generics for complex logic.',
       ],
       imgSrc: typescript,
       title: 'TypeScript',
@@ -66,7 +68,7 @@ const configSkillsGrid = () => {
       content: [
         'Configured Webpack for optimized bundling and chunking.',
         'Set up loaders and plugins for transpiling and asset management.',
-        'Enhanced app performance through tree shaking and code splitting.'
+        'Enhanced app performance through tree shaking and code splitting.',
       ],
       imgSrc: webpack,
       title: 'Webpack',
@@ -75,7 +77,7 @@ const configSkillsGrid = () => {
       content: [
         'Designed responsive layouts with Flexbox and Grid.',
         'Implemented animations and transitions for improved user interactions.',
-        'Ensured cross-browser styling consistency.'
+        'Ensured cross-browser styling consistency.',
       ],
       imgSrc: css,
       title: 'CSS',
@@ -84,7 +86,7 @@ const configSkillsGrid = () => {
       content: [
         'Built SEO-friendly web apps with static site generation.',
         'Optimized page loads with incremental static regeneration.',
-        'Integrated with various data sources using Next.js API routes.'
+        'Integrated with various data sources using Next.js API routes.',
       ],
       imgSrc: next,
       title: 'Next.js',
@@ -93,19 +95,16 @@ const configSkillsGrid = () => {
       content: [
         'Set up and customized WordPress sites for various clients.',
         'Implemented custom themes and plugins to enhance site functionality.',
-        'Optimized site speed and ensured security through regular updates.'
+        'Optimized site speed and ensured security through regular updates.',
       ],
       imgSrc: wordpress,
-      title: 'WordPress'
-    }
+      title: 'WordPress',
+    },
   ];
 
   for (const skill of skillsArray) {
     const { content, imgSrc, title } = skill;
-
     const skillCell = createSkill(content, imgSrc, title);
-
-    // skillCell.append(skillTitle);
     skillsGrid.append(skillCell);
   }
 };

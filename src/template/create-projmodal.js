@@ -1,18 +1,12 @@
-import projectJSON from '../data/min/projectJSONMin.json';
+import projectJSON from '../data/projects/projectOverviewJSON.json';
 
 import handleModalOffset from '../utilities/handle-modaloffset';
-
-const body = document.querySelector('body');
-
-const handleCloseProjOverview = () => {
-  document?.querySelector('.project-overview--wrapper')?.remove();
-  handleModalOffset();
-};
 
 const closeProjectOverview = (e) => {
   if (e.target.classList.contains('po-header--close')
     || e.target.classList.contains('project-overview--wrapper')) {
-    handleCloseProjOverview();
+    e.currentTarget.remove();
+    handleModalOffset();
   }
 };
 
@@ -51,8 +45,7 @@ const projectFeatureTemplate = (featureName, featureValue) => {
  * data.links : {link: [url, title]}
  * data.features : {feature: [list of features]}
  */
-const setProjectOverview = (data) => {
-  const { title, links, features } = data;
+const configProjectOverview = (title, links, features) => {
   const poWrapper = document.createElement('aside');
   poWrapper.classList.add('project-overview--wrapper', 'act-modal');
 
@@ -106,21 +99,30 @@ const setProjectOverview = (data) => {
   poModal.append(poModalHeader, poModalBody);
   poWrapper.append(poModal);
   poWrapper.addEventListener('click', closeProjectOverview);
-  setTimeout(() => {
-    closePoBtn.focus();
-  }, 50);
   return poWrapper;
 };
 
 const createProjectModal = (e) => {
-  if (body.classList.contains('body-prevent-scroll')) return;
-  const projectDataAttr = e.target.dataset.proj;
-  if (!projectDataAttr) return;
-  const projectData = projectJSON[projectDataAttr];
+  const body = document.querySelector('body');
+  if (body.dataset.activeModal === 'true') return;
 
-  body.append(setProjectOverview(projectData));
+  const projectDataAttr = e?.target?.dataset?.proj;
+  if (!projectDataAttr) return;
+
+  const { [projectDataAttr]: projectData } = projectJSON;
+  const { title, links, features } = projectData;
+  const projectOverviewInstance = configProjectOverview(
+    title,
+    links,
+    features,
+  );
+  body.append(projectOverviewInstance);
   e.target.blur();
   handleModalOffset();
+  // const projectData = projectJSON[projectDataAttr];
+  // body.append(setProjectOverview(projectData));
+  // e.target.blur();
+  // handleModalOffset();
 };
 
 export default createProjectModal;

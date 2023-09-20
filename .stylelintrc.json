@@ -8,6 +8,7 @@
     "media-feature-range-notation": null,
     "alpha-value-notation": null,
     "no-descending-specificity": null,
-    "color-function-notation": null
+    "color-function-notation": null,
+    "shorthand-property-no-redundant-values": null
   }
 }

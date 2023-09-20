@@ -1,10 +1,10 @@
 import handleModalOffset from './handle-modaloffset';
 
 const closeModalsOnEsc = (e) => {
+  // const body = document.querySelector('.body')
   const cname = 'act-modal';
   const modalC = document?.querySelectorAll(`.${cname}`);
-  console.log(modalC);
-  if (e.key === 'Escape' && modalC.length !== 0) {
+  if (e.key === 'Escape' && modalC.length > 0) {
     handleModalOffset();
     modalC.forEach((modal) => {
       modal.remove();
@@ -17,6 +17,6 @@ const closeModalsOnEsc = (e) => {
  */
 const initHandleModals = () => {
   window.addEventListener('keydown', closeModalsOnEsc);
-}
+};
 
 export default initHandleModals;

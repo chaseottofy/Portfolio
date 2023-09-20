@@ -21,6 +21,7 @@
   align-items: center;
   height: 100%;
   padding: 1rem 1rem 0 1rem;
+
   /* padding: 1.5rem 1rem 0; */
 }
 
@@ -30,16 +31,16 @@
   align-items: flex-start;
   height: 100%;
   padding-right: 1rem;
-  position:relative;
+  position: relative;
   padding-left: .25rem;
 }
 
-.project-footer__desc:before {
+.project-footer__desc::before {
   content: '— ';
-  position:absolute;
+  position: absolute;
   transform: translateX(-100%);
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   font-size: .75rem;
 }
 
@@ -50,16 +51,20 @@
   position: relative;
 }
 
-.pf-stacks:before {
+.pf-stacks::before {
   content: attr(data-pf-stacks);
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(-100%) translateY(50%) scaleY(.9);
+  left:0;
+  top:0;
+  font-weight: 500;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%) scaleY(.9);
   text-transform: uppercase;
   font-size: .85rem;
   letter-spacing: -.02em;
-  opacity: .7;
+  opacity: .8;
 }
 
 .pf-stack {
@@ -72,20 +77,15 @@
   margin-left: 1rem;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-}
-
-.pf-stack:hover {
-  opacity: .8;
 }
 
 .pf-stack::before {
+  /* border-image: linear-gradient(to right bottom, #818080, #1a1a1a, #000); */
   border-radius: 50%;
   content: "";
   position: absolute;
   border: 12px solid transparent;
   border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
-  /* border-image: linear-gradient(to right bottom, #818080, #1a1a1a, #000); */
   border-image-slice: 1;
   height: 100%;
   left: 0;
@@ -106,7 +106,6 @@
 
 .theme__light .pf-stack::after {
   background: var(--black0);
-  /* background: #111; */
 }
 
 .vanilla-icon,
@@ -115,10 +114,11 @@
 .next-icon,
 .webpack-icon,
 .vite-icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   z-index: 3;
   position: relative;
+  filter: contrast(1.1) brightness(1.1);
 }
 
 .project-footer__content {
@@ -202,6 +202,7 @@
   .pf-stacks {
     display: none;
   }
+
   .project-footer__desc {
     width: 80%;
   }

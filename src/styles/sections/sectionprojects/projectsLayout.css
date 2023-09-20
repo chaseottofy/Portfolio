@@ -19,6 +19,7 @@
 }
 
 /* .projects-container::before {
+  
   position:absolute;
   top:0;
   left:0;
@@ -32,6 +33,10 @@
 .projects-container .section-title {
   padding: 5rem 0 1rem 0;
 }
+
+/* .section-projects-title {
+  flex-direction: column;
+} */
 
 .projects-grid {
   position: relative;

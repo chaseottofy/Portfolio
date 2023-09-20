@@ -20,7 +20,7 @@
   <script src="index.js" defer="defer"></script>
 </head>
 
-<body class="body theme__dark" data-disable-transitions="true">
+<body class="body theme__dark" data-disable-transitions="true" id="page-top" data-active-modal="false">
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
   <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
@@ -39,8 +39,8 @@
   <header class="header header-animate">
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
-        <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#top">
-          otto
+        <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
+          <img src="./images/svg/logo.svg" alt>
         </a>
       </div>
 
@@ -48,13 +48,13 @@
         <nav class="header-nav">
           <ul class="nav-menu">
             <li>
-              <a class="nav-menu--link" data-scroll-to="0" href="#projects" title="Scroll to projects">Projects</a>
+              <a class="nav-menu--link" data-scroll-to="0" href="#projects-top" title="Scroll to projects">Projects</a>
             </li>
             <li>
-              <a class="nav-menu--link" data-scroll-to="1" href="#skills" title="Scroll to skills">Skills</a>
+              <a class="nav-menu--link" data-scroll-to="1" href="#skills-top" title="Scroll to skills">Skills</a>
             </li>
             <li class="nav-multi__contact">
-              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="2" href="#contact" title="Contact Menu & context">
+              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="2" href="#contact-top" title="Contact Menu & context">
                 <span>Contact</span>
                 <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt>
               </a>
@@ -89,24 +89,15 @@
   <!-- SECTION: INTRO -->
   <section class="intro-container">
     <div class="intro-header">
-      <div class="intro-top">
-        <!-- <h1 class="intro-header__title">Chase ottofy</h1> -->
-      </div>
       <div class="intro-header__subtitles">
-        <div class="intro-header__subtitle intro-header__subtitle--one">
-
-          <h1 class="intro-header__title">Front-end WebDev</h1>
-          <!-- <h1 class="intro-header__title">Chase Ottofy</h1> -->
-          <br>
-          <h2 class="intro-header__subtitle--text">Chase Ottofy</h2>
-        </div>
-        <!-- <div class="intro-header__subtitle intro-header__subtitle--two">
-          <h2 class="intro-header__subtitle--text ih-last">web dev</h2>
-        </div> -->
+        <h1>chase ottofy</h1>
       </div>
     </div>
+    <div class="intro-container--links">
+
+    </div>
   </section>
-  
+
   <!-- MAIN (projects > skills > about > contact) -->
   <aside class="section-divider" style="z-index: 62 !important;"></aside>
   <aside class="section-gradient--l" style="z-index: 61 !important;"></aside>
@@ -127,35 +118,9 @@
         </p>
       </div>
 
-      <div class="floating-menu">
-        <ul class="float-options">
-          <li class="float-option--calendar">
-            <a href="#proj-calendar-top">
-              <span>Google Calendar 2.0</span>
-              <span>vanilla | 0 dependency</span>
-            </a>
-          </li>
-          <li class="float-option--blog">
-            <a href="#proj-blog-top">
-              <span>Next.js Blog</span>
-              <span>Typescript + React</span>
-            </a>
-          </li>
-          <li class="float-option--monthpicker">
-            <a href="#proj-monthpicker-top">
-              <span>Datepicker Package</span>
-              <span>Typescript</span>
-            </a>
-          </li>
-          <li class="float-option--markdown">
-            <a href="#proj-markdown-top">
-              <span>Markdown Editor</span>
-              <span>React</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
+      <!-- created @/src/template/create-projoptions -->
+      <div class="floating-menu"></div>
+      <!-- All project cell content is configured @/src/template/create-card -->
       <div class="projects-grid">
         <!-- calendar project -->
         <div class="project-cell calendarcm" data-proj-title="Google Calendar 2.0">
@@ -163,14 +128,13 @@
             <div class="project-content__header"></div>
             <div class="project-content__subheader">
               <div class="pc__subheader--search" data-tooltip="Go to live site">
-                <a class="cal-search" data-search-after="day" href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Google Calendar 2.0</a>
+                <a class="cal-search" data-search-after="day" href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Demo: Google Calendar 2.0</a>
                 <span class="search-arrowright">
                   <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                 </span>
               </div>
             </div>
             <div class="project-content__published"></div>
-
             <div class="project-content__body"></div>
           </div>
 
@@ -244,28 +208,21 @@
     <!-- SECTION: SKILLS -->
     <aside class="section-divider"></aside>
     <aside class="section-gradient--l"></aside>
-    <!-- <aside class="section-gradient--r"></aside> -->
     <article class="section-container skills-container" id="skills-top">
       <div class="skills-top">
         <div class="section-title">
-          <h3>Skills — </h3>
-          <h2>02</h2>
+          <h2>02— </h2>
+          <h3>Skills</h3>
         </div>
-        <!-- <div class="section-excerpt">
+        <div class="section-excerpt">
           <p>
-            Whether I'm building a simple library or a full-scale application, I do not compromise on accessibility, performance, or user experience.
+            I believe form follows function - a great user experience must come from well thought out functionality and vice versa. My strengths are in developing and refining that functionality. I've prioritized building a strong foundation in fundamental web technologies, and I've used mordern frameworks to expand upon that foundation.
             <br>
-            <br>
-            Two projects are from very early on in my learning journey. The Google Calendar Clone and Markdown Editor were my third and fourth projects respectively. I've included them to show that even when I lacked experience, I still had the means to deliver highly optimized solutions with keen attention to detail.
           </p>
-        </div> -->
+        </div>
       </div>
-
       <div class="skills-grid"></div>
     </article>
-
-    
-    <aside class="section-gradient--r"></aside>
 
     <!-- SECTION: CONTACT -->
     <aside class="section-divider"></aside>
@@ -289,6 +246,17 @@
             </div>
           </div>
         </div>
+
+        <!-- 
+
+              <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
+                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
+              </a>
+                  <a href="mailto:ottofy@zohomail.com" title="Open Mail-to">
+                  <img class="img-icon cm-img--icon" src="./images/svg/mailto.svg" alt>
+                </a>
+
+         -->
 
         <!-- RIGHT -->
         <div class="cm-right">

@@ -8,9 +8,9 @@ const initDefaults = () => {
   configMailto();
 
   const body = document.querySelector('body');
-  setTimeout(() =>{
+  setTimeout(() => {
     body.dataset.disableTransitions = false;
-  }, 200)
+  }, 200);
 };
 
 export default initDefaults;

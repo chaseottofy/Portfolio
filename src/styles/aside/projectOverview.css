@@ -14,12 +14,14 @@
 }
 
 .project-overview--modal {
-  height: 90%;
   max-height: 1200px;
-  width: 90%;
   max-width: 900px;
-  border-radius: 1rem;
-  border: 1px solid rgba(50, 145, 255, 0.2);
+  height: 90%;
+  width: 90%;
+
+  /* border-radius: 1rem; */
+
+  /* border: 1px solid rgba(50, 145, 255, 0.2); */
   background: var(--black4);
   display: flex;
   flex-direction: column;

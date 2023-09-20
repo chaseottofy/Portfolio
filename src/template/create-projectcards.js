@@ -1,13 +1,12 @@
 import imageSets from '../utilities/get-image';
 import svgIcons from '../utilities/get-svg';
-
-import createLHModal from './create-lhmodal';
-import createProjectModal from './create-projmodal';
-import cardData from '../data/cardsJSON.json';
-
 import initCalendarMulit from '../utilities/handle-tabs';
 import handleModalOffset from '../utilities/handle-modaloffset';
 
+import createLHModal from './create-lhmodal';
+import createProjectModal from './create-projmodal';
+
+import cardData from '../data/projects/projectCardsJSON.json';
 import {
   aspectSmallWidth,
   projectImageType,
@@ -38,7 +37,7 @@ const createSubheaderLink = (cName, href, icon, alt, children) => {
   const link = createLink(href, alt, null, null);
 
   if (children) {
-    const linkTxt = document.createTextNode(alt);
+    const linkTxt = document.createTextNode('Demo: ' + alt);
     link.append(icon, linkTxt);
     linkwrapper.append(link, children);
   } else {
@@ -56,7 +55,7 @@ const createStack = (icon) => {
   return stack;
 };
 
-const createFullImagePopup = (src, alt = 'alt image') => {
+const createFullImagePopup = (img) => {
   const popup = document.createElement('div');
   popup.classList.add('popup-picture', 'act-modal');
   const popupHeader = document.createElement('div');
@@ -69,14 +68,10 @@ const createFullImagePopup = (src, alt = 'alt image') => {
 
   const imgWrapper = document.createElement('div');
   imgWrapper.classList.add('popup-picture__imgwrapper');
-  const imgElem = new Image();
-  imgElem.src = src;
-  imgElem.alt = alt;
-  imgElem.loading = 'eager';
 
   popupHeaderContent.append(imageInfo);
   popupHeader.append(popupHeaderContent);
-  imgWrapper.append(imgElem);
+  imgWrapper.append(img);
   popup.append(popupHeader, imgWrapper);
   document.body.append(popup);
   handleModalOffset(popup);
@@ -93,24 +88,26 @@ const createProjectPicture = (images, cNames, attr1, attr2) => {
   if (attr2) { projectImage.setAttribute(...Object.values(attr2)); }
   for (const cName of cNames) { projectImage.classList.add(cName); }
 
+  const img = new Image();
   for (let i = 0; i < images.length; i += 1) {
     const { src, alt, media } = images[i];
     const source = document.createElement('source');
     source.srcset = src;
     source.media = media;
     source.type = projectImageType;
+    img.srcset += src;
     if (i === 0) {
-      const img = new Image();
       img.src = src;
+      img.srcset = `${src} 1x, `;
       img.alt = alt;
       img.style = 'max-width:100vw;';
       img.loading = 'lazy';
-      projectImage.append(source, img);
     } else {
-      // source tags must be kept in order and inserted before the <img> tag
-      projectImage.insertBefore(source, projectImage.lastElementChild);
+      img.srcset = `${img.srcset + src} ${i + 1}x`;
     }
+    projectImage.append(source);
   }
+  projectImage.append(img);
   return projectImage;
 };
 
@@ -186,6 +183,29 @@ const createProjectFooterButtons = (lighthouseKey) => {
   return projectFooterBtns;
 };
 
+const getImgArray = (images) => {
+  const imgArray = [];
+  let ind = 0;
+  for (const [key, value] of Object.entries(images)) {
+    const media = ind === 0 ? `(min-width: ${aspectSmallWidth + 1}px)` : `(max-width: ${aspectSmallWidth + 1}px)`;
+    imgArray.push({ src: value, alt: key, media });
+    ind += 1;
+  }
+  return imgArray;
+};
+
+const handlePopupImage = (e) => {
+  const imgWrapper = e.target.closest('picture');
+  if (!imgWrapper) return;
+  const targetImg = imgWrapper?.lastElementChild;
+  if (!targetImg) return;
+  const swapImg = new Image();
+  swapImg.src = targetImg.currentSrc;
+  swapImg.alt = targetImg.alt;
+  swapImg.loading = 'eager';
+  createFullImagePopup(swapImg);
+};
+
 const createProjectCell = (
   title,
   projLink,
@@ -194,10 +214,11 @@ const createProjectCell = (
   lighthouseKey,
   description,
   published,
-  projectCell,
+  projectCellCname,
   images,
   isCalendar = false,
 ) => {
+  const projectCell = document.querySelector(`.${projectCellCname}`);
   const projectHeader = projectCell.querySelector('.project-content__header');
   const projectSubheader = projectCell.querySelector('.project-content__subheader');
   const projectBody = projectCell.querySelector('.project-content__body');
@@ -232,7 +253,7 @@ const createProjectCell = (
 
   const publishedText = document.createElement('span');
   publishedText.classList.add('content-published--text');
-  publishedText.textContent = 'Published: ' + published;
+  publishedText.textContent = `Published: ${published}`;
   projectPublished.append(publishedText);
 
   for (const stack of stacks) {
@@ -256,50 +277,46 @@ const createProjectCell = (
   return projectCell;
 };
 
-const getImgArray = (images) => {
-  const imgArray = [];
-  let ind = 0;
-  for (const [key, value] of Object.entries(images)) {
-    const media = ind === 0 ? `(min-width: ${aspectSmallWidth + 1}px)` : `(max-width: ${aspectSmallWidth + 1}px)`;
-    imgArray.push({ src: value, alt: key, media });
-    ind += 1;
-  }
-  return imgArray;
-};
-
-const handlePopupImage = (e) => {
-  if (window.innerWidth >= aspectSmallWidth) {
-    const img = e.target.closest('img');
-    if (!img) return;
-    const imgSrc = img?.src;
-    const imgAlt = img?.alt || 'alt';
-    if (!imgSrc) return;
-    createFullImagePopup(imgSrc, imgAlt);
-  } else {
-    const img = e.target.closest('picture');
-    if (!img) return;
-    const imgSrc = img?.firstElementChild?.nextElementSibling?.srcset;
-    const imgAlt = img?.lastElementChild?.alt || 'alt';
-    if (!imgSrc) return;
-    createFullImagePopup(imgSrc, imgAlt);
-  }
-};
-
 const initProjCards = () => {
-  const { cal, markdown: mark, blog, monthPicker: mp } = imageSets;
-  const { calendarCard, blogCard, monthPickerCard, markdownCard } = cardData;
+  /** @see /utilities/get-images */
+  const {
+    cal, markdown: mark, blog, monthPicker: mp,
+  } = imageSets;
+
+  /**
+   * @see /data/cardsJSON.json
+   * @cardData : array of project data for each card
+   * - title {string}
+   * - projLink {string}
+   * - githubLink {string}
+   * - stacks {array} : ['html', 'css', 'js']
+   * - lighthouseKey {string} : provide reference to open 'Audits' modal
+   * - description {string}
+   * - published {string} : date published
+   */
+  const {
+    calendarCard, blogCard, monthPickerCard, markdownCard,
+  } = cardData;
+
+  /**
+   * @clsNames :
+   * - each card already has a template in the HTML
+   *   corresponding to the class names below
+   */
   const clsNames = ['calendarcm', 'blogcm', 'monthpickercm', 'markdowncm'];
+
+  /**
+   * store above data in arrays for iteration
+   */
   const imgArrays = [getImgArray(cal), getImgArray(blog), getImgArray(mp), getImgArray(mark)];
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
 
   for (let i = 0; i < clsNames.length; i += 1) {
-    const cardElem = document.querySelector(`.${clsNames[i]}`);
-    // const { title, projLink, githubLink, stacks, lighthouseKey, description, published } = cardDataArray[i];
     createProjectCell(
       ...Object.values(cardDataArray[i]),
-      cardElem,
+      clsNames[i],
       imgArrays[i],
-      i === 0
+      i === 0,
     );
   }
 

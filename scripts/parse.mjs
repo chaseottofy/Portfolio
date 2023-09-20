@@ -53,7 +53,7 @@ class ImageConfig {
     this._placeholderFileSuffix = '';
 
     this._imageFileExtension = 'webp';
-    this._outputImageQuality = 99;
+    this._outputImageQuality = 70;
     this._resizeOptions = {
       width: 1600,
       height: 900,
@@ -369,7 +369,6 @@ async function createImagePlaceholder() {
   }
   const files = fs.readdirSync(postsDirectory);
   const imageFiles = files.filter(file => acceptedFileExtensions.some(ext => file.endsWith(ext)));
-
 
   const tasks = imageFiles.map(async (imageFile) => {
     const inputImagePath = path.join(postsDirectory, imageFile);

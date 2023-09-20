@@ -1,7 +1,7 @@
 /* SECTION: INTRO
 ============================ */
 .intro-container {
-  height: calc(100vh + 2px);
+  height: calc(70vh + 2px);
   position: relative;
   z-index: 101;
 }
@@ -13,129 +13,100 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-top: 30vh;
 }
 
-.intro-header__title,
-.intro-header__subtitle {
-  position: relative;
-  z-index: 2;
-}
-
-/* TITLE (NAME)
-============================ */
-
-.intro-header__title {
-  font-size: 3vw;
-  text-align: center;
-  letter-spacing: .07rem;
-  padding: .5rem 0;
-  position:relative;
-  transform: scaleY(1.3);
-  cursor: help;
-  width: 100%;
-  font-family: var(--secondaryFont);
-  color: transparent;
-  background:rgba(0,0,0,.6);
-  background-clip: text;
-  -webkit-text-stroke: 1px #e2e0e0;
-}
-
-/* SUBTITLES
-============================ */
 .intro-header__subtitles {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  text-align: center;
-  justify-content: flex-start;
-  margin-top: 3rem;
   position: relative;
-}
-
-.intro-header__subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
   width: 100%;
-}
-
-.intro-header__subtitle--one {
-  display: flex;
-  flex-direction:column;
-}
-
-.intro-header__subtitle--two {
-  display:flex;
-  text-align: center;
-}
-
-/* .intro-header__subtitle--text {
-  font-size: 1.325rem;
-  font-weight: 500;
-  color: #fff;
-  opacity: .9;
-}
-
-.intro-header__subtitle--text {
-  font-size: 1.325rem;
-  font-weight: 500;
-  color: #fff;
-  opacity: .9;
-} */
-.intro-header__subtitle--text {
-  /* font-size: 1.75rem; */
-  
-  font-size: 2.75vw;
-  /* letter-spacing: 10px; */
-  font-family: var(--secondaryFont);
-  font-weight: 900;
-  /* font-weight: 500; */
-  color: #fff;
-  opacity: .9;
-} 
-
-/* .intro-header__subtitle--text {
-  line-height: 1.25;
-  font-size: 2.5rem;
-  width: 100%;
-  font-family: var(--secondaryFont);
-  font-weight: 900;
-  color: transparent;
-  background-image: linear-gradient(120deg,
-      #e0dddd,
-      #cccbcb);
-  background-clip: text;
-  position: relative;
-  background-blend-mode: screen;
-  -webkit-text-fill-color: transparent;
-  background-size: 100% 200%;
-} */
-
-/* .intro-header__subtitle--text:after { */
-/* .intro-header__subtitles:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  /* height: 70vh; */
   height: 100%;
-  content: '';
-  opacity: .1;
-  filter: url(#grainy);
-} */
-
-.intro-header__subtitle img {
-  height: 1.5rem;
-  width: 1.5rem;
-  margin: 0 .875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--maxWidthMd);
+  flex-direction: column;
+  /* padding: 0 1rem; */
 }
 
-@media screen and (max-width: 640px) {
-  .intro-header__title {
-    font-size: 1.125rem;
+.intro-header__subtitles h1 {
+  font-size: max(40px, 4.1666666667vw);
+  /* font-size: max(24px, 2.5vw); */
+  letter-spacing: .04em;
+  line-height: .95;
+  /* letter-spacing: .07rem; */
+  /* line-height: 100%; */
+  position: relative;
+  width: auto;
+  padding-top: 2rem;
+
+  text-wrap:nowrap;
+  cursor: help;
+  font-family: var(--secondaryFont);
+  /* color: #fff; */
+  /* text-align: center; */
+  background: rgba(0, 0, 0, 0);
+  color: #e3e5e9;
+  opacity: .9;
+  /* color: transparent; */
+  /* background-clip: text; */
+  /* -webkit-text-stroke: 1px #bfc3d6; */
+}
+
+.intro-header__subtitles h1:before {
+  /* content: 'web developer'; */
+  content: 'webdev';
+  position: absolute;
+  letter-spacing: .03rem;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  padding-top: .5rem;
+  padding-right: 1rem;
+  /* color: #e3e5e9; */
+  /* opacity: .75; */
+  /* background-clip: unset; */
+  color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 1px #d0d3e4;
+}
+
+/* background: rgba(0, 0, 0, .6);
+color: transparent;
+background-clip: text;
+-webkit-text-stroke: 1px #bfc3d6; */
+
+.intro-header__subtitles h2 {
+  /* font-size: 20px; */
+  font-size: max(1rem, 1.2vw);
+  line-height: 1.1964285714;
+  letter-spacing: -.005em;
+  padding-top: 6vw;
+  color: #fff;
+  opacity: .9;
+  font-weight: 400;
+  text-wrap: balance;
+  width: 100%;
+  text-align: start;
+  max-width: 45vw;
+  /* margin-right: auto; */
+  /* text-indent: 2vw; */
+}
+
+@media screen and (max-width: 720px) {
+
+  .intro-header__subtitles h1 {
+    font-size: max(28px, 3.2vw);
   }
 
-  .intro-header__subtitle--text {
-    font-size: 2rem;
+  /* .intro-header__subtitles h1:before {
+    content: 'webdev';
+  } */
+}
+
+@media screen and (max-width: 580px) {
+
+  .intro-header__subtitles h1 {
+    font-size: max(20px, 2.6vw);
   }
 }

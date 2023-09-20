@@ -1,5 +1,5 @@
 .contact-container {
-  /* padding-top: 4rem; */
+  padding-top: 4rem;
   padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
@@ -30,11 +30,11 @@
   z-index: 9998;
   display: flex;
   opacity: 1;
-  height: min(640px, calc(95vh - var(--headerHeight)));
+  height: min(600px, calc(95vh - var(--headerHeight)));
   border: 1px solid var(--black1);
   box-shadow: var(--bs-lg);
   min-height: 400px;
-  animation: ease-modal-in 100ms both;
+  animation: ease-modal-in 150ms both;
 }
 
 .contact-menu__body {
@@ -49,37 +49,6 @@
   max-width: 1200px;
   position: relative;
 }
-
-/* .contact-menu__body::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  content: "";
-  pointer-events: none;
-  user-select: none;
-  opacity: .4;
-}
-
-.theme__light .contact-menu__body::before {
-  filter: invert(1);
-  opacity: .2;
-} */
-
-/* .contact-menu__body--gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,
-      transparent,
-      var(--grey3) 10%,
-      var(--grey1) 20%,
-      transparent);
-} */
 
 /* LEFT GRID SECTION -- ONLY IN <MAIN> <CONTACT />
 ===================================== */
@@ -132,9 +101,12 @@
   flex-direction: column;
   padding: .5rem;
   font-size: 1.125rem;
+
   /* font-size: 1.5rem; */
+
   /* font-weight: 700; */
   line-height: 1.375;
+
   /* transform: scaleY(.9); */
   color: var(--white0);
 }
@@ -269,11 +241,13 @@
   width: 100%;
   text-align: end;
   margin-left: auto;
+
   /* color: transparent; */
 }
 
 .badge-prof {
   position: relative;
+
   /* color: transparent; */
 }
 
@@ -341,7 +315,9 @@
 
 .contact-menu__body .cm-right {
   overflow: hidden;
+
   /* border-radius: 1rem; */
+
   /* border: 1px solid var(--black2); */
 }
 
@@ -349,6 +325,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
   /* background:
     linear-gradient(60deg,
       var(--black0) 0,
@@ -400,8 +377,7 @@
 
 .cm-right--top__cell:hover {
   transition: var(--tbg1);
-  background: var(--offsetsecondary2);
-  opacity: .8;
+  background: var(--grey4);
 }
 
 .cm-copy:hover,

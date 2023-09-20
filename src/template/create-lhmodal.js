@@ -1,40 +1,17 @@
-import lhdata from '../data/min/lighthouseJSONMin.json';
+import projectAuditsData from '../data/projects/projectAuditsJSON.json';
 import handleModalOffset from '../utilities/handle-modaloffset';
-
-const body = document.querySelector('.body');
-const header = document.querySelector('.header');
-
-const handleLHClose = () => {
-  document?.querySelector('.lighthouse-modal--wrapper')?.remove();
-  handleModalOffset();
-  // eslint-disable-next-line no-use-before-define
-  // window.removeEventListener('keydown', closeLHOnEsc);
-};
 
 const closeLH = (e) => {
   if (e.target.classList.contains('lighthouse-modal--wrapper')
     || e.target.closest('.close-lh-btn')) {
-    handleLHClose();
+    e.currentTarget.remove();
+    handleModalOffset();
   }
 };
 
-const closeLHOnEsc = (e) => {
-  if (e.key === 'Escape') {
-    handleLHClose();
-  }
-};
-
-const setLHModal = (appname) => {
+const configLightHouseModal = (title, link, score, content) => {
   const lhWrapper = document.createElement('aside');
   lhWrapper.classList.add('lighthouse-modal--wrapper', 'act-modal');
-  const base = lhdata[appname];
-
-  const [dataTitle, dataLink, dataScore, dataContent] = [
-    base.title,
-    base.link,
-    base.score,
-    lhdata.content,
-  ];
 
   const lhmodal = document.createElement('div');
   lhmodal.classList.add('lighthouse-modal');
@@ -46,22 +23,22 @@ const setLHModal = (appname) => {
   const tempspan = document.createElement('span');
   tempspan.textContent = 'Audit: ';
   const brhead = document.createElement('br');
-  lhtitle.append(tempspan, brhead, dataTitle);
+  lhtitle.append(tempspan, brhead, title);
 
   const closeBtn = document.createElement('button');
   closeBtn.classList.add('close-lh-btn');
   closeBtn.textContent = 'x';
 
   const lhbody = document.createElement('div');
-  const lhmain = document.createElement('div');
-  const mainscore = document.createElement('span');
   lhbody.classList.add('lighthouse-modal__body');
+  const lhmain = document.createElement('div');
   lhmain.classList.add('lh-main');
+  const mainscore = document.createElement('span');
   mainscore.textContent = '100';
   mainscore.classList.add('lh-main__score');
 
   const screenshotLinkBtn = document.createElement('a');
-  screenshotLinkBtn.href = dataLink;
+  screenshotLinkBtn.href = link;
   screenshotLinkBtn.title = 'pagespeed.web.dev';
   screenshotLinkBtn.target = '_blank';
   screenshotLinkBtn.rel = 'noopener noreferrer';
@@ -73,7 +50,7 @@ const setLHModal = (appname) => {
   lhbody.append(lhmain);
 
   for (let i = 0; i < 4; i += 1) {
-    const [contentTitle, contentDesc] = dataContent[i];
+    const [contentTitle, contentDesc] = content[i];
 
     const lhsub = document.createElement('div');
     lhsub.classList.add('lh-sub');
@@ -87,7 +64,7 @@ const setLHModal = (appname) => {
 
     const metricDescTitle = document.createElement('span');
     metricDescTitle.classList.add('lh-sub__metrics-title');
-    metricDescTitle.textContent = dataScore[i];
+    metricDescTitle.textContent = score[i];
     metricDesc.append(metricDescTitle);
     const lhhr = document.createElement('hr');
 
@@ -106,12 +83,37 @@ const setLHModal = (appname) => {
 };
 
 const createLHModal = (e) => {
-  if (body.classList.contains('body-prevent-scroll')) return;
-  body.append(
-    setLHModal(e.target.getAttribute('data-lh-proj')),
+  const body = document.querySelector('.body');
+  if (body.dataset.activeModal === 'true') return;
+
+  const targetProject = e?.target?.dataset?.lhProj;
+  if (!targetProject) return;
+
+  const { [targetProject]: activeProjectData, content } = projectAuditsData;
+  const { title, link, score } = activeProjectData;
+  const lightHouseInstance = configLightHouseModal(
+    title,
+    link,
+    score,
+    content,
   );
-  e.target.blur();
+  body.append(lightHouseInstance);
   handleModalOffset();
+  e.target.blur();
 };
+
+// const inittemp = () => {
+//   handleModalOffset();
+//   const { markdown: tempdata, content } = projectAuditsData;
+//   const { title, link, score } = tempdata;
+//   const lightHouseInstance = configLightHouseModal(
+//     title,
+//     link,
+//     score,
+//     content,
+//   );
+//   document.querySelector('.body').append(lightHouseInstance);
+// };
+// inittemp();
 
 export default createLHModal;

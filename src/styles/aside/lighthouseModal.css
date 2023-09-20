@@ -18,12 +18,12 @@
 }
 
 .lighthouse-modal {
-  height: 90%;
-  max-height: 500px;
+  height: auto;
+  max-height: 80vh;
   width: 90%;
   max-width: 900px;
-  border-radius: 1rem;
-  border: 1px solid rgba(12, 206, 107, .2);
+  border-radius: 6px;
+  border: 1px solid var(--black2);
   background: var(--black1);
   display: flex;
   flex-direction: column;
@@ -33,13 +33,12 @@
 /* HEADER
 ============================ */
 .lighthouse-modal__header {
-  height: 5rem;
+  min-height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background: var(--black1);
-  border-bottom: 1px solid rgba(12, 206, 107, .1);
 }
 
 .lh-appname {
@@ -61,13 +60,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 2rem;
+  width: 2rem;
   padding: 0;
   margin: 0;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: 400;
   background: var(--black1);
   color: var(--accent-7);
   border: 1px solid var(--accent-2);
@@ -101,7 +101,8 @@
   flex-direction: column;
   position: relative;
   max-width: 320px;
-  min-height: 240px;
+
+  /* min-height: 240px; */
   min-width: 200px;
   background: linear-gradient(180deg,
       var(--black0) 40%,
@@ -163,7 +164,9 @@
       var(--black0),
       var(--accent-1));
   padding: 0 1.5rem;
-  margin-top: 1.5rem;
+
+  /* margin-top: 1.5rem; */
+  margin: 1.5rem 0 1.5rem 0;
   font-size: .875rem;
   overflow: hidden;
   line-height: 2.5rem;
@@ -186,14 +189,15 @@
 /* GRID :: SUB
 ============================ */
 .lh-sub {
-  max-width: 290px;
+  /* max-width: 290px; */
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 1.5rem;
   border: none;
   width: 100%;
-  height: 210px;
+
+  /* height: 210px; */
 
   /* max-height: 210px; */
   text-align: left;
@@ -268,7 +272,7 @@
 
 @media screen and (max-width:768px) {
   .lighthouse-modal {
-    max-height: 90%;
+    /* max-height: 90%; */
     height: 100%;
   }
 
@@ -305,7 +309,13 @@
 
   .lh-sub {
     max-width: 100%;
-    height: 160px;
+    height: 200px;
     border-bottom: 1px solid var(--black3);
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .lighthouse-modal {
+    width: 100%;
   }
 }

@@ -25,6 +25,7 @@
     "unicorn/no-null": "off",
     "unicorn/no-for-loop": "off",
     "no-console": "off",
-    "unicorn/no-unsafe-regex": "off"
+    "unicorn/no-unsafe-regex": "off",
+    "unicorn/no-array-for-each": "off"
   }
 }

@@ -3,7 +3,10 @@
     "title": "Google Calendar 2.0",
     "projLink": "https://chaseottofy.github.io/google-calendar-clone-vanilla/",
     "githubLink": "https://github.com/chaseottofy/google-calendar-clone-vanilla",
-    "stacks": ["vanilla", "webpack"],
+    "stacks": [
+      "vanilla",
+      "webpack"
+    ],
     "lighthouseKey": "calendar",
     "description": "Zero dependency clone of Google Calendar.",
     "published": "Jan 15, 2023"
@@ -12,7 +15,10 @@
     "title": "NextJS Blog",
     "projLink": "https://chaseottofy.github.io/nextjs-blog/",
     "githubLink": "https://github.com/chaseottofy/nextjs-blog",
-    "stacks": ["typescript", "next"],
+    "stacks": [
+      "typescript",
+      "next"
+    ],
     "lighthouseKey": "blog",
     "description": "Next.js Blog with Contentlayer integration.",
     "published": "Sep 14, 2023"
@@ -21,7 +27,9 @@
     "title": "Month Picker Plugin",
     "projLink": "https://www.npmjs.com/package/monthpicker-lite-js",
     "githubLink": "https://github.com/chaseottofy/monthpicker-lite-js",
-    "stacks": ["typescript"],
+    "stacks": [
+      "typescript"
+    ],
     "lighthouseKey": "monthpicker",
     "description": "Lightweight month interface datepicker library for Vanilla JS & Typescript.",
     "published": "Aug 27, 2023"
@@ -30,9 +38,34 @@
     "title": "Markdown Lite",
     "projLink": "https://chaseottofy.github.io/react-lite-markdown/",
     "githubLink": "https://github.com/chaseottofy/react-lite-markdown",
-    "stacks": ["react", "vite"],
+    "stacks": [
+      "react",
+      "vite"
+    ],
     "lighthouseKey": "markdown",
     "description": "Custom React markdown editor with real-time preview.",
     "published": "Feb 26, 2023"
+  },
+  "optionsData": {
+    "calendar": {
+      "title": "Google Calendar 2.0",
+      "subtitle": "vanilla JS",
+      "href": "#proj-calendar-top"
+    },
+    "blog": {
+      "title": "Next.js Blog",
+      "subtitle": "Typescript + React",
+      "href": "#proj-blog-top"
+    },
+    "monthpicker": {
+      "title": "Datepicker Package",
+      "subtitle": "Typescript",
+      "href": "#proj-monthpicker-top"
+    },
+    "markdown": {
+      "title": "Markdown Editor",
+      "subtitle": "React",
+      "href": "#proj-markdown-top"
+    }
   }
 }

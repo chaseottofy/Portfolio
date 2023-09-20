@@ -7,14 +7,7 @@ const checkEmailValidity = (email) => {
   return (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email));
 };
 
-const checkPhoneValidity = (phone) => {
-  if (!phone) {
-    return false;
-  } else if (phone.length < 10) {
-    return false;
-  }
-  return true;
-};
+const checkPhoneValidity = (phone) => phone && phone.length >= 10;
 
 const checkValidNameMessage = (sanitizedMessage, min, max) => {
   if (!sanitizedMessage) {
@@ -131,39 +124,39 @@ const initContactForm = () => {
     submitBtn.disabled = true;
   };
 
-  const handleInvalidInputs = () => {
-    const invalidSwitch = () => {
-      if (invalidElements().length > 0) {
-        for (const element of invalidElements()) {
-          switch (element) {
-            case 'name': {
-              nameInput.classList.add('invalid');
-              nameInput.focus();
-              break;
-            }
-            case 'email': {
-              contactValueInput.classList.add('invalid');
-              contactValueInput.focus();
-              break;
-            }
-            case 'phone': {
-              contactValueInput.classList.add('invalid');
-              contactValueInput.focus();
-              break;
-            }
-            case 'message': {
-              messageInput.classList.add('invalid');
-              messageInput.focus();
-              break;
-            }
-            default: {
-              break;
-            }
+  const invalidSwitch = () => {
+    if (invalidElements().length > 0) {
+      for (const element of invalidElements()) {
+        switch (element) {
+          case 'name': {
+            nameInput.classList.add('invalid');
+            nameInput.focus();
+            break;
+          }
+          case 'email': {
+            contactValueInput.classList.add('invalid');
+            contactValueInput.focus();
+            break;
+          }
+          case 'phone': {
+            contactValueInput.classList.add('invalid');
+            contactValueInput.focus();
+            break;
+          }
+          case 'message': {
+            messageInput.classList.add('invalid');
+            messageInput.focus();
+            break;
+          }
+          default: {
+            break;
           }
         }
       }
-    };
+    }
+  };
 
+  const handleInvalidInputs = () => {
     invalidSwitch();
     submitBtn.blur();
     submitBtn.disabled = true;
@@ -238,7 +231,6 @@ const initContactForm = () => {
       input.addEventListener('focus', (e) => {
         if (e.target.classList.contains('invalid')) {
           setTimeout(() => {
-
             e.target.classList.remove('invalid');
           }, 1500);
         }

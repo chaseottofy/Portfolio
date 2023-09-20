@@ -127,6 +127,7 @@
   pointer-events: none;
   color: #fff;
   background: var(--linear1);
+
   /* background:
     linear-gradient(0deg,
       var(--offsetwhite1),
@@ -138,6 +139,7 @@
 
 .pc__header-tabs span input:focus + label {
   border: 1px solid rgba(255, 255, 255, .1);
+
   /* opacity: .8; */
   transition: var(--topac1);
 }

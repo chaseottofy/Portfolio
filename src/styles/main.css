@@ -26,16 +26,15 @@
   position: relative;
   width: 100%;
   max-width: var(--maxWidthMd);
-  margin: 2rem auto 2rem auto;
+  margin: 0 auto 2rem auto;
   display: flex;
+  flex-direction: column;
 }
 
 .section-title h2,
 .section-title h3 {
-  /* width: auto; */
-  /* font-size: max(32px, 3.8vw); */
   white-space: nowrap;
-  font-size: max(24px, 2.2916666667vw);
+  font-size: max(22px, 2vw);
   font-family: var(--secondaryFont);
   font-weight: 900;
   line-height: .95;
@@ -46,17 +45,22 @@
 
 /* font-size: max(26px, 3vw); */
 .section-title h2 {
-  font-size: max(24px, 2.2916666667vw);
-  -webkit-text-stroke: 2px var(--white1) !important;
+  font-size: max(22px, 2vw);
   letter-spacing: 5px;
+  color: var(--white1);
+  /* -webkit-text-stroke: 2px var(--white1) !important;
   background: var(--offsetblack1) !important;
   background-clip: text !important;
-  color: transparent !important;
+  color: transparent !important; */
 }
 
 .section-title h3 {
   color: var(--white1);
-  /* font-size: max(24px, 2.2916666667vw); */
+  /* -webkit-text-stroke: 1px var(--white1) !important;
+  background: var(--offsetblack1) !important;
+  background-clip: text !important;
+  color: transparent !important; */
+  /* color: var(--white1); */
 }
 
 /* .section-title h2:after {
@@ -112,8 +116,9 @@
   padding: 1.5rem .5rem 1.5rem .5rem;
   font-size: max(1.125rem, 1.3vw);
   position: relative;
-  /* border: 1px solid var(--grey2); */
   border-bottom: 1px solid var(--grey2);
+  opacity: .9;
+  /* border: 1px solid var(--grey2); */
 }
 
 .section-excerpt p {
@@ -127,16 +132,14 @@
 
   .section-title h2,
   .section-title h3 {
-    font-size: 6.2708333333vw;
+    font-size: 6.2708vw;
   }
 
   .section-excerpt p {
     padding-right: 2rem;
   }
 
-  .section-excerpt:after {
+  .section-excerpt::after {
     width: calc(100% - 2rem);
   }
 }
-
-@media screen and (max-width: 640px) {}

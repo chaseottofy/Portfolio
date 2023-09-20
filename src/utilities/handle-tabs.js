@@ -41,6 +41,7 @@ const appendPicture = (parent, imgvars) => {
 
   const img = new Image();
   img.src = large;
+  img.srcset = `${large} 1x, ${medium} 2x`;
   img.alt = alt;
   img.style = 'max-width:100vw;';
   img.type = projectImageType;
