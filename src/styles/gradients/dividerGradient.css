@@ -18,7 +18,6 @@
   filter: blur(46px);
   position: relative;
   background: linear-gradient(to bottom, #008beb 20%, #033450 50%, #086faa);
-
   /* background: linear-gradient(to bottom, var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%)); */
   opacity: .8;
   height: 42px;

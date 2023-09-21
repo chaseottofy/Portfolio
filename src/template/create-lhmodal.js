@@ -102,18 +102,4 @@ const createLHModal = (e) => {
   e.target.blur();
 };
 
-// const inittemp = () => {
-//   handleModalOffset();
-//   const { markdown: tempdata, content } = projectAuditsData;
-//   const { title, link, score } = tempdata;
-//   const lightHouseInstance = configLightHouseModal(
-//     title,
-//     link,
-//     score,
-//     content,
-//   );
-//   document.querySelector('.body').append(lightHouseInstance);
-// };
-// inittemp();
-
 export default createLHModal;

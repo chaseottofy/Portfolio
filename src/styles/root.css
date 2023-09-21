@@ -45,6 +45,12 @@
   --ap: calc(var(--wt)/var(--ht));
   --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
   --apsmall: calc(var(--wt2)/var(--ht2));
+  --fs1: max(40px, 3.5rem);
+  --fs2: max(28px, 3rem);
+  --fs3: max(20px, 1.8rem);
+  --fs4: max(22px, 1.6rem);
+  --fs5: max(1.125rem, 22px);
+  --fs6: max(1rem, 16px);
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;

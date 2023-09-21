@@ -119,7 +119,7 @@
 }
 
 .toast-message {
-  font-size: max(1rem, 16px);
+  font-size: var(--fs6);
   font-weight: 400;
 }
 

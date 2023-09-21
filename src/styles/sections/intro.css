@@ -4,6 +4,8 @@
   height: calc(78vh + 2px);
   position: relative;
   z-index: 101;
+  max-width: var(--maxWidthLg);
+  margin: 0 auto;
 }
 
 .intro-header {
@@ -29,7 +31,7 @@
 }
 
 .intro-header__subtitles h1 {
-  font-size: max(40px, 4.1667vw);
+  font-size: var(--fs1);
   letter-spacing: .04em;
   line-height: .95;
   position: relative;
@@ -91,24 +93,17 @@
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-duration: .15s;
   background: hsla(240deg 3.7% 15.9%);
-
-  /* background: rgba(255, 255, 255, .1); */
   border-color: hsla(255deg 3.7% 15.9%);
 }
 
 @media screen and (max-width: 720px) {
   .intro-header__subtitles h1 {
-    font-size: max(28px, 3.2vw);
+    font-size: var(--fs2);
   }
-
-  /* .intro-container--links a img {
-    height: 1.5rem;
-    width: 1.5rem;
-  } */
 }
 
 @media screen and (max-width: 580px) {
   .intro-header__subtitles h1 {
-    font-size: max(20px, 2.6vw);
+    font-size: var(--fs4);
   }
 }

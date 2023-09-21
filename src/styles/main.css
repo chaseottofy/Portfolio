@@ -34,7 +34,7 @@
 .section-title h2,
 .section-title h3 {
   white-space: nowrap;
-  font-size: max(22px, 2vw);
+  font-size: var(--fs4);
   font-family: var(--secondaryFont);
   font-weight: 900;
   line-height: .95;
@@ -44,7 +44,7 @@
 }
 
 .section-title h2 {
-  font-size: max(22px, 2vw);
+  font-size: var(--fs4);
   letter-spacing: 5px;
   color: var(--white1);
 }
@@ -72,7 +72,7 @@
   line-height: 1.25;
   letter-spacing: -.02em;
   padding: 1.5rem .5rem 1.5rem .5rem;
-  font-size: max(1.125rem, 1.3vw);
+  font-size: var(--fs5);
   position: relative;
   border-bottom: 1px solid var(--grey2);
   opacity: .9;

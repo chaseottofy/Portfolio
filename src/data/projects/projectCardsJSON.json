@@ -13,7 +13,7 @@
   },
   "blogCard": {
     "title": "NextJS Blog",
-    "projLink": "https://chaseottofy.github.io/nextjs-blog/",
+    "projLink": "https://nextjs-blog-ottofy.vercel.app/",
     "githubLink": "https://github.com/chaseottofy/nextjs-blog",
     "stacks": [
       "typescript",

@@ -61,6 +61,10 @@
       "live": [
         "https://nextjs-blog-ottofy.vercel.app/",
         "Nextjs Blog Live Demo"
+      ],
+      "audit": [
+        "https://pagespeed.web.dev/analysis/https-nextjs-blog-ottofy-vercel-app/20vhxq5qg3?form_factor=desktop",
+        "Pagespeed.web.dev View Last Audit"
       ]
     },
     "features": {
