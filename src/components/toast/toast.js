@@ -1,4 +1,4 @@
-import handleState from '../utilities/handle-state';
+import handleState from '../../hooks/handle-state';
 
 const toastWrapper = document.querySelector('.toast-wrapper');
 

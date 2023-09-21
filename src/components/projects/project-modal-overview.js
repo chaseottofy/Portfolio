@@ -1,12 +1,12 @@
-import projectJSON from '../data/projects/projectOverviewJSON.json';
+import projectJSON from '../../data/json/projects/projects-overview-data.json';
 
-import handleModalOffset from '../utilities/handle-modaloffset';
+import useHandleModalOffset from '../../hooks/handle-modal-offset';
 
 const closeProjectOverview = (e) => {
   if (e.target.classList.contains('po-header--close')
     || e.target.classList.contains('project-overview--wrapper')) {
     e.currentTarget.remove();
-    handleModalOffset();
+    useHandleModalOffset();
   }
 };
 
@@ -118,11 +118,7 @@ const createProjectModal = (e) => {
   );
   body.append(projectOverviewInstance);
   e.target.blur();
-  handleModalOffset();
-  // const projectData = projectJSON[projectDataAttr];
-  // body.append(setProjectOverview(projectData));
-  // e.target.blur();
-  // handleModalOffset();
+  useHandleModalOffset();
 };
 
 export default createProjectModal;

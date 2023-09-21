@@ -1,4 +1,4 @@
-import svgIcons from '../utilities/get-svg';
+import svgIcons from '../../utilities/get-svg';
 
 const createSkill = (content, imgSrc, title) => {
   const skillCell = document.createElement('div');
@@ -109,8 +109,8 @@ const configSkillsGrid = () => {
   }
 };
 
-const initSkillsGrid = () => {
+const initSkills = () => {
   configSkillsGrid();
 };
 
-export default initSkillsGrid;
+export default initSkills;

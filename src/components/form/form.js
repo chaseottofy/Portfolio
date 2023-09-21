@@ -1,31 +1,14 @@
-import createToast from '../template/create-toast';
-import handleState from './handle-state';
-import createSpinner from '../template/create-spinner';
+import createToast from '../toast/toast';
+import createSpinner from '../spinner/spinner';
+import handleState from '../../hooks/handle-state';
+import {
+  checkEmailValidity,
+  checkPhoneValidity,
+  checkValidNameMessage,
+  sanitizeInput,
+} from './form-utilities';
 
-// eslint-disable-next-line arrow-body-style
-const checkEmailValidity = (email) => {
-  return (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email));
-};
-
-const checkPhoneValidity = (phone) => phone && phone.length >= 10;
-
-const checkValidNameMessage = (sanitizedMessage, min, max) => {
-  if (!sanitizedMessage) {
-    return false;
-  }
-
-  if (sanitizedMessage.length < min) {
-    return false;
-  }
-
-  if (sanitizedMessage.length > max) {
-    return false;
-  }
-
-  return true;
-};
-
-const initContactForm = () => {
+const initForm = () => {
   const [formDisabled, setFormDisabled] = handleState(true);
   const [invalidElements, setInvalidElements] = handleState([]);
 
@@ -38,12 +21,6 @@ const initContactForm = () => {
   const contactOptions = document.querySelectorAll('.contact-option--input');
   const formWrapper = document.querySelector('.contact-form--wrapper');
   const hpone = document.querySelector('.form-hp--one');
-
-  const sanitizeInput = (str) => {
-    const textarea = document.createElement('textarea');
-    textarea.textContent = str;
-    return textarea.innerHTML;
-  };
 
   const handleSelectedContactMethod = (e) => {
     const selectedOption = e.target.value;
@@ -227,7 +204,7 @@ const initContactForm = () => {
       option.addEventListener('change', handleSelectedContactMethod);
     }
 
-    formInputs.forEach((input) => {
+    for (const input of formInputs) {
       input.addEventListener('focus', (e) => {
         if (e.target.classList.contains('invalid')) {
           setTimeout(() => {
@@ -235,7 +212,7 @@ const initContactForm = () => {
           }, 1500);
         }
       });
-    });
+    }
     form.addEventListener('input', handleFormChange);
     form.addEventListener('submit', handleFormSubmit);
   };
@@ -243,4 +220,4 @@ const initContactForm = () => {
   initFormFunc();
 };
 
-export default initContactForm;
+export default initForm;

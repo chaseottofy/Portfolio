@@ -1,12 +1,13 @@
-import createToast from '../template/create-toast';
-import copyToClipboard from './get-copytoclipboard';
+import useCopyToClipboard from '../hooks/handle-copy';
+import createToast from '../components/toast/toast';
 
 const setCopy = (text) => {
-  copyToClipboard(text);
+  useCopyToClipboard(text);
   createToast(text, 'Copied!', 'success', 2);
 };
 
 const copyEmail = () => setCopy('ottofy@zohomail.com');
+
 const copyPhone = () => setCopy('9709882548');
 
 const initCopyElements = () => {

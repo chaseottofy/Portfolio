@@ -1,7 +1,7 @@
-import isLocalStorageEnabled from './localstore-enabled';
+import useHasLocalStorage from '../hooks/has-local-storage';
 
 const initTheme = () => {
-  const localEnabled = isLocalStorageEnabled();
+  const localEnabled = useHasLocalStorage();
   const body = document.querySelector('.body');
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   const themeInputs = document.querySelectorAll('.theme-input');

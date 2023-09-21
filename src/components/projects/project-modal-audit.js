@@ -1,15 +1,15 @@
-import projectAuditsData from '../data/projects/projectAuditsJSON.json';
-import handleModalOffset from '../utilities/handle-modaloffset';
+import projectAuditsData from '../../data/json/projects/projects-audit-data.json';
+import useHandleModalOffset from '../../hooks/handle-modal-offset';
 
 const closeLH = (e) => {
   if (e.target.classList.contains('lighthouse-modal--wrapper')
     || e.target.closest('.close-lh-btn')) {
     e.currentTarget.remove();
-    handleModalOffset();
+    useHandleModalOffset();
   }
 };
 
-const configLightHouseModal = (title, link, score, content) => {
+const configAuditModal = (title, link, score, content) => {
   const lhWrapper = document.createElement('aside');
   lhWrapper.classList.add('lighthouse-modal--wrapper', 'act-modal');
 
@@ -82,7 +82,7 @@ const configLightHouseModal = (title, link, score, content) => {
   return lhWrapper;
 };
 
-const createLHModal = (e) => {
+const createAuditModal = (e) => {
   const body = document.querySelector('.body');
   if (body.dataset.activeModal === 'true') return;
 
@@ -91,15 +91,15 @@ const createLHModal = (e) => {
 
   const { [targetProject]: activeProjectData, content } = projectAuditsData;
   const { title, link, score } = activeProjectData;
-  const lightHouseInstance = configLightHouseModal(
+  const lightHouseInstance = configAuditModal(
     title,
     link,
     score,
     content,
   );
   body.append(lightHouseInstance);
-  handleModalOffset();
+  useHandleModalOffset();
   e.target.blur();
 };
 
-export default createLHModal;
+export default createAuditModal;

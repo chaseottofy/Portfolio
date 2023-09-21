@@ -1,4 +1,4 @@
-const isLocalStorageEnabled = () => {
+const useHasLocalStorage = () => {
   try {
     const key = '__storage__test';
     window.localStorage.setItem(key, null);
@@ -10,4 +10,4 @@ const isLocalStorageEnabled = () => {
   }
 };
 
-export default isLocalStorageEnabled;
+export default useHasLocalStorage;

@@ -10,7 +10,7 @@ const setDateTime = (timeString) => {
   contactDateTime.textContent = `MST: ${timeString}`;
 };
 
-const initDateTime = () => {
+const initDateTimeElements = () => {
   setDateTime(getMyTime(new Date()));
   const currentTime = new Date();
 
@@ -31,4 +31,4 @@ const initDateTime = () => {
   });
 };
 
-export default initDateTime;
+export default initDateTimeElements;

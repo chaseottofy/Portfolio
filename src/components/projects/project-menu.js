@@ -1,4 +1,4 @@
-import cardData from '../data/projects/projectCardsJSON.json';
+import cardData from '../../data/json/projects/projects-card-data.json';
 
 const createFloatOptions = (options) => {
   const floatOptions = document.createElement('ul');
@@ -11,7 +11,6 @@ const createFloatOptions = (options) => {
     const floatOptionLink = document.createElement('a');
     floatOptionLink.href = href;
     floatOptionLink.title = `Scroll to ${title}`;
-
     const floatOptionTitle = document.createElement('span');
     floatOptionTitle.dataset.projTitleIndex = `${i + 1}.`;
     const floatOptionSubtitle = document.createElement('span');
@@ -25,10 +24,10 @@ const createFloatOptions = (options) => {
   return floatOptions;
 };
 
-const initProjectLocalLinks = () => {
+const createProjectMenu = () => {
   const floatingMenu = document.querySelector('.floating-menu');
   const projectMenuJSON = cardData.optionsData;
   floatingMenu.append(createFloatOptions(Object.values(projectMenuJSON)));
 };
 
-export default initProjectLocalLinks;
+export default createProjectMenu;

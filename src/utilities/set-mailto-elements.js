@@ -2,7 +2,7 @@
  * configMailto
  * @description config mailto links to open email client with subject already filled out
 */
-const configMailto = () => {
+const initMailtoElements = () => {
   const mailtoLinks = document?.querySelectorAll('.mailto-link');
   if (mailtoLinks === null) return;
   const subject = `subject=${encodeURIComponent('Contacting you from your portfolio site')}`;
@@ -12,4 +12,4 @@ const configMailto = () => {
   }
 };
 
-export default configMailto;
+export default initMailtoElements;

@@ -1,6 +1,6 @@
-import badgeData from '../data/min/contactJSONMin.json';
-import createToast from './create-toast';
-import copyToClipboard from '../utilities/get-copytoclipboard';
+import badgeData from '../../data/json/contact/contact-modal.json';
+import createToast from '../toast/toast';
+import useCopyToClipboard from '../../hooks/handle-copy';
 
 /**
  * createBadge
@@ -46,16 +46,16 @@ const createBadge = (
   badgeTopContainerSvgImg.src = cmBodyImgs[idx].getAttribute('src');
   badgeTopContainerSvgImg.alt = '';
   const badgeTopSpan = document.createElement('span');
-  badgeTopSpan.setAttribute('data-acc', dataAcc);
+  badgeTopSpan.dataset.acc = dataAcc;
 
   if (dataBef) {
     const [bef, aft] = dataBef;
+    badgeTopSpan.dataset.bef = aft;
     badgeTopSpan.classList.add('badge-prof');
-    badgeTopSpan.setAttribute('data-bef', aft);
     badgeTopSpan.textContent = bef;
     badgeTopContainerSvgImg.classList.add('badge-mug');
   } else {
-    badgeTopSpan.setAttribute('data-acc', dataAcc);
+    badgeTopSpan.dataset.acc = dataAcc;
     badgeTopSpan.textContent = dataAcc;
     badgeTopContainerSvgImg.classList.add('img-icon');
   }
@@ -117,7 +117,7 @@ const createCmBottomCell = (
   menuBtnImg.src = imgs[1].src;
   menuBtnImg.alt = '';
   menuBtn.addEventListener('click', () => {
-    copyToClipboard(dataText);
+    useCopyToClipboard(dataText);
     createToast(dataText, 'Copied!', 'success', 2);
   });
   menuBtn.append(menuBtnImg);

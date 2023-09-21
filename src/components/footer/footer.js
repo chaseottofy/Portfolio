@@ -1,4 +1,4 @@
-const createAscii = () => {
+const setFooterAscii = () => {
   const asciitext = `
       ,o888888o. 8888888 8888888888 8888888 8888888888 ,o888888o.     
    . 8888     '88.     8 8888             8 8888    . 8888     '88.   
@@ -14,4 +14,9 @@ const createAscii = () => {
   const asciiWrapper = document.querySelector('.ascii-wrapper');
   asciiWrapper.textContent = asciitext;
 };
-export default createAscii;
+
+const initFooter = () => {
+  setFooterAscii();
+};
+
+export default initFooter;

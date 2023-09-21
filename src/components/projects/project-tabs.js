@@ -1,12 +1,10 @@
-// import configPicture from './handle-images';
-
-import createSpinner from '../template/create-spinner';
-import handleState from './handle-state';
-import imageSets from './get-image';
+import createSpinner from '../spinner/spinner';
+import handleState from '../../hooks/handle-state';
+import imageSets from './import-project-images';
 import {
   aspectSmallWidth,
   projectImageType,
-} from '../data/constants';
+} from '../../data/constants';
 
 const calendarImageVars = [
   ['cweeklgdark', 'cweekmddark', 'Calendar Week'],
@@ -82,7 +80,7 @@ const configPicture = (parent, nth) => {
   );
 };
 
-const initCalendarMulit = () => {
+const initCalendarTabs = () => {
   const [tabState, setTabState] = handleState(0);
   const calendarTabs = document?.querySelectorAll('.proj-cal--tab');
 
@@ -125,4 +123,4 @@ const initCalendarMulit = () => {
   initTabs();
 };
 
-export default initCalendarMulit;
+export default initCalendarTabs;

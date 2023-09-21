@@ -1,6 +1,6 @@
-import createContactMenu from '../template/create-contactmenu';
+import createContactMenu from './contact-menu';
 
-const configContactMenu = () => {
+const initContactModal = () => {
   const navContactBtn = document.querySelector('.nav-multi__contact');
 
   const contactMousemove = (e) => {
@@ -29,8 +29,4 @@ const configContactMenu = () => {
   navContactBtn.addEventListener('mouseenter', openContactMenu);
 };
 
-const initHover = () => {
-  configContactMenu();
-};
-
-export default initHover;
+export default initContactModal;
