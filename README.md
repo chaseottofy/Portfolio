@@ -10,6 +10,7 @@ ___
 ![screen](screenshots/perf3.jpg)
 
 ## Table of Contents
+- [Cloning](#cloning)
 - [Features](#features)
 - [Form](#contact-form)
   - [Apps Script Setup](#apps-script-setup)
@@ -18,6 +19,42 @@ ___
   - [Image Optimization](#image-optimization)
 - [Notes](#notes)
 
+
+## Cloning
+
+Clone the repository and install dependencies
+```bash
+git clone
+cd portfolio
+npm install
+```
+
+Create a .env file in the root of the project, it can be empty or if you want to use the contact form, follow the steps in [Apps Script Setup](#apps-script-setup) and add the `SHEET_ID` to the .env file.
+
+```bash
+touch .env
+```
+
+---
+
+**If you decide to not use the contact form**, follow the steps below to remove it from the project:
+
+- Remove the following files: `/src/components/form` & `/src/styles/sections/contactForm.css`
+
+- Remove the following lines from `/src/index.js`
+
+```javascript
+import initForm from './components/form/form';
+initForm();
+```
+
+- Remove the following Tag from `/src/index.html`
+
+```html
+<article class="contact-form--container"></article>
+```
+
+---
 
 ## Features
 - Zero 3rd party dependencies
