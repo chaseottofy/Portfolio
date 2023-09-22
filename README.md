@@ -2,12 +2,13 @@
 
 > **Warning**
 > The image optimization script CLI commands are a work in progress
+
 ___
 
 Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the time to optimize my webpack configuration. If you use webpack, be sure to check out [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin)!
 
 ___
-![screen](screenshots/perf3.jpg)
+![screen](screenshots/perf4.jpg)
 
 ## Table of Contents
 - [Cloning](#cloning)
