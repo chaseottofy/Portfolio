@@ -1,6 +1,9 @@
 /* SECTION: ECTS
 ============================ */
 .projects-container {
+  position: relative;
+  z-index: 50;
+
   /* background: linear-gradient(to top,
       var(--black0) 0,
       hsla(0, 0%, 100%, 0) 100%),
@@ -10,10 +13,10 @@
   background-size: 100% 100%, 100% 100%, 1440px 1px;
   background-position: bottom;
   background-repeat: no-repeat; */
+
+  /* background: #09090b; */
   width: 100%;
   background: var(--black0);
-  z-index: 50;
-  position: relative;
   scroll-margin-top: 4rem;
 }
 
@@ -25,12 +28,12 @@
   position: relative;
   z-index: 10;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
   width: 100%;
   max-width: var(--max-width-md);
+  height: 100%;
+  flex-direction: column;
   padding: 0 .5rem;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 490px) {

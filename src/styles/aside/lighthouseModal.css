@@ -1,16 +1,16 @@
 .lighthouse-modal--wrapper {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  background: rgba(0, 0, 0, .6);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
   animation: ease-modal-in 100ms both;
+  background: rgba(0, 0, 0, .6);
 }
 
 .hide-lh-modal {
@@ -18,59 +18,59 @@
 }
 
 .lighthouse-modal {
-  height: auto;
-  max-height: 80vh;
+  display: flex;
+  overflow: hidden;
   width: 90%;
   max-width: 900px;
-  border-radius: 6px;
-  border: 1px solid var(--black2);
-  background: var(--black1);
-  display: flex;
+  height: auto;
+  max-height: 80vh;
   flex-direction: column;
-  overflow: hidden;
+  border: 1px solid var(--black2);
+  border-radius: 6px;
+  background: var(--black1);
 }
 
 /* HEADER
 ============================ */
 .lighthouse-modal__header {
-  min-height: 5rem;
   display: flex;
-  justify-content: space-between;
+  min-height: 5rem;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   background: var(--black1);
 }
 
 .lh-appname {
-  font-size: 1.125rem;
-  letter-spacing: -.5px;
-  text-transform: uppercase;
-  color: transparent;
+  background-clip: text;
   background-image: linear-gradient(90deg,
       var(--white1) 0%,
       var(--accent-7) 80%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-size: 100% 200%;
-  transform: scaleY(.88);
+  color: transparent;
+  font-size: 1.125rem;
   font-weight: 500;
+  letter-spacing: -.5px;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  transform: scaleY(.88);
 }
 
 .close-lh-btn {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
   width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  margin: 0;
+  border: 1px solid var(--accent-2);
   border-radius: 5px;
+  margin: 0;
+  background: var(--black1);
+  color: var(--accent-7);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
-  background: var(--black1);
-  color: var(--accent-7);
-  border: 1px solid var(--accent-2);
   transform: scaleX(115%);
 }
 
@@ -81,94 +81,94 @@
 /* BODY
 ============================ */
 .lighthouse-modal__body {
-  height: calc(100% - 4rem);
-  overflow-y: auto;
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  width: 100%;
+  height: calc(100% - 4rem);
   grid-template-areas:
     "main sub sub"
     "main sub sub";
+  grid-template-columns: 1fr auto auto;
+  overflow-y: auto;
 }
 
 /* GRID :: MAIN
 ============================ */
 .lh-main {
-  grid-area: main;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   position: relative;
-  max-width: 320px;
+  z-index: 2;
+  display: flex;
+  width: 100%;
 
   /* min-height: 240px; */
   min-width: 200px;
+  max-width: 320px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(180deg,
       var(--black0) 40%,
       var(--black1));
-  width: 100%;
   box-shadow: 0 0 0 1px var(--black2);
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, .12));
-  z-index: 2;
+  grid-area: main;
 }
 
 .lh-main::before {
-  content: "";
-  background: var(--black0);
-  width: 14px;
-  height: 14px;
   position: absolute;
   left: 100%;
-  border-right: 1px solid var(--black2);
+  width: 14px;
+  height: 14px;
   border-top: 1px solid var(--black2);
+  border-right: 1px solid var(--black2);
+  background: var(--black0);
   border-top-right-radius: 2px;
+  content: "";
   transform: translateX(-45%) rotate(45deg);
 }
 
 .lh-main__score {
-  padding: 10px 5px;
+  position: relative;
   display: flex;
+  width: 8rem;
+  height: 8rem;
   flex-direction: column;
   align-items: center;
-  height: 8rem;
-  width: 8rem;
+  justify-content: center;
+  padding: 10px 5px;
+  border-radius: 50%;
   background: #16cf6b;
   color: #fff;
-  font-weight: 700;
   font-size: 1.75rem;
-  border-radius: 50%;
-  justify-content: center;
-  position: relative;
+  font-weight: 700;
 }
 
 .lh-main__score::after {
   position: absolute;
-  inset: 0;
-  margin: auto;
   width: 90%;
   height: 90%;
   border: 8px solid #fff;
   border-radius: 50%;
+  margin: auto;
   content: "";
+  inset: 0;
 }
 
 .lh-main__score-title {
-  border: 1px solid var(--black3);
-  height: 2.5rem;
-  border-radius: 5px;
-  font-weight: 500;
   position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border: 1px solid var(--black3);
+  border-radius: 5px;
+  margin: 1.5rem 0 1.5rem 0;
   background: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
       var(--accent-1));
-  padding: 0 1.5rem;
-  margin: 1.5rem 0 1.5rem 0;
-  font-size: .875rem;
-  overflow: hidden;
-  line-height: 2.5rem;
   color: var(--white0);
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
 }
 
 .lh-main__score-title:hover {
@@ -176,24 +176,25 @@
 }
 
 .lh-main__score-subtitle {
+  padding: 0 .5rem;
+  color: var(--white1);
   font-size: .875rem;
   font-weight: 400;
-  color: var(--white1);
-  opacity: .8;
   line-height: 1.4;
-  padding: 0 .5rem;
+  opacity: .8;
 }
 
 /* GRID :: SUB
 ============================ */
 .lh-sub {
+  position: relative;
+
   /* max-width: 290px; */
   display: flex;
+  width: 100%;
   flex-direction: column;
-  position: relative;
   padding: 1.5rem;
   border: none;
-  width: 100%;
 
   /* height: 210px; */
 
@@ -210,62 +211,62 @@
 }
 
 .lh-sub-title {
-  font-size: 1rem;
-  color: var(--white1);
-  font-weight: 500;
   width: 100%;
+  color: var(--white1);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .lh-sub__metrics {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  align-items: center;
   width: 100%;
   height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .lh-sub__metrics-title {
   margin-top: .75rem;
+  color: #1aad5f;
   font-size: 1.375rem;
   font-weight: 700;
-  color: #1aad5f;
 }
 
 .lh-sub__metrics-sm {
-  font-size: .875rem;
-  color: var(--white1);
-  opacity: .8;
-  font-weight: 500;
   margin-left: 6px;
+  color: var(--white1);
+  font-size: .875rem;
+  font-weight: 500;
+  opacity: .8;
 }
 
 .lh-sub__metrics-score {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #16cf6b;
   border-radius: 50%;
-  height: 2.25rem;
-  width: 2.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: .875rem;
   color: var(--white2);
+  font-size: .875rem;
 }
 
 .lh-sub hr {
-  border: none;
-  background: var(--black2);
-  height: 1px;
-  margin: 1.25rem 0;
   width: 100%;
+  height: 1px;
+  border: none;
+  margin: 1.25rem 0;
+  background: var(--black2);
 }
 
 .lh-sub-subtitle {
+  color: var(--white1);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--white1);
-  opacity: .8;
   line-height: 1.4;
+  opacity: .8;
 }
 
 @media screen and (max-width:768px) {
@@ -276,13 +277,13 @@
 
   .lighthouse-modal__body {
     display: grid;
-    grid-template-columns: 1fr;
     width: 100%;
     grid-template-areas:
       "main"
       "sub"
       "sub"
       "sub";
+    grid-template-columns: 1fr;
   }
 
   .lh-main {
@@ -291,9 +292,9 @@
   }
 
   .lh-main::before {
-    background: var(--black1);
-    left: unset;
     top: 100%;
+    left: unset;
+    background: var(--black1);
     transform: translateY(-45%) rotate(135deg);
   }
 

@@ -1,88 +1,88 @@
 .contact-container {
+  position: relative;
+  z-index: 3;
   display: flex;
+  width: 100%;
+  max-width: 100vw;
   flex-direction: column;
   align-items: center;
-  max-width: 100vw;
-  width: 100%;
-  position: relative;
   padding: 4rem .75rem 6rem .75rem;
   background: var(--black0);
-  z-index: 3;
   scroll-margin-top: 4rem;
 }
 
 .contact-menu__header {
   position: fixed;
-  left: 0;
-  right: 0;
-  max-width: min(640px, 90vw);
-  background: var(--offsetblack4);
-  border-radius: 8px;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
-  max-height: 90%;
-  overflow: hidden;
   z-index: 9998;
+  right: 0;
+  left: 0;
   display: flex;
-  opacity: 1;
+  overflow: hidden;
+  width: 100%;
+  max-width: min(640px, 90vw);
   height: min(600px, calc(95vh - var(--header-height)));
-  border: 1px solid var(--black1);
-  box-shadow: var(--bs-lg);
   min-height: 400px;
+  max-height: 90%;
+  flex-direction: column;
+  border: 1px solid var(--black1);
+  border-radius: 8px;
+  margin: 0 auto;
   animation: ease-modal-in 150ms both;
+  background: var(--offsetblack4);
+  box-shadow: var(--bs-lg);
+  opacity: 1;
 }
 
 [data-contact-menu-disabled="true"] {
+  position: relative;
+  z-index: -1 !important;
+  display: none;
   width: 0 !important;
   height: 0 !important;
-  z-index: -1 !important;
   visibility: hidden;
-  position: relative;
-  display: none;
 }
 
 .contact-menu__body {
+  position: relative;
   display: grid;
-  min-height: 600px;
+  width: 100%;
+  max-width: 1200px;
   height: 100%;
-  grid-template-columns: min(380px, 40%) 1fr;
+  min-height: 600px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
+  grid-template-columns: min(380px, 40%) 1fr;
 }
 
 /* LEFT GRID SECTION -- ONLY IN <MAIN> <CONTACT />
 ===================================== */
 .cm-left {
-  height: 100%;
-  width: 100%;
+  position: relative;
   display: grid;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding-right: 1rem;
+  background: var(--offsetblack3);
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 128px;
-  padding-right: 1rem;
   row-gap: .5rem;
-  position: relative;
-  overflow: hidden;
-  background: var(--offsetblack3);
 }
 
 .cm-left::after {
-  top: 0;
+  position: absolute;
   z-index: -1;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
-  content: "";
   background-image: url('../../images/design/top1.avif');
-  opacity: .4;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  content: "";
+  opacity: .4;
   pointer-events: none;
   user-select: none;
 }
@@ -94,9 +94,9 @@
 .cm-left__header,
 .cm-left__body,
 .cm-left__footer {
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
 }
 
 /* ---------------- */
@@ -105,15 +105,15 @@
 .cm-left__header {
   flex-direction: column;
   padding: .5rem;
+
+  /* transform: scaleY(.9); */
+  color: var(--white0);
   font-size: 1.125rem;
 
   /* font-size: 1.5rem; */
 
   /* font-weight: 700; */
   line-height: 1.375;
-
-  /* transform: scaleY(.9); */
-  color: var(--white0);
 }
 
 .cm-left__header h3 {
@@ -126,46 +126,46 @@
 /* LEFT FOOTER SECTION */
 .cm-left__footer {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 100%;
 }
 
 .cm-left__footer-relocate {
-  padding: .25rem;
   display: flex;
-  align-items: center;
   width: 100%;
-  transform: scaleY(.9);
-  text-transform: uppercase;
+  height: 100%;
+  align-items: center;
+  padding: .25rem;
   color: var(--accent-8);
   font-weight: 500;
-  height: 100%;
+  text-transform: uppercase;
+  transform: scaleY(.9);
 }
 
 .cm-left__footer-location {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  line-height: 1.5rem;
-  font-weight: 500;
-  color: var(--accent-7);
-  padding: .25rem;
   height: 100%;
+  flex-direction: column;
+  padding: .25rem;
   border-top: 1px solid var(--black2);
+  color: var(--accent-7);
+  font-weight: 500;
+  line-height: 1.5rem;
 }
 
 /* RIGHT GRID SECTION
 ===================================== */
 .cm-right {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
-  height: 100%;
-  width: 100%;
-  box-shadow: var(--bs-md);
   position: relative;
   z-index: 1000;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--bs-md);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 /* ---------------- */
@@ -173,18 +173,18 @@
 /* RIGHT TOP SECTION */
 .cm-right--top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
   color: var(--accent-5);
+  grid-template-columns: 1fr 1fr;
 }
 
 .cm-right--top__cell {
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -202,28 +202,28 @@
 
 .cm-right--top__cell-badge {
   display: flex;
-  flex-direction: column;
-  font-weight: 500;
-  height: 100%;
-  padding: 1.5rem;
   width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 1.5rem;
   color: var(--white0);
   cursor: pointer;
+  font-weight: 500;
 }
 
 .badge-top {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .badge-top--container--svg {
+  display: flex;
+  overflow: hidden;
   min-width: 3rem;
   min-height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .badge-top--container--svg img {
@@ -240,18 +240,18 @@
 }
 
 .badge-mug {
-  height: 3rem;
   width: 3rem;
   min-width: 3rem;
+  height: 3rem;
   min-height: 3rem;
   border-radius: 50%;
 }
 
 .badge-top span {
   width: 100%;
-  text-align: end;
   margin-left: auto;
   opacity: .8;
+  text-align: end;
 }
 
 .badge-prof {
@@ -260,48 +260,48 @@
 
 .badge-prof::after {
   position: absolute;
-  content: attr(data-acc);
-  font-size: .875rem;
+  z-index: 1;
   top: 1.5rem;
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   color: var(--accent-8);
+  content: attr(data-acc);
+  font-size: .875rem;
   transition: var(--ttop1);
 }
 
 .badge-prof::before {
   position: absolute;
-  content: attr(data-bef);
-  font-size: .75rem;
+  z-index: 1;
   top: 3rem;
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   color: var(--accent-8);
+  content: attr(data-bef);
+  font-size: .75rem;
   opacity: 1;
 }
 
 /* BADGE FOOTER */
 .badge-footer {
   display: flex;
-  align-items: center;
-  height: 1.75rem;
   width: 100%;
+  height: 1.75rem;
+  align-items: center;
   color: var(--accent-8);
-  letter-spacing: -.5px;
   font-weight: 500;
+  letter-spacing: -.5px;
 }
 
 .badge-footer img {
-  fill: none;
-  height: 1rem;
   width: 1rem;
-  filter: invert(1);
+  height: 1rem;
   margin-right: .5rem;
   margin-left: .25rem;
+  fill: none;
+  filter: invert(1);
 }
 
 .badge-footer span {
@@ -314,10 +314,10 @@
 /* RIGHT BOTTOM SECTION */
 .cm-right--bottom {
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100%;
-  width: 100%;
 }
 
 .contact-menu__body .cm-right {
@@ -330,8 +330,8 @@
 
 .cm-right--bottom__body {
   display: flex;
-  flex-direction: column;
   height: 100%;
+  flex-direction: column;
 
   /* background:
     linear-gradient(60deg,
@@ -341,13 +341,13 @@
 
 .cm-right--bottom__cell {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 4rem;
-  border-top: 1px solid var(--offsetwhite1);
-  height: 100%;
   width: 100%;
+  height: 100%;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
   padding: 2px .5rem;
+  border-top: 1px solid var(--offsetwhite1);
   font-weight: 500;
 }
 
@@ -357,19 +357,19 @@
 
 .cm-right--bottom__cell-icons {
   display: flex;
-  justify-content: flex-end;
   height: 100%;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .cm-copy,
 .cm-email-goto {
-  border: 1px solid var(--offsetwhite1);
   display: flex;
-  align-items: center;
-  height: 2.25rem;
   width: 2.5rem;
+  height: 2.25rem;
+  align-items: center;
   justify-content: center;
+  border: 1px solid var(--offsetwhite1);
 }
 
 .cm-copy {
@@ -378,25 +378,25 @@
 
 .cm-copy img,
 .cm-email-goto img {
-  height: 1.375rem;
   width: 1.375rem;
+  height: 1.375rem;
 }
 
 .cm-right--top__cell:hover {
-  transition: var(--tbg1);
   background: var(--grey4);
+  transition: var(--tbg1);
 }
 
 .cm-copy:hover,
 .cm-email-goto:hover {
-  transition: var(--tbg1);
   background: var(--offsetwhite1);
+  transition: var(--tbg1);
 }
 
 @media screen and (max-height: 600px) {
   .contact-menu__header {
-    min-height: 8rem !important;
     height: 8rem !important;
+    min-height: 8rem !important;
   }
 
   .contact-menu__header .cm-right {
@@ -414,16 +414,16 @@
 
 @media screen and (max-width: 768px) {
   .contact-menu__body {
+    padding: .25rem;
     grid-template-columns: 1fr;
     grid-template-rows: 25% 1fr;
-    padding: .25rem;
   }
 
   .cm-left {
-    border: none;
     display: flex;
     flex-wrap: wrap;
     padding: 6px 2px 2rem;
+    border: none;
   }
 
   .cm-left__header {
@@ -459,8 +459,8 @@
 
 @media screen and (max-width: 640px) {
   .contact-container {
-    padding-left: .25rem;
     padding-right: .25rem;
+    padding-left: .25rem;
   }
 
   .cm-right--top__cell-badge {

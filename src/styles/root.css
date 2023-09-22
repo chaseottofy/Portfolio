@@ -1,33 +1,33 @@
 @font-face {
+  font-display: swap;
   font-family: Neue;
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/neue/NeueMontreal-Regular.woff2') format('woff2');
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: Neue;
   font-style: normal;
   font-weight: 500;
   src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: Neue;
   font-style: normal;
   font-weight: 700;
   src: url('../assets/fonts/neue/NeueMontreal-Bold.woff2') format('woff2');
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: basement;
   font-style: normal;
   font-weight: 900;
   src: url('../assets/fonts/basement-expanded.woff2') format('woff2');
-  font-display: swap;
 }
 
 :root {
@@ -81,14 +81,12 @@
   --primary1: #0089ae;
   --primary2: #025b74;
   --primary3: #013948;
-
-  /* --primary1: #008beb;
-  --primary2: #086faa;
-  --primary3: #033450; */
   --red1: #cf007a;
 
   /* ********************************** */
-  --intro-offset: 20vh;
+
+  /* --intro-offset: 0vh; */
+  --intro-offset: 18vh;
   --header-height: 4rem;
   --max-width-lg: 1280px;
   --max-width-md: 1140px;
@@ -113,31 +111,32 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
+  padding: 0;
   border: 0;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 html {
+  font-size: 18px;
   line-height: 1.15;
   tab-size: 4;
-  font-size: 18px;
   text-size-adjust: 100%;
 }
 
 body {
+  position: relative;
+
   /* width hack for mobile */
   width: calc(100vw - calc(100vw - 100%));
-  font-family: var(--primaryFont);
   background: var(--black0);
   color: var(--white1);
+  font-family: var(--primaryFont);
   font-size: 1rem;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
   line-height: inherit;
-  position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -168,41 +167,42 @@ h4 {
 }
 
 button {
-  background: none;
-  line-height: 1.15;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 1.15;
   outline: none;
   text-transform: none;
-  cursor: pointer;
 }
 
 input {
-  background: none;
-  line-height: 1.15;
-  margin: 0;
-  outline: none;
-  text-transform: none;
-  border: 1px solid var(--black2);
   width: 100%;
   padding: 0.5rem;
+  border: 1px solid var(--black2);
   border-radius: 5px;
-  font-size: .875rem;
+  margin: 0;
+  background: none;
   color: var(--white1);
+  font-size: .875rem;
+  line-height: 1.15;
+  outline: none;
+  text-transform: none;
 }
 
 textarea {
-  background: none;
-  text-transform: none;
   width: 100%;
+
+  /* resize: vertical; */
+  min-height: 4rem;
   padding: 0.5rem;
   border: 1px solid var(--black2);
   border-radius: 5px;
-  font-size: .875rem;
+  background: none;
   color: var(--white1);
+  font-size: .875rem;
   resize: none;
-  /* resize: vertical; */
-  min-height: 4rem;
+  text-transform: none;
 }
 
 ul {
@@ -215,20 +215,20 @@ a {
 }
 
 img {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  height: auto;
   max-width: 100%;
-  max-inline-size: 100%;
+  height: auto;
+  padding: 0;
+  border: 0;
+  margin: 0;
   max-block-size: 100%;
+  max-inline-size: 100%;
 }
 
 button > img,
 a > img,
 span > img {
-  user-select: none;
   pointer-events: none;
+  user-select: none;
 }
 
 :link img,
@@ -273,8 +273,8 @@ svg {
 /* ::-MOZ
 ============================ */
 ::-moz-focus-inner {
-  border-style: none;
-  padding: 0
+  padding: 0;
+  border-style: none
 }
 
 :-moz-focusring {
@@ -292,22 +292,22 @@ input[type="number"] {
 /* [ATTRIBUTES]
 ============================ */
 img[disabled] {
-  pointer-events: none;
-  user-select: none;
   appearance: none;
   opacity: .5;
+  pointer-events: none;
+  user-select: none;
 }
 
 input[disabled],
 button[disabled],
 a[disabled] {
-  user-select: none;
   cursor: not-allowed;
+  user-select: none;
 }
 
 .img-icon {
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
   filter: invert(1);
 }
 
@@ -322,22 +322,24 @@ a[disabled] {
 }
 
 .scrollbar-measure {
+  position: absolute;
   overflow: scroll;
   visibility: hidden;
-  position: absolute;
 }
 
 /* TRANSITION UTILITIES
 ===================================== */
 [data-disable-transitions="true"] * {
+  animation: none !important;
   transition: none !important;
   transition-duration: none !important;
   transition-property: none !important;
   transition-timing-function: none !important;
-  animation: none !important;
 }
 
 .skeleton {
+  animation: skeleton-loading 8s ease-in-out infinite;
+  background-clip: text;
   background-image: linear-gradient(270deg,
       var(--grey2),
       var(--grey3),
@@ -347,8 +349,6 @@ a[disabled] {
   color: transparent;
   pointer-events: none;
   user-select: none;
-  animation: skeleton-loading 8s ease-in-out infinite;
-  background-clip: text;
 }
 
 .skeleton::placeholder {

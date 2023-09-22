@@ -1,31 +1,31 @@
 .project-overview--wrapper {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  background: rgba(0, 0, 0, .4);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
   animation: ease-modal-in 100ms both;
+  background: rgba(0, 0, 0, .4);
 }
 
 .project-overview--modal {
-  max-height: 1200px;
+  display: flex;
+  overflow: hidden;
+  width: 90%;
   max-width: 900px;
   height: 90%;
-  width: 90%;
+  max-height: 1200px;
+  flex-direction: column;
 
   /* border-radius: 1rem; */
 
   /* border: 1px solid rgba(50, 145, 255, 0.2); */
   background: var(--black4);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 .hide-po {
@@ -33,15 +33,15 @@
 }
 
 .po-header {
-  height: 4rem;
   display: flex;
-  justify-content: space-between;
+  height: 4rem;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
+  border-bottom: 1px solid rgba(50, 145, 255, 0.15);
   background: linear-gradient(210deg,
       rgba(50, 145, 255, 0.05),
       var(--black4));
-  border-bottom: 1px solid rgba(50, 145, 255, 0.15);
 }
 
 .po-header--title {
@@ -49,39 +49,39 @@
 }
 
 .po-header--title h3 {
-  text-transform: uppercase;
-  letter-spacing: -.5px;
-  color: transparent;
+  background-clip: text;
   background-image: linear-gradient(90deg,
       var(--white1) 0%,
       var(--accent-7) 80%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-size: 100% 200%;
-  font-weight: 500;
-  transform: scaleY(.92);
+  color: transparent;
   font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -.5px;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  transform: scaleY(.92);
 }
 
 .po-header--title span {
-  font-size: .875rem;
   color: var(--white2);
+  font-size: .875rem;
 }
 
 .po-header--close {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2.25rem;
   width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  margin: 0;
+  border: 1px solid var(--accent-2);
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.125rem;
+  margin: 0;
   background: var(--black1);
   color: var(--accent-7);
-  border: 1px solid var(--accent-2);
+  cursor: pointer;
+  font-size: 1.125rem;
   transform: scaleX(115%);
 }
 
@@ -94,30 +94,30 @@
   flex-direction: column;
   padding: 1rem;
   padding-top: 2rem;
-  overflow-y: scroll;
   background: linear-gradient(to bottom,
       var(--black0),
       var(--black4) 50%
     );
+  overflow-y: scroll;
 }
 
 .po-body hr {
-  height: 1px;
   width: 100%;
-  margin: .5rem 0;
+  height: 1px;
   border-top: 1px solid var(--black2);
   border-bottom: 1px solid var(--black2);
+  margin: .5rem 0;
 }
 
 .po-title {
-  text-transform: uppercase;
-  height: 3.5rem;
   display: flex;
+  height: 3.5rem;
   align-items: center;
-  margin-top: 2rem;
   padding-left: 1rem;
+  margin-top: 2rem;
   font-size: 1.125rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .po-title:first-child {
@@ -125,44 +125,44 @@
 }
 
 .po-horiz {
+  width: 100%;
   height: 2rem;
   margin: 1rem 0;
-  width: 100%;
 }
 
 .proj-overview--links {
   display: flex;
-  margin: 1rem 0 4rem;
-  padding: 0 .5rem;
   width: 100%;
-  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
+  padding: 0 .5rem;
+  margin: 1rem 0 4rem;
 }
 
 .proj-overview--links a {
-  border: 1px solid var(--black3);
-  text-transform: capitalize;
-  height: 2.5rem;
-  border-radius: 5px;
-  font-weight: 500;
   position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+  padding: 0 2rem;
+  border: 1px solid var(--black3);
+  border-radius: 5px;
+  margin: .25rem;
   background: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
       var(--accent-1));
-  padding: 0 2rem;
-  margin: .25rem;
-  font-size: .875rem;
-  overflow: hidden;
-  line-height: 2.5rem;
   color: var(--white0);
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-transform: capitalize;
 }
 
 .proj-overview--links a:hover {
-  color: var(--white1);
   border: 1px solid var(--white1);
   background: linear-gradient(to right bottom, var(--black2), var(--black1), var(--accent-1));
+  color: var(--white1);
 }
 
 .po-list {
@@ -176,16 +176,16 @@
   position: relative;
   display: flex;
   align-items: center;
+  padding-left: 1rem;
   margin: .5rem 0;
   line-height: 1.25;
   list-style: circle;
   opacity: .9;
-  padding-left: 1rem;
 }
 
 .po-list--item::before {
-  content: "- ";
   position: absolute;
   top: 0;
   left: 0;
+  content: "- ";
 }

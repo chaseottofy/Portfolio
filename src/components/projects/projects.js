@@ -155,8 +155,12 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
 
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
-  const { cal, blog, monthPicker, markdown } = imageSets;
-  const { calendarCard, blogCard, monthPickerCard, markdownCard } = cardData;
+  const {
+    cal, blog, monthPicker, markdown,
+  } = imageSets;
+  const {
+    calendarCard, blogCard, monthPickerCard, markdownCard,
+  } = cardData;
   const imgArrays = [
     getImgArrayFormatted(cal),
     getImgArrayFormatted(blog),

@@ -1,46 +1,46 @@
 .popup-picture {
   position: fixed;
-  inset: 0;
-  margin: auto;
-  background: var(--offsetblack0);
   z-index: 9999;
   display: flex;
-  flex-direction: column;
   overflow: hidden;
   height: min(calc(var(--htvh) + var(-header-height)), 100vh);
+  flex-direction: column;
+  margin: auto;
+  background: var(--offsetblack0);
+  inset: 0;
 }
 
 .popup-picture__header {
   overflow: hidden;
-  height: var(--header-height);
   width: 100%;
+  height: var(--header-height);
 }
 
 .popup-picture__header-content {
+  display: flex;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: flex-end;
-  overflow: hidden;
+  justify-content: center;
   margin: 0 auto;
   background: var(--offsetblack0);
 }
 
 .popup-picture__info {
-  font-size: 1.125rem;
   width: 100%;
-  text-align: center;
   color: var(--white1);
+  font-size: 1.125rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .popup-picture__close {
-  border: 1px solid var(--white2);
-  height: 2.5rem;
   width: 5rem;
-  font-size: 1.25rem;
+  height: 2.5rem;
+  border: 1px solid var(--white2);
   cursor: pointer;
+  font-size: 1.25rem;
 }
 
 .popup-picture__close:hover {
@@ -49,33 +49,33 @@
 
 .popup-picture__imgwrapper {
   position: relative;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
   width: 100%;
   height: calc(100vh - var(--header-height));
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   margin: 0 auto;
 }
 
 .popup-picture img {
+  position: relative;
   height: min(var(--htvh), calc(90vh - var(--header-height)));
+  filter: contrast(1.1) grayscale(10%);
+  image-rendering: -o-crisp-edges;
   object-fit: contain;
   object-position: center;
-  image-rendering: -o-crisp-edges;
-  position: relative;
-  filter: contrast(1.1) grayscale(10%);
 }
 
 .popup-picture img::before {
   position: absolute;
   top: 0;
-  content: '';
   left: 0;
   width: 100%;
   height: 100%;
   border: 1px solid var(--black2);
+  content: '';
 }
 
 @media screen and (max-width: 720px) {

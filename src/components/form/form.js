@@ -20,16 +20,15 @@ const initForm = () => {
   const submitBtn = document.querySelector('.submit-form--btn');
   const contactOptions = document.querySelectorAll('.contact-option--input');
   const formWrapper = document.querySelector('.contact-form--wrapper');
-  const hpone = document.querySelector('.form-hp--one');
 
   const handleSelectedContactMethod = (e) => {
     const selectedOption = e.target.value;
     if (selectedOption === 'phone') {
       contactValueInput.type = 'tel';
-      contactValueInput.placeholder = 'Enter your phone number';
+      // contactValueInput.placeholder = 'Enter your phone number';
     } else if (selectedOption === 'email') {
       contactValueInput.type = 'email';
-      contactValueInput.placeholder = 'Enter your email address';
+      // contactValueInput.placeholder = 'Enter your email address';
     }
   };
 
@@ -83,15 +82,6 @@ const initForm = () => {
     enableForm();
     toggleSkeleton();
     setInvalidElements([]);
-  };
-
-  const checkHP = () => {
-    if (hpone.value !== '1') {
-      resetForm();
-      formWrapper.classList.add('disable-form');
-      /* eslint-disable no-alert */
-      alert('WW91IGFyZSBhIGJvdA==');
-    }
   };
 
   const ensureDisableOnLoad = () => {
@@ -170,7 +160,6 @@ const initForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    checkHP();
     checkValidity();
     handleInvalidInputs();
 

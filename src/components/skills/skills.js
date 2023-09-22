@@ -19,7 +19,7 @@ const createSkill = (content, imgSrc, title, parent) => {
   }
 
   const iconClass = title.toLowerCase() === 'wordpress' ? 'skill-img--wp' : null;
-  const skillImg = createIcon(iconClass, imgSrc, title);
+  const skillImg = createIcon(iconClass, imgSrc, null);
   skillImgWrapper.append(skillImg);
 };
 

@@ -1,6 +1,11 @@
 {
   "extends": [
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    "stylelint-config-recommended",
+    "stylelint-config-idiomatic-order"
+  ],
+  "plugins": [
+    "stylelint-order"
   ],
   "rules": {
     "custom-property-pattern": null,

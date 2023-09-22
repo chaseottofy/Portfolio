@@ -13,19 +13,19 @@
 /* GRADIENT (under header)
 ============================ */
 .gradient-overlay--one {
-  height: calc(100vh + 2px);
   position: absolute;
-  width: 100%;
   z-index: 100;
-  margin: calc(0vh - var(--intro-offset)) auto 0 auto;
   top: 0;
   left: 0;
-  pointer-events: none;
-  user-select: none;
+  width: 100%;
+  height: calc(100vh + 2px);
+  margin: calc(0vh - var(--intro-offset)) auto 0 auto;
   background:
     linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #222 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 .5%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #F00 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #105 100%);
   background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference;
   background-size: 110% 110%;
+  pointer-events: none;
+  user-select: none;
 }
 
 .gradient-noir {

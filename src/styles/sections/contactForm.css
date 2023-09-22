@@ -1,6 +1,9 @@
 .contact-form--container {
   position: relative;
+  z-index: 400;
   width: 100%;
+  padding: .125rem;
+  background-clip: content-box, border-box;
   background-color: var(--grey3);
   background-image: linear-gradient(var(--grey3),
       var(--grey3)),
@@ -9,12 +12,9 @@
       var(--primary1) 20%,
       rgba(121, 40, 202, 0) 80%);
   background-origin: border-box;
-  background-clip: content-box, border-box;
-  background-size: 100% 100%, 100% 100%;
   background-position: 0 0, 0 0;
   background-repeat: no-repeat;
-  padding: .125rem;
-  z-index: 400;
+  background-size: 100% 100%, 100% 100%;
 }
 
 .disable-form {
@@ -32,50 +32,50 @@
 
 .contact-form--container .section-title h3 {
   width: 100%;
-  text-align: center !important;
   font-size: 1.5rem !important;
   line-height: 1.5;
+  text-align: center !important;
   text-wrap:balance;
 }
 
 .contact-form--wrapper {
   display: flex;
-  flex-direction: column;
-  height: 100%;
   width: 100%;
   max-width: 1200px;
+  height: 100%;
+  flex-direction: column;
   margin: 0 auto;
 }
 
 .contact-form {
+  position: relative;
   display: grid;
+  overflow: hidden;
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: inset 0 1px 1px -1px #3b3b3b;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  box-shadow: inset 0 1px 1px -1px #3b3b3b;
-  border-radius: 20px;
-  max-width: 560px;
-  width: 100%;
-  border: 1px solid transparent;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
 }
 
 .success-message {
   position: absolute;
+  z-index: 9999;
   top: 0;
   left: 0;
-  height: 100%;
+  display: flex;
   width: 100%;
-  z-index: 9999;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: var(--offsetblack1);
+  color: var(--white1);
+  font-size: .875rem;
   pointer-events: none;
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--offsetblack1);
-  font-size: .875rem;
-  color: var(--white1);
 }
 
 .success-message span {
@@ -86,8 +86,8 @@
 .form-group p {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: .875rem;
   color: var(--white2);
+  font-size: .875rem;
   font-weight: 500;
 }
 
@@ -105,31 +105,31 @@
 
 .contact-method-group {
   display: flex;
+  width: 10rem;
   align-items: center;
-  margin-bottom: 1rem;
   padding: 4px;
   border: 1px solid var(--black2);
   border-radius: 5px;
-  width: 10rem;
+  margin-bottom: 1rem;
 }
 
 .contact-method-group span {
+  position: relative;
   width: 5rem;
   height: 1.75rem;
-  position: relative;
 }
 
 .contact-method-group span label {
-  height: 100%;
   width: 100%;
-  text-align: center;
-  line-height: 1.75rem;
+  height: 100%;
   border: none;
-  cursor: pointer;
-  background: transparent;
-  font-weight: 500;
-  color: var(--white1);
   border-radius: 3px;
+  background: transparent;
+  color: var(--white1);
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.75rem;
+  text-align: center;
 }
 
 .contact-method-group span label:hover {
@@ -138,16 +138,16 @@
 }
 
 .contact-method-group span input {
-  appearance: none;
-  border: none;
-  opacity: 0;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  outline: none;
   position: absolute;
   z-index: -1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  margin: 0;
+  appearance: none;
+  opacity: 0;
+  outline: none;
 }
 
 .contact-method-group span input:checked + label {
@@ -162,24 +162,24 @@
 }
 
 .submit-form--btn {
-  background: transparent;
-  border: 1px solid var(--black2);
-  color: var(--white2);
-  padding: 0.625rem 2.25rem;
-  border-radius: 5px;
-  font-size: .875rem;
-  cursor: not-allowed;
-  user-select: none;
   position: relative;
+  padding: 0.625rem 2.25rem;
+  border: 1px solid var(--black2);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--white2);
+  cursor: not-allowed;
+  font-size: .875rem;
+  user-select: none;
 }
 
 .btn-allow {
-  color: var(--white1);
-  background: var(--black0);
   border: 1px solid var(--primary2);
-  transition: var(--tbg1);
+  background: var(--black0);
+  color: var(--white1);
   cursor: pointer;
   pointer-events: all;
+  transition: var(--tbg1);
   user-select: all;
 }
 

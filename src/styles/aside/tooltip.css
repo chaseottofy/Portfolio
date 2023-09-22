@@ -1,29 +1,29 @@
 .tooltip {
   position: absolute;
+  z-index: 9999;
+  display: flex;
   width: 220px;
   max-width: 220px;
   height: 35px;
-  text-wrap: balance;
-  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  opacity: 0;
+  text-wrap: balance;
+  transition-duration: .2s;
   transition-property: opacity;
   transition-timing-function: var(--bez-4);
-  transition-duration: .2s;
-  opacity: 0;
 }
 
 .tooltip-caret {
   position: absolute;
+  z-index: 1;
+  display: flex;
   width: 20px;
   height: 20px;
-  display: flex;
   align-items: flex-end;
   justify-content: center;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
 }
 
 .tooltip-caret img {
@@ -32,29 +32,29 @@
 }
 
 .tooltip-content {
-  border-radius: 5px;
-  width: auto;
-  margin: 0 auto;
-  font-weight: 400 !important;
-  height: 100%;
+  position:relative;
+  z-index: 2;
   display: flex;
+  width: auto;
+  height: 100%;
   align-items: center;
   justify-content: center;
   padding: .5rem;
-  font-size: .85rem;
-  line-height: 1;
-  color: #fff;
   border: 1px solid #202124;
+  border-radius: 5px;
+  margin: 0 auto;
   background: #101112;
-  position:relative;
-  z-index: 2;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 400 !important;
+  line-height: 1;
 }
 
 
 [data-tooltip-active="false"] {
-  visibility: hidden;
-  left: 0;
   top: 0;
+  left: 0;
+  visibility: hidden;
 }
 
 [data-tooltip-active="true"] {

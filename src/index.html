@@ -355,7 +355,7 @@
               <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" alt style="height:3rem;width:3rem;">
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" style="height:3rem;width:3rem;"  alt>
                     <span class="badge-prof" data-acc="3.6k subs" data-bef="">@otto-fy</span>
                   </div>
                 </div>
@@ -391,7 +391,7 @@
               <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" alt style="height:3rem;width:3rem;">
+                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" style="height:3rem;width:3rem;" alt>
                     <span class="badge-prof" data-acc="Top 0.2%" data-bef="#1,200">@protto</span>
                   </div>
                 </div>
@@ -409,10 +409,10 @@
               <span>ottofy@zohomail.com</span>
               <div class="cm-right--bottom__cell-icons">
                 <a class="mailto-link cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-                  <img class="img-icon cm-img--icon" src="./images/svg/mailto.svg" alt>
+                  <img class="img-icon cm-img--icon" src="./images/svg/mailto.svg" alt="mail">
                 </a>
                 <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
-                  <img class="img-icon cm-img--icon" src="./images/svg/copy.svg" alt>
+                  <img class="img-icon cm-img--icon" src="./images/svg/copy.svg" alt="copy">
                 </button>
               </div>
             </div>
@@ -446,10 +446,7 @@
             <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
           </div>
 
-          <input class="form-hp--one" type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1">
-
           <div class="form-group">
-            <p>Choose the best for response *</p>
 
             <div class="contact-method-group">
               <span>
@@ -463,7 +460,10 @@
               </span>
             </div>
 
-            <input class="form-contact--input fmi" name="messageContactVal" type="email"  minlength="1" maxLength="200" required>
+            <span>
+              <label for="contact-input">Choose the best for response *</label>
+              <input class="form-contact--input fmi" id="contact-input" name="messageContactVal" type="email" minlength="1" maxLength="200" required>
+            </span>
           </div>
 
           <div class="form-group">
@@ -506,7 +506,7 @@
   <aside class="tooltip" style="left:0;top:0;" data-tooltip-active="false">
     <span class="tooltip-content"></span>
     <span class="tooltip-caret" style="top:0;left:0;right:0;margin:auto;transform:translateY(-12px);">
-      <img src="images/svg/caretup.svg" alt="">
+      <img src="images/svg/caretup.svg" alt>
     </span>
   </aside>
 </body>
