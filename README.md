@@ -71,7 +71,7 @@ initForm();
 - SEO friendly: scores 100 on all Major SEO tests (lighthouse, google page speed insights, etc.)
 - Lightweight DOM
   - Lazy loading images
-  - Dynamic content loading, rendering, and removal to ensure less than 750 nodes at any given time
+  - Dynamic content loading, rendering, and removal to ensure less than 650 nodes at any given time
 - Aggressive memory management and EventListener cleanup
 
 ---
