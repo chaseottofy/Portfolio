@@ -45,9 +45,9 @@
 }
 
 .intro-header__subtitles h1::before {
+  letter-spacing: .03rem;
   content: 'webdev';
   position: absolute;
-  letter-spacing: .03rem;
   bottom: 0;
   right: 0;
   transform: translateY(100%);
@@ -71,12 +71,14 @@
   align-items: center;
   padding: .5rem 1rem;
   font-size: .875rem;
-  background: #0d0d0e;
+  /* background: #0d0d0e; */
+  background: rgba(0,0,0,.4);
   color: #e7ecf4;
-  border: 1px solid #262b30;
+  border: 1px solid rgba(36, 39, 44, 0.5);
+  /* border: 1px solid #262b30; */
   border-radius: 6px;
   height: 2.25rem;
-  margin: 0 .5rem;
+  margin: 0 .65rem;
 }
 
 .intro-container--links a img {
@@ -99,11 +101,17 @@
 @media screen and (max-width: 720px) {
   .intro-header__subtitles h1 {
     font-size: var(--fs2);
+    letter-spacing: -.01em;
+  }
+
+  .intro-header__subtitles h1::before {
+    letter-spacing: -.01em;
   }
 }
 
 @media screen and (max-width: 580px) {
   .intro-header__subtitles h1 {
-    font-size: var(--fs4);
+    /* font-size: var(--fs4); */
+    font-size: max(20px, 1.4rem);
   }
 }

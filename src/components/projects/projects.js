@@ -2,6 +2,7 @@ import imageSets from './import-project-images';
 
 import handleTab from './handle-project-tabs';
 import handlePopupImage from './handle-popup-image';
+
 import createProjectTabs from './project-tabs';
 import createProjectMenu from './project-menu';
 import createProjectFooterButtons from './project-footer';
@@ -103,10 +104,10 @@ const createProjectHeader = (
 
   // Github repo button
   const subheaderRepo = projectCell.querySelector('.pc__subheader--links');
-  const subheaderRepoLink = createLink(githubLink, 'github repo', null, 'Repo');
+  const subheaderRepoLink = createLink(githubLink, 'github repo', null, null);
   const subheaderGhText = document.createElement('span');
   subheaderGhText.textContent = 'Repo';
-  subheaderRepoLink.prepend(githubIcon);
+  subheaderRepoLink.append(githubIcon, subheaderGhText);
   subheaderRepo.append(subheaderRepoLink);
 };
 
@@ -116,7 +117,6 @@ const createProjectHeader = (
  * @returns {void}
  */
 const createProjectBody = (projectCell, images) => {
-  console.log(images);
   const projectBody = projectCell.querySelector('.project-content__body');
   const projectPicture = projectBody.firstElementChild;
   createProjectPicture(projectPicture, images);
@@ -155,9 +155,8 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
 
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
-  const {
-    cal, blog, monthPicker, markdown,
-  } = imageSets;
+  const { cal, blog, monthPicker, markdown } = imageSets;
+  const { calendarCard, blogCard, monthPickerCard, markdownCard } = cardData;
   const imgArrays = [
     getImgArrayFormatted(cal),
     getImgArrayFormatted(blog),
@@ -165,16 +164,13 @@ const createProjectCards = () => {
     getImgArrayFormatted(markdown),
   ];
 
+  const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
+
   const iconSrcs = {
     lock: svgIcons.lock,
     github: svgIcons.github,
     arrow: svgIcons.arrow,
   };
-
-  const {
-    calendarCard, blogCard, monthPickerCard, markdownCard,
-  } = cardData;
-  const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
 
   for (let i = 0; i < projectCells.length; i += 1) {
     const {

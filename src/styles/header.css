@@ -9,13 +9,8 @@
   max-width: 100vw;
   width: 100%;
   z-index: var(--z-header);
-  background: rgba(0, 0, 0, .9) !important;
-
   /* backdrop-filter: blur(12px); */
 }
-
-/* .theme__light .header {
-} */
 
 .header-wrapper {
   padding: 0 1rem;

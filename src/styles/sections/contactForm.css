@@ -33,7 +33,9 @@
 .contact-form--container .section-title h3 {
   width: 100%;
   text-align: center !important;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
+  line-height: 1.5;
+  text-wrap:balance;
 }
 
 .contact-form--wrapper {
@@ -187,4 +189,10 @@
 
 .invalid {
   border: 1px solid var(--red1);
+}
+
+@media screen and (max-width: 720px) {
+  .contact-form--container .section-title h3 {
+    font-size: 0.925rem;
+  }
 }

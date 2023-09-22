@@ -58,6 +58,7 @@
   padding: .5rem 0 .5rem 0;
   position: relative;
   z-index: 9999;
+
 }
 
 .subheader-sm {
@@ -71,7 +72,7 @@
   height: 100%;
   width: 100%;
   align-items: flex-start;
-  padding: 0 .5rem;
+  padding: 0 .5rem .5rem .5rem;
 }
 
 .pc__header-tabs span {
@@ -99,6 +100,7 @@
   position: relative;
   transition: var(--tbg1);
   outline: 1px dotted transparent;
+  transform: translateY(.9);
 }
 
 .pc__header-tabs span label::after {
@@ -156,21 +158,20 @@
   padding: 0 .5rem;
   position: relative;
   z-index: 1;
+
 }
 
 .project-content__published {
   display: flex;
   align-items: center;
   padding: 0 .5rem;
-  margin: .5rem .5rem;
-  text-transform: uppercase;
-  transform: scaleY(.9);
+  margin: .5rem .325rem;
   width: fit-content;
-  opacity: .75;
+  opacity: .7;
+  transform: translateY(.85);
   color: var(--white1);
   position: relative;
   z-index: 8888;
-  border-bottom: 1px solid var(--grey4);
 }
 
 .content-published--text {
@@ -179,13 +180,12 @@
   letter-spacing: -.02em;
   line-height: 1.75rem;
   font-size: .85rem;
-  font-weight: 500;
 }
 
 /* SUBHEADER SEARCH */
 .pc__subheader--search {
-  width: 100%;
   max-width: 70%;
+  width: 100%;
   height: 2.25rem;
   border-radius: 5px;
   overflow: hidden;
@@ -282,8 +282,9 @@
   outline: 1px dotted var(--white1);
 }
 
-.pc__subheader--search:focus-within {
-  outline: 1px dotted var(--white1);
+.pc__subheader--search:focus-within,
+.pc__subheader--links a:focus-visible {
+  border: 1px dotted var(--white1);
 }
 
 .pc__subheader--links a:hover,
@@ -314,16 +315,26 @@
     display: none;
   }
 
-  .project-content__subheader {
-    height: 2.25rem;
-  }
-
   .subheader-sm {
     height: 3.5rem !important;
   }
 
   .pc__header-tabs span input:checked + label::before {
     display: none;
+  }
+
+  .pc__subheader--search {
+    max-width: 80%;
+  }
+
+  .pc__subheader--search a {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -.03em;
+  }
+
+  .content-published--text {
+    font-size: 16px;
   }
 }
 
@@ -333,7 +344,10 @@
     width: 2.25rem;
   }
 
-  /* .pc__subheader--links a {} */
+  .pc__subheader--search a img {
+    display: none;
+  }
+
   .pc__subheader--links img {
     margin: 0;
   }

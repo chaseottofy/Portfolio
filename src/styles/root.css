@@ -200,7 +200,8 @@ textarea {
   border-radius: 5px;
   font-size: .875rem;
   color: var(--white1);
-  resize: vertical;
+  resize: none;
+  /* resize: vertical; */
   min-height: 4rem;
 }
 

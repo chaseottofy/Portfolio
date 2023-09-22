@@ -30,16 +30,9 @@
   height: 100%;
   padding-right: 1rem;
   position: relative;
-  padding-left: .25rem;
-}
-
-.project-footer__desc::before {
-  content: '— ';
-  position: absolute;
-  transform: translateX(-100%);
-  left: 0;
-  top: 0;
-  font-size: .75rem;
+  /* padding-left: .25rem; */
+  /* font-size: 1rem; */
+  font-size: 1.125rem;
 }
 
 .pf-stacks {
@@ -197,7 +190,7 @@
 @media screen and (max-width: 720px) {
   .project-cell__footer {
     margin-top: 0;
-    padding: .25rem 0;
+    padding: .5rem 0 .25rem 0;
   }
 
   .pf-stacks {
@@ -205,7 +198,8 @@
   }
 
   .project-footer__desc {
-    width: 80%;
+    width: 90%;
+    font-size: 18px;
   }
 }
 

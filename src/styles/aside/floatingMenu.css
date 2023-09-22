@@ -75,12 +75,12 @@
 }
 
 @media screen and (max-width: 720px) {
-  .float-options li a {
+  /* .float-options li a {
     font-size: max(1.125rem, 16px);
     padding: 1rem .25rem;
   }
 
   .float-options li a span:first-child::before {
     display: none;
-  }
+  } */
 }

@@ -39,7 +39,7 @@ const configHeader = () => {
 };
 
 const initHeader = () => {
-  // configHeader();
+  configHeader();
 };
 
 export default initHeader;

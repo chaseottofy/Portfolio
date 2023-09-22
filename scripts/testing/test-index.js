@@ -13,7 +13,7 @@ import measureFocus from './measure-focus';
 const enableTesting = (focus, memory, shift, width) => {
   // check for dev env
 
-  console.log(process.env.NODE_ENV)
+  // console.log(process.env.NODE_ENV)
 
   if (focus) {
     measureFocus();
