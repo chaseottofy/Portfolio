@@ -1,3 +1,6 @@
+/* background: rgba(9, 9, 10, 0.5); */
+
+/* border-bottom: 1px solid #0e0e0f; */
 .header {
   position: fixed;
   top: 0;
@@ -6,17 +9,16 @@
   max-width: 100vw;
   width: 100%;
   z-index: var(--z-header);
-  backdrop-filter: blur(12px);
-  background: rgba(9, 9, 10, 0.493);
-  border-bottom: 1px solid #0e0e0f;
+
+  /* backdrop-filter: blur(12px); */
 }
 
-.theme__light .header {
+/* .theme__light .header {
   background: rgba(0, 0, 0, .9);
-}
+} */
 
 .header-wrapper {
-  padding: 0 .5rem;
+  padding: 0 1rem;
   max-width: var(--max-width-md);
   width: 100%;
   margin: 0 auto;
@@ -103,36 +105,38 @@
   transform: scaleY(.9);
   box-shadow: none;
   border-radius: 1.325rem;
+  position: relative;
 }
 
-.nav-menu li:last-child a {
-  justify-content: space-between;
-  padding-right: 1.5rem;
+.contact-nav--btn span {
+  pointer-events: none;
+  user-select: none;
 }
 
-.nav-menu--contact--active {
+.contact-nav--btn::after {
+  content: "";
+  background-image: url('../images/svg/caretdown.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1rem;
+  width: 1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+[data-contact-menu-open="true"] a {
   background: #fff;
   transition: var(--tbg1);
 }
 
-.nav-menu--contact--active span {
+[data-contact-menu-open="true"] a span {
   color: #000;
 }
 
-.nav-multi--caret {
-  height: 1rem;
-  width: 1rem;
-  filter: invert(1);
-  transition: var(--tt1);
-}
-
-.theme__light .nav-multi--caret {
-  filter: invert(1);
-}
-
-.nav-menu--contact--active .nav-multi--caret {
-  filter: invert(0);
-  transform: rotate(180deg);
+[data-contact-menu-open="true"] a::after {
+  filter: invert(1) !important;
+  transform: rotate(180deg) !important;
 }
 
 .header-right {
@@ -183,8 +187,9 @@
 }
 
 .theme-switch span input:checked + label {
-  background: #444;
-  box-shadow: var(--bs-md);
+  background: #4d5052;
+
+  /* box-shadow: var(--bs-md); */
 }
 
 .theme-switch span input:checked + label img {
@@ -222,28 +227,17 @@
 }
 
 @media screen and (max-width: 720px) {
-  .header-wrapper {
-    padding: 0 .5rem;
-  }
-
-  .nav-menu li:last-child a {
-    width: 100%;
-    justify-content: center;
-    padding-right: 1rem;
+  .header-logo--wrapper {
+    display: none;
   }
 
   .nav-menu li a {
     padding: .625rem;
   }
 
-  .header-logo--wrapper {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .nav-multi--caret {
-    display: none;
+  .contact-nav--btn::after {
+    content: '';
+    background-image: none;
   }
 }
 
@@ -261,12 +255,6 @@
   }
 
   .nav-menu li:nth-child(2) {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .header-logo {
     display: none;
   }
 }

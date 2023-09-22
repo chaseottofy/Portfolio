@@ -1,40 +1,58 @@
-const createTooltip = (text, element) => {
-  const tooltip = document.querySelector('.tooltip');
-  const tooltipCaret = tooltip.querySelector('.tooltip-caret');
-  const tooltipContent = tooltip.querySelector('.tooltip-content');
-  tooltip.dataset.tooltipActive = 'true';
+const createTooltip = (text, el) => {
+  // constant values for tooltip
+  const [tooltipWidth, tooltipHeight, tooltipPadding] = [220, 35, 20];
 
-  const [tooltipWidth, tooltipHeight, tooltipPadding] = [220, 40, 20];
+  // caret positions: will differ depending on position
+  // - disabling eslint because I'm using dynamic property access.
+  /* eslint-disable unicorn/no-unused-properties */
+  const caretPositions = {
+    'left': 'left:25%;top:0;',
+    'middle': 'left:0;top:0;right:0;margin:0 auto;',
+    'right': 'left:60%;top:0;',
+    'bottom': 'transform:translateY(-10px) rotate(180deg);top:100% !important;',
+    'top': 'transform:translateY(-10px);',
+  };
+  /* eslint-enable */
 
   const {
     innerWidth, innerHeight, scrollY, scrollX,
   } = window;
-
+  // rect of element that tooltip refers to,
+  // note that the tooltip itself is positioned absolutely to the body, not the element
+  // still, we need the element's position to determine where to place the tooltip
   const {
-    left: elementLeft,
-    top: elementTop,
-    bottom: elementBottom,
-    width: elementWidth,
-  } = element.getBoundingClientRect();
+    left: elLeft, top: elTop, bottom: elBottom, width: elWidth,
+  } = el.getBoundingClientRect();
 
-  let top = elementBottom + scrollY + tooltipPadding;
-  let left = elementLeft + scrollX + elementWidth / 2 - tooltipWidth / 2;
-  tooltipCaret.style = '';
+  const tooltip = document.querySelector('.tooltip');
+  const tooltipCaret = tooltip.querySelector('.tooltip-caret');
+  const tooltipContent = tooltip.querySelector('.tooltip-content');
+  tooltip.dataset.tooltipActive = 'true';
+  tooltipCaret.setAttribute('style', '');
 
+  let top = elBottom + scrollY + tooltipPadding;
+  let left = elLeft + scrollX + elWidth / 2 - tooltipWidth / 2;
+  let [caretX, caretY] = ['middle', 'top'];
+
+  // place tooltip on top and change caret position to bottom
   if (top + tooltipHeight > innerHeight + scrollY) {
-    top = elementTop + scrollY - tooltipHeight - tooltipPadding;
+    top = elTop + scrollY - tooltipHeight - tooltipPadding;
+    caretY = 'bottom';
+    // isCaretBottom = true;
   }
 
+  // check if going off screen either side, change position of tooltip and caret accordingly
+  // will default to middle if neither condition is met
   if (left < 0) {
-    left = 10;
-    tooltipCaret.style.left = '25%';
+    left = tooltipPadding / 2;
+    caretX = 'left';
   } else if (left + tooltipWidth > innerWidth) {
     left = innerWidth - tooltipWidth;
-    tooltipCaret.style.left = '60%';
-  } else {
-    tooltipCaret.setAttribute('style', 'left:0;right:0;margin:auto;');
+    caretX = 'right';
   }
 
+  const { [caretX]: caretPositionX, [caretY]: caretPositionY } = caretPositions;
+  tooltipCaret.setAttribute('style', `${caretPositionX}${caretPositionY}`);
   tooltip.style.left = `${left}px`;
   tooltip.style.top = `${top}px`;
   tooltipContent.textContent = text;

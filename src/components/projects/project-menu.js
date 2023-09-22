@@ -1,8 +1,9 @@
 import cardData from '../../data/json/projects/projects-card-data.json';
 import createLink from '../ui/link';
 
-const createFloatOptions = (options) => {
-  const floatOptions = document.createElement('ul');
+const createFloatOptions = (options, parent) => {
+  // const floatOptions = document.createElement('ul');
+  const floatOptions = parent.querySelector('.float-options');
   floatOptions.classList.add('float-options');
 
   for (let i = 0; i < options.length; i += 1) {
@@ -25,7 +26,12 @@ const createFloatOptions = (options) => {
 const createProjectMenu = () => {
   const floatingMenu = document.querySelector('.floating-menu');
   const projectMenuJSON = cardData.optionsData;
-  floatingMenu.append(createFloatOptions(Object.values(projectMenuJSON)));
+  floatingMenu.append(
+    createFloatOptions(
+      Object.values(projectMenuJSON),
+      floatingMenu,
+    ),
+  );
 };
 
 export default createProjectMenu;

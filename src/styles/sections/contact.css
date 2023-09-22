@@ -8,12 +8,11 @@
   padding: 4rem .75rem 6rem .75rem;
   background: var(--black0);
   z-index: 3;
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 4rem;
 }
 
 .contact-menu__header {
   position: fixed;
-  top: 3rem;
   left: 0;
   right: 0;
   max-width: min(640px, 90vw);
@@ -32,6 +31,15 @@
   box-shadow: var(--bs-lg);
   min-height: 400px;
   animation: ease-modal-in 150ms both;
+}
+
+[data-contact-menu-disabled="true"] {
+  width:0 !important;
+  height:0 !important;
+  z-index: -1 !important;
+  visibility: hidden;
+  position:relative;
+  display:none;
 }
 
 .contact-menu__body {
@@ -238,6 +246,7 @@
   width: 100%;
   text-align: end;
   margin-left: auto;
+  opacity: .8;
 
   /* color: transparent; */
 }
@@ -441,11 +450,13 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   .contact-menu__header {
     display: none;
   }
+}
 
+@media screen and (max-width: 640px) {
   .contact-container {
     padding-left: .25rem;
     padding-right: .25rem;

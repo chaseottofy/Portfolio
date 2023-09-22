@@ -1,0 +1,65 @@
+[
+  {
+    "content": [
+      "Developed reusable React components for various projects.",
+      "Utilized hooks for state management and lifecycle methods.",
+      "Integrated third-party libraries for enhanced UI/UX."
+    ],
+    "imgSrc": "react",
+    "title": "React JS"
+  },
+  {
+    "content": [
+      "Implemented complex features without relying on frameworks.",
+      "Optimized website performance and responsiveness.",
+      "Debugged and resolved cross-browser compatibility issues."
+    ],
+    "imgSrc": "vanilla",
+    "title": "Vanilla JS"
+  },
+  {
+    "content": [
+      "Typed JavaScript for better maintainability and fewer runtime errors.",
+      "Integrated third-party libraries with custom type declarations.",
+      "Utilized advanced types and generics for complex logic."
+    ],
+    "imgSrc": "typescript",
+    "title": "TypeScript"
+  },
+  {
+    "content": [
+      "Configured Webpack for optimized bundling and chunking.",
+      "Set up loaders and plugins for transpiling and asset management.",
+      "Enhanced app performance through tree shaking and code splitting."
+    ],
+    "imgSrc": "webpack",
+    "title": "Webpack"
+  },
+  {
+    "content": [
+      "Designed responsive layouts with Flexbox and Grid.",
+      "Implemented animations and transitions for improved user interactions.",
+      "Ensured cross-browser styling consistency."
+    ],
+    "imgSrc": "css",
+    "title": "CSS"
+  },
+  {
+    "content": [
+      "Built SEO-friendly web apps with static site generation.",
+      "Optimized page loads with incremental static regeneration.",
+      "Integrated with various data sources using Next.js API routes."
+    ],
+    "imgSrc": "next",
+    "title": "Next.js"
+  },
+  {
+    "content": [
+      "Set up and customized WordPress sites for various clients.",
+      "Implemented custom themes and plugins to enhance site functionality.",
+      "Optimized site speed and ensured security through regular updates."
+    ],
+    "imgSrc": "wordpress",
+    "title": "WordPress"
+  }
+]

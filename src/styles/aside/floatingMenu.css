@@ -1,11 +1,12 @@
 .floating-menu {
   width: 100%;
   height: auto;
-  margin: 0 auto 6rem auto;
+  margin: 1rem auto 4rem auto;
   padding: 1.5rem 0;
   z-index: var(--z-modal);
   max-width: var(--max-width-md);
-  border-bottom: 1px solid var(--grey2);
+
+  /* border-bottom: 1px solid var(--grey2); */
 }
 
 .floating-menu--fixed {
@@ -15,28 +16,25 @@
 
 .float-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
-  gap: .5rem;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: .25rem .75rem;
 }
 
 .float-options li {
   height: 100%;
   display: flex;
   align-items: center;
-  border: 0;
-  padding: 0;
+  padding: 0 .25rem;
   position: relative;
 }
 
 .float-options li a {
   justify-content: center;
   display: flex;
-  padding: .25rem .25rem .25rem .125rem;
+  padding: 1rem .5rem 1rem 1.25rem;
   width: 100%;
   align-items: flex-start;
   flex-direction: column;
@@ -51,17 +49,17 @@
 
 .float-options li a span:first-child::before {
   content: attr(data-proj-title-index);
-  opacity: .8;
-  font-size: 85%;
+  opacity: .7;
+  font-size: .925rem;
+  line-height: 1.3rem;
   letter-spacing: -.05em;
-  margin-right: 2px;
-  font-family: monospace !important;
+  position: absolute;
+  left: .5rem;
   font-weight: 400;
 }
 
 .float-options li a span:last-child {
   font-size: 80%;
-  padding-left: 1.25rem;
   margin-top: .25rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -77,22 +75,13 @@
   transition-property: background, border, text-shadow;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   .float-options li a {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .float-options {
-    row-gap: 1rem;
+    font-size: max(1.125rem, 16px);
+    padding: 1rem .25rem;
   }
 
-  /* .float-options {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  .float-options li a span:first-child::before {
+    display: none;
   }
-
-  .float-options li a {
-    font-size: .8rem;
-  } */
 }

@@ -18,13 +18,6 @@
   <meta name="robots" content="index, follow">
   <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link href="style.scss" rel="stylesheet">
-  <!-- <script>
-    (function () {
-      var d = document.documentElement;
-      d.style.setProperty('--vw', (d.clientWidth || window.innerWidth) / 100 + 'px');
-      d.style.setProperty('--vh', (d.clientHeight || window.innerHeight) / 100 + 'px');
-    }())
-  </script> -->
   <script src="index.js" defer="defer"></script>
 </head>
 
@@ -44,7 +37,7 @@
   </filter>
   </svg>
   <!-- HEADER (FIXED)-->
-  <header class="header">
+  <header class="header" style="background-color:transparent;">
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
         <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
@@ -62,9 +55,8 @@
               <a class="nav-menu--link" data-scroll-to="1" href="#skills-top" title="Scroll to skills">Skills</a>
             </li>
             <li class="nav-multi__contact">
-              <a class="nav-menu--link menu-btn--multi contact-nav--btn" data-scroll-to="2" href="#contact-top" title="Contact Menu & context">
+              <a class="nav-menu--link contact-nav--btn" data-scroll-to="2" href="#contact-top" title="Contact Menu & context" data-contact-menu-open="false">
                 <span>Contact</span>
-                <img class="nav-multi--caret" src="./images/svg/caretdown.svg" alt>
               </a>
             </li>
           </ul>
@@ -99,16 +91,10 @@
     <div class="intro-header">
       <div class="intro-header__subtitles">
         <h1>chase ottofy</h1>
-      </div>
-      <div class="intro-container--links">
-        <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy">
-          <img src="./images/svg/githuboutline.svg" alt>
-          Github
-        </a>
-        <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com">
-          <img src="./images/svg/mailto.svg" alt>
-          Email
-        </a>
+        <div class="intro-container--links">
+          <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy"><img src="./images/svg/githuboutline.svg" alt>Github</a>
+          <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com"><img src="./images/svg/mailto.svg" alt>Email</a>
+        </div>
       </div>
     </div>
   </section>
@@ -118,9 +104,8 @@
   <aside class="section-gradient--l" style="z-index: 61 !important;"></aside>
 
   <main class="main">
-
     <!-- SECTION : PROJECTS -->
-    <article class="section-container projects-container" id="projects-top">
+    <article class="section-container projects-container" id="projects-top" style="z-index: 60 !important;">
       <div class="section-title section-projects-title">
         <h2>01 —</h2>
         <h3>PROJECTS</h3>
@@ -134,7 +119,11 @@
       </div>
 
       <!-- created @/src/template/create-projoptions -->
-      <div class="floating-menu"></div>
+      <div class="floating-menu">
+        <ul class="float-options">
+
+        </ul>
+      </div>
       <!-- All project cell content is configured @/src/template/create-card -->
       <div class="projects-grid">
         <!-- calendar project -->
@@ -149,70 +138,89 @@
                 </span>
               </div>
             </div>
-            <div class="project-content__published"></div>
+            <div class="project-content__published">
+              <span class="content-published--text"></span>
+            </div>
             <div class="project-content__body"></div>
           </div>
 
           <div class="project-cell__footer">
             <div class="project-footer__titles">
+              <p class="project-footer__desc"></p>
               <div class="pf-stacks"></div>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="project-footer__content">
+              <h3 class="project-footer__title"></h3>
+              <div class="project-footer-btns"></div>
+            </div>
           </div>
         </div>
         <!--  -->
 
-        <!-- blog project -->
-        <div class="project-cell blogcm">
+        <!-- project cell -->
+        <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="project-content__subheader subheader-sm"></div>
             </div>
-            <div class="project-content__published"></div>
+            <div class="project-content__published">
+              <span class="content-published--text"></span>
+            </div>
             <div class="project-content__body pcb-sm"></div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
+              <p class="project-footer__desc"></p>
               <div class="pf-stacks"></div>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="project-footer__content">
+              <h3 class="project-footer__title"></h3>
+              <div class="project-footer-btns"></div>
+            </div>
           </div>
         </div>
-        <!--  -->
-
-        <!-- monthpicker project -->
-        <div class="project-cell monthpickercm">
+        <!-- project cell -->
+        <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="project-content__subheader subheader-sm"></div>
             </div>
-            <div class="project-content__published"></div>
+            <div class="project-content__published">
+              <span class="content-published--text"></span>
+            </div>
             <div class="project-content__body pcb-sm"></div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
+              <p class="project-footer__desc"></p>
               <div class="pf-stacks"></div>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="project-footer__content">
+              <h3 class="project-footer__title"></h3>
+              <div class="project-footer-btns"></div>
+            </div>
           </div>
         </div>
-        <!--  -->
-
-        <!-- markdown project -->
-        <div class="project-cell markdowncm">
+        <!-- project cell -->
+        <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
               <div class="project-content__subheader subheader-sm"></div>
             </div>
-            <div class="project-content__published"></div>
-
+            <div class="project-content__published">
+              <span class="content-published--text"></span>
+            </div>
             <div class="project-content__body pcb-sm"></div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
+              <p class="project-footer__desc"></p>
               <div class="pf-stacks"></div>
             </div>
-            <div class="project-footer__content"></div>
+            <div class="project-footer__content">
+              <h3 class="project-footer__title"></h3>
+              <div class="project-footer-btns"></div>
+            </div>
           </div>
         </div>
         <!--  -->
@@ -222,7 +230,7 @@
 
     <!-- SECTION: SKILLS -->
     <aside class="section-divider" style="z-index: 61 !important;"></aside>
-    <aside class="section-gradient--l" style="z-index: 120 !important;"></aside>
+    <aside class="section-gradient--l" style="z-index: 59 !important;"></aside>
     <article class="section-container skills-container" id="skills-top">
       <div class="skills-top">
         <div class="section-title">
@@ -236,7 +244,43 @@
           </p>
         </div>
       </div>
-      <div class="skills-grid"></div>
+      <div class="skills-grid">
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+        <div class="skills-cell">
+          <h4 class="skill-title"></h4>
+          <ul class="skill-content"></ul>
+          <div class="skill-img--wrapper"></div>
+        </div>
+      </div>
     </article>
 
     <!-- SECTION: CONTACT -->
@@ -375,13 +419,13 @@
         <form class="contact-form" data-csd="false">
           <div class="form-group">
             <label for="form-name">Name *</label>
-            <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
+            <input class="form-name--input" placeholder="Enter your name" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
           </div>
 
           <input class="form-hp--one" type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1">
 
           <div class="form-group">
-            <label>Choose the best for response *</label>
+            <p>Choose the best for response *</p>
 
             <div class="contact-method-group">
               <span>
@@ -417,16 +461,30 @@
       <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
       <a class="mailto-link" href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
     </div>
-    <pre class="ascii-wrapper"></pre>
+    <pre class="ascii-wrapper">
+      ,o888888o. 8888888 8888888888 8888888 8888888888 ,o888888o.     
+   . 8888     '88.     8 8888             8 8888    . 8888     '88.   
+  ,8 8888       '8b    8 8888             8 8888   ,8 8888       '8b  
+  88 8888        '8b   8 8888             8 8888   88 8888        '8b 
+  88 8888         88   8 8888             8 8888   88 8888         88 
+  88 8888         88   8 8888             8 8888   88 8888         88 
+  88 8888        ,8P   8 8888             8 8888   88 8888        ,8P 
+  '8 8888       ,8P    8 8888             8 8888   '8 8888       ,8P  
+   ' 8888     ,88'     8 8888             8 8888    ' 8888     ,88'   
+      '8888888P'       8 8888             8 8888       '8888888P'</pre>
   </footer>
+
+  <!-- ContactMenu -->
+  <aside class="contact-menu__header" data-contact-menu-disabled="true"></aside>
 
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
+  <!-- Tooltip -->
   <aside class="tooltip" style="left:0;top:0;" data-tooltip-active="false">
-    <span class="tooltip-caret">
+    <span class="tooltip-content"></span>
+    <span class="tooltip-caret" style="top:0;left:0;right:0;margin:auto;transform:translateY(-12px);">
       <img src="images/svg/caretup.svg" alt="">
     </span>
-    <span class="tooltip-content"></span>
   </aside>
 </body>
 

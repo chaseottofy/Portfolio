@@ -4,8 +4,6 @@ import createButton from '../ui/button';
 import { mailtoHref } from '../../data/constants';
 import createLink from '../ui/link';
 import useCopyToClipboard from '../../hooks/handle-copy';
-// import svgIcons from '../../utilities/get-svg';
-// import createIcon from '../ui/icon';
 
 /**
  * createBadge
@@ -26,15 +24,12 @@ const createBadge = (
   idx,
 ) => {
   const cmBodyImgs = document.querySelectorAll('.cm-body--img');
-  const bentArrow = document.querySelector('.img-bent-arrowsrc');
-  const bentArrowSrc = bentArrow.getAttribute('src');
 
   const badge = document.createElement('div');
   badge.classList.add('cm-right--top__cell');
   badge.classList.add(cname);
 
   const badgeLink = createLink(href, title, 'cm-right--top__cell-badge', null);
-
   const badgeTop = document.createElement('div');
   badgeTop.classList.add('badge-top');
   const badgeTopProfile = document.createElement('div');
@@ -62,17 +57,18 @@ const createBadge = (
 
   const badgeFooter = document.createElement('div');
   badgeFooter.classList.add('badge-footer');
-  const badgeFooterImg = document.createElement('img');
-  badgeFooterImg.setAttribute('class', 'img-icon cm-bent--arrow');
-  badgeFooterImg.src = bentArrowSrc;
-  badgeFooterImg.alt = '';
+  // const badgeFooterImg = document.createElement('img');
+  // badgeFooterImg.setAttribute('class', 'img-icon cm-bent--arrow');
+  // badgeFooterImg.src = bentArrowSrc;
+  // badgeFooterImg.alt = '';
   const badgeFooterSpan = document.createElement('span');
   badgeFooterSpan.textContent = title;
 
   badgeTopContainerSvg.append(badgeTopContainerSvgImg);
   badgeTopProfile.append(badgeTopContainerSvg, badgeTopSpan);
   badgeTop.append(badgeTopProfile);
-  badgeFooter.append(badgeFooterImg, badgeFooterSpan);
+  badgeFooter.append(badgeFooterSpan);
+  // badgeFooter.append(badgeFooterImg, badgeFooterSpan);
   badgeLink.append(badgeTop, badgeFooter);
 
   badge.append(badgeLink);
@@ -87,7 +83,6 @@ const createCmBottomCell = (
   dataText,
   imgs,
 ) => {
-  console.log(imgs);
   const menuCell = document.createElement('div');
   menuCell.classList.add('cm-right--bottom__cell');
   const menuSpan = document.createElement('span');
@@ -122,18 +117,11 @@ const createCmBottomCell = (
 };
 
 const createContactMenu = () => {
-  const body = document.querySelector('.body');
   const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
-
-  if (document?.querySelector('.contact-menu__header')) return;
-  const contactMenuAside = document.createElement('aside');
-  contactMenuAside.setAttribute('class', 'contact-menu__header');
-
   const contactMenuWrapper = document.createElement('div');
   contactMenuWrapper.classList.add('cm-right');
   const contactMenuBody = document.createElement('div');
   contactMenuBody.classList.add('cm-right--top');
-
   for (const values of Object.values(badgeData)) {
     const badge = createBadge(...Object.values(values));
     contactMenuBody.append(badge);
@@ -161,8 +149,7 @@ const createContactMenu = () => {
   );
 
   contactMenuWrapper.append(contactMenuBody, contactMenuFooter);
-  contactMenuAside.append(contactMenuWrapper);
-  body.append(contactMenuAside);
+  return contactMenuWrapper;
 };
 
 export default createContactMenu;

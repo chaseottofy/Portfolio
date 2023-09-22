@@ -1,20 +1,18 @@
 import imageSets from './import-project-images';
-import svgIcons from '../../utilities/get-svg';
-import initCalendarTabs from './project-tabs';
-import useHandleModalOffset from '../../hooks/handle-modal-offset';
+
+import handleTab from './project-tabs';
+import createProjectMenu from './project-menu';
+import createProjectFooterButtons from './project-footer';
+
+import createFullImagePopup from '../ui/image-popup';
 import createIcon from '../ui/icon';
 import createLink from '../ui/link';
-import createButton from '../ui/button';
 
-import createAuditModal from './project-modal-audit';
-import createProjectModal from './project-modal-overview';
-import createProjectMenu from './project-menu';
+import svgIcons from '../../utilities/get-svg';
+import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
 
 import cardData from '../../data/json/projects/projects-card-data.json';
-import {
-  aspectSmallWidth,
-  projectImageType,
-} from '../../data/constants';
+import { projectImageType } from '../../data/constants';
 
 const createSubheaderLink = (cName, href, icon, alt, children) => {
   const linkwrapper = document.createElement('div');
@@ -37,32 +35,6 @@ const createStack = (icon) => {
   stack.classList.add('pf-stack');
   stack.append(icon);
   return stack;
-};
-
-const createFullImagePopup = (img) => {
-  const popup = document.createElement('div');
-  popup.classList.add('popup-picture', 'act-modal');
-  const popupHeader = document.createElement('div');
-  popupHeader.classList.add('popup-picture__header');
-  const popupHeaderContent = document.createElement('div');
-  popupHeaderContent.classList.add('popup-picture__header-content');
-  const imageInfo = document.createElement('span');
-  imageInfo.classList.add('popup-picture__info');
-  imageInfo.textContent = 'click anywhere to close';
-
-  const imgWrapper = document.createElement('div');
-  imgWrapper.classList.add('popup-picture__imgwrapper');
-
-  popupHeaderContent.append(imageInfo);
-  popupHeader.append(popupHeaderContent);
-  imgWrapper.append(img);
-  popup.append(popupHeader, imgWrapper);
-  document.body.append(popup);
-  useHandleModalOffset(popup);
-  popup.addEventListener('click', () => {
-    popup.remove();
-    useHandleModalOffset();
-  });
 };
 
 const createProjectPicture = (images, cNames, attr1, attr2) => {
@@ -95,22 +67,8 @@ const createProjectPicture = (images, cNames, attr1, attr2) => {
   return projectImage;
 };
 
-const createProjectFooterButton = (
-  cName,
-  attrName,
-  dataText,
-  text,
-  callback,
-) => {
-  const projFooterBtn = createButton(text, cName, null, 'button');
-  projFooterBtn.dataset.tooltipText = `Open ${text} Modal`;
-  projFooterBtn.setAttribute(attrName, dataText);
-  projFooterBtn.addEventListener('click', callback);
-  return projFooterBtn;
-};
-
 const createCalTabs = () => {
-  const createTab = (title, tabIdx, checked) => {
+  const createTab = (title, tabIdx, checked, listener) => {
     const labSm = title[0];
     const labelTxt = `${title} View`;
     const wrapper = document.createElement('span');
@@ -130,6 +88,10 @@ const createCalTabs = () => {
     label.ariaLabel = labelTxt;
     label.textContent = `${title} `;
     wrapper.append(input, label);
+
+    input.addEventListener('change', () => {
+      listener(tabIdx);
+    });
     return wrapper;
   };
 
@@ -137,43 +99,10 @@ const createCalTabs = () => {
   const calTabs = document.createElement('div');
   calTabs.classList.add('pc__header-tabs');
   for (let i = 0; i < tabNames.length; i += 1) {
-    calTabs.append(createTab(tabNames[i], i + 1, i === 0));
+    calTabs.append(createTab(tabNames[i], i + 1, i === 0, handleTab));
   }
+
   return calTabs;
-};
-
-const createProjectFooterButtons = (lighthouseKey) => {
-  const projectFooterBtns = document.createElement('div');
-  projectFooterBtns.classList.add('project-footer-btns');
-  projectFooterBtns.append(
-    createProjectFooterButton(
-      'open-lh--btn',
-      'data-lh-proj',
-      lighthouseKey,
-      'Audits',
-      createAuditModal,
-    ),
-    createProjectFooterButton(
-      'open-overview--btn',
-      'data-proj',
-      lighthouseKey,
-      'Overview',
-      createProjectModal,
-    ),
-  );
-
-  return projectFooterBtns;
-};
-
-const getImgArray = (images) => {
-  const imgArray = [];
-  let ind = 0;
-  for (const [key, value] of Object.entries(images)) {
-    const media = ind === 0 ? `(min-width: ${aspectSmallWidth + 1}px)` : `(max-width: ${aspectSmallWidth + 1}px)`;
-    imgArray.push({ src: value, alt: key, media });
-    ind += 1;
-  }
-  return imgArray;
 };
 
 const handlePopupImage = (e) => {
@@ -181,6 +110,7 @@ const handlePopupImage = (e) => {
   if (!imgWrapper) return;
   const targetImg = imgWrapper?.lastElementChild;
   if (!targetImg) return;
+
   const swapImg = new Image();
   swapImg.src = targetImg.currentSrc;
   swapImg.alt = targetImg.alt || 'project image';
@@ -188,7 +118,11 @@ const handlePopupImage = (e) => {
   createFullImagePopup(swapImg);
 };
 
+// 1122 x 847
 const createProjectCard = (
+  projectCell,
+  images,
+  isCalendar,
   title,
   projLink,
   githubLink,
@@ -196,24 +130,24 @@ const createProjectCard = (
   lighthouseKey,
   description,
   published,
-  projectCellCname,
-  images,
-  isCalendar = false,
 ) => {
-  const projectCell = document.querySelector(`.${projectCellCname}`);
   const projectHeader = projectCell.querySelector('.project-content__header');
   const projectSubheader = projectCell.querySelector('.project-content__subheader');
   const projectBody = projectCell.querySelector('.project-content__body');
-  const projectCellFooter = projectCell.querySelector('.project-cell__footer');
-  const projectFooterTitles = projectCell.querySelector('.project-footer__titles');
   const projectFooterStacks = projectCell.querySelector('.pf-stacks');
-  const projectFooterContent = projectCell.querySelector('.project-footer__content');
-  const projectPublished = projectCell.querySelector('.project-content__published');
+  const projectFooterTitle = projectCell.querySelector('.project-footer__title');
+  const projectFooterBtns = projectCell.querySelector('.project-footer-btns');
+  const projectFooterDesc = projectCell.querySelector('.project-footer__desc');
+  const publishedText = projectCell.querySelector('.content-published--text');
+
   const lockIcon = createIcon('img-icon', svgIcons.lock, null);
   const ghIcon = createIcon('img-icon', svgIcons.github, null);
+
+  const subheaderGhText = document.createElement('span');
+  subheaderGhText.textContent = 'Repo';
   const subheaderGh = createSubheaderLink('links', githubLink, ghIcon, 'github repo', null);
-  const projectHref = `proj-${lighthouseKey}-top`;
-  projectCell.id = projectHref;
+  subheaderGh.firstElementChild.append(subheaderGhText);
+
   projectFooterStacks.dataset.pfStacks = stacks.join(' + ');
 
   if (isCalendar) {
@@ -231,12 +165,9 @@ const createProjectCard = (
     projectSubheader.append(createSubheaderLink('search', projLink, lockIcon, title, arrowDec));
     projectBody.append(createProjectPicture(images, ['proj-img-sm'], null, null));
   }
-  projectSubheader.append(subheaderGh);
 
-  const publishedText = document.createElement('span');
-  publishedText.classList.add('content-published--text');
+  projectSubheader.append(subheaderGh);
   publishedText.textContent = `Published: ${published}`;
-  projectPublished.append(publishedText);
 
   for (const stack of stacks) {
     projectFooterStacks.append(createStack(
@@ -244,39 +175,53 @@ const createProjectCard = (
     ));
   }
 
-  const projectFooterDesc = document.createElement('p');
-  projectFooterDesc.classList.add('project-footer__desc');
   projectFooterDesc.textContent = `${description}`;
-  projectFooterTitles.append(projectFooterDesc, projectFooterStacks);
-
-  const projectFooterTitle = document.createElement('h3');
-  projectFooterTitle.classList.add('project-footer__title');
   projectFooterTitle.textContent = title;
-
-  const projectFooterBtns = createProjectFooterButtons(lighthouseKey);
-  projectFooterContent.append(projectFooterTitle, projectFooterBtns);
-  projectCellFooter.append(projectFooterTitles, projectFooterContent);
-  return projectCell;
+  projectFooterBtns.append(...createProjectFooterButtons(lighthouseKey));
 };
 
 const createProjectCards = () => {
+  const projectCells = document.querySelectorAll('.project-cell');
   const {
-    cal, markdown: mark, blog, monthPicker: mp,
+    cal, markdown, blog, monthPicker,
   } = imageSets;
+  const imgArrays = [
+    getImgArrayFormatted(cal),
+    getImgArrayFormatted(markdown),
+    getImgArrayFormatted(blog),
+    getImgArrayFormatted(monthPicker),
+  ];
+
   const {
     calendarCard, blogCard, monthPickerCard, markdownCard,
   } = cardData;
-
-  const clsNames = ['calendarcm', 'blogcm', 'monthpickercm', 'markdowncm'];
-  const imgArrays = [getImgArray(cal), getImgArray(blog), getImgArray(mp), getImgArray(mark)];
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
 
-  for (let i = 0; i < clsNames.length; i += 1) {
+  for (let i = 0; i < projectCells.length; i += 1) {
+    const {
+      title,
+      projLink,
+      githubLink,
+      stacks,
+      lighthouseKey,
+      description,
+      published,
+    } = cardDataArray[i];
+
+    const projectCell = projectCells[i];
+    projectCell.id = `proj-${lighthouseKey}-top`;
+
     createProjectCard(
-      ...Object.values(cardDataArray[i]),
-      clsNames[i],
+      projectCell,
       imgArrays[i],
       i === 0,
+      title,
+      projLink,
+      githubLink,
+      stacks,
+      lighthouseKey,
+      description,
+      published,
     );
   }
 };
@@ -284,7 +229,6 @@ const createProjectCards = () => {
 const initProjects = () => {
   createProjectMenu();
   createProjectCards();
-  initCalendarTabs();
   const projectsGrid = document.querySelector('.projects-grid');
   projectsGrid.addEventListener('click', handlePopupImage);
 };

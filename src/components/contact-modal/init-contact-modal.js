@@ -1,28 +1,40 @@
 import createContactMenu from './contact-menu';
+import useIsTouchDevice from '../../hooks/is-touch-device';
 
 const initContactModal = () => {
   const navContactBtn = document.querySelector('.nav-multi__contact');
+  const contactModal = document.querySelector('.contact-menu__header');
+
+  const isUsingTouchDevice = useIsTouchDevice();
+  if (isUsingTouchDevice) {
+    return;
+  }
 
   const contactMousemove = (e) => {
-    if (
-      !e
-      || !e.target
-      || e.target.closest('.contact-menu__header')
-      || e.target.closest('.nav-multi__contact')
-    ) return;
+    if (e.target && e.target.nodeType === 1) {
+      if (e.target.closest('.contact-menu__header') || e.target.closest('.nav-multi__contact')) return;
 
-    document?.querySelector('.contact-menu__header')?.remove();
-    navContactBtn?.firstElementChild?.classList.remove('nav-menu--contact--active');
-    window.removeEventListener('mousemove', contactMousemove);
+      if (contactModal.firstElementChild) {
+        contactModal.firstElementChild.remove();
+      }
+
+      contactModal.dataset.contactMenuDisabled = 'true';
+      navContactBtn.dataset.contactMenuOpen = 'false';
+      window.removeEventListener('mousemove', contactMousemove);
+    }
   };
 
   const openContactMenu = () => {
-    if (window.innerWidth <= 640) return;
+    if (window.innerWidth <= 720) return;
+    const isContactMenuOpen = contactModal.dataset.contactMenuDisabled === 'false';
+    if (isContactMenuOpen) return;
 
-    if (navContactBtn?.firstElementChild?.classList.contains('nav-menu--contact--active')) return;
-
-    createContactMenu();
-    navContactBtn?.firstElementChild?.classList.add('nav-menu--contact--active');
+    const { bottom } = navContactBtn.getBoundingClientRect();
+    const modalTop = Number.parseFloat(bottom.toFixed(2)) - 10;
+    contactModal.style.top = `${modalTop}px`;
+    contactModal.append(createContactMenu());
+    contactModal.dataset.contactMenuDisabled = 'false';
+    navContactBtn.dataset.contactMenuOpen = 'true';
     window.addEventListener('mousemove', contactMousemove);
   };
 

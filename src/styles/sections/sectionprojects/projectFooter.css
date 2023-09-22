@@ -14,15 +14,12 @@
 }
 
 .project-footer__titles {
-  /* margin-top: .5rem; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 100%;
   padding: 1rem 1rem 0 1rem;
-
-  /* padding: 1.5rem 1rem 0; */
 }
 
 .project-footer__desc {
@@ -142,7 +139,7 @@
   opacity: .9;
   position: relative;
   margin-right: 1rem;
-  padding: 1rem 0;
+  padding: 2rem 0 2rem 0;
   transform: scaleY(1.2);
 }
 

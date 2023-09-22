@@ -4,7 +4,7 @@ const initDisableOnLoadElements = () => {
   setTimeout(() => {
     body.dataset.disableTransitions = false;
     root.style.scrollBehavior = 'smooth';
-  }, 500);
+  }, 200);
 };
 
 export default initDisableOnLoadElements;

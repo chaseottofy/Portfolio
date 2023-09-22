@@ -4,8 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
+  padding: 1rem 0 2rem 0;
   scroll-margin-top: 4rem;
   max-width: 1200px;
 }
@@ -19,14 +18,14 @@
   max-width: 1600px;
   margin: 0 auto;
   width: 100%;
-  padding: 1rem;
 }
 
 .skills-container .skills-top .section-title {
   margin-bottom: 3rem;
-  text-align: end;
+  text-align: start;
   display: flex;
   justify-content: center;
+  min-height: 26px;
 }
 
 .skills-grid {
@@ -40,6 +39,7 @@
   border-radius: 1rem;
   border: 1px solid var(--black1);
   margin-bottom: 2rem;
+  margin-top: 4rem;
 }
 
 .skills-cell {
@@ -78,6 +78,7 @@
   width: 100%;
   align-items: center;
   padding: 3rem 1rem 1rem 1rem;
+  min-height: 140px;
 }
 
 .skill-title {
@@ -93,15 +94,13 @@
   color: var(--white1);
 }
 
-.skill-content span {
+.skill-content li {
   position: relative;
   z-index: 3;
   width: 100%;
-  font-size: .95rem;
-  line-height: 1.25;
+  font-size: 1.125rem;
+  line-height: 1.3;
   letter-spacing: -.02em;
-
-  /* color: var(--accent-7); */
   color: var(--white1);
   opacity: .8;
 }
@@ -114,19 +113,15 @@
   height: 2.5rem;
   justify-content: center;
   border-radius: 50%;
-}
-
-.skill-content:last-child.skill-img--wrapper {
-  background: green;
+  position: relative;
 }
 
 .skill-img--wrapper img {
+  filter: grayscale(1) contrast(1.2);
   height: 2.5rem !important;
   width: 2.5rem !important;
-  z-index: 2;
   pointer-events: none !important;
   user-select: none !important;
-  filter: grayscale(1) contrast(1.1) brightness(1.1);
 }
 
 .theme__light .skill-img--wp {
@@ -149,7 +144,7 @@
   transition-property: filter;
 }
 
-.skills-cell:hover .skill-content span {
+.skills-cell:hover .skill-content li {
   opacity: 1;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-duration: .15s;
@@ -162,12 +157,16 @@
   }
 
   .skills-cell {
-    grid-template-columns: 1fr 3rem;
+    grid-template-columns: 1fr 2.5rem;
   }
 
   .skill-img--wrapper {
     width: 2rem;
     height: 2rem;
+  }
+
+  .skill-content li {
+    font-size: 18px;
   }
 
   .skill-img--wrapper img {

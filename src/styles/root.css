@@ -57,8 +57,8 @@
   /* ********************************** */
 
   /* dynamic font sizes */
-  --fs1: max(40px, 3.5rem);
-  --fs2: max(28px, 3rem);
+  --fs1: max(32px, 2.8rem);
+  --fs2: max(25px, 2.2rem);
   --fs3: max(20px, 1.8rem);
   --fs4: max(22px, 1.6rem);
   --fs5: max(1.125rem, 22px);
@@ -78,13 +78,17 @@
   /* ********************************** */
 
   /* Shared colors between light/dark */
-  --primary1: #008beb;
+  --primary1: #0089ae;
+  --primary2: #025b74;
+  --primary3: #013948;
+
+  /* --primary1: #008beb;
   --primary2: #086faa;
-  --primary3: #033450;
+  --primary3: #033450; */
   --red1: #cf007a;
 
   /* ********************************** */
-  --intro-offset: 15vh;
+  --intro-offset: 20vh;
   --header-height: 4rem;
   --max-width-lg: 1280px;
   --max-width-md: 1140px;
@@ -93,6 +97,7 @@
 
   /* Transition helpers */
   --tbg1: background .15s cubic-bezier(.4, 0, .2, 1);
+  --tbg2: background-color .2s cubic-bezier(.4, 0, .2, 1);
   --tt1: transform .2s ease-in-out;
   --tc1: color .2s ease-in-out;
   --ttop1: top .2s ease-in-out;

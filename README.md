@@ -9,6 +9,66 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 ___
 ![screen](screenshots/perf3.jpg)
 
+## Table of Contents
+- [Features](#features)
+- [Form](#contact-form)
+  - [Apps Script Setup](#apps-script-setup)
+- [Images](#images)
+  - [Project Images](#project-images)
+  - [Image Optimization](#image-optimization)
+- [Notes](#notes)
+
+
+## Features
+- Zero 3rd party dependencies
+- 100% Vanilla JS & Vanilla CSS
+- All UI components and design are built from scratch
+  - Includes some helpful JS Components like Tooltips, Toasts, and Modals
+- Copy to clipboard
+- Two themes
+- Responsive on all devices
+- Contact Form integrated with google sheets (free to use)
+- Extremely optimized: .3-.4s speed index
+- Accessible: Triple A contrast ratio, keyboard navigation.
+- SEO friendly: scores 100 on all Major SEO tests (lighthouse, google page speed insights, etc.)
+- Lightweight DOM
+  - Lazy loading images
+  - Dynamic content loading, rendering, and removal to ensure less than 750 nodes at any given time
+- Aggressive memory management and EventListener cleanup
+
+---
+
+## Contact Form
+
+The Form is integrated with google sheets using Apps Script - the process is very simple and free to use.
+
+### Apps Script Setup
+1. Create a new google sheet
+2. Locate `Apps Script` in the `Extensions` menu and open it
+3. Add a new file and name it `Code.gs` (or whatever you want)
+4. Copy the full url of your google sheet e.g. `https://docs.google.com/spreadsheets/d/.../edit#gid=0`
+5. Paste the following code into the file:
+```javascript
+// replace the URL with your own google sheet URL
+const sheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/.../edit#gid=0");
+const sheet = sheets.getSheetByName("Sheet1");
+function doPost(e){
+  let data = e.parameter;
+
+  // appendRow will recieve the formData : {messageName, contactMethod, messageContactVal, messageVal} in my case
+  sheet.appendRow([data.messageName,data.contactMethod,data.messageContactVal,data.messageVal]);
+  return ContentService.createTextOutput("Success");
+}
+```
+6. Click Deploy -> New Deployment
+7. Select `Web App` as the type
+8. Set 'Who has access' to 'Anyone'
+9. Click Deploy
+10. Copy the Deployment ID and paste it into your .env file as `SHEET_ID`
+11. Done.
+
+---
+
 ## Images
 
 #### Project Images
@@ -75,3 +135,8 @@ Using a custom node script that utilizes the sharp library, the images are resiz
 
 All project images are imported via the src/utilities/get-image.js file. They are then distributed throughout the project from there.
 
+---
+
+## Notes
+I'm working on making it easier to customize the content by having all data loaded from JSON.
+- update on customization (9/22/23): 50-60% of the content is now loaded from JSON. Will eventually move all content to JSON.

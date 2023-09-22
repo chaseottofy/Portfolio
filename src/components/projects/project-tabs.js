@@ -80,47 +80,31 @@ const configPicture = (parent, nth) => {
   );
 };
 
-const initCalendarTabs = () => {
-  const [tabState, setTabState] = handleState(0);
-  const calendarTabs = document?.querySelectorAll('.proj-cal--tab');
+const [tabState, setTabState] = handleState(0);
 
-  const handleTab = (nth) => {
-    const currentClass = 'cal-current';
-    const activeImg = document.querySelector('.cal-current');
+const handleTab = (nth) => {
+  const currentClass = 'cal-current';
+  const activeImg = document.querySelector('.cal-current');
 
-    if (nth === tabState() + 1) return;
-    setTabState(nth - 1);
-    const nowActive = document.querySelector(`[data-cal-nth="${tabState() + 1}"]`);
-    // Only the first tab is laoded by default, once a tab is clicked for the first
-    // time, the image must be initialized.
-    if (nowActive === null) {
-      configPicture(activeImg.parentElement, +nth);
-      activeImg.classList.remove(currentClass);
-      activeImg.classList.add('fade-img--out');
-      setTimeout(() => {
-        activeImg.classList.add('hide-img');
-        activeImg.classList.remove('fade-img--out');
-      }, 200);
-    } else {
-      activeImg.classList.remove(currentClass);
+  if (nth === tabState() + 1) return;
+  setTabState(nth - 1);
+  const nowActive = document.querySelector(`[data-cal-nth="${tabState() + 1}"]`);
+  // Only the first tab is laoded by default, once a tab is clicked for the first
+  // time, the image must be initialized.
+  if (nowActive === null) {
+    configPicture(activeImg.parentElement, +nth);
+    activeImg.classList.remove(currentClass);
+    activeImg.classList.add('fade-img--out');
+    setTimeout(() => {
       activeImg.classList.add('hide-img');
-      nowActive.classList.remove('hide-img');
-      nowActive.classList.add(currentClass);
-    }
-  };
-
-  const initTabs = () => {
-    if (calendarTabs === null) return;
-
-    calendarTabs[tabState()].previousElementSibling.checked = true;
-    for (const [index, tab] of calendarTabs.entries()) {
-      tab.addEventListener('click', () => {
-        handleTab(index + 1);
-      });
-    }
-  };
-
-  initTabs();
+      activeImg.classList.remove('fade-img--out');
+    }, 200);
+  } else {
+    activeImg.classList.remove(currentClass);
+    activeImg.classList.add('hide-img');
+    nowActive.classList.remove('hide-img');
+    nowActive.classList.add(currentClass);
+  }
 };
 
-export default initCalendarTabs;
+export default handleTab;

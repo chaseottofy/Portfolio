@@ -15,15 +15,19 @@
   mix-blend-mode: normal;
   pointer-events: none;
   user-select: none;
-  filter: blur(46px);
+  filter: blur(48px);
   position: relative;
-  background: linear-gradient(to bottom, #008beb 20%, #033450 50%, #086faa);
-
-  /* background: linear-gradient(to bottom, var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%)); */
+  background: linear-gradient(to bottom, var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%));
   opacity: .8;
-  height: 42px;
+  height: 100% !important;
+  width: 100%;
+  min-height: 48px !important;
+  max-height: 48px !important;
 }
 
 .theme__light .section-gradient--l {
-  opacity: .5;
+  /* filter: blur(48px) grayscale(.8); */
+  opacity: .6;
+
+  /* opacity: 1; */
 }

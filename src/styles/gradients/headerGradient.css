@@ -2,48 +2,36 @@
 
 /* Mess with the background-blend-modes */
 
+/* background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge; */
+
+/* background-blend-mode: overlay, difference, difference, color-burn, color-dodge; */
+
+/* background-blend-mode: difference, overlay, color-burn, color-burn, screen; */
+
+/* background-blend-mode: difference, color-dodge, difference, difference, overlay, color-dodge; */
+
 /* GRADIENT (under header)
 ============================ */
 .gradient-overlay--one {
-  /* height: calc(80vh + 2px); */
   height: calc(100vh + 2px);
   position: absolute;
   width: 100%;
   z-index: 100;
-  margin: 0 auto;
-  margin-top: calc(0vh - var(--intro-offset));
+  margin: calc(0vh - var(--intro-offset)) auto 0 auto;
   top: 0;
   left: 0;
   pointer-events: none;
   user-select: none;
   background:
     linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #222 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 .5%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #F00 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #105 100%);
-
-  /* background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge; */
-
-  /* background-blend-mode: overlay, difference, difference, color-burn, color-dodge; */
-
-  /* background-blend-mode: difference, overlay, color-burn, color-burn, screen; */
-
-  /* background-blend-mode: difference, color-dodge, difference, difference, overlay, color-dodge; */
   background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference;
-}
-
-/* Uncomment to apply grain overlay */
-.gradient-overlay--one::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  filter:url("#grainy");
-  opacity: 0.2;
-  height: 100%;
-  content: "";
-  z-index:9999;
+  background-size: 110% 110%;
 }
 
 .gradient-noir {
-  filter: contrast(1.4) brightness(.8) hue-rotate(298deg);
+  filter: contrast(1.5) brightness(1) hue-rotate(294deg);
+
+  /* filter: contrast(1.4) brightness(.8) hue-rotate(298deg); */
 
   /* filter: contrast(1.4) brightness(.8); */
 
@@ -57,3 +45,17 @@
 
   /* filter: contrast(1.3) grayscale(1) brightness(.6); */
 }
+
+/* Uncomment to apply grain overlay */
+
+/* .gradient-overlay--one::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  filter: url("#grainy");
+  opacity: 0.2;
+  height: 100%;
+  content: "";
+  z-index: 9999;
+} */

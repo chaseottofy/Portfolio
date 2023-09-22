@@ -1,7 +1,6 @@
 .contact-form--container {
   position: relative;
   width: 100%;
-  z-index: 3;
   background-color: var(--grey3);
   background-image: linear-gradient(var(--grey3),
       var(--grey3)),
@@ -15,6 +14,7 @@
   background-position: 0 0, 0 0;
   background-repeat: no-repeat;
   padding: .125rem;
+  z-index: 400;
 }
 
 .disable-form {
@@ -80,7 +80,8 @@
   animation: pulse 1.5s infinite;
 }
 
-.form-group label {
+.form-group label,
+.form-group p {
   display: block;
   margin-bottom: 0.5rem;
   font-size: .875rem;

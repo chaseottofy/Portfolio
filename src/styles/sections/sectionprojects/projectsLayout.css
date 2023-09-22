@@ -1,10 +1,6 @@
 /* SECTION: ECTS
 ============================ */
 .projects-container {
-  width: 100%;
-
-  /* background: var(--black0); */
-
   /* background: linear-gradient(to top,
       var(--black0) 0,
       hsla(0, 0%, 100%, 0) 100%),
@@ -14,13 +10,15 @@
   background-size: 100% 100%, 100% 100%, 1440px 1px;
   background-position: bottom;
   background-repeat: no-repeat; */
+  width: 100%;
+  background: var(--black0);
   z-index: 50;
   position: relative;
   scroll-margin-top: 4rem;
 }
 
 .projects-container .section-title {
-  padding: 3rem 0 1rem 0;
+  padding: 2rem 0 1rem 0;
 }
 
 .projects-grid {

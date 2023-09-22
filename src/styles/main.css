@@ -5,12 +5,18 @@
   align-items: center;
   position: relative;
   width: 100%;
+
+  /* z-index: 200; */
 }
 
 /* ------------------------ */
 
 /* SECTIONS
 ============================ */
+.section-container {
+  padding-bottom:4rem;
+}
+
 .section-title {
   position: relative;
   width: 100%;
@@ -56,7 +62,7 @@
   justify-content: center;
   line-height: 1.25;
   letter-spacing: -.02em;
-  padding: 1.5rem .5rem 1.5rem .5rem;
+  padding: 1rem 8rem 3rem .5rem;
   font-size: var(--fs5);
   position: relative;
   border-bottom: 1px solid var(--grey2);
@@ -74,7 +80,12 @@
 
   .section-title h2,
   .section-title h3 {
-    font-size: 6.2708vw;
+    font-size: var(--fs2);
+  }
+
+  .section-excerpt {
+    padding: 1rem .5rem;
+    font-size: 1.25rem;
   }
 
   .section-excerpt p {
@@ -83,5 +94,12 @@
 
   .section-excerpt::after {
     width: calc(100% - 2rem);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .section-title h2,
+  .section-title h3 {
+    font-size: var(--fs4);
   }
 }

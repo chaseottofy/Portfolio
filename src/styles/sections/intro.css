@@ -27,7 +27,7 @@
   align-items: center;
   max-width: var(--max-width-md);
   flex-direction: column;
-  padding-top: 3rem;
+  margin-top: var(--header-height);
 }
 
 .intro-header__subtitles h1 {
@@ -62,7 +62,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 4rem;
+  padding-top: 9rem;
   width: 100%;
 }
 
@@ -71,9 +71,9 @@
   align-items: center;
   padding: .5rem 1rem;
   font-size: .875rem;
-  background: #101011;
-  color: #fff;
-  border: 1px solid #1b1d1f;
+  background: #0d0d0e;
+  color: #e7ecf4;
+  border: 1px solid #262b30;
   border-radius: 6px;
   height: 2.25rem;
   margin: 0 .5rem;
