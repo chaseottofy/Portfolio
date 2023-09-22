@@ -60,19 +60,16 @@ initForm();
 ## Features
 - Zero 3rd party dependencies
 - 100% Vanilla JS & Vanilla CSS
-- All UI components and design are built from scratch
-  - Includes some helpful JS Components like Tooltips, Toasts, and Modals
-- Copy to clipboard
+- All UI components and design are from scratch
 - Two themes
 - Responsive on all devices
-- Contact Form integrated with google sheets (free to use)
+- Contact Form free POSTS with google sheets
 - Extremely optimized: .3-.4s speed index
-- Accessible: Triple A contrast ratio, keyboard navigation.
-- SEO friendly: scores 100 on all Major SEO tests (lighthouse, google page speed insights, etc.)
+- Accessible: perfect score on several audits (WAVE, Lighthouse, page speed insights, NU HTML checker)
+- SEO friendly: perfect score on lighthouse and page speed insights.
 - Lightweight DOM
-  - Lazy loading images
   - Dynamic content loading, rendering, and removal to ensure less than 650 nodes at any given time
-- Aggressive memory management and EventListener cleanup
+- Most of the content is easily customizable via JSON which allows for a CMS type experience.
 
 ---
 
