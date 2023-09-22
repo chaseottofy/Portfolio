@@ -1,6 +1,11 @@
 import badgeData from '../../data/json/contact/contact-modal.json';
-import createToast from '../toast/toast';
+import createToast from '../ui/toast';
+import createButton from '../ui/button';
+import { mailtoHref } from '../../data/constants';
+import createLink from '../ui/link';
 import useCopyToClipboard from '../../hooks/handle-copy';
+// import svgIcons from '../../utilities/get-svg';
+// import createIcon from '../ui/icon';
 
 /**
  * createBadge
@@ -28,12 +33,7 @@ const createBadge = (
   badge.classList.add('cm-right--top__cell');
   badge.classList.add(cname);
 
-  const badgeLink = document.createElement('a');
-  badgeLink.classList.add('cm-right--top__cell-badge');
-  badgeLink.href = href;
-  badgeLink.title = title;
-  badgeLink.target = '_blank';
-  badgeLink.rel = 'noreferrer';
+  const badgeLink = createLink(href, title, 'cm-right--top__cell-badge', null);
 
   const badgeTop = document.createElement('div');
   badgeTop.classList.add('badge-top');
@@ -87,6 +87,7 @@ const createCmBottomCell = (
   dataText,
   imgs,
 ) => {
+  console.log(imgs);
   const menuCell = document.createElement('div');
   menuCell.classList.add('cm-right--bottom__cell');
   const menuSpan = document.createElement('span');
@@ -95,10 +96,7 @@ const createCmBottomCell = (
   menuCellIcons.classList.add('cm-right--bottom__cell-icons');
 
   if (btnHref) {
-    const menuLink = document.createElement('a');
-    menuLink.classList.add('cm-email-goto');
-    menuLink.href = btnHref;
-    menuLink.title = 'Open Mail-to';
+    const menuLink = createLink(mailtoHref, 'Open Mail-to', 'cm-email-goto', null, '_self');
     const menuLinkImg = document.createElement('img');
     menuLinkImg.classList.add('img-icon');
     menuLinkImg.src = imgs[0].src;
@@ -107,11 +105,8 @@ const createCmBottomCell = (
     menuCellIcons.append(menuLink);
   }
 
-  const menuBtn = document.createElement('button');
-  menuBtn.classList.add('cm-copy');
-  menuBtn.classList.add(btnClass);
-  menuBtn.title = btnTitle;
-  menuBtn.setAttribute('aria-label', 'button');
+  const menuBtnClass = `cm-copy ${btnClass}`;
+  const menuBtn = createButton(null, menuBtnClass, btnTitle, 'button');
   const menuBtnImg = document.createElement('img');
   menuBtnImg.classList.add('img-icon');
   menuBtnImg.src = imgs[1].src;
@@ -122,7 +117,6 @@ const createCmBottomCell = (
   });
   menuBtn.append(menuBtnImg);
   menuCellIcons.append(menuBtn);
-
   menuCell.append(menuSpan, menuCellIcons);
   return menuCell;
 };
@@ -132,24 +126,22 @@ const createContactMenu = () => {
   const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
 
   if (document?.querySelector('.contact-menu__header')) return;
-  const cmAside = document.createElement('aside');
-  cmAside.setAttribute('class', 'contact-menu__header');
+  const contactMenuAside = document.createElement('aside');
+  contactMenuAside.setAttribute('class', 'contact-menu__header');
 
-  const cmwrapper = document.createElement('div');
-  cmwrapper.classList.add('cm-right');
-  const cm = document.createElement('div');
-  cm.classList.add('cm-right--top');
+  const contactMenuWrapper = document.createElement('div');
+  contactMenuWrapper.classList.add('cm-right');
+  const contactMenuBody = document.createElement('div');
+  contactMenuBody.classList.add('cm-right--top');
 
-  for (const v of Object.values(badgeData)) {
-    cm.append(
-      createBadge(v.cname, v.href, v.title, v.dataAcc, v.dataBef, v.idx),
-    );
+  for (const values of Object.values(badgeData)) {
+    const badge = createBadge(...Object.values(values));
+    contactMenuBody.append(badge);
   }
 
-  const cmFooter = document.createElement('div');
-  cmFooter.classList.add('cm-right--bottom');
-  cmFooter.classList.add('cm-right--bottom__body');
-  cmFooter.append(
+  const contactMenuFooter = document.createElement('div');
+  contactMenuFooter.classList.add('cm-right--bottom', 'cm-right--bottom__body');
+  contactMenuFooter.append(
     createCmBottomCell(
       '970-988-2548',
       'cm-copy--phone',
@@ -168,9 +160,9 @@ const createContactMenu = () => {
     ),
   );
 
-  cmwrapper.append(cm, cmFooter);
-  cmAside.append(cmwrapper);
-  body.append(cmAside);
+  contactMenuWrapper.append(contactMenuBody, contactMenuFooter);
+  contactMenuAside.append(contactMenuWrapper);
+  body.append(contactMenuAside);
 };
 
 export default createContactMenu;

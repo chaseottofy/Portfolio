@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: var(--headerHeight);
+  height: var(--header-height);
   max-width: 100vw;
   width: 100%;
   z-index: var(--z-header);
@@ -17,7 +17,7 @@
 
 .header-wrapper {
   padding: 0 .5rem;
-  max-width: var(--maxWidthMd);
+  max-width: var(--max-width-md);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--header-text-before);
+  color: #fff;
   opacity: .8;
 }
 
@@ -97,7 +97,7 @@
   margin: 0;
   border: 0;
   cursor: pointer;
-  color: var(--header-text-before);
+  color: #fff;
   opacity: .8;
   text-transform: uppercase;
   transform: scaleY(.9);

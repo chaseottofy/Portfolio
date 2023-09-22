@@ -27,7 +27,7 @@
   z-index: 9998;
   display: flex;
   opacity: 1;
-  height: min(600px, calc(95vh - var(--headerHeight)));
+  height: min(600px, calc(95vh - var(--header-height)));
   border: 1px solid var(--black1);
   box-shadow: var(--bs-lg);
   min-height: 400px;
@@ -337,7 +337,7 @@
   border-top: 1px solid var(--offsetwhite1);
   height: 100%;
   width: 100%;
-  padding: 2px var(--gap1);
+  padding: 2px .5rem;
   font-weight: 500;
 }
 

@@ -12,73 +12,40 @@
   --black2: #333;
   --black3: #333;
   --black4: #090909;
-  --grey1: #818080;
   --grey2: #1a1a1a;
   --grey3: #000;
   --grey4: #27272a;
   --white0: #fff;
-  --white1: rgb(247, 245, 245);
+  --white1: #f7f5f5;
   --white2: #cccbcb;
+  --white3: #e7ecf4;
   --offsetblack0: rgba(0, 0, 0, .9);
   --offsetblack1: rgba(0, 0, 0, .6);
   --offsetblack2: rgba(0, 0, 0, .2);
-
-  /* --offsetblack2: rgba(23, 23, 23, 0.6); */
   --offsetblack3: rgba(23, 23, 23, 0.1);
   --offsetblack4: rgba(8, 8, 8, 0.99);
-  --offsetwhite0: rgba(255, 255, 255, 0);
   --offsetwhite1: rgba(255, 255, 255, .05);
   --offsetwhite2: rgba(255, 255, 255, .1);
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
-  --offsetsecondary2: rgba(50, 180, 255, 0.1);
-  --offsetsecondary3: hsla(0deg, 0%, 100%, .4);
-  --red1: #cf007a;
-  --red2: #c0103e;
-  --red3: #F8688E;
+  --offsetsecondary2: hsla(0deg, 0%, 100%, .4);
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
   --bs-inset1:
-    inset 0 0 10px 8px rgba(74, 74, 74, 0.2);
-  --bs-inset2:
     inset 0 0 10px 8px rgba(17, 17, 17, .5),
     inset 0 0 10px 8px rgba(17, 17, 17, .3);
-  --bs-offset1:
-    rgba(136, 136, 136, .1) 0 0 3px 2px,
-    rgba(136, 136, 136, .05) 0 1px 3px 2px;
 
   /* SPECIFIC */
   --selection: #f81ce5;
-  --header-before: transparent;
-  --header-text-before: #fff;
-  --header-after: rgba(0, 0, 0, .6);
   --link: #7F95F5;
-  --dividerBg: rgba(64, 100, 143, 0.1);
   --linear1: linear-gradient(0deg,
       var(--offsetwhite1),
       var(--offsetwhite1)),
     radial-gradient(50% 50% at 50% 100%,
       var(--offsetwhite2) 0%,
-      var(--offsetwhite0) 100%);
-  --radial1:
-    radial-gradient(100% 100% at 50% 0,
-      var(--offsetblack0) 0,
-      var(--offsetblack1) 100%),
-    linear-gradient(105deg,
-      var(--offsetwhite2) 8%,
-      var(--offsetwhite1) 30%,
-      var(--offsetblack2) 70%,
-      var(--offsetblack1) 95%);
-
-  /* 
-#040D14
-#044687
-#043258
-#042137
-#042C44
-*/
+      transparent 100%);
 }
 
 .theme__light {
@@ -95,71 +62,40 @@
   --black2: #d4d4d4;
   --black3: #555;
   --black4: #fafafa;
-  --grey1: #999;
   --grey2: #d9d9d9;
   --grey3: #fff;
   --grey4: #f7f7f8;
   --white0: #000;
   --white1: #171717;
   --white2: #4c4c4c;
+  --white3: #212122;
   --offsetblack0: rgba(255, 255, 255, 1);
   --offsetblack1: rgba(255, 255, 255, .8);
   --offsetblack2: rgba(255, 255, 255, .5);
   --offsetblack3: rgba(255, 255, 255, .2);
   --offsetblack4: rgba(255, 255, 255, .96);
-  --offsetwhite0: rgba(0, 0, 0, 0);
   --offsetwhite1: rgba(0, 0, 0, .05);
   --offsetwhite2: rgba(0, 0, 0, .1);
-
-  /* --offsetsecondary1: rgba(235, 54, 127, .2);
-  --offsetsecondary2: rgba(121, 40, 202, .2); */
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
-  --offsetsecondary2: rgba(50, 180, 255, 0.1);
-  --offsetsecondary3: rgba(0,0,0, 0.3);
-  --red1: #cf007a;
-  --red2: #c0103e;
-  --red3: #A60731;
+  --offsetsecondary2: rgba(0,0,0, 0.3);
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
   --bs-inset1:
-    0 0 0 #ccc,
-    0 0 0 #fff,
-    3px 3px 3px #ccc inset,
-    -3px -3px 3px #fff inset;
-  --bs-inset2:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
-  --bs-offset1:
-    rgba(85, 85, 85, .2) 0 1px 2px 0,
-    rgba(85, 85, 85, .1) 0 1px 3px 0;
 
   /* SPECIFIC */
   --selection: #7fffe1;
-  --header-before: transparent;
-  --header-text-before: #fff;
-  --header-after: rgba(255, 255, 255, .9);
   --link: #153DEF;
-  --dividerBg: transparent;
   --linear1: linear-gradient(0deg,
       rgba(23, 23, 23, .4),
       rgba(8, 8, 8, .05)),
     radial-gradient(50% 50% at 50% 100%,
       rgba(40, 40, 40, .2) 0%,
       rgba(0, 0, 0, .8) 100%);
-  --radial1:
-    radial-gradient(100% 100% at 50% 0,
-      var(--offsetblack0) 0,
-      var(--offsetblack1) 100%),
-    linear-gradient(105deg,
-      var(--offsetwhite2) 8%,
-      var(--offsetwhite1) 30%,
-      var(--offsetblack2) 70%,
-      var(--offsetblack1) 95%);
-  --radial2:
-    linear-gradient(to bottom, #044687 0, #040D14 50%);
 }
 
 /*

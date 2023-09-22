@@ -164,8 +164,6 @@
       var(--black0),
       var(--accent-1));
   padding: 0 1.5rem;
-
-  /* margin-top: 1.5rem; */
   margin: 1.5rem 0 1.5rem 0;
   font-size: .875rem;
   overflow: hidden;

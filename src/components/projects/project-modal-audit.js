@@ -1,5 +1,7 @@
 import projectAuditsData from '../../data/json/projects/projects-audit-data.json';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
+import createLink from '../ui/link';
+import createButton from '../ui/button';
 
 const closeLH = (e) => {
   if (e.target.classList.contains('lighthouse-modal--wrapper')
@@ -25,10 +27,7 @@ const configAuditModal = (title, link, score, content) => {
   const brhead = document.createElement('br');
   lhtitle.append(tempspan, brhead, title);
 
-  const closeBtn = document.createElement('button');
-  closeBtn.classList.add('close-lh-btn');
-  closeBtn.textContent = 'x';
-
+  const closeBtn = createButton('x', 'close-lh-btn', 'close audit modal', 'button');
   const lhbody = document.createElement('div');
   lhbody.classList.add('lighthouse-modal__body');
   const lhmain = document.createElement('div');
@@ -37,14 +36,12 @@ const configAuditModal = (title, link, score, content) => {
   mainscore.textContent = '100';
   mainscore.classList.add('lh-main__score');
 
-  const screenshotLinkBtn = document.createElement('a');
-  screenshotLinkBtn.href = link;
-  screenshotLinkBtn.title = 'pagespeed.web.dev';
-  screenshotLinkBtn.target = '_blank';
-  screenshotLinkBtn.rel = 'noopener noreferrer';
-  screenshotLinkBtn.textContent = 'View latest audit';
-  screenshotLinkBtn.classList.add('lh-main__score-title');
-
+  const screenshotLinkBtn = createLink(
+    link,
+    'pagespeed.web.dev',
+    'lh-main__score-title',
+    'View latest audit',
+  );
   lhheader.append(lhtitle, closeBtn);
   lhmain.append(mainscore, screenshotLinkBtn);
   lhbody.append(lhmain);
@@ -91,12 +88,7 @@ const createAuditModal = (e) => {
 
   const { [targetProject]: activeProjectData, content } = projectAuditsData;
   const { title, link, score } = activeProjectData;
-  const lightHouseInstance = configAuditModal(
-    title,
-    link,
-    score,
-    content,
-  );
+  const lightHouseInstance = configAuditModal(title, link, score, content);
   body.append(lightHouseInstance);
   useHandleModalOffset();
   e.target.blur();

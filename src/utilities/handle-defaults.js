@@ -1,6 +1,7 @@
 import initDisableOnLoadElements from './set-disableonload-elements';
 import initCloseOnEscElements from './set-closeonesc-elements';
 import initDateTimeElements from './set-date-time-elements';
+import initTooltipElements from './set-tooltip-elements';
 import initMailtoElements from './set-mailto-elements';
 import initCopyElements from './set-copy-elements';
 import initTheme from './set-theme';
@@ -23,6 +24,7 @@ const initDefaults = () => {
   initDisableOnLoadElements();
   initCloseOnEscElements();
   initDateTimeElements();
+  initTooltipElements();
   initMailtoElements();
   initCopyElements();
   initTheme();

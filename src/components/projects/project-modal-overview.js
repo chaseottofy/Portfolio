@@ -1,5 +1,6 @@
 import projectJSON from '../../data/json/projects/projects-overview-data.json';
-
+import createLink from '../ui/link';
+import createButton from '../ui/button';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 
 const closeProjectOverview = (e) => {
@@ -11,16 +12,6 @@ const closeProjectOverview = (e) => {
 };
 
 const createProjectHR = () => document.createElement('hr');
-
-const projectLinkTemplate = (link, text, tooltip) => {
-  const linkEl = document.createElement('a');
-  linkEl.href = link;
-  linkEl.target = '_blank';
-  linkEl.rel = 'noopener noreferrer';
-  linkEl.textContent = text;
-  linkEl.title = tooltip;
-  return linkEl;
-};
 
 const projectFeatureTemplate = (featureName, featureValue) => {
   const featureTitle = document.createElement('h4');
@@ -61,12 +52,7 @@ const configProjectOverview = (title, links, features) => {
   const br = document.createElement('br');
   poModalTitle.textContent = title;
 
-  const closePoBtn = document.createElement('button');
-  closePoBtn.textContent = 'x';
-  closePoBtn.classList.add('po-header--close');
-  closePoBtn.title = 'Close Project Overview';
-  closePoBtn.ariaLabel = 'button';
-
+  const closePoBtn = createButton('x', 'po-header--close', 'close project overview', 'button');
   // MODAL HEADER : APPEND
   poSubheader.append(poModalTitle, br, poSubheaderText);
   poModalHeader.append(poSubheader, closePoBtn);
@@ -85,7 +71,7 @@ const configProjectOverview = (title, links, features) => {
   // create <UL><LI> cascade for each link
   for (const [key, val] of Object.entries(links)) {
     const [link, tooltip] = val;
-    linksWrapper.append(projectLinkTemplate(link, key, tooltip));
+    linksWrapper.append(createLink(link, tooltip, null, key));
   }
   poModalBody.append(linksWrapper);
 

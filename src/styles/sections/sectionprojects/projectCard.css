@@ -188,7 +188,7 @@
   height: 2.25rem;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: var(--bs-inset2);
+  box-shadow: var(--bs-inset1);
   border: 1px solid var(--offsetwhite2);
   background: var(--black0);
   display: flex;

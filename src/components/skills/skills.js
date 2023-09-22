@@ -1,4 +1,5 @@
 import svgIcons from '../../utilities/get-svg';
+import createIcon from '../ui/icon';
 
 const createSkill = (content, imgSrc, title) => {
   const skillCell = document.createElement('div');
@@ -18,15 +19,12 @@ const createSkill = (content, imgSrc, title) => {
   }
   const skillImgWrapper = document.createElement('div');
   skillImgWrapper.classList.add('skill-img--wrapper');
-  const skillImg = new Image();
-  if (title.toLowerCase() === 'wordpress') {
-    skillImg.classList.add('skill-img--wp');
-  }
-  skillImg.src = imgSrc;
-  skillImg.type = 'image/svg+xml';
-  skillImg.alt = title;
+  const skillImg = createIcon(
+    title.toLowerCase() === 'wordpress' ? 'skill-img--wp' : null,
+    imgSrc,
+    title,
+  );
   skillImgWrapper.append(skillImg);
-
   skillCell.append(skillTitle, skillContent, skillImgWrapper);
   return skillCell;
 };

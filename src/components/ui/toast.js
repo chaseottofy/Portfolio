@@ -1,4 +1,5 @@
 import handleState from '../../hooks/handle-state';
+import createButton from './button';
 
 const toastWrapper = document.querySelector('.toast-wrapper');
 
@@ -54,9 +55,7 @@ const createToast = (text, pre, type = 'default', time = 2) => {
   message.classList.add('toast-message');
   message.textContent = pre ? `${pre} ${text}` : `${text}`;
 
-  const closeBtn = document.createElement('button');
-  closeBtn.classList.add('toast-close');
-  closeBtn.textContent = 'x';
+  const closeBtn = createButton('x', 'toast-close', 'close toast', 'button');
   closeBtn.addEventListener('click', () => {
     wrapper.remove();
     if (toastIndex() > 0) {

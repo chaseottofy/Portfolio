@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
-    // devtool: IS_PRODUCTION ? 'source-map' : 'inline-source-map',
+    devtool: IS_PRODUCTION ? false : 'inline-source-map',
 
     output: {
       path: path.resolve(__dirname, 'dist'),

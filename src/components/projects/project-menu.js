@@ -1,16 +1,15 @@
 import cardData from '../../data/json/projects/projects-card-data.json';
+import createLink from '../ui/link';
 
 const createFloatOptions = (options) => {
   const floatOptions = document.createElement('ul');
   floatOptions.classList.add('float-options');
 
-  // for (const option of options) {
   for (let i = 0; i < options.length; i += 1) {
     const { title, subtitle, href } = options[i];
     const floatOption = document.createElement('li');
-    const floatOptionLink = document.createElement('a');
-    floatOptionLink.href = href;
-    floatOptionLink.title = `Scroll to ${title}`;
+    const linkTitle = `Scroll to ${title}`;
+    const floatOptionLink = createLink(href, linkTitle, null, null, '_self');
     const floatOptionTitle = document.createElement('span');
     floatOptionTitle.dataset.projTitleIndex = `${i + 1}.`;
     const floatOptionSubtitle = document.createElement('span');
@@ -20,7 +19,6 @@ const createFloatOptions = (options) => {
     floatOption.append(floatOptionLink);
     floatOptions.append(floatOption);
   }
-
   return floatOptions;
 };
 

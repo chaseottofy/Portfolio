@@ -80,12 +80,11 @@
 }
 
 .pf-stack::before {
-  /* border-image: linear-gradient(to right bottom, #818080, #1a1a1a, #000); */
   border-radius: 50%;
   content: "";
   position: absolute;
   border: 12px solid transparent;
-  border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  border-image: linear-gradient(to right bottom, var(--accent-6), var(--black1), var(--black0));
   border-image-slice: 1;
   height: 100%;
   left: 0;

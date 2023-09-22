@@ -12,7 +12,7 @@
 
 .popup-picture__header {
   overflow: hidden;
-  height: var(--headerHeight);
+  height: var(--header-height);
   width: 100%;
 }
 
@@ -54,13 +54,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - var(--headerHeight));
+  height: calc(100vh - var(--header-height));
   padding: 1rem;
   margin: 0 auto;
 }
 
 .popup-picture img {
-  height: min(var(--htvh), calc(90vh - var(--headerHeight)));
+  height: min(var(--htvh), calc(90vh - var(--header-height)));
   object-fit: contain;
   object-position: center;
   image-rendering: -o-crisp-edges;
@@ -84,6 +84,6 @@
   }
 
   .popup-picture img {
-    height: min(var(--htvh2), calc(90vh - var(--headerHeight)));
+    height: min(var(--htvh2), calc(90vh - var(--header-height)));
   }
 }

@@ -4,13 +4,13 @@
   margin: 0 auto 6rem auto;
   padding: 1.5rem 0;
   z-index: var(--z-modal);
-  max-width: var(--maxWidthMd);
+  max-width: var(--max-width-md);
   border-bottom: 1px solid var(--grey2);
 }
 
 .floating-menu--fixed {
   position: fixed;
-  top: var(--headerHeight);
+  top: var(--header-height);
 }
 
 .float-options {
@@ -70,7 +70,7 @@
 }
 
 .float-options li a:hover {
-  text-shadow: 1px 1px 12px var(--offsetsecondary3);
+  text-shadow: 1px 1px 12px var(--offsetsecondary2);
   background: var(--black1);
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-duration: .15s;

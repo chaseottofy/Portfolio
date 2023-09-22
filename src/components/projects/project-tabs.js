@@ -1,4 +1,4 @@
-import createSpinner from '../spinner/spinner';
+import createSpinner from '../ui/spinner';
 import handleState from '../../hooks/handle-state';
 import imageSets from './import-project-images';
 import {

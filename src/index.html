@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
+  <title>Chase Ottofy</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta name="author" content="Chase Ottofy">
   <meta name="description" content="Portfolio for Chase Ottofy">
@@ -14,9 +16,15 @@
   <meta property="og:site_name" content="Portfolio">
   <meta property="og:url" content="https://chaseottofy.github.io/Portfolio">
   <meta name="robots" content="index, follow">
-  <title>Chase Ottofy</title>
   <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link href="style.scss" rel="stylesheet">
+  <!-- <script>
+    (function () {
+      var d = document.documentElement;
+      d.style.setProperty('--vw', (d.clientWidth || window.innerWidth) / 100 + 'px');
+      d.style.setProperty('--vh', (d.clientHeight || window.innerHeight) / 100 + 'px');
+    }())
+  </script> -->
   <script src="index.js" defer="defer"></script>
 </head>
 
@@ -36,7 +44,7 @@
   </filter>
   </svg>
   <!-- HEADER (FIXED)-->
-  <header class="header header-animate">
+  <header class="header">
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
         <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
@@ -93,11 +101,11 @@
         <h1>chase ottofy</h1>
       </div>
       <div class="intro-container--links">
-        <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">
+        <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy">
           <img src="./images/svg/githuboutline.svg" alt>
           Github
         </a>
-        <a href="mailto:ottofy@zohomail.com" title="Open Mail-to">
+        <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com">
           <img src="./images/svg/mailto.svg" alt>
           Email
         </a>
@@ -108,11 +116,11 @@
   <!-- MAIN (projects > skills > about > contact) -->
   <aside class="section-divider" style="z-index: 62 !important;"></aside>
   <aside class="section-gradient--l" style="z-index: 61 !important;"></aside>
+
   <main class="main">
 
     <!-- SECTION : PROJECTS -->
     <article class="section-container projects-container" id="projects-top">
-
       <div class="section-title section-projects-title">
         <h2>01 —</h2>
         <h3>PROJECTS</h3>
@@ -414,6 +422,12 @@
 
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
+  <aside class="tooltip" style="left:0;top:0;" data-tooltip-active="false">
+    <span class="tooltip-caret">
+      <img src="images/svg/caretup.svg" alt="">
+    </span>
+    <span class="tooltip-content"></span>
+  </aside>
 </body>
 
 </html>

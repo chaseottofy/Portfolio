@@ -1,5 +1,5 @@
 import useCopyToClipboard from '../hooks/handle-copy';
-import createToast from '../components/toast/toast';
+import createToast from '../components/ui/toast';
 
 const setCopy = (text) => {
   useCopyToClipboard(text);

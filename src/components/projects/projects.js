@@ -2,6 +2,9 @@ import imageSets from './import-project-images';
 import svgIcons from '../../utilities/get-svg';
 import initCalendarTabs from './project-tabs';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
+import createIcon from '../ui/icon';
+import createLink from '../ui/link';
+import createButton from '../ui/button';
 
 import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';
@@ -12,25 +15,6 @@ import {
   aspectSmallWidth,
   projectImageType,
 } from '../../data/constants';
-
-const createIcon = (cName, src, alt) => {
-  const icon = new Image();
-  if (cName) icon.classList.add(cName);
-  icon.alt = alt || '';
-  icon.src = src || 'img-icon';
-  return icon;
-};
-
-const createLink = (href, title, cName, text) => {
-  const link = document.createElement('a');
-  if (cName) link.classList.add(cName);
-  if (text) link.textContent = text;
-  link.title = title;
-  link.href = href;
-  link.target = '_blank';
-  link.rel = 'noreferrer';
-  return link;
-};
 
 const createSubheaderLink = (cName, href, icon, alt, children) => {
   const linkwrapper = document.createElement('div');
@@ -45,7 +29,6 @@ const createSubheaderLink = (cName, href, icon, alt, children) => {
     link.append(icon);
     linkwrapper.append(link);
   }
-
   return linkwrapper;
 };
 
@@ -100,7 +83,7 @@ const createProjectPicture = (images, cNames, attr1, attr2) => {
     if (i === 0) {
       img.src = src;
       img.srcset = `${src} 1x, `;
-      img.alt = alt;
+      img.alt = alt || 'project image';
       img.style = 'max-width:100vw;';
       img.loading = 'lazy';
     } else {
@@ -119,13 +102,11 @@ const createProjectFooterButton = (
   text,
   callback,
 ) => {
-  const button = document.createElement('button');
-  button.classList.add(cName);
-  button.ariaLabel = 'button';
-  button.textContent = text;
-  button.setAttribute(attrName, dataText);
-  button.addEventListener('click', callback);
-  return button;
+  const projFooterBtn = createButton(text, cName, null, 'button');
+  projFooterBtn.dataset.tooltipText = `Open ${text} Modal`;
+  projFooterBtn.setAttribute(attrName, dataText);
+  projFooterBtn.addEventListener('click', callback);
+  return projFooterBtn;
 };
 
 const createCalTabs = () => {
@@ -202,7 +183,7 @@ const handlePopupImage = (e) => {
   if (!targetImg) return;
   const swapImg = new Image();
   swapImg.src = targetImg.currentSrc;
-  swapImg.alt = targetImg.alt;
+  swapImg.alt = targetImg.alt || 'project image';
   swapImg.loading = 'eager';
   createFullImagePopup(swapImg);
 };

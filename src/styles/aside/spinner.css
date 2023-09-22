@@ -15,7 +15,7 @@
 
 .spinner-cell {
   animation: spin 1.2s linear infinite;
-  background: var(--grey1);
+  background: var(--accent-6);
   border-radius: 5px;
   height: 8%;
   left: -10%;
