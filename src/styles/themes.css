@@ -77,7 +77,7 @@
   --offsetwhite1: rgba(0, 0, 0, .05);
   --offsetwhite2: rgba(0, 0, 0, .1);
   --offsetsecondary1: rgba(50, 145, 255, 0.1);
-  --offsetsecondary2: rgba(0,0,0, 0.3);
+  --offsetsecondary2: rgba(0, 0, 0, 0.3);
   --bs-md:
     rgba(0, 0, 0, .2) 0 1px 2px 0,
     rgba(0, 0, 0, .1) 0 1px 3px 0;
@@ -90,6 +90,8 @@
   /* SPECIFIC */
   --selection: #7fffe1;
   --link: #153DEF;
+
+  /* --linear1: rgba(255, 255, 255, .05); */
   --linear1: linear-gradient(0deg,
       rgba(23, 23, 23, .4),
       rgba(8, 8, 8, .05)),

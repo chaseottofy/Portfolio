@@ -1,10 +1,11 @@
 import imageSets from './import-project-images';
 
-import handleTab from './project-tabs';
+import handleTab from './handle-project-tabs';
+import handlePopupImage from './handle-popup-image';
+import createProjectTabs from './project-tabs';
 import createProjectMenu from './project-menu';
 import createProjectFooterButtons from './project-footer';
 
-import createFullImagePopup from '../ui/image-popup';
 import createIcon from '../ui/icon';
 import createLink from '../ui/link';
 
@@ -14,36 +15,7 @@ import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
 import cardData from '../../data/json/projects/projects-card-data.json';
 import { projectImageType } from '../../data/constants';
 
-const createSubheaderLink = (cName, href, icon, alt, children) => {
-  const linkwrapper = document.createElement('div');
-  linkwrapper.classList.add(`pc__subheader--${cName}`);
-  const link = createLink(href, alt, null, null);
-
-  if (children) {
-    const linkTxt = document.createTextNode(`Demo: ${alt}`);
-    link.append(icon, linkTxt);
-    linkwrapper.append(link, children);
-  } else {
-    link.append(icon);
-    linkwrapper.append(link);
-  }
-  return linkwrapper;
-};
-
-const createStack = (icon) => {
-  const stack = document.createElement('div');
-  stack.classList.add('pf-stack');
-  stack.append(icon);
-  return stack;
-};
-
-const createProjectPicture = (images, cNames, attr1, attr2) => {
-  const projectImage = document.createElement('picture');
-
-  if (attr1) { projectImage.setAttribute(...Object.values(attr1)); }
-  if (attr2) { projectImage.setAttribute(...Object.values(attr2)); }
-  for (const cName of cNames) { projectImage.classList.add(cName); }
-
+const createProjectPicture = (picture, images) => {
   const img = new Image();
   for (let i = 0; i < images.length; i += 1) {
     const { src, alt, media } = images[i];
@@ -56,125 +28,126 @@ const createProjectPicture = (images, cNames, attr1, attr2) => {
       img.src = src;
       img.srcset = `${src} 1x, `;
       img.alt = alt || 'project image';
-      img.style = 'max-width:100vw;';
       img.loading = 'lazy';
     } else {
       img.srcset = `${img.srcset + src} ${i + 1}x`;
     }
-    projectImage.append(source);
+    picture.append(source);
   }
-  projectImage.append(img);
-  return projectImage;
+  picture.append(img);
 };
 
-const createCalTabs = () => {
-  const createTab = (title, tabIdx, checked, listener) => {
-    const labSm = title[0];
-    const labelTxt = `${title} View`;
-    const wrapper = document.createElement('span');
-    const input = document.createElement('input');
-    input.classList.add('proj-header__tabinput');
-    input.id = `proj-calendar-${title.toLowerCase()}`;
-    input.type = 'radio';
-    input.name = 'proj-calendar--radio';
-    input.value = title;
-    input.checked = checked;
-    const label = document.createElement('label');
-    label.classList.add('proj-cal--tab');
-    label.dataset.labAfter = 'view';
-    label.dataset.labSm = labSm;
-    label.dataset.tabIdx = tabIdx;
-    label.setAttribute('for', `proj-calendar-${title.toLowerCase()}`);
-    label.ariaLabel = labelTxt;
-    label.textContent = `${title} `;
-    wrapper.append(input, label);
+const createTabs = (tabs, title) => {
+  const tabWrapper = document.createElement('div');
+  tabWrapper.classList.add('pc__header-tabs');
+  for (let i = 0; i < tabs.length; i += 1) {
+    const tab = tabs[i];
 
-    input.addEventListener('change', () => {
-      listener(tabIdx);
-    });
-    return wrapper;
-  };
+    const identifiers = {
+      tabId: `proj-${title}-${tab.toLowerCase()}`,
+      projName: title,
+      suffix: 'View',
+    };
 
-  const tabNames = ['Day', 'Week', 'Month', 'Year', 'List'];
-  const calTabs = document.createElement('div');
-  calTabs.classList.add('pc__header-tabs');
-  for (let i = 0; i < tabNames.length; i += 1) {
-    calTabs.append(createTab(tabNames[i], i + 1, i === 0, handleTab));
+    tabWrapper.append(createProjectTabs(
+      tab,
+      identifiers,
+      i + 1,
+      i === 0,
+      handleTab,
+    ));
   }
-
-  return calTabs;
+  return tabWrapper;
 };
 
-const handlePopupImage = (e) => {
-  const imgWrapper = e.target.closest('picture');
-  if (!imgWrapper) return;
-  const targetImg = imgWrapper?.lastElementChild;
-  if (!targetImg) return;
-
-  const swapImg = new Image();
-  swapImg.src = targetImg.currentSrc;
-  swapImg.alt = targetImg.alt || 'project image';
-  swapImg.loading = 'eager';
-  createFullImagePopup(swapImg);
-};
-
-// 1122 x 847
-const createProjectCard = (
+/**
+ * @param {HTMLDivElement} projectCell
+ * @param {Array<string> | []} tabs
+ * @param {string} projLink
+ * @param {string} githubLink
+ * @param {string} title
+ * @param {string} published
+ * @returns {void}
+ */
+const createProjectHeader = (
   projectCell,
-  images,
-  isCalendar,
-  title,
+  tabs,
   projLink,
   githubLink,
-  stacks,
-  lighthouseKey,
-  description,
+  title,
   published,
+  iconSrcs,
 ) => {
+  const { lock, github, arrow } = iconSrcs;
+
+  const lockIcon = createIcon('img-icon', lock, null);
+  const githubIcon = createIcon('img-icon', github, null);
+  const arrowRightIcon = createIcon('img-icon', arrow, null);
+
   const projectHeader = projectCell.querySelector('.project-content__header');
-  const projectSubheader = projectCell.querySelector('.project-content__subheader');
+  if (tabs.length > 1) {
+    projectHeader.append(createTabs(tabs));
+  }
+
+  const publishedText = projectCell.querySelector('.content-published--text');
+  publishedText.textContent = `Published: ${published}`;
+
+  const searchArrowRight = projectCell.querySelector('.search-arrowright');
+  searchArrowRight.append(arrowRightIcon);
+
+  // search bar
+  const subheaderSearch = projectCell.querySelector('.pc__subheader--search');
+  const subheaderSearchLink = createLink(projLink, 'demo', null, `Demo: ${title}`, '_self');
+  subheaderSearch.prepend(subheaderSearchLink);
+  subheaderSearchLink.prepend(lockIcon);
+
+  // Github repo button
+  const subheaderRepo = projectCell.querySelector('.pc__subheader--links');
+  const subheaderRepoLink = createLink(githubLink, 'github repo', null, 'Repo');
+  const subheaderGhText = document.createElement('span');
+  subheaderGhText.textContent = 'Repo';
+  subheaderRepoLink.prepend(githubIcon);
+  subheaderRepo.append(subheaderRepoLink);
+};
+
+/**
+ * @param {HTMLDivElement} projectCell
+ * @param {Array<{src: string, alt: string, media: string}>} images
+ * @returns {void}
+ */
+const createProjectBody = (projectCell, images) => {
+  console.log(images);
   const projectBody = projectCell.querySelector('.project-content__body');
+  const projectPicture = projectBody.firstElementChild;
+  createProjectPicture(projectPicture, images);
+};
+
+/**
+ * @param {HTMLDivElement} projectCell
+ * @param {Array<string>} stacks
+ * @param {string} description
+ * @param {string} title
+ * @param {string} lighthouseKey
+ * @returns {void}
+ */
+const createProjectFooter = (projectCell, stacks, description, title, lighthouseKey) => {
   const projectFooterStacks = projectCell.querySelector('.pf-stacks');
   const projectFooterTitle = projectCell.querySelector('.project-footer__title');
   const projectFooterBtns = projectCell.querySelector('.project-footer-btns');
   const projectFooterDesc = projectCell.querySelector('.project-footer__desc');
-  const publishedText = projectCell.querySelector('.content-published--text');
 
-  const lockIcon = createIcon('img-icon', svgIcons.lock, null);
-  const ghIcon = createIcon('img-icon', svgIcons.github, null);
-
-  const subheaderGhText = document.createElement('span');
-  subheaderGhText.textContent = 'Repo';
-  const subheaderGh = createSubheaderLink('links', githubLink, ghIcon, 'github repo', null);
-  subheaderGh.firstElementChild.append(subheaderGhText);
-
-  projectFooterStacks.dataset.pfStacks = stacks.join(' + ');
-
-  if (isCalendar) {
-    projectHeader.append(createCalTabs());
-    projectBody.append(createProjectPicture(
-      images,
-      ['project-image__calendar', 'cal-current'],
-      { attrName: 'data-cal-nth', dataText: '1' },
-      { attrName: 'data-hasimg', dataText: 'true' },
-    ));
-  } else {
-    const arrowDec = document.createElement('span');
-    arrowDec.classList.add('search-arrowright');
-    arrowDec.append(createIcon('img-icon', svgIcons.arrow, null));
-    projectSubheader.append(createSubheaderLink('search', projLink, lockIcon, title, arrowDec));
-    projectBody.append(createProjectPicture(images, ['proj-img-sm'], null, null));
-  }
-
-  projectSubheader.append(subheaderGh);
-  publishedText.textContent = `Published: ${published}`;
-
+  // create icons of tech used in project (stacks)
   for (const stack of stacks) {
-    projectFooterStacks.append(createStack(
-      createIcon(`${stack}-icon`, svgIcons[stack], null),
-    ));
+    const iconWrapper = document.createElement('div');
+    iconWrapper.classList.add('pf-stack');
+    const stackIcon = createIcon(`${stack}-icon`, svgIcons[stack], null);
+    iconWrapper.append(stackIcon);
+    projectFooterStacks.append(iconWrapper);
   }
 
+  // dataset.pfStacks represents the names of the stacks used in the project conjoined by ' + '
+  // will appear adjacent to the icon wrapper for the stacks.
+  projectFooterStacks.dataset.pfStacks = stacks.join(' + ');
   projectFooterDesc.textContent = `${description}`;
   projectFooterTitle.textContent = title;
   projectFooterBtns.append(...createProjectFooterButtons(lighthouseKey));
@@ -183,14 +156,20 @@ const createProjectCard = (
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
   const {
-    cal, markdown, blog, monthPicker,
+    cal, blog, monthPicker, markdown,
   } = imageSets;
   const imgArrays = [
     getImgArrayFormatted(cal),
-    getImgArrayFormatted(markdown),
     getImgArrayFormatted(blog),
     getImgArrayFormatted(monthPicker),
+    getImgArrayFormatted(markdown),
   ];
+
+  const iconSrcs = {
+    lock: svgIcons.lock,
+    github: svgIcons.github,
+    arrow: svgIcons.arrow,
+  };
 
   const {
     calendarCard, blogCard, monthPickerCard, markdownCard,
@@ -206,23 +185,17 @@ const createProjectCards = () => {
       lighthouseKey,
       description,
       published,
+      tabs,
     } = cardDataArray[i];
 
-    const projectCell = projectCells[i];
-    projectCell.id = `proj-${lighthouseKey}-top`;
+    const cell = projectCells[i];
+    const projectImages = imgArrays[i];
+    createProjectHeader(cell, tabs, projLink, githubLink, title, published, iconSrcs);
+    createProjectBody(cell, projectImages);
+    createProjectFooter(cell, stacks, description, title, lighthouseKey);
 
-    createProjectCard(
-      projectCell,
-      imgArrays[i],
-      i === 0,
-      title,
-      projLink,
-      githubLink,
-      stacks,
-      lighthouseKey,
-      description,
-      published,
-    );
+    // give project cell ID for floating menu scroll
+    cell.id = `proj-${lighthouseKey}-top`;
   }
 };
 

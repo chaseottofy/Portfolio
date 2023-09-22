@@ -18,7 +18,6 @@ const configHeader = () => {
   );
 
   const setHeaderBackground = () => {
-    console.log('ran');
     const { scrollY } = window;
     if (scrollY > fadeThreshold) {
       // use a flag to prevent unnecessary style changes
@@ -40,7 +39,7 @@ const configHeader = () => {
 };
 
 const initHeader = () => {
-  configHeader();
+  // configHeader();
 };
 
 export default initHeader;

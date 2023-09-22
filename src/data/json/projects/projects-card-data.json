@@ -9,7 +9,14 @@
     ],
     "lighthouseKey": "calendar",
     "description": "Zero dependency clone of Google Calendar.",
-    "published": "Jan 15, 2023"
+    "published": "Jan 15, 2023",
+    "tabs": [
+      "Day",
+      "Week",
+      "Month",
+      "Year",
+      "List"
+    ]
   },
   "blogCard": {
     "title": "NextJS Blog",
@@ -21,7 +28,8 @@
     ],
     "lighthouseKey": "blog",
     "description": "Next.js Blog with Contentlayer integration.",
-    "published": "Sep 14, 2023"
+    "published": "Sep 14, 2023",
+    "tabs": []
   },
   "monthPickerCard": {
     "title": "Month Picker Plugin",
@@ -32,7 +40,8 @@
     ],
     "lighthouseKey": "monthpicker",
     "description": "Lightweight month interface datepicker library for Vanilla JS & Typescript.",
-    "published": "Aug 27, 2023"
+    "published": "Aug 27, 2023",
+    "tabs": []
   },
   "markdownCard": {
     "title": "Markdown Lite",
@@ -44,7 +53,8 @@
     ],
     "lighthouseKey": "markdown",
     "description": "Custom React markdown editor with real-time preview.",
-    "published": "Feb 26, 2023"
+    "published": "Feb 26, 2023",
+    "tabs": []
   },
   "optionsData": {
     "calendar": {

@@ -43,11 +43,11 @@
 }
 
 .skills-cell {
+  min-height:  240px;
   grid-template-columns: 1fr 4rem;
   width: 100%;
   display: grid;
   position: relative;
-  min-height: 140px;
   height: 100%;
   padding: 1rem 0;
   margin: 0 auto;
@@ -78,7 +78,6 @@
   width: 100%;
   align-items: center;
   padding: 3rem 1rem 1rem 1rem;
-  min-height: 140px;
 }
 
 .skill-title {

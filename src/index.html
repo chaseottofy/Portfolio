@@ -112,18 +112,19 @@
       </div>
 
       <div class="section-excerpt">
-        <p>
-          From streamlined packages to robust clones like Google Calendar, I've always aimed for versatility and meticulous detail. Regardless of when they were built, each project showcases my commitment to accessibility, performance, and responsiveness. Some earlier works might be less polished, but they stand testament to my early knack for optimizing solutions.
-          <br>
-        </p>
+        <p>From streamlined packages to robust clones like Google Calendar, I've always aimed for versatility and meticulous detail. Regardless of when they were built, each project showcases my commitment to accessibility, performance, and responsiveness. Some earlier works might be less polished, but they stand testament to my early knack for optimizing solutions.<br></p>
       </div>
 
       <!-- created @/src/template/create-projoptions -->
       <div class="floating-menu">
         <ul class="float-options">
-
+          <li class="float-option"></li>
+          <li class="float-option"></li>
+          <li class="float-option"></li>
+          <li class="float-option"></li>
         </ul>
       </div>
+
       <!-- All project cell content is configured @/src/template/create-card -->
       <div class="projects-grid">
         <!-- calendar project -->
@@ -131,17 +132,26 @@
           <div class="project-cell__content">
             <div class="project-content__header"></div>
             <div class="project-content__subheader">
-              <div class="pc__subheader--search" data-tooltip="Go to live site">
-                <a class="cal-search" data-search-after="day" href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer"><img class="img-icon search-lock" src="./images/svg/lock.svg" alt>Demo: Google Calendar 2.0</a>
+              <!-- <div class="pc__subheader--search" data-tooltip="Go to live site">
+                <a href="https://chaseottofy.github.io/google-calendar-clone-vanilla/" title="Go to Live Site" target="_blank" rel="noreferrer">
+                  <img class="img-icon search-lock" src="./images/svg/lock.svg" alt>
+                  Demo: Google Calendar 2.0
+                </a>
                 <span class="search-arrowright">
                   <img class="img-icon" src="./images/svg/arrowRight.svg" alt>
                 </span>
+              </div> -->
+              <div class="pc__subheader--search">
+                <span class="search-arrowright"></span>
               </div>
+              <div class="pc__subheader--links"></div>
             </div>
             <div class="project-content__published">
               <span class="content-published--text"></span>
             </div>
-            <div class="project-content__body"></div>
+            <div class="project-content__body">
+              <picture data-cal-nth="1" data-hasimg="true" class="proj-img cal-current"></picture>
+            </div>
           </div>
 
           <div class="project-cell__footer">
@@ -161,12 +171,19 @@
         <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm"></div>
+              <div class="project-content__subheader subheader-sm">
+                <div class="pc__subheader--search">
+                  <span class="search-arrowright"></span>
+                </div>
+                <div class="pc__subheader--links"></div>
+              </div>
             </div>
             <div class="project-content__published">
               <span class="content-published--text"></span>
             </div>
-            <div class="project-content__body pcb-sm"></div>
+            <div class="project-content__body pcb-sm">
+              <picture class="proj-img"></picture>
+            </div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
@@ -179,16 +196,24 @@
             </div>
           </div>
         </div>
+
         <!-- project cell -->
         <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm"></div>
+              <div class="project-content__subheader subheader-sm">
+                <div class="pc__subheader--search">
+                  <span class="search-arrowright"></span>
+                </div>
+                <div class="pc__subheader--links"></div>
+              </div>
             </div>
             <div class="project-content__published">
               <span class="content-published--text"></span>
             </div>
-            <div class="project-content__body pcb-sm"></div>
+            <div class="project-content__body pcb-sm">
+              <picture class="proj-img"></picture>
+            </div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
@@ -201,16 +226,24 @@
             </div>
           </div>
         </div>
+
         <!-- project cell -->
         <div class="project-cell">
           <div class="project-cell__content">
             <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm"></div>
+              <div class="project-content__subheader subheader-sm">
+                <div class="pc__subheader--search">
+                  <span class="search-arrowright"></span>
+                </div>
+                <div class="pc__subheader--links"></div>
+              </div>
             </div>
             <div class="project-content__published">
               <span class="content-published--text"></span>
             </div>
-            <div class="project-content__body pcb-sm"></div>
+            <div class="project-content__body pcb-sm">
+              <picture class="proj-img"></picture>
+            </div>
           </div>
           <div class="project-cell__footer">
             <div class="project-footer__titles">
@@ -476,7 +509,6 @@
 
   <!-- ContactMenu -->
   <aside class="contact-menu__header" data-contact-menu-disabled="true"></aside>
-
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
   <!-- Tooltip -->

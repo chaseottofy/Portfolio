@@ -13,8 +13,7 @@
   cursor: pointer;
 }
 
-.project-image__calendar,
-.proj-img-sm {
+.proj-img {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -73,8 +72,7 @@
     padding-top: var(--ap2small);
   }
 
-  .project-image__calendar img,
-  .project-img-sm img {
+  .proj-img {
     aspect-ratio: var(--apsmall);
   }
 }
