@@ -40,9 +40,13 @@
   display: flex;
   width: auto;
   align-items: center;
+
+  /* justify-content: flex-end; */
+
+  /* width: 8rem; */
 }
 
-.pf-stacks::before {
+.pf-stacks::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,8 +110,8 @@
 .vite-icon {
   position: relative;
   z-index: 3;
-  width: 2rem;
-  height: 2rem;
+  width: 30px;
+  height: 30px;
   filter: contrast(1.1) brightness(1.1);
 }
 
@@ -188,19 +192,21 @@
 }
 
 @media screen and (max-width: 720px) {
-  .project-footer__content {
-    padding: 1rem .5rem;
-  }
-
   .project-cell__footer {
-    padding: .5rem 0 .25rem 0;
+    /* padding: .5rem 0 .25rem 0; */
+    padding: .5rem .5rem .25rem .5rem;
     margin-top: 0;
   }
 
+  .project-footer__content {
+    padding: 1rem .25rem;
+  }
+
+
   .project-footer__title {
     width: 100%;
-    padding-bottom: 2rem;
     padding-right: .5rem;
+    padding-bottom: 2rem;
   }
 
   .pf-stacks {
@@ -209,7 +215,7 @@
 
   .project-footer__desc {
     width: 90%;
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 

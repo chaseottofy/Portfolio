@@ -69,18 +69,23 @@ initForm();
 
 ## Features
 
-- Zero 3rd party dependencies
+- Zero 3rd party code/dependencies
 - 100% Vanilla JS & Vanilla CSS
 - All UI components and design are from scratch
+  - Useful custom vanilla hooks: closeOnEsc, throttle, copyToClipboard, etc.
+  - Custom vanilla components: tabs, modals, toast, tooltips, image preview, etc.
 - Two themes
 - Responsive on all devices
+  - Mobile first design
 - Contact Form free POSTS with google sheets
-- Extremely optimized: .3-.4s speed index
+- Prioritizes DOM updates vs re-renders, content is loaded and removed dynamically through the use of HTML templates and skeletons. 
+  - Zero layout shifts.
+  - Lightweight DOM: all listeners are cleaned up on unmount, and averages < 600 nodes.
+- Relies solely on highly optimized local svgs and fonts, no external requests means 0.0s TTFB
+- .3-.4s speed index
 - Accessible: perfect score on several audits (WAVE, Lighthouse, page speed insights, NU HTML checker)
 - SEO friendly: perfect score on lighthouse and page speed insights.
-- Lightweight DOM
-  - Dynamic content loading, rendering, and removal to ensure less than 650 nodes at any given time
-- Most of the content is easily customizable via JSON which allows for a CMS type experience.
+- Verbose style and script linting
 
 ---
 

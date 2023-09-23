@@ -1,9 +1,9 @@
 .popup-picture {
   position: fixed;
-  z-index: 9999;
   display: flex;
   overflow: hidden;
-  height: min(calc(var(--htvh) + var(-header-height)), 100vh);
+  /* height: min(calc(var(--htvh) + var(-header-height)), 100vh); */
+  height: 100vh;
   flex-direction: column;
   margin: auto;
   background: var(--offsetblack0);

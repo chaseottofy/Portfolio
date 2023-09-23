@@ -1,9 +1,9 @@
-import badgeData from '../../data/json/contact/contact-modal.json';
-import createToast from '../ui/toast';
-import createButton from '../ui/button';
 import { mailtoHref } from '../../data/constants';
-import createLink from '../ui/link';
+import badgeData from '../../data/json/contact/contact-modal.json';
 import useCopyToClipboard from '../../hooks/handle-copy';
+import createButton from '../ui/button';
+import createLink from '../ui/link';
+import createToast from '../ui/toast';
 
 /**
  * createBadge
@@ -149,6 +149,7 @@ const createContactMenu = () => {
   );
 
   contactMenuWrapper.append(contactMenuBody, contactMenuFooter);
+  contactMenuWrapper.firstElementChild.focus();
   return contactMenuWrapper;
 };
 

@@ -53,12 +53,11 @@
   --wtvw2: 720px;
   --apsmall: calc(var(--wt2)/var(--ht2));
   --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
-  --card-default: calc(var(--ap2) + (var(--ap2) * .6))
-  /* --card-default: calc(var(--ap2) + (var(--ap2) * .6)); */
 
   /* ********************************** */
 
   /* dynamic font sizes */
+  --fs0: max(34px, 3.4rem);
   --fs1: max(32px, 2.8rem);
   --fs2: max(25px, 2.2rem);
   --fs3: max(20px, 1.8rem);
@@ -98,6 +97,7 @@
   /* Transition helpers */
   --tbg1: background .15s cubic-bezier(.4, 0, .2, 1);
   --tbg2: background-color .2s cubic-bezier(.4, 0, .2, 1);
+  --tbg3: background-color 100ms cubic-bezier(.4, 0, .2, 1);
   --tt1: transform .2s ease-in-out;
   --tc1: color .2s ease-in-out;
   --ttop1: top .2s ease-in-out;
@@ -356,6 +356,30 @@ a[disabled] {
 .skeleton::placeholder {
   color: transparent;
   opacity: 0;
+}
+
+/* popup utilities
+===================================== */
+[data-active-popup="false"] {
+  z-index: -1;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
+  user-select: none;
+  visibility: hidden;
+}
+
+[data-active-popup="true"] {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 200ms ease-in-out;
+  user-select: auto;
+  visibility: visible;
 }
 
 @keyframes slide-down {

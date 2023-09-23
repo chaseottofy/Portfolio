@@ -105,20 +105,13 @@
 .cm-left__header {
   flex-direction: column;
   padding: .5rem;
-
-  /* transform: scaleY(.9); */
   color: var(--white0);
   font-size: 1.125rem;
-
-  /* font-size: 1.5rem; */
-
-  /* font-weight: 700; */
   line-height: 1.375;
 }
 
 .cm-left__header h3 {
   font-family: var(--secondaryFont);
-
 }
 
 /* ---------------- */

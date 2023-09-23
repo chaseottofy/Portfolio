@@ -1,5 +1,5 @@
-import useThrottle from '../../hooks/throttle';
 import handleState from '../../hooks/handle-state';
+import useThrottle from '../../hooks/throttle';
 
 // fade the header background in until the bottom of the intro section is reached
 // fade out the header background until the top of the intro section is reached

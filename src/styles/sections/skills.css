@@ -73,11 +73,11 @@
 .skill-content {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 240px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .skill-title {
@@ -85,22 +85,22 @@
   z-index: 3;
   top: 1.25rem;
   left: 1.325rem;
-  width: 100%;
+  width: auto;
   color: var(--white1);
   font-family: var(--secondaryFont);
-  font-size: .925rem;
-  opacity: .9;
-  transform: scaleY(1.3);
+  font-size: var(--fs5);
+  opacity: .7;
+  transform: scaleY(1.2);
 }
 
 .skill-content li {
   position: relative;
   z-index: 3;
   width: 100%;
+  padding-bottom: 10px;
   color: var(--white1);
   font-size: 1.125rem;
-  letter-spacing: -.02em;
-  line-height: 1.3;
+  line-height: 20px;
   opacity: .8;
 }
 

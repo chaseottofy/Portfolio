@@ -1,29 +1,38 @@
+import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 
-const createFullImagePopup = (img) => {
-  const popup = document.createElement('div');
-  popup.classList.add('popup-picture', 'act-modal');
-  const popupHeader = document.createElement('div');
-  popupHeader.classList.add('popup-picture__header');
-  const popupHeaderContent = document.createElement('div');
-  popupHeaderContent.classList.add('popup-picture__header-content');
-  const imageInfo = document.createElement('span');
-  imageInfo.classList.add('popup-picture__info');
-  imageInfo.textContent = 'click anywhere to close';
+const configCreateFullImagePopup = (img) => {
+  const popupPicture = document.querySelector('.popup-picture');
+  const popupPictureImgWrapper = popupPicture.querySelector('.popup-picture__imgwrapper');
 
-  const imgWrapper = document.createElement('div');
-  imgWrapper.classList.add('popup-picture__imgwrapper');
-
-  popupHeaderContent.append(imageInfo);
-  popupHeader.append(popupHeaderContent);
-  imgWrapper.append(img);
-  popup.append(popupHeader, imgWrapper);
-  document.body.append(popup);
-  useHandleModalOffset(popup);
-  popup.addEventListener('click', () => {
-    popup.remove();
+  const removePopup = () => {
+    popupPictureImgWrapper?.querySelector('img')?.remove();
+    popupPicture.dataset.activePopup = 'false';
     useHandleModalOffset();
-  });
+    // eslint-ignore-next-line no-use-before-define
+    popupPicture.removeEventListener('click', handleClosePopupOnClick);
+    closeOnEscManager.forceCleanup();
+  };
+
+  const handleClosePopupOnClick = (e) => {
+    const { target } = e;
+    if (target && target.nodeType === 1 && target.closest('.popup-picture')) {
+      removePopup();
+    }
+  };
+
+  popupPictureImgWrapper.append(img);
+  popupPicture.dataset.activePopup = 'true';
+  useHandleModalOffset(popupPicture);
+  popupPicture.addEventListener('click', handleClosePopupOnClick);
+  closeOnEscManager.useCloseOnEsc(
+    popupPicture.dataset.activePopup === 'true',
+    removePopup,
+  );
+};
+
+const createFullImagePopup = (img) => {
+  configCreateFullImagePopup(img);
 };
 
 export default createFullImagePopup;

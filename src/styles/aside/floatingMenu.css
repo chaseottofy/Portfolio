@@ -7,6 +7,10 @@
   margin: 1rem auto 4rem auto;
 }
 
+[data-floating-menu-loaded="false"] * {
+  color: transparent;
+}
+
 .floating-menu--fixed {
   position: fixed;
   top: var(--header-height);

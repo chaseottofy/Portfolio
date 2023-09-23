@@ -1,5 +1,4 @@
 import cardData from '../../data/json/projects/projects-card-data.json';
-import createLink from '../ui/link';
 
 const createFloatOptions = (options) => {
   const floatingMenu = document.querySelector('.floating-menu');
@@ -8,16 +7,14 @@ const createFloatOptions = (options) => {
   for (let i = 0; i < options.length; i += 1) {
     const { title, subtitle, href } = options[i];
     const floatOption = floatListItem[i];
-    const linkTitle = `Scroll to ${title}`;
-    const floatOptionLink = createLink(href, linkTitle, null, null, '_self');
-    const floatOptionTitle = document.createElement('span');
-    floatOptionTitle.dataset.projTitleIndex = `${i + 1}.`;
-    const floatOptionSubtitle = document.createElement('span');
-    floatOptionTitle.textContent = title;
-    floatOptionSubtitle.textContent = subtitle;
-    floatOptionLink.append(floatOptionTitle, floatOptionSubtitle);
-    floatOption.append(floatOptionLink);
+    const floatLink = floatOption.querySelector('a');
+    floatLink.href = href;
+    const [floatTitle, floatSubtitle] = floatLink.children;
+    floatTitle.textContent = title;
+    floatSubtitle.textContent = subtitle;
   }
+
+  floatingMenu.dataset.floatingMenuLoaded = 'true';
 };
 
 const createProjectMenu = () => {

@@ -16,8 +16,8 @@
   min-height: 48px !important;
   max-height: 48px !important;
   border-radius: 100%;
-  margin-top: -24px;
-  background: linear-gradient(to bottom, var(--primary1) 20%, var(--primary3) 50%, var(--primary2 80%));
+  margin-top: -28px;
+  background: linear-gradient(to bottom, var(--primary1) 0, var(--primary3) 50%, var(--primary2) 80%);
   filter: blur(48px);
   mix-blend-mode: normal;
   opacity: .8;
@@ -26,8 +26,5 @@
 }
 
 .theme__light .section-gradient--l {
-  /* filter: blur(48px) grayscale(.8); */
   opacity: .6;
-
-  /* opacity: 1; */
 }

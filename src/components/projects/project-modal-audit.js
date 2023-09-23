@@ -1,19 +1,21 @@
 import projectAuditsData from '../../data/json/projects/projects-audit-data.json';
+import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
-import createLink from '../ui/link';
 import createButton from '../ui/button';
+import createLink from '../ui/link';
 
 const closeLH = (e) => {
   if (e.target.classList.contains('lighthouse-modal--wrapper')
     || e.target.closest('.close-lh-btn')) {
     e.currentTarget.remove();
     useHandleModalOffset();
+    closeOnEscManager.forceCleanup();
   }
 };
 
 const configAuditModal = (title, link, score, content) => {
   const lhWrapper = document.createElement('aside');
-  lhWrapper.classList.add('lighthouse-modal--wrapper', 'act-modal');
+  lhWrapper.classList.add('lighthouse-modal--wrapper');
 
   const lhmodal = document.createElement('div');
   lhmodal.classList.add('lighthouse-modal');
@@ -92,6 +94,14 @@ const createAuditModal = (e) => {
   body.append(lightHouseInstance);
   useHandleModalOffset();
   e.target.blur();
+
+  closeOnEscManager.useCloseOnEsc(
+    body.dataset.activeModal === 'true',
+    () => {
+      lightHouseInstance.remove();
+      useHandleModalOffset();
+    },
+  );
 };
 
 export default createAuditModal;

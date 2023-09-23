@@ -1,5 +1,5 @@
-import createContactMenu from './contact-menu';
 import useIsTouchDevice from '../../hooks/is-touch-device';
+import createContactMenu from './contact-menu';
 
 const initContactModal = () => {
   const navContactBtn = document.querySelector('.nav-multi__contact');
@@ -30,7 +30,8 @@ const initContactModal = () => {
     if (isContactMenuOpen) return;
 
     const { bottom } = navContactBtn.getBoundingClientRect();
-    const modalTop = Number.parseFloat(bottom.toFixed(2)) - 10;
+    // const accountForScale = bottom - bottom * .1;
+    const modalTop = Number.parseFloat(bottom.toFixed(2)) - 16;
     contactModal.style.top = `${modalTop}px`;
     contactModal.append(createContactMenu());
     contactModal.dataset.contactMenuDisabled = 'false';

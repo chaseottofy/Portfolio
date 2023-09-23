@@ -1,6 +1,6 @@
-import createToast from '../ui/toast';
-import createSpinner from '../ui/spinner';
 import handleState from '../../hooks/handle-state';
+import createSpinner from '../ui/spinner';
+import createToast from '../ui/toast';
 import {
   checkEmailValidity,
   checkPhoneValidity,

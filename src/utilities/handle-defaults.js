@@ -1,10 +1,9 @@
-import initDisableOnLoadElements from './set-disableonload-elements';
-import initCloseOnEscElements from './set-closeonesc-elements';
-import initDateTimeElements from './set-date-time-elements';
-import initTooltipElements from './set-tooltip-elements';
-import initMailtoElements from './set-mailto-elements';
 import initCopyElements from './set-copy-elements';
+import initDateTimeElements from './set-date-time-elements';
+import initDisableOnLoadElements from './set-disableonload-elements';
+import initMailtoElements from './set-mailto-elements';
 import initTheme from './set-theme';
+import initTooltipElements from './set-tooltip-elements';
 
 /**
  * The majority of content is already in the DOM on page load.
@@ -14,7 +13,6 @@ import initTheme from './set-theme';
  *
  * Funcionality set here:
  * - Disable transition effects and smooth scrolling on page load
- * - Allow modals to be closed by pressing escape key
  * - Contact section will reflect my local time and update on the minute
  * - Mail to links receive additional attributes that allow me to set the subject line
  * - Check if browser supports clipboard API, if so, add copy to clipboard functionality
@@ -22,7 +20,6 @@ import initTheme from './set-theme';
  */
 const initDefaults = () => {
   initDisableOnLoadElements();
-  initCloseOnEscElements();
   initDateTimeElements();
   initTooltipElements();
   initMailtoElements();

@@ -22,20 +22,16 @@
 </head>
 
 <body class="body theme__dark" data-disable-transitions="true" id="page-top" data-active-modal="false">
+
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
+  <!-- USE THE SVG BELOW IN CSS FOR GRAIN OVERLAY: url("#grainy") -->
   <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
   <filter id='grainy' x='0' y='0' width='100%' height='100%'>
-    <feTurbulence
-      type='fractalNoise'
-      baseFrequency='0.8'
-      numOctaves='3'
-      seed='5'
-      stitchTiles='stitch'
-      result='noise'
-    />
+    <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='5' stitchTiles='stitch' result='noise'/>
   </filter>
   </svg>
+
   <!-- HEADER (FIXED)-->
   <header class="header" style="background-color:transparent;">
     <div class="header-wrapper">
@@ -57,6 +53,9 @@
             <li class="nav-multi__contact">
               <a class="nav-menu--link contact-nav--btn" data-scroll-to="2" href="#contact-top" title="Contact Menu & context" data-contact-menu-open="false">
                 <span>Contact</span>
+                <span class="nav-menu--link__arrow">
+                  <img src="./images/svg/caretdown.svg" alt>
+                </span>
               </a>
             </li>
           </ul>
@@ -86,14 +85,17 @@
     </div>
   </header>
 
+  <!-- POPUP:CONTACTMENU -->
+  <aside class="contact-menu__header" data-contact-menu-disabled="true"></aside>
+
   <!-- SECTION: INTRO -->
   <section class="intro-container">
     <div class="intro-header">
       <div class="intro-header__subtitles">
         <h1>chase ottofy</h1>
         <div class="intro-container--links">
-          <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy"><img src="./images/svg/githuboutline.svg" alt>Github</a>
           <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com"><img src="./images/svg/mailto.svg" alt>Email</a>
+          <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy"><img src="./images/svg/githuboutline.svg" alt>Github</a>
         </div>
       </div>
     </div>
@@ -102,7 +104,6 @@
   <!-- MAIN (projects > skills > about > contact) -->
   <aside class="section-divider" style="z-index: 62 !important;"></aside>
   <aside class="section-gradient--l" style="z-index: 61 !important;"></aside>
-
   <main class="main">
     <!-- SECTION : PROJECTS -->
     <article class="section-container projects-container" id="projects-top" style="z-index: 60 !important;">
@@ -115,19 +116,48 @@
         <p>From streamlined packages to robust clones like Google Calendar, I've always aimed for versatility and meticulous detail. Regardless of when they were built, each project showcases my commitment to accessibility, performance, and responsiveness. Some earlier works might be less polished, but they stand testament to my early knack for optimizing solutions.<br></p>
       </div>
 
-      <!-- created @/src/template/create-projoptions -->
-      <div class="floating-menu">
+      <!-- Project Menu HTML template : Propagated @/src/components/projects/project-menu -->
+      <div class="floating-menu" data-floating-menu-loaded="false">
         <ul class="float-options">
-          <li class="float-option"></li>
-          <li class="float-option"></li>
-          <li class="float-option"></li>
-          <li class="float-option"></li>
+          <li class="float-option">
+            <a href="#" target="_self" rel="noreferrer" title="">
+              <span data-proj-title-index="1">lorem ipsum</span>
+              <span>lorem ipsum</span>
+            </a>
+          </li>
+          <li class="float-option">
+            <a href="#" target="_self" rel="noreferrer" title="">
+              <span data-proj-title-index="2">lorem ipsum</span>
+              <span>lorem ipsum</span>
+            </a>
+          </li>
+          <li class="float-option">
+            <a href="#" target="_self" rel="noreferrer" title="">
+              <span data-proj-title-index="3">lorem ipsum</span>
+              <span>lorem ipsum</span>
+            </a>
+          </li>
+          <li class="float-option">
+            <a href="#" target="_self" rel="noreferrer" title="">
+              <span data-proj-title-index="4">lorem ipsum</span>
+              <span>lorem ipsum</span>
+            </a>
+          </li>
         </ul>
       </div>
 
+      <!-- POPUP:PICTURE -->
+      <aside class="popup-picture" data-active-popup="false">
+        <div class="popup-picture__header">
+          <div class="popup-picture__header-content">
+            <span class="popup-picture__info">click anywhere to close</span>
+          </div>
+        </div>
+        <div class="popup-picture__imgwrapper"></div>
+      </aside>
+
       <!-- All project cell content is configured @/src/template/create-card -->
       <div class="projects-grid">
-
         <!-- project cell with tabs -->
         <div class="project-cell proj-cell-tabs" data-project-cell-loaded="false">
           <div class="project-cell__content">
@@ -185,6 +215,7 @@
             </div>
           </div>
         </div>
+        <aside class="project-cell-divider"></aside>
         <!-- ------------ -->
 
         <!-- project cell -->
@@ -244,6 +275,7 @@
             </div>
           </div>
         </div>
+        <aside class="project-cell-divider"></aside>
         <!-- ------------ -->
 
         <!-- project cell -->
@@ -275,13 +307,7 @@
               <picture class="proj-img">
                         <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
                         <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
-                        <img 
-                          src="images/placeholder/placeholder1600x900.png" 
-                          loading="eagar" 
-                          style="max-width:100vw;" 
-                          alt="project image"
-                          srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
-                        >
+                        <img src="images/placeholder/placeholder1600x900.png" loading="eagar" style="max-width:100vw;" alt="project image" srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x">
                       </picture>
             </div>
           </div>
@@ -303,6 +329,7 @@
             </div>
           </div>
         </div>
+        <aside class="project-cell-divider"></aside>
         <!-- ------------ -->
 
         <!-- project cell -->
@@ -362,7 +389,7 @@
             </div>
           </div>
         </div>
-        <!-- ------------ -->
+        <aside class="project-cell-divider"></aside>
         <!-- end of project grid -->
       </div>
     </article>
@@ -613,17 +640,17 @@
       '8888888P'       8 8888             8 8888       '8888888P'</pre>
   </footer>
 
-  <!-- ContactMenu -->
-  <aside class="contact-menu__header" data-contact-menu-disabled="true"></aside>
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
-  <!-- Tooltip -->
+
+  <!-- TOOLTIPS -->
   <aside class="tooltip" style="left:0;top:0;" data-tooltip-active="false">
     <span class="tooltip-content"></span>
     <span class="tooltip-caret" style="top:0;left:0;right:0;margin:auto;transform:translateY(-12px);">
       <img src="images/svg/caretup.svg" alt>
     </span>
   </aside>
+
 </body>
 
 </html>

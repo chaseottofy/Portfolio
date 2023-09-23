@@ -5,6 +5,7 @@ const handlePopupImage = (e) => {
   if (!imgWrapper) return;
   const targetImg = imgWrapper?.lastElementChild;
   if (!targetImg) return;
+
   const swapImg = new Image();
   swapImg.src = targetImg.currentSrc;
   swapImg.alt = targetImg.alt || 'project image';

@@ -7,6 +7,7 @@
 background-size: 100% 100%, 100% 100%, 1440px 1px;
 background-position: bottom;
 background-repeat: no-repeat; */
+
 /* SECTION: ECTS
 ============================ */
 .projects-container {
@@ -31,6 +32,21 @@ background-repeat: no-repeat; */
   flex-direction: column;
   padding: 0 .5rem;
   margin: 0 auto;
+}
+
+.project-cell-divider {
+  z-index:2000;
+  width:1px;
+  height:5rem;
+  margin: 1.5rem auto 1.5rem auto;
+  opacity: .3;
+  outline: 1px dotted var(--white1);
+}
+
+.project-cell-divider:last-child {
+  height:8rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 490px) {

@@ -7,13 +7,17 @@
   flex-direction: column;
   border: 1px solid var(--grey2);
   border-radius: 12px;
-  margin: 0 auto 8rem auto;
+  margin: 0 auto 0 auto;
   background: var(--black0);
   scroll-margin-top: 5rem;
 }
 
 [data-project-cell-loaded="false"] * {
-  color: var(--black1) !important;
+  color: var(--black0) !important;
+}
+
+[data-project-cell-loaded="false"] *::before {
+  opacity: 0 !important;
 }
 
 /* [data-project-cell-loaded="false"] img {opacity: 0 !important;} */

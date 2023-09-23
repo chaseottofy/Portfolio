@@ -1,6 +1,6 @@
+import skillsData from '../../data/json/skills/skills-data.json';
 import svgIcons from '../../utilities/get-svg';
 import createIcon from '../ui/icon';
-import skillsData from '../../data/json/skills/skills-data.json';
 
 const createSkill = (content, imgSrc, title, parent) => {
   const skillTitle = parent.querySelector('.skill-title');

@@ -1,20 +1,14 @@
-import imageSets from './import-project-images';
-
-import handleTab from './handle-project-tabs';
-import handlePopupImage from './handle-popup-image';
-
-import createProjectTabs from './project-tabs';
-import createProjectMenu from './project-menu';
-import createProjectFooterButtons from './project-footer';
-
-import createIcon from '../ui/icon';
-import createLink from '../ui/link';
-
-import svgIcons from '../../utilities/get-svg';
-import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
-
-import cardData from '../../data/json/projects/projects-card-data.json';
 import { projectImageType } from '../../data/constants';
+import cardData from '../../data/json/projects/projects-card-data.json';
+import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
+import svgIcons from '../../utilities/get-svg';
+import handlePopupImage from './handle-popup-image';
+import handleTab from './handle-project-tabs';
+import imageSets from './import-project-images';
+import createProjectMenu from './project-menu';
+import createAuditModal from './project-modal-audit';
+import createProjectModal from './project-modal-overview';
+import createProjectTabs from './project-tabs';
 
 const configProjectPicture = (picture, images) => {
   const img = picture.querySelector('img');
@@ -47,15 +41,10 @@ const configProjectPicture = (picture, images) => {
  * @param {string} published
  * @returns {void}
  */
-const createProjectHeader = (
-  projectCell,
-  tabs,
-  projLink,
-  githubLink,
-  title,
-  published,
-) => {
+const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, published) => {
   const projectHeader = projectCell.querySelector('.project-content__header');
+  // Only create tabs if there are more than 1, if a project does not have tabs, it will
+  // be represented by an empty array
   if (tabs.length > 1) {
     const tabsWrapper = projectHeader.querySelector('.pc__header-tabs');
     for (let i = 0; i < tabs.length; i += 1) {
@@ -108,11 +97,6 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   const projectStacksWrapper = projectCell.querySelector('.pf-stacks');
   const projectStacks = projectCell.querySelectorAll('.pf-stack');
 
-  // The template allows for 2 stacks, so remove the last one if there is only 1 stack
-  if (projectStacks.length > stacks.length) {
-    projectStacks[projectStacks.length - 1].remove();
-  }
-
   const projectFooterTitle = projectCell.querySelector('.project-footer__title');
   const projectFooterBtnsWrapper = projectCell.querySelector('.project-footer-btns');
   const projectFooterDesc = projectCell.querySelector('.project-footer__desc');
@@ -134,6 +118,8 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;
   auditBtn.dataset.lhProj = lighthouseKey;
   overviewBtn.dataset.proj = lighthouseKey;
+  auditBtn.addEventListener('click', createAuditModal);
+  overviewBtn.addEventListener('click', createProjectModal);
 };
 
 const createProjectCards = () => {
@@ -165,8 +151,7 @@ const createProjectCards = () => {
       tabs,
     } = cardDataArray[i];
 
-    const cell = projectCells[i];
-    const projectImages = imgArrays[i];
+    const [cell, projectImages] = [projectCells[i], imgArrays[i]];
 
     createProjectHeader(cell, tabs, projLink, githubLink, title, published);
     createProjectBody(cell, projectImages);

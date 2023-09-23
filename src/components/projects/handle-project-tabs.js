@@ -1,10 +1,10 @@
-import createSpinner from '../ui/spinner';
-import handleState from '../../hooks/handle-state';
-import imageSets from './import-project-images';
 import {
   aspectSmallWidth,
   projectImageType,
 } from '../../data/constants';
+import handleState from '../../hooks/handle-state';
+import createSpinner from '../ui/spinner';
+import imageSets from './import-project-images';
 
 const calendarImageVars = [
   ['cweeklgdark', 'cweekmddark', 'Calendar Week'],

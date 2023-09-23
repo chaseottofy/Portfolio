@@ -1,13 +1,15 @@
 import projectJSON from '../../data/json/projects/projects-overview-data.json';
-import createLink from '../ui/link';
-import createButton from '../ui/button';
+import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
+import createButton from '../ui/button';
+import createLink from '../ui/link';
 
 const closeProjectOverview = (e) => {
   if (e.target.classList.contains('po-header--close')
     || e.target.classList.contains('project-overview--wrapper')) {
     e.currentTarget.remove();
     useHandleModalOffset();
+    closeOnEscManager.forceCleanup();
   }
 };
 
@@ -38,7 +40,7 @@ const projectFeatureTemplate = (featureName, featureValue) => {
  */
 const configProjectOverview = (title, links, features) => {
   const poWrapper = document.createElement('aside');
-  poWrapper.classList.add('project-overview--wrapper', 'act-modal');
+  poWrapper.classList.add('project-overview--wrapper');
 
   const poModal = document.createElement('div');
   poModal.classList.add('project-overview--modal');
@@ -102,9 +104,20 @@ const createProjectModal = (e) => {
     links,
     features,
   );
+
   body.append(projectOverviewInstance);
+
   e.target.blur();
+
   useHandleModalOffset();
+
+  closeOnEscManager.useCloseOnEsc(
+    body.dataset.activeModal === 'true',
+    () => {
+      projectOverviewInstance.remove();
+      useHandleModalOffset();
+    },
+  );
 };
 
 export default createProjectModal;

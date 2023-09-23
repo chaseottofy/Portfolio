@@ -35,7 +35,7 @@
   font-size: 1.5rem !important;
   line-height: 1.5;
   text-align: center !important;
-  text-wrap:balance;
+  text-wrap: balance;
 }
 
 .contact-form--wrapper {
@@ -193,6 +193,6 @@
 
 @media screen and (max-width: 720px) {
   .contact-form--container .section-title h3 {
-    font-size: 0.925rem;
+    font-size: 4vw !important;
   }
 }
