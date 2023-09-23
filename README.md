@@ -14,6 +14,7 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 
 **Table of Contents**
 
+- [Notes](#notes)
 - [Cloning](#cloning)
 - [Features](#features)
 - [Form](#contact-form)
@@ -21,7 +22,13 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 - [Images](#images)
   - [How I handle Project Images](#how-i-handle-project-images)
   - [CLI Commands](#cli-commands)
-- [Notes](#notes)
+
+## Notes
+
+I'm working on making this project more customizable, but for now, 50-60% of the content has some hardcoded values here and there.
+
+The goal is to eventually have all content loaded from JSON, and to have HTML templates for each section.
+Right now, only HTML templates exist for the projects section in which I have a different template for projects with tab functionality and projects with a single image. All data in the projects section is loaded from JSON but requires the HTML template to be copy and pasted into the index.html to prevent layout issues.
 
 ## Cloning
 
@@ -157,10 +164,7 @@ First, I keep all project images within the same directory on the same level.
 > The script will not work if any of the directories are not set properly.
 > The image optimization script is not perfect, it is very personalized to my needs, I use it to set all images to the same aspect ratio and size, and to create a small and large version of each image in different aspect ratios within the same folder.
 
+- [placeholder images](https://dummyimage.com/1600x900/000/000&text=.)
+
 ---
 
-## Notes
-
-I'm working on making it easier to customize the content by having all data loaded from JSON.
-
-- update on customization (9/22/23): 50-60% of the content is now loaded from JSON. Will eventually move all content to JSON.

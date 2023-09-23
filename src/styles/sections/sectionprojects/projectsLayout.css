@@ -1,20 +1,17 @@
+/* background: linear-gradient(to top,
+    var(--black0) 0,
+    hsla(0, 0%, 100%, 0) 100%),
+  linear-gradient(180deg,
+    var(--black0) 0,
+    var(--offsetsecondary1) 20%);
+background-size: 100% 100%, 100% 100%, 1440px 1px;
+background-position: bottom;
+background-repeat: no-repeat; */
 /* SECTION: ECTS
 ============================ */
 .projects-container {
   position: relative;
   z-index: 50;
-
-  /* background: linear-gradient(to top,
-      var(--black0) 0,
-      hsla(0, 0%, 100%, 0) 100%),
-    linear-gradient(180deg,
-      var(--black0) 0,
-      var(--offsetsecondary1) 20%);
-  background-size: 100% 100%, 100% 100%, 1440px 1px;
-  background-position: bottom;
-  background-repeat: no-repeat; */
-
-  /* background: #09090b; */
   width: 100%;
   background: var(--black0);
   scroll-margin-top: 4rem;

@@ -53,6 +53,8 @@
   --wtvw2: 720px;
   --apsmall: calc(var(--wt2)/var(--ht2));
   --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
+  --card-default: calc(var(--ap2) + (var(--ap2) * .6))
+  /* --card-default: calc(var(--ap2) + (var(--ap2) * .6)); */
 
   /* ********************************** */
 

@@ -16,11 +16,12 @@ import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
 import cardData from '../../data/json/projects/projects-card-data.json';
 import { projectImageType } from '../../data/constants';
 
-const createProjectPicture = (picture, images) => {
-  const img = new Image();
+const configProjectPicture = (picture, images) => {
+  const img = picture.querySelector('img');
+  const sources = picture.querySelectorAll('source');
   for (let i = 0; i < images.length; i += 1) {
     const { src, alt, media } = images[i];
-    const source = document.createElement('source');
+    const source = sources[i];
     source.srcset = src;
     source.media = media;
     source.type = projectImageType;
@@ -28,37 +29,13 @@ const createProjectPicture = (picture, images) => {
     if (i === 0) {
       img.src = src;
       img.srcset = `${src} 1x, `;
-      img.alt = alt || 'project image';
       img.loading = 'lazy';
+      img.alt = alt || 'project image';
+      img.type = projectImageType;
     } else {
       img.srcset = `${img.srcset + src} ${i + 1}x`;
     }
-    picture.append(source);
   }
-  picture.append(img);
-};
-
-const createTabs = (tabs, title) => {
-  const tabWrapper = document.createElement('div');
-  tabWrapper.classList.add('pc__header-tabs');
-  for (let i = 0; i < tabs.length; i += 1) {
-    const tab = tabs[i];
-
-    const identifiers = {
-      tabId: `proj-${title}-${tab.toLowerCase()}`,
-      projName: title,
-      suffix: 'View',
-    };
-
-    tabWrapper.append(createProjectTabs(
-      tab,
-      identifiers,
-      i + 1,
-      i === 0,
-      handleTab,
-    ));
-  }
-  return tabWrapper;
 };
 
 /**
@@ -77,38 +54,35 @@ const createProjectHeader = (
   githubLink,
   title,
   published,
-  iconSrcs,
 ) => {
-  const { lock, github, arrow } = iconSrcs;
-
-  const lockIcon = createIcon('img-icon', lock, null);
-  const githubIcon = createIcon('img-icon', github, null);
-  const arrowRightIcon = createIcon('img-icon', arrow, null);
-
   const projectHeader = projectCell.querySelector('.project-content__header');
   if (tabs.length > 1) {
-    projectHeader.append(createTabs(tabs));
+    const tabsWrapper = projectHeader.querySelector('.pc__header-tabs');
+    for (let i = 0; i < tabs.length; i += 1) {
+      const tab = tabs[i];
+      const identifiers = {
+        tabId: `proj-${title}-${tab.toLowerCase()}`,
+        projName: title,
+        suffix: 'View',
+      };
+      tabsWrapper.append(createProjectTabs(tab, identifiers, i + 1, i === 0, handleTab));
+    }
   }
 
   const publishedText = projectCell.querySelector('.content-published--text');
   publishedText.textContent = `Published: ${published}`;
 
-  const searchArrowRight = projectCell.querySelector('.search-arrowright');
-  searchArrowRight.append(arrowRightIcon);
-
-  // search bar
+  // set search bar link and title
   const subheaderSearch = projectCell.querySelector('.pc__subheader--search');
-  const subheaderSearchLink = createLink(projLink, 'demo', null, `Demo: ${title}`, '_self');
-  subheaderSearch.prepend(subheaderSearchLink);
-  subheaderSearchLink.prepend(lockIcon);
+  const subheaderSearchLink = subheaderSearch.querySelector('a');
+  subheaderSearchLink.setAttribute('href', projLink);
+  const subheaderSearchText = subheaderSearch.querySelector('span');
+  subheaderSearchText.textContent = `Demo: ${title}`;
 
-  // Github repo button
+  // set github link
   const subheaderRepo = projectCell.querySelector('.pc__subheader--links');
-  const subheaderRepoLink = createLink(githubLink, 'github repo', null, null);
-  const subheaderGhText = document.createElement('span');
-  subheaderGhText.textContent = 'Repo';
-  subheaderRepoLink.append(githubIcon, subheaderGhText);
-  subheaderRepo.append(subheaderRepoLink);
+  const subheaderRepoLink = subheaderRepo.querySelector('a');
+  subheaderRepoLink.setAttribute('href', githubLink);
 };
 
 /**
@@ -119,7 +93,7 @@ const createProjectHeader = (
 const createProjectBody = (projectCell, images) => {
   const projectBody = projectCell.querySelector('.project-content__body');
   const projectPicture = projectBody.firstElementChild;
-  createProjectPicture(projectPicture, images);
+  configProjectPicture(projectPicture, images);
 };
 
 /**
@@ -131,26 +105,35 @@ const createProjectBody = (projectCell, images) => {
  * @returns {void}
  */
 const createProjectFooter = (projectCell, stacks, description, title, lighthouseKey) => {
-  const projectFooterStacks = projectCell.querySelector('.pf-stacks');
+  const projectStacksWrapper = projectCell.querySelector('.pf-stacks');
+  const projectStacks = projectCell.querySelectorAll('.pf-stack');
+
+  // The template allows for 2 stacks, so remove the last one if there is only 1 stack
+  if (projectStacks.length > stacks.length) {
+    projectStacks[projectStacks.length - 1].remove();
+  }
+
   const projectFooterTitle = projectCell.querySelector('.project-footer__title');
-  const projectFooterBtns = projectCell.querySelector('.project-footer-btns');
+  const projectFooterBtnsWrapper = projectCell.querySelector('.project-footer-btns');
   const projectFooterDesc = projectCell.querySelector('.project-footer__desc');
 
   // create icons of tech used in project (stacks)
-  for (const stack of stacks) {
-    const iconWrapper = document.createElement('div');
-    iconWrapper.classList.add('pf-stack');
-    const stackIcon = createIcon(`${stack}-icon`, svgIcons[stack], null);
-    iconWrapper.append(stackIcon);
-    projectFooterStacks.append(iconWrapper);
+  for (let i = 0; i < stacks.length; i += 1) {
+    const stack = stacks[i];
+    const stackSvg = svgIcons[stack];
+    const iconWrapper = projectStacks[i];
+    const tempIcon = iconWrapper.querySelector('img');
+    tempIcon.src = stackSvg;
+    tempIcon.classList.add(`${stack}-icon`);
   }
 
-  // dataset.pfStacks represents the names of the stacks used in the project conjoined by ' + '
-  // will appear adjacent to the icon wrapper for the stacks.
-  projectFooterStacks.dataset.pfStacks = stacks.join(' + ');
+  projectStacksWrapper.dataset.pfStacks = stacks.join(' + ');
   projectFooterDesc.textContent = `${description}`;
   projectFooterTitle.textContent = title;
-  projectFooterBtns.append(...createProjectFooterButtons(lighthouseKey));
+
+  const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;
+  auditBtn.dataset.lhProj = lighthouseKey;
+  overviewBtn.dataset.proj = lighthouseKey;
 };
 
 const createProjectCards = () => {
@@ -170,12 +153,6 @@ const createProjectCards = () => {
 
   const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
 
-  const iconSrcs = {
-    lock: svgIcons.lock,
-    github: svgIcons.github,
-    arrow: svgIcons.arrow,
-  };
-
   for (let i = 0; i < projectCells.length; i += 1) {
     const {
       title,
@@ -190,12 +167,14 @@ const createProjectCards = () => {
 
     const cell = projectCells[i];
     const projectImages = imgArrays[i];
-    createProjectHeader(cell, tabs, projLink, githubLink, title, published, iconSrcs);
+
+    createProjectHeader(cell, tabs, projLink, githubLink, title, published);
     createProjectBody(cell, projectImages);
     createProjectFooter(cell, stacks, description, title, lighthouseKey);
 
     // give project cell ID for floating menu scroll
     cell.id = `proj-${lighthouseKey}-top`;
+    cell.dataset.projectCellLoaded = 'true';
   }
 };
 

@@ -131,8 +131,6 @@
   position: relative;
   display: flex;
   align-items: center;
-
-  /* margin-right: 1rem; */
   padding: 1rem 3rem .5rem 0;
   color: var(--white1);
   font-family: var(--secondaryFont);
@@ -197,6 +195,12 @@
   .project-cell__footer {
     padding: .5rem 0 .25rem 0;
     margin-top: 0;
+  }
+
+  .project-footer__title {
+    width: 100%;
+    padding-bottom: 2rem;
+    padding-right: .5rem;
   }
 
   .pf-stacks {
