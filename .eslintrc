@@ -28,7 +28,6 @@
     "unicorn/no-null": "off",
     "unicorn/no-for-loop": "off",
     "no-console": "off",
-    "unicorn/no-unsafe-regex": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": "warn"
   }

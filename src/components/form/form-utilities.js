@@ -1,7 +1,4 @@
-// eslint-disable-next-line arrow-body-style
-const checkEmailValidity = (email) => {
-  return (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email));
-};
+const checkEmailValidity = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const checkPhoneValidity = (phone) => phone && phone.length >= 10;
 

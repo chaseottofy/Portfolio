@@ -9,7 +9,7 @@ const configCreateFullImagePopup = (img) => {
     popupPictureImgWrapper?.querySelector('img')?.remove();
     popupPicture.dataset.activePopup = 'false';
     useHandleModalOffset();
-    // eslint-ignore-next-line no-use-before-define
+    // eslint-disable-next-line no-use-before-define
     popupPicture.removeEventListener('click', handleClosePopupOnClick);
     closeOnEscManager.forceCleanup();
   };
