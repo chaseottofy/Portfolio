@@ -8,8 +8,12 @@
   border: 1px solid var(--grey2);
   border-radius: 12px;
   margin: 0 auto 0 auto;
+
+  /* background: var(--black0); */
   background: var(--black0);
-  box-shadow: 4px 12px 48px rgba(1, 57, 72, .15);
+  box-shadow: 4px 4px 12px rgba(55, 57, 57, 0.146);
+
+  /* box-shadow: 4px 12px 48px rgba(1, 57, 72, .1); */
   scroll-margin-top: 5rem;
 }
 
@@ -25,16 +29,30 @@
 
 .project-cell::after {
   position: absolute;
-  z-index: 9998;
+  z-index: 3000;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   content: '';
-  filter: url("#grainy");
-  opacity: .06;
+
+  /* background-image: url('../../../images/design/3px-tile.png'); */
+
+  /* opacity: 100%; */
+
+  /* opacity: .2; */
   pointer-events: none;
   user-select: none;
+
+  /* background-blend-mode:overlay; */
+
+  /* background-image: url('../../../images/design/binding-dark.png'); */
+
+  /* filter: url("#grainy"); */
+
+  /* opacity: 5%; */
+
+  /* background: rgba(0,0,0,0); */
 }
 
 /* .project-cell::before {
@@ -62,7 +80,6 @@
 
 .project-content__header {
   position: relative;
-  z-index: 9999;
   display: grid;
   width: 100%;
   height: 4rem;
@@ -70,6 +87,8 @@
   justify-content: center;
   padding: .5rem 0 .5rem 0;
   grid-template-columns: 1fr;
+
+  /* z-index: 2000; */
 }
 
 .subheader-sm {
@@ -163,6 +182,8 @@
 .project-content__subheader {
   position: relative;
   z-index: 1;
+
+  /* background: var(--black0); */
   display: flex;
   overflow: hidden;
   width: 100%;

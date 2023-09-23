@@ -169,7 +169,7 @@ First, I keep all project images within the same directory on the same level.
 > The script will not work if any of the directories are not set properly.
 > The image optimization script is not perfect, it is very personalized to my needs, I use it to set all images to the same aspect ratio and size, and to create a small and large version of each image in different aspect ratios within the same folder.
 
-- [placeholder images](https://dummyimage.com/1600x900/000/000&text=.)
-
 ---
 
+- [placeholder images](https://dummyimage.com/1600x900/000/000&text=.)
+- [textures](https://www.transparenttextures.com/)

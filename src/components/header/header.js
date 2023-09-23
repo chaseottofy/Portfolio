@@ -41,13 +41,14 @@ const configHeaderTwo = () => {
   const header = document.querySelector('.header');
   if (!header) return;
   const introRef = document.querySelector('.intro-observer-ref');
+  const headerRef = document.querySelector('.intro-observer-ref--top');
   const options = {
     root: null, // using the viewport as the root
     rootMargin: '0px', // no margins
     threshold: 1, // 100% of the target's visibility
   };
 
-  const observer = new IntersectionObserver((entries) => {
+  const introObserver = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
         header.classList.remove('header-has--background');
@@ -57,11 +58,29 @@ const configHeaderTwo = () => {
     }
   }, options);
 
-  observer.observe(introRef);
+  const headerObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        header.classList.remove('header-has--filter');
+      } else {
+        header.classList.add('header-has--filter');
+      }
+    }
+  });
+
+  introObserver.observe(introRef);
+  headerObserver.observe(headerRef);
 };
 
 const initHeader = () => {
   configHeaderTwo();
+
+  window.addEventListener('mouseover', (e) => {
+    const { target } = e;
+    if (target && target.nodeType === '1') {
+      console.log(target);
+    }
+  });
 };
 
 export default initHeader;

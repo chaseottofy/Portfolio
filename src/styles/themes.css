@@ -35,8 +35,8 @@
   --bs-lg:
     0 30px 60px rgba(0, 0, 0, .12);
   --bs-inset1:
-    inset 0 0 10px 8px rgba(17, 17, 17, .5),
-    inset 0 0 10px 8px rgba(17, 17, 17, .3);
+    inset 0 0 10px 8px rgba(17, 17, 17, .3),
+    inset 0 0 10px 8px rgba(17, 17, 17, .2);
 
   /* SPECIFIC */
   --selection: #f81ce5;

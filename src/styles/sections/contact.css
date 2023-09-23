@@ -77,12 +77,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../images/design/top1.avif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  /* background-image: url('../../images/design/top1.avif'); */
+  background-image: url('../../images/design/cartographer.png');
+
+  /* opacity: .4; */
+
+  /* background-position: center; */
+
+  /* background-repeat: no-repeat; */
+
+  /* background-size: cover; */
   content: "";
-  opacity: .4;
+
+  /* filter:invert(1); */
+  opacity: .8;
   pointer-events: none;
   user-select: none;
 }

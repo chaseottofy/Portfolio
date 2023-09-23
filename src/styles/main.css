@@ -5,8 +5,8 @@
   height: 100%;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
-  margin-top: -20px;
+
+  /* padding-top: .75rem; */
 }
 
 /* ------------------------ */
@@ -14,7 +14,7 @@
 /* SECTIONS
 ============================ */
 .section-container {
-  padding-bottom:4rem;
+  padding-bottom: 4rem;
 }
 
 .section-title {

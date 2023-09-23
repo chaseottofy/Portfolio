@@ -30,7 +30,15 @@
   <aside class="gradient-overlay--two"></aside>
   <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
   <filter id='grainy' x='0' y='0' width='100%' height='100%'>
-    <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='5' stitchTiles='stitch' result='noise'/>
+    <!-- <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/> -->
+    <!-- <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='5' stitchTiles='stitch' result='noise'/> -->
+    <feTurbulence 
+    type='fractalNoise' 
+    baseFrequency='0.6' 
+    stitchTiles='stitch'/>
+   <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+      <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+      <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
   </filter>
   </svg>
 
@@ -104,6 +112,7 @@
       </div>
     </div>
 
+    <aside class="intro-observer-ref--top"></aside>
     <aside class="intro-observer-ref"></aside>
   </section>
 

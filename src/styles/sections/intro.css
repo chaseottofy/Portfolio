@@ -19,6 +19,7 @@
 
 .intro-header__subtitles {
   position: relative;
+  z-index: 200;
   display: flex;
   width: 100%;
   max-width: var(--max-width-md);
@@ -39,8 +40,8 @@
   font-family: var(--secondaryFont);
   font-size: var(--fs0);
   letter-spacing: .05em;
-  line-height: .9;
-  opacity: .86;
+  line-height: 1;
+  opacity: .92;
   text-wrap: nowrap;
 }
 
@@ -59,6 +60,8 @@
 }
 
 .intro-container--links {
+  position: relative;
+  z-index: 9999;
   display: flex;
   width: auto;
   height: 14rem;
@@ -68,23 +71,32 @@
 }
 
 .intro-container--links a {
+  position: relative;
+
+  /* background: rgba(0, 0, 0, .4); */
+
+  /* background:rgba(8, 8, 8, 1); */
+
+  /* background:rgba(8, 8, 8, .7); */
+
+  /* background: black; */
   display: flex;
-  height: 2.25rem;
+  height: 2.5rem;
   align-items: center;
-  padding: .5rem .75rem;
+  padding: .5rem 1rem;
   border: 1px solid rgba(36, 39, 44, 0.5);
   border-radius: 6px;
   margin: 0 .5rem;
-  background: rgba(0, 0, 0, .4);
+  background: #000;
   color: #e7ecf4;
   font-size: .9rem;
   letter-spacing: .02em;
 }
 
 .intro-container--links a img {
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: .75rem;
   filter: invert(1);
   pointer-events: none;
   user-select: none;
@@ -100,9 +112,19 @@
 
 .intro-observer-ref {
   position: absolute;
-  z-index:-1;
+  z-index: -1;
   bottom: .25rem;
-  /* background-color: green; */
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  pointer-events: none;
+  user-select: none;
+}
+
+.intro-observer-ref--top {
+  position: absolute;
+  z-index: -1;
+  top:0;
   left: 0;
   width: 100%;
   height: var(--header-height);

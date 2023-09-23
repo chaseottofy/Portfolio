@@ -10,6 +10,20 @@
 
 /* background-blend-mode: difference, color-dodge, difference, difference, overlay, color-dodge; */
 
+/* filter: contrast(1.4) brightness(.8) hue-rotate(298deg); */
+
+/* filter: contrast(1.4) brightness(.8); */
+
+/* filter: hue-rotate(298deg); */
+
+/* filter: contrast(1.4) brightness(.8) hue-rotate(320deg); */
+
+/* filter: grayscale(1) brightness(1.3); */
+
+/* filter: contrast(1.4) brightness(1) hue-rotate(300deg); */
+
+/* filter: contrast(1.3) grayscale(.8) brightness(1); */
+
 /* GRADIENT (under header)
 ============================ */
 .gradient-overlay--one {
@@ -29,48 +43,34 @@
 }
 
 .gradient-noir {
-  filter: contrast(1.5) brightness(1) hue-rotate(294deg);
-
-  /* filter: contrast(1.4) brightness(.8) hue-rotate(298deg); */
-
-  /* filter: contrast(1.4) brightness(.8); */
-
-  /* filter: hue-rotate(298deg); */
-
-  /* filter: contrast(1.4) brightness(.8) hue-rotate(320deg); */
-
-  /* filter: grayscale(1) brightness(1.3); */
-
-  /* filter: contrast(1.4) brightness(1) hue-rotate(300deg); */
-
-  /* filter: contrast(1.3) grayscale(.8) brightness(1); */
+  filter: contrast(1.5) hue-rotate(294deg);
 }
 
 .gradient-overlay--two {
   position: absolute;
-  z-index: 100;
+  z-index: 900;
+
+  /* z-index: 102; */
   top: 0;
   left: 0;
   width: 100%;
   height: calc(100vh + 2px);
   margin: calc(0vh - var(--intro-offset)) auto 0 auto;
-  background: rgba(0, 0, 0, .3);
+  backdrop-filter: contrast(1.2);
+  background-image: url('../../images/design/cartographer.png');
+  opacity: .4;
+  pointer-events: none;
+  user-select: none;
 }
 
-/* .gradient-noir::before {
-  content: "";
-} */
-
-/* Uncomment to apply grain overlay */
-
-/* .gradient-overlay--one::after {
+.gradient-overlay--one::after {
   position: absolute;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
-  filter: url("#grainy");
-  opacity: 0.2;
   height: 100%;
+  background: rgba(0,0,0,.75);
   content: "";
-  z-index: 9999;
-} */
+  opacity: 0.05;
+}

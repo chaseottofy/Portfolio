@@ -87,7 +87,7 @@
   /* ********************************** */
 
   /* --intro-offset: 0vh; */
-  --intro-offset: 18vh;
+  --intro-offset: 10vh;
   --header-height: 4rem;
   --max-width-lg: 1280px;
   --max-width-md: 1140px;
@@ -251,7 +251,7 @@ input[type="radio"]:focus-visible + label,
 label:focus-visible,
 textarea:focus-visible,
 button:focus-visible {
-  outline: 1px dotted var(--white1);
+  outline: 1.5px dotted var(--white1);
 }
 
 svg {
@@ -281,6 +281,7 @@ svg {
 
 :-moz-focusring {
   outline: 1px dotted ButtonText
+
 }
 
 :-moz-ui-invalid {
@@ -366,12 +367,12 @@ a[disabled] {
   left: 0;
   width: 0 !important;
   height: 0 !important;
-  opacity: 0;
+  margin: 0 !important;
+  opacity: 0 !important;
   pointer-events: none !important;
   transition: opacity 200ms ease-in-out;
   user-select: none !important;
   visibility: hidden !important;
-  
 }
 
 [data-active-popup="true"] {
@@ -436,6 +437,16 @@ a[disabled] {
 
   100% {
     background-position: -200% 0
+  }
+}
+
+@keyframes pulse-small {
+  0% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
