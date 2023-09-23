@@ -57,7 +57,7 @@
   /* ********************************** */
 
   /* dynamic font sizes */
-  --fs0: max(34px, 3.4rem);
+  --fs0: max(34px, 2.8rem);
   --fs1: max(32px, 2.8rem);
   --fs2: max(25px, 2.2rem);
   --fs3: max(20px, 1.8rem);
@@ -361,14 +361,17 @@ a[disabled] {
 /* popup utilities
 ===================================== */
 [data-active-popup="false"] {
-  z-index: -1;
+  z-index: -1 !important;
+  top: 0;
+  left: 0;
   width: 0 !important;
   height: 0 !important;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none !important;
   transition: opacity 200ms ease-in-out;
-  user-select: none;
-  visibility: hidden;
+  user-select: none !important;
+  visibility: hidden !important;
+  
 }
 
 [data-active-popup="true"] {

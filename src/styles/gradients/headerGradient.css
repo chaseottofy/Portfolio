@@ -43,8 +43,23 @@
 
   /* filter: contrast(1.4) brightness(1) hue-rotate(300deg); */
 
-  /* filter: contrast(1.3) grayscale(1) brightness(.6); */
+  /* filter: contrast(1.3) grayscale(.8) brightness(1); */
 }
+
+.gradient-overlay--two {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 2px);
+  margin: calc(0vh - var(--intro-offset)) auto 0 auto;
+  background: rgba(0, 0, 0, .3);
+}
+
+/* .gradient-noir::before {
+  content: "";
+} */
 
 /* Uncomment to apply grain overlay */
 

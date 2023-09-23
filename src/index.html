@@ -25,7 +25,7 @@
 
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
-  <!-- USE THE SVG BELOW IN CSS FOR GRAIN OVERLAY: url("#grainy") -->
+  <aside class="gradient-overlay--two"></aside>
   <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
   <filter id='grainy' x='0' y='0' width='100%' height='100%'>
     <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='5' stitchTiles='stitch' result='noise'/>
@@ -33,11 +33,13 @@
   </svg>
 
   <!-- HEADER (FIXED)-->
-  <header class="header" style="background-color:transparent;">
+  <!-- style="background-color:transparent;" -->
+  <header class="header" >
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
         <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
-          <img src="./images/svg/logo.svg" alt>
+          <!-- <img src="./images/svg/globe.svg" alt> -->
+          <!-- <img src="./images/svg/logo.svg" alt> -->
         </a>
       </div>
 
@@ -99,11 +101,13 @@
         </div>
       </div>
     </div>
+
+    <aside class="intro-observer-ref"></aside>
   </section>
 
   <!-- MAIN (projects > skills > about > contact) -->
   <aside class="section-divider" style="z-index: 62 !important;"></aside>
-  <aside class="section-gradient--l" style="z-index: 61 !important;"></aside>
+  <aside class="section-gradient--l section-divider-top" style="z-index: 61 !important;"></aside>
   <main class="main">
     <!-- SECTION : PROJECTS -->
     <article class="section-container projects-container" id="projects-top" style="z-index: 60 !important;">

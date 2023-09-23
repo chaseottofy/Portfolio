@@ -61,8 +61,8 @@
 .intro-container--links {
   display: flex;
   width: auto;
-  height:14rem;
-  align-items:flex-end;
+  height: 14rem;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 0 1rem;
 }
@@ -98,13 +98,21 @@
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
+.intro-observer-ref {
+  position: absolute;
+  z-index:-1;
+  bottom: .25rem;
+  background-color: green;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  pointer-events: none;
+  user-select: none;
+}
+
 @media screen and (max-width: 720px) {
-  /* .intro-header__subtitles h1 {
-    font-size: var(--fs2);
-    letter-spacing: -.01em;
-  } */
   .intro-header__subtitles h1 {
-    font-size: 6vw;
+    font-size: 5.5vw;
   }
 
   .intro-header__subtitles h1::before {
