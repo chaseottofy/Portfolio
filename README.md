@@ -1,29 +1,32 @@
 # Portfolio
 
 > **Warning**
-> The image optimization script CLI commands are a work in progress
+> Regarding the form: Refer to the [Form](#contact-form) section for information on how to setup the contact form, your build.
+> Regarding the image optimization script: Requires setup, refer to the [Images](#images) section before running any CLI commands.
 
-___
+---
 
-Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the time to optimize my webpack configuration. If you use webpack, be sure to check out [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin)!
+Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the time to re-work my webpack config using his excellent [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin).
 
-___
 ![screen](screenshots/perf4.jpg)
 
-## Table of Contents
+---
+
+**Table of Contents**
+
 - [Cloning](#cloning)
 - [Features](#features)
 - [Form](#contact-form)
   - [Apps Script Setup](#apps-script-setup)
 - [Images](#images)
-  - [Project Images](#project-images)
-  - [Image Optimization](#image-optimization)
+  - [How I handle Project Images](#how-i-handle-project-images)
+  - [CLI Commands](#cli-commands)
 - [Notes](#notes)
-
 
 ## Cloning
 
 Clone the repository and install dependencies
+
 ```bash
 git clone
 cd portfolio
@@ -40,16 +43,16 @@ touch .env
 
 **If you decide to not use the contact form**, follow the steps below to remove it from the project:
 
-- Remove the following files: `/src/components/form` & `/src/styles/sections/contactForm.css`
+1.  Remove the following files: `/src/components/form` & `/src/styles/sections/contactForm.css`
 
-- Remove the following lines from `/src/index.js`
+2.  Remove the following lines from `/src/index.js`
 
 ```javascript
 import initForm from './components/form/form';
 initForm();
 ```
 
-- Remove the following Tag from `/src/index.html`
+3.  Remove the following Tag from `/src/index.html`
 
 ```html
 <article class="contact-form--container"></article>
@@ -58,6 +61,7 @@ initForm();
 ---
 
 ## Features
+
 - Zero 3rd party dependencies
 - 100% Vanilla JS & Vanilla CSS
 - All UI components and design are from scratch
@@ -77,101 +81,86 @@ initForm();
 
 The Form is integrated with google sheets using Apps Script - the process is very simple and free to use.
 
-### Apps Script Setup
-1. Create a new google sheet
-2. Locate `Apps Script` in the `Extensions` menu and open it
-3. Add a new file and name it `Code.gs` (or whatever you want)
-4. Copy the full url of your google sheet e.g. `https://docs.google.com/spreadsheets/d/.../edit#gid=0`
-5. Paste the following code into the file:
+> Apps Script Setup (Google Sheets)
+
+1.  Create a new google sheet
+2.  Locate `Apps Script` in the `Extensions` menu and open it
+3.  Add a new file and name it `Code.gs` (or whatever you want)
+4.  Copy the full url of your google sheet e.g. `https://docs.google.com/spreadsheets/d/.../edit#gid=0`
+5.  Paste the following code into the file:
+
 ```javascript
 // replace the URL with your own google sheet URL
 const sheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/.../edit#gid=0");
 const sheet = sheets.getSheetByName("Sheet1");
-function doPost(e){
-  let data = e.parameter;
 
-  // appendRow will recieve the formData : {messageName, contactMethod, messageContactVal, messageVal} in my case
-  sheet.appendRow([data.messageName,data.contactMethod,data.messageContactVal,data.messageVal]);
-  return ContentService.createTextOutput("Success");
+function doPost(e) {
+    let data = e.parameter;
+
+    // appendRow will recieve the formData : {messageName, contactMethod, messageContactVal, messageVal} in my case
+    sheet.appendRow([data.messageName, data.contactMethod, data.messageContactVal, data.messageVal]);
+    return ContentService.createTextOutput("Success");
 }
 ```
-6. Click Deploy -> New Deployment
-7. Select `Web App` as the type
-8. Set 'Who has access' to 'Anyone'
-9. Click Deploy
-10. Copy the Deployment ID and paste it into your .env file as `SHEET_ID`
-11. Done.
+
+6.  Click Deploy -> New Deployment
+7.  Select `Web App` as the type
+8.  Set 'Who has access' to 'Anyone'
+9.  Click Deploy
+10. Copy the Deployment ID
+11. Create a .env and set `SHEET_ID` to the Deployment ID
+12. Setup the fetch, or use the one provided in the project.
+
+```javascript
+fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
+    method: 'POST',
+    body: new FormData(form),
+})
+```
 
 ---
 
 ## Images
 
-#### Project Images
+> Project Images
 
-Project images are handled differently than all other images
-- The original images are stored in the src/images/imgprojstart folder
-- Each project contains a large and small image within this folder.
-- The calendar project is the only project with multiple images, it contains 10 images total, 2 for each 'view' of the project.
-- It is preferred that project images are 
+- I have turned overwrites off by default just in case someone accidentally sets the output directory to the wrong folder.
+- I wrote this to fit my very specific needs but after finding myself using it over and over again, I decided to include it in the project.
+- I included a bunch of CLI commands but I recommend just setting the directories manually and to test everything in a test project before running it on your actual project.
+
+In short, I use the script to do the following:
+First, I keep all project images within the same directory on the same level.
+
+- Large image names end in '1' and small images end in '2'. (you can customize this in the script)
+- The script compresses each image, and formats all images to the same width and height. It then uses a predefined multiplier to create a small version of the images ending in '2'. There are also options to ensure that an aspect ratio is maintained for small and images, in my case, I use 4/3 for small images and 16/9 for large images.
+- It utilizes the sharp library for all image processing, and in my opinion, there is no better library or tool for compression and easy manipulation (I wish they had a contrast filter though).
+- Everything else is sketchy, I don't really ever mess around with node, so hopefully this works for you. I wouldn't include it if I ever had problems with it but I'm not sure if different operating systems will cause issues (I'm on windows).
+
+### CLI Commands
+
+| Command               | Description                                                                                  | Example                                       |
+| --------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `setparse`            | Run the actual optimization (make sure to set up first either manually or with CLI commands) | `npm run setparse`                            |
+| `setparse:help`       | Get a list of all commands                                                                   | `npm run setparse:help`                       |
+| `setparse:base`       | Set the base directory                                                                       | `npm run setparse:base base/directory`        |
+| `setparse:sub`        | Set the sub directory                                                                        | `npm run setparse:sub folderWithinBase`       |
+| `setparse:out`        | Set the output directory                                                                     | `npm run setparse:out outputFolderWithinBase` |
+| `setparse:wh`         | Set the width and height of the large image                                                  | `npm run setparse:wh 1600 900`                |
+| `setparse:multiplier` | Set the multiplier for the large image                                                       | `npm run setparse:multiplier 0.1`             |
+| `setparse:format`     | Set the format of the large image                                                            | `npm run setparse:format jpg`                 |
+| `setparse:ar`         | Set the aspect ratio of the small image                                                      | `npm run setparse:ar 4/3`                     |
+| `setparse:current`    | Get the current config                                                                       | `npm run setparse:current`                    |
+| `setparse:quality`    | Set the quality of the large image                                                           | `npm run setparse:quality 1-99`               |
 
 > **Warning**
-> To utilize the image optimization script included in this project, a list of CLI commands is provided below.
-- For instances where multiple arguments are used, example being `npm run setparse:wh 1600 900`, separate the arguments by a space.
-
-#### Set the Base Directory where the images are located
-```bash
-# npm run setparse:base full/path/to/baseimgdir
-# example:
-npm run setparse:base src/images
-```
-> **Warning**
-> Your project images should be located in a subfolder of this directory.
-> - If you do not provide a path, the default path will be used. `[src/images]`.
-> By default, the images are located in the src/images/imgprojstart folder.
-> To change the subdirectory name, run the command below.
-
-#### Set the Subdirectory where the images are located within the Base Directory
-> By default, the subdirectory is named `imgprojstart`
-```bash
-npm run setparse:sub imgprojstart
-```
-
-#### Set the Subdirectory where the optimized images will be located within the Base Directory
-> By default, the subdirectory is named `imgproj`
-```bash
-npm run setparse:opt imgproj
-```
-
-#### Set the desired output width and height for the images
-> By default, the width is set to `1600` and the height is set to `900`
-```bash
-# npm run setparse:wh width height
-example: npm run setparse:wh 1600 900
-```
-
-#### Set the desired output format for the images
-> By default, the format is set to `webp`
-> Must be one of the following: `webp`, `jpeg`, `png`, `avif`
-```bash
-# npm run setparse:format format
-example: npm run setparse:format webp
-```
-
-#### Set the desired output quality for the images
-> By default, the quality is set to `99`
-> Must be a number between `1` and `100`
-```bash
-npm run setparse:quality 99
-```
-
-Using a custom node script that utilizes the sharp library, the images are resized to fit one specific aspect ratio, optimized, converted to webp if not already, and then moved to the src/images/imgproj folder. This is done BEFORE the webpack build process and is NOT dynamic. You must run this script manually - it only has to be run once.
-- The script is located in the scripts folder at the root of the project in the file named `parse.mjs`
-- To call the script, first ensure that it is properly configured.
-
-All project images are imported via the src/utilities/get-image.js file. They are then distributed throughout the project from there.
+> It is recommended to manually optimize images before running the script.
+> The script will not work if any of the directories are not set properly.
+> The image optimization script is not perfect, it is very personalized to my needs, I use it to set all images to the same aspect ratio and size, and to create a small and large version of each image in different aspect ratios within the same folder.
 
 ---
 
 ## Notes
+
 I'm working on making it easier to customize the content by having all data loaded from JSON.
+
 - update on customization (9/22/23): 50-60% of the content is now loaded from JSON. Will eventually move all content to JSON.
