@@ -78,16 +78,26 @@
 
   /* ********************************** */
 
+  /* ********************************** */
+
+  /* html template heights */
+  --skill-section-height: 280px;
+
+  /* ********************************** */
+
   /* Shared colors between light/dark */
   --primary1: #0089ae;
   --primary2: #025b74;
   --primary3: #013948;
+
+  /* apply this value as a filter and the element color will be converted to primary2 */
+  --convert-to-primary: invert(33%) sepia(61%) saturate(1000%) hue-rotate(171deg) brightness(90%) contrast(101%);
   --red1: #cf007a;
 
   /* ********************************** */
 
   /* --intro-offset: 0vh; */
-  --intro-offset: 10vh;
+  --intro-offset: 17vh;
   --header-height: 4rem;
   --max-width-lg: 1280px;
   --max-width-md: 1140px;

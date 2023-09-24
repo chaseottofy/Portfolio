@@ -17,30 +17,18 @@ background-repeat: no-repeat; */
   background: var(--black0);
 
   /* background: linear-gradient(to bottom, transparent 0, var(--black0) 50%); */
-  scroll-margin-top: 4rem;
+  scroll-margin-top: calc(4rem + 20px);
 }
 
 .projects-container::before {
   position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-
-  /* background: rgba(0,0,0,.1); */
-  background-image:url('../../images/design/graphy-dark.png');
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/design/graphy-dark.png');
   content: '';
   opacity: .13;
-
-  /* background-image: url('../../images/design/brilliant.png'), url('../../images/design/shattered-dark.png'); */
-
-  /* backdrop-filter: contrast(1.4); */
-
-  /* filter:invert(1); */
-
-  /* filter: url(#grainy); */
-
-  /* opacity: .1; */
 }
 
 .projects-container .section-title {
@@ -60,16 +48,16 @@ background-repeat: no-repeat; */
 }
 
 .project-cell-divider {
-  z-index:2000;
-  width:1px;
-  height:5rem;
+  z-index: 2000;
+  width: 1px;
+  height: 5rem;
   margin: 1.5rem auto 1.5rem auto;
   opacity: .3;
   outline: 1px dotted var(--white1);
 }
 
 .project-cell-divider:last-child {
-  height:8rem;
+  height: 8rem;
   margin-top: 3rem;
   margin-bottom: 0;
 }

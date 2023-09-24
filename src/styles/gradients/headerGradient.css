@@ -48,7 +48,7 @@
 
 .gradient-overlay--two {
   position: absolute;
-  z-index: 900;
+  z-index: 200;
 
   /* z-index: 102; */
   top: 0;

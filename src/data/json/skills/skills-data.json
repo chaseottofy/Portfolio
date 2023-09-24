@@ -1,65 +1,67 @@
 [
   {
     "content": [
-      "Developed reusable React components for various projects.",
-      "Utilized hooks for state management and lifecycle methods.",
-      "Integrated third-party libraries for enhanced UI/UX."
+      "I have 1 year of experience with React, and 3 years of experience in JavaScript alltogether.",
+      "Every time I create a project in vanilla, I create a project in React. I find that I learn from both, and that I am able to apply what I learn in one to the other. I have no doubt that I would be able to implement my most verbose vanilla projects in React, and vice versa. With that being said, it's hard to pinpoint exactly where my React skills are at, but I will say that I have not yet encountered the roadblocks that I had to overcome in vanilla, the 2 years I spent imprisoned ",
+      "I do not feel limited by React in any way, and while I have yet to take on a project with the complexity of some of my vanilla projects, notably the Google Calendar Clone, I am confident that I would be able to do so. The real hill I have yet to climb is real-world react experience, and I am eager to do so.",
+      "No, I do not have any real-world experience with React, but I am confident that I am prepared to deliver. I have been working with React for a year now, and I have been working with JavaScript for 3 years counting my time in React. I have a deep understanding of the fundamentals of JavaScript, therefore I have a deep understanding of React. The 'in-between' variable declaration and execution are certainly different, but the underlying concepts are the same."
     ],
     "imgSrc": "react",
     "title": "React JS"
   },
   {
     "content": [
-      "Implemented complex features without relying on frameworks.",
-      "Optimized website performance and responsiveness.",
-      "Debugged and resolved cross-browser compatibility issues."
-    ],
-    "imgSrc": "vanilla",
-    "title": "Vanilla JS"
-  },
-  {
-    "content": [
-      "Typed JavaScript for better maintainability and fewer runtime errors.",
-      "Integrated third-party libraries with custom type declarations.",
-      "Utilized advanced types and generics for complex logic."
-    ],
-    "imgSrc": "typescript",
-    "title": "TypeScript"
-  },
-  {
-    "content": [
-      "Configured Webpack for optimized bundling and chunking.",
-      "Set up loaders and plugins for transpiling and asset management.",
-      "Enhanced app performance through tree shaking and code splitting."
-    ],
-    "imgSrc": "webpack",
-    "title": "Webpack"
-  },
-  {
-    "content": [
-      "Designed responsive layouts with Flexbox and Grid.",
-      "Implemented animations and transitions for improved user interactions.",
-      "Ensured cross-browser styling consistency."
-    ],
-    "imgSrc": "css",
-    "title": "CSS"
-  },
-  {
-    "content": [
-      "Built SEO-friendly web apps with static site generation.",
-      "Optimized page loads with incremental static regeneration.",
-      "Integrated with various data sources using Next.js API routes."
+      "My experience with Next.js is more or less the same as my experience with React. I have been using it for a year now, although I have only published one project publicly, but I think that project is a good representation that I am comfortable and capable with the framework",
+      "Built a Next.js blog application with the latest App Router, ContentLayer for CMS, CSS Modules and TypeScript.",
+      "Blog application scores a flawless 100 on Google Lighthouse and Vercel's Performance, Accessibility, Best Practices, and SEO audits. It is built with a mobile first approach in mind and the UI, though not my own design (I got it from basement.studio), is implemented from scratch using CSS Modules. Creating and updating blog posts is as simple as updating a MDX file, all in thanks to the ContentLayer SDK."
     ],
     "imgSrc": "next",
     "title": "Next.js"
   },
   {
     "content": [
-      "Set up and customized WordPress sites for various clients.",
-      "Implemented custom themes and plugins to enhance site functionality.",
-      "Optimized site speed and ensured security through regular updates."
+      "I have 1 year of experience with TypeScript. My most recent projects are all written in TypeScript, and I am well-versed in it's TSX syntax when used with React.",
+      "I have built two, Zero-dependency NPM packages using Typescript, the latest of which has over 1000 downloads (monthpicker-lite-js). My latest project is a Blog written in TSX using Next.js, and I am currently working on a few different React NPM Component packages using TSX."
     ],
-    "imgSrc": "wordpress",
-    "title": "WordPress"
+    "imgSrc": "typescript",
+    "title": "TypeScript"
+  },
+  {
+    "content": [
+      "3 years of experience with Vanilla JS.",
+      "Prioritized building a foundation through Vanilla and spent the first 2 years of my learning using it exclusively.",
+      "Pledged to not use any frameworks until I felt I had pushed Vanilla as far as I could, which came in the form of building a one for one clone of Google Calendar without the use of any frameworks or libraries.",
+      "The long time spent at ground zero without any third party code prepared me extremely well for modern frameworks.",
+      "Have solved at least 2 problems a day on Codewars for nearly 2 years. Began mixing in Leetcode 4 months ago, and in total I have solved over 1,000 problems on these sites and have reached the top .25% of codewars users."
+    ],
+    "imgSrc": "vanilla",
+    "title": "Vanilla JS"
+  },
+  {
+    "content": [
+      "Automation is important to me, unfortunately there are not many tools I'm aware of that are great at it. I have been honing with Node for a year now and have built several CLI tools to automate various tasks.",
+      "I do not publicly share the majority of these tools, but I will leave them in whatever project I am working on that requires them. This portfolio for example hass a CLI Image Handling Script that automates several annoying tasks relative to image handling such as resizing, applying filters, converting to webp, creating queries, data URIs, and more.",
+      "The majority of the time when I create a project that I do not intend on making public, I will use a custom Node build process to compile and bundle the project."
+    ],
+    "imgSrc": "node",
+    "title": "Node JS"
+  },
+  {
+    "content": [
+      "I have over 5 years of experience with CSS, enough to know how to re-create any design so long as it doesn't involve canvas magic.",
+      "Am open to using any CSS framework or tooling, some of the ones I am familiar with are: Bootstrap, Tailwind, and Module CSS."
+    ],
+    "imgSrc": "css",
+    "title": "CSS"
+  },
+  {
+    "content": [
+      "Over 2 years of experience with Webpack.",
+      "Familiar with all of the core loading and optimization features in standard webpack.",
+      "Have explored many of the more advanced features such as code splitting, tree shaking, and module federation.",
+      "Make it a habit to try out different configurations with each new project. For example, this portfolio utilizes a very underrated plugin called 'html-bundler-webpack-plugin' which allows you to resolve images, fonts, css, and js files from your html files."
+    ],
+    "imgSrc": "webpack",
+    "title": "Webpack"
   }
 ]

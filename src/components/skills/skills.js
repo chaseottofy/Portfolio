@@ -10,7 +10,7 @@ const createSkill = (content, imgSrc, title, parent) => {
 
   const createSkillContent = (text) => {
     const skillListItem = document.createElement('li');
-    skillListItem.textContent = `- ${text}`;
+    skillListItem.textContent = text;
     skillContent.append(skillListItem);
   };
 

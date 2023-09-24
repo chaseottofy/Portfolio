@@ -35,24 +35,8 @@
   width: 100%;
   height: 100%;
   content: '';
-
-  /* background-image: url('../../../images/design/3px-tile.png'); */
-
-  /* opacity: 100%; */
-
-  /* opacity: .2; */
   pointer-events: none;
   user-select: none;
-
-  /* background-blend-mode:overlay; */
-
-  /* background-image: url('../../../images/design/binding-dark.png'); */
-
-  /* filter: url("#grainy"); */
-
-  /* opacity: 5%; */
-
-  /* background: rgba(0,0,0,0); */
 }
 
 /* .project-cell::before {

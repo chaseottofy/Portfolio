@@ -6,6 +6,7 @@ import cssSvg from '../images/svg/css.svg';
 import githubSvg from '../images/svg/githuboutline.svg';
 import lockSvg from '../images/svg/lock.svg';
 import mailtoSvg from '../images/svg/mailto.svg';
+import nodeSvg from '../images/svg/node.svg';
 import nextSvg from '../images/svg/next.svg';
 import reactSvg from '../images/svg/react.svg';
 import typescriptSvg from '../images/svg/typescript.svg';
@@ -24,6 +25,7 @@ const svgIcons = {
   'lock': lockSvg,
   'mailto': mailtoSvg,
   'next': nextSvg,
+  'node': nodeSvg,
   'react': reactSvg,
   'typescript': typescriptSvg,
   'vanilla': vanillaSvg,

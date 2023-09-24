@@ -18,19 +18,10 @@
   top:0;
   left:0;
   width:100%;
-
-  /* filter: contrast(140%); */
-
-  /* backdrop-filter:contrast(140%); */
   height:100%;
-  backdrop-filter: saturate(85%) contrast(120%);
-
-  /* background-image: url('../../images/design/shattered-dark.png'); */
-
-  /* background-image: url('../../images/design/brilliant.png'), url('../../images/design/simple-horizontal-light.png'); */
+  backdrop-filter: saturate(85%) contrast(110%);
   background-image: url('../../images/design/brilliant.png');
   content: '';
-  opacity: 1;
   pointer-events: none;
   user-select: none;
 }
