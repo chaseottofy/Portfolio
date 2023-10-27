@@ -16,7 +16,7 @@
   min-height: 48px !important;
   max-height: 48px !important;
   border-radius: 100%;
-  margin-top: -28px;
+  margin-top: -48px;
   background: linear-gradient(to bottom, var(--primary1) 0, var(--primary3) 50%, var(--primary2) 80%);
   filter: blur(48px);
   mix-blend-mode: normal;

@@ -225,16 +225,8 @@
 }
 
 .header-logo:hover {
-  filter: invert(33%) sepia(61%) saturate(1000%) hue-rotate(171deg) brightness(90%) contrast(101%);
-
-  /* opacity: .8; */
-
-  /* transition: var(--topac1); */
-  transition: all .2s ease-in-out;
-
-  /* animation: pulse-small 4s ease-in-out infinite; */
-
-  /* transform: perspective(1px) scale(1.1); */
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
 }
 
 .theme-switch span label:hover img {

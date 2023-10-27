@@ -2,8 +2,6 @@
 ============================ */
 .intro-container {
   position: relative;
-
-  /* z-index: 902; */
   max-width: var(--max-width-lg);
   height: calc(100vh - var(--intro-offset) + 2px);
   margin: 0 auto;
@@ -135,9 +133,3 @@
     letter-spacing: -.01em;
   }
 }
-
-/* @media screen and (max-width: 580px) {
-  .intro-header__subtitles h1 {
-    font-size: 6vw;
-  }
-} */

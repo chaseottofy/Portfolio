@@ -8,18 +8,17 @@
   border: none;
   border-top: 1px solid var(--grey4);
   margin: 0;
-
-  /* filter: contrast(1.02) saturate(80%); */
+  /* filter: saturate(85%) contrast(120%) brightness(105%); */
 }
 
 .project-content__body::after {
   position: absolute;
-  z-index:888;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  backdrop-filter: saturate(85%) contrast(110%);
+  z-index: 888;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: saturate(85%) contrast(120%) brightness(110%);
   background-image: url('../../images/design/brilliant.png');
   content: '';
   pointer-events: none;
@@ -28,10 +27,13 @@
 
 .project-content__body picture {
   cursor: zoom-in;
+  /* filter: contrast(120%); */
 }
 
 .project-content__body picture img {
   transition: transform .3s cubic-bezier(.25, .75, .6, .98);
+  filter: contrast(110%);
+
 }
 
 .proj-img {
@@ -41,16 +43,10 @@
   width: 100%;
   height: 100%;
   aspect-ratio: var(--ap);
-
-  /* filter: brightness(.6); */
-
-  /* filter: contrast(160%); */
   image-rendering: auto;
   -interpolation-mode: nearest-neighbor;
   object-fit: cover;
   object-position: center;
-
-  /* image-rendering: -webkit-optimize-contrast; */
 }
 
 .hide-img {
@@ -81,15 +77,11 @@
   min-height: 100%;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .6);
+  background: var(--offsetblack1);
 }
 
 .project-content__body picture:hover img {
   transform: scale(101%) translate(.2%, .2%);
-
-  /* transform: scale(101%) translateX(.5%); */
-
-  /* transform: scale(101%) translate(-.5%, -.5%); */
 }
 
 @keyframes fade-img {

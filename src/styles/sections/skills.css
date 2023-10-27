@@ -151,29 +151,8 @@
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
-/* .skills-cell:hover {
-  background: var(--offsetblack4);
-  transition-duration: .15s;
-  transition-property: background;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
-
-.skills-cell:hover .skill-img--wrapper img {
-  filter: grayscale(0);
-  transition-duration: .15s;
-  transition-property: filter;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
-
-.skills-cell:hover .skill-content li {
-  opacity: 1;
-  transition-duration: .15s;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-} */
-
 .skill-content::-webkit-scrollbar {
-  width: 6px;
+  width: 9px;
   background: var(--black1);
 }
 

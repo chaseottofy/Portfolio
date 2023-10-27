@@ -64,7 +64,7 @@
   justify-content: center;
   color: var(--accent-7);
   font-family: monospace;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   pointer-events: none;
   transform: scale(.95) translateY(-10%);

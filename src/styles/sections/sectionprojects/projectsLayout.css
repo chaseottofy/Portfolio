@@ -28,7 +28,7 @@ background-repeat: no-repeat; */
   height: 100%;
   background-image: url('../../images/design/graphy-dark.png');
   content: '';
-  opacity: .13;
+  opacity: .1;
 }
 
 .projects-container .section-title {
@@ -50,7 +50,7 @@ background-repeat: no-repeat; */
 .project-cell-divider {
   z-index: 2000;
   width: 1px;
-  height: 5rem;
+  height: 7rem;
   margin: 1.5rem auto 1.5rem auto;
   opacity: .3;
   outline: 1px dotted var(--white1);
