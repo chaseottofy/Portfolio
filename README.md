@@ -8,7 +8,7 @@
 
 Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the time to re-work my webpack config using his excellent [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin).
 
-![screen](screenshots/perf4.jpg)
+![screen](screenshots/perf5.jpg)
 
 ---
 
