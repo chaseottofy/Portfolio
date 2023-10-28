@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Portfolio for Chase Ottofy",
+  "description": "Chase Ottofy Portfolio",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -35,12 +35,10 @@
     "webpack": "^5.82.0"
   },
   "keywords": [
-    "portfolio",
-    "chase",
     "ottofy",
-    "chaseottofy",
     "chase ottofy",
-    "chase ottofy portfolio",
+    "portfolio",
+    "chaseottofy",
     "front end",
     "front end developer",
     "javascript developer",
@@ -51,7 +49,7 @@
   "author": "Chase Ottofy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chaseottofy/portfolio/issues"
+    "url": "https://github.com/chaseottofy/Portfolio/issues"
   },
   "homepage": "https://github.com/chaseottofy/portfolio#readme",
   "devDependencies": {

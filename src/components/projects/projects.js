@@ -59,7 +59,8 @@ const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, pub
   }
 
   const publishedText = projectCell.querySelector('.content-published--text');
-  publishedText.textContent = `— ${published}`;
+  // publishedText.textContent = `— ${published}`;
+  publishedText.textContent = `- ${published}`;
 
   // set search bar link and title
   const subheaderSearch = projectCell.querySelector('.pc__subheader--search');
@@ -113,7 +114,7 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   }
 
   projectStacksWrapper.dataset.pfStacks = stacks.join(' + ');
-  projectFooterDesc.textContent = `— ${description}`;
+  projectFooterDesc.textContent = `${description}`;
   projectFooterTitle.textContent = title;
 
   const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;

@@ -173,3 +173,4 @@ First, I keep all project images within the same directory on the same level.
 
 - [placeholder images](https://dummyimage.com/1600x900/000/000&text=.)
 - [textures](https://www.transparenttextures.com/)
+- [textures-two](https://www.toptal.com/designers/subtlepatterns/)

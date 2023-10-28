@@ -98,8 +98,6 @@
   z-index: 2;
   display: flex;
   width: 100%;
-
-  /* min-height: 240px; */
   min-width: 200px;
   max-width: 320px;
   flex-direction: column;
@@ -188,17 +186,11 @@
 ============================ */
 .lh-sub {
   position: relative;
-
-  /* max-width: 290px; */
   display: flex;
   width: 100%;
   flex-direction: column;
   padding: 1.5rem;
   border: none;
-
-  /* height: 210px; */
-
-  /* max-height: 210px; */
   text-align: left;
 }
 
@@ -271,7 +263,6 @@
 
 @media screen and (max-width:768px) {
   .lighthouse-modal {
-    /* max-height: 90%; */
     height: 100%;
   }
 

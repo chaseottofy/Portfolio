@@ -1,13 +1,3 @@
-/* background: linear-gradient(to top,
-    var(--black0) 0,
-    hsla(0, 0%, 100%, 0) 100%),
-  linear-gradient(180deg,
-    var(--black0) 0,
-    var(--offsetsecondary1) 20%);
-background-size: 100% 100%, 100% 100%, 1440px 1px;
-background-position: bottom;
-background-repeat: no-repeat; */
-
 /* SECTION: ECTS
 ============================ */
 .projects-container {
@@ -15,9 +5,7 @@ background-repeat: no-repeat; */
   z-index: 50;
   width: 100%;
   background: var(--black0);
-
-  /* background: linear-gradient(to bottom, transparent 0, var(--black0) 50%); */
-  scroll-margin-top: calc(4rem + 20px);
+  scroll-margin-top:4rem;
 }
 
 .projects-container::before {
@@ -27,6 +15,7 @@ background-repeat: no-repeat; */
   width: 100%;
   height: 100%;
   background-image: url('../../images/design/graphy-dark.png');
+  background-position:center;
   content: '';
   opacity: .1;
 }
@@ -50,14 +39,14 @@ background-repeat: no-repeat; */
 .project-cell-divider {
   z-index: 2000;
   width: 1px;
-  height: 7rem;
+  height: 5rem;
   margin: 1.5rem auto 1.5rem auto;
   opacity: .3;
   outline: 1px dotted var(--white1);
 }
 
 .project-cell-divider:last-child {
-  height: 8rem;
+  height: 6rem;
   margin-top: 3rem;
   margin-bottom: 0;
 }

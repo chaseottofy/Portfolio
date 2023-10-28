@@ -32,7 +32,7 @@
   font-family: var(--secondaryFont);
   font-size: var(--fs4);
   font-weight: 900;
-  line-height: .95;
+  line-height: .65;
   white-space: nowrap;
 }
 
@@ -40,7 +40,11 @@
   letter-spacing: 5px;
 }
 
-/* .section-title h3 {} */
+.section-title h3 {
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white2);
+}
 
 .section-subtitle {
   color: var(--white1);
@@ -62,9 +66,7 @@
   border-bottom: 1px solid var(--grey2);
   margin: 0 auto 0 auto;
   font-size: var(--fs5);
-  letter-spacing: -.02em;
-  line-height: 1.25;
-  opacity: .9;
+  line-height: 1.125;
 }
 
 .section-excerpt p {
@@ -78,7 +80,7 @@
 
   .section-title h2,
   .section-title h3 {
-    font-size: var(--fs2);
+    font-size: var(--fs4);
   }
 
   .section-excerpt {

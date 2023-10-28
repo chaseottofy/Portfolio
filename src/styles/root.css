@@ -62,7 +62,7 @@
   --fs2: max(25px, 2.2rem);
   --fs3: max(20px, 1.8rem);
   --fs4: max(22px, 1.6rem);
-  --fs5: max(1.125rem, 22px);
+  --fs5: max(1.125rem, 20px);
   --fs6: max(1rem, 16px);
 
   /* ********************************** */
@@ -81,7 +81,7 @@
   /* ********************************** */
 
   /* html template heights */
-  --skill-section-height: 280px;
+  --skill-section-height: 320px;
 
   /* ********************************** */
 
@@ -96,9 +96,8 @@
 
   /* ********************************** */
 
-  /* --intro-offset: 0vh; */
-  --intro-offset: 17vh;
-  --header-height: 4rem;
+  --intro-offset: 12vh;
+  --header-height: 3.75rem;
   --max-width-lg: 1280px;
   --max-width-md: 1140px;
 

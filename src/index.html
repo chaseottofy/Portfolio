@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Chase Ottofy</title>
+  <title>ottofy.dev</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,38 +10,34 @@
   <meta name="color-scheme" content="dark">
   <meta name="author" content="Chase Ottofy">
   <meta name="description" content="Portfolio for Chase Ottofy">
-  <meta name="keywords" content="chase ottofy portfolio, portfolio, chase, ottofy, chaseottofy, chase ottofy, chase ottofy portfolio, front end developer, front end, javascript, react developer, react">
+  <meta name="keywords" content="ottofy, chase ottofy, ottofy portfolio, chaseottofy, chase ottofy, chase ottofy portfolio, front end developer, front end, javascript, react developer, react">
   <meta property="og:title" content="Chase Ottofy Portfolio">
   <meta property="og:description" content="Portfolio for Chase Ottofy">
   <meta property="og:site_name" content="Portfolio">
-  <meta property="og:url" content="https://chaseottofy.github.io/Portfolio">
+  <meta property="og:url" content="https://ottofy.dev">
   <meta name="robots" content="index, follow">
-  <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
-  <link rel="icon" href="./images/svg/favicon.svg" sizes="any" type="image/svg+xml">
-  <!-- <link type="image/png" href="./images/favicon/favicon-32x32.png" rel="icon" sizes="32x32"> -->
+  <link type="image/png" href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
+  <link rel="icon" href="images/svg/favicon.svg" sizes="any" type="image/svg+xml">
+  <!-- <link type="image/png" href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32"> -->
   <link href="style.scss" rel="stylesheet">
+  <link rel="preload" href="images/design/top2.webp" as="image" type="image/webp">
   <script src="index.js" defer="defer"></script>
 </head>
 
 <body class="body theme__dark" data-disable-transitions="true" id="page-top" data-active-modal="false">
-
   <!-- HEADER GRADIENT -->
   <aside class="gradient-overlay--one gradient-noir"></aside>
   <aside class="gradient-overlay--two"></aside>
-  <svg style="position:absolute;top:0;left:0;height:0;width:0;z-index:-1;opacity:0;visibility:hidden;">
-  <filter id='grainy' x='0' y='0' width='100%' height='100%'>
-    <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' seed='5' stitchTiles='stitch' result='noise'/>
-  </filter>
-  </svg>
 
   <!-- HEADER (FIXED)-->
   <header class="header">
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
         <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
+          <img src="images/design/ab11.svg" alt="logo" style="height:42px !important; width:42px !important;">
         </a>
       </div>
-      
+
       <div class="nav-wrapper">
         <nav class="header-nav">
           <ul class="nav-menu">
@@ -55,7 +51,7 @@
               <a class="nav-menu--link contact-nav--btn" data-scroll-to="2" href="#contact-top" title="Contact Menu & context" data-contact-menu-open="false">
                 <span>Contact</span>
                 <span class="nav-menu--link__arrow">
-                  <img src="./images/svg/caretdown.svg" alt>
+                  <img src="images/svg/caretdown.svg" alt style="height:16px;width:16px;">
                 </span>
               </a>
             </li>
@@ -69,14 +65,14 @@
             <span>
               <input class="theme-input" id="theme-switch-dark" name="radio-theme" type="radio" value="dark">
               <label class="theme-label" for="theme-switch-dark" title="Switch to dark mode" aria-label="Switch to dark mode">
-                <img src="./images/svg/moon.svg" alt="dark">
+                <img src="images/svg/moon.svg" alt="dark">
               </label>
             </span>
 
             <span>
               <input class="theme-input" id="theme-switch-light" name="radio-theme" type="radio" value="light">
               <label class="theme-label theme-label--two" for="theme-switch-light" title="Switch to light mode" aria-label="Switch to light mode">
-                <img src="./images/svg/sun.svg" alt="light">
+                <img src="images/svg/sun.svg" alt="light">
               </label>
             </span>
           </div>
@@ -97,11 +93,10 @@
       </div>
     </div>
     <div class="intro-container--links">
-      <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com"><img src="./images/svg/mailto.svg" alt>Email</a>
-      <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy"><img src="./images/svg/githuboutline.svg" alt>Github</a>
+      <a href="mailto:ottofy@zohomail.com" title="Open Mail-to" class="mailto-link" data-tooltip-text="ottofy@zohomail.com"><img src="images/svg/mailto.svg" alt>Email</a>
+      <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer" data-tooltip-text="github.com/chaseottofy"><img src="images/svg/githuboutline.svg" alt>Github</a>
     </div>
 
-    <aside class="intro-observer-ref--top"></aside>
     <aside class="intro-observer-ref"></aside>
   </section>
 
@@ -117,7 +112,7 @@
       </div>
 
       <div class="section-excerpt">
-        <p>From streamlined packages to robust clones like Google Calendar, I've always aimed for versatility and meticulous detail. Regardless of when they were built, each project showcases my commitment to accessibility, performance, and responsiveness. Some earlier works might be less polished, but they stand testament to my early knack for optimizing solutions.<br></p>
+        <p>Instead of showcasing only my latest work, I've selected four projects that represent both the beginning and current stages of my learning journey. By presenting early efforts, such as the Google Calendar clone, I'm not attempting to depict my current skill set. Instead, I aim to highlight my evolution as a developer and my commitment to producing high-quality work, even when I might not possess immediate expertise in a particular area. If you're primarily interested in my present abilities, the Next.js Blog and Monthpicker Plugin are my two most recent projects.</p>
       </div>
 
       <!-- Project Menu HTML template : Propagated @/src/components/projects/project-menu -->
@@ -206,15 +201,15 @@
             <div class="project-footer__titles">
               <p class="project-footer__desc">lorem ipsum dolor</p>
               <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
               </div>
             </div>
             <div class="project-footer__content">
               <h3 class="project-footer__title">Lorem ipsum dolor</h3>
               <div class="project-footer-btns">
-                <button class="open-lh--btn" aria-label="button" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" aria-label="button" data-tooltip-text="Open Overview Modal">Overview</button>
+                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
               </div>
             </div>
           </div>
@@ -266,15 +261,15 @@
             <div class="project-footer__titles">
               <p class="project-footer__desc">lorem ipsum dolor</p>
               <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
               </div>
             </div>
             <div class="project-footer__content">
               <h3 class="project-footer__title">Lorem ipsum dolor</h3>
               <div class="project-footer-btns">
-                <button class="open-lh--btn" aria-label="button" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" aria-label="button" data-tooltip-text="Open Overview Modal">Overview</button>
+                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
               </div>
             </div>
           </div>
@@ -320,15 +315,15 @@
             <div class="project-footer__titles">
               <p class="project-footer__desc">lorem ipsum dolor</p>
               <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
               </div>
             </div>
             <div class="project-footer__content">
               <h3 class="project-footer__title">Lorem ipsum dolor</h3>
               <div class="project-footer-btns">
-                <button class="open-lh--btn" aria-label="button" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" aria-label="button" data-tooltip-text="Open Overview Modal">Overview</button>
+                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
               </div>
             </div>
           </div>
@@ -380,15 +375,15 @@
             <div class="project-footer__titles">
               <p class="project-footer__desc">lorem ipsum dolor</p>
               <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt=""></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
               </div>
             </div>
             <div class="project-footer__content">
               <h3 class="project-footer__title">Lorem ipsum dolor</h3>
               <div class="project-footer-btns">
-                <button class="open-lh--btn" aria-label="button" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" aria-label="button" data-tooltip-text="Open Overview Modal">Overview</button>
+                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
               </div>
             </div>
           </div>
@@ -450,12 +445,11 @@
           <ul class="skill-content"></ul>
           <div class="skill-img--wrapper"></div>
         </div>
-        
-        <div class="skills-cell">
+        <!-- <div class="skills-cell">
           <h4 class="skill-title"></h4>
           <ul class="skill-content"></ul>
           <div class="skill-img--wrapper"></div>
-        </div>
+        </div> -->
       </div>
     </article>
 
@@ -490,13 +484,13 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon cm-body--img" src="./images/svg/githuboutline.svg" alt>
+                      <img class="img-icon cm-body--img" src="images/svg/githuboutline.svg" alt>
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
                 </div>
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
+                  <img class="img-icon" src="images/svg/bentarrow.svg" alt>
                   <span>Github</span>
                 </div>
               </a>
@@ -507,13 +501,13 @@
               <a class="cm-right--top__cell-badge" href="https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g" title="YouTube channel" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/YTmug1.webp" style="height:3rem;width:3rem;"  alt>
+                    <img class="badge-mug cm-body--img" src="images/mugshot/YTmug1.webp" style="height:3rem;width:3rem;"  alt>
                     <span class="badge-prof" data-acc="3.6k subs" data-bef="">@otto-fy</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
+                  <img class="img-icon" src="images/svg/bentarrow.svg" alt>
                   <span>YouTube</span>
                 </div>
               </a>
@@ -525,14 +519,14 @@
                 <div class="badge-top">
                   <div class="badge-top--profile">
                     <div class="badge-top--container--svg">
-                      <img class="img-icon cm-body--img" src="./images/svg/codepen.svg" alt>
+                      <img class="img-icon cm-body--img" src="images/svg/codepen.svg" alt>
                     </div>
                     <span data-acc="@chaseottofy">@chaseottofy</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon" src="./images/svg/bentarrow.svg" alt>
+                  <img class="img-icon" src="images/svg/bentarrow.svg" alt>
                   <span>Codepen</span>
                 </div>
               </a>
@@ -543,13 +537,13 @@
               <a class="cm-right--top__cell-badge" href="https://www.codewars.com/users/protto" title="Codewars Profile" target="_blank" rel="noreferrer">
                 <div class="badge-top">
                   <div class="badge-top--profile">
-                    <img class="badge-mug cm-body--img" src="./images/mugshot/codewarsmug1.webp" style="height:3rem;width:3rem;" alt>
+                    <img class="badge-mug cm-body--img" src="images/mugshot/codewarsmug1.webp" style="height:3rem;width:3rem;" alt>
                     <span class="badge-prof" data-acc="Top 0.2%" data-bef="#1,200">@protto</span>
                   </div>
                 </div>
 
                 <div class="badge-footer">
-                  <img class="img-icon img-bent-arrowsrc" src="./images/svg/bentarrow.svg" alt>
+                  <img class="img-icon img-bent-arrowsrc" src="images/svg/bentarrow.svg" alt>
                   <span>Codewars</span>
                 </div>
               </a>
@@ -561,10 +555,10 @@
               <span>ottofy@zohomail.com</span>
               <div class="cm-right--bottom__cell-icons">
                 <a class="mailto-link cm-email-goto" href="mailto:ottofy@zohomail.com" title="Open Mail-to">
-                  <img class="img-icon cm-img--icon" src="./images/svg/mailto.svg" alt="mail">
+                  <img class="img-icon cm-img--icon" src="images/svg/mailto.svg" alt="mail">
                 </a>
                 <button class="cm-copy cm-copy--email" title="Copy E-mail address" aria-label="button">
-                  <img class="img-icon cm-img--icon" src="./images/svg/copy.svg" alt="copy">
+                  <img class="img-icon cm-img--icon" src="images/svg/copy.svg" alt="copy">
                 </button>
               </div>
             </div>
@@ -573,7 +567,7 @@
               <span>970-988-2548</span>
               <div class="cm-right--bottom__cell-icons">
                 <button class="cm-copy cm-copy--phone" data-text="9709882548" title="Copy Phone Number" aria-label="button">
-                  <img class="img-icon" src="./images/svg/copy.svg" alt>
+                  <img class="img-icon" src="images/svg/copy.svg" alt>
                 </button>
               </div>
             </div>
@@ -660,7 +654,6 @@
       <img src="images/svg/caretup.svg" alt>
     </span>
   </aside>
-
 
 </body>
 

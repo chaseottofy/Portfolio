@@ -1,38 +1,34 @@
 [
   {
     "content": [
-      "I have 1 year of experience with React, and 3 years of experience in JavaScript alltogether.",
-      "Every time I create a project in vanilla, I create a project in React. I find that I learn from both, and that I am able to apply what I learn in one to the other. I have no doubt that I would be able to implement my most verbose vanilla projects in React, and vice versa. With that being said, it's hard to pinpoint exactly where my React skills are at, but I will say that I have not yet encountered the roadblocks that I had to overcome in vanilla, the 2 years I spent imprisoned ",
-      "I do not feel limited by React in any way, and while I have yet to take on a project with the complexity of some of my vanilla projects, notably the Google Calendar Clone, I am confident that I would be able to do so. The real hill I have yet to climb is real-world react experience, and I am eager to do so.",
-      "No, I do not have any real-world experience with React, but I am confident that I am prepared to deliver. I have been working with React for a year now, and I have been working with JavaScript for 3 years counting my time in React. I have a deep understanding of the fundamentals of JavaScript, therefore I have a deep understanding of React. The 'in-between' variable declaration and execution are certainly different, but the underlying concepts are the same."
+      "Nearly 2 years of experience with React. I have built several projects with it, and have used it in conjunction with Next.js for the past year.",
+      "1 year of experience using React with TypeScript"
     ],
     "imgSrc": "react",
     "title": "React JS"
   },
   {
     "content": [
-      "My experience with Next.js is more or less the same as my experience with React. I have been using it for a year now, although I have only published one project publicly, but I think that project is a good representation that I am comfortable and capable with the framework",
-      "Built a Next.js blog application with the latest App Router, ContentLayer for CMS, CSS Modules and TypeScript.",
-      "Blog application scores a flawless 100 on Google Lighthouse and Vercel's Performance, Accessibility, Best Practices, and SEO audits. It is built with a mobile first approach in mind and the UI, though not my own design (I got it from basement.studio), is implemented from scratch using CSS Modules. Creating and updating blog posts is as simple as updating a MDX file, all in thanks to the ContentLayer SDK."
+      "Familiar with new Nextjs features such as the App Router.",
+      "1 year of experience building Next.js applications, all of which are written in TypeScript.",
+      "The only Next.js project I have made public is the blog above in the 'Projects' section. I have built several other projects with Next.js and have tried to cover as many of the features as possible."
     ],
     "imgSrc": "next",
     "title": "Next.js"
   },
   {
     "content": [
-      "I have 1 year of experience with TypeScript. My most recent projects are all written in TypeScript, and I am well-versed in it's TSX syntax when used with React.",
-      "I have built two, Zero-dependency NPM packages using Typescript, the latest of which has over 1000 downloads (monthpicker-lite-js). My latest project is a Blog written in TSX using Next.js, and I am currently working on a few different React NPM Component packages using TSX."
+      "1 year of experience with Typescript. Have used it exclusively for that time, and have gotten familiar with the majority of its intricacies both in conjunction with React and Vanilla JS.",
+      "Published two NPM packages using Typescript, neither are very popular but I believe the monthpicker in particular is a good representation of my current skill level and understaning of TS."
     ],
     "imgSrc": "typescript",
     "title": "TypeScript"
   },
   {
     "content": [
-      "3 years of experience with Vanilla JS.",
-      "Prioritized building a foundation through Vanilla and spent the first 2 years of my learning using it exclusively.",
-      "Pledged to not use any frameworks until I felt I had pushed Vanilla as far as I could, which came in the form of building a one for one clone of Google Calendar without the use of any frameworks or libraries.",
-      "The long time spent at ground zero without any third party code prepared me extremely well for modern frameworks.",
-      "Have solved at least 2 problems a day on Codewars for nearly 2 years. Began mixing in Leetcode 4 months ago, and in total I have solved over 1,000 problems on these sites and have reached the top .25% of codewars users."
+      "3 years of experience with Vanilla JS. Prioritized building a foundation through Vanilla and spent the first 2 years of my learning using it exclusively.",
+      "Mainly use it for small projects and scripts now but I am still very comfortable with it and am more than willing to take on a project that requires it.",
+      "All of my vanilla projects are written from scratch without any boilerplate or tooling, including this portfolio and the google calendar clone in the 'Projects' section."
     ],
     "imgSrc": "vanilla",
     "title": "Vanilla JS"
@@ -40,8 +36,7 @@
   {
     "content": [
       "Automation is important to me, unfortunately there are not many tools I'm aware of that are great at it. I have been honing with Node for a year now and have built several CLI tools to automate various tasks.",
-      "I do not publicly share the majority of these tools, but I will leave them in whatever project I am working on that requires them. This portfolio for example hass a CLI Image Handling Script that automates several annoying tasks relative to image handling such as resizing, applying filters, converting to webp, creating queries, data URIs, and more.",
-      "The majority of the time when I create a project that I do not intend on making public, I will use a custom Node build process to compile and bundle the project."
+      "I do not publicly share the majority of these tools, but I will leave them in whatever project I am working on that requires them. This portfolio for example hass a CLI Image Handling Script that automates several annoying tasks relative to image handling such as resizing, applying filters, converting to webp, creating queries, data URIs, and more."
     ],
     "imgSrc": "node",
     "title": "Node JS"
@@ -49,14 +44,15 @@
   {
     "content": [
       "I have over 5 years of experience with CSS, enough to know how to re-create any design so long as it doesn't involve canvas magic.",
-      "Am open to using any CSS framework or tooling, some of the ones I am familiar with are: Bootstrap, Tailwind, and Module CSS."
+      "Am open to using any CSS framework or tooling, some of the ones I am familiar with are: Bootstrap, Tailwind, and Module CSS.",
+      "My eye for design is not great, but I have a keen eye for detail and am adept at identifying UX issues."
     ],
     "imgSrc": "css",
     "title": "CSS"
   },
   {
     "content": [
-      "Over 2 years of experience with Webpack.",
+      "2 years of experience with Webpack.",
       "Familiar with all of the core loading and optimization features in standard webpack.",
       "Have explored many of the more advanced features such as code splitting, tree shaking, and module federation.",
       "Make it a habit to try out different configurations with each new project. For example, this portfolio utilizes a very underrated plugin called 'html-bundler-webpack-plugin' which allows you to resolve images, fonts, css, and js files from your html files."

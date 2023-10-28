@@ -37,7 +37,7 @@ const createBadge = (
   const badgeTopContainerSvg = document.createElement('div');
   badgeTopContainerSvg.classList.add('badge-top--container--svg');
   const badgeTopContainerSvgImg = document.createElement('img');
-  badgeTopContainerSvgImg.classList.add('cm-header--img');
+  // badgeTopContainerSvgImg.classList.add('cm-header--img');
   badgeTopContainerSvgImg.src = cmBodyImgs[idx].getAttribute('src');
   badgeTopContainerSvgImg.alt = '';
   const badgeTopSpan = document.createElement('span');
@@ -57,10 +57,6 @@ const createBadge = (
 
   const badgeFooter = document.createElement('div');
   badgeFooter.classList.add('badge-footer');
-  // const badgeFooterImg = document.createElement('img');
-  // badgeFooterImg.setAttribute('class', 'img-icon cm-bent--arrow');
-  // badgeFooterImg.src = bentArrowSrc;
-  // badgeFooterImg.alt = '';
   const badgeFooterSpan = document.createElement('span');
   badgeFooterSpan.textContent = title;
 
@@ -68,9 +64,7 @@ const createBadge = (
   badgeTopProfile.append(badgeTopContainerSvg, badgeTopSpan);
   badgeTop.append(badgeTopProfile);
   badgeFooter.append(badgeFooterSpan);
-  // badgeFooter.append(badgeFooterImg, badgeFooterSpan);
   badgeLink.append(badgeTop, badgeFooter);
-
   badge.append(badgeLink);
   return badge;
 };

@@ -21,10 +21,6 @@
   height: 90%;
   max-height: 1200px;
   flex-direction: column;
-
-  /* border-radius: 1rem; */
-
-  /* border: 1px solid rgba(50, 145, 255, 0.2); */
   background: var(--black4);
 }
 

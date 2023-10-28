@@ -30,7 +30,6 @@ const initContactModal = () => {
     if (isContactMenuOpen) return;
 
     const { bottom } = navContactBtn.getBoundingClientRect();
-    // const accountForScale = bottom - bottom * .1;
     const modalTop = Number.parseFloat(bottom.toFixed(2)) - 16;
     contactModal.style.top = `${modalTop}px`;
     contactModal.append(createContactMenu());

@@ -1,17 +1,17 @@
 /* FOOTER
 ============================ */
 .project-cell__footer {
-  margin-top: -8rem;
   position: relative;
   z-index: 999;
   display: flex;
   width: 100%;
   height: 100%;
   flex-direction: column-reverse;
+  padding: .5rem .5rem 1rem .5rem;
   border-radius: 0 0 12px 12px;
   border-top: 2px solid var(--black1);
-  padding-top: .25rem;
-  background: linear-gradient(to bottom, var(--offsetblack0) 0, var(--black0) 40%);
+  margin-top: -6rem;
+  background: linear-gradient(to bottom, var(--offsetblack0) 0, var(--black0) 30%);
 }
 
 .project-footer__titles {
@@ -20,22 +20,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem;
+  padding: .5rem .5rem 0 .5rem;
   padding-top: 1.25rem;
 }
 
 .project-footer__desc {
   position: relative;
-  font-weight: 400 !important;
   display: flex;
   width: 70%;
   height: 100%;
-  padding-right: 1rem;
   min-height: 2.75rem;
+  padding-right: 1rem;
   font-size: 1.2rem;
+  font-weight: 400 !important;
   letter-spacing: -.02em;
-  transform: scaleY(.9);
   opacity: .825;
+  transform: scaleY(.9);
 }
 
 .pf-stacks {
@@ -49,8 +49,8 @@
   position: relative;
   display: flex;
   overflow: hidden;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3rem;
+  height: 3rem;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -110,22 +110,23 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 .5rem .5rem .5rem;
+  padding: .5rem .5rem .25rem .5rem;
   margin: 0 auto;
 }
 
 .project-footer__title {
   position: relative;
   display: flex;
+  min-height: 2rem;
   align-items: center;
   padding: 1rem 2rem .5rem 0;
-  color: var(--white1);
+  color: var(--white3);
   font-family: var(--secondaryFont);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 900;
-  opacity: .95;
-  transform: scaleY(1.25);
   letter-spacing: .05em;
+  opacity: .85;
+  transform: scaleY(1.25);
 }
 
 .project-footer-btns {
@@ -180,16 +181,23 @@
     display: none;
   }
 
+  .project-footer__title {
+    font-size: 1rem;
+  }
+
   .project-cell__footer {
     margin-top: -2rem;
-    padding-bottom: .5rem;
+    background: var(--black0);
   }
 }
 
 @media screen and (max-width: 540px) {
+  .project-cell__footer {
+    margin-top: 0;
+  }
+
   .project-footer__title {
-    font-size: 3.75vw;
-    padding: 1.25rem 0 .5rem 0;
+    font-size: 3.25vw;
   }
 
   .project-footer-btns button::before {

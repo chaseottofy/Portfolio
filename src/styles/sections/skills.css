@@ -5,7 +5,6 @@
   max-width: 1200px;
   height: 100%;
   flex-direction: column;
-  padding: 1rem 0 2rem 0;
   scroll-margin-top: 4rem;
 }
 
@@ -24,6 +23,7 @@
   display: flex;
   min-height: 26px;
   justify-content: center;
+  padding-top: 2rem;
   margin-bottom: 3rem;
   text-align: start;
 }
@@ -39,21 +39,10 @@
   margin: 0 auto;
   margin-top: 4rem;
   margin-bottom: 2rem;
+  background: var(--black4);
+  gap: 1rem;
   grid-auto-columns: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-.skills-grid::before {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: grayscale(1) contrast(1.4);
-  background-image: url('../../images/design/noisy-net.png');
-  content: '';
-  opacity: .8;
 }
 
 .skills-cell {
@@ -67,7 +56,6 @@
   border-top: 1px solid var(--grey2);
   border-left: 1px solid var(--grey2);
   margin: 0 auto;
-  background: var(--offsetblack1);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -140,15 +128,6 @@
 
 .theme__light .skill-img--wp {
   filter: invert(1) !important;
-}
-
-.slills-cell:hover .skill-title {
-  background-color: var(--offsetblack3);
-  color: green !important;
-  opacity: 1;
-  transition-duration: .15s;
-  transition-property: opacity, background-color;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 .skill-content::-webkit-scrollbar {

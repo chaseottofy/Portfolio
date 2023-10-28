@@ -2,8 +2,6 @@
   position: fixed;
   display: flex;
   overflow: hidden;
-
-  /* height: min(calc(var(--htvh) + var(-header-height)), 100vh); */
   height: 100vh;
   flex-direction: column;
   margin: auto;

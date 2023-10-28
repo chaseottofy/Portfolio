@@ -5,11 +5,12 @@
   width: 100%;
   max-width: 100%;
   flex-direction: column;
+  padding-top:.5rem;
   border: 1px solid var(--grey2);
   border-radius: 12px;
   margin: 0 auto 0 auto;
   background: var(--black0);
-  box-shadow: 4px 4px 12px rgba(55, 57, 57, 0.146);
+  box-shadow: 4px 4px 12px rgba(39, 42, 43, 0.125);
   scroll-margin-top: 5rem;
 }
 
@@ -20,8 +21,6 @@
 [data-project-cell-loaded="false"] *::before {
   opacity: 0 !important;
 }
-
-/* [data-project-cell-loaded="false"] img {opacity: 0 !important;} */
 
 .project-cell::after {
   position: absolute;
@@ -41,6 +40,7 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
+
 }
 
 .project-content__header {
@@ -50,7 +50,7 @@
   height: 3.5rem;
   align-items: center;
   justify-content: center;
-  padding: .5rem 0 0 0;
+  padding:.5rem;
   grid-template-columns: 1fr;
 }
 
@@ -66,7 +66,7 @@
   width: 100%;
   height: 100%;
   align-items: flex-start;
-  padding: 0 .5rem .5rem .5rem;
+  margin-top:-.5rem;
 }
 
 .pc__header-tabs span {
@@ -160,19 +160,20 @@
   display: flex;
   width: fit-content;
   align-items: center;
-  color: var(--white1);
   margin: 0 0 .5rem .625rem;
+  color: var(--white1);
+  opacity: .75;
   pointer-events: none;
 }
 
 .content-published--text {
   display: flex;
   width: fit-content;
-  font-size: .8rem;
-  text-transform: uppercase;
-  font-weight: 500;
   font-family: monospace;
+  font-size: .8rem;
+  font-weight: 500;
   line-height:1.25rem;
+  text-transform: uppercase;
 }
 
 /* SUBHEADER SEARCH */
@@ -201,16 +202,16 @@
   height: 100%;
   align-items: center;
   padding: 0 3rem 0 .5rem;
+  border: 0;
   color: var(--white1);
   font-size: .875rem;
   font-weight: 500;
   opacity: .9;
-  border: 0;
 }
 
 .pc__subheader--search span {
-  height: 100%;
   display: flex;
+  height: 100%;
   align-items: center;
   border-top: 2px solid transparent;
 }
@@ -333,12 +334,11 @@
     font-weight: 400;
     letter-spacing: -.03em;
   }
-
 }
 
 @media screen and (max-width: 540px) {
   .pc__header-tabs {
-    padding: 0 0 1rem 0;
+    padding-bottom: .25rem;
   }
 
   .pc__subheader--links {
