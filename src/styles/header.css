@@ -8,11 +8,7 @@
   height: var(--header-height);
   border-bottom: 1px solid rgba(80, 85, 90, 0.15);
   backdrop-filter: saturate(180%) blur(5px);
-  background-color: rgba(0, 0, 0, .4);
-}
-
-.header-has--background {
-  background-color: rgba(0, 0, 0, .93);
+  background: rgba(0, 0, 0, .93);
   box-shadow: 0 12px 36px rgba(1, 57, 72, .15);
 }
 
@@ -104,7 +100,7 @@
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: .02em;
-  opacity: .8;
+  opacity: .9;
   text-align: center;
   transform: scaleY(.9);
 }
@@ -149,8 +145,6 @@
 }
 
 .theme-switch span label img {
-  width: 18px !important;
-  height: 18px !important;
   opacity: .8;
 }
 

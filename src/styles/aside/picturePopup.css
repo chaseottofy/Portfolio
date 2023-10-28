@@ -60,7 +60,7 @@
 
 .popup-picture img {
   position: relative;
-  height: min(var(--htvh), calc(90vh - var(--header-height)));
+  height: 100%;
   filter: contrast(1.1) grayscale(10%);
   image-rendering: -o-crisp-edges;
   object-fit: contain;
@@ -75,14 +75,4 @@
   height: 100%;
   border: 1px solid var(--black2);
   content: '';
-}
-
-@media screen and (max-width: 720px) {
-  .popup-picture {
-    height: min(calc(var(--htvh2) + var(-header-height)), 100vh);
-  }
-
-  .popup-picture img {
-    height: min(var(--htvh2), calc(90vh - var(--header-height)));
-  }
 }

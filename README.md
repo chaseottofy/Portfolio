@@ -22,6 +22,7 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 - [Images](#images)
   - [How I handle Project Images](#how-i-handle-project-images)
   - [CLI Commands](#cli-commands)
+- [Resources](#resources)
 
 ## Notes
 
@@ -179,4 +180,3 @@ First, I keep all project images within the same directory on the same level.
 - [react-icons](https://react-icons.github.io/react-icons/search)
 - [Neue-Montreal-Font](https://pangrampangram.com/products/neue-montreal)
 - [Basement-Expanded-Font](https://grotesque.basement.studio/)
-- []

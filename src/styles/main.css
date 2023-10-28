@@ -45,6 +45,7 @@
   background-clip: text;
   color: transparent;
   -webkit-text-stroke: 1px var(--white2);
+  
 }
 
 .section-subtitle {
