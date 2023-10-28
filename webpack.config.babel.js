@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
             test: /\.woff2?$/,
             attributes: {
               as: 'font',
-              // crossorigin: true,
+              crossorigin: true,
             },
           },
         ],
