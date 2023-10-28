@@ -1,3 +1,5 @@
+const googleSheetsFormId = process.env.SHEET_ID;
+
 const checkEmailValidity = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const checkPhoneValidity = (phone) => phone && phone.length >= 10;
@@ -28,5 +30,6 @@ export {
   checkEmailValidity,
   checkPhoneValidity,
   checkValidNameMessage,
+  googleSheetsFormId,
   sanitizeInput,
 };

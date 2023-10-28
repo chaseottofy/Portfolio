@@ -32,7 +32,7 @@
 }
 
 .tooltip-content {
-  position:relative;
+  position: relative;
   z-index: 2;
   display: flex;
   width: auto;
@@ -41,7 +41,7 @@
   justify-content: center;
   padding: .5rem;
   border: 1px solid #202124;
-  border-radius: 5px;
+  border-radius: var(--br-1);
   margin: 0 auto;
   background: #101112;
   color: #fff;
@@ -49,7 +49,6 @@
   font-weight: 400 !important;
   line-height: 1;
 }
-
 
 [data-tooltip-active="false"] {
   top: 0;

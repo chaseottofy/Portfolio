@@ -34,6 +34,10 @@
   width: 100%;
   height: calc(100vh + 2px);
   margin: calc(0vh - var(--intro-offset)) auto 0 auto;
+
+  /* if you're wondering what this atrocity is, I made it with a personal gradient generator */
+
+  /* link: https://codepen.io/chaseottofy/pen/BaGqJKK */
   background:
     linear-gradient(320.54deg, #00069F 0%, #120010 72.37%), linear-gradient(58.72deg, #69D200 0%, #970091 100%), linear-gradient(121.28deg, #8CFF18 0%, #6C0075 100%), linear-gradient(121.28deg, #8000FF 0%, #222 100%), linear-gradient(180deg, #00FF19 0%, #24FF00 .5%, #2400FF 100%), linear-gradient(52.23deg, #0500FF 0%, #F00 100%), linear-gradient(121.28deg, #32003A 0%, #FF4040 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #105 100%);
   background-blend-mode: screen, color-dodge, color-burn, screen, overlay, difference;
@@ -56,9 +60,8 @@
   margin: calc(0vh - var(--intro-offset)) auto 0 auto;
   background-image: url("../../images/design/top2.webp");
   background-position: center;
-  background-repeat:round;
-
-  /* opacity: .4; */
+  background-repeat: round;
+  filter: brightness(1.2);
   mix-blend-mode: darken;
   pointer-events: none;
   user-select: none;
@@ -71,7 +74,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .75);
+  background: rgba(255, 255, 255, .1);
   content: "";
-  opacity: 0.05;
+  opacity: 0.5;
 }

@@ -19,7 +19,7 @@
   left: -10%;
   width: 24%;
   height: 8%;
-  border-radius: 5px;
+  border-radius: var(--br-1);
   animation: spin 1.2s linear infinite;
   background: var(--accent-6);
 }

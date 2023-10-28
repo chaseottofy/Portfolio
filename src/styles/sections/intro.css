@@ -77,7 +77,7 @@
   align-items: center;
   padding: .5rem 1rem;
   border: 1px solid rgba(36, 39, 44, 0.5);
-  border-radius: 6px;
+  border-radius: var(--br-1);
   margin: 0 .5rem;
   background: rgba(0, 0, 0, 0.7);
   color: #e7ecf4;

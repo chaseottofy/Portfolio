@@ -8,6 +8,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
+  // console.log({environmentvar: env})
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
@@ -20,6 +21,7 @@ module.exports = (env, argv) => {
 
     plugins: [
       new Dotenv(),
+      // https://github.com/webdiscus/html-bundler-webpack-plugin
       new HtmlBundlerPlugin({
         entry: {
           index: './src/index.html',
@@ -30,12 +32,13 @@ module.exports = (env, argv) => {
         css: {
           filename: '[name].[contenthash:8].css',
         },
+        // only use woff2 nowadays... https://caniuse.com/?search=woff2
         preload: [
           {
             test: /\.woff2?$/,
             attributes: {
               as: 'font',
-              crossorigin: true,
+              // crossorigin: true,
             },
           },
         ],
@@ -121,9 +124,7 @@ module.exports = (env, argv) => {
       hot: true,
       historyApiFallback: true,
     };
-  }
-
-  if (IS_PRODUCTION) {
+  } else {
     config.optimization = {
       minimize: true,
       minimizer: [

@@ -5,6 +5,7 @@ import {
   checkEmailValidity,
   checkPhoneValidity,
   checkValidNameMessage,
+  googleSheetsFormId,
   sanitizeInput,
 } from './form-utilities';
 
@@ -25,10 +26,8 @@ const initForm = () => {
     const selectedOption = e.target.value;
     if (selectedOption === 'phone') {
       contactValueInput.type = 'tel';
-      // contactValueInput.placeholder = 'Enter your phone number';
     } else if (selectedOption === 'email') {
       contactValueInput.type = 'email';
-      // contactValueInput.placeholder = 'Enter your email address';
     }
   };
 
@@ -172,7 +171,7 @@ const initForm = () => {
     disableForm();
     toggleSkeleton();
     createSuccessMessage();
-    fetch(`https://script.google.com/macros/s/${process.env.SHEET_ID}/exec`, {
+    fetch(`https://script.google.com/macros/s/${googleSheetsFormId}/exec`, {
       method: 'POST',
       body: formData,
     })

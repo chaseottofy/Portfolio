@@ -1,5 +1,5 @@
-import { mailtoHref } from '../../data/constants';
 import badgeData from '../../data/json/contact/contact-modal.json';
+import personalContactData from '../../data/json/contact/contact-personal.json';
 import useCopyToClipboard from '../../hooks/handle-copy';
 import createButton from '../ui/button';
 import createLink from '../ui/link';
@@ -77,6 +77,8 @@ const createCmBottomCell = (
   dataText,
   imgs,
 ) => {
+  const mailToSubject = personalContactData.mailto;
+
   const menuCell = document.createElement('div');
   menuCell.classList.add('cm-right--bottom__cell');
   const menuSpan = document.createElement('span');
@@ -85,7 +87,7 @@ const createCmBottomCell = (
   menuCellIcons.classList.add('cm-right--bottom__cell-icons');
 
   if (btnHref) {
-    const menuLink = createLink(mailtoHref, 'Open Mail-to', 'cm-email-goto', null, '_self');
+    const menuLink = createLink(mailToSubject, 'Open Mail-to', 'cm-email-goto', null, '_self');
     const menuLinkImg = document.createElement('img');
     menuLinkImg.classList.add('img-icon');
     menuLinkImg.src = imgs[0].src;

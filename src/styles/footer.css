@@ -5,7 +5,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 1200px;
-  height: 450px;
+  height: 240px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,7 @@
   color: var(--accent-7);
   font-size: .875rem;
   font-weight: 700;
+  letter-spacing: .03em;
   line-height: 3rem;
   text-transform: uppercase;
   transform: scale(.9, .8);

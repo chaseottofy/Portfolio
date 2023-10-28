@@ -12,7 +12,7 @@
 }
 
 .header-has--background {
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, .93);
   box-shadow: 0 12px 36px rgba(1, 57, 72, .15);
 }
 
@@ -95,7 +95,7 @@
   justify-content: center;
   padding: 0 .85rem;
   border: 0;
-  border-radius: 9999px;
+  border-radius: var(--br-full);
   margin: 0;
   background-color: transparent;
   box-shadow: none;
@@ -144,7 +144,7 @@
   align-items: center;
   justify-content: space-around;
   border: 1px solid #111;
-  border-radius: 9999px;
+  border-radius: var(--br-full);
   background: rgba(8, 8, 8, 0.99);
 }
 
@@ -190,7 +190,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--br-half);
   background: transparent;
   color: #fff;
   cursor: pointer;

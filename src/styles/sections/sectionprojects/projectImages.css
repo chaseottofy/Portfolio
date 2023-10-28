@@ -17,11 +17,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../images/design/webb-dark.png");
+  background-image: url("../../images/design/dark-matter.png");
   background-position: center;
   content: '';
+  filter: invert(.3);
   mix-blend-mode: screen;
-  opacity: .1;
+  opacity: .5;
   pointer-events: none;
   user-select: none;
 }

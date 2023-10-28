@@ -11,7 +11,6 @@ import measureFocus from './measure-focus';
  * @param {boolean} width 
  */
 const enableTesting = (focus, memory, shift, width) => {
-
   if (focus) {
     measureFocus();
   }

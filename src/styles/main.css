@@ -7,12 +7,12 @@
   align-items: center;
 }
 
-/* ------------------------ */
-
 /* SECTIONS
 ============================ */
 .section-container {
+  padding-right: .5rem;
   padding-bottom: 4rem;
+  padding-left: .5rem;
 }
 
 .section-title {
@@ -21,7 +21,8 @@
   width: 100%;
   max-width: var(--max-width-md);
   flex-direction: column;
-  margin: 0 auto 2rem auto;
+  padding: 2rem 0 1rem 0;
+  margin: 0 auto .5rem auto;
 }
 
 .section-title h2,
@@ -62,15 +63,15 @@
   height: auto;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 8rem 3rem .5rem;
+  padding: 1rem 8rem 1rem .5rem;
   border-bottom: 1px solid var(--grey2);
   margin: 0 auto 0 auto;
-  font-size: var(--fs5);
-  line-height: 1.125;
 }
 
 .section-excerpt p {
-  padding: 0 1rem 1rem .25rem;
+  min-height: 160px;
+  padding: 0 1rem 1rem 0;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 720px) {
@@ -85,7 +86,8 @@
 
   .section-excerpt {
     padding: 1rem .5rem;
-    font-size: 1.25rem;
+
+    /* font-size: 1.25rem; */
   }
 
   .section-excerpt p {

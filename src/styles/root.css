@@ -22,6 +22,9 @@
   src: url('../assets/fonts/neue/NeueMontreal-Bold.woff2') format('woff2');
 }
 
+/* 
+You may want to block the display of this font, there isn't a great match for it.
+*/
 @font-face {
   font-display: swap;
   font-family: basement;
@@ -62,7 +65,7 @@
   --fs2: max(25px, 2.2rem);
   --fs3: max(20px, 1.8rem);
   --fs4: max(22px, 1.6rem);
-  --fs5: max(1.125rem, 20px);
+  --fs5: max(1.125rem, 16px);
   --fs6: max(1rem, 16px);
 
   /* ********************************** */
@@ -78,10 +81,9 @@
 
   /* ********************************** */
 
-  /* ********************************** */
-
   /* html template heights */
-  --skill-section-height: 320px;
+  --skill-section-height: 300px;
+  --skill-section-height-sm: 200px;
 
   /* ********************************** */
 
@@ -89,17 +91,26 @@
   --primary1: #0089ae;
   --primary2: #025b74;
   --primary3: #013948;
+  --red1: #cf007a;
 
   /* apply this value as a filter and the element color will be converted to primary2 */
   --convert-to-primary: invert(33%) sepia(61%) saturate(1000%) hue-rotate(171deg) brightness(90%) contrast(101%);
-  --red1: #cf007a;
 
   /* ********************************** */
 
+  /* constants */
+
+  /* intro-offset: value to subtract from intro height */
   --intro-offset: 12vh;
-  --header-height: 3.75rem;
-  --max-width-lg: 1280px;
+  --header-height: 4rem;
   --max-width-md: 1140px;
+  --max-width-lg: 1280px;
+  --br-1: 5px;
+  --br-2: 8px;
+  --br-3: 10px;
+  --br-4: 12px;
+  --br-half: 50%;
+  --br-full: 9999px;
 
   /* ********************************** */
 
@@ -191,7 +202,7 @@ input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--black2);
-  border-radius: 5px;
+  border-radius: var(--br-1);
   margin: 0;
   background: none;
   color: var(--white1);
@@ -208,7 +219,7 @@ textarea {
   min-height: 4rem;
   padding: 0.5rem;
   border: 1px solid var(--black2);
-  border-radius: 5px;
+  border-radius: var(--br-1);
   background: none;
   color: var(--white1);
   font-size: .875rem;
@@ -290,7 +301,6 @@ svg {
 
 :-moz-focusring {
   outline: 1px dotted ButtonText
-
 }
 
 :-moz-ui-invalid {

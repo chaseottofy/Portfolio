@@ -1,5 +1,10 @@
 import { aspectSmallWidth } from '../data/constants';
 
+/**
+ *
+ * @param {object} images { 'imgName': 'imgPath', ... }
+ * @returns formats image data to be used in srcset
+ */
 const getImgArrayFormatted = (images) => {
   const imgArray = [];
   let ind = 0;
@@ -11,4 +16,17 @@ const getImgArrayFormatted = (images) => {
   return imgArray;
 };
 
-export default getImgArrayFormatted;
+/**
+ *
+ * @param {object} images Object of image objects
+ * @returns array of image objects formatted using getImgArrayFormatted
+ */
+const getImageArray = (images) => {
+  const arr = [];
+  for (let i = 0; i < images.length; i += 1) {
+    arr.push(getImgArrayFormatted(images[i]));
+  }
+  return arr;
+};
+
+export default getImageArray;

@@ -32,9 +32,14 @@
 
 .contact-form--container .section-title h3 {
   width: 100%;
-  font-size: 1.5rem !important;
+
+  /* transform: scaleY(1.25); */
+  background-clip: unset;
+  color: var(--white2);
+  font-size: 23px !important;
   line-height: 1.5;
   text-align: center !important;
+  -webkit-text-stroke: 0;
   text-wrap: balance;
 }
 
@@ -82,6 +87,10 @@
   animation: pulse 1.5s infinite;
 }
 
+.form-group {
+  padding: 0 2rem;
+}
+
 .form-group label,
 .form-group p {
   display: block;
@@ -89,10 +98,6 @@
   color: var(--white2);
   font-size: .875rem;
   font-weight: 500;
-}
-
-.form-group {
-  padding: 0 2rem;
 }
 
 .contact-form .form-group:first-child {
@@ -108,8 +113,11 @@
   width: 10rem;
   align-items: center;
   padding: 4px;
-  border: 1px solid var(--black2);
-  border-radius: 5px;
+
+  /* border: 1px solid var(--accent-1); */
+
+  /* border: 1px solid var(--black2); */
+  border-radius: var(--br-1);
   margin-bottom: 1rem;
 }
 
@@ -122,19 +130,14 @@
 .contact-method-group span label {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 3px;
+  border: 1px solid transparent;
+  border-radius:var(--br-1);
   background: transparent;
   color: var(--white1);
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.75rem;
   text-align: center;
-}
-
-.contact-method-group span label:hover {
-  opacity: .7;
-  transition: var(topac1);
 }
 
 .contact-method-group span input {
@@ -151,7 +154,8 @@
 }
 
 .contact-method-group span input:checked + label {
-  background: var(--black2);
+  border: 1px solid var(--primary2);
+  background: var(--black4);
   color: var(--white1);
   opacity: 1;
 }
@@ -163,9 +167,9 @@
 
 .submit-form--btn {
   position: relative;
-  padding: 0.625rem 2.25rem;
+  padding: 0.5rem 2rem;
   border: 1px solid var(--black2);
-  border-radius: 5px;
+  border-radius: var(--br-1);
   background: transparent;
   color: var(--white2);
   cursor: not-allowed;
@@ -183,12 +187,17 @@
   user-select: all;
 }
 
-.btn-allow:hover {
-  background: var(--grey2);
-}
-
 .invalid {
   border: 1px solid var(--red1);
+}
+
+.contact-method-group span label:hover {
+  opacity: .7;
+  transition: var(topac1);
+}
+
+.btn-allow:hover {
+  background: var(--grey2);
 }
 
 @media screen and (max-width: 720px) {

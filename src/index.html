@@ -18,7 +18,6 @@
   <meta name="robots" content="index, follow">
   <link type="image/png" href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link rel="icon" href="images/svg/favicon.svg" sizes="any" type="image/svg+xml">
-  <!-- <link type="image/png" href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32"> -->
   <link href="style.scss" rel="stylesheet">
   <link rel="preload" href="images/design/top2.webp" as="image" type="image/webp">
   <script src="index.js" defer="defer"></script>
@@ -34,7 +33,7 @@
     <div class="header-wrapper">
       <div class="header-logo--wrapper">
         <a class="header-logo" data-href="#header-top" title="Scroll To Top" aria-label="button" href="#page-top">
-          <img src="images/design/ab11.svg" alt="logo" style="height:42px !important; width:42px !important;">
+          <img src="images/logo/logo.svg" alt="logo" style="height:42px !important; width:42px !important;">
         </a>
       </div>
 
@@ -111,8 +110,8 @@
         <h3>PROJECTS</h3>
       </div>
 
-      <div class="section-excerpt">
-        <p>Instead of showcasing only my latest work, I've selected four projects that represent both the beginning and current stages of my learning journey. By presenting early efforts, such as the Google Calendar clone, I'm not attempting to depict my current skill set. Instead, I aim to highlight my evolution as a developer and my commitment to producing high-quality work, even when I might not possess immediate expertise in a particular area. If you're primarily interested in my present abilities, the Next.js Blog and Monthpicker Plugin are my two most recent projects.</p>
+      <div class="section-excerpt" data-section-excerpt="projects">
+        <p class="skeleton-excerpt">lorem</p>
       </div>
 
       <!-- Project Menu HTML template : Propagated @/src/components/projects/project-menu -->
@@ -402,11 +401,8 @@
           <h2>02— </h2>
           <h3>Skills</h3>
         </div>
-        <div class="section-excerpt">
-          <p>
-            I believe in the principle that form follows function. A stellar user experience should arise from meticulously planned functionality, and similarly, well-conceived functionality can lead to great user experience. My strengths lie in developing and refining this functionality. I've prioritized building a robust foundation in fundamental web technologies and have utilized modern frameworks to enhance that foundation.
-            <br>
-          </p>
+        <div class="section-excerpt" data-section-excerpt="skills">
+          <p class="skeleton-excerpt">lorem</p>
         </div>
       </div>
       <div class="skills-grid">
@@ -453,7 +449,7 @@
       </div>
     </article>
 
-    <!-- SECTION: CONTACT -->
+    <!-- SECTION: CONTACT-LINKS -->
     <aside class="section-divider"></aside>
     <div class="section-container contact-container" id="contact-top">
 
@@ -592,7 +588,7 @@
             <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group group-response--type">
 
             <div class="contact-method-group">
               <span>
@@ -631,17 +627,6 @@
       <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
       <a class="mailto-link" href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
     </div>
-    <pre class="ascii-wrapper">
-      ,o888888o. 8888888 8888888888 8888888 8888888888 ,o888888o.     
-   . 8888     '88.     8 8888             8 8888    . 8888     '88.   
-  ,8 8888       '8b    8 8888             8 8888   ,8 8888       '8b  
-  88 8888        '8b   8 8888             8 8888   88 8888        '8b 
-  88 8888         88   8 8888             8 8888   88 8888         88 
-  88 8888         88   8 8888             8 8888   88 8888         88 
-  88 8888        ,8P   8 8888             8 8888   88 8888        ,8P 
-  '8 8888       ,8P    8 8888             8 8888   '8 8888       ,8P  
-   ' 8888     ,88'     8 8888             8 8888    ' 8888     ,88'   
-      '8888888P'       8 8888             8 8888       '8888888P'</pre>
   </footer>
 
   <!-- TOAST -->

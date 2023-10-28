@@ -1,6 +1,6 @@
 import { projectImageType } from '../../data/constants';
 import cardData from '../../data/json/projects/projects-card-data.json';
-import getImgArrayFormatted from '../../utilities/get-imgarr-formatted';
+import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
 import handlePopupImage from './handle-popup-image';
 import handleTab from './handle-project-tabs';
@@ -10,6 +10,19 @@ import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';
 import createProjectTabs from './project-tabs';
 
+/**
+ *
+ * @param {HTMLPictureElement} picture
+ * @param {Array<object>} images
+ * images format example:
+ * [
+    {
+        "src": "images/cday1.8e769cb7.webp",
+        "alt": "cdaylgdark",
+        "media": "(min-width: 721px)"
+    },
+  ]
+ */
 const configProjectPicture = (picture, images) => {
   const img = picture.querySelector('img');
   const sources = picture.querySelectorAll('source');
@@ -20,6 +33,8 @@ const configProjectPicture = (picture, images) => {
     source.media = media;
     source.type = projectImageType;
     img.srcset += src;
+
+    // set first image in provided images array as default
     if (i === 0) {
       img.src = src;
       img.srcset = `${src} 1x, `;
@@ -45,21 +60,31 @@ const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, pub
   const projectHeader = projectCell.querySelector('.project-content__header');
   // Only create tabs if there are more than 1, if a project does not have tabs, it will
   // be represented by an empty array
+
+  // format title to be used as ID prefix for tabs
   if (tabs.length > 1) {
     const tabsWrapper = projectHeader.querySelector('.pc__header-tabs');
+    const formattedTitle = title.toLowerCase().replaceAll(/[^a-z]/g, '');
+
     for (let i = 0; i < tabs.length; i += 1) {
       const tab = tabs[i];
       const identifiers = {
-        tabId: `proj-${title}-${tab.toLowerCase()}`,
-        projName: title,
+        tabId: `${formattedTitle}-${tab.toLowerCase()}`,
+        projName: formattedTitle,
         suffix: 'View',
       };
-      tabsWrapper.append(createProjectTabs(tab, identifiers, i + 1, i === 0, handleTab));
+
+      tabsWrapper.append(createProjectTabs(
+        tab, // string: tab value
+        identifiers, // object created above
+        i + 1, // number: tab index
+        i === 0, // boolean: input checked
+        handleTab, // function: handle tab change
+      ));
     }
   }
 
   const publishedText = projectCell.querySelector('.content-published--text');
-  // publishedText.textContent = `— ${published}`;
   publishedText.textContent = `- ${published}`;
 
   // set search bar link and title
@@ -124,22 +149,25 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   overviewBtn.addEventListener('click', createProjectModal);
 };
 
+/**
+ * A skeleton of each project card already exists in the HTML
+ * This function fills in the skeleton with data, images, and sets up any event listeners
+ *
+ * If the project card needs tabs, aka more than 1 image, ensure that a temporary imageSet
+ * is provided within 'imageSets' so that only the first image is loaded initially
+ *
+ * I've added two html templates within the '../templates' folder, one for a
+ * project with tabs, and one without.
+ * @returns {void}
+ */
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
   const {
     cal, blog, monthPicker, markdown,
   } = imageSets;
-  const {
-    calendarCard, blogCard, monthPickerCard, markdownCard,
-  } = cardData;
-  const imgArrays = [
-    getImgArrayFormatted(cal),
-    getImgArrayFormatted(blog),
-    getImgArrayFormatted(monthPicker),
-    getImgArrayFormatted(markdown),
-  ];
-
-  const cardDataArray = [calendarCard, blogCard, monthPickerCard, markdownCard];
+  // remove the last element from data array, which is the project menu
+  const cardDataArray = Object.values(cardData).slice(0, -1);
+  const imgArrays = getImgArray([cal, blog, monthPicker, markdown]);
 
   for (let i = 0; i < projectCells.length; i += 1) {
     const {

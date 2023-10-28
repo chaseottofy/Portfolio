@@ -1,3 +1,11 @@
+/**
+ *
+ * @param {string} title
+ * @param {object} identifiers
+ * @param {number} tabIdx
+ * @param {boolean} checked
+ * @param {function} listener
+ */
 const createProjectTabs = (title, identifiers, tabIdx, checked, listener) => {
   const { tabId, projName, suffix } = identifiers;
   const labSm = title[0];
@@ -16,7 +24,7 @@ const createProjectTabs = (title, identifiers, tabIdx, checked, listener) => {
   label.dataset.tabIdx = tabIdx;
   label.setAttribute('for', tabId);
   label.ariaLabel = labelTxt;
-  label.textContent = `${title} `;
+  label.textContent = `${title}`;
   wrapper.append(input, label);
 
   input.addEventListener('change', () => {

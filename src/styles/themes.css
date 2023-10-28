@@ -18,6 +18,7 @@
   --grey5: #262b30;
   --grey6: #6d6e77;
   --grey7: #a3a5ad;
+  --grey8: #b6b9c2;
   --white0: #fff;
   --white1: #f7f5f5;
   --white2: #cccbcb;
@@ -43,6 +44,7 @@
   /* SPECIFIC */
   --selection: #f81ce5;
   --link: #7F95F5;
+  --link2: #0089ae;
   --linear1: linear-gradient(0deg,
       var(--offsetwhite1),
       var(--offsetwhite1)),
@@ -71,6 +73,7 @@
   --grey5: #94989c;
   --grey6: #6d6e77;
   --grey7: #212122;
+  --grey8: #212122;
   --white0: #000;
   --white1: #171717;
   --white2: #4c4c4c;
@@ -96,6 +99,7 @@
   /* SPECIFIC */
   --selection: #7fffe1;
   --link: #153DEF;
+  --link2: #212122;
 
   /* --linear1: rgba(255, 255, 255, .05); */
   --linear1: linear-gradient(0deg,

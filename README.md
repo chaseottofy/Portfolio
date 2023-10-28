@@ -171,6 +171,12 @@ First, I keep all project images within the same directory on the same level.
 
 ---
 
+## Resources
 - [placeholder images](https://dummyimage.com/1600x900/000/000&text=.)
 - [textures](https://www.transparenttextures.com/)
 - [textures-two](https://www.toptal.com/designers/subtlepatterns/)
+- [vercel-icons](https://vercel.com/design/icons)
+- [react-icons](https://react-icons.github.io/react-icons/search)
+- [Neue-Montreal-Font](https://pangrampangram.com/products/neue-montreal)
+- [Basement-Expanded-Font](https://grotesque.basement.studio/)
+- []

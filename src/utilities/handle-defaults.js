@@ -2,29 +2,30 @@ import initCopyElements from './set-copy-elements';
 import initDateTimeElements from './set-date-time-elements';
 import initDisableOnLoadElements from './set-disableonload-elements';
 import initMailtoElements from './set-mailto-elements';
+import initSectionExcerpts from './set-section-excerpts';
 import initTheme from './set-theme';
 import initTooltipElements from './set-tooltip-elements';
 
 /**
- * The majority of content is already in the DOM on page load.
- * However, some of that content needs JavaScript to be fully functional.
- * None of these elements are critical to the user experience, all of them
- * are essentially enhancements.
+ * This function calls a series of functions that give
+ * elements already in the DOM their functionality or content
  *
- * Funcionality set here:
- * - Disable transition effects and smooth scrolling on page load
- * - Contact section will reflect my local time and update on the minute
- * - Mail to links receive additional attributes that allow me to set the subject line
- * - Check if browser supports clipboard API, if so, add copy to clipboard functionality
- * - Set theme to 'dark' and allow user to toggle between 'dark' and 'light'
+ * @function initCopyElements - set copy to clipboard functionality
+ * @function initDisableOnLoadElements - disable transition effects and smooth scrolling on load
+ * @function initDateTimeElements - set contact time to update on the minute and reflect my time
+ * @function initMailtoElements - set mail to links to include subject line
+ * @function initSectionExcerpts - set the content of the section excerpts
+ * @function initTheme - set theme to 'dark' and allow user to toggle between 'dark' and 'light'
+ * @function initTooltipElements - give elements with a data-tooltip attribute a custom tooltip
  */
 const initDefaults = () => {
+  initCopyElements();
   initDisableOnLoadElements();
   initDateTimeElements();
-  initTooltipElements();
   initMailtoElements();
-  initCopyElements();
+  initSectionExcerpts();
   initTheme();
+  initTooltipElements();
 };
 
 export default initDefaults;

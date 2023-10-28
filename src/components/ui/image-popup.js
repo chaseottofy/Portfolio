@@ -1,6 +1,13 @@
 import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 
+/**
+ * Allows images in the project section to be clicked on and
+ * viewed in their full size as a popup
+ *
+ * @param {HTMLImageElement} img
+ * @returns {void}
+ */
 const configCreateFullImagePopup = (img) => {
   const popupPicture = document.querySelector('.popup-picture');
   const popupPictureImgWrapper = popupPicture.querySelector('.popup-picture__imgwrapper');
