@@ -137,7 +137,7 @@
   background: #16cf6b;
   color: #fff;
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .lh-main__score::after {
@@ -222,7 +222,7 @@
   margin-top: .75rem;
   color: #1aad5f;
   font-size: 1.375rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .lh-sub__metrics-sm {

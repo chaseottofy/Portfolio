@@ -82,7 +82,7 @@
   </header>
 
   <!-- POPUP:CONTACTMENU -->
-  <aside class="contact-menu__header" data-contact-menu-disabled="true"></aside>
+  <aside class="contact-menu__header" data-contact-menu-disabled="true" data-contact-menu-loaded="false"></aside>
 
   <!-- SECTION: INTRO -->
   <section class="intro-container">
@@ -197,18 +197,18 @@
             </div>
           </div>
           <div class="project-cell__footer">
-            <div class="project-footer__titles">
-              <p class="project-footer__desc">lorem ipsum dolor</p>
-              <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-              </div>
-            </div>
             <div class="project-footer__content">
               <h3 class="project-footer__title">Lorem ipsum dolor</h3>
               <div class="project-footer-btns">
                 <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
                 <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
+              </div>
+            </div>
+            <div class="project-footer__titles">
+              <h4 class="project-footer__desc">lorem ipsum dolor</h4>
+              <div class="pf-stacks">
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
               </div>
             </div>
           </div>
@@ -216,178 +216,183 @@
         <aside class="project-cell-divider"></aside>
         <!-- ------------ -->
 
-        <!-- project cell -->
-        <div class="project-cell" data-project-cell-loaded="false">
-          <div class="project-cell__content">
-            <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm">
-                <div class="pc__subheader--search">
-                  <a title="" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" src="images/svg/lock.svg" alt="">
-                    <span>.</span>
-                  </a>
-                  <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
-                </div>
-                <div class="pc__subheader--links">
-                  <a title="github repo" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
-                    <span>Repo</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content__published">
-              <span class="content-published--text">Published</span>
-            </div>
-
-            <div class="project-content__body pcb-sm">
-              <picture class="proj-img">
-                <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
-                <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
-                <img 
-                  src="images/placeholder/placeholder1600x900.png" 
-                  loading="eagar" 
-                  style="max-width:100vw;" 
-                  alt="project image"
-                  srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
-                >
-              </picture>
-            </div>
-          </div>
-
-          <div class="project-cell__footer">
-            <div class="project-footer__titles">
-              <p class="project-footer__desc">lorem ipsum dolor</p>
-              <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-              </div>
-            </div>
-            <div class="project-footer__content">
-              <h3 class="project-footer__title">Lorem ipsum dolor</h3>
-              <div class="project-footer-btns">
-                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
-              </div>
-            </div>
-          </div>
+<!-- project cell -->
+<div class="project-cell" data-project-cell-loaded="false">
+  <div class="project-cell__content">
+    <div class="project-content__header">
+      <div class="project-content__subheader subheader-sm">
+        <div class="pc__subheader--search">
+          <a title="" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" src="images/svg/lock.svg" alt="">
+            <span>.</span>
+          </a>
+          <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
         </div>
-        <aside class="project-cell-divider"></aside>
-        <!-- ------------ -->
-
-        <!-- project cell -->
-        <div class="project-cell" data-project-cell-loaded="false">
-          <div class="project-cell__content">
-            <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm">
-                <div class="pc__subheader--search">
-                  <a title="" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" src="images/svg/lock.svg" alt="">
-                    <span>.</span>
-                  </a>
-                  <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
-                </div>
-                <div class="pc__subheader--links">
-                  <a title="github repo" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
-                    <span>Repo</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content__published">
-              <span class="content-published--text">Published</span>
-            </div>
-
-            <div class="project-content__body pcb-sm">
-              <picture class="proj-img">
-                        <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
-                        <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
-                        <img src="images/placeholder/placeholder1600x900.png" loading="eagar" style="max-width:100vw;" alt="project image" srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x">
-                      </picture>
-            </div>
-          </div>
-
-          <div class="project-cell__footer">
-            <div class="project-footer__titles">
-              <p class="project-footer__desc">lorem ipsum dolor</p>
-              <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-              </div>
-            </div>
-            <div class="project-footer__content">
-              <h3 class="project-footer__title">Lorem ipsum dolor</h3>
-              <div class="project-footer-btns">
-                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
-              </div>
-            </div>
-          </div>
+        <div class="pc__subheader--links">
+          <a title="github repo" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
+            <span>Repo</span>
+          </a>
         </div>
-        <aside class="project-cell-divider"></aside>
-        <!-- ------------ -->
+      </div>
+    </div>
 
-        <!-- project cell -->
-        <div class="project-cell" data-project-cell-loaded="false">
-          <div class="project-cell__content">
-            <div class="project-content__header">
-              <div class="project-content__subheader subheader-sm">
-                <div class="pc__subheader--search">
-                  <a title="" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" src="images/svg/lock.svg" alt="">
-                    <span>.</span>
-                  </a>
-                  <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
-                </div>
-                <div class="pc__subheader--links">
-                  <a title="github repo" href="#" target="_blank" rel="noreferrer">
-                    <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
-                    <span>Repo</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <div class="project-content__published">
+      <span class="content-published--text">Published</span>
+    </div>
 
-            <div class="project-content__published">
-              <span class="content-published--text">Published</span>
-            </div>
+    <div class="project-content__body pcb-sm">
+      <picture class="proj-img">
+        <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
+        <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
+        <img 
+          src="images/placeholder/placeholder1600x900.png" 
+          loading="eagar" 
+          style="max-width:100vw;" 
+          alt="project image"
+          srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
+        >
+      </picture>
+    </div>
+  </div>
 
-            <div class="project-content__body pcb-sm">
-              <picture class="proj-img">
-                <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
-                <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
-                <img 
-                  src="images/placeholder/placeholder1600x900.png" 
-                  loading="eagar" 
-                  style="max-width:100vw;" 
-                  alt="project image"
-                  srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
-                >
-              </picture>
-            </div>
-          </div>
-
-          <div class="project-cell__footer">
-            <div class="project-footer__titles">
-              <p class="project-footer__desc">lorem ipsum dolor</p>
-              <div class="pf-stacks">
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-                <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
-              </div>
-            </div>
-            <div class="project-footer__content">
-              <h3 class="project-footer__title">Lorem ipsum dolor</h3>
-              <div class="project-footer-btns">
-                <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
-                <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
-              </div>
-            </div>
-          </div>
+  <div class="project-cell__footer">
+    <div class="project-footer__content">
+      <h3 class="project-footer__title">Project Title</h3>
+      <div class="project-footer-btns">
+        <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+        <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
+      </div>
+    </div>
+    <div class="project-footer__titles">
+      <h4 class="project-footer__desc">Project Subtitle</h4>
+      <div class="pf-stacks">
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="project-cell-divider"></aside>
+<!-- ------------ -->
+<!-- project cell -->
+<div class="project-cell" data-project-cell-loaded="false">
+  <div class="project-cell__content">
+    <div class="project-content__header">
+      <div class="project-content__subheader subheader-sm">
+        <div class="pc__subheader--search">
+          <a title="" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" src="images/svg/lock.svg" alt="">
+            <span>.</span>
+          </a>
+          <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
         </div>
-        <aside class="project-cell-divider"></aside>
+        <div class="pc__subheader--links">
+          <a title="github repo" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
+            <span>Repo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-content__published">
+      <span class="content-published--text">Published</span>
+    </div>
+
+    <div class="project-content__body pcb-sm">
+      <picture class="proj-img">
+        <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
+        <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
+        <img 
+          src="images/placeholder/placeholder1600x900.png" 
+          loading="eagar" 
+          style="max-width:100vw;" 
+          alt="project image"
+          srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
+        >
+      </picture>
+    </div>
+  </div>
+
+  <div class="project-cell__footer">
+    <div class="project-footer__content">
+      <h3 class="project-footer__title">Project Title</h3>
+      <div class="project-footer-btns">
+        <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+        <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
+      </div>
+    </div>
+    <div class="project-footer__titles">
+      <h4 class="project-footer__desc">Project Subtitle</h4>
+      <div class="pf-stacks">
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="project-cell-divider"></aside>
+<!-- ------------ -->
+<!-- project cell -->
+<div class="project-cell" data-project-cell-loaded="false">
+  <div class="project-cell__content">
+    <div class="project-content__header">
+      <div class="project-content__subheader subheader-sm">
+        <div class="pc__subheader--search">
+          <a title="" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" src="images/svg/lock.svg" alt="">
+            <span>.</span>
+          </a>
+          <span class="search-arrowright"><img class="img-icon" src="images/svg/arrowRight.svg" alt="arrowright"></span>
+        </div>
+        <div class="pc__subheader--links">
+          <a title="github repo" href="#" target="_blank" rel="noreferrer">
+            <img class="img-icon" alt="" src="images/svg/githuboutline.svg">
+            <span>Repo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-content__published">
+      <span class="content-published--text">Published</span>
+    </div>
+
+    <div class="project-content__body pcb-sm">
+      <picture class="proj-img">
+        <source srcset="images/placeholder/placeholder1600x900.png" media="(min-width:721px)">
+        <source srcset="images/placeholder/placeholder720x540.png" media="(max-width:721px)">
+        <img 
+          src="images/placeholder/placeholder1600x900.png" 
+          loading="eagar" 
+          style="max-width:100vw;" 
+          alt="project image"
+          srcset="images/placeholder/placeholder1600x900.png 1x, images/placeholder/placeholder720x540.png 2x"
+        >
+      </picture>
+    </div>
+  </div>
+
+  <div class="project-cell__footer">
+    <div class="project-footer__content">
+      <h3 class="project-footer__title">Project Title</h3>
+      <div class="project-footer-btns">
+        <button class="open-lh--btn" data-tooltip-text="Open Audits Modal">Audits</button>
+        <button class="open-overview--btn" data-tooltip-text="Open Overview Modal">Overview</button>
+      </div>
+    </div>
+    <div class="project-footer__titles">
+      <h4 class="project-footer__desc">Project Subtitle</h4>
+      <div class="pf-stacks">
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+        <div class="pf-stack"><img src="images/svg/filler.svg" alt="" style="height:32px;width:32px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="project-cell-divider"></aside>
+<!-- ------------ -->
         <!-- end of project grid -->
       </div>
     </article>
@@ -621,14 +626,6 @@
     </article>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
-      <a class="mailto-link" href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
-    </div>
-  </footer>
-
   <!-- TOAST -->
   <aside class="toast-wrapper"></aside>
 
@@ -640,6 +637,13 @@
     </span>
   </aside>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/chaseottofy" title="Github Profile" target="_blank" rel="noreferrer">github.com/chaseottofy</a>
+      <a class="mailto-link" href="mailto:ottofy@zohomail.com" title="Open Mail-to">ottofy@zohomail.com</a>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -6,11 +6,13 @@
   display: flex;
   width: 100%;
   height: 100%;
-  flex-direction: column-reverse;
+  flex-direction: column;
   padding: .5rem .5rem 1rem .5rem;
-  border-radius: 0 0 var(--br-2) var(--br-2);
+  border-radius: 0 0 var(--br-4) var(--br-4);
   border-top: 2px solid var(--black1);
   margin-top: -6rem;
+
+  /* border-radius: 0 0 var(--br-2) var(--br-2); */
   background: linear-gradient(to bottom, var(--offsetblack0) 0, var(--black0) 30%);
 }
 

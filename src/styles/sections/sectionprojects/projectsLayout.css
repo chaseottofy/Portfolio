@@ -15,8 +15,6 @@
   width: 100%;
   height: 100%;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACgAgMAAADm7QMnAAAADFBMVEV3d3dOTk5OTk5OTk60BIz+AAAABHRSTlP/bytS3QghxwAAAEhJREFUeAFjZA1gQAevGVc5XPjy9z8K8Ytowd/YBf8zYIB/xGsfyhaNWjRq0ahFoxaNWkS4QhmtjwaDRaMWjVo0atGoRaP1EQDs2xO3GiLLhAAAAABJRU5ErkJggg==");
-
-  /* background-image: url('../../images/design/graphy-dark.png'); */
   background-position:center;
   content: '';
   opacity: .1;

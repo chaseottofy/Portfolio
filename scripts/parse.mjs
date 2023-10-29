@@ -53,10 +53,10 @@ class ImageConfig {
     this._placeholderFileSuffix = '';
 
     this._imageFileExtension = 'webp';
-    this._outputImageQuality = 70;
+    this._outputImageQuality = 75;
     this._resizeOptions = {
-      width: 1600,
-      height: 900,
+      width: 1120,
+      height: 630,
     };
     this._outputImageSize = 1;
 
@@ -360,9 +360,11 @@ async function createImagePlaceholder() {
   const smallImgSuffix = config.smallImageSuffix;
   const smallImgMult = config.smallImageMultiplier;
   const smallImgAspectRatio = config.smallAspectRatio;
-  const smallHeight = Math.round(height * smallImgMult);
-  const smallWidth = Math.round(smallImgAspectRatio * smallHeight);
-  console.log(smallWidth, smallHeight);
+  const smallHeight = 540;
+  const smallWidth = 720;
+  // const smallHeight = Math.round(height * smallImgMult);
+  // const smallWidth = Math.round(smallImgAspectRatio * smallHeight);
+  // console.log(smallWidth, smallHeight);
 
   if (!fs.existsSync(postsDirectory)) {
     fs.mkdirSync(placeholderDirectory, { recursive: true });
@@ -393,7 +395,7 @@ async function createImagePlaceholder() {
         .modulate({
           brightness: 1.1,
           saturation: 1.1,
-          lightness: .8,
+          lightness: .9,
         })
         .toBuffer()
         .then((data) => {

@@ -53,7 +53,7 @@ const appendPicture = (parent, imgvars) => {
     }
   }).catch((encodingError) => {
     // eslint-disable-next-line no-console
-    console.assert(false, encodingError);
+    console.warn(encodingError);
     if (skel) {
       skel.remove();
     }

@@ -81,7 +81,8 @@
 }
 
 .project-content__body picture:hover img {
-  transform: scale(101%);
+  /* transform: scale(101%); */
+  transform: translateY(-5px);
 }
 
 @keyframes fade-img {
