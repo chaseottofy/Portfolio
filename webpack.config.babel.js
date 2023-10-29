@@ -5,10 +5,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
-  // console.log({environmentvar: env})
 
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
@@ -49,6 +49,7 @@ module.exports = (env, argv) => {
           removeAttributeQuotes: true,
         },
       }),
+      // new BundleAnalyzerPlugin({ openAnalyzer: true }),
     ],
 
     module: {

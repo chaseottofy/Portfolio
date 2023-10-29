@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "analyze": "webpack --mode=production --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "dev": "webpack serve --mode=development",
     "build": "webpack --mode=production",
     "deploy": "gh-pages -d dist",
@@ -91,6 +92,7 @@
     "stylelint-order": "^6.0.3",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.88.1",
+    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "yargs": "^17.7.2"

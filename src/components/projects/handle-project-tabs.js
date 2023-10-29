@@ -20,30 +20,6 @@ const appendSkeleton = (parent) => {
   parent.prepend(tempSkeleton);
 };
 
-/*
-const createProjectPicture = (picture, images) => {
-  const img = new Image();
-  for (let i = 0; i < images.length; i += 1) {
-    const { src, alt, media } = images[i];
-    const source = document.createElement('source');
-    source.srcset = src;
-    source.media = media;
-    source.type = projectImageType;
-    img.srcset += src;
-    if (i === 0) {
-      img.src = src;
-      img.srcset = `${src} 1x, `;
-      img.alt = alt || 'project image';
-      img.loading = 'lazy';
-    } else {
-      img.srcset = `${img.srcset + src} ${i + 1}x`;
-    }
-    picture.append(source);
-  }
-  picture.append(img);
-};
-*/
-
 const appendPicture = (parent, imgvars) => {
   appendSkeleton(parent.parentElement);
   const [large, medium, alt] = imgvars;

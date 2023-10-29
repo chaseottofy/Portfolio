@@ -46,9 +46,9 @@
   user-select: none;
 }
 
-.gradient-noir {
+/* .gradient-noir {
   filter: contrast(1.5) hue-rotate(294deg);
-}
+} */
 
 .gradient-overlay--two {
   position: absolute;
@@ -56,12 +56,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh + 2px);
+  height: calc(100vh + 3px);
   margin: calc(0vh - var(--intro-offset)) auto 0 auto;
+  backdrop-filter: contrast(1.5) hue-rotate(294deg);
   background-image: url("../../images/design/top2.webp");
   background-position: center;
   background-repeat: round;
-  filter: brightness(1.2);
+  filter: brightness(150%);
   mix-blend-mode: darken;
   pointer-events: none;
   user-select: none;

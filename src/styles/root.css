@@ -1,3 +1,14 @@
+/* 
+You may want to block the display of this font, there isn't a great match for it.
+*/
+@font-face {
+  font-display: block;
+  font-family: basement;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/basement-expanded.woff2') format('woff2');
+}
+
 @font-face {
   font-display: swap;
   font-family: Neue;
@@ -22,20 +33,11 @@
   src: url('../assets/fonts/neue/NeueMontreal-Bold.woff2') format('woff2');
 }
 
-/* 
-You may want to block the display of this font, there isn't a great match for it.
-*/
-@font-face {
-  font-display: swap;
-  font-family: basement;
-  font-style: normal;
-  font-weight: 900;
-  src: url('../assets/fonts/basement-expanded.woff2') format('woff2');
-}
-
 :root {
   --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+
+  /* --secondaryFont: georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
 
   /* ********************************** */
 
