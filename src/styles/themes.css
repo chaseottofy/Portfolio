@@ -51,6 +51,7 @@
     radial-gradient(50% 50% at 50% 100%,
       var(--offsetwhite2) 0%,
       transparent 100%);
+  --skeleton1: linear-gradient(270deg, #111, #333, #333, #111);
 }
 
 .theme__light {
@@ -100,14 +101,13 @@
   --selection: #7fffe1;
   --link: #153DEF;
   --link2: #212122;
-
-  /* --linear1: rgba(255, 255, 255, .05); */
   --linear1: linear-gradient(0deg,
       rgba(23, 23, 23, .4),
       rgba(8, 8, 8, .05)),
     radial-gradient(50% 50% at 50% 100%,
       rgba(40, 40, 40, .2) 0%,
       rgba(0, 0, 0, .8) 100%);
+  --skeleton1: linear-gradient(270deg, #fafafa, #eaeaea, #eaeaea, #fafafa);
 }
 
 /*

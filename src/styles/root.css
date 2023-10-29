@@ -353,20 +353,19 @@ a[disabled] {
 
 .skeleton {
   animation: skeleton-loading 8s ease-in-out infinite;
-  background-clip: text;
-  background-image: linear-gradient(270deg,
-      var(--grey2),
-      var(--grey3),
-      var(--grey3),
-      var(--grey2));
+  background-image: var(--skeleton1) !important;
   background-size: 400% 100%;
-  color: transparent;
+
+  /* background-clip: text; */
+
+  /* -webkit-background-clip: text; */
+  color: transparent !important;
   pointer-events: none;
   user-select: none;
 }
 
 .skeleton::placeholder {
-  color: transparent;
+  color: transparent !important;
   opacity: 0;
 }
 

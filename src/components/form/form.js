@@ -67,19 +67,23 @@ const initForm = () => {
   };
 
   const toggleSkeleton = () => {
-    nameInput.classList.toggle('skeleton');
-    contactValueInput.classList.toggle('skeleton');
-    messageInput.classList.toggle('skeleton');
+    if (nameInput.classList.contains('skeleton')) {
+      nameInput.classList.remove('skeleton');
+      contactValueInput.classList.remove('skeleton');
+      messageInput.classList.remove('skeleton');
+    } else {
+      nameInput.classList.add('skeleton');
+      contactValueInput.classList.add('skeleton');
+      messageInput.classList.add('skeleton');
+    }
   };
 
   const resetForm = () => {
     form.reset();
-    formWrapper.firstElementChild.remove();
     submitBtn.classList.remove('btn-allow');
     setFormDisabled(true);
     submitBtn.disabled = true;
     enableForm();
-    toggleSkeleton();
     setInvalidElements([]);
   };
 
@@ -157,6 +161,27 @@ const initForm = () => {
     }
   };
 
+  const removeSuccessMessage = () => {
+    const tempSuccessMessage = document?.querySelector('.success-message');
+    if (tempSuccessMessage) { tempSuccessMessage.remove(); }
+  };
+
+  const handleFormError = () => {
+    createToast('Fetch failed', 'Error: ', 'error', 2);
+    toggleSkeleton();
+    removeSuccessMessage();
+    resetForm();
+    // eslint-disable-next-line no-console
+    console.warn('Form is not properly configured.');
+  };
+
+  const handleFormSuccess = () => {
+    createToast('Message Sent!', null, 'success', 2);
+    removeSuccessMessage();
+    resetForm();
+    toggleSkeleton();
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     checkValidity();
@@ -167,22 +192,26 @@ const initForm = () => {
       return;
     }
 
-    const formData = new FormData(form);
     disableForm();
     toggleSkeleton();
+
+    if (googleSheetsFormId === undefined || googleSheetsFormId == null) {
+      handleFormError();
+      return;
+    }
+
     createSuccessMessage();
+
     fetch(`https://script.google.com/macros/s/${googleSheetsFormId}/exec`, {
       method: 'POST',
-      body: formData,
+      body: new FormData(form),
     })
       .then((res) => res.text())
       .then(() => {
-        createToast('Message Sent!', null, 'success', 2);
-        resetForm();
+        handleFormSuccess();
       })
       .catch(() => {
-        createToast('Something went wrong!', 'Error: ', 'error', 2);
-        resetForm();
+        handleFormError();
       });
   };
 
