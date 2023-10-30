@@ -20,6 +20,11 @@
   ],
   "rules": {
     "linebreak-style": 0,
+    "arrow-body-style": "off",
+    "unicorn/no-unused-properties": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-param-reassign": "off",
+    "unicorn/no-negated-condition": "off",
     "no-unused-vars": "error",
     "quote-props": "off",
     "no-restricted-syntax": "off", // allow for...of

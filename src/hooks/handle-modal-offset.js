@@ -29,7 +29,6 @@ const useHandleModalOffset = (element) => {
     body.style.paddingRight = offsetscroll;
     header.style.paddingRight = offsetscroll;
     if (element) {
-      // eslint-disable-next-line no-param-reassign
       element.style.paddingRight = offsetscroll;
     }
   }

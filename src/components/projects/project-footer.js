@@ -10,7 +10,6 @@ const createProjectFooterButton = (cName, attrName, dataText, text, callback) =>
   return projFooterBtn;
 };
 
-// eslint-disable-next-line  arrow-body-style
 const createProjectFooterButtons = (lighthouseKey) => {
   return [
     createProjectFooterButton(

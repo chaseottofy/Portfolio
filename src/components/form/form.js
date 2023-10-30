@@ -171,7 +171,6 @@ const initForm = () => {
     toggleSkeleton();
     removeSuccessMessage();
     resetForm();
-    // eslint-disable-next-line no-console
     console.warn('Form is not properly configured.');
   };
 

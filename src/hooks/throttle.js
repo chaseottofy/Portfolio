@@ -4,7 +4,6 @@ const useThrottle = (fn, wait) => {
   let lastTime;
 
   return function throttled(...args) {
-    // eslint-disable-next-line  unicorn/no-negated-condition
     if (!inThrottle) {
       fn.apply(this, args);
       lastTime = Date.now();

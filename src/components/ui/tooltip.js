@@ -4,7 +4,6 @@ const createTooltip = (text, el) => {
 
   // caret positions: will differ depending on position
   // - disabling eslint because I'm using dynamic property access.
-  /* eslint-disable unicorn/no-unused-properties */
   const caretPositions = {
     'left': 'left:25%;top:0;',
     'middle': 'left:0;top:0;right:0;margin:0 auto;',
@@ -12,7 +11,6 @@ const createTooltip = (text, el) => {
     'bottom': 'transform:translateY(-10px) rotate(180deg);top:100% !important;',
     'top': 'transform:translateY(-10px);',
   };
-  /* eslint-enable */
 
   const {
     innerWidth, innerHeight, scrollY, scrollX,
