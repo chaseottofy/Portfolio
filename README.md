@@ -105,6 +105,11 @@ initForm();
   - Copy to clipboard
   - Handle state
   - Throttle
+- Webpack
+  - js, css, & html minification
+  - js split
+  - hash naming
+  - babel
   
 ---
 
