@@ -28,9 +28,6 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 
 I'm working on making this project more customizable, but for now, 50-60% of the content has some hardcoded values here and there.
 
-The goal is to eventually have all content loaded from JSON, and to have HTML templates for each section.
-Right now, only HTML templates exist for the projects section in which I have a different template for projects with tab functionality and projects with a single image. All data in the projects section is loaded from JSON but requires the HTML template to be copy and pasted into the index.html to prevent layout issues.
-
 ## Cloning
 
 Clone the repository and install dependencies

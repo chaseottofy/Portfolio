@@ -92,7 +92,6 @@
     "stylelint-order": "^6.0.3",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.88.1",
-    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "yargs": "^17.7.2"

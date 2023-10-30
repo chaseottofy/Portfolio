@@ -1,5 +1,9 @@
 /* 
-You may want to block the display of this font, there isn't a great match for it.
+Fonts are loaded in the order they appear in this file.
+*/
+
+/*
+I'm using block font-display for basement because it's decorative and scales horrendously.
 */
 @font-face {
   font-display: block;

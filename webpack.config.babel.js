@@ -5,7 +5,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+// Big thing to note is the html-bundler-webpack-plugin, it does the job of 4-5 plugins and
+// requires a different approach to a standard config
+// https://github.com/webdiscus/html-bundler-webpack-plugin
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
@@ -21,7 +24,6 @@ module.exports = (env, argv) => {
 
     plugins: [
       new Dotenv(),
-      // https://github.com/webdiscus/html-bundler-webpack-plugin
       new HtmlBundlerPlugin({
         entry: {
           index: './src/index.html',
@@ -32,9 +34,9 @@ module.exports = (env, argv) => {
         css: {
           filename: '[name].[contenthash:8].css',
         },
-        // only use woff2 nowadays... https://caniuse.com/?search=woff2
         preload: [
           {
+            // I only use woff2 nowadays... https://caniuse.com/?search=woff2
             test: /\.woff2?$/,
             attributes: {
               as: 'font',
@@ -49,7 +51,6 @@ module.exports = (env, argv) => {
           removeAttributeQuotes: true,
         },
       }),
-      // new BundleAnalyzerPlugin({ openAnalyzer: true }),
     ],
 
     module: {
@@ -145,6 +146,14 @@ module.exports = (env, argv) => {
           ],
         }),
       ],
+      splitChunks: {
+        cacheGroups: {
+          scripts: {
+            test: /\.js$/,
+            chunks: 'all'
+          }
+        }
+      },
     };
   }
 
