@@ -6,7 +6,7 @@
 
 ---
 
-Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the time to re-work my webpack config using his excellent [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin).
+Special thank you to [@webdiscus](https://github.com/webdiscus) founder of [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin) for help configuring the plugin.
 
 ![screen](screenshots/perf5.jpg)
 
@@ -26,7 +26,10 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) for taking the t
 
 ## Notes
 
-I'm working on making this project more customizable, but for now, 50-60% of the content has some hardcoded values here and there.
+- Uses handlebars solely for html templating as a dev dependency.
+- My handlebars setup is facilitated through the use of html-bundler-webpack-plugin, the only configuration needed is to set the entry and partials directories within the webpack config.
+- I am only using the most basic partials available in handlebars - it's very simple to use and won't require any learning curve.
+- Note that when referencing an asset within a partial, the path should be defined as if you were referencing that asset from the entry file `index.hbs`. Also, when referencing a partial from within a partial, include the entire path, even if the partial is in the same directory.
 
 ## Cloning
 
@@ -67,24 +70,42 @@ initForm();
 
 ## Features
 
-- Zero 3rd party code/dependencies
+- Zero 3rd party code/dependencies, all assets are local.
 - 100% Vanilla JS & Vanilla CSS
-- All UI components and design are from scratch
+  - Includes linting for both JS and CSS
+- Handlebars
+  - If you are unfamiliar with handlebars, don't worry, I've only implemented the most basic feature and it's all self explanatory. It's just an easy way to create reusable html templates, and more importantly, break up long html files. All configuration is done in the webpack config within the html-bundler-webpack-plugin. Just define the entry `index.hbs` and the directory where the templates `partials` are located. The plugin is a dev dependency and does not affect the build.
+  - Prioritizes DOM updates vs re-renders, very aggressive memory management. 
+  - Majority of content is defined in JSON, and then loaded into templates. Zero additional nodes are created on load to avoid layout shifts.
+- UX focused design, 100% from scratch
   - Useful custom vanilla hooks: closeOnEsc, throttle, copyToClipboard, etc.
   - Custom vanilla components: tabs, modals, toast, tooltips, image preview, etc.
-- Two themes
-- Responsive on all devices
-  - Mobile first design
-- Contact Form free POSTS with google sheets
-- Prioritizes DOM updates vs re-renders, content is loaded and removed dynamically through the use of HTML templates and skeletons. 
-  - Zero layout shifts.
-  - Lightweight DOM: all listeners are cleaned up on unmount, and averages < 600 nodes.
-- Relies solely on highly optimized local svgs and fonts, no external requests means 0.0s TTFB
-- .3-.4s speed index
-- Accessible: perfect score on several audits (WAVE, Lighthouse, page speed insights, NU HTML checker)
-- SEO friendly: perfect score on lighthouse and page speed insights.
-- Verbose style and script linting
-
+  - Two themes (light and dark): Both verified to be AAA contrast compliant.
+  - Responsive on all devices: Mobile first design
+- Utilizes a very simple form integration with google sheets using Apps Script.
+  - Free to use, no external requests, no server needed.
+- Images/SVGS
+  - All images/svgs are properly sized to their display size.
+  - All icons are svgs.
+  - Lazy loaded when in or near the viewport.
+  - Custom CLI script to compress, scale to specific size or aspect ratio, and create both large and small outputs in bulk.
+    - see [Images](#images)
+- Performance:
+  - Perfect score on all major audits (Lighthouse, page speed insights, gtmetrix)
+  - Passes all accessibility audits (WAVE, Lighthouse, nu html checker)
+  - Accessible: perfect score on several audits (WAVE, Lighthouse, page speed insights, NU HTML checker)
+- Custom components
+  - Tab system that works as a gallery.
+  - Easy to integrate Tooltip system.
+  - Image preview.
+  - Configurable Toasts.
+  - Skeletons/Loaders.
+- Hooks
+  - Close on escape
+  - Copy to clipboard
+  - Handle state
+  - Throttle
+  
 ---
 
 ## Contact Form

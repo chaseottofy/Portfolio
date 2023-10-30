@@ -6,8 +6,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const autoprefixer = require('autoprefixer');
 
-// Big thing to note is the html-bundler-webpack-plugin, it does the job of 4-5 plugins and
-// requires a different approach to a standard config
+// Using html-bundler-webpack-plugin instead of standard html-webpack-plugin
+// Big reason is easy handlebars template support + ability to resolve assets within templates
 // https://github.com/webdiscus/html-bundler-webpack-plugin
 
 module.exports = (env, argv) => {
@@ -26,13 +26,22 @@ module.exports = (env, argv) => {
       new Dotenv(),
       new HtmlBundlerPlugin({
         entry: {
-          index: './src/index.html',
+          index: './src/index.hbs',
         },
         js: {
           filename: '[name].[contenthash:8].js',
         },
         css: {
           filename: '[name].[contenthash:8].css',
+        },
+        loaderOptions: {
+          preprocessor: 'handlebars',
+          preprocessorOptions: {
+            partials: [
+              'src/partials',
+              path.join(__dirname, 'src/partials')
+            ],
+          },
         },
         preload: [
           {

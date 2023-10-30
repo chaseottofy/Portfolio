@@ -1,0 +1,46 @@
+<aside class="section-divider"></aside>
+<article class="contact-form--container">
+
+  <div class="section-title">
+    <h3>Send Direct Message</h3>
+    <span class="cf-br" style="height:1rem;"></span>
+  </div>
+
+  <div class="contact-form--wrapper">
+    <form class="contact-form" data-csd="false">
+      <div class="form-group">
+        <label for="form-name">Name *</label>
+        <input class="form-name--input" id="form-name" name="messageName" type="text" minlength="1" maxlength="200" required>
+      </div>
+
+      <div class="form-group group-response--type">
+
+        <div class="contact-method-group">
+          <span>
+            <input class="contact-option--input fmi" id="contact-method--email" name="contactMethod" type="radio" value="email" checked>
+            <label for="contact-method--email">Email</label>
+          </span>
+
+          <span>
+            <input class="contact-option--input fmi" id="contact-method--phone" name="contactMethod" type="radio" aria-label value="phone">
+            <label for="contact-method--phone">Phone</label>
+          </span>
+        </div>
+
+        <span>
+          <label for="contact-input">Choose the best for response *</label>
+          <input class="form-contact--input fmi" id="contact-input" name="messageContactVal" type="email" minlength="1" maxLength="200" required>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="form-message">Message *</label>
+        <textarea class="form-message--input fmi" id="form-message" name="messageVal" rows="4" maxlength="500" minlength="1" required></textarea>
+      </div>
+
+      <div class="form-group form-group--submit">
+        <button class="submit-form--btn" type="submit" tabindex="-1" disabled>Submit</button>
+      </div>
+    </form>
+  </div>
+</article>
