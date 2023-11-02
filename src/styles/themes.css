@@ -51,8 +51,10 @@
     radial-gradient(50% 50% at 50% 100%,
       var(--offsetwhite2) 0%,
       transparent 100%);
-  --skeleton1: linear-gradient(270deg, #111, #333, #333, #111);
+  --skeleton1: linear-gradient(2c70deg, #111, #333, #333, #111);
 }
+
+
 
 .theme__light {
   --accent-1: #f1f1f1;
@@ -120,3 +122,71 @@
       rgba(255, 255, 255, 0.1) 0%,
       rgba(255, 255, 255, 0) 100%);
 */
+
+/* .theme__dark2 {
+  --grey2: #1e1e21;
+  --grey3: #0f0f11;
+  --grey4: #0f0f11;
+  --grey5: #0f0f11;
+  --grey6: #767784;
+  --grey7: #a9aabc;
+  --grey8: #a9aabc;
+  --accent-8: #9899a9;
+  --accent-7: #878896;
+  --accent-6: #767784;
+  --accent-5: #333338;
+  --accent-4: #222226;
+  --accent-3: #111113;
+  --accent-2: #1e1e21;
+  --accent-1: #0f0f11;
+
+  --black0: #0d0d0d;
+  --black1: #09090b;
+  --black2: #151517;
+  --black3: #18181b;
+  --black4: #27272a;
+
+  --white0: #fff;
+  --white1: #fafafa;
+  --white2: #a9aabc;
+  --white3: #a6a6a6;
+
+  --offsetblack0: rgba(0, 0, 0, .9);
+  --offsetblack1: rgba(0, 0, 0, .6);
+  --offsetblack2: rgba(0, 0, 0, .2);
+  --offsetblack3: rgba(23, 23, 23, 0.1);
+  --offsetblack4: rgba(8, 8, 8, 0.99);
+  --offsetwhite1: rgba(255, 255, 255, .05);
+  --offsetwhite2: rgba(255, 255, 255, .1);
+  --offsetsecondary1: rgba(50, 145, 255, 0.1);
+  --offsetsecondary2: hsla(0deg, 0%, 100%, .4);
+  --inset1: rgba(17, 17, 17, .3);
+  --inset2: rgba(17, 17, 17, .2);
+  --bsout1: rgba(0, 0, 0, .2);
+  --bsout2: rgba(0, 0, 0, .1);
+  --bsout3: rgba(0, 0, 0, .2);
+  --border-color-1: var(--black4);
+  --border1: 1px solid var(--black4);
+  --placeholder1: var(--grey5);
+
+  --bs-md:
+    var(--bsout1) 0 1px 2px 0,
+    var(--bsout2) 0 1px 3px 0;
+  --bs-lg:
+    0 30px 60px var(--bsout2);
+  --bs-inset1:
+    inset 0 0 10px 8px var(--inset1),
+    inset 0 0 10px 8px var(--inset2);
+
+  --selection: #f81ce5;
+  --link: #7F95F5;
+  --link2: #0089ae;
+  --linear1: linear-gradient(0deg,
+      var(--offsetwhite1),
+      var(--offsetwhite1)),
+    radial-gradient(50% 50% at 50% 100%,
+      var(--offsetwhite2) 0%,
+      transparent 100%);
+  --linear2: linear-gradient(270deg, var(--grey10), var(--grey8), var(--grey10), var(--grey8));
+  --skeleton1: linear-gradient(2c70deg, #111, #333, #333, #111);
+} */

@@ -29,8 +29,27 @@ I'm using block font-display for basement because it's decorative and scales hor
   src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
 }
 
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/inter/inter-v12-latin-500.woff2') format('woff2');
+}
+
+
+
 :root {
-  --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  --primaryFont: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  /* --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
 
   /* ********************************** */
@@ -97,8 +116,9 @@ I'm using block font-display for basement because it's decorative and scales hor
   /* constants */
 
   /* intro-offset: value to subtract from intro height */
-  --intro-offset: 12vh;
-  --header-height: 4rem;
+  --intro-offset: 25vh;
+  /* --header-height: 68px; */
+  --header-height: 3.85rem;
   --max-width-md: 1140px;
   --max-width-lg: 1280px;
   --br-1: 5px;
@@ -509,6 +529,12 @@ a[disabled] {
     font-size: 16px;
   }
 }
+
+/* @media screen and (max-width: 720px) {
+  html {
+    font-size: 16px;
+  }
+} */
 
 @media screen and (max-width: 390px) {
   html {

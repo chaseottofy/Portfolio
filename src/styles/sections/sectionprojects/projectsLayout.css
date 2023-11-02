@@ -5,7 +5,7 @@
   z-index: 50;
   width: 100%;
   background: var(--black0);
-  scroll-margin-top:4rem;
+  scroll-margin-top:var(--header-height);
 }
 
 .projects-container::before {
@@ -35,7 +35,7 @@
 .project-cell-divider {
   z-index: 2000;
   width: 1px;
-  height: 5rem;
+  height: 2rem;
   margin: 1.5rem auto 1.5rem auto;
   opacity: .3;
   outline: 1px dotted var(--white1);
