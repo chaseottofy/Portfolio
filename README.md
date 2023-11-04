@@ -1,4 +1,4 @@
-# Portfolio
+# [ottofy.dev](https://ottofy.dev)
 
 > **Warning**
 > Regarding the form: Refer to the [Form](#contact-form) section for information on how to setup the contact form, your build.
@@ -23,13 +23,6 @@ Special thank you to [@webdiscus](https://github.com/webdiscus) founder of [html
   - [How I handle Project Images](#how-i-handle-project-images)
   - [CLI Commands](#cli-commands)
 - [Resources](#resources)
-
-<!-- ## Notes -->
-
-<!-- - Uses handlebars solely for html templating as a dev dependency.
-- My handlebars setup is facilitated through the use of html-bundler-webpack-plugin, the only configuration needed is to set the entry and partials directories within the webpack config.
-- I am only using the most basic partials available in handlebars - it's very simple to use and won't require any learning curve.
-- Note that when referencing an asset within a partial, the path should be defined as if you were referencing that asset from the entry file `index.hbs`. Also, when referencing a partial from within a partial, include the entire path, even if the partial is in the same directory. -->
 
 ## Cloning
 
