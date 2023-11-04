@@ -48,7 +48,8 @@ I'm using block font-display for basement because it's decorative and scales hor
 
 
 :root {
-  --primaryFont: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  --primaryFont: inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+
   /* --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
 
@@ -117,6 +118,7 @@ I'm using block font-display for basement because it's decorative and scales hor
 
   /* intro-offset: value to subtract from intro height */
   --intro-offset: 25vh;
+
   /* --header-height: 68px; */
   --header-height: 3.85rem;
   --max-width-md: 1140px;

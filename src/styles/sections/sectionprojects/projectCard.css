@@ -267,6 +267,7 @@
   border: 1px solid #111;
   border-radius: var(--br-1);
   background: linear-gradient(to bottom, #222, #111);
+
   /* background: linear-gradient(to bottom, var(--primary3), #111); */
   color: #fff;
   font-size: .875rem;

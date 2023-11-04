@@ -51,7 +51,7 @@
     radial-gradient(50% 50% at 50% 100%,
       var(--offsetwhite2) 0%,
       transparent 100%);
-  --skeleton1: linear-gradient(2c70deg, #111, #333, #333, #111);
+  --skeleton1: linear-gradient(270deg, #111, #333, #333, #111);
 }
 
 
