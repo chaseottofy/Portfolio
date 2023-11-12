@@ -29,37 +29,26 @@ I'm using block font-display for basement because it's decorative and scales hor
   src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
 }
 
-/* @font-face {
-  font-display: swap;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/inter/inter-v12-latin-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/inter/inter-v12-latin-500.woff2') format('woff2');
-} */
-
-
-
 :root {
-  /* --primaryFont: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
-
   --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
 
   /* ********************************** */
 
   /* aspect ratio: large project images */
-  --wtvw: 1600px;
-  --htvh: 900px;
-  --wt: 1600;
-  --ht: 900;
+  --wtvw: 1071px;
+  --htvh: 459px;
+  --wt: 1071;
+  --ht: 459;
+
+  /* --wtvw: 1280px;
+  --htvh: 720px;
+  --wt: 1280;
+  --ht: 720; */
+
+  /* --wt: 1600; */
+
+  /* --ht: 900; */
   --ap: calc(var(--wt)/var(--ht));
   --ap2: calc(100% * (var(--ht)/var(--wt)));
 
@@ -115,14 +104,14 @@ I'm using block font-display for basement because it's decorative and scales hor
   /* ********************************** */
 
   /* constants */
-
-  /* intro-offset: value to subtract from intro height */
-  --intro-offset: 25vh;
-
-  /* --header-height: 68px; */
-  --header-height: 3.85rem;
-  --max-width-md: 1140px;
+  --intro-offset: 18vh;
+  --header-height: 4rem;
+  --max-width-md: 1080px;
   --max-width-lg: 1280px;
+
+  /* --max-width-md: 1140px;/ */
+
+  /* --max-width-lg: 1280px; */
   --br-1: 5px;
   --br-2: 8px;
   --br-3: 10px;
@@ -158,16 +147,20 @@ I'm using block font-display for basement because it's decorative and scales hor
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.15;
+  scroll-behavior: smooth;
   tab-size: 4;
   text-size-adjust: 100%;
 }
 
 body {
   position: relative;
+
   /* width hack for mobile */
-  width: calc(100vw - calc(100vw - 100%));
+  width: 100%;
+
+  /* width: calc(100vw - calc(100vw - 100%)); */
   background: var(--black0);
   color: var(--white1);
   font-family: var(--primaryFont);
@@ -178,6 +171,8 @@ body {
   line-height: inherit;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  /* -webkit-overflow-scrolling: touch; */
 }
 
 /* GENERAL RESETS
@@ -521,11 +516,12 @@ a[disabled] {
 
 /* adaptive font sizes
 ===================================== */
-@media screen and (max-width: 1020px) {
+
+/* @media screen and (max-width: 1020px) {
   html {
     font-size: 16px;
   }
-}
+} */
 
 /* @media screen and (max-width: 720px) {
   html {

@@ -28,5 +28,6 @@
 }
 
 .theme__light .section-gradient--l {
+  filter: grayscale(1);
   opacity: .6;
 }

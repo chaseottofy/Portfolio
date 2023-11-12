@@ -7,10 +7,13 @@
   max-width: 100vw;
   height: var(--header-height);
   border-bottom: 1px solid rgba(80, 85, 90, 0.15);
+
   /* backdrop-filter: blur(8px); */
+
   /* backdrop-filter: saturate(180%) blur(8px); */
   background: rgba(8,8,8,.9);
-  box-shadow: 0 12px 36px rgba(1, 57, 72, .15);
+
+  /* box-shadow: 0 12px 36px rgba(1, 57, 72, .15); */
 }
 
 .header-wrapper {
@@ -98,9 +101,7 @@
   box-shadow: none;
   color: #fff;
   cursor: pointer;
-  font-size: .875rem;
-
-  /* font-weight: 500; */
+  font-size: .93rem;
   letter-spacing: .02em;
   opacity: .9;
   text-align: center;

@@ -31,7 +31,7 @@
   padding: .5rem;
   color: var(--white3);
   font-family: var(--secondaryFont);
-  font-size: var(--fs4);
+  font-size: var(--fs3);
   font-weight: 900;
   line-height: .65;
   white-space: nowrap;
@@ -44,7 +44,7 @@
 .section-title h3 {
   background-clip: text;
   color: transparent;
-  -webkit-text-stroke: 1px var(--white2);
+  -webkit-text-stroke: 1px var(--grey8);
   
 }
 
@@ -70,7 +70,7 @@
 }
 
 .section-excerpt p {
-  min-height: 160px;
+  min-height: 70px;
   padding: 0 1rem 1rem 0;
   font-size: 1rem;
 }

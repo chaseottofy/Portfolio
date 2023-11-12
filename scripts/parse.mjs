@@ -53,10 +53,10 @@ class ImageConfig {
     this._placeholderFileSuffix = '';
 
     this._imageFileExtension = 'webp';
-    this._outputImageQuality = 75;
+    this._outputImageQuality = 90;
     this._resizeOptions = {
-      width: 1120,
-      height: 630,
+      width: 1071,
+      height: 459,
     };
     this._outputImageSize = 1;
 

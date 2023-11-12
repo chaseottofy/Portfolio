@@ -1,9 +1,9 @@
 const initDisableOnLoadElements = () => {
   const body = document.querySelector('body');
-  const root = document.querySelector('html');
+  // const root = document.querySelector('html');
   setTimeout(() => {
     body.dataset.disableTransitions = false;
-    root.style.scrollBehavior = 'smooth';
+    // root.style.scrollBehavior = 'smooth';
   }, 200);
 };
 
