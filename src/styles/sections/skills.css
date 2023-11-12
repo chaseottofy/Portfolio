@@ -28,11 +28,7 @@
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 2rem;
-
-  /* background: var(--offsetblack3); */
   gap: 1rem;
-
-  /* row-gap:1rem; */
   grid-template-columns: 1fr 1fr;
 }
 
