@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {{> head}}
   <title>Chase Ottofy - Front End Web Developer Specializing in React - Portfolio</title>
@@ -9,9 +8,15 @@
   <link href="style.scss" rel="stylesheet">
   <link rel="preload" href="images/design/top2.webp" as="image" type="image/webp">
   <script src="index.js" defer="defer"></script>
+  {{!-- <script>
+    console.log('ran');
+    const colorSchemeMeta = document.querySelector('meta[name="theme-color"]');
+    colorSchemeMeta.setAttribute('content', '#fff');
+  </script> --}}
 </head>
 
-<body class="body theme__dark" data-disable-transitions="true" id="page-top" data-active-modal="false">
+<body class="body" data-disable-transitions="true" id="page-top" data-active-modal="false">
+{{!-- <body class="body theme__dark" data-disable-transitions="true" id="page-top" data-active-modal="false"> --}}
   {{> aside/top-gradients }}
 
   {{> header }}

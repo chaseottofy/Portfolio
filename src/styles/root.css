@@ -29,7 +29,7 @@ I'm using block font-display for basement because it's decorative and scales hor
   src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
 }
 
-@font-face {
+/* @font-face {
   font-display: swap;
   font-family: Inter;
   font-style: normal;
@@ -43,14 +43,14 @@ I'm using block font-display for basement because it's decorative and scales hor
   font-style: normal;
   font-weight: 500;
   src: url('../assets/fonts/inter/inter-v12-latin-500.woff2') format('woff2');
-}
+} */
 
 
 
 :root {
-  --primaryFont: inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
+  /* --primaryFont: Inter, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
 
-  /* --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
+  --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
   --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
 
   /* ********************************** */
@@ -166,7 +166,6 @@ html {
 
 body {
   position: relative;
-
   /* width hack for mobile */
   width: calc(100vw - calc(100vw - 100%));
   background: var(--black0);
@@ -381,10 +380,6 @@ a[disabled] {
   animation: skeleton-loading 8s ease-in-out infinite;
   background-image: var(--skeleton1) !important;
   background-size: 400% 100%;
-
-  /* background-clip: text; */
-
-  /* -webkit-background-clip: text; */
   color: transparent !important;
   pointer-events: none;
   user-select: none;

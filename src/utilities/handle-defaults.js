@@ -3,7 +3,6 @@ import initDateTimeElements from './set-date-time-elements';
 import initDisableOnLoadElements from './set-disableonload-elements';
 import initMailtoElements from './set-mailto-elements';
 import initSectionExcerpts from './set-section-excerpts';
-import initTheme from './set-theme';
 import initTooltipElements from './set-tooltip-elements';
 
 /**
@@ -15,7 +14,6 @@ import initTooltipElements from './set-tooltip-elements';
  * @function initDateTimeElements - set contact time to update on the minute and reflect my time
  * @function initMailtoElements - set mail to links to include subject line
  * @function initSectionExcerpts - set the content of the section excerpts
- * @function initTheme - set theme to 'dark' and allow user to toggle between 'dark' and 'light'
  * @function initTooltipElements - give elements with a data-tooltip attribute a custom tooltip
  */
 const initDefaults = () => {
@@ -24,7 +22,6 @@ const initDefaults = () => {
   initDateTimeElements();
   initMailtoElements();
   initSectionExcerpts();
-  initTheme();
   initTooltipElements();
 };
 
