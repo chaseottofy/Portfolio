@@ -10,7 +10,7 @@
   border: 1px solid var(--grey2);
   border-radius: var(--br-4);
   margin: 0 auto 0 auto;
-  box-shadow: 0 24px 43px 0 rgba(173, 179, 192, 0.05);
+  box-shadow: 0 24px 43px 0 rgb(173 179 192 / 0.05);
   scroll-margin-top: 4rem;
 }
 

@@ -151,12 +151,12 @@
   background: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
-      rgba(12, 206, 107, .05));
+      rgb(12 206 107 / .05));
   color: var(--accent-7);
 }
 
 .project-footer-btns button:first-child:hover {
-  border: 1px solid rgba(12, 206, 107, .2);
+  border: 1px solid rgb(12 206 107 / .2);
 }
 
 .project-footer-btns button:last-child {
@@ -167,7 +167,7 @@
 
 .project-footer-btns button:last-child:hover {
   background: linear-gradient(to right bottom,
-      rgba(50, 145, 255, 0.25),
+      rgb(50 145 255 / 0.25),
       var(--accent-1));
   color: var(--white1);
 }

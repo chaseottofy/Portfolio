@@ -27,14 +27,14 @@ import tmMd from '../../images/imgproj/tm2.webp';
 
 const imageSets = {
   calendar: {
-    'cweeklgdark': cweeklgdark,
-    'cweekmddark': cweekmddark,
-    'cmonthlgdark': cmonthlgdark,
-    'cmonthmddark': cmonthmddark,
-    'cyearlgdark': cyearlgdark,
-    'cyearmddark': cyearmddark,
-    'clistlgdark': clistlgdark,
-    'clistmddark': clistmddark,
+    cweeklgdark,
+    cweekmddark,
+    cmonthlgdark,
+    cmonthmddark,
+    cyearlgdark,
+    cyearmddark,
+    clistlgdark,
+    clistmddark,
   },
   cal: { cdaylgdark, cdaymddark },
   markdown: { markdownLg, markdownMd },
@@ -48,7 +48,7 @@ const startingImageSets = {
   monthPicker: { mpLg, mpMd },
   markdown: { markdownLg, markdownMd },
   taskManager: { tmLg, tmMd },
-}
+};
 
-export default imageSets
+export default imageSets;
 export { startingImageSets };

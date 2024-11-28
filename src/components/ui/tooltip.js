@@ -1,15 +1,12 @@
 const createTooltip = (text, el) => {
   // constant values for tooltip
   const [tooltipWidth, tooltipHeight, tooltipPadding] = [220, 35, 20];
-
-  // caret positions: will differ depending on position
-  // - disabling eslint because I'm using dynamic property access.
   const caretPositions = {
-    'left': 'left:25%;top:0;',
-    'middle': 'left:0;top:0;right:0;margin:0 auto;',
-    'right': 'left:60%;top:0;',
-    'bottom': 'transform:translateY(-10px) rotate(180deg);top:100% !important;',
-    'top': 'transform:translateY(-10px);',
+    leftPos: 'left:25%;top:0;',
+    middlePos: 'left:0;top:0;right:0;margin:0 auto;',
+    topPos: 'transform:translateY(-10px);',
+    rightPos: 'left:60%;top:0;',
+    bottomPos: 'transform:translateY(-10px) rotate(180deg);top:100% !important;',
   };
 
   const {
@@ -30,12 +27,12 @@ const createTooltip = (text, el) => {
 
   let top = elBottom + scrollY + tooltipPadding;
   let left = elLeft + scrollX + elWidth / 2 - tooltipWidth / 2;
-  let [caretX, caretY] = ['middle', 'top'];
+  let [caretX, caretY] = ['middlePos', 'topPos'];
 
   // place tooltip on top and change caret position to bottom
   if (top + tooltipHeight > innerHeight + scrollY) {
     top = elTop + scrollY - tooltipHeight - tooltipPadding;
-    caretY = 'bottom';
+    caretY = 'bottomPos';
     // isCaretBottom = true;
   }
 
@@ -43,14 +40,16 @@ const createTooltip = (text, el) => {
   // will default to middle if neither condition is met
   if (left < 0) {
     left = tooltipPadding / 2;
-    caretX = 'left';
+    caretX = 'leftPos';
   } else if (left + tooltipWidth > innerWidth) {
     left = innerWidth - tooltipWidth;
-    caretX = 'right';
+    caretX = 'rightPos';
   }
 
-  const { [caretX]: caretPositionX, [caretY]: caretPositionY } = caretPositions;
-  tooltipCaret.setAttribute('style', `${caretPositionX}${caretPositionY}`);
+  tooltipCaret.setAttribute(
+    'style',
+    `${caretPositions[caretX]}${caretPositions[caretY]}`,
+  );
   tooltip.style.left = `${left}px`;
   tooltip.style.top = `${top}px`;
   tooltipContent.textContent = text;

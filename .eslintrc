@@ -5,35 +5,66 @@
     "sourceType": "module"
   },
   "env": {
-    "es6": true,
-    "node": true,
+    "es2024": true,
     "browser": true
   },
   "extends": [
     "plugin:unicorn/all",
-    "airbnb"
+    "airbnb-base"
   ],
   "plugins": [
     "unicorn",
     "import",
-    "simple-import-sort"
+    "promise",
+    "simple-import-sort",
+    "sort-class-members"
   ],
   "rules": {
-    "linebreak-style": 0,
+    "quotes": [
+      "error",
+      "single"
+    ],
     "arrow-body-style": "off",
-    "unicorn/no-unused-properties": "off",
-    "prefer-promise-reject-errors": "off",
-    "no-param-reassign": "off",
-    "unicorn/no-negated-condition": "off",
-    "no-unused-vars": "error",
-    "quote-props": "off",
-    "no-restricted-syntax": "off", // allow for...of
-    "unicorn/prefer-module": "off",
+    "class-methods-use-this": "off",
+    "linebreak-style": "off",
+    "no-console": "off",
+    "no-restricted-syntax": "off",
+    "unicorn/no-static-only-class": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "object-curly-newline": "off",
+    "object-property-newline": "off",
+    "radix": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "space-before-function-paren": "off",
+    "import/no-extraneous-dependencies": "off",
+    "unicorn/no-keyword-prefix": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-null": "off",
     "unicorn/no-for-loop": "off",
-    "no-console": "off",
-    "simple-import-sort/exports": "warn",
-    "simple-import-sort/imports": "warn"
+    "unicorn/no-array-reduce": "off",
+    "unicorn/prefer-module": "off",
+    "sort-class-members/sort-class-members": [
+      2,
+      {
+        "order": [
+          "[static-properties]",
+          "[static-methods]",
+          "[properties]",
+          "[conventional-private-properties]",
+          "constructor",
+          "[methods]",
+          "[conventional-private-methods]"
+        ],
+        "accessorPairPositioning": "getThenSet"
+      }
+    ]
   }
 }

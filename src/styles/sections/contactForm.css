@@ -10,7 +10,7 @@
     linear-gradient(200deg,
       var(--primary3) 0,
       var(--primary1) 20%,
-      rgba(121, 40, 202, 0) 80%);
+      rgb(121 40 202 / 0) 80%);
   background-origin: border-box;
   background-position: 0 0, 0 0;
   background-repeat: no-repeat;

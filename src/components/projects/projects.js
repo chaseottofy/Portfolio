@@ -4,7 +4,7 @@ import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
 import handlePopupImage from './handle-popup-image';
 import handleTab from './handle-project-tabs';
-import imageSets, {startingImageSets} from './import-project-images';
+import { startingImageSets } from './import-project-images';
 import createProjectMenu from './project-menu';
 import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';

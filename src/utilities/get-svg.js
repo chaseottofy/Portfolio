@@ -16,22 +16,22 @@ import webpackSvg from '../images/svg/webpack.svg';
 import wordpressSvg from '../images/svg/wordpress.svg';
 
 const svgIcons = {
-  'adobe': adobeSvg,
-  'arrow': arrowRightSvg,
-  'calendar': calendarSvg,
-  'css': cssSvg,
-  'copy': copySvg,
-  'github': githubSvg,
-  'lock': lockSvg,
-  'mailto': mailtoSvg,
-  'next': nextSvg,
-  'node': nodeSvg,
-  'react': reactSvg,
-  'typescript': typescriptSvg,
-  'vanilla': vanillaSvg,
-  'vite': viteSvg,
-  'webpack': webpackSvg,
-  'wordpress': wordpressSvg,
+  adobe: adobeSvg,
+  arrow: arrowRightSvg,
+  calendar: calendarSvg,
+  css: cssSvg,
+  copy: copySvg,
+  github: githubSvg,
+  lock: lockSvg,
+  mailto: mailtoSvg,
+  next: nextSvg,
+  node: nodeSvg,
+  react: reactSvg,
+  typescript: typescriptSvg,
+  vanilla: vanillaSvg,
+  vite: viteSvg,
+  webpack: webpackSvg,
+  wordpress: wordpressSvg,
 };
 
 export default svgIcons;

@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   animation: ease-modal-in 100ms both;
-  background: rgba(0, 0, 0, .4);
+  background: rgb(0 0 0 / .4);
 }
 
 .project-overview--modal {
@@ -34,9 +34,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid rgba(50, 145, 255, 0.15);
+  border-bottom: 1px solid rgb(50 145 255 / 0.15);
   background: linear-gradient(210deg,
-      rgba(50, 145, 255, 0.05),
+      rgb(50 145 255 / 0.05),
       var(--black4));
 }
 

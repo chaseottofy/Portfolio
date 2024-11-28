@@ -23,23 +23,23 @@
   --white1: #f7f5f5;
   --white2: #cccbcb;
   --white3: #e7ecf4;
-  --offsetblack0: rgba(0, 0, 0, .9);
-  --offsetblack1: rgba(0, 0, 0, .6);
-  --offsetblack2: rgba(0, 0, 0, .2);
-  --offsetblack3: rgba(23, 23, 23, 0.1);
-  --offsetblack4: rgba(8, 8, 8, 0.99);
-  --offsetwhite1: rgba(255, 255, 255, .05);
-  --offsetwhite2: rgba(255, 255, 255, .1);
-  --offsetsecondary1: rgba(50, 145, 255, 0.1);
-  --offsetsecondary2: hsla(0deg, 0%, 100%, .4);
+  --offsetblack0: rgb(0 0 0 / .9);
+  --offsetblack1: rgb(0 0 0 / .6);
+  --offsetblack2: rgb(0 0 0 / .2);
+  --offsetblack3: rgb(23 23 23 / 0.1);
+  --offsetblack4: rgb(8 8 8 / 0.99);
+  --offsetwhite1: rgb(255 255 255 / .05);
+  --offsetwhite2: rgb(255 255 255 / .1);
+  --offsetsecondary1: rgb(50 145 255 / 0.1);
+  --offsetsecondary2: hsl(0deg 0% 100% / .4);
   --bs-md:
-    rgba(0, 0, 0, .2) 0 1px 2px 0,
-    rgba(0, 0, 0, .1) 0 1px 3px 0;
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
   --bs-lg:
-    0 30px 60px rgba(0, 0, 0, .12);
+    0 30px 60px rgb(0 0 0 / .12);
   --bs-inset1:
-    inset 0 0 10px 8px rgba(17, 17, 17, .3),
-    inset 0 0 10px 8px rgba(17, 17, 17, .2);
+    inset 0 0 10px 8px rgb(17 17 17 / .3),
+    inset 0 0 10px 8px rgb(17 17 17 / .2);
 
   /* SPECIFIC */
   --selection: #f81ce5;
@@ -79,34 +79,34 @@
   --white1: #171717;
   --white2: #4c4c4c;
   --white3: #212122;
-  --offsetblack0: rgba(255, 255, 255, 1);
-  --offsetblack1: rgba(255, 255, 255, .8);
-  --offsetblack2: rgba(255, 255, 255, .5);
-  --offsetblack3: rgba(255, 255, 255, .2);
-  --offsetblack4: rgba(255, 255, 255, .96);
-  --offsetwhite1: rgba(0, 0, 0, .05);
-  --offsetwhite2: rgba(0, 0, 0, .1);
-  --offsetsecondary1: rgba(50, 145, 255, 0.1);
-  --offsetsecondary2: rgba(0, 0, 0, 0.3);
+  --offsetblack0: rgb(255 255 255 / 1);
+  --offsetblack1: rgb(255 255 255 / .8);
+  --offsetblack2: rgb(255 255 255 / .5);
+  --offsetblack3: rgb(255 255 255 / .2);
+  --offsetblack4: rgb(255 255 255 / .96);
+  --offsetwhite1: rgb(0 0 0 / .05);
+  --offsetwhite2: rgb(0 0 0 / .1);
+  --offsetsecondary1: rgb(50 145 255 / 0.1);
+  --offsetsecondary2: rgb(0 0 0 / 0.3);
   --bs-md:
-    rgba(0, 0, 0, .2) 0 1px 2px 0,
-    rgba(0, 0, 0, .1) 0 1px 3px 0;
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
   --bs-lg:
-    0 30px 60px rgba(0, 0, 0, .12);
+    0 30px 60px rgb(0 0 0 / .12);
   --bs-inset1:
-    rgba(0, 0, 0, .2) 0 1px 2px 0,
-    rgba(0, 0, 0, .1) 0 1px 3px 0;
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
 
   /* SPECIFIC */
   --selection: #7fffe1;
   --link: #153DEF;
   --link2: #212122;
   --linear1: linear-gradient(0deg,
-      rgba(23, 23, 23, .4),
-      rgba(8, 8, 8, .05)),
+      rgb(23 23 23 / .4),
+      rgb(8 8 8 / .05)),
     radial-gradient(50% 50% at 50% 100%,
-      rgba(40, 40, 40, .2) 0%,
-      rgba(0, 0, 0, .8) 100%);
+      rgb(40 40 40 / .2) 0%,
+      rgb(0 0 0 / .8) 100%);
   --skeleton1: linear-gradient(270deg, #fafafa, #eaeaea, #eaeaea, #fafafa);
 }
 

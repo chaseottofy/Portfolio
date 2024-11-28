@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   animation: ease-modal-in 100ms both;
-  background: rgba(0, 0, 0, .6);
+  background: rgb(0 0 0 / .6);
 }
 
 .hide-lh-modal {
@@ -107,7 +107,7 @@
       var(--black0) 40%,
       var(--black1));
   box-shadow: 0 0 0 1px var(--black2);
-  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, .12));
+  filter: drop-shadow(0 8px 30px rgb(0 0 0 / .12));
   grid-area: main;
 }
 

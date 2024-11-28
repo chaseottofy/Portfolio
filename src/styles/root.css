@@ -169,8 +169,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   line-height: inherit;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden scroll;
 
   /* -webkit-overflow-scrolling: touch; */
 }

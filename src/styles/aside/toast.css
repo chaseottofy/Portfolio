@@ -40,7 +40,7 @@
 
 [data-toast-type="success"] .toast-progress--length,
 [data-toast-type="error"] .toast-progress--length {
-  background: rgba(0, 0, 0, .3) !important;
+  background: rgb(0 0 0 / .3) !important;
 }
 
 [data-toast-type="success"] .toast-close,
@@ -50,16 +50,16 @@
 
 [data-toast-type="success"] .toast-close:hover,
 [data-toast-type="error"] .toast-close:hover {
-  background: rgba(255, 255, 255, .1) !important;
+  background: rgb(255 255 255 / .1) !important;
 }
 
 [data-toast-type="success"] .toast-progress,
 [data-toast-type="error"] .toast-progress {
-  background: rgba(255, 255, 255, .6) !important;
+  background: rgb(255 255 255 / .6) !important;
 }
 
 [data-toast-type="default"] .toast-progress--length {
-  background: rgba(255, 255, 255, .3) !important;
+  background: rgb(255 255 255 / .3) !important;
 }
 
 [data-toast-type="default"] .toast-progress {
