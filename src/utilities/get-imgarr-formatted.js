@@ -23,6 +23,7 @@ const getImgArrayFormatted = (images) => {
  */
 const getImageArray = (images) => {
   const arr = [];
+  // console.log(images)
   for (let i = 0; i < images.length; i += 1) {
     arr.push(getImgArrayFormatted(images[i]));
   }

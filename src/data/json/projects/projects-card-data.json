@@ -56,6 +56,19 @@
     "published": "Feb 26, 2023",
     "tabs": []
   },
+  "taskManagerCard": {
+    "title": "Task Manager",
+    "projLink": "https://github.com/chaseottofy/local-task-manager?tab=readme-ov-file",
+    "githubLink": "https://github.com/chaseottofy/local-task-manager?tab=readme-ov-file",
+    "stacks": [
+      "vanilla",
+      "webpack"
+    ],
+    "lighthouseKey": "taskManager",
+    "description": "Interface to manage json data with json-server.",
+    "published": "Mar 24, 2024",
+    "tabs": []
+  },
   "optionsData": {
     "calendar": {
       "title": "Google Calendar 2.0",
@@ -76,6 +89,11 @@
       "title": "Markdown Editor",
       "subtitle": "React",
       "href": "#proj-markdown-top"
+    },
+    "taskManager": {
+      "title": "Task Manager",
+      "subtitle": "vanilla JS",
+      "href": "#proj-taskManager-top"
     }
   }
 }

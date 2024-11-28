@@ -4,7 +4,7 @@ import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
 import handlePopupImage from './handle-popup-image';
 import handleTab from './handle-project-tabs';
-import imageSets from './import-project-images';
+import imageSets, {startingImageSets} from './import-project-images';
 import createProjectMenu from './project-menu';
 import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';
@@ -162,12 +162,8 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
  */
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
-  const {
-    cal, blog, monthPicker, markdown,
-  } = imageSets;
-  // remove the last element from data array, which is the project menu
   const cardDataArray = Object.values(cardData).slice(0, -1);
-  const imgArrays = getImgArray([cal, blog, monthPicker, markdown]);
+  const imgArrays = getImgArray(Object.values(startingImageSets));
 
   for (let i = 0; i < projectCells.length; i += 1) {
     const {

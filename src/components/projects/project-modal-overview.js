@@ -91,12 +91,13 @@ const configProjectOverview = (title, links, features) => {
 };
 
 const createProjectModal = (e) => {
+  console.log(projectData);
   const body = document.querySelector('body');
   if (body.dataset.activeModal === 'true') return;
 
   const projectDataAttr = e?.target?.dataset?.proj;
   if (!projectDataAttr) return;
-
+  
   const { [projectDataAttr]: projectData } = projectJSON;
   const { title, links, features } = projectData;
   const projectOverviewInstance = configProjectOverview(

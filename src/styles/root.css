@@ -10,7 +10,7 @@ I'm using block font-display for basement because it's decorative and scales hor
   font-family: basement;
   font-style: normal;
   font-weight: 900;
-  src: url('../assets/fonts/basement-expanded.woff2') format('woff2');
+  src: url('../assets/fonts/subsetted/basement-expanded-Subset.woff2') format('woff2');
 }
 
 @font-face {
@@ -18,7 +18,7 @@ I'm using block font-display for basement because it's decorative and scales hor
   font-family: Neue;
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/neue/NeueMontreal-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/subsetted/NeueMontreal-Regular-Subset.woff2') format('woff2');
 }
 
 @font-face {
@@ -26,7 +26,7 @@ I'm using block font-display for basement because it's decorative and scales hor
   font-family: Neue;
   font-style: normal;
   font-weight: 500;
-  src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/subsetted/NeueMontreal-Medium-Subset.woff2') format('woff2');
 }
 
 :root {
@@ -104,7 +104,7 @@ I'm using block font-display for basement because it's decorative and scales hor
   /* ********************************** */
 
   /* constants */
-  --intro-offset: 18vh;
+  --intro-offset: 40vh;
   --header-height: 4rem;
   --max-width-md: 1080px;
   --max-width-lg: 1280px;

@@ -1,4 +1,4 @@
-{
+{  
   "github": {
     "cname": "badge-github",
     "href": "https://github.com/chaseottofy",
@@ -6,7 +6,7 @@
     "dataAcc": "@chaseottofy",
     "dataBef": null,
     "idx": 0
-  },
+  },  
   "youtube": {
     "cname": "badge-youtube",
     "href": "https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g",
@@ -30,10 +30,10 @@
     "cname": "badge-codewars",
     "href": "https://www.codewars.com/users/protto",
     "title": "Codewars",
-    "dataAcc": "Top 0.2%",
+    "dataAcc": "Top 0.077%",
     "dataBef": [
       "@protto",
-      "#1218"
+      "#514"
     ],
     "idx": 3
   }

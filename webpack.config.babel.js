@@ -4,7 +4,12 @@ const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
+const CompressionPlugin = require('compression-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const CopyPlugin = require('copy-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const zlib = require('node:zlib');
+const { cache } = require('sharp');
 
 // Using html-bundler-webpack-plugin instead of standard html-webpack-plugin
 // Big reason is easy handlebars template support + ability to resolve assets within templates
@@ -24,6 +29,12 @@ module.exports = (env, argv) => {
 
     plugins: [
       new Dotenv(),
+      new WebpackManifestPlugin(
+        {
+          fileName: 'manifest.json',
+          basePath: 'dist/',
+        },
+      ),
       new HtmlBundlerPlugin({
         entry: {
           index: './src/index.hbs',
@@ -45,7 +56,6 @@ module.exports = (env, argv) => {
         },
         preload: [
           {
-            // I only use woff2 nowadays... https://caniuse.com/?search=woff2
             test: /\.woff2?$/,
             attributes: {
               as: 'font',
@@ -154,16 +164,61 @@ module.exports = (env, argv) => {
             CssMinimizerPlugin.cleanCssMinify,
           ],
         }),
+        new CompressionPlugin({
+          filename: '[path][base].gz',
+          algorithm: 'gzip',
+          test: /\.js$|\.css$|\.html$|\.json$/,
+          threshold: 10_240, // Only compress files larger than 10KB
+          minRatio: 0.8,
+        }),
+        new CompressionPlugin({
+          filename: '[path][base].br',
+          algorithm: 'brotliCompress',
+          test: /\.(js|css|html|json|svg)$/,
+          compressionOptions: {
+            params: {
+              [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+            },
+          },
+          threshold: 10_240,
+          minRatio: 0.8,
+        }),
       ],
       splitChunks: {
+        chunks: 'all',
+        minSize: 20_000,
+        minRemainingSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50_000,
         cacheGroups: {
           scripts: {
             test: /\.js$/,
-            chunks: 'all'
+            chunks: 'all',
           }
         }
+        // cacheGroups: {
+        //   defaultVendors: {
+        //     test: /[/\\]node_modules[/\\]/,
+        //     priority: -10,
+        //     reuseExistingChunk: true,
+        //   },
+        //   default: {
+        //     minChunks: 2,
+        //     priority: -20,
+        //     reuseExistingChunk: true,
+        //   },
+        // },
       },
     };
+    config.plugins.push(
+      new CopyPlugin({
+        patterns: [
+          { from: './src/assets/robots.txt', to: 'robots.txt' },
+        ],
+      }),
+    );
   }
 
   return config;
