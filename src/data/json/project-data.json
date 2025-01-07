@@ -129,19 +129,19 @@
 				"monthpicker2.webp"
 			]
 		},
-    "links": {
-      "github": [
-        "https://github.com/chaseottofy/google-calendar-clone-vanilla",
-        "Google Calendar 2.0 Github Repository"
-      ],
-      "NPM": [
-        "https://www.npmjs.com/package/monthpicker-lite-js",
-        "Monthpicker NPM Package"
-      ],
-      "live": [
-        "https://stackblitz.com/edit/monthpicker-lite-js?file=package.json",
-        "Monthpicker demo"
-      ]
+		"links": {
+			"github": [
+				"https://github.com/chaseottofy/google-calendar-clone-vanilla",
+				"Google Calendar 2.0 Github Repository"
+			],
+			"NPM": [
+				"https://www.npmjs.com/package/monthpicker-lite-js",
+				"Monthpicker NPM Package"
+			],
+			"live": [
+				"https://stackblitz.com/edit/monthpicker-lite-js?file=package.json",
+				"Monthpicker demo"
+			]
 		},
 		"features": {
 			"about": [
