@@ -46,8 +46,23 @@
   pointer-events: none;
   user-select: none;
 }
-
 .gradient-overlay--two {
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 3px);
+  margin: calc(0vh - var(--intro-offset)) auto 0 auto;
+  background-image: url("../../images/design/top2.webp");
+  background-repeat: round;
+  filter:brightness(160%);
+  mix-blend-mode: darken;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* .gradient-overlay--two {
   position: absolute;
   z-index: 200;
   top: 0;
@@ -61,7 +76,7 @@
   mix-blend-mode: darken;
   pointer-events: none;
   user-select: none;
-}
+} */
 
 /* .gradient-overlay--one::after {
   position: absolute;

@@ -165,13 +165,14 @@ const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
   const cardDataKeys = Object.keys(projectData);
   const imgArrays = getImgArray(Object.values(startingImageSets).map((x) => x.slice(0, 2)));
+  // console.log(imgArrays);
 
   for (let i = 0; i < projectCells.length; i += 1) {
     const { title, links, card } = projectData[cardDataKeys[i]];
     const { lighthouseKey, description, published, tabs, stacks } = card;
-    const { live: projLink, github: githubLink } = links;
+    const { live: projLink = ['#'], github: githubLink = ['#'] } = links;
     const [cell, projectImages] = [projectCells[i], imgArrays[i]];
-    createProjectHeader(cell, tabs, projLink, githubLink, title, published);
+    createProjectHeader(cell, tabs, projLink[0], githubLink[0], title, published);
     createProjectBody(cell, projectImages);
     createProjectFooter(cell, stacks, description, title, lighthouseKey);
     // give project cell ID for floating menu scroll

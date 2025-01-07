@@ -12,7 +12,7 @@ const zlib = require('node:zlib');
 const validImages = require('./scripts/get-filtered-images.js');
 const ImageFilterPlugin = require('./plugins/image-filter-plugin.js');
 
-module.exports = (env, argv) => {
+module.exports = (_, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
@@ -27,19 +27,7 @@ module.exports = (env, argv) => {
         fileName: 'manifest.json',
         basePath: 'dist/',
       }),
-      new ImageFilterPlugin(
-        validImages,
-        {
-          verbose: !IS_PRODUCTION,
-          sourceDirectories: ['imgproj'],
-          preloadedImages: [
-            'top2',
-            'favicon-32x32',
-            'fallback',
-            'fallbackMd',
-          ]
-        }
-      ),
+
       new HtmlBundlerPlugin({
         entry: {
           index: './src/index.hbs',
@@ -224,6 +212,23 @@ module.exports = (env, argv) => {
         // },
       },
     };
+    if (IS_PRODUCTION) {
+      config.plugins.push(
+        new ImageFilterPlugin(
+          validImages,
+          {
+            verbose: !IS_PRODUCTION,
+            sourceDirectories: ['imgproj'],
+            preloadedImages: [
+              'top2',
+              'favicon-32x32',
+              'fallback',
+              'fallbackMd',
+            ]
+          }
+        ),
+      );
+    }
     config.plugins.push(
       new CopyPlugin({
         patterns: [
@@ -233,6 +238,5 @@ module.exports = (env, argv) => {
     );
   }
 
-  // if (IS_PRODUCTION) {}
   return config;
 };

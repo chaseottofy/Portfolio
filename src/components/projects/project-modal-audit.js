@@ -13,23 +13,11 @@ const closeLH = (e) => {
   }
 };
 
-const content = [
-  [
-    'First Contentful Paint',
-    'Marks the time at which the first text or image is painted.',
-  ],
-  [
-    'Largest Contentful Paint',
-    'Marks the time at which the largest text or image is painted.',
-  ],
-  [
-    'Total Blocking Time',
-    'Sum of all time periods between FCP and Time to Interactive.',
-  ],
-  [
-    'Cumulative Layout Shift',
-    'Measures the movement of visible elements within the viewport.',
-  ],
+const auditContent = [
+  ['First Contentful Paint', 'Marks the time at which the first text or image is painted.'],
+  ['Largest Contentful Paint', 'Marks the time at which the largest text or image is painted.'],
+  ['Total Blocking Time', 'Sum of all time periods between FCP and Time to Interactive.'],
+  ['Cumulative Layout Shift', 'Measures the movement of visible elements within the viewport.'],
 ];
 
 const configAuditModal = (title, link, score) => {
@@ -67,8 +55,8 @@ const configAuditModal = (title, link, score) => {
   lhmain.append(mainscore, screenshotLinkBtn);
   lhbody.append(lhmain);
 
-  for (let i = 0; i < 4; i += 1) {
-    const [contentTitle, contentDesc] = content[i];
+  for (let i = 0; i < auditContent.length; i += 1) {
+    const [contentTitle, contentDesc] = auditContent[i];
 
     const lhsub = document.createElement('div');
     lhsub.classList.add('lh-sub');
@@ -108,10 +96,12 @@ const createAuditModal = (e) => {
   const targetProject = e?.target?.dataset?.lhProj;
   if (!targetProject) return;
 
-  const { title, links, audit } = projectData[targetProject];
-  const { score } = audit;
-  const { auditLink = '#' } = links;
-  const lightHouseInstance = configAuditModal(title, auditLink, score, content);
+  const {
+    title,
+    links: { auditLink = ['#'] },
+    audit: { score },
+  } = projectData[targetProject];
+  const lightHouseInstance = configAuditModal(title, auditLink[0], score);
   body.append(lightHouseInstance);
   useHandleModalOffset();
   e.target.blur();

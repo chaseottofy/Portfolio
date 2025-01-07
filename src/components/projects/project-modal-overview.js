@@ -73,6 +73,8 @@ const configProjectOverview = (title, links, features) => {
   // create <UL><LI> cascade for each link
   for (const [key, val] of Object.entries(links)) {
     const [link, tooltip] = val;
+    // console.log(key, val, link, tooltip);
+
     linksWrapper.append(createLink(link, tooltip, null, key));
   }
   poModalBody.append(linksWrapper);
@@ -104,11 +106,7 @@ const createProjectModal = (e) => {
   } = projectData[projectDataAttr];
   // const { [projectDataAttr]: projectData } = projectJSON;
   // const { title, links, features } = projectData;
-  const projectOverviewInstance = configProjectOverview(
-    title,
-    links,
-    features,
-  );
+  const projectOverviewInstance = configProjectOverview(title, links, features);
 
   body.append(projectOverviewInstance);
 
