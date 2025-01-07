@@ -1,4 +1,4 @@
-import projectData from '../../data/json/projects/project-data.json';
+import projectData from '../../data/json/project-data.json';
 import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 import createButton from '../ui/button';

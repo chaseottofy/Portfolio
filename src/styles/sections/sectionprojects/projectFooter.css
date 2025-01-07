@@ -10,7 +10,7 @@
   padding: .25rem .5rem .75rem .5rem;
   border-radius: 0 0 var(--br-4) var(--br-4);
   border-top: 2px solid var(--black1);
-  margin-top: -2rem;
+  margin-top: -2.5rem;
   background: linear-gradient(to bottom, var(--offsetblack0) 0, var(--black0) 30%);
 }
 

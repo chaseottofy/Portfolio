@@ -1,4 +1,4 @@
-import projectData from '../../data/json/projects/project-data.json';
+import projectData from '../../data/json/project-data.json';
 import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 import createButton from '../ui/button';
@@ -72,19 +72,16 @@ const configProjectOverview = (title, links, features) => {
 
   // create <UL><LI> cascade for each link
   for (const [key, val] of Object.entries(links)) {
-    const [link, tooltip] = val;
-    // console.log(key, val, link, tooltip);
-
-    linksWrapper.append(createLink(link, tooltip, null, key));
+    linksWrapper.append(createLink(...val, null, key));
   }
   poModalBody.append(linksWrapper);
-
   // create <UL><LI> cascade for each feature
   for (const [key, val] of Object.entries(features)) {
-    const [featureTitle, featureList] = projectFeatureTemplate(key, val);
-    poModalBody.append(featureTitle, featureList, createProjectHR());
+    poModalBody.append(
+      ...projectFeatureTemplate(key, val),
+      createProjectHR(),
+    );
   }
-
   // MODAL : APPEND
   poModal.append(poModalHeader, poModalBody);
   poWrapper.append(poModal);

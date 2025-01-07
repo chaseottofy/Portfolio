@@ -21,11 +21,3 @@ const appInit = () => {
 };
 
 appInit();
-
-/*
-
-// const noUmbr = ['clear', 'sunny', 'cloudy', 'overcast', 'windy'];
-// const umbr = ['rainy', 'thunderstorm']]
-const noUmbr = new Set()
-
-*/

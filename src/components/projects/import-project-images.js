@@ -1,5 +1,5 @@
 import { imgTypesRegex } from '../../data/constants';
-import projectData from '../../data/json/projects/project-data.json';
+import projectData from '../../data/json/project-data.json';
 import fallback from '../../images/fallback/fallback.webp';
 import fallbackMd from '../../images/fallback/fallbackMd.webp';
 import getImgStem from '../../utilities/get-img-stem';

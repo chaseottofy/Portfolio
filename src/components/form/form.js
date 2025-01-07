@@ -13,14 +13,14 @@ const initForm = () => {
   const [formDisabled, setFormDisabled] = handleState(true);
   const [invalidElements, setInvalidElements] = handleState([]);
 
-  const formInputs = document.querySelectorAll('.fmi');
-  const form = document.querySelector('.contact-form');
-  const nameInput = document.querySelector('.form-name--input');
-  const contactValueInput = document.querySelector('.form-contact--input');
-  const messageInput = document.querySelector('.form-message--input');
-  const submitBtn = document.querySelector('.submit-form--btn');
-  const contactOptions = document.querySelectorAll('.contact-option--input');
   const formWrapper = document.querySelector('.contact-form--wrapper');
+  const form = formWrapper.querySelector('.contact-form');
+  const formInputs = form.querySelectorAll('.fmi');
+  const nameInput = form.querySelector('.form-name--input');
+  const contactValueInput = form.querySelector('.form-contact--input');
+  const messageInput = form.querySelector('.form-message--input');
+  const submitBtn = form.querySelector('.submit-form--btn');
+  const contactOptions = form.querySelectorAll('.contact-option--input');
 
   const handleSelectedContactMethod = (e) => {
     const selectedOption = e.target.value;
@@ -234,6 +234,7 @@ const initForm = () => {
   };
 
   initFormFunc();
+  // console.log(document.querySelector('.contact-form--wrapper').innerHTML)
 };
 
 export default initForm;

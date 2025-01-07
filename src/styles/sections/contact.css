@@ -8,7 +8,7 @@
   align-items: center;
   padding: 2rem .75rem 6rem .75rem;
   background: var(--black0);
-  scroll-margin-top: 4rem;
+  scroll-margin-top: var(--header-height) !important;
 }
 
 .contact-menu__header {

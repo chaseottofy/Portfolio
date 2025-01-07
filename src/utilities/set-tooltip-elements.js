@@ -1,4 +1,5 @@
 import createTooltip from '../components/ui/tooltip';
+import { aspectSmallWidth } from '../data/constants';
 import useIsTouchDevice from '../hooks/is-touch-device';
 
 const configTooltipElements = () => {
@@ -24,7 +25,7 @@ const configTooltipElements = () => {
   if (
     tooltipElements.length === 0
     || isTouchDevice
-    || window.innerWidth < 640
+    || window.innerWidth < aspectSmallWidth
   ) return;
 
   for (const element of tooltipElements) {

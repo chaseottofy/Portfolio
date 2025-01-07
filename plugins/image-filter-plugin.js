@@ -8,7 +8,7 @@ class ImageFilterPlugin {
       // pass src directories to filter images from using validImages provided @constructor
       // searches file.name
       // sourceDirectories are assumed to be in the 'images' directory
-      sourceDirectories: ['imgproj'], 
+      sourceDirectories: ['imgproj'],
       // pass preloaded images to ignore
       preloadedImages: [],
       ...options

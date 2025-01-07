@@ -1,6 +1,7 @@
 .popup-picture {
   position: fixed;
   display: flex;
+  z-index:10000;
   overflow: hidden;
   height: 100vh;
   flex-direction: column;

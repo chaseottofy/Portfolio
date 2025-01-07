@@ -2,7 +2,6 @@
   position: relative;
   z-index: 500;
   display: flex;
-  overflow:hidden;
   width: 100%;
   max-width: 100%;
   flex-direction: column;
@@ -10,8 +9,9 @@
   border: 1px solid var(--grey2);
   border-radius: var(--br-4);
   margin: 0 auto 0 auto;
-  box-shadow: 0 24px 43px 0 rgb(173 179 192 / 0.05);
-  scroll-margin-top: 4rem;
+  box-shadow: 
+  0 24px 43px 0 rgb(173 179 192 / 0.08);
+  scroll-margin-top: 6rem;
 }
 
 [data-project-cell-loaded="false"] * {
@@ -56,8 +56,6 @@
 .subheader-sm {
   height: 3rem !important;
   padding: 0 !important;
-
-  /* padding: 0 .25rem !important; */
 }
 
 /* TABS

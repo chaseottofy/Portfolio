@@ -1,4 +1,4 @@
-import projectData from '../../data/json/projects/project-data.json';
+import projectData from '../../data/json/project-data.json';
 import getImgSuffix from '../../utilities/get-img-suffix';
 import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
@@ -94,7 +94,7 @@ const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, pub
   subheaderSearchLink.setAttribute('href', projLink);
 
   const subheaderSearchText = subheaderSearch.querySelector('span');
-  subheaderSearchText.textContent = `Demo: ${title}`;
+  subheaderSearchText.textContent = `Go to: ${title}`;
 
   // set github link
   const subheaderRepo = projectCell.querySelector('.pc__subheader--links');
@@ -163,6 +163,7 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
  */
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
+
   const cardDataKeys = Object.keys(projectData);
   const imgArrays = getImgArray(Object.values(startingImageSets).map((x) => x.slice(0, 2)));
   // console.log(imgArrays);
@@ -178,6 +179,7 @@ const createProjectCards = () => {
     // give project cell ID for floating menu scroll
     cell.id = `proj-${lighthouseKey}-top`;
     cell.dataset.projectCellLoaded = 'true';
+    cell.setAttribute('z-index', -1);
   }
 };
 

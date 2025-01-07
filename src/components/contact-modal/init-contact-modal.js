@@ -1,3 +1,7 @@
+import {
+  aspectSmallWidth,
+  pxToRem,
+} from '../../data/constants';
 import useIsTouchDevice from '../../hooks/is-touch-device';
 import createContactMenu from './contact-menu';
 
@@ -12,7 +16,9 @@ const initContactModal = () => {
 
   const contactMousemove = (e) => {
     if (e.target && e.target.nodeType === 1) {
-      if (e.target.closest('.contact-menu__header') || e.target.closest('.nav-multi__contact')) return;
+      if (e.target.closest('.contact-menu__header')
+        || e.target.closest('.nav-multi__contact')
+      ) return;
 
       contactModal.dataset.contactMenuDisabled = 'true';
       navContactBtn.dataset.contactMenuOpen = 'false';
@@ -21,13 +27,15 @@ const initContactModal = () => {
   };
 
   const openContactMenu = () => {
-    if (window.innerWidth <= 720) return;
+    if (window.innerWidth <= aspectSmallWidth) return;
     const isContactMenuOpen = contactModal.dataset.contactMenuDisabled === 'false';
     const isContactMenuLoaded = contactModal.dataset.contactMenuLoaded === 'false';
     if (isContactMenuOpen) return;
 
     const { bottom } = navContactBtn.getBoundingClientRect();
-    const modalTop = Number.parseFloat(bottom.toFixed(2)) - 16;
+    console.log(document.querySelector('html'));
+
+    const modalTop = Number.parseFloat(bottom.toFixed(2)) - pxToRem;
     contactModal.style.top = `${modalTop}px`;
 
     if (isContactMenuLoaded) {

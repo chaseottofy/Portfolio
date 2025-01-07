@@ -37,7 +37,6 @@ const createBadge = (
   const badgeTopContainerSvg = document.createElement('div');
   badgeTopContainerSvg.classList.add('badge-top--container--svg');
   const badgeTopContainerSvgImg = document.createElement('img');
-  // badgeTopContainerSvgImg.classList.add('cm-header--img');
   badgeTopContainerSvgImg.src = cmBodyImgs[idx].getAttribute('src');
   badgeTopContainerSvgImg.alt = '';
   const badgeTopSpan = document.createElement('span');
@@ -77,8 +76,7 @@ const createCmBottomCell = (
   dataText,
   imgs,
 ) => {
-  const mailToSubject = personalContactData.mailto;
-
+  const { mailto: mailToSubject } = personalContactData;
   const menuCell = document.createElement('div');
   menuCell.classList.add('cm-right--bottom__cell');
   const menuSpan = document.createElement('span');
@@ -113,6 +111,7 @@ const createCmBottomCell = (
 };
 
 const createContactMenu = () => {
+  const { phone, email } = personalContactData;
   const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
   const contactMenuWrapper = document.createElement('div');
   contactMenuWrapper.classList.add('cm-right');
@@ -127,19 +126,19 @@ const createContactMenu = () => {
   contactMenuFooter.classList.add('cm-right--bottom', 'cm-right--bottom__body');
   contactMenuFooter.append(
     createCmBottomCell(
-      '970-988-2548',
+      phone,
       'cm-copy--phone',
       'Copy Phone Number',
       null,
-      '9709882548',
+      phone.replaceAll('-', ''),
       cmFooterImgs,
     ),
     createCmBottomCell(
-      'ottofy@zohomail.com',
+      email,
       'cm-copy--email',
       'Copy E-mail Address',
-      'mailto:ottofy@zohomail.com',
-      'ottofy@zohomail.com',
+      `mailto:${email}`,
+      email,
       cmFooterImgs,
     ),
   );

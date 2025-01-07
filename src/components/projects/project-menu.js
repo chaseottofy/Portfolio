@@ -1,4 +1,4 @@
-import projectData from '../../data/json/projects/project-data.json';
+import projectData from '../../data/json/project-data.json';
 
 const createFloatOptions = (options) => {
   const floatingMenu = document.querySelector('.floating-menu');
