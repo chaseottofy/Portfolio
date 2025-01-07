@@ -1,8 +1,8 @@
 {
   "dist/index.html": "auto/index.html",
-  "dist/index.css": "auto/style.186ac2f0.css",
-  "dist/index.1.js": "auto/index.1.fd835f88.js",
-  "dist/622.5be79798.js": "auto/622.5be79798.js",
+  "dist/index.css": "auto/style.e36c5019.css",
+  "dist/index.1.js": "auto/index.1.fb8ca220.js",
+  "dist/961.b8ba4e93.js": "auto/961.b8ba4e93.js",
   "dist/images/cweek1.webp": "auto/images/cweek1.93ee5f33.webp",
   "dist/images/blog1.webp": "auto/images/blog1.c12b56a6.webp",
   "dist/images/cweek2.webp": "auto/images/cweek2.d309fecf.webp",
@@ -48,12 +48,10 @@
   "dist/images/arrowRight.svg": "auto/images/arrowRight.b89601d5.svg",
   "dist/images/bentarrow.svg": "auto/images/bentarrow.e54aa09c.svg",
   "dist/images/lock.svg": "auto/images/lock.e5937d85.svg",
-  "dist/images/placeholder1600x900.png": "auto/images/placeholder1600x900.8871d09e.png",
   "dist/images/copy.svg": "auto/images/copy.15c73ec6.svg",
   "dist/images/caretdown.svg": "auto/images/caretdown.4fcb3086.svg",
   "dist/images/adobe.svg": "auto/images/adobe.3f36ee69.svg",
   "dist/images/caretup.svg": "auto/images/caretup.3b2e48c5.svg",
-  "dist/images/placeholder720x540.png": "auto/images/placeholder720x540.93f5e0a7.png",
   "dist/images/filler.svg": "auto/images/filler.7a698502.svg",
   "dist/robots.txt": "auto/robots.txt"
 }
