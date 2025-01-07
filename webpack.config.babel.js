@@ -23,6 +23,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new Dotenv(),
+      new WebpackManifestPlugin({
+        fileName: 'manifest.json',
+        basePath: 'dist/',
+      }),
       new ImageFilterPlugin(
         validImages,
         {
@@ -229,15 +233,6 @@ module.exports = (env, argv) => {
     );
   }
 
-  if (IS_PRODUCTION) {
-    config.plugins.push(
-      new WebpackManifestPlugin({
-        fileName: 'manifest.json',
-        basePath: 'dist/',
-        removeKeyHash: true,
-      }),
-    );
-  }
-
+  // if (IS_PRODUCTION) {}
   return config;
 };

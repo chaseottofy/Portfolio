@@ -21,11 +21,10 @@ class ImageLoader {
     const requiredImages = new Set();
     for (const key of this.keys) {
       const { images = [] } = this.config[key];
-      if (images.length > 0) {
-        for (const arr of Object.values(images)) {
-          for (const img of arr) {
-            requiredImages.add(getImgStem(img));
-          }
+      if (images.length === 0) return;
+      for (const arr of Object.values(images)) {
+        for (const img of arr) {
+          requiredImages.add(getImgStem(img));
         }
       }
     }
