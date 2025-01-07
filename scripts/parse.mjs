@@ -53,11 +53,19 @@ class ImageConfig {
     this._placeholderFileSuffix = '';
 
     this._imageFileExtension = 'webp';
-    this._outputImageQuality = 90;
+    this._outputImageQuality = 95;
     this._resizeOptions = {
-      width: 1071,
-      height: 459,
+      width: 2000,
+      height: 820,
     };
+    // this._resizeOptions = {
+    //   width: 1071,
+    //   height: 410,
+    // };
+    // this._resizeOptions = {
+    //   width: 1071,
+    //   height: 459,
+    // };
     this._outputImageSize = 1;
 
     this._outputVariableName = 'imagePlaceholders';
@@ -362,6 +370,7 @@ async function createImagePlaceholder() {
   const smallImgAspectRatio = config.smallAspectRatio;
   const smallHeight = 540;
   const smallWidth = 720;
+  const outputExt = 'webp';
   // const smallHeight = Math.round(height * smallImgMult);
   // const smallWidth = Math.round(smallImgAspectRatio * smallHeight);
   // console.log(smallWidth, smallHeight);
@@ -384,12 +393,13 @@ async function createImagePlaceholder() {
     };
 
     const outputImagePath = path.join(
-      placeholderDirectory, `${imageNameWithoutExt}${placeholderSuffix}.${imageFileExtension}`
+      placeholderDirectory, `${imageNameWithoutExt}${placeholderSuffix}.${outputExt}`
     );
 
     const imageMetadata = await sharp(inputImagePath).metadata();
     if (imageMetadata.width && imageMetadata.height) {
       const img = sharp(inputImagePath);
+      
       img.resize(resizeOptions)
         .normalise()
         .modulate({
@@ -401,7 +411,7 @@ async function createImagePlaceholder() {
         .then((data) => {
           return sharp(data)
             .webp({
-              quality: desiredQuality,
+              quality: 98,
               lossless: false,
               effort: 6,
             })

@@ -19,15 +19,14 @@
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAAQElEQVR4ARXEsQnFMBAFMBUfXnVFwFWGSHWdF8h8XsCj/mAEAgbs0kA8aIDgNXbZR5nOARr5/zSl17UIMAVwywex1QiXwasx9AAAAABJRU5ErkJggg==");
   background-position: center;
   content: '';
-  filter: invert(.3);
+  filter: invert(.5);
   mix-blend-mode: screen;
-  opacity: .5;
+  opacity: .3;
   pointer-events: none;
   user-select: none;
 }
 
 .project-content__body picture {
-  cursor: zoom-in;
   filter: contrast(110%);
 }
 
@@ -76,11 +75,7 @@
   min-height: 100%;
   align-items: center;
   justify-content: center;
-  background: var(--offsetblack1);
-}
-
-.project-content__body picture:hover img {
-  transform: translateY(-2px);
+  background-color: var(--offsetblack1);
 }
 
 @keyframes fade-img {

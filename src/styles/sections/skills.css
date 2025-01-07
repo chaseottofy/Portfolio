@@ -23,7 +23,7 @@
   position: relative;
   display: grid;
   width: 100%;
-  max-width:  1100px;
+  max-width: 1100px;
   height: 100%;
   margin: 0 auto;
   margin-top: 1rem;
@@ -55,7 +55,6 @@
 /* .skills-cell:nth-child(n + 6) {
   border-bottom: 1px solid var(--grey2);
 } */
-
 .skills-cell:last-child {
   /* border-right: 1px solid var(--grey2); */
   border-bottom: 0;
@@ -120,17 +119,17 @@
 
 .skill-content::-webkit-scrollbar {
   width: 9px;
-  background: var(--black1);
+  background-color: var(--black1);
 }
 
 .skill-content::-webkit-scrollbar-thumb {
   border-radius: var(--br-3);
-  background: var(--accent-5);
+  background-color: var(--accent-5);
 }
 
 .skill-content::-webkit-scroll-track {
   border-radius: var(--br-3);
-  background: var(--black1) !important;
+  background-color: var(--black1) !important;
 }
 
 @media screen and (max-width: 840px) {
@@ -157,7 +156,6 @@
   /* .skill-content li {
     font-size: 18px;
   } */
-
   .skill-img--wrapper img {
     width: 1.75rem !important;
     height: 1.75rem !important;

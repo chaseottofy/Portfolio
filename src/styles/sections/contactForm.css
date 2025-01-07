@@ -76,7 +76,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  background: var(--offsetblack1);
+  background-color: var(--offsetblack1);
   color: var(--white1);
   font-size: .875rem;
   pointer-events: none;
@@ -131,8 +131,8 @@
   width: 100%;
   height: 100%;
   border: 1px solid transparent;
-  border-radius:var(--br-1);
-  background: transparent;
+  border-radius: var(--br-1);
+  background-color: transparent;
   color: var(--white1);
   cursor: pointer;
   font-weight: 400;
@@ -155,7 +155,7 @@
 
 .contact-method-group span input:checked + label {
   border: 1px solid var(--primary2);
-  background: var(--black4);
+  background-color: var(--black4);
   color: var(--white1);
   opacity: 1;
 }
@@ -170,7 +170,7 @@
   padding: 0.5rem 2rem;
   border: 1px solid var(--black2);
   border-radius: var(--br-1);
-  background: transparent;
+  background-color: transparent;
   color: var(--white2);
   cursor: not-allowed;
   font-size: .875rem;
@@ -179,7 +179,7 @@
 
 .btn-allow {
   border: 1px solid var(--primary2);
-  background: var(--black0);
+  background-color: var(--black0);
   color: var(--white1);
   cursor: pointer;
   pointer-events: all;
@@ -197,7 +197,7 @@
 }
 
 .btn-allow:hover {
-  background: var(--grey2);
+  background-color: var(--grey2);
 }
 
 @media screen and (max-width: 720px) {

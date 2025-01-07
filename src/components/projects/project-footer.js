@@ -1,5 +1,5 @@
+// import createAuditModal from './project-modal-audit';
 import createButton from '../ui/button';
-import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';
 
 const createProjectFooterButton = (cName, attrName, dataText, text, callback) => {
@@ -12,13 +12,13 @@ const createProjectFooterButton = (cName, attrName, dataText, text, callback) =>
 
 const createProjectFooterButtons = (lighthouseKey) => {
   return [
-    createProjectFooterButton(
-      'open-lh--btn',
-      'data-lh-proj',
-      lighthouseKey,
-      'Audits',
-      createAuditModal,
-    ),
+    // createProjectFooterButton(
+    //   'open-lh--btn',
+    //   'data-lh-proj',
+    //   lighthouseKey,
+    //   'Audits',
+    //   createAuditModal,
+    // ),
     createProjectFooterButton(
       'open-overview--btn',
       'data-proj',

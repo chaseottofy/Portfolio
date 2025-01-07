@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem .75rem 6rem .75rem;
-  background: var(--black0);
+  background-color: var(--black0);
   scroll-margin-top: var(--header-height) !important;
 }
 
@@ -28,7 +28,7 @@
   border-radius: var(--br-2);
   margin: 0 auto;
   animation: ease-modal-in 150ms both;
-  background: var(--offsetblack4);
+  background-color: var(--offsetblack4);
   box-shadow: var(--bs-lg);
   opacity: 1;
 }
@@ -64,7 +64,7 @@
   width: 100%;
   height: 100%;
   padding-right: 1rem;
-  background: var(--offsetblack3);
+  background-color: var(--offsetblack3);
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 128px;
   row-gap: .5rem;
@@ -366,13 +366,13 @@
 }
 
 .cm-right--top__cell:hover {
-  background: var(--grey4);
+  background-color: var(--grey4);
   transition: var(--tbg1);
 }
 
 .cm-copy:hover,
 .cm-email-goto:hover {
-  background: var(--offsetwhite1);
+  background-color: var(--offsetwhite1);
   transition: var(--tbg1);
 }
 

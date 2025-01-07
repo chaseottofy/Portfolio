@@ -43,7 +43,7 @@
   border: 1px solid #202124;
   border-radius: var(--br-1);
   margin: 0 auto;
-  background: #101112;
+  background-color: #101112;
   color: #fff;
   font-size: .85rem;
   font-weight: 400 !important;

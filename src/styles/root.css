@@ -36,10 +36,14 @@ I'm using block font-display for basement because it's decorative and scales hor
   /* ********************************** */
 
   /* aspect ratio: large project images */
-  --wtvw: 1071px;
-  --htvh: 459px;
-  --wt: 1071;
-  --ht: 459;
+  --wtvw: 1000px;
+  --wt: 1000;
+
+  /* --htvh: 459px; */
+  --htvh: 410px;
+  --ht: 410;
+
+  /* --ht: 459; */
 
   /* --wtvw: 1280px;
   --htvh: 720px;
@@ -148,7 +152,7 @@ I'm using block font-display for basement because it's decorative and scales hor
 }
 
 html {
-  --intro-offset: 20vh;
+  --intro-offset: 17vh;
 
   font-size: 17px;
   line-height: 1.15;
@@ -161,7 +165,7 @@ html {
 body {
   position: relative;
   width: 100%;
-  background: var(--black0);
+  background-color: var(--black0);
   color: var(--white1);
   font-family: var(--primaryFont);
   font-size: 1rem;
@@ -227,7 +231,7 @@ textarea {
   /* resize: vertical; */
   min-height: 4rem;
   padding: 0.5rem;
-  border: 1px solid var(--black2);
+  border:1px solid var(--black2);
   border-radius: var(--br-1);
   background: none;
   color: var(--white1);

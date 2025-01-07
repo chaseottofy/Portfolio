@@ -1,12 +1,11 @@
+// import createAuditModal from '../../../localonly/project-modal-audit';
 import projectData from '../../data/json/project-data.json';
 import getImgSuffix from '../../utilities/get-img-suffix';
 import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
-import handlePopupImage from './handle-popup-image';
 import handleTab from './handle-project-tabs';
 import { startingImageSets } from './import-project-images';
 import createProjectMenu from './project-menu';
-import createAuditModal from './project-modal-audit';
 import createProjectModal from './project-modal-overview';
 import createProjectTabs from './project-tabs';
 
@@ -143,10 +142,11 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   projectFooterDesc.textContent = `${description}`;
   projectFooterTitle.textContent = title;
 
-  const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;
-  auditBtn.dataset.lhProj = lighthouseKey;
+  // const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;
+  // auditBtn.dataset.lhProj = lighthouseKey;
+  // overviewBtn.dataset.proj = lighthouseKey;
+  const overviewBtn = projectFooterBtnsWrapper.querySelector('.open-overview--btn');
   overviewBtn.dataset.proj = lighthouseKey;
-  auditBtn.addEventListener('click', createAuditModal);
   overviewBtn.addEventListener('click', createProjectModal);
 };
 
@@ -186,8 +186,6 @@ const createProjectCards = () => {
 const initProjects = () => {
   createProjectMenu();
   createProjectCards();
-  const projectsGrid = document.querySelector('.projects-grid');
-  projectsGrid.addEventListener('click', handlePopupImage);
 };
 
 export default initProjects;

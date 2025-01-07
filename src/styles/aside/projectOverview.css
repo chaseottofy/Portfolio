@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   animation: ease-modal-in 100ms both;
-  background: rgb(0 0 0 / .4);
+  background-color: rgb(0 0 0 / .4);
 }
 
 .project-overview--modal {
@@ -21,7 +21,7 @@
   height: 90%;
   max-height: 1200px;
   flex-direction: column;
-  background: var(--black4);
+  background-color: var(--black4);
 }
 
 .hide-po {
@@ -35,7 +35,7 @@
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 1px solid rgb(50 145 255 / 0.15);
-  background: linear-gradient(210deg,
+  background-color: linear-gradient(210deg,
       rgb(50 145 255 / 0.05),
       var(--black4));
 }
@@ -74,7 +74,7 @@
   border: 1px solid var(--accent-2);
   border-radius: var(--br-1);
   margin: 0;
-  background: var(--black1);
+  background-color: var(--black1);
   color: var(--accent-7);
   cursor: pointer;
   font-size: 1.125rem;
@@ -82,7 +82,7 @@
 }
 
 .po-header--close:hover {
-  background: var(--accent-1);
+  background-color: var(--accent-1);
 }
 
 .po-body {
@@ -90,7 +90,7 @@
   flex-direction: column;
   padding: 1rem;
   padding-top: 2rem;
-  background: linear-gradient(to bottom,
+  background-color: linear-gradient(to bottom,
       var(--black0),
       var(--black4) 50%);
   overflow-y: scroll;
@@ -143,7 +143,7 @@
   border: 1px solid var(--black3);
   border-radius: var(--br-1);
   margin: .25rem;
-  background: linear-gradient(to right bottom,
+  background-color: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
       var(--accent-1));
@@ -156,7 +156,7 @@
 
 .proj-overview--links a:hover {
   border: 1px solid var(--white1);
-  background: linear-gradient(to right bottom, var(--black2), var(--black1), var(--accent-1));
+  background-color: linear-gradient(to right bottom, var(--black2), var(--black1), var(--accent-1));
   color: var(--white1);
 }
 

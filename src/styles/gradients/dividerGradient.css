@@ -7,7 +7,7 @@
   height: 1px;
   margin: 0 auto;
 
-  /* background: var(--primary3); */
+  /* background-color: var(--primary3); */
   box-shadow: 0 0 0 .5px var(--primary3);
 }
 

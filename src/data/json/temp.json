@@ -26,6 +26,10 @@
 			"live": [
 				"https://chaseottofy.github.io/google-calendar-clone-vanilla/",
 				"Google Calendar 2.0 Live Demo"
+			],
+			"auditLink": [
+				"https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-google-calendar-clone-vanilla/3ra0nt0y2h?form_factor=desktop",
+				"Pagespeed.web.dev View Last Audit"
 			]
 		},
 		"features": {
@@ -74,6 +78,14 @@
 				"Year",
 				"List"
 			]
+		},
+		"audit": {
+			"score": [
+				"0.3",
+				"0.3",
+				"0.0",
+				"0.0"
+			]
 		}
 	},
 	"blog": {
@@ -95,6 +107,10 @@
 			"live": [
 				"https://nextjs-blog-ottofy.vercel.app/",
 				"Nextjs Blog Live Demo"
+			],
+			"auditLink": [
+				"https://pagespeed.web.dev/analysis/https-nextjs-blog-ottofy-vercel-app/20vhxq5qg3?form_factor=desktop",
+				"Pagespeed.web.dev View Last Audit"
 			]
 		},
 		"features": {
@@ -116,6 +132,14 @@
 			"description": "Next.js Blog with Contentlayer integration.",
 			"published": "Sep 14, 2023",
 			"tabs": []
+		},
+		"audit": {
+			"score": [
+				"0.3",
+				"0.3",
+				"0.0",
+				"0.0"
+			]
 		}
 	},
 	"monthpicker": {
@@ -141,7 +165,11 @@
       "live": [
         "https://stackblitz.com/edit/monthpicker-lite-js?file=package.json",
         "Monthpicker demo"
-      ]
+      ],
+			"auditLink": [
+				"https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-google-calendar-clone-vanilla/3ra0nt0y2h?form_factor=desktop",
+				"Pagespeed.web.dev View Last Audit"
+			]
 		},
 		"features": {
 			"about": [
@@ -156,6 +184,14 @@
 			"description": "Lightweight month interface datepicker library for Vanilla JS & Typescript.",
 			"published": "Aug 27, 2023",
 			"tabs": []
+		},
+		"audit": {
+			"score": [
+				"0.3",
+				"0.3",
+				"0.0",
+				"0.0"
+			]
 		}
 	},
 	"markdown": {
@@ -177,6 +213,14 @@
 			"live": [
 				"https://chaseottofy.github.io/react-lite-markdown/",
 				"Markdown Lite Live Demo"
+			],
+			"auditLink": [
+				"https://pagespeed.web.dev/analysis/https-chaseottofy-github-io-react-lite-markdown/ov2k7dtd51?form_factor=desktop",
+				"Pagespeed.web.dev View Last Audit"
+			],
+			"screenshots": [
+				"https://flic.kr/s/aHBqjAB58q",
+				"Markdown Lite Screenshots on Flickr"
 			]
 		},
 		"features": {
@@ -224,6 +268,14 @@
 			"description": "Custom React markdown editor with real-time preview.",
 			"published": "Feb 26, 2023",
 			"tabs": []
+		},
+		"audit": {
+			"score": [
+				"0.3",
+				"0.3",
+				"0.0",
+				"0.0"
+			]
 		}
 	}
 }

@@ -1,6 +1,7 @@
 export const aspectSmallHeight = 540;
 export const aspectSmallWidth = 720;
-export const aspectLargeWidth = 1600;
+export const aspectLargeWidth = 1000;
+// export const aspectLargeWidth = 1600;
 export const pxToRem = 17;
 // this is the path value where it will be imported @importAllImages
 export const projectImagePath = '../../images/imgproj';

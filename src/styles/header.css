@@ -7,7 +7,11 @@
   max-width: 100vw;
   height: var(--header-height);
   border-bottom: 1px solid rgb(80 85 90 / 0.15);
-  background: rgb(8 8 8 / .93);
+
+  /* background-color: rgb(16 16 16 / .93); */
+
+  /* background-color: rgb(12, 12, 12); */
+  background-color: rgb(14 14 14 / .93);
 }
 
 .header-wrapper {
@@ -138,7 +142,7 @@
   justify-content: space-around;
   border: 1px solid #111;
   border-radius: var(--br-full);
-  background: rgb(8 8 8 / 0.99);
+  background-color: rgb(8 8 8 / 0.99);
   cursor: pointer;
 }
 
@@ -156,7 +160,7 @@
 }
 
 .theme-switch span input:checked + label {
-  background: #212223;
+  background-color: #212223;
 }
 
 .theme-switch span input:checked + label img {
@@ -190,7 +194,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--br-half);
-  background: transparent;
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
   pointer-events: none;

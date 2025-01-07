@@ -5,17 +5,24 @@
   width: 100%;
   max-width: 100%;
   flex-direction: column;
-  padding-top: .5rem;
-  border: 1px solid var(--grey2);
-  border-radius: var(--br-4);
+
+  /* padding-top: .5rem; */
+  border: 1px solid var(--grey4);
+  background-color: #111;
+
+  /* background-color: var(--offsetblack1); */
+
+  /* border: 1px solid var(--grey2); */
+  border-radius: var(--br-3);
   margin: 0 auto 0 auto;
-  box-shadow: 
-  0 24px 43px 0 rgb(173 179 192 / 0.08);
+  box-shadow:
+    0 24px 43px 0 rgb(173 179 192 / 0.08);
   scroll-margin-top: 6rem;
 }
 
 [data-project-cell-loaded="false"] * {
-  color: var(--black0) !important;
+  /* color: var(--black0) !important; */
+  color: transparent !important;
 }
 
 [data-project-cell-loaded="false"] *::before {
@@ -37,20 +44,23 @@
 .project-cell__content {
   display: flex;
   overflow: hidden;
+  border-radius: var(--br-3);
   width: 100%;
   height: 100%;
   flex-direction: column;
+  background:linear-gradient(to bottom, #090909, #000);
 }
 
 .project-content__header {
   position: relative;
   display: grid;
   width: 100%;
-  height: 3rem;  
+  height: 3rem;
   align-items: center;
   justify-content: center;
-  padding: .25rem .5rem;
+  padding: .75rem .5rem .25rem .5rem;
   grid-template-columns: 1fr;
+
 }
 
 .subheader-sm {
@@ -83,9 +93,11 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--offsetwhite1);
+  border: 1px solid #222;
   border-top: 0;
-  color: var(--accent-7);
+
+  /* color: var(--accent-7); */
+  color: #d2d8e1;
   cursor: pointer;
   font-size: .85rem;
 
@@ -122,14 +134,21 @@
 }
 
 .pc__header-tabs span input:checked + label {
-  border: 1px solid var(--offsetwhite2);
+  border: 1px solid #222;
   border-top: none;
-  background: var(--linear1);
+
+  /* background-color: var(--linear1); */
+  background: linear-gradient(0deg,
+  rgb(255 255 255 / .05),
+  rgb(255 255 255 / .05)),
+radial-gradient(50% 50% at 50% 100%,
+rgb(80 80 80 / .5) 0%,
+  transparent 100%);
   color: #fff;
   pointer-events: none;
 }
 
-.pc__header-tabs span input:checked + label::before {
+/* .pc__header-tabs span input:checked + label::before {
   position: absolute;
   top: .5rem;
   right: .5rem;
@@ -137,9 +156,9 @@
   height: .35rem;
   border-radius: var(--br-half);
   animation: pulse 2s ease-in-out infinite;
-  background: var(--primary1);
-  content: "";
-}
+  background-color: var(--primary1);
+  background-color: rgb(32 32 32 / .5);
+} */
 
 /* SUBHEADER CONTENT (search/githublink/lighthouse button)
 ============================ */
@@ -161,7 +180,7 @@
   width: fit-content;
   align-items: center;
   margin: 0 0 .5rem .5rem;
-  color: var(--white2);
+  color: #d2d8e1;
   pointer-events: none;
 }
 
@@ -185,10 +204,13 @@
   height: 2.25rem;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid var(--offsetwhite2);
+  border: 1px solid #242424;
   border-radius: var(--br-1);
-  background: var(--black0);
-  box-shadow: var(--bs-inset1);
+
+  /* background-color: var(--black0); */
+
+  /* background-color: var(--bs-inset1); */
+  background-color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -202,7 +224,7 @@
   align-items: center;
   padding: 0 3rem 0 .5rem;
   border: 0;
-  color: var(--white1);
+  color: #d2d8e1;
   font-size: .875rem;
   font-weight: 500;
   opacity: .9;
@@ -228,6 +250,10 @@
   user-select: none;
 }
 
+.theme__light .pc__subheader--search a:first-child img {
+  filter: invert(1);
+}
+
 .pc__subheader--search .search-arrowright {
   position: absolute;
   z-index: 1;
@@ -238,7 +264,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
   pointer-events: none;
   user-select: none;
@@ -247,6 +273,10 @@
 .pc__subheader--search .search-arrowright img {
   width: .875rem;
   height: .875rem;
+}
+
+.theme__light .pc__subheader--search .search-arrowright img {
+  filter: invert(1);
 }
 
 /* SUBHEADER LINKS */
@@ -295,15 +325,15 @@
 
 .pc__subheader--links button:hover,
 .pc__header-tabs span label:hover {
-  background: var(--accent-1);
+  background-color: #222;
   transition-duration: .15s;
-  transition-property: background;
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 .pc__subheader--search:hover {
-  border-color: var(--accent-5);
-  background-color: var(--black4);
+  border-color: #444;
+  background-color: #222;
   transition-duration: .15s;
   transition-property: background, border;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
