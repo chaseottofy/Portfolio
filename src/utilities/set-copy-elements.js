@@ -1,4 +1,5 @@
 import createToast from '../components/ui/toast';
+import contactPersonal from '../data/json/contact/contact-personal.json';
 import useCopyToClipboard from '../hooks/handle-copy';
 
 const setCopy = (text) => {
@@ -6,9 +7,10 @@ const setCopy = (text) => {
   createToast(text, 'Copied!', 'success', 2);
 };
 
-const copyEmail = () => setCopy('ottofy@zohomail.com');
-
-const copyPhone = () => setCopy('9709882548');
+const copyHandler = {
+  email: () => setCopy(contactPersonal.email),
+  phone: () => setCopy(contactPersonal.phone),
+};
 
 const initCopyElements = () => {
   const copyEmailBtns = document?.querySelectorAll('.cm-copy--email');
@@ -16,14 +18,14 @@ const initCopyElements = () => {
 
   if (copyEmailBtns) {
     for (const btn of copyEmailBtns) {
-      btn.addEventListener('click', copyEmail);
+      btn.addEventListener('click', copyHandler.email);
     }
   }
 
   if (copyPhoneBtns) {
     if (copyPhoneBtns === null) return;
     for (const btn of copyPhoneBtns) {
-      btn.addEventListener('click', copyPhone);
+      btn.addEventListener('click', copyHandler.phone);
     }
   }
 };

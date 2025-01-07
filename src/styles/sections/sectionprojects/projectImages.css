@@ -82,7 +82,7 @@
 }
 
 .project-content__body picture:hover img {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 @keyframes fade-img {

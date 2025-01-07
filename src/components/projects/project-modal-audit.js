@@ -1,4 +1,4 @@
-import projectAuditsData from '../../data/json/projects/projects-audit-data.json';
+import projectData from '../../data/json/projects/project-data.json';
 import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 import createButton from '../ui/button';
@@ -13,7 +13,26 @@ const closeLH = (e) => {
   }
 };
 
-const configAuditModal = (title, link, score, content) => {
+const content = [
+  [
+    'First Contentful Paint',
+    'Marks the time at which the first text or image is painted.',
+  ],
+  [
+    'Largest Contentful Paint',
+    'Marks the time at which the largest text or image is painted.',
+  ],
+  [
+    'Total Blocking Time',
+    'Sum of all time periods between FCP and Time to Interactive.',
+  ],
+  [
+    'Cumulative Layout Shift',
+    'Measures the movement of visible elements within the viewport.',
+  ],
+];
+
+const configAuditModal = (title, link, score) => {
   const lhWrapper = document.createElement('aside');
   lhWrapper.classList.add('lighthouse-modal--wrapper');
 
@@ -82,15 +101,17 @@ const configAuditModal = (title, link, score, content) => {
 };
 
 const createAuditModal = (e) => {
+  // const
   const body = document.querySelector('.body');
   if (body.dataset.activeModal === 'true') return;
 
   const targetProject = e?.target?.dataset?.lhProj;
   if (!targetProject) return;
 
-  const { [targetProject]: activeProjectData, content } = projectAuditsData;
-  const { title, link, score } = activeProjectData;
-  const lightHouseInstance = configAuditModal(title, link, score, content);
+  const { title, links, audit } = projectData[targetProject];
+  const { score } = audit;
+  const { auditLink = '#' } = links;
+  const lightHouseInstance = configAuditModal(title, auditLink, score, content);
   body.append(lightHouseInstance);
   useHandleModalOffset();
   e.target.blur();

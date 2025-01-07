@@ -8,20 +8,24 @@ import useHandleModalOffset from '../../hooks/handle-modal-offset';
  * @param {HTMLImageElement} img
  * @returns {void}
  */
+
 const configCreateFullImagePopup = (img) => {
+  const body = document.querySelector('.body');
   const popupPicture = document.querySelector('.popup-picture');
   const popupPictureImgWrapper = popupPicture.querySelector('.popup-picture__imgwrapper');
+  const clickHandler = {
+    current: null,
+  };
 
   const removePopup = () => {
     popupPictureImgWrapper?.querySelector('img')?.remove();
     popupPicture.dataset.activePopup = 'false';
     useHandleModalOffset();
-    // eslint-disable-next-line no-use-before-define
-    popupPicture.removeEventListener('click', handleClosePopupOnClick);
+    popupPicture.removeEventListener('click', clickHandler.current);
     closeOnEscManager.forceCleanup();
   };
 
-  const handleClosePopupOnClick = (e) => {
+  clickHandler.current = (e) => {
     const { target } = e;
     if (target && target.nodeType === 1 && target.closest('.popup-picture')) {
       removePopup();
@@ -30,8 +34,11 @@ const configCreateFullImagePopup = (img) => {
 
   popupPictureImgWrapper.append(img);
   popupPicture.dataset.activePopup = 'true';
-  useHandleModalOffset(popupPicture);
-  popupPicture.addEventListener('click', handleClosePopupOnClick);
+  useHandleModalOffset();
+  if (body.style && body.style.paddingRight) {
+    popupPicture.style.paddingRight = body.style.paddingRight;
+  }
+  popupPicture.addEventListener('click', clickHandler.current);
   closeOnEscManager.useCloseOnEsc(
     popupPicture.dataset.activePopup === 'true',
     removePopup,

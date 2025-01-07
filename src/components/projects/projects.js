@@ -1,5 +1,5 @@
-import { projectImageType } from '../../data/constants';
-import cardData from '../../data/json/projects/projects-card-data.json';
+import projectData from '../../data/json/projects/project-data.json';
+import getImgSuffix from '../../utilities/get-img-suffix';
 import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
 import handlePopupImage from './handle-popup-image';
@@ -28,10 +28,11 @@ const configProjectPicture = (picture, images) => {
   const sources = picture.querySelectorAll('source');
   for (let i = 0; i < images.length; i += 1) {
     const { src, alt, media } = images[i];
+    const srcExtension = getImgSuffix(src);
     const source = sources[i];
     source.srcset = src;
     source.media = media;
-    source.type = projectImageType;
+    source.type = srcExtension;
     img.srcset += src;
 
     // set first image in provided images array as default
@@ -40,7 +41,7 @@ const configProjectPicture = (picture, images) => {
       img.srcset = `${src} 1x, `;
       img.loading = 'lazy';
       img.alt = alt || 'project image';
-      img.type = projectImageType;
+      img.type = srcExtension;
     } else {
       img.srcset = `${img.srcset + src} ${i + 1}x`;
     }
@@ -162,27 +163,17 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
  */
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
-  const cardDataArray = Object.values(cardData).slice(0, -1);
-  const imgArrays = getImgArray(Object.values(startingImageSets));
+  const cardDataKeys = Object.keys(projectData);
+  const imgArrays = getImgArray(Object.values(startingImageSets).map((x) => x.slice(0, 2)));
 
   for (let i = 0; i < projectCells.length; i += 1) {
-    const {
-      title,
-      projLink,
-      githubLink,
-      stacks,
-      lighthouseKey,
-      description,
-      published,
-      tabs,
-    } = cardDataArray[i];
-
+    const { title, links, card } = projectData[cardDataKeys[i]];
+    const { lighthouseKey, description, published, tabs, stacks } = card;
+    const { live: projLink, github: githubLink } = links;
     const [cell, projectImages] = [projectCells[i], imgArrays[i]];
-
     createProjectHeader(cell, tabs, projLink, githubLink, title, published);
     createProjectBody(cell, projectImages);
     createProjectFooter(cell, stacks, description, title, lighthouseKey);
-
     // give project cell ID for floating menu scroll
     cell.id = `proj-${lighthouseKey}-top`;
     cell.dataset.projectCellLoaded = 'true';

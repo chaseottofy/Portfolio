@@ -9,3 +9,4 @@ handle-pdf.js
 webpack.config.babel.js
 unused/
 todo.js
+plugins/

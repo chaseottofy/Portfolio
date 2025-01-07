@@ -1,14 +1,17 @@
+import { LOCAL_STORAGE_THEME } from '../data/constants';
 import useHasLocalStorage from '../hooks/has-local-storage';
 
 const initTheme = () => {
   const localEnabled = useHasLocalStorage();
   const body = document.querySelector('.body');
-  const themeInputs = document.querySelectorAll('.theme-input');
-  const themeLabels = document.querySelectorAll('.theme-label');
+  const themeSwitch = document.querySelector('.theme-switch');
+  const themeLabels = themeSwitch.querySelectorAll('.theme-label');
+  const themeInputs = themeSwitch.querySelectorAll('.theme-input');
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   const setTheme = (theme) => {
+    if (localEnabled) localStorage.setItem(LOCAL_STORAGE_THEME, theme);
     themeColorMeta.setAttribute('content', theme === 'light' ? '#fff' : '#000');
     colorSchemeMeta.setAttribute('content', theme);
     body.setAttribute('class', `body theme__${theme}`);
@@ -18,38 +21,16 @@ const initTheme = () => {
     themeInputs[idx].checked = true;
   };
 
-  const initDefaultTheme = () => {
-    if (!localEnabled) {
-      setTheme('dark');
-      return;
-    }
-
-    const localTheme = localStorage.getItem('portfolio-theme');
-    if (localTheme) {
-      setTheme(localTheme);
-    } else {
-      setTheme('dark');
-      localStorage.setItem('portfolio-theme', 'dark');
-    }
-  };
-
-  const handleThemeChange = (e) => {
-    const theme = e.target.value;
-    setTheme(theme);
-    if (localEnabled) {
-      localStorage.setItem('portfolio-theme', theme);
-    }
-  };
-
-  const initThemeOptions = () => {
-    for (const input of themeInputs) {
-      input.addEventListener('change', handleThemeChange);
-    }
+  const toggleTheme = () => {
+    const { systemTheme } = themeSwitch.dataset;
+    const nxt = systemTheme === 'dark' ? 'light' : 'dark';
+    setTheme(nxt);
+    themeSwitch.dataset.systemTheme = nxt;
   };
 
   const configTheme = () => {
-    initDefaultTheme();
-    initThemeOptions();
+    setTheme(localEnabled ? (localStorage.getItem(LOCAL_STORAGE_THEME) || 'dark') : 'dark');
+    themeSwitch.addEventListener('click', toggleTheme);
   };
 
   configTheme();

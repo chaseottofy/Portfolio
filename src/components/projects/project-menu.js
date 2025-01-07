@@ -1,25 +1,25 @@
-import cardData from '../../data/json/projects/projects-card-data.json';
+import projectData from '../../data/json/projects/project-data.json';
 
 const createFloatOptions = (options) => {
   const floatingMenu = document.querySelector('.floating-menu');
   const floatListItem = floatingMenu.querySelectorAll('.float-option');
 
   for (let i = 0; i < options.length; i += 1) {
-    const { title, subtitle, href } = options[i];
-    const floatOption = floatListItem[i];
-    const floatLink = floatOption.querySelector('a');
-    floatLink.href = href;
-    const [floatTitle, floatSubtitle] = floatLink.children;
+    const title = options[i];
+    const { card: { lighthouseKey, stacks } } = projectData[title];
+    const floatLink = floatListItem[i].querySelector('a');
+    floatLink.href = `#proj-${lighthouseKey}-top`;
+    const [floatTitle, floatSub] = floatLink.querySelectorAll('span');
     floatTitle.textContent = title;
-    floatSubtitle.textContent = subtitle;
+    floatSub.textContent = stacks?.shift();
   }
 
   floatingMenu.dataset.floatingMenuLoaded = 'true';
 };
 
 const createProjectMenu = () => {
-  const projectMenuJSON = cardData.optionsData;
-  createFloatOptions(Object.values(projectMenuJSON));
+  const projectKeys = Object.keys(projectData);
+  createFloatOptions(Object.values(projectKeys));
 };
 
 export default createProjectMenu;

@@ -1,4 +1,4 @@
-import projectJSON from '../../data/json/projects/projects-overview-data.json';
+import projectData from '../../data/json/projects/project-data.json';
 import closeOnEscManager from '../../hooks/handle-closeonesc';
 import useHandleModalOffset from '../../hooks/handle-modal-offset';
 import createButton from '../ui/button';
@@ -97,8 +97,13 @@ const createProjectModal = (e) => {
   const projectDataAttr = e?.target?.dataset?.proj;
   if (!projectDataAttr) return;
 
-  const { [projectDataAttr]: projectData } = projectJSON;
-  const { title, links, features } = projectData;
+  const {
+    title,
+    links,
+    features,
+  } = projectData[projectDataAttr];
+  // const { [projectDataAttr]: projectData } = projectJSON;
+  // const { title, links, features } = projectData;
   const projectOverviewInstance = configProjectOverview(
     title,
     links,

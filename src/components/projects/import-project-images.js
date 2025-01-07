@@ -1,54 +1,131 @@
-import blogLg from '../../images/imgproj/blog1.webp';
-import blogMd from '../../images/imgproj/blog2.webp';
-import cdaylgdark from '../../images/imgproj/cday1.webp';
-import cdaymddark from '../../images/imgproj/cday2.webp';
-import clistlgdark from '../../images/imgproj/clist1.webp';
-import clistmddark from '../../images/imgproj/clist2.webp';
-import cmonthlgdark from '../../images/imgproj/cmonth1.webp';
-import cmonthmddark from '../../images/imgproj/cmonth2.webp';
-import cweeklgdark from '../../images/imgproj/cweek1.webp';
-import cweekmddark from '../../images/imgproj/cweek2.webp';
-import cyearlgdark from '../../images/imgproj/cyear1.webp';
-import cyearmddark from '../../images/imgproj/cyear2.webp';
-import markdownLg from '../../images/imgproj/markdown1.webp';
-import markdownMd from '../../images/imgproj/markdown2.webp';
-import mpLg from '../../images/imgproj/mp1.webp';
-import mpMd from '../../images/imgproj/mp2.webp';
-import tmLg from '../../images/imgproj/tm1.webp';
-import tmMd from '../../images/imgproj/tm2.webp';
-// const requireContext = require.context('../../images/imgproj', true, /\.webp$/);
-// // console.log(requireContext)
-// const images = {};
-// requireContext.keys().forEach((key) => {
-//   const moduleName = key.replace(/^\.\/(.*)\.webp$/, '$1');
-//   images[moduleName] = requireContext(key);
-// });
-// console.log(images)
+import { imgTypesRegex } from '../../data/constants';
+import projectData from '../../data/json/projects/project-data.json';
+import fallback from '../../images/fallback/fallback.webp';
+import fallbackMd from '../../images/fallback/fallbackMd.webp';
+import getImgStem from '../../utilities/get-img-stem';
 
-const imageSets = {
-  calendar: {
-    cweeklgdark,
-    cweekmddark,
-    cmonthlgdark,
-    cmonthmddark,
-    cyearlgdark,
-    cyearmddark,
-    clistlgdark,
-    clistmddark,
-  },
-  cal: { cdaylgdark, cdaymddark },
-  markdown: { markdownLg, markdownMd },
-  blog: { blogLg, blogMd },
-  monthPicker: { mpLg, mpMd },
-  taskManager: { tmLg, tmMd },
-};
-const startingImageSets = {
-  cal: { cdaylgdark, cdaymddark },
-  blog: { blogLg, blogMd },
-  monthPicker: { mpLg, mpMd },
-  markdown: { markdownLg, markdownMd },
-  taskManager: { tmLg, tmMd },
-};
+class ImageLoader {
+  constructor(userJsonConfig) {
+    this.config = userJsonConfig;
+    this.keys = Object.keys(this.config);
+    this.imageProps = ['large', 'medium'];
+    this.projectImages = this.importAllImages();
+    this.fallback = {
+      large: fallback,
+      medium: fallbackMd,
+    };
+    this.loadedImages = new Map();
+  }
 
-export default imageSets;
+  getRequiredImages() {
+    const requiredImages = new Set();
+    for (const key of this.keys) {
+      const { images = [] } = this.config[key];
+      if (images.length > 0) {
+        for (const arr of Object.values(images)) {
+          for (const img of arr) {
+            requiredImages.add(getImgStem(img));
+          }
+        }
+      }
+    }
+    return requiredImages;
+  }
+
+  importAllImages() {
+    const validImages = this.getRequiredImages();
+    const loadImages = {};
+    const context = require.context('../../images/imgproj', false, /\.(webp|png|jpe?g)$/);
+    for (const key of context.keys()) {
+      const fileName = (key
+        .replace('./', '')
+        .replace(imgTypesRegex, '')) || 'fallback';
+      if (validImages.has(fileName)) {
+        loadImages[fileName] = context(key);
+      }
+    }
+    return loadImages;
+  }
+
+  getImage(key, size = 'large') {
+    const img = (this.projectImages[getImgStem(key)]) || fallback[size];
+    return img;
+    // return `../../${img}`;
+  }
+
+  getAllProjectImages() {
+    const projects = {};
+    for (const key of this.keys) {
+      projects[key] = this.getProjectImages(key);
+    }
+    return projects;
+  }
+
+  getFillerArray(len, size) {
+    return Array.from({ length: len }, () => this.fallback[size]);
+  }
+
+  getProjectImages(key) {
+    const { images = [] } = this.config[key];
+    if (images.length === 0) return this.fallback;
+
+    const imagePaths = [];
+    // handle cases with tabs and missing large || medium images
+    if (this.imageProps.every((prop) => prop in images)) {
+      const { large, medium } = images;
+      const diff = Math.abs(large.length - medium.length);
+      if (Math.abs(large.length - medium.length) > 0) {
+        const largeSmaller = large.length < medium.length;
+        const filler = this.getFillerArray(diff, largeSmaller ? 'large' : 'medium');
+        if (largeSmaller) large.push(...filler);
+        else medium.push(...filler);
+      }
+      for (let i = 0; i < large.length; i += 1) {
+        imagePaths.push(this.getImage(large[i]), this.getImage(medium[i], 'medium'));
+      }
+    }
+    return imagePaths;
+  }
+
+  getProjectImagesWithKeys(key) {
+    const { images = [] } = this.config[key];
+    if (images.length === 0) return this.fallback;
+
+    const imagePaths = {};
+    // handle cases with tabs and missing large || medium images
+    if (this.imageProps.every((prop) => prop in images)) {
+      const { large, medium } = images;
+      const diff = Math.abs(large.length - medium.length);
+      if (Math.abs(large.length - medium.length) > 0) {
+        const largeSmaller = large.length < medium.length;
+        const filler = this.getFillerArray(diff, largeSmaller ? 'large' : 'medium');
+        if (largeSmaller) large.push(...filler);
+        else medium.push(...filler);
+      }
+      for (let i = 0; i < large.length; i += 1) {
+        const identifier = getImgStem(large[i]).slice(0, -1);
+        imagePaths[identifier] = {
+          large: this.getImage(large[i]),
+          medium: this.getImage(medium[i], 'medium'),
+        };
+      }
+    }
+    return imagePaths;
+  }
+
+  getImagesWithTabs() {
+    const projects = {};
+    for (const key of this.keys) {
+      if (this.config[key].hasTabs) {
+        projects[key] = this.getProjectImagesWithKeys(key);
+      }
+    }
+    return projects;
+  }
+}
+
+const imageLoader = new ImageLoader(projectData);
+const startingImageSets = imageLoader.getAllProjectImages();
+const tabbedProjects = imageLoader.getImagesWithTabs();
+export default tabbedProjects;
 export { startingImageSets };

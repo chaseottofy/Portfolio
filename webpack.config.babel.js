@@ -9,31 +9,32 @@ const autoprefixer = require('autoprefixer');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const zlib = require('node:zlib');
-const { cache } = require('sharp');
-
-// Using html-bundler-webpack-plugin instead of standard html-webpack-plugin
-// Big reason is easy handlebars template support + ability to resolve assets within templates
-// https://github.com/webdiscus/html-bundler-webpack-plugin
+const validImages = require('./scripts/get-filtered-images.js');
+const ImageFilterPlugin = require('./plugins/image-filter-plugin.js');
 
 module.exports = (env, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
-
   const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
-    devtool: IS_PRODUCTION ? false : 'inline-source-map',
-
+    devtool: IS_PRODUCTION ? false : 'source-map',
     output: {
       path: path.resolve(__dirname, 'dist'),
       clean: true,
     },
-
     plugins: [
       new Dotenv(),
-      new WebpackManifestPlugin(
+      new ImageFilterPlugin(
+        validImages,
         {
-          fileName: 'manifest.json',
-          basePath: 'dist/',
-        },
+          verbose: !IS_PRODUCTION,
+          sourceDirectories: ['imgproj'],
+          preloadedImages: [
+            'top2',
+            'favicon-32x32',
+            'fallback',
+            'fallbackMd',
+          ]
+        }
       ),
       new HtmlBundlerPlugin({
         entry: {
@@ -71,7 +72,6 @@ module.exports = (env, argv) => {
         },
       }),
     ],
-
     module: {
       rules: [
         {
@@ -141,12 +141,20 @@ module.exports = (env, argv) => {
       },
       compress: true,
       port: 3000,
-      open: true,
-      hot: true,
-      historyApiFallback: true,
+      open: {
+        target: ['http://localhost:3000'],
+        app: {
+          name: 'chrome',
+          arguments: ['--incognito'],
+        },
+      },
+      // hot: true,
+      // historyApiFallback: true,
     };
   } else {
     config.optimization = {
+      usedExports: true,
+      sideEffects: true,
       minimize: true,
       minimizer: [
         new TerserPlugin({
@@ -217,6 +225,16 @@ module.exports = (env, argv) => {
         patterns: [
           { from: './src/assets/robots.txt', to: 'robots.txt' },
         ],
+      }),
+    );
+  }
+
+  if (IS_PRODUCTION) {
+    config.plugins.push(
+      new WebpackManifestPlugin({
+        fileName: 'manifest.json',
+        basePath: 'dist/',
+        removeKeyHash: true,
       }),
     );
   }

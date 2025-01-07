@@ -104,8 +104,9 @@ I'm using block font-display for basement because it's decorative and scales hor
   /* ********************************** */
 
   /* constants */
-  --intro-offset: 40vh;
-  --header-height: 4rem;
+
+  /* --intro-offset: 20vh; */
+  --header-height: 3.85rem;
   --max-width-md: 1080px;
   --max-width-lg: 1280px;
 
@@ -147,20 +148,19 @@ I'm using block font-display for basement because it's decorative and scales hor
 }
 
 html {
-  font-size: 16px;
+  --intro-offset: 20vh;
+
+  font-size: 17px;
   line-height: 1.15;
-  scroll-behavior: smooth;
+
+  /* scroll-behavior: smooth; */
   tab-size: 4;
   text-size-adjust: 100%;
 }
 
 body {
   position: relative;
-
-  /* width hack for mobile */
   width: 100%;
-
-  /* width: calc(100vw - calc(100vw - 100%)); */
   background: var(--black0);
   color: var(--white1);
   font-family: var(--primaryFont);
@@ -170,8 +170,6 @@ body {
   font-weight: 400;
   line-height: inherit;
   overflow: hidden scroll;
-
-  /* -webkit-overflow-scrolling: touch; */
 }
 
 /* GENERAL RESETS
@@ -527,6 +525,11 @@ a[disabled] {
     font-size: 16px;
   }
 } */
+@media screen and (max-height: 600px) {
+  html {
+    --intro-offset: 0vh;
+  }
+}
 
 @media screen and (max-width: 390px) {
   html {

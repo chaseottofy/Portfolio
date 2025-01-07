@@ -64,7 +64,7 @@
   bottom: 0;
   display: flex;
   width: 100%;
-  height: 8rem;
+  height: 7rem;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -73,15 +73,18 @@
 .intro-container--links a {
   position: relative;
   display: flex;
-  height: 2.5rem;
+  height: 2.625rem;
   align-items: center;
-  padding: .5rem 1rem;
+  padding: .5rem 1.25rem;
   border: 1px solid rgb(36 39 44 / 0.7);
   border-radius: var(--br-1);
   margin: 0 .5rem;
   background: rgb(4 4 4 / .85);
+  box-shadow: var(--bs-offset1);
 
-  /* background: rgba(0, 0, 0, 0.7); */
+  /* box-shadow */
+
+  /* background: rgb(4 4 4 / .85); */
   color: #e7ecf4;
   font-size: .875rem;
   letter-spacing: .02em;
@@ -120,3 +123,9 @@
     font-size: 5.8vw;
   }
 }
+
+/* @media screen and (max-height: 600px) {
+  .intro-container {
+    height: 100vh !important;
+  }
+} */

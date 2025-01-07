@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Chase Ottofy Portfolio",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "webpack --mode=production --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "dev": "webpack serve --mode=development",
-    "build": "webpack --mode=production",
+    "build": "npm run clean && webpack --mode=production",
     "build:server": "node ./scripts/build-server.mjs",
     "deploy": "gh-pages -d dist",
     "preview": "npm run build && http-server dist --port 4321 -o -g -c-1 --cors",

@@ -37,6 +37,8 @@
     rgb(0 0 0 / .1) 0 1px 3px 0;
   --bs-lg:
     0 30px 60px rgb(0 0 0 / .12);
+  --bs-offset1:
+    rgb(109 110 119 / 0.1) 0 1px 20px 0;
   --bs-inset1:
     inset 0 0 10px 8px rgb(17 17 17 / .3),
     inset 0 0 10px 8px rgb(17 17 17 / .2);
