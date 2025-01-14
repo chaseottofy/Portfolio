@@ -36,7 +36,8 @@
   padding: .5rem;
   border: 1px solid var(--black1);
   background-color: transparent;
-  transition: background-color .15s ease;
+
+  /* transition: background-color .15s ease; */
 }
 
 .float-options li a {
@@ -52,7 +53,12 @@
   font-weight: 500;
   line-height: 1.2;
   opacity: .9;
-  transition: background-color .15s ease;
+
+  /* transition: background-color .15s ease; */
+}
+
+.float-options li a span:first-child {
+  text-transform: capitalize;
 }
 
 .float-options li a span:first-child::before {
@@ -78,9 +84,10 @@
 .float-options li:hover {
   background-color: var(--black1);
   text-shadow: 1px 1px 12px var(--offsetsecondary2);
-  transition-duration: .15s;
+
+  /* transition-duration: .15s;
   transition-property: background-color, border, text-shadow;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1); */
 }
 
 .span-br-float {

@@ -4,9 +4,9 @@ node_modules
 /src/testing/
 /src/_docs/
 /src/data/
-/scripts/
 handle-pdf.js
 webpack.config.babel.js
 unused/
 todo.js
 plugins/
+localonly/

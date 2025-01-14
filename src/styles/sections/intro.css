@@ -36,7 +36,7 @@
   width: auto;
   background-color: transparent;
   color: #e7ecf4;
-  font-family: var(--secondaryFont);
+  font-family: var(--font2);
   font-size: var(--fs0);
   letter-spacing: .05em;
   line-height: 1;
@@ -46,16 +46,19 @@
 
 .intro-header__subtitles h1::before {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   padding-top: .5rem;
-  padding-right: 1.25rem;
   background-clip: text;
   color: transparent;
-  content: 'webdev';
+  content: 'front-end';
+  padding-right: .25rem;
   letter-spacing: .03rem;
   -webkit-text-stroke: 1px #ddd;
   transform: translateY(100%);
+  font-size: calc(var(--fs0) - 8px);
+  text-align: end;
+  width: 100%;
 }
 
 .intro-container--links {
@@ -73,16 +76,17 @@
 .intro-container--links a {
   position: relative;
   display: flex;
-  height: 2.625rem;
+
+  /* height: 2.625rem; */
   align-items: center;
-  padding: .5rem 1.25rem;
+  padding: .8rem 1.25rem;
   border: 1px solid rgb(36 39 44 / 0.7);
   border-radius: var(--br-1);
   margin: 0 .5rem;
   background-color: rgb(4 4 4 / .85);
   box-shadow: var(--bs-offset1);
   color: #e7ecf4;
-  font-size: .875rem;
+  font-size: .9rem;
   letter-spacing: .02em;
 }
 
@@ -98,9 +102,12 @@
 .intro-container--links a:hover {
   border-color: var(--grey6);
   background-color: #141516;
-  transition-duration: .15s;
-  transition-property: color, background-color, border-color, fill, stroke;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+
+  /* transition-duration: .15s; */
+
+  /* transition-property: color, background-color, border-color, fill, stroke; */
+
+  /* transition-timing-function: cubic-bezier(.4, 0, .2, 1); */
 }
 
 .intro-observer-ref {
@@ -117,6 +124,10 @@
 @media screen and (max-width: 840px) {
   .intro-header__subtitles h1 {
     font-size: 5.8vw;
+  }
+
+  .intro-header__subtitles h1::before {
+    font-size: 5.2vw;
   }
 }
 

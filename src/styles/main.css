@@ -30,7 +30,7 @@
   position: relative;
   padding: .5rem;
   color: var(--white3);
-  font-family: var(--secondaryFont);
+  font-family: var(--font2);
   font-size: var(--fs3);
   font-weight: 900;
   line-height: .65;
@@ -45,7 +45,6 @@
   background-clip: text;
   color: transparent;
   -webkit-text-stroke: 1px var(--grey8);
-  
 }
 
 .section-subtitle {

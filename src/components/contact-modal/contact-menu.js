@@ -1,5 +1,4 @@
-import badgeData from '../../data/json/contact/contact-modal.json';
-import personalContactData from '../../data/json/contact/contact-personal.json';
+import contactData from '../../data/json/contact.json';
 import useCopyToClipboard from '../../hooks/handle-copy';
 import createButton from '../ui/button';
 import createLink from '../ui/link';
@@ -76,7 +75,7 @@ const createCmBottomCell = (
   dataText,
   imgs,
 ) => {
-  const { mailto: mailToSubject } = personalContactData;
+  const { mailto: mailToSubject } = contactData;
   const menuCell = document.createElement('div');
   menuCell.classList.add('cm-right--bottom__cell');
   const menuSpan = document.createElement('span');
@@ -111,13 +110,13 @@ const createCmBottomCell = (
 };
 
 const createContactMenu = () => {
-  const { phone, email } = personalContactData;
+  const { phone, email, badges } = contactData;
   const cmFooterImgs = document.querySelectorAll('.cm-img--icon');
   const contactMenuWrapper = document.createElement('div');
   contactMenuWrapper.classList.add('cm-right');
   const contactMenuBody = document.createElement('div');
   contactMenuBody.classList.add('cm-right--top');
-  for (const values of Object.values(badgeData)) {
+  for (const values of Object.values(badges)) {
     const badge = createBadge(...Object.values(values));
     contactMenuBody.append(badge);
   }

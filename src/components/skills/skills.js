@@ -1,4 +1,4 @@
-import skillsData from '../../data/json/skills/skills-data.json';
+import skillsData from '../../data/json/skills.json';
 import svgIcons from '../../utilities/get-svg';
 import createIcon from '../ui/icon';
 

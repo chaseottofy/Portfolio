@@ -54,3 +54,12 @@ export async function clearDirectory(directoryPath) {
     console.error(`Error reading or clearing directory: ${error.message}`);
   }
 }
+
+export class StructureValidationError extends Error {
+  constructor(path, type) {
+    super(`Required ${type} not found: ${path}`);
+    this.name = 'StructureValidationError';
+    this.path = path;
+    this.type = type;
+  }
+}

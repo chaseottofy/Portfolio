@@ -38,7 +38,7 @@ const configProjectPicture = (picture, images) => {
     if (i === 0) {
       img.src = src;
       img.srcset = `${src} 1x, `;
-      img.loading = 'lazy';
+      img.loading = 'eager';
       img.alt = alt || 'project image';
       img.type = srcExtension;
     } else {
@@ -58,10 +58,6 @@ const configProjectPicture = (picture, images) => {
  */
 const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, published) => {
   const projectHeader = projectCell.querySelector('.project-content__header');
-  // Only create tabs if there are more than 1, if a project does not have tabs, it will
-  // be represented by an empty array
-
-  // format title to be used as ID prefix for tabs
   if (tabs.length > 1) {
     const tabsWrapper = projectHeader.querySelector('.pc__header-tabs');
     const formattedTitle = title.toLowerCase().replaceAll(/[^a-z]/g, '');
@@ -128,7 +124,6 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   const projectFooterBtnsWrapper = projectCell.querySelector('.project-footer-btns');
   const projectFooterDesc = projectCell.querySelector('.project-footer__desc');
 
-  // create icons of tech used in project (stacks)
   for (let i = 0; i < stacks.length; i += 1) {
     const stack = stacks[i];
     const stackSvg = svgIcons[stack];
@@ -142,31 +137,16 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   projectFooterDesc.textContent = `${description}`;
   projectFooterTitle.textContent = title;
 
-  // const [auditBtn, overviewBtn] = projectFooterBtnsWrapper.children;
-  // auditBtn.dataset.lhProj = lighthouseKey;
-  // overviewBtn.dataset.proj = lighthouseKey;
   const overviewBtn = projectFooterBtnsWrapper.querySelector('.open-overview--btn');
   overviewBtn.dataset.proj = lighthouseKey;
   overviewBtn.addEventListener('click', createProjectModal);
 };
 
-/**
- * A skeleton of each project card already exists in the HTML
- * This function fills in the skeleton with data, images, and sets up any event listeners
- *
- * If the project card needs tabs, aka more than 1 image, ensure that a temporary imageSet
- * is provided within 'imageSets' so that only the first image is loaded initially
- *
- * I've added two html templates within the '../templates' folder, one for a
- * project with tabs, and one without.
- * @returns {void}
- */
 const createProjectCards = () => {
   const projectCells = document.querySelectorAll('.project-cell');
 
   const cardDataKeys = Object.keys(projectData);
   const imgArrays = getImgArray(Object.values(startingImageSets).map((x) => x.slice(0, 2)));
-  // console.log(imgArrays);
 
   for (let i = 0; i < projectCells.length; i += 1) {
     const { title, links, card } = projectData[cardDataKeys[i]];

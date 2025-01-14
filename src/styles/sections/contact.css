@@ -107,7 +107,7 @@
 }
 
 .cm-left__header h3 {
-  font-family: var(--secondaryFont);
+  font-family: var(--font2);
 }
 
 .cm-left__header h3:last-child {
@@ -367,13 +367,15 @@
 
 .cm-right--top__cell:hover {
   background-color: var(--grey4);
-  transition: var(--tbg1);
+
+  /* transition: var(--tbg1); */
 }
 
 .cm-copy:hover,
 .cm-email-goto:hover {
   background-color: var(--offsetwhite1);
-  transition: var(--tbg1);
+
+  /* transition: var(--tbg1); */
 }
 
 @media screen and (max-height: 600px) {

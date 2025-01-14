@@ -9,9 +9,7 @@
   justify-content: center;
   opacity: 0;
   text-wrap: balance;
-  transition-duration: .2s;
-  transition-property: opacity;
-  transition-timing-function: var(--bez-4);
+  transition: opacity .2s var(--bez-4);
 }
 
 .tooltip-caret {

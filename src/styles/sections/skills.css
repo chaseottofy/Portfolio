@@ -66,7 +66,7 @@
   top: 1.25rem;
   left: 1.25rem;
   width: auto;
-  font-family: var(--secondaryFont);
+  font-family: var(--font2);
   font-size: 16px;
   letter-spacing: .05rem;
   transform: scaleY(1.2);

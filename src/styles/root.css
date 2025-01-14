@@ -1,74 +1,24 @@
-/* 
-Fonts are loaded in the order they appear in this file.
-*/
+@font-face {
+  font-display: swap;
+  font-family: geist;
+  font-style: normal;
+  font-weight: 400 500;
+  src: local('Geist Regular'),
+    local('Geist Medium'),
+    url('../assets/fonts/geist/subset-geist.woff2') format('woff2');
+}
 
-/*
-I'm using block font-display for basement because it's decorative and scales horrendously.
-*/
 @font-face {
   font-display: block;
   font-family: basement;
   font-style: normal;
   font-weight: 900;
-  src: url('../assets/fonts/subsetted/basement-expanded-Subset.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: Neue;
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/subsetted/NeueMontreal-Regular-Subset.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: Neue;
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/subsetted/NeueMontreal-Medium-Subset.woff2') format('woff2');
+  src: url('../assets/fonts/basement/subset-basement-expanded.woff2') format('woff2');
 }
 
 :root {
-  --primaryFont: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
-  --secondaryFont: "basement", georgia, sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace;
-
-  /* ********************************** */
-
-  /* aspect ratio: large project images */
-  --wtvw: 1000px;
-  --wt: 1000;
-
-  /* --htvh: 459px; */
-  --htvh: 410px;
-  --ht: 410;
-
-  /* --ht: 459; */
-
-  /* --wtvw: 1280px;
-  --htvh: 720px;
-  --wt: 1280;
-  --ht: 720; */
-
-  /* --wt: 1600; */
-
-  /* --ht: 900; */
-  --ap: calc(var(--wt)/var(--ht));
-  --ap2: calc(100% * (var(--ht)/var(--wt)));
-
-  /* ********************************** */
-
-  /* aspect ratio: small project images */
-  --wt2: 720;
-  --ht2: 540;
-  --htvh2: 540px;
-  --wtvw2: 720px;
-  --apsmall: calc(var(--wt2)/var(--ht2));
-  --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
-
-  /* ********************************** */
-
-  /* dynamic font sizes */
+  --font1: geist, sans-serif, -apple-system, ui-sans-serif, system-ui;
+  --font2: basement, sans-serif, -apple-system, ui-sans-serif, system-ui;
   --fs0: max(34px, 2.8rem);
   --fs1: max(32px, 2.8rem);
   --fs2: max(25px, 2.2rem);
@@ -76,10 +26,6 @@ I'm using block font-display for basement because it's decorative and scales hor
   --fs4: max(22px, 1.6rem);
   --fs5: max(1.125rem, 16px);
   --fs6: max(1rem, 16px);
-
-  /* ********************************** */
-
-  /* Z indices */
   --z-main: 500;
   --z-footer: 600;
   --z-sidebar: 700;
@@ -87,46 +33,22 @@ I'm using block font-display for basement because it's decorative and scales hor
   --z-aside: 900;
   --z-modal: 1000;
   --z-toast: 1100;
-
-  /* ********************************** */
-
-  /* html template heights */
   --skill-section-height: 300px;
   --skill-section-height-sm: 240px;
-
-  /* ********************************** */
-
-  /* Shared colors between light/dark */
   --primary1: #0089ae;
   --primary2: #025b74;
   --primary3: #013948;
   --red1: #cf007a;
-
-  /* apply this value as a filter and the element color will be converted to primary2 */
   --convert-to-primary: invert(33%) sepia(61%) saturate(1000%) hue-rotate(171deg) brightness(90%) contrast(101%);
-
-  /* ********************************** */
-
-  /* constants */
-
-  /* --intro-offset: 20vh; */
   --header-height: 3.85rem;
   --max-width-md: 1080px;
   --max-width-lg: 1280px;
-
-  /* --max-width-md: 1140px;/ */
-
-  /* --max-width-lg: 1280px; */
   --br-1: 5px;
   --br-2: 8px;
   --br-3: 10px;
   --br-4: 12px;
   --br-half: 50%;
   --br-full: 9999px;
-
-  /* ********************************** */
-
-  /* Transition helpers */
   --tbg1: background .15s cubic-bezier(.4, 0, .2, 1);
   --tbg2: background-color .2s cubic-bezier(.4, 0, .2, 1);
   --tbg3: background-color 100ms cubic-bezier(.4, 0, .2, 1);
@@ -142,6 +64,8 @@ I'm using block font-display for basement because it's decorative and scales hor
   --bez-4: cubic-bezier(.25, .75, .6, .98);
 }
 
+/* --font1: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
+/* if I set css variables in html, will pseudo-elements have access to them? */
 *,
 *::before,
 *::after {
@@ -153,11 +77,20 @@ I'm using block font-display for basement because it's decorative and scales hor
 
 html {
   --intro-offset: 17vh;
-
+  --wt: 1000;
+  --ht: 410;
+  --wtvw: calc(var(--wt) * 1px);
+  --htvh: calc(var(--ht) * 1px);
+  --ap: calc(var(--wt)/var(--ht));
+  --ap2: calc(100% * (var(--ht)/var(--wt)));
+  --wt2: 720;
+  --ht2: 540;
+  --htvh2: 540px;
+  --wtvw2: 720px;
+  --apsmall: calc(var(--wt2)/var(--ht2));
+  --ap2small: calc(100% * (var(--ht2)/var(--wt2)));
   font-size: 17px;
   line-height: 1.15;
-
-  /* scroll-behavior: smooth; */
   tab-size: 4;
   text-size-adjust: 100%;
 }
@@ -167,7 +100,7 @@ body {
   width: 100%;
   background-color: var(--black0);
   color: var(--white1);
-  font-family: var(--primaryFont);
+  font-family: var(--font1);
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -191,7 +124,7 @@ ul,
 div,
 input,
 textarea {
-  font-family: var(--primaryFont);
+  font-family: var(--font1);
 }
 
 h1,
@@ -227,11 +160,10 @@ input {
 
 textarea {
   width: 100%;
-
   /* resize: vertical; */
   min-height: 4rem;
   padding: 0.5rem;
-  border:1px solid var(--black2);
+  border: 1px solid var(--black2);
   border-radius: var(--br-1);
   background: none;
   color: var(--white1);
@@ -421,6 +353,7 @@ a[disabled] {
   100% {
     transform: translateY(1.5rem);
   }
+
 }
 
 @keyframes slide-right {
@@ -431,6 +364,7 @@ a[disabled] {
   100% {
     transform: translateX(15%);
   }
+
 }
 
 @keyframes slight-opacity {
@@ -441,6 +375,7 @@ a[disabled] {
   100% {
     opacity: .8;
   }
+
 }
 
 @keyframes ease-modal-in {
@@ -455,6 +390,7 @@ a[disabled] {
   100% {
     opacity: 1;
   }
+
 }
 
 @keyframes skeleton-loading {
@@ -465,6 +401,7 @@ a[disabled] {
   100% {
     background-position: -200% 0
   }
+
 }
 
 @keyframes pulse-small {
@@ -475,6 +412,7 @@ a[disabled] {
   100% {
     opacity: 1;
   }
+
 }
 
 @keyframes pulse {
@@ -489,6 +427,7 @@ a[disabled] {
   100% {
     opacity: 0;
   }
+
 }
 
 @keyframes spin {
@@ -499,6 +438,7 @@ a[disabled] {
   100% {
     opacity: .15;
   }
+
 }
 
 @keyframes gradient {
@@ -513,30 +453,44 @@ a[disabled] {
   100% {
     background-position: 0% 50%;
   }
+
 }
 
 /* adaptive font sizes
 ===================================== */
-
 /* @media screen and (max-width: 1020px) {
   html {
     font-size: 16px;
   }
-} */
 
+}
+
+ */
 /* @media screen and (max-width: 720px) {
   html {
     font-size: 16px;
   }
-} */
+
+}
+
+ */
 @media screen and (max-height: 600px) {
   html {
     --intro-offset: 0vh;
   }
+
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    --intro-offset: 30vh;
+  }
+
 }
 
 @media screen and (max-width: 390px) {
   html {
     font-size: 14px;
   }
+
 }

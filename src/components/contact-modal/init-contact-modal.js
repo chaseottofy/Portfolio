@@ -33,8 +33,6 @@ const initContactModal = () => {
     if (isContactMenuOpen) return;
 
     const { bottom } = navContactBtn.getBoundingClientRect();
-    console.log(document.querySelector('html'));
-
     const modalTop = Number.parseFloat(bottom.toFixed(2)) - pxToRem;
     contactModal.style.top = `${modalTop}px`;
 

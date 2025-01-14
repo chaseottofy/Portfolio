@@ -234,7 +234,6 @@ const initForm = () => {
   };
 
   initFormFunc();
-  // console.log(document.querySelector('.contact-form--wrapper').innerHTML)
 };
 
 export default initForm;

@@ -49,7 +49,8 @@
 
 .footer a:hover::after {
   background: var(--accent-7);
-  transition: background .35s var(--bez-3);
+
+  /* transition: background .35s var(--bez-3); */
 }
 
 @media screen and (max-width: 490px) {

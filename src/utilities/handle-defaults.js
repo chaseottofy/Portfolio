@@ -1,7 +1,6 @@
 import initCopyElements from './set-copy-elements';
 import initDateTimeElements from './set-date-time-elements';
 import initMailtoElements from './set-mailto-elements';
-import initSectionExcerpts from './set-section-excerpts';
 import initTooltipElements from './set-tooltip-elements';
 // import initDisableOnLoadElements from './set-disableonload-elements';
 
@@ -20,7 +19,6 @@ const initDefaults = () => {
   initCopyElements();
   initDateTimeElements();
   initMailtoElements();
-  initSectionExcerpts();
   initTooltipElements();
   // initDisableOnLoadElements();
 };

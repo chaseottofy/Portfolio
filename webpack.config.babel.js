@@ -1,11 +1,10 @@
+const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const postcssPresetEnv = require('postcss-preset-env');
 const CompressionPlugin = require('compression-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const zlib = require('node:zlib');
@@ -88,9 +87,11 @@ module.exports = (_, argv) => {
                 sourceMap: false,
                 postcssOptions: {
                   plugins: [
-                    postcssPresetEnv(),
-                    autoprefixer(),
-                  ],
+                    postcssPresetEnv({
+                      stage: 2,
+                      autoprefixer: { grid: true },
+                    }),
+                  ]
                 },
               },
             },
