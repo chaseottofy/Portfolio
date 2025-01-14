@@ -50,7 +50,7 @@ const createBadge = (
   } else {
     badgeTopSpan.dataset.acc = dataAcc;
     badgeTopSpan.textContent = dataAcc;
-    badgeTopContainerSvgImg.classList.add('img-icon');
+    badgeTopContainerSvgImg.classList.add('icn-svg');
   }
 
   const badgeFooter = document.createElement('div');
@@ -86,7 +86,7 @@ const createCmBottomCell = (
   if (btnHref) {
     const menuLink = createLink(mailToSubject, 'Open Mail-to', 'cm-email-goto', null, '_self');
     const menuLinkImg = document.createElement('img');
-    menuLinkImg.classList.add('img-icon');
+    menuLinkImg.classList.add('icn-svg');
     menuLinkImg.src = imgs[0].src;
     menuLinkImg.alt = '';
     menuLink.append(menuLinkImg);
@@ -96,7 +96,7 @@ const createCmBottomCell = (
   const menuBtnClass = `cm-copy ${btnClass}`;
   const menuBtn = createButton(null, menuBtnClass, btnTitle, 'button');
   const menuBtnImg = document.createElement('img');
-  menuBtnImg.classList.add('img-icon');
+  menuBtnImg.classList.add('icn-svg');
   menuBtnImg.src = imgs[1].src;
   menuBtnImg.alt = '';
   menuBtn.addEventListener('click', () => {

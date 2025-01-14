@@ -40,7 +40,6 @@
   --primary3: #013948;
   --red1: #cf007a;
   --convert-to-primary: invert(33%) sepia(61%) saturate(1000%) hue-rotate(171deg) brightness(90%) contrast(101%);
-  --header-height: 3.85rem;
   --max-width-md: 1080px;
   --max-width-lg: 1280px;
   --br-1: 5px;
@@ -62,10 +61,121 @@
   --bez-2: cubic-bezier(.33, 1, .68, 1);
   --bez-3: cubic-bezier(.25, .75, .6, .98);
   --bez-4: cubic-bezier(.25, .75, .6, .98);
+  --accent-1: #111;
+  --accent-2: #222;
+  --accent-3: #333;
+  --accent-4: #444;
+  --accent-5: #555;
+  --accent-6: #888;
+  --accent-7: #eaeaea;
+  --accent-8: #fafafa;
+  --black0: #000;
+  --black1: #0e0e0f;
+  --black2: #333;
+  --black3: #333;
+  --black4: #090909;
+  --grey2: #1a1a1a;
+  --grey3: #000;
+  --grey4: #27272a;
+  --grey5: #262b30;
+  --grey6: #6d6e77;
+  --grey7: #a3a5ad;
+  --grey8: #b6b9c2;
+  --white0: #fff;
+  --white1: #f7f5f5;
+  --white2: #cccbcb;
+  --white3: #e7ecf4;
+  --offsetblack0: rgb(0 0 0 / .9);
+  --offsetblack1: rgb(0 0 0 / .6);
+  --offsetblack2: rgb(0 0 0 / .2);
+  --offsetblack3: rgb(23 23 23 / 0.1);
+  --offsetblack4: rgb(4 4 4 / 0.98);
+  --offsetblack5: rgb(4 4 4 / .85);
+  --offsetwhite1: rgb(255 255 255 / .05);
+  --offsetwhite2: rgb(255 255 255 / .1);
+  --offsetsecondary1: rgb(50 145 255 / 0.1);
+  --offsetsecondary2: hsl(0deg 0% 100% / .4);
+  --bs-md:
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
+  --bs-lg:
+    0 30px 60px rgb(0 0 0 / .12);
+  --bs-offset1:
+    rgb(109 110 119 / 0.1) 0 1px 20px 0;
+  --bs-inset1:
+    inset 0 0 10px 8px rgb(17 17 17 / .3),
+    inset 0 0 10px 8px rgb(17 17 17 / .2);
+  --selection: #f81ce5;
+  --link: #7F95F5;
+  --link2: #0089ae;
+  --linear1: linear-gradient(0deg,
+      var(--offsetwhite1),
+      var(--offsetwhite1)),
+    radial-gradient(50% 50% at 50% 100%,
+      var(--offsetwhite2) 0%,
+      transparent 100%);
+  --skeleton1: linear-gradient(270deg, #111, #333, #333, #111);
+  --icon-color: white;
+  --icon-b: brightness(0) saturate(100%) invert(73%) sepia(91%) saturate(1095%) hue-rotate(232deg);
 }
 
-/* --font1: "Neue", sans-serif, -apple-system, ui-sans-serif, system-ui, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, monospace; */
-/* if I set css variables in html, will pseudo-elements have access to them? */
+[data-theme="light"] {
+  --icon-color: black;
+  --accent-1: #f1f1f1;
+  --accent-2: #f5f5f5;
+  --accent-3: #f5f5f5;
+  --accent-4: #d4d4d4;
+  --accent-5: #d4d4d4;
+  --accent-6: #888;
+  --accent-7: #333;
+  --accent-8: #111;
+  --black0: #fff;
+  --black1: #e7ecf4;
+  --black2: #d4d4d4;
+  --black3: #555;
+  --black4: #fafafa;
+  --grey2: #d9d9d9;
+  --grey3: #fff;
+  --grey4: #f7f7f8;
+  --grey5: #94989c;
+  --grey6: #6d6e77;
+  --grey7: #212122;
+  --grey8: #212122;
+  --white0: #000;
+  --white1: #171717;
+  --white2: #4c4c4c;
+  --white3: #212122;
+  --offsetblack0: rgb(255 255 255 / 1);
+  --offsetblack1: rgb(255 255 255 / .8);
+  --offsetblack2: rgb(255 255 255 / .5);
+  --offsetblack3: rgb(255 255 255 / .2);
+  --offsetblack4: rgb(255 255 255 / .96);
+  --offsetblack5: #e7ecf4;
+  --offsetwhite1: rgb(0 0 0 / .05);
+  --offsetwhite2: rgb(0 0 0 / .1);
+  --offsetsecondary1: rgb(50 145 255 / 0.1);
+  --offsetsecondary2: rgb(0 0 0 / 0.3);
+  --bs-md:
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
+  --bs-lg:
+    0 30px 60px rgb(0 0 0 / .12);
+  --bs-inset1:
+    rgb(0 0 0 / .2) 0 1px 2px 0,
+    rgb(0 0 0 / .1) 0 1px 3px 0;
+  /* SPECIFIC */
+  --selection: #7fffe1;
+  --link: #153DEF;
+  --link2: #212122;
+  --linear1: linear-gradient(0deg,
+      rgb(23 23 23 / .4),
+      rgb(8 8 8 / .05)),
+    radial-gradient(50% 50% at 50% 100%,
+      rgb(40 40 40 / .2) 0%,
+      rgb(0 0 0 / .8) 100%);
+  --skeleton1: linear-gradient(270deg, #fafafa, #eaeaea, #eaeaea, #fafafa);
+}
+
 *,
 *::before,
 *::after {
@@ -76,7 +186,8 @@
 }
 
 html {
-  --intro-offset: 17vh;
+  --header-height: 4rem;
+  --intro-offset: 14vh;
   --wt: 1000;
   --ht: 410;
   --wtvw: calc(var(--wt) * 1px);
@@ -136,7 +247,7 @@ h4 {
 
 button {
   padding: 0;
-  margin: 0;
+  margin: 0; 
   background: none;
   cursor: pointer;
   line-height: 1.15;
@@ -147,7 +258,7 @@ button {
 input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid var(--black2);
+  border: 1px solid var(--grey5);
   border-radius: var(--br-1);
   margin: 0;
   background: none;
@@ -160,7 +271,6 @@ input {
 
 textarea {
   width: 100%;
-  /* resize: vertical; */
   min-height: 4rem;
   padding: 0.5rem;
   border: 1px solid var(--black2);
@@ -272,14 +382,31 @@ a[disabled] {
   user-select: none;
 }
 
-.img-icon {
-  width: 1rem;
+.icn-svg {
   height: 1rem;
-  filter: invert(1);
+  width: 1rem;
+  pointer-events: none;
+  user-select: none;
 }
 
-.theme__light .img-icon {
-  filter: invert(0);
+[data-theme="dark"] .icn-svg {
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .icn-svg {
+  filter: brightness(0);
+}
+
+.icn-svg[data-keep-dark="true"] {
+  filter: brightness(0) invert(1) !important;
+}
+
+[data-parent-dark="true"] * .icn-svg {
+  filter: brightness(0) invert(1);
+}
+
+.icn-svg[data-invert="true"] {
+  filter: invert(1) !important;
 }
 
 /* GENERAL UTILITIES
@@ -404,17 +531,6 @@ a[disabled] {
 
 }
 
-@keyframes pulse-small {
-  0% {
-    opacity: .5;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-}
-
 @keyframes pulse {
   0% {
     opacity: 0;
@@ -456,24 +572,6 @@ a[disabled] {
 
 }
 
-/* adaptive font sizes
-===================================== */
-/* @media screen and (max-width: 1020px) {
-  html {
-    font-size: 16px;
-  }
-
-}
-
- */
-/* @media screen and (max-width: 720px) {
-  html {
-    font-size: 16px;
-  }
-
-}
-
- */
 @media screen and (max-height: 600px) {
   html {
     --intro-offset: 0vh;
@@ -481,9 +579,9 @@ a[disabled] {
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 560px) {
   html {
-    --intro-offset: 30vh;
+    --intro-offset: 25vh;
   }
 
 }

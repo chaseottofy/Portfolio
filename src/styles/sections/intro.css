@@ -26,38 +26,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2.5rem;
+
+  /* padding-bottom: 1rem; */
   margin: 0 auto;
 }
 
 .intro-header__subtitles h1 {
   position: relative;
   z-index: -1;
-  width: auto;
+  width: 100%;
+  text-align: center;
   background-color: transparent;
   color: #e7ecf4;
   font-family: var(--font2);
-  font-size: var(--fs0);
+  font-size: max(34px, 3rem);
+  transform: scaleY(.94);
+
+  /* font-size: var(--fs0); */
   letter-spacing: .05em;
-  line-height: 1;
+  line-height: 1.25;
   opacity: .95;
   text-wrap: nowrap;
 }
 
 .intro-header__subtitles h1::before {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  inset: 0;
+  margin: auto;
   padding-top: .5rem;
-  background-clip: text;
   color: transparent;
-  content: 'front-end';
-  padding-right: .25rem;
-  letter-spacing: .03rem;
-  -webkit-text-stroke: 1px #ddd;
-  transform: translateY(100%);
-  font-size: calc(var(--fs0) - 8px);
-  text-align: end;
+  content: 'front—end dev';
+  transform: translateY(90%);
+  text-wrap: wrap;
+  -webkit-text-stroke: 1px #d4d8e0;
+  background: linear-gradient(90deg, #000, #111, #111, #1b1e22);
+  background-clip: text;
+  letter-spacing: .25rem;
+  font-size: max(34px, 2.7rem);
+  text-align: center;
   width: 100%;
 }
 
@@ -67,7 +74,7 @@
   bottom: 0;
   display: flex;
   width: 100%;
-  height: 7rem;
+  height: 9rem;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -76,63 +83,91 @@
 .intro-container--links a {
   position: relative;
   display: flex;
-
-  /* height: 2.625rem; */
   align-items: center;
-  padding: .8rem 1.25rem;
+  padding: .625rem 1.375rem;
   border: 1px solid rgb(36 39 44 / 0.7);
   border-radius: var(--br-1);
-  margin: 0 .5rem;
-  background-color: rgb(4 4 4 / .85);
-  box-shadow: var(--bs-offset1);
-  color: #e7ecf4;
-  font-size: .9rem;
+  margin: 0 1rem;
+  background-color: rgb(4 4 4 / .95);
+  color: #f1f3f7;
+  font-size: .95rem;
   letter-spacing: .02em;
+  font-weight: 400;
+
+  /* background-image: linear-gradient(210deg, rgba(8, 8, 8, .7), rgba(14, 14, 14, .8) 60%, rgba(24, 24, 24, .95)); */
+
+  /* background-image: linear-gradient(0deg, hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, .05)), radial-gradient(50% 50% at 50% 100%, hsla(0, 0%, 100%, .1) 0, hsla(0, 0%, 100%, 0) 100%); */
+
+  /* backdrop-filter: brightness(1.5) contrast(1.5); */
+}
+
+[data-theme="light"] .intro-container--links a {
+  /* filter: invert(1); */
+  background-color: #f1f3f7;
+  color: black;
+}
+
+[data-theme="light"] .intro-container--links a img {
+  color: black !important;
 }
 
 .intro-container--links a img {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: .75rem;
-  filter: invert(1);
   pointer-events: none;
   user-select: none;
 }
 
 .intro-container--links a:hover {
-  border-color: var(--grey6);
-  background-color: #141516;
+  filter: invert(1);
 
-  /* transition-duration: .15s; */
+  /* border-color: var(--grey6); */
 
-  /* transition-property: color, background-color, border-color, fill, stroke; */
-
-  /* transition-timing-function: cubic-bezier(.4, 0, .2, 1); */
+  /* background-color: #141516; */
 }
 
 .intro-observer-ref {
   position: absolute;
   z-index: -1;
-  bottom: 0;
+
+  /* top: calc(var(--header-height) + 8px); */
+  top: 4px;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  height: 4rem;
   pointer-events: none;
   user-select: none;
 }
 
 @media screen and (max-width: 840px) {
   .intro-header__subtitles h1 {
-    font-size: 5.8vw;
+    font-size: 6.1vw;
   }
 
   .intro-header__subtitles h1::before {
-    font-size: 5.2vw;
+    font-size: 5.4vw;
   }
 }
 
-/* @media screen and (max-height: 600px) {
-  .intro-container {
-    height: 100vh !important;
+@media screen and (max-width: 560px) {
+  .intro-header__subtitles {
+    padding: 0 .5rem;
+    padding-bottom: 4rem;
   }
-} */
+
+  .intro-header__subtitles h1 {
+    text-wrap: wrap;
+    font-size: 9.5vw;
+    text-align: left;
+    line-height: 2.8rem;
+  }
+
+  .intro-header__subtitles h1::before {
+    font-size: 8.5vw;
+    transform: translateY(105%) scaleY(1.2);
+    letter-spacing: -.5px;
+    text-align: left;
+    line-height: 2.4rem;
+  }
+}

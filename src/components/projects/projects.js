@@ -130,12 +130,14 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
     const iconWrapper = projectStacks[i];
     const tempIcon = iconWrapper.querySelector('img');
     tempIcon.src = stackSvg;
+
     tempIcon.classList.add(`${stack}-icon`);
+    tempIcon.classList.add('icn-svg');
   }
 
   projectStacksWrapper.dataset.pfStacks = stacks.join(' + ');
   projectFooterDesc.textContent = `${description}`;
-  projectFooterTitle.textContent = title;
+  projectFooterTitle.textContent = `${title} `;
 
   const overviewBtn = projectFooterBtnsWrapper.querySelector('.open-overview--btn');
   overviewBtn.dataset.proj = lighthouseKey;

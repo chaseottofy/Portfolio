@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   {{> head}}
   <title>Chase Ottofy - Front End Web Developer - Portfolio</title>
   <link type="image/png" href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
   <link rel="icon" href="images/svg/favicon.svg" sizes="any" type="image/svg+xml">
   <link href="style.scss" rel="stylesheet">
-  <link rel="preload" href="images/design/top2.webp" as="image" type="image/webp">
+  <link rel="preload" href="images/design/top2av.avif" as="image" type="image/avif">
+  {{!-- <link rel="preload" href="images/design/top2.webp" as="image" type="image/webp"> --}}
   <script src="index.js" defer="defer"></script>
+  <script>
+    const lt = localStorage.getItem('co-theme') || 'dark';
+    document.documentElement.dataset.theme = lt;
+    document.querySelector('meta[name="color-scheme"]').content = lt;
+    document.querySelector('meta[name="theme-color"]').content = lt === 'dark' ? '#000' : '#fff';
+  </script>
 </head>
 
-<body class="body theme__dark" data-disable-transitions="false" id="page-top" data-active-modal="false">
+<body class="body" data-disable-transitions="false" id="page-top" data-active-modal="false">
   {{> aside/top-gradients }}
 
   {{> header }}

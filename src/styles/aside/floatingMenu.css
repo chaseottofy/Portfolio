@@ -52,7 +52,7 @@
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.2;
-  opacity: .9;
+  opacity: .85;
 
   /* transition: background-color .15s ease; */
 }
@@ -68,17 +68,19 @@
   font-weight: 400;
   letter-spacing: -.05em;
   line-height: 1.2;
-  opacity: .7;
-  transform: scale(.8);
+  opacity: .9;
+  transform: scale(.7);
 }
 
 .float-options li a span:last-child {
   margin-top: .25rem;
   font-size: 80%;
   font-weight: 400;
-  opacity: .85;
+  opacity: 1;
   text-transform: uppercase;
   transform: scaleY(.9);
+
+  /* transform: scale(.8) translateY(-.25rem) translateX(-.25rem); */
 }
 
 .float-options li:hover {

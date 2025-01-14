@@ -27,7 +27,7 @@
   user-select: none;
 }
 
-.theme__light .section-gradient--l {
+[data-theme="light"] .section-gradient--l {
   filter: grayscale(1);
   opacity: .6;
 }

@@ -32,8 +32,6 @@
 
 .contact-form--container .section-title h3 {
   width: 100%;
-
-  /* transform: scaleY(1.25); */
   background-clip: unset;
   color: var(--white2);
   font-size: 23px !important;
@@ -113,10 +111,6 @@
   width: 10rem;
   align-items: center;
   padding: 4px;
-
-  /* border: 1px solid var(--accent-1); */
-
-  /* border: 1px solid var(--black2); */
   border-radius: var(--br-1);
   margin-bottom: 1rem;
 }
@@ -168,7 +162,7 @@
 .submit-form--btn {
   position: relative;
   padding: 0.5rem 2rem;
-  border: 1px solid var(--black2);
+  border: 1px solid var(--accent-2);
   border-radius: var(--br-1);
   background-color: transparent;
   color: var(--white2);

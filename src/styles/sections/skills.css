@@ -113,9 +113,9 @@
   user-select: none !important;
 }
 
-.theme__light .skill-img--wp {
+/* [data-theme="light"] .skill-img--wp {
   filter: invert(1) !important;
-}
+} */
 
 .skill-content::-webkit-scrollbar {
   width: 9px;

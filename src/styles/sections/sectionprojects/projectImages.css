@@ -5,7 +5,6 @@
   padding: 0;
   padding-top: var(--ap2);
   border: none;
-  border-top: 1px solid var(--grey2);
   margin: 0;
 }
 
@@ -24,6 +23,7 @@
   opacity: .3;
   pointer-events: none;
   user-select: none;
+
 }
 
 .project-content__body picture {

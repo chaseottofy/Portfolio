@@ -84,7 +84,7 @@
   user-select: none;
 }
 
-.theme__light .cm-left::after {
+[data-theme="light"] .cm-left::after {
   filter: invert(1);
 }
 
@@ -294,7 +294,8 @@
   margin-right: .5rem;
   margin-left: .25rem;
   fill: none;
-  filter: invert(1);
+
+  /* filter: invert(1); */
 }
 
 .badge-footer span {
