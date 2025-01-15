@@ -1,14 +1,4 @@
 @font-face {
-  font-display: swap;
-  font-family: geist;
-  font-style: normal;
-  font-weight: 400 500;
-  src: local('Geist Regular'),
-    local('Geist Medium'),
-    url('../assets/fonts/geist/subset-geist.woff2') format('woff2');
-}
-
-@font-face {
   font-display: block;
   font-family: basement;
   font-style: normal;
@@ -16,9 +6,18 @@
   src: url('../assets/fonts/basement/subset-basement-expanded.woff2') format('woff2');
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'Neue Montreal';
+  font-style: normal;
+  font-weight: 400 500;
+  src: url('../assets/fonts/neue/subset-PPNeueMontreal-Variable.woff2') format('woff2');
+}
+
 :root {
-  --font1: geist, sans-serif, -apple-system, ui-sans-serif, system-ui;
+  --font1: 'Neue Montreal', sans-serif, -apple-system, ui-sans-serif, system-ui;
   --font2: basement, sans-serif, -apple-system, ui-sans-serif, system-ui;
+  /* --font1: geist, sans-serif, -apple-system, ui-sans-serif, system-ui; */
   --fs0: max(34px, 2.8rem);
   --fs1: max(32px, 2.8rem);
   --fs2: max(25px, 2.2rem);
@@ -247,7 +246,7 @@ h4 {
 
 button {
   padding: 0;
-  margin: 0; 
+  margin: 0;
   background: none;
   cursor: pointer;
   line-height: 1.15;
@@ -590,5 +589,4 @@ a[disabled] {
   html {
     font-size: 14px;
   }
-
 }

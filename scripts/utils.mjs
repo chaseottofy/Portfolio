@@ -10,7 +10,6 @@ function get__filename() {
   return filename;
 }
 
-// hack to allow __dirname
 export function initGlobalDirname() {
   if (typeof __filename === 'undefined') {
     global.__filename = get__filename();
