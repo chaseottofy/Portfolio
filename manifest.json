@@ -1,6 +1,6 @@
 {
   "dist/index.html": "auto/index.html",
-  "dist/index.css": "auto/style.8dcfe661.css",
+  "dist/index.css": "auto/style.fcdb2b9c.css",
   "dist/index.1.js": "auto/index.1.2a08436a.js",
   "dist/538.f0af39fc.js": "auto/538.f0af39fc.js",
   "dist/images/cyear1.webp": "auto/images/cyear1.3d770c17.webp",
@@ -11,6 +11,7 @@
   "dist/images/cday1.webp": "auto/images/cday1.1e8ed8b4.webp",
   "dist/images/cyear2.webp": "auto/images/cyear2.84d9d979.webp",
   "dist/images/cweek2.webp": "auto/images/cweek2.9d7048bf.webp",
+  "dist/fonts/subset-PPNeueMontreal-Variable.woff2": "auto/fonts/subset-PPNeueMontreal-Variable.woff2",
   "dist/images/blog2.webp": "auto/images/blog2.6b087691.webp",
   "dist/images/clist2.webp": "auto/images/clist2.6883ca74.webp",
   "dist/images/cday2.webp": "auto/images/cday2.a5bcf881.webp",
@@ -18,7 +19,6 @@
   "dist/images/markdown1.webp": "auto/images/markdown1.06c49abb.webp",
   "dist/images/monthpicker1.webp": "auto/images/monthpicker1.553999e7.webp",
   "dist/images/markdown2.webp": "auto/images/markdown2.3f03541c.webp",
-  "dist/fonts/subset-geist.woff2": "auto/fonts/subset-geist.woff2",
   "dist/images/monthpicker2.webp": "auto/images/monthpicker2.d26afaf9.webp",
   "dist/fonts/subset-basement-expanded.woff2": "auto/fonts/subset-basement-expanded.woff2",
   "dist/images/top2av.avif": "auto/images/top2av.05dfe7a6.avif",
