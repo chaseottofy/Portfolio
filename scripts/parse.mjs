@@ -8,15 +8,31 @@ import {
   initGlobalDirname,
   clearDirectory,
   isNum,
+  terminateGlobalDirname,
 } from './utils.mjs';
-import {
-  defaultDataURL,
-} from './defaults.mjs';
+
+
+/**
+*************************************
+INPUT: src/assets/images/imgprojstart
+OUTPUT: src/assets/images/imgproj
+*************************************
+npm run gen:parsed-images
+not configured during any automatic proces
+
+Requires specific directory strcuture & image naming.
+For each of your project images, either create two versions of the image or simply duplicate them (this script will handle the rest to assure the correct adjustments).
+LARGE IMAGE SHOULD BE SUFFIXED WITH '1'
+SMALL IMAGE SHOULD BE SUFFIXED WITH '2'
+
+In most cases im duplicating images, suffixing one  with '1' and the other with '2' then just letting this script convert them to actual large and small instances.
+
+This script also helps uniform the images by normalizing their blacks/whites then adding just enough contrast and saturation to minimize the range of blacks without altering the hues too much.
+*/
 
 initGlobalDirname();
-
 class ImageConfig {
-  #mode = '';
+  #mode = 'parse';
   #acceptedModes = ['base', 'sub', 'out', 'wh', 'multiplier', 'format', 'quality'];
   #helpArray = [
     "npm run setparse (run script)",
@@ -43,14 +59,29 @@ class ImageConfig {
   constructor() {
     this._baseStartDirectory = '../src/images';
     this._baseOutput64Directory = '../data';
-
-    this._postsFolder = 'imgprojstart';
-    this._smallImageSuffix = '2';
+    this._maxHeight = 840;
+    this._maxWidth = 2100;
     this._smallImageMultiplier = 0.6;
     this._smallAspectRatio = 4 / 3;
 
+    // this._roptions = {
+    //   '1': {
+    //     width: this._maxWidth,
+    //     height: this._maxHeight,
+    //     aspectRatio: this._maxHeight / this._maxWidth,
+    //   },
+    //   '2': {
+    //     width: 
+    //   }
+    // };
+
+    this._postsFolder = 'imgprojstart';
     this._postsPlaceholderFolder = 'imgproj';
     this._placeholderFileSuffix = '';
+
+    this._largeImageSuffix = '1';
+    this._smallImageSuffix = '2';
+
 
     this._imageFileExtension = 'webp';
     this._outputImageQuality = 95;
@@ -58,14 +89,6 @@ class ImageConfig {
       width: 2000,
       height: 820,
     };
-    // this._resizeOptions = {
-    //   width: 1071,
-    //   height: 410,
-    // };
-    // this._resizeOptions = {
-    //   width: 1071,
-    //   height: 459,
-    // };
     this._outputImageSize = 1;
 
     this._outputVariableName = 'imagePlaceholders';
@@ -73,7 +96,7 @@ class ImageConfig {
     this._outputFileExtension = 'ts';
 
     this._generateDefault = true;
-    this._defaultDurl = defaultDataURL;
+    this._defaultDurl = 'data:image/webp;base64,UklGRhgCAABXRUJQVlA4IAwCAADQIQCdASqAAdgAP73e6G2+NzGqI3MpY8A3iWdu4WL9/zmekavyRX/3QGpmsqQeS0KmGaypB5OF5B5L5tN4eFl7slbA3Vf2Q9W1s5mRUZ+QeS0KmHgzkQUF9SnMTjXYQnlog7NChPK4lTLyDD/ZU9bLVG+QZ+EUWD3jAZE8OQc8NcATtQf4p/7HdwPGHe2D7NkDv29tprwy4ffQTqO8ozkoQ6nkcli4xyTtaw/eF0qNGTgCDKO6jTYCI5qtL2TnE61xJ5zb8/CYOueE3YcbrlvFtjbczoPJBncjtpIDnbvJZMYs13zLB7Ij4/9DgJGXEodR0Q8coZrQcYzfGKSfXQSLDtxTt7PzS2KfSLuoxZSDyWqQoW13gmAA/vKPN/JfBrevOtSH2KAYXunT7dxfmVqagf2QA4tJbsAAAxWgggbGNyYE23XgAeiqHd5T3hekwNLAwVLu7QiT/FH+peWW1tL2dpsHsudTaRZvM27USrXz5p1PdjyzzYbBsfasTVVYzxAB+whCWML4z5kL1Sq4imRy0KsrTvUs3hNgNmH4rZ5FZEBLLXBytSDzH/L2fUllvfFvij73mAtP+j0pK9xoIvUx/gSyQlYwnyDPoYbQ/g7WXgGVFLh14Kp/VfQBOGvtLn4IBC3J9LJj5Lpz+Uv0YNELuEyAVeyzmCFYhEgzVEieBBghACY8nrEZcgAAAA==';
   }
 
   init() {
@@ -226,7 +249,7 @@ class ImageConfig {
 
   get resizeOptions() { return this._resizeOptions; }
   set resizeOptions(value) {
-    const { width, height, fit, position } = value;
+    // const { width, height, fit, position } = value;
   }
 
   get mode() { return this.#mode; }
@@ -254,15 +277,7 @@ class ImageConfig {
    * - ../public/images/posts/placeholders/imageName_placeholder.webp
    */
   get placeholderFileSuffix() { return this._placeholderFileSuffix; }
-  /** 
-   * @param {string} value - The suffix to be appended to the placeholder image file 
-   * @remarks
-   * - Must only contain a-z, A-Z, 0-9, -, and _
-   * - If you want to use a space, change the below regex to the following:
-   * ```js
-   * const regex = /[^a-zA-Z0-9-_ ]/g;
-   * ```
-  */
+
   set placeholderFileSuffix(value) {
     // write a regex to remove any character other than a-z, A-Z, 0-9, -, and _.
     const regex = /[^a-zA-Z0-9-_]/g;
@@ -355,19 +370,18 @@ class ImageConfig {
 
 const config = new ImageConfig();
 config.init();
-const mode = config.mode;
 
 async function createImagePlaceholder() {
   const postsDirectory = config.postsDirectory;
   const placeholderDirectory = config.placeholdersDirectory;
   const acceptedFileExtensions = config.acceptedImageFileExtensions;
   const placeholderSuffix = config.placeholderFileSuffix;
-  const imageFileExtension = config.imageFileExtension;
-  const desiredQuality = config.outputImageQuality;
+  // const imageFileExtension = config.imageFileExtension;
+  // const desiredQuality = config.outputImageQuality;
   const { width, height } = config.resizeOptions;
   const smallImgSuffix = config.smallImageSuffix;
-  const smallImgMult = config.smallImageMultiplier;
-  const smallImgAspectRatio = config.smallAspectRatio;
+  // const smallImgMult = config.smallImageMultiplier;
+  // const smallImgAspectRatio = config.smallAspectRatio;
   const smallHeight = 540;
   const smallWidth = 720;
   const outputExt = 'webp';
@@ -399,7 +413,7 @@ async function createImagePlaceholder() {
     const imageMetadata = await sharp(inputImagePath).metadata();
     if (imageMetadata.width && imageMetadata.height) {
       const img = sharp(inputImagePath);
-      
+
       img.resize(resizeOptions)
         .normalise()
         .modulate({
@@ -423,10 +437,18 @@ async function createImagePlaceholder() {
   console.log(`Processed ${tasks.length} images.`);
 }
 
-const init = () => {
-  if (mode === 'parse') {
-    createImagePlaceholder().catch(err => console.error("PLACEHOLDER processing error:", err));
+// ignore modes
+async function init() {
+  try {
+    console.log(global?.__dirname);
+    await createImagePlaceholder();
+    console.log('PLACEHOLDER processing complete.');
+  } catch (error) {
+    console.error("PLACEHOLDER processing error:", error);
+  } finally {
+    terminateGlobalDirname();
+    console.log(global?.__dirname);
   }
-};
+}
 
 init();

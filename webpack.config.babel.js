@@ -1,4 +1,3 @@
-// const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
@@ -10,7 +9,6 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const zlib = require('node:zlib');
 const validImages = require('./scripts/get-filtered-images.js');
 const ImageFilterPlugin = require('./plugins/image-filter-plugin.js');
-const csso = require('postcss-csso');
 
 module.exports = (_, argv) => {
   const IS_PRODUCTION = argv.mode === 'production';
@@ -84,11 +82,6 @@ module.exports = (_, argv) => {
             {
               loader: 'postcss-loader',
               options: {
-                // sourceMap: false,
-                // postcssPresetEnv({
-                //   stage: 2,
-                //   autoprefixer: { grid: true },
-                // }),
                 postcssOptions: {
                   plugins: [
                     'postcss-preset-env',
@@ -198,18 +191,6 @@ module.exports = (_, argv) => {
             chunks: 'all',
           }
         }
-        // cacheGroups: {
-        //   defaultVendors: {
-        //     test: /[/\\]node_modules[/\\]/,
-        //     priority: -10,
-        //     reuseExistingChunk: true,
-        //   },
-        //   default: {
-        //     minChunks: 2,
-        //     priority: -20,
-        //     reuseExistingChunk: true,
-        //   },
-        // },
       },
     };
     if (IS_PRODUCTION) {

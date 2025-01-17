@@ -21,7 +21,7 @@
   width: 100%;
   max-width: var(--max-width-md);
   flex-direction: column;
-  padding: 2rem 0 1rem 0;
+  padding: 2rem 0 0 0;
   margin: 0 auto .5rem auto;
 }
 
@@ -29,7 +29,7 @@
 .section-title h3 {
   position: relative;
   padding: .5rem;
-  color: var(--white3);
+  color: var(--white0);
   font-family: var(--font2);
   font-size: var(--fs3);
   font-weight: 900;
@@ -44,11 +44,11 @@
 .section-title h3 {
   background-clip: text;
   color: transparent;
-  -webkit-text-stroke: 1px var(--grey8);
+  -webkit-text-stroke: 1px var(--white0);
 }
 
 .section-subtitle {
-  color: var(--white1);
+  color: var(--white0);
   font-size: .875rem;
   font-weight: 500;
   line-height: 1.375;
@@ -63,16 +63,16 @@
   height: auto;
   flex-direction: column;
   justify-content: center;
-  padding: 0 8rem 0 .5rem;
+  padding: 1rem 8rem 1rem .5rem;
   border-bottom: 1px solid var(--grey2);
   opacity: .8;
   margin: 0 auto 0 auto;
 }
 
 .section-excerpt p {
-  /* min-height: 70px; */
-  padding: 0 1rem 1rem 0;
-  font-size: 1rem;
+  padding: 0 1rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 720px) {
@@ -87,8 +87,6 @@
 
   .section-excerpt {
     padding: 1rem .5rem;
-
-    /* font-size: 1.25rem; */
   }
 
   .section-excerpt p {

@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+// import path from 'path';
+// import fs from 'fs';
 
 /**
  * 
@@ -28,4 +30,5 @@ const getValidImages = () => {
   }, new Set());
 };
 const validImages = getValidImages();
+
 module.exports = validImages;

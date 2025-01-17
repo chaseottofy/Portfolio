@@ -2,20 +2,21 @@
 	"calendar": {
 		"title": "Google Calendar Clone",
 		"hasTabs": true,
+		
 		"images": {
-			"large": [
-				"cday1.webp",
-				"cweek1.webp",
-				"cmonth1.webp",
-				"cyear1.webp",
-				"clist1.webp"
+			"1": [
+				"calendarday1.webp",
+				"calendarweek1.webp",
+				"calendarmonth1.webp",
+				"calendaryear1.webp",
+				"calendarlist1.webp"
 			],
-			"medium": [
-				"cday2.webp",
-				"cweek2.webp",
-				"cmonth2.webp",
-				"cyear2.webp",
-				"clist2.webp"
+			"2": [
+				"calendarday2.webp",
+				"calendarweek2.webp",
+				"calendarmonth2.webp",
+				"calendaryear2.webp",
+				"calendarlist2.webp"
 			]
 		},
 		"links": {
@@ -80,10 +81,10 @@
 		"title": "Nextjs Blog",
 		"hasTabs": false,
 		"images": {
-			"large": [
+			"1": [
 				"blog1.webp"
 			],
-			"medium": [
+			"2": [
 				"blog2.webp"
 			]
 		},
@@ -122,10 +123,10 @@
 		"title": "Monthpicker",
 		"hasTabs": false,
 		"images": {
-			"large": [
+			"1": [
 				"monthpicker1.webp"
 			],
-			"medium": [
+			"2": [
 				"monthpicker2.webp"
 			]
 		},
@@ -162,10 +163,10 @@
 		"title": "Markdown Lite",
 		"hasTabs": false,
 		"images": {
-			"large": [
+			"1": [
 				"markdown1.webp"
 			],
-			"medium": [
+			"2": [
 				"markdown2.webp"
 			]
 		},

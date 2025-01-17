@@ -17,6 +17,13 @@ export function initGlobalDirname() {
   }
 }
 
+export function terminateGlobalDirname() {
+  if (__filename && typeof __filename !== 'undefined') {
+    delete global?.__filename;
+    delete global?.__dirname;
+  }
+}
+
 export function isNum(value) {
   const num = Number(value);
   if (isNaN(num)) {

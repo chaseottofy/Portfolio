@@ -19,7 +19,6 @@ const initContactModal = () => {
       if (e.target.closest('.contact-menu__header')
         || e.target.closest('.nav-multi__contact')
       ) return;
-
       contactModal.dataset.contactMenuDisabled = 'true';
       navContactBtn.dataset.contactMenuOpen = 'false';
       window.removeEventListener('mousemove', contactMousemove);
@@ -45,7 +44,6 @@ const initContactModal = () => {
     navContactBtn.dataset.contactMenuOpen = 'true';
     window.addEventListener('mousemove', contactMousemove);
   };
-
   navContactBtn.addEventListener('mouseenter', openContactMenu);
 };
 

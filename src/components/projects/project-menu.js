@@ -1,12 +1,12 @@
-import projectData from '../../data/json/project-data.json';
-
-const createFloatOptions = (options) => {
+const createFloatOptions = (data) => {
+  const projectKeys = Object.keys(data);
+  const options = Object.values(projectKeys);
   const floatingMenu = document.querySelector('.floating-menu');
   const floatListItem = floatingMenu.querySelectorAll('.float-option');
 
   for (let i = 0; i < options.length; i += 1) {
     const title = options[i];
-    const { card: { lighthouseKey, stacks } } = projectData[title];
+    const { card: { lighthouseKey, stacks } } = data[title];
 
     const floatLink = floatListItem[i].querySelector('a');
     floatLink.href = `#proj-${lighthouseKey}-top`;
@@ -18,9 +18,8 @@ const createFloatOptions = (options) => {
   floatingMenu.dataset.floatingMenuLoaded = 'true';
 };
 
-const createProjectMenu = () => {
-  const projectKeys = Object.keys(projectData);
-  createFloatOptions(Object.values(projectKeys));
+const createProjectMenu = (projectData) => {
+  createFloatOptions(projectData);
 };
 
 export default createProjectMenu;

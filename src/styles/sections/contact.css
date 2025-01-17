@@ -28,7 +28,8 @@
   border-radius: var(--br-2);
   margin: 0 auto;
   animation: ease-modal-in 150ms both;
-  background-color: var(--offsetblack4);
+  background-color: var(--offsetblack6);
+  backdrop-filter: blur(32px);
   box-shadow: var(--bs-lg);
   opacity: 1;
 }

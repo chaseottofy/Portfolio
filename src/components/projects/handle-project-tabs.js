@@ -4,7 +4,7 @@ import {
 import handleState from '../../hooks/handle-state';
 import getImgSuffix from '../../utilities/get-img-suffix';
 import createSpinner from '../ui/spinner';
-import tabbedProjects from './import-project-images';
+import projectImages from './import-project-images';
 
 const createSource = (srcset, media, extension) => {
   const source = document.createElement('source');
@@ -21,29 +21,31 @@ const appendSkeleton = (parent) => {
   parent.prepend(tempSkeleton);
 };
 
-const appendPicture = (parent, imgvars) => {
+const appendPicture = (parent, altval, sources) => {
   appendSkeleton(parent.parentElement);
+  const [large, medium] = sources;
+  const extensionLarge = getImgSuffix(large);
   const skel = document.querySelector('.img-skeleton');
+  const widthValues = [
+    `(min-width: ${aspectSmallWidth + 1}px)`,
+    `(max-width: ${aspectSmallWidth}px)`,
+  ];
 
-  const [large, medium, alt] = imgvars;
-  const extensionType = getImgSuffix(large);
-  if (extensionType === '') {
+  if (extensionLarge === '') {
     console.warn('No image extension found');
     if (skel) skel.remove();
     return;
   }
 
-  parent.append(
-    createSource(large, `(min-width: ${aspectSmallWidth + 1}px)`, extensionType),
-    createSource(medium, `(max-width: ${aspectSmallWidth + 1}px)`, extensionType),
-  );
+  parent.append(createSource(large, widthValues[0], extensionLarge));
+  parent.append(createSource(medium, widthValues[1], extensionLarge));
 
   const img = new Image();
   img.src = large;
   img.srcset = `${large} 1x, ${medium} 2x`;
-  img.alt = alt;
+  img.alt = altval;
   img.style = 'max-width:100vw;';
-  img.type = extensionType;
+  img.type = extensionLarge;
   img.loading = 'eager';
 
   img.decode().then(() => {
@@ -57,16 +59,12 @@ const appendPicture = (parent, imgvars) => {
 
 const configPicture = (parent, nth) => {
   const imgWrapper = document.createElement('picture');
-  const { calendar: calendarImageSet } = tabbedProjects;
-  const imageSetKeys = Object.keys(calendarImageSet);
-
+  const { calendar: calendarImageSet } = projectImages;
   imgWrapper.classList.add('cal-current', 'proj-img');
   imgWrapper.dataset.hasimg = 'true';
   imgWrapper.dataset.calNth = nth;
   parent.append(imgWrapper);
-  const currKey = imageSetKeys[nth - 1];
-  const { large, medium } = calendarImageSet[currKey];
-  appendPicture(imgWrapper, [large, medium, currKey]);
+  appendPicture(imgWrapper, 'cal', calendarImageSet[nth - 1]);
 };
 
 const [tabState, setTabState] = handleState(0);

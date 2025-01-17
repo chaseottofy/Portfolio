@@ -143,21 +143,20 @@
   border: 1px solid var(--black3);
   border-radius: var(--br-1);
   margin: .25rem;
-  background-color: linear-gradient(to right bottom,
+  /* background-color: linear-gradient(to right bottom,
       var(--black4),
       var(--black0),
-      var(--accent-1));
+      var(--accent-1)); */
   color: var(--white0);
   font-size: .875rem;
   font-weight: 500;
+  background-color: var(--black0);
   line-height: 2.5rem;
   text-transform: capitalize;
 }
 
 .proj-overview--links a:hover {
-  border: 1px solid var(--white1);
-  background-color: linear-gradient(to right bottom, var(--black2), var(--black1), var(--accent-1));
-  color: var(--white1);
+  filter: invert(1);
 }
 
 .po-list {

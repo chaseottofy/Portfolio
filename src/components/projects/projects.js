@@ -1,29 +1,15 @@
-// import createAuditModal from '../../../localonly/project-modal-audit';
 import projectData from '../../data/json/project-data.json';
 import getImgSuffix from '../../utilities/get-img-suffix';
-import getImgArray from '../../utilities/get-imgarr-formatted';
 import svgIcons from '../../utilities/get-svg';
 import handleTab from './handle-project-tabs';
-import { startingImageSets } from './import-project-images';
+import { sourceImages } from './import-project-images';
 import createProjectMenu from './project-menu';
 import createProjectModal from './project-modal-overview';
 import createProjectTabs from './project-tabs';
 
-/**
- *
- * @param {HTMLPictureElement} picture
- * @param {Array<object>} images
- * images format example:
- * [
-    {
-        "src": "images/cday1.8e769cb7.webp",
-        "alt": "cdaylgdark",
-        "media": "(min-width: 721px)"
-    },
-  ]
- */
 const configProjectPicture = (picture, images) => {
   const img = picture.querySelector('img');
+  if (img.hasAttribute('srcset')) img.removeAttribute('srcset');
   const sources = picture.querySelectorAll('source');
   for (let i = 0; i < images.length; i += 1) {
     const { src, alt, media } = images[i];
@@ -32,17 +18,14 @@ const configProjectPicture = (picture, images) => {
     source.srcset = src;
     source.media = media;
     source.type = srcExtension;
-    img.srcset += src;
-
-    // set first image in provided images array as default
     if (i === 0) {
       img.src = src;
-      img.srcset = `${src} 1x, `;
+      img.srcset = `${src} 1x`;
       img.loading = 'eager';
       img.alt = alt || 'project image';
       img.type = srcExtension;
     } else {
-      img.srcset = `${img.srcset + src} ${i + 1}x`;
+      img.srcset += `, ${src} ${i + 1}x`;
     }
   }
 };
@@ -144,19 +127,18 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
   overviewBtn.addEventListener('click', createProjectModal);
 };
 
-const createProjectCards = () => {
+const createProjectCards = (data, sources) => {
   const projectCells = document.querySelectorAll('.project-cell');
-
-  const cardDataKeys = Object.keys(projectData);
-  const imgArrays = getImgArray(Object.values(startingImageSets).map((x) => x.slice(0, 2)));
+  const cardDataKeys = Object.keys(data);
+  const projectImages = Object.values(sources);
 
   for (let i = 0; i < projectCells.length; i += 1) {
-    const { title, links, card } = projectData[cardDataKeys[i]];
+    const cell = projectCells[i];
+    const { title, links, card } = data[cardDataKeys[i]];
     const { lighthouseKey, description, published, tabs, stacks } = card;
     const { live: projLink = ['#'], github: githubLink = ['#'] } = links;
-    const [cell, projectImages] = [projectCells[i], imgArrays[i]];
     createProjectHeader(cell, tabs, projLink[0], githubLink[0], title, published);
-    createProjectBody(cell, projectImages);
+    createProjectBody(cell, projectImages[i]);
     createProjectFooter(cell, stacks, description, title, lighthouseKey);
     // give project cell ID for floating menu scroll
     cell.id = `proj-${lighthouseKey}-top`;
@@ -166,8 +148,8 @@ const createProjectCards = () => {
 };
 
 const initProjects = () => {
-  createProjectMenu();
-  createProjectCards();
+  createProjectMenu(projectData);
+  createProjectCards(projectData, sourceImages);
 };
 
 export default initProjects;

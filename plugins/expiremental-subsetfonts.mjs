@@ -1,9 +1,10 @@
+// from what i've measured this reduces font sizs on average by 75%
+// works with variable fonts
 import { tokenize } from '@csstools/css-tokenizer';
 import { parseListOfComponentValues } from '@csstools/css-parser-algorithms';
 import fs from 'fs/promises';
 import path from 'path';
 import subsetFont from 'subset-font';
-
 
 const subsettedText = [...new Set(['_', '-', '–', '—', ',', ':', '!', '.', "'", '"', '(', ')', '[', ']', '{', '}', '@', '*', '/', '&', '#', '%', '•', '+', '>', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])].join('');
 
@@ -112,29 +113,3 @@ const getUpdatedCSS = async () => {
 };
 
 getUpdatedCSS();
-/*
-@font-face {
-  font-display: swap;
-  font-family: geist;
-  font-style: normal;
-  font-weight: 400 500;
-  src: local('Geist Regular'),
-    local('Geist Medium'),
-    url('../assets/fonts/geist/subset-geist.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: Neue Montreal;
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/neue/NeueMontreal-Medium.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: Neue Montreal;
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/neue/subset-NeueMontreal-Regular.woff2') format('woff2');
-}
-*/

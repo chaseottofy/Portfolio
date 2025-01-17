@@ -14,9 +14,22 @@
   src: url('../assets/fonts/neue/subset-PPNeueMontreal-Variable.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'subset-PPNeueMontreal-Variable-fallback';
+  src: local('Arial');
+  ascent-override: 131.588%;
+  descent-override: 114.992%;
+  line-height-override: 110.256%;
+  cap-height-override: 99.817%;
+  x-height-override: 98.350%;
+}
+
 :root {
-  --font1: 'Neue Montreal', sans-serif, -apple-system, ui-sans-serif, system-ui;
+  --font1: 'Neue Montreal', 'subset-PPNeueMontreal-Variable-fallback', sans-serif, -apple-system, ui-sans-serif, system-ui;
   --font2: basement, sans-serif, -apple-system, ui-sans-serif, system-ui;
+  /* --font1: 'Inter', sans-serif, -apple-system, ui-sans-serif, system-ui; */
+  /* --font1: 'Neue Montreal', sans-serif, -apple-system, ui-sans-serif, system-ui; */
+  /* --font1: 'Geist', sans-serif, -apple-system, ui-sans-serif, system-ui; */
   /* --font1: geist, sans-serif, -apple-system, ui-sans-serif, system-ui; */
   --fs0: max(34px, 2.8rem);
   --fs1: max(32px, 2.8rem);
@@ -90,6 +103,7 @@
   --offsetblack3: rgb(23 23 23 / 0.1);
   --offsetblack4: rgb(4 4 4 / 0.98);
   --offsetblack5: rgb(4 4 4 / .85);
+  --offsetblack6: rgb(4 4 4 / .75);
   --offsetwhite1: rgb(255 255 255 / .05);
   --offsetwhite2: rgb(255 255 255 / .1);
   --offsetsecondary1: rgb(50 145 255 / 0.1);
@@ -116,9 +130,15 @@
   --skeleton1: linear-gradient(270deg, #111, #333, #333, #111);
   --icon-color: white;
   --icon-b: brightness(0) saturate(100%) invert(73%) sepia(91%) saturate(1095%) hue-rotate(232deg);
+  --scrollbar-bg: #040404;
+  --scrollbar-thumb: #1f2125;
+  --scrollbar-thumb-hover: #737a7f;
 }
 
 [data-theme="light"] {
+  --scrollbar-bg: #fff;
+  --scrollbar-thumb: #979da3;
+  --scrollbar-thumb-hover: #80868b;
   --icon-color: black;
   --accent-1: #f1f1f1;
   --accent-2: #f5f5f5;
@@ -150,6 +170,7 @@
   --offsetblack3: rgb(255 255 255 / .2);
   --offsetblack4: rgb(255 255 255 / .96);
   --offsetblack5: #e7ecf4;
+  --offsetblack6: rgba(255, 255, 255, 0.9);
   --offsetwhite1: rgb(0 0 0 / .05);
   --offsetwhite2: rgb(0 0 0 / .1);
   --offsetsecondary1: rgb(50 145 255 / 0.1);
@@ -185,8 +206,9 @@
 }
 
 html {
-  --header-height: 4rem;
-  --intro-offset: 14vh;
+  --header-height: 4.5rem;
+  --intro-offset: 30vh;
+  /* --intro-offset: calc(var(--header-height) * 2); */
   --wt: 1000;
   --ht: 410;
   --wtvw: calc(var(--wt) * 1px);
@@ -471,6 +493,25 @@ a[disabled] {
   visibility: visible;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 2px;
+  min-height: 80px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-bg);
+}
+
 @keyframes slide-down {
   0% {
     transform: translateY(0);
@@ -479,7 +520,6 @@ a[disabled] {
   100% {
     transform: translateY(1.5rem);
   }
-
 }
 
 @keyframes slide-right {
@@ -490,7 +530,6 @@ a[disabled] {
   100% {
     transform: translateX(15%);
   }
-
 }
 
 @keyframes slight-opacity {
@@ -501,7 +540,6 @@ a[disabled] {
   100% {
     opacity: .8;
   }
-
 }
 
 @keyframes ease-modal-in {
@@ -516,7 +554,6 @@ a[disabled] {
   100% {
     opacity: 1;
   }
-
 }
 
 @keyframes skeleton-loading {
@@ -527,7 +564,6 @@ a[disabled] {
   100% {
     background-position: -200% 0
   }
-
 }
 
 @keyframes pulse {
@@ -542,7 +578,6 @@ a[disabled] {
   100% {
     opacity: 0;
   }
-
 }
 
 @keyframes spin {
@@ -553,7 +588,6 @@ a[disabled] {
   100% {
     opacity: .15;
   }
-
 }
 
 @keyframes gradient {
@@ -568,21 +602,18 @@ a[disabled] {
   100% {
     background-position: 0% 50%;
   }
+}
 
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-height: 600px) {
   html {
     --intro-offset: 0vh;
   }
-
-}
-
-@media screen and (max-width: 560px) {
-  html {
-    --intro-offset: 25vh;
-  }
-
 }
 
 @media screen and (max-width: 390px) {

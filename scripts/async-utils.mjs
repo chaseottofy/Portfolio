@@ -17,6 +17,27 @@ async function directoryExists(dirPath) {
   }
 }
 
+async function resetDirectory(dirPath) {
+  try {
+    // Check if directory exists
+    const exists = await fs.access(dirPath)
+      .then(() => true)
+      .catch(() => false);
+    
+    if (exists) {
+      // Remove all contents recursively
+      await fs.rm(dirPath, { recursive: true, force: true });
+    }
+    
+    // Create fresh directory
+    await fs.mkdir(dirPath, { recursive: true });
+    
+  } catch (error) {
+    console.error(`Error handling directory ${dirPath}:`, error);
+    throw error;
+  }
+}
+
 /**
  * Check if a path exists (could be file or directory)
  * @param {string} path - Path to check
@@ -64,4 +85,4 @@ async function prependToCSS(filePath, contentToPrepend) {
   }
 }
 
-export { directoryExists, pathExists, prependToCSS };
+export { directoryExists, resetDirectory, pathExists, prependToCSS };
