@@ -1,5 +1,6 @@
 # [ottofy.dev](https://ottofy.dev)
 
+![img](/screenshots/sc1d.png)
 
 personal portfolio
 
