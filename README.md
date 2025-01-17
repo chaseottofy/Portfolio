@@ -1,7 +1,5 @@
 # [ottofy.dev](https://ottofy.dev)
 
-![sheets ex](screenshots/sheets-exmp.png)
-
 
 personal portfolio
 
